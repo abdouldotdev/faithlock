@@ -4,6 +4,7 @@ import BibleVerse from '@/components/ui/BibleVerse'
 import CTAButton from '@/components/ui/CTAButton'
 import RichText, { stripMarkdown } from '@/components/ui/RichText'
 import TemplateTracker from '@/components/templates/TemplateTracker'
+import ResourceStoreClickTracker from '@/components/templates/ResourceStoreClickTracker'
 import TableOfContents from '@/components/seo/TableOfContents'
 import ReadingTime from '@/components/seo/ReadingTime'
 import SubtleCallout from '@/components/seo/SubtleCallout'
@@ -68,6 +69,7 @@ export default function GlossaryTemplate({ term, updatedAt }: GlossaryTemplatePr
   return (
     <article className="cozy-page">
       <TemplateTracker type="glossary" slug={term.slug} />
+      <ResourceStoreClickTracker />
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: '/' },
