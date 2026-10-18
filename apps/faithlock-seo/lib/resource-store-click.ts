@@ -23,6 +23,21 @@ export interface ResourceStoreClickProperties {
   destination_type: 'short_link' | 'app_store'
 }
 
+export function trackResourceStoreClick(
+  target: EventTarget | null,
+  pagePath: string,
+  article: Element,
+  capture: (eventName: string, properties: ResourceStoreClickProperties) => void,
+) {
+  if (!(target instanceof Element)) return
+  const anchor = target.closest('a[href]') as HTMLAnchorElement | null
+  if (!anchor) return
+
+  const props = getArticleStoreClick(article, anchor, pagePath)
+  if (props) capture('faithlock_store_click', props)
+  // Do not prevent navigation or await analytics: the destination must work offline.
+}
+
 /** A store click is a web outbound-click proxy, never an install or subscription. */
 export function buildResourceStoreClick({ href, pagePath, position, section }: ResourceStoreClickInput): ResourceStoreClickProperties | null {
   const match = /^\/resources\/([^/]+)\/?$/.exec(pagePath)
