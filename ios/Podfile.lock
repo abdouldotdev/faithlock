@@ -1,6 +1,17 @@
 PODS:
   - app_links (7.0.0):
     - Flutter
+  - appsflyer_sdk (7.0.2):
+    - appsflyer_sdk/Core (= 7.0.2)
+  - appsflyer_sdk/Core (7.0.2):
+    - AppsFlyerFramework/Main (= 7.0.2)
+    - AppsFlyerRPC/Main (= 7.0.13)
+    - Flutter
+  - AppsFlyerFramework (7.0.2):
+    - AppsFlyerFramework/Main (= 7.0.2)
+  - AppsFlyerFramework/Main (7.0.2)
+  - AppsFlyerRPC/Main (7.0.13):
+    - AppsFlyerFramework (= 7.0.2)
   - audio_session (0.0.1):
     - Flutter
   - device_info_plus (0.0.1):
@@ -87,6 +98,7 @@ PODS:
 
 DEPENDENCIES:
   - app_links (from `.symlinks/plugins/app_links/ios`)
+  - appsflyer_sdk (from `.symlinks/plugins/appsflyer_sdk/ios`)
   - audio_session (from `.symlinks/plugins/audio_session/ios`)
   - device_info_plus (from `.symlinks/plugins/device_info_plus/ios`)
   - facebook_flutter_sdk (from `.symlinks/plugins/facebook_flutter_sdk/ios`)
@@ -117,6 +129,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - AppsFlyerFramework
+    - AppsFlyerRPC
     - FBAEMKit
     - FBSDKCoreKit
     - FBSDKCoreKit_Basics
@@ -130,6 +144,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   app_links:
     :path: ".symlinks/plugins/app_links/ios"
+  appsflyer_sdk:
+    :path: ".symlinks/plugins/appsflyer_sdk/ios"
   audio_session:
     :path: ".symlinks/plugins/audio_session/ios"
   device_info_plus:
@@ -187,6 +203,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   app_links: a754cbec3c255bd4bbb4d236ecc06f28cd9a7ce8
+  appsflyer_sdk: 694ee3ec968ca52f0b9a2ea2f8eb3afec94f966b
+  AppsFlyerFramework: bf96b40ed77d0ad089e5d3e2ae2c0a0d8d62f5b1
+  AppsFlyerRPC: d4125067fdc9cb55f5d97aaf36caae2967001c72
   audio_session: 9bb7f6c970f21241b19f5a3658097ae459681ba0
   device_info_plus: 21fcca2080fbcd348be798aa36c3e5ed849eefbe
   facebook_flutter_sdk: 01c78952132a5caeabdf930317990240336ceceb

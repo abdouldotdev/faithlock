@@ -65,6 +65,7 @@ dependencies:
   sherpa_onnx: ^1.13.3
   archive: ^4.0.9
   flutter_cube: ^0.1.1
+  appsflyer_sdk: 7.0.2+2
 
 dev_dependencies:
   flutter_test:

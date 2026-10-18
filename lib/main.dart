@@ -7,6 +7,7 @@ import 'package:faithlock/core/theme/export.dart';
 import 'package:faithlock/features/faithlock/services/faithlock_database_service.dart';
 import 'package:faithlock/features/faithlock/services/unlock_timer_service.dart';
 import 'package:faithlock/features/onboarding/screens/initial_route_screen.dart';
+import 'package:faithlock/services/analytics/appsflyer/export.dart';
 import 'package:faithlock/services/analytics/meta/export.dart';
 import 'package:faithlock/services/analytics/posthog/export.dart';
 import 'package:faithlock/services/analytics/tiktok/export.dart';
@@ -203,6 +204,7 @@ void _initializeNonCriticalServices() {
       debugPrint('⚠️ Meta App Events SDK initialization failed: $e');
     }
 
+
     try {
       // RevenueCat
       final RevenueCatService revenueCat = Get.put(RevenueCatService());
@@ -213,6 +215,23 @@ void _initializeNonCriticalServices() {
       debugPrint('✅ RevenueCat initialized');
     } catch (e) {
       debugPrint('⚠️ RevenueCat initialization failed: $e');
+    }
+
+    try {
+      // AppsFlyer attribution. After RevenueCat: it sets $appsflyerId on the
+      // RevenueCat customer so server-side revenue events are attributed.
+      String? supabaseUserId;
+      try {
+        supabaseUserId = Supabase.instance.client.auth.currentUser?.id;
+      } catch (_) {}
+      await AppsFlyerService.instance.init(
+        devKey: Env.appsFlyerDevKey,
+        appId: AppConfig.appStoreId,
+        customerUserId: supabaseUserId,
+        enableDebug: kDebugMode,
+      );
+    } catch (e) {
+      debugPrint('⚠️ AppsFlyer initialization failed: $e');
     }
 
     try {

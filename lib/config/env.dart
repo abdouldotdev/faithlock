@@ -32,6 +32,10 @@ abstract class Env {
   @EnviedField(varName: 'TIKTOK_ANDROID_ID', defaultValue: 'YOUR_TIKTOK_ANDROID_ID')
   static String tiktokAndroidId = _Env.tiktokAndroidId;
 
+  /// AppsFlyer dev key (AppsFlyer dashboard → App settings). Empty = SDK off.
+  @EnviedField(varName: 'APPSFLYER_DEV_KEY', defaultValue: '')
+  static String appsFlyerDevKey = _Env.appsFlyerDevKey;
+
   // ── Supabase ─────────────────────────────────────────────────────────────────
 
   /// Supabase project URL, e.g. https://xyzcompany.supabase.co

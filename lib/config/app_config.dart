@@ -11,6 +11,9 @@ class AppConfig {
   static const String appName = 'Fast App';
   static const String appVersion = '1.0.0';
 
+  /// Apple App ID — required by AppsFlyer on iOS.
+  static const String appStoreId = '6754208209';
+
   /// Public App Store listing — used by share / rate flows.
   static const String appStoreUrl =
       'https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209';

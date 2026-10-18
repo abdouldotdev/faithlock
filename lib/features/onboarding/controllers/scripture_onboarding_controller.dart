@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:faithlock/features/faithlock/services/screen_time_service.dart';
+import 'package:faithlock/services/analytics/appsflyer/export.dart';
 import 'package:faithlock/services/analytics/meta/export.dart';
 import 'package:faithlock/services/analytics/posthog/export.dart';
 import 'package:faithlock/services/analytics/tiktok/export.dart';
@@ -415,6 +416,8 @@ class ScriptureOnboardingController extends GetxController {
     } catch (e) {
       debugPrint('ATT request failed: $e');
     }
+    // Releases AppsFlyer's first session if it is still waiting on ATT.
+    await AppsFlyerService.instance.onTrackingAuthorizationResolved();
 
     // Track onboarding completion
     if (_analytics.isReady) {
@@ -434,6 +437,9 @@ class ScriptureOnboardingController extends GetxController {
     } catch (e) {
       debugPrint('Meta trackCompleteRegistration failed: $e');
     }
+
+    await AppsFlyerService.instance
+        .trackCompleteRegistration(method: 'onboarding');
   }
 
   /// Complete summary screen
