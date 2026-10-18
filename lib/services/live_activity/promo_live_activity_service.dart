@@ -98,8 +98,23 @@ class PromoLiveActivityService {
   static const MethodChannel _channel =
       MethodChannel('faithlock/live_activity');
 
+  /// Master kill switch for the whole welcome-offer mechanism (2026-08-29).
+  ///
+  /// Set to false, and nothing reserves and nothing restores: [isEligible]
+  /// refuses, which both blocks [reserveOffer] and makes `PromoGiftCard`
+  /// render an empty box on the home screen — the entry point disappears on
+  /// its own. [restoreIfNeeded] tears down any activity still running on a
+  /// device in the wild instead of re-arming it.
+  ///
+  /// This masks the trigger without deleting the feature: the Swift target,
+  /// the bridge, the promo route and the PostHog experiment below are all left
+  /// intact. Flip back to true to re-enable, no other change needed.
+  static const bool triggerEnabled = false;
+
   /// PostHog flag. Multivariate: `control` | `gift` | `value`.
   /// `control` = no Live Activity (in-app card only) — the A/B baseline.
+  ///
+  /// Dormant while [triggerEnabled] is false — the kill switch wins.
   static const String flagKey = 'promo_live_activity';
 
   /// RevenueCat offering carrying the $1 introductory price.
@@ -162,6 +177,7 @@ class PromoLiveActivityService {
   /// Note this gates the in-app entry point, not the Live Activity itself:
   /// the control variant reaches the same promo page without one.
   Future<bool> isEligible() async {
+    if (!triggerEnabled) return false;
     if (RevenueCatService.instance.isSubscriptionActive.value) return false;
 
     final prefs = await SharedPreferences.getInstance();
@@ -252,6 +268,16 @@ class PromoLiveActivityService {
     if (!Platform.isIOS) return;
     if (_restoredThisSession) return;
     _restoredThisSession = true;
+
+    // Kill switch: tear down, never re-arm. An install that already has a card
+    // on its Lock Screen loses it at the next launch rather than keeping it
+    // for another eight hours.
+    if (!triggerEnabled) {
+      debugPrint('ℹ️ [PromoLA] restore skipped: trigger masked — ending any '
+          'activity still on screen');
+      await end();
+      return;
+    }
 
     if (RevenueCatService.instance.isSubscriptionActive.value) {
       debugPrint('ℹ️ [PromoLA] restore skipped: subscriber');
