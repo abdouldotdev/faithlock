@@ -3,7 +3,10 @@ const RESOURCE_SLUGS = new Set([
   'best-christian-app-blocker',
 ])
 
-const OFFICIAL_APP_ID = '6754208209'
+export const FAITHLOCK_APP_STORE_ID = '6754208209'
+export const FAITHLOCK_APP_STORE_DEVELOPER = 'Appbiz Studio, LLC'
+export const FAITHLOCK_APP_STORE_URL =
+  'https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209'
 const SHORT_LINK_PATH = '/kTxgKF4'
 
 export interface ResourceStoreClickInput {
@@ -55,7 +58,7 @@ export function buildResourceStoreClick({ href, pagePath, position, section }: R
   let destination_type: ResourceStoreClickProperties['destination_type']
   if (url.hostname === 'pim.ms' && url.pathname === SHORT_LINK_PATH) {
     destination_type = 'short_link'
-  } else if (url.hostname === 'apps.apple.com' && new RegExp(`/id${OFFICIAL_APP_ID}$`).test(url.pathname)) {
+  } else if (url.hostname === 'apps.apple.com' && new RegExp(`/id${FAITHLOCK_APP_STORE_ID}$`).test(url.pathname)) {
     destination_type = 'app_store'
   } else {
     return null
