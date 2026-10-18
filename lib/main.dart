@@ -128,6 +128,20 @@ void _initializeNonCriticalServices() {
   Future.microtask(() async {
     debugPrint('⏳ Loading non-critical services in background...');
 
+    // RevenueCat first: PaywallGuardService waits for it before routing a
+    // returning subscriber, so every service queued ahead delays launch.
+    try {
+      // RevenueCat
+      final RevenueCatService revenueCat = Get.put(RevenueCatService());
+      await revenueCat.initialize(
+        apiKey: Env.revenueCatApiKey,
+        enableDebugLogs: kDebugMode,
+      );
+      debugPrint('✅ RevenueCat initialized');
+    } catch (e) {
+      debugPrint('⚠️ RevenueCat initialization failed: $e');
+    }
+
     // Initialize LocalNotificationService for handling notification taps
     // This does NOT request permissions - only sets up the tap handler
     try {
@@ -204,18 +218,6 @@ void _initializeNonCriticalServices() {
       debugPrint('⚠️ Meta App Events SDK initialization failed: $e');
     }
 
-
-    try {
-      // RevenueCat
-      final RevenueCatService revenueCat = Get.put(RevenueCatService());
-      await revenueCat.initialize(
-        apiKey: Env.revenueCatApiKey,
-        enableDebugLogs: kDebugMode,
-      );
-      debugPrint('✅ RevenueCat initialized');
-    } catch (e) {
-      debugPrint('⚠️ RevenueCat initialization failed: $e');
-    }
 
     try {
       // AppsFlyer attribution. After RevenueCat: it sets $appsflyerId on the
