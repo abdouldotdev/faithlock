@@ -171,4 +171,4 @@ For related reading, see our guides to the [best Christian Bible app](/resources
 
 ---
 
-*Sources: [Hallow on the App Store](https://apps.apple.com/us/app/hallow-prayer-meditation/id1405323394), [Echo Prayer on the App Store](https://apps.apple.com/us/app/echo-prayer/id880759027), [PrayerMate on the App Store](https://apps.apple.com/us/app/prayermate-christian-prayer/id434815549), [Abide on the App Store](https://apps.apple.com/us/app/abide-bible-prayer-meditation/id726031617), [Abide Help Center pricing](https://help.abide.com/hc/en-us/articles/23119147863955-How-Much-Does-Abide-Cost)*
+*Sources: Hallow on the App Store, Echo Prayer on the App Store, PrayerMate on the App Store, Abide on the App Store, Abide Help Center pricing*

@@ -105,4 +105,4 @@ Treat them as directional. Clearspace App Store reviewers report inaccurate trac
 
 ---
 
-*Sources: [Clearspace on the App Store](https://apps.apple.com/us/app/clearspace-reduce-screen-time/id1572515807), [Clearspace App Store reviews](https://apps.apple.com/us/app/clearspace-reduce-screen-time/id1572515807?see-all=reviews&platform=iphone), [Lockpact Clearspace review](https://lockpact.app/blog/clearspace-app-review/), [Clearspace official site](https://www.getclearspace.com/), [Jomo](https://jomo.so), [Jomo on the App Store](https://apps.apple.com/app/id1609960918), [Jomo help center, blocking issues](https://help.jomo.so/en/article/blocking-doesnt-seem-to-be-working-pr6ji2/), [rtriv.io Jomo review](https://rtriv.io/en/blog/jomo-app-review)*
+*Sources: Clearspace on the App Store, Clearspace App Store reviews, Lockpact Clearspace review, Clearspace official site, Jomo, Jomo on the App Store, Jomo help center, blocking issues, [rtriv.io Jomo review](https://rtriv.io/en/blog/jomo-app-review)*

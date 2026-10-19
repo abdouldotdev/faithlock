@@ -182,4 +182,4 @@ If what you're really after is a reason to put the phone down that's rooted in s
 
 ---
 
-*Sources: [Brick on the App Store](https://apps.apple.com/us/app/brick-ditch-distractions/id6448794069), [Brick official site](https://getbrick.com/), [Digital Reviews, Brick Phone Distraction Device Review](https://www.digitalreviews.net/reviews/mobile/brick-phone-distraction-device-review/), [Cybernews, Brick Phone Blocker Review](https://cybernews.com/reviews/brick-phone-blocker-review/)*
+*Sources: Brick on the App Store, Brick official site, [Digital Reviews, Brick Phone Distraction Device Review](https://www.digitalreviews.net/reviews/mobile/brick-phone-distraction-device-review/), [Cybernews, Brick Phone Blocker Review](https://cybernews.com/reviews/brick-phone-blocker-review/)*

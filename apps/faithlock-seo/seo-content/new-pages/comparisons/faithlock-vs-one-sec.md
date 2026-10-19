@@ -87,4 +87,4 @@ Bible Pause combines Scripture with a reflection-based pause where you choose to
 Running two blocking apps simultaneously can create API conflicts on iOS. It's technically possible to configure them for different apps, but the experience is unreliable.
 
 ---
-*Sources: [FaithLock on App Store](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), [One Sec on App Store](https://apps.apple.com/app/one-sec-app-blocker), [One Sec on Google Play](https://play.google.com/store/apps/details?id=one.sec)*
+*Sources: [FaithLock on App Store](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), One Sec on App Store, One Sec on Google Play*

@@ -103,4 +103,4 @@ Jomo maintains a public troubleshooting article about exactly this, attributing 
 
 ---
 
-*Sources: [ScreenZen official site](https://screenzen.co/), [ScreenZen on the App Store](https://apps.apple.com/us/app/screenzen-screen-time-control/id1541027222), [ScreenZen on Trustpilot](https://www.trustpilot.com/review/www.screenzen.co), [Nibble ScreenZen review](https://nibble-app.com/blog/screenzen), [Jomo](https://jomo.so), [Jomo on the App Store](https://apps.apple.com/app/id1609960918), [Jomo help center, blocking issues](https://help.jomo.so/en/article/blocking-doesnt-seem-to-be-working-pr6ji2/), [rtriv.io Jomo review](https://rtriv.io/en/blog/jomo-app-review)*
+*Sources: ScreenZen official site, ScreenZen on the App Store, [ScreenZen on Trustpilot](https://www.trustpilot.com/review/www.screenzen.co), Nibble ScreenZen review, Jomo, Jomo on the App Store, Jomo help center, blocking issues, [rtriv.io Jomo review](https://rtriv.io/en/blog/jomo-app-review)*

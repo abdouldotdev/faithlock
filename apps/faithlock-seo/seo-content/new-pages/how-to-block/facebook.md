@@ -79,4 +79,4 @@ No. If you use "Login with Facebook" on other apps, those logins continue to wor
 
 ---
 
-*Sources: [Facebook Help Center](https://www.facebook.com/help/), [Facebook on the App Store](https://apps.apple.com/app/facebook/id284882215), [Pew Research — Social Media Use 2024](https://www.pewresearch.org/internet/2024/01/31/americans-social-media-use/)*
+*Sources: [Facebook Help Center](https://www.facebook.com/help/), Facebook on the App Store, [Pew Research — Social Media Use 2024](https://www.pewresearch.org/internet/2024/01/31/americans-social-media-use/)*

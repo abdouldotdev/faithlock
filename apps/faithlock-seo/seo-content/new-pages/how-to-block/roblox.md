@@ -74,4 +74,4 @@ For most families, limits work better than a full block. A complete block can cr
 
 ---
 
-*Sources: [Roblox Parents Guide](https://en.help.roblox.com/hc/en-us/articles/4438305850260-Safety-and-Civility-at-Roblox), [Roblox on the App Store](https://apps.apple.com/app/roblox/id431946152)*
+*Sources: [Roblox Parents Guide](https://en.help.roblox.com/hc/en-us/articles/4438305850260-Safety-and-Civility-at-Roblox), Roblox on the App Store*

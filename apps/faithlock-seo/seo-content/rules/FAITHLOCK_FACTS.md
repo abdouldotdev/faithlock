@@ -41,7 +41,7 @@ Ces formulations exactes ont été trouvées dans `best-christian-app-blocker.md
 - ⚠️ Prix : la fiche App Store live (annotation IAP extraite le 2026-08-16) affiche "Premium Membership. $6.99" et "Premium Membership. $39.99", SANS périodicité indiquée. Le site publie "$4.99/week or $24.99/year" sur 3 pages : ces 3 pages sont donc PÉRIMÉES et à corriger. Formulation autorisée : citer les deux montants du store sans inventer de périodicité. À confirmer par le fondateur (changement de tarif ou offres régionales ?). Tant que ce n'est pas tranché, ne citer AUCUN montant FaithLock dans une nouvelle page. Faits store confirmés par l'API iTunes (id 6754208209) : nom "Faith Lock: Bible Prayer Focus", éditeur "Appbiz Studio, LLC", téléchargement gratuit, 4,19/5 sur 16 avis, iOS 13.0+
 - "Strong (Family Controls API)" pour la solidité du blocage
 - "For apps that don't offer a native lock screen widget (like FaithLock), the verse appears when you try to open a blocked app instead of sitting on the lock screen itself" — le site confirme déjà correctement l'absence de widget lock screen, cohérent avec le code
-- Lien App Store utilisé sur le site : `https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209` (URL non vérifiée par cette recherche — à confirmer que c'est le bon identifiant App Store avant réutilisation massive)
+- Lien App Store utilisé sur le site : `https://pim.ms/kTxgKF4` (lien tracké, = `APP_STORE_URL`). Tout lien brut `apps.apple.com/.../id6754208209` est réécrit vers ce lien au rendu, et chaque clic émet l'événement PostHog `faithlock_store_click`.
 
 ## Claims interdits
 

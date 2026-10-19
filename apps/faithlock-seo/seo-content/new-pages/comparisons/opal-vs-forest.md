@@ -89,4 +89,4 @@ Forest by a wide margin — 50 million+ downloads vs Opal's 1 million+. Forest's
 FaithLock offers always-on app blocking with Bible verse engagement (similar to Opal's scope but with Scripture). Sanctum and Pray Screen Time are faith-based options that work on Android.
 
 ---
-*Sources: [Opal on App Store](https://apps.apple.com/app/opal-screen-time-for-focus), [Forest on App Store](https://apps.apple.com/app/forest-focus-for-productivity), [Forest on Google Play](https://play.google.com/store/apps/details?id=cc.forestapp)*
+*Sources: Opal on App Store, Forest on App Store, Forest on Google Play*

@@ -164,7 +164,7 @@ You'll have 3-7 extra hours per day. Here's what to fill them with:
 ## Common Objections (And Honest Answers)
 
 **"I can't do this, my job requires my phone."**
-A full digital fast works best on weekends or during vacation. If that's impossible, do a modified fast: work email and calls only, all social media and entertainment apps blocked. A faith-based app blocker like [FaithLock](/) or [Sanctum](https://play.google.com/store/apps/details?id=com.hapibits.sanctum) can automate this with scheduled lock times.
+A full digital fast works best on weekends or during vacation. If that's impossible, do a modified fast: work email and calls only, all social media and entertainment apps blocked. A faith-based app blocker like [FaithLock](/) or Sanctum can automate this with scheduled lock times.
 
 **"What about emergencies?"**
 Give one trusted person a way to reach you (landline, spouse's phone, neighbor). Emergencies are rare. The fear of missing one is what keeps most people tethered.

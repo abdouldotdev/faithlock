@@ -37,7 +37,7 @@ Publishing the method matters more than the ranking, because it lets you disagre
 
 Canopy runs a VPN and network extension on iOS and inspects traffic in real time, and its distinguishing move is blurring individual images rather than blocking a whole site. It also blocks third party VPNs, which closes the most common bypass. Of everything here, it is the closest to a genuine technical block.
 
-**Where it struggles:** roughly 3.8 out of 5 across about 1.3K App Store reviews, with recurring complaints about overblocking ordinary content, battery and data use, and breaking banking or streaming apps ([App Store](https://apps.apple.com/us/app/canopy-ai-online-safety-app/id1492266682)). On Trustpilot it sits far lower, around 2.2 to 2.5, where the dominant complaint is a VPN connection slow enough to make the phone difficult to use, and refunds not being honored ([Trustpilot](https://www.trustpilot.com/review/canopy.us)). One reviewer reports finding a way around the filter after a few weeks via image search.
+**Where it struggles:** roughly 3.8 out of 5 across about 1.3K App Store reviews, with recurring complaints about overblocking ordinary content, battery and data use, and breaking banking or streaming apps (App Store). On Trustpilot it sits far lower, around 2.2 to 2.5, where the dominant complaint is a VPN connection slow enough to make the phone difficult to use, and refunds not being honored ([Trustpilot](https://www.trustpilot.com/review/canopy.us)). One reviewer reports finding a way around the filter after a few weeks via image search.
 
 Full breakdown: [Canopy porn blocker review](/resources/canopy-porn-blocker-review).
 
@@ -55,7 +55,7 @@ The premise is not blocking. On Android, Windows and macOS it takes regular scre
 
 The company states plainly that this is not a blocking tool. It logs browsing including private browsing, app usage and device activity, then sends real time alerts or daily and weekly summaries to as many partners as you nominate. Unlimited partners per device is unusual and genuinely useful for anyone whose plan involves more than one person.
 
-**Where it struggles:** App Store reviewers describe frequent false alerts, including ordinary beach photos flagged as suspicious, and ask for monitoring to be harder to switch off ([App Store](https://apps.apple.com/us/app/accountable2you-monitoring/id1531309290)). Coverage of messaging apps is reported as poor. One Chrome Web Store reviewer reports reinstalling the extension daily without resolution ([Chrome Web Store](https://chromewebstore.google.com/detail/accountable2you/efbfdmcbmjkdkhopodcpmajcdbkiljaa/reviews)).
+**Where it struggles:** App Store reviewers describe frequent false alerts, including ordinary beach photos flagged as suspicious, and ask for monitoring to be harder to switch off (App Store). Coverage of messaging apps is reported as poor. One Chrome Web Store reviewer reports reinstalling the extension daily without resolution (Chrome Web Store).
 
 ## 4. Truple, Best Encryption Story, Worst iPhone Story
 
@@ -63,7 +63,7 @@ The company states plainly that this is not a blocking tool. It logs browsing in
 
 Truple is really two things. The DNS filter blocks over two million adult sites, installed on iOS via a configuration profile. The accountability app blocks nothing: it captures random screenshots of the whole device, analyzes them, and shares them with your chosen partner. End-to-end encryption is claimed as a differentiator in this market, which given the sensitivity of screenshot data is a substantive claim rather than a marketing one.
 
-**Where it struggles:** there is no native Truple app on iOS, requiring separate companion apps ([Truple support](https://support.truple.io/articles/ios/iphone-setup-guide)), and the company acknowledges its iOS solutions are workarounds for Apple's limitations with weaker coverage than Android ([Truple support](https://support.truple.io/articles/ios/why-iphone-app-is-designed-the-way-it-is)). The DNS filter is bypassable by changing DNS settings unless the device is supervised.
+**Where it struggles:** there is no native Truple app on iOS, requiring separate companion apps (Truple support), and the company acknowledges its iOS solutions are workarounds for Apple's limitations with weaker coverage than Android (Truple support). The DNS filter is bypassable by changing DNS settings unless the device is supervised.
 
 ## 5. Bark, Best for a Parent Who Wants Alerts Rather Than Walls
 
@@ -71,7 +71,7 @@ Truple is really two things. The DNS filter blocks over two million adult sites,
 
 Bark is a monitoring product first. Its AI scans messages, social media and searches and alerts a parent to risky content, including bullying and suicidal ideation alongside explicit material. It also does category based site and app blocking and screen time management.
 
-**Where it struggles:** on iOS, Apple prevents third party apps from reading messages and photos directly, so Bark sells a physical charger, the Bark Sync, that scans the device when plugged in. Monitoring is therefore periodic rather than continuous ([Bark support](https://support.bark.us/en/articles/13928365-how-to-monitor-ios-devices-with-the-bark-sync)). App Store reviewers report the app being difficult to uninstall without contacting support ([App Store](https://apps.apple.com/us/app/bark-parental-controls/id1477619146)). Bark acknowledges false positives in its alerts.
+**Where it struggles:** on iOS, Apple prevents third party apps from reading messages and photos directly, so Bark sells a physical charger, the Bark Sync, that scans the device when plugged in. Monitoring is therefore periodic rather than continuous (Bark support). App Store reviewers report the app being difficult to uninstall without contacting support (App Store). Bark acknowledges false positives in its alerts.
 
 ## 6. Your Phone's Built-In Filter, Best Value in the Category
 
@@ -143,4 +143,4 @@ Yes, and generally better than on iOS, because Android permits deeper system acc
 
 ---
 
-*Sources: [Canopy on the App Store](https://apps.apple.com/us/app/canopy-ai-online-safety-app/id1492266682), [Canopy on Trustpilot](https://www.trustpilot.com/review/canopy.us), [TechLockdown on Covenant Eyes for iPhone](https://www.techlockdown.com/articles/covenant-eyes-iphone-review), [Cranky Old Dan](https://crankyolddan.substack.com/p/you-cant-hide-those-covenant-eyes), [Covenant Eyes on Trustpilot](https://www.trustpilot.com/review/covenanteyes.com), [Accountable2You on the App Store](https://apps.apple.com/us/app/accountable2you-monitoring/id1531309290), [Accountable2You on the Chrome Web Store](https://chromewebstore.google.com/detail/accountable2you/efbfdmcbmjkdkhopodcpmajcdbkiljaa/reviews), [Truple iPhone setup](https://support.truple.io/articles/ios/iphone-setup-guide), [Truple on iOS design](https://support.truple.io/articles/ios/why-iphone-app-is-designed-the-way-it-is), [Bark Sync support](https://support.bark.us/en/articles/13928365-how-to-monitor-ios-devices-with-the-bark-sync), [Bark on the App Store](https://apps.apple.com/us/app/bark-parental-controls/id1477619146), [Google For Families Help](https://support.google.com/families/answer/7087030). All checked 2026-08-16.*
+*Sources: Canopy on the App Store, [Canopy on Trustpilot](https://www.trustpilot.com/review/canopy.us), [TechLockdown on Covenant Eyes for iPhone](https://www.techlockdown.com/articles/covenant-eyes-iphone-review), [Cranky Old Dan](https://crankyolddan.substack.com/p/you-cant-hide-those-covenant-eyes), [Covenant Eyes on Trustpilot](https://www.trustpilot.com/review/covenanteyes.com), Accountable2You on the App Store, Accountable2You on the Chrome Web Store, Truple iPhone setup, Truple on iOS design, Bark Sync support, Bark on the App Store, [Google For Families Help](https://support.google.com/families/answer/7087030). All checked 2026-08-16.*

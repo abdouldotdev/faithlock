@@ -56,7 +56,7 @@ It is free. Not free-to-download, free. There is no premium tier holding back th
 | Languages | English and 63 more |
 | Size / iOS | 169 MB, requires iOS 17.0 or later |
 
-[View on the App Store](https://apps.apple.com/us/app/bible/id282935706)
+View on the App Store
 
 ---
 
@@ -75,7 +75,7 @@ Glorify's structure is a daily walk with morning and evening rhythms, guided pra
 | Price | Free download; in-app purchases from $4.99 to $69.99 |
 | Size / iOS | 347.3 MB, requires iOS 16.0 or later |
 
-[View on the App Store](https://apps.apple.com/us/app/glorify-daily-christian-app/id1490587079)
+View on the App Store
 
 ---
 
@@ -94,7 +94,7 @@ Abide builds guided, audio-led meditations around biblical passages. If your dai
 | Price | Free download; in-app purchases from $4.99 to $44.99 |
 | Size / iOS | 749 MB, requires iOS 15.0 or later |
 
-[View on the App Store](https://apps.apple.com/us/app/abide-bible-prayer-meditation/id726031617)
+View on the App Store
 
 ---
 
@@ -173,4 +173,4 @@ The case for anything else is specific. Choose Abide if audio is the format that
 
 ---
 
-*Sources: App Store listings for [Bible](https://apps.apple.com/us/app/bible/id282935706), [Glorify](https://apps.apple.com/us/app/glorify-daily-christian-app/id1490587079), [Abide](https://apps.apple.com/us/app/abide-bible-prayer-meditation/id726031617), and [Faith Lock](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), all checked August 2026, plus the [YouVersion Bible App page](https://www.youversion.com/the-bible-app/). Scripture quoted from [Bible Gateway](https://www.biblegateway.com/).*
+*Sources: App Store listings for Bible, Glorify, Abide, and [Faith Lock](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), all checked August 2026, plus the [YouVersion Bible App page](https://www.youversion.com/the-bible-app/). Scripture quoted from [Bible Gateway](https://www.biblegateway.com/).*

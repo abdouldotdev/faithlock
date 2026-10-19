@@ -87,4 +87,4 @@ Neither has a spiritual component. For users wanting faith-integrated blocking, 
 Yes. The free version blocks specific websites. Pro adds app blocking. You can create granular blocklists that target individual websites while leaving the rest of your browser functional.
 
 ---
-*Sources: [Freedom](https://freedom.to), [Cold Turkey](https://getcoldturkey.com), [Freedom on App Store](https://apps.apple.com/app/freedom-block-distractions)*
+*Sources: Freedom, Cold Turkey, Freedom on App Store*

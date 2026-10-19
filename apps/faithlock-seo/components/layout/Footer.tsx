@@ -74,6 +74,7 @@ export default async function Footer() {
             </p>
             <a
               href={APP_STORE_URL}
+              data-store-location="footer"
               className="inline-flex items-center gap-2 bg-cozy-primary text-white border-[2.5px] border-cozy-ink shadow-cozy-hard px-4 py-2.5 rounded-full font-bold text-sm transition-all duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-cozy-hard-lg"
               target="_blank"
               rel="noopener noreferrer"

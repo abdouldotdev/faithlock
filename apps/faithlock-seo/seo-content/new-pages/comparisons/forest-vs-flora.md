@@ -113,4 +113,4 @@ Opal offers Gem sessions and team challenges. Clearspace has group challenges. B
 No. Each app maintains its own tree collection, and there's no data migration between them. You'd start fresh.
 
 ---
-*Sources: [Forest on App Store](https://apps.apple.com/app/forest-focus-for-productivity), [Forest on Google Play](https://play.google.com/store/apps/details?id=cc.forestapp), [Flora on App Store](https://apps.apple.com/app/flora-focus-habit-tracker), [Flora on Google Play](https://play.google.com/store/apps/details?id=com.flora)*
+*Sources: Forest on App Store, Forest on Google Play, Flora on App Store, Flora on Google Play*

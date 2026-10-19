@@ -124,4 +124,4 @@ Jomo offers a comparable Screen Time API foundation with Strict Mode at a substa
 
 ---
 
-*Sources: [Opal on the App Store](https://apps.apple.com/us/app/opal-screen-time-control/id1497465230), [Opal official site](https://opalapp.com/screentime), [Opal help center, how to lock Screen Time access](https://opalapp.com/help/how-to-lock-opals-screen-time-access), [Opal help center, App Uninstall Protection](https://opalapp.com/help/what-is-app-uninstall-protection), [Opal help center, making Opal foolproof](https://opalapp.com/help/how-can-i-make-opal-foolproof), [Blok.so Opal review](https://www.blok.so/resources/opal-app-review-is-it-worth-100-year-for-screen-time-management), [Opal community, refund thread](https://community.opalapp.com/t/refund-for-unwanted-subscription/1498), [Jomo help center](https://help.jomo.so/en/article/blocking-doesnt-seem-to-be-working-pr6ji2/)*
+*Sources: Opal on the App Store, Opal official site, Opal help center, how to lock Screen Time access, Opal help center, App Uninstall Protection, Opal help center, making Opal foolproof, Blok.so Opal review, Opal community, refund thread, Jomo help center*

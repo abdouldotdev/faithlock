@@ -32,7 +32,7 @@ Canopy is owned by Netspark Inc., whose founder and CEO is Sean Clifford (as rep
 
 The mechanism has three parts:
 
-**A network extension on the device.** On iOS this installs as a VPN profile, visible afterward under Settings, VPN & Device Management ([Canopy support](https://support.canopy.us/portal/en/kb/articles/canopy-shield-ios-installation), checked 2026-08-16). Because it sits on traffic rather than inside a browser, it reaches apps as well as every browser on the device. That is the single most important fact about Canopy, and it is what separates it from extension based tools.
+**A network extension on the device.** On iOS this installs as a VPN profile, visible afterward under Settings, VPN & Device Management (Canopy support, checked 2026-08-16). Because it sits on traffic rather than inside a browser, it reaches apps as well as every browser on the device. That is the single most important fact about Canopy, and it is what separates it from extension based tools.
 
 **Real time image classification.** Rather than blocking an entire site because part of it is objectionable, Canopy inspects traffic and blurs specific images. In principle this means a news site or a social platform stays usable while individual images do not load, which is a more precise instrument than domain level blocking.
 
@@ -48,11 +48,11 @@ Canopy holds roughly 3.8 out of 5 across about 1.3K App Store reviews, and aroun
 
 Three complaints recur often enough to treat as characteristics rather than incidents:
 
-**Overblocking.** Non-explicit content blocked, and incompatibilities with banking or streaming apps ([App Store](https://apps.apple.com/us/app/canopy-ai-online-safety-app/id1492266682), checked 2026-08-16). This is the predictable cost of real time classification. A filter making judgment calls thousands of times a day will make some of them wrong, and the direction of the error is set by the vendor's tolerance, not yours.
+**Overblocking.** Non-explicit content blocked, and incompatibilities with banking or streaming apps (App Store, checked 2026-08-16). This is the predictable cost of real time classification. A filter making judgment calls thousands of times a day will make some of them wrong, and the direction of the error is set by the vendor's tolerance, not yours.
 
 **Speed and battery.** Trustpilot reviewers describe the VPN connection as slow enough to make the iPhone nearly unusable, alongside heavy battery and data consumption ([Trustpilot](https://www.trustpilot.com/review/canopy.us), checked 2026-08-16). Routing all traffic through an inspection layer has a cost, and on older hardware that cost is visible.
 
-**It is not airtight.** One App Store reviewer reports finding ways around the filter after a few weeks, notably through image search ([App Store](https://apps.apple.com/us/app/canopy-ai-online-safety-app/id1492266682), checked 2026-08-16). Worth holding onto if you are buying Canopy expecting a solved problem rather than a raised cost.
+**It is not airtight.** One App Store reviewer reports finding ways around the filter after a few weeks, notably through image search (App Store, checked 2026-08-16). Worth holding onto if you are buying Canopy expecting a solved problem rather than a raised cost.
 
 ---
 
@@ -74,7 +74,7 @@ Three complaints recur often enough to treat as characteristics rather than inci
 
 **Covenant Eyes.** Also filters device wide on iOS through a VPN, and adds a report to a partner you choose. Its screenshot capture on iOS covers Safari only, leaving other browsers and apps outside the report ([TechLockdown](https://www.techlockdown.com/articles/covenant-eyes-iphone-review), checked 2026-08-16). See [Covenant Eyes review](/resources/covenant-eyes-review) and [Canopy vs Covenant Eyes](/resources/canopy-vs-covenant-eyes).
 
-**Bark.** A monitoring product rather than a filter, alerting a parent to risky content across messages and social platforms. On iOS its coverage is periodic because it depends on a physical accessory, the Bark Sync ([Bark support](https://support.bark.us/en/articles/13928365-how-to-monitor-ios-devices-with-the-bark-sync), checked 2026-08-16).
+**Bark.** A monitoring product rather than a filter, alerting a parent to risky content across messages and social platforms. On iOS its coverage is periodic because it depends on a physical accessory, the Bark Sync (Bark support, checked 2026-08-16).
 
 **The free stack.** Built-in OS restriction plus filtering DNS. No image classification, no reporting, no cost. For many adults filtering their own device, this is genuinely sufficient.
 
@@ -128,4 +128,4 @@ They answer different questions. Canopy is the better filter, particularly for c
 
 ---
 
-*Sources: [Canopy pricing](https://canopy.us/pricing/), [Canopy on the App Store](https://apps.apple.com/us/app/canopy-ai-online-safety-app/id1492266682), [Canopy on Trustpilot](https://www.trustpilot.com/review/canopy.us), [Canopy Shield iOS installation](https://support.canopy.us/portal/en/kb/articles/canopy-shield-ios-installation), [Focus on the Family Daily Citizen](https://dailycitizen.focusonthefamily.com/canopy-new-parental-control-app-protects-children-from-nudity-and-pornography/), [TechLockdown on Covenant Eyes for iPhone](https://www.techlockdown.com/articles/covenant-eyes-iphone-review), [Bark Sync support](https://support.bark.us/en/articles/13928365-how-to-monitor-ios-devices-with-the-bark-sync). All checked 2026-08-16.*
+*Sources: Canopy pricing, Canopy on the App Store, [Canopy on Trustpilot](https://www.trustpilot.com/review/canopy.us), Canopy Shield iOS installation, [Focus on the Family Daily Citizen](https://dailycitizen.focusonthefamily.com/canopy-new-parental-control-app-protects-children-from-nudity-and-pornography/), [TechLockdown on Covenant Eyes for iPhone](https://www.techlockdown.com/articles/covenant-eyes-iphone-review), Bark Sync support. All checked 2026-08-16.*

@@ -204,4 +204,4 @@ For related reading, see our guides to the [best Christian Bible app](/resources
 
 ---
 
-*Sources: [YouVersion on the App Store](https://apps.apple.com/us/app/bible-app-by-life-church/id282935706), [Our Daily Bread on the App Store](https://apps.apple.com/us/app/our-daily-bread/id437496538), [First 5 on the App Store](https://apps.apple.com/us/app/first-5/id997457664), [She Reads Truth on the App Store](https://apps.apple.com/us/app/she-reads-truth/id892128363), [He Reads Truth on the App Store](https://apps.apple.com/us/app/he-reads-truth/id1009532934), [Dwell on the App Store](https://apps.apple.com/us/app/dwell-audio-bible/id1343917374)*
+*Sources: YouVersion on the App Store, Our Daily Bread on the App Store, First 5 on the App Store, She Reads Truth on the App Store, He Reads Truth on the App Store, Dwell on the App Store*

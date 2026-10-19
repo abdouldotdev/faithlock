@@ -44,7 +44,7 @@ Glorify is the gold standard for Bible verse wallpapers — hundreds of pre-made
 | Platforms | iOS + Android |
 | Wallpaper method | Browse + save to camera roll |
 
-[Download on the App Store](https://apps.apple.com/app/glorify-daily-bible-verses/id1490587079)
+Download on the App Store
 
 ---
 
@@ -65,7 +65,7 @@ Canva isn't a Bible app — it's a design tool used by 150 million people. Searc
 | Platforms | iOS + Android + Web |
 | Wallpaper method | Design + export to camera roll |
 
-[Download on the App Store](https://apps.apple.com/app/canva-design-photo-video/id897446215)
+Download on the App Store
 
 ---
 
@@ -86,7 +86,7 @@ YouVersion's Verse of the Day generates a shareable image every day — a verse 
 | Platforms | iOS + Android |
 | Wallpaper method | Save Verse of the Day image |
 
-[Download on the App Store](https://apps.apple.com/app/bible/id282935706)
+Download on the App Store
 
 ---
 
@@ -107,7 +107,7 @@ Heavenly generates wallpaper-quality verse images and can automatically update y
 | Platforms | iOS |
 | Wallpaper method | Auto-set daily or manual save |
 
-[Download on the App Store](https://apps.apple.com/app/heavenly-bible-verse-widget/id6751951584)
+Download on the App Store
 
 ---
 
@@ -128,7 +128,7 @@ Bible Verse Daily has a massive collection of verse images organized by topic �
 | Platforms | iOS + Android |
 | Wallpaper method | Browse + save from gallery |
 
-[Download on the App Store](https://apps.apple.com/app/bible-verse-daily/id1048087872)
+Download on the App Store
 
 ---
 
@@ -149,7 +149,7 @@ Verses is primarily a Bible memory app using spaced-repetition (like Anki for Sc
 | Platforms | iOS |
 | Wallpaper method | Generate verse card + save |
 
-[Download on the App Store](https://apps.apple.com/app/verses-bible-memory/id878550734)
+Download on the App Store
 
 ---
 
@@ -218,4 +218,4 @@ You can always change it later. The point is to start now.
 
 ---
 
-*Sources: [Zajonc, R.B. Mere Exposure Effect (1968)](https://www.sciencedirect.com/science/article/abs/pii/S0022103168000148), [Karpicke & Roediger, PNAS 2008](https://www.pnas.org/doi/10.1073/pnas.0711910105), [Apple Wallpaper Support](https://support.apple.com/en-us/105117), [App Store listings](https://apps.apple.com)*
+*Sources: [Zajonc, R.B. Mere Exposure Effect (1968)](https://www.sciencedirect.com/science/article/abs/pii/S0022103168000148), [Karpicke & Roediger, PNAS 2008](https://www.pnas.org/doi/10.1073/pnas.0711910105), [Apple Wallpaper Support](https://support.apple.com/en-us/105117), App Store listings*

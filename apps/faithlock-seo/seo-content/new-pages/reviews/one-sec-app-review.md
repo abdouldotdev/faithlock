@@ -182,4 +182,4 @@ This one sec app review's bottom line: try the free tier on your worst app first
 
 ---
 
-*Sources: [one sec on the App Store](https://apps.apple.com/us/app/one-sec-screen-time-focus/id1532875441), [one sec official site](https://one-sec.app), [Blok.so, One Sec App Review](https://www.blok.so/resources/one-sec-app-review-does-adding-friction-actually-reduce-screen-time), [WhistleOut, One Sec App Review](https://www.whistleout.com/CellPhones/Apps/one-sec-app-review)*
+*Sources: one sec on the App Store, one sec official site, Blok.so, One Sec App Review, [WhistleOut, One Sec App Review](https://www.whistleout.com/CellPhones/Apps/one-sec-app-review)*

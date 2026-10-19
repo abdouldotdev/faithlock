@@ -49,7 +49,7 @@ Life.Church's Bible app is free with no premium tier. The Verse of the Day widge
 | Price | Free, no premium tier |
 | Platforms | iPhone, iPad, Apple Vision, Apple TV, and Android |
 
-[View on the App Store](https://apps.apple.com/us/app/bible/id282935706)
+View on the App Store
 
 ---
 
@@ -67,7 +67,7 @@ The free tier gives you a working widget with a limited design library. Pro is $
 | Free tier | Working widget, limited designs |
 | Paid | $9.99/month, $49.99/year, or $99.99 lifetime |
 
-[View on the App Store](https://apps.apple.com/us/app/heavenly-bible-verse-widget/id6751951584)
+View on the App Store
 
 ---
 
@@ -83,7 +83,7 @@ Worth it if you want the verse to open into a morning and evening routine. Not w
 | Free tier | Limited content |
 | Paid | In-app purchases from $4.99 to $69.99 |
 
-[View on the App Store](https://apps.apple.com/us/app/glorify-daily-christian-app/id1490587079)
+View on the App Store
 
 ---
 
@@ -93,7 +93,7 @@ Free to download, with in-app purchases at $1.99, $3.99, $19.99, and $29.99. The
 
 Rated 4.6 out of 5 across 765K ratings, the largest review base of any app here.
 
-[View on the App Store](https://apps.apple.com/us/app/widgetsmith/id1523682319)
+View on the App Store
 
 ---
 
@@ -177,4 +177,4 @@ Start free. If a month in you find yourself wanting something better looking, yo
 
 ---
 
-*Sources: App Store listings for [Bible](https://apps.apple.com/us/app/bible/id282935706), [Heavenly](https://apps.apple.com/us/app/heavenly-bible-verse-widget/id6751951584), [Glorify](https://apps.apple.com/us/app/glorify-daily-christian-app/id1490587079), [Widgetsmith](https://apps.apple.com/us/app/widgetsmith/id1523682319), and [Faith Lock](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), all checked August 2026.*
+*Sources: App Store listings for Bible, Heavenly, Glorify, Widgetsmith, and [Faith Lock](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), all checked August 2026.*

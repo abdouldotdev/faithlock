@@ -19,7 +19,7 @@ meta_description: "Understand how Roblox exploits children's social needs and cr
 
 Roblox has over 70 million daily active users, the majority under 16. It's not a game — it's a platform containing millions of games, social spaces, and virtual economies. Its addiction runs deep because it becomes a child's entire world.
 
-**Social identity lives inside Roblox.** Children's friend groups, social hierarchies, and daily interactions happen within Roblox. Their avatar is their identity. Their Roblox friends are their real friends. Leaving Roblox means leaving their social world. A [2023 report by Qustodio](https://www.qustodio.com/en/research/annual-report-2023/) found that Roblox is the most-used app among children aged 7-12, surpassing even YouTube.
+**Social identity lives inside Roblox.** Children's friend groups, social hierarchies, and daily interactions happen within Roblox. Their avatar is their identity. Their Roblox friends are their real friends. Leaving Roblox means leaving their social world. A 2023 report by Qustodio found that Roblox is the most-used app among children aged 7-12, surpassing even YouTube.
 
 **Infinite game variety.** Roblox contains millions of user-created games across every genre. When a child gets bored of one game, there are thousands more. The platform never gets stale because new content is created daily by its community. This infinite variety eliminates the natural endpoint that single games have.
 
@@ -110,4 +110,4 @@ Stay calm and consistent. Acknowledge their frustration ("I know it's hard to st
 
 ---
 
-*Sources: [Qustodio Annual Report, 2023](https://www.qustodio.com/en/research/annual-report-2023/), [NCBI - Microtransactions and Gambling Psychology](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7360418/), [National Center for Missing & Exploited Children](https://www.missingkids.org/theissues/onlineexploitation)*
+*Sources: Qustodio Annual Report, 2023, [NCBI - Microtransactions and Gambling Psychology](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7360418/), [National Center for Missing & Exploited Children](https://www.missingkids.org/theissues/onlineexploitation)*

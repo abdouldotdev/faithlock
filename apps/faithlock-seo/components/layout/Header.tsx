@@ -45,6 +45,7 @@ export default function Header() {
             className="hidden sm:inline-flex items-center gap-2 bg-cozy-primary text-white border-[2.5px] border-cozy-ink px-5 py-2.5 rounded-full font-bold text-sm shadow-cozy-hard transition-all duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-cozy-hard-lg"
             target="_blank"
             rel="noopener noreferrer"
+            data-store-location="header"
             onClick={() => trackCTAClick('header', 'Download now')}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -107,6 +108,7 @@ export default function Header() {
               className="mt-2 flex items-center justify-center gap-2 bg-cozy-primary text-white border-[2.5px] border-cozy-ink px-5 py-3 rounded-full font-bold text-sm shadow-cozy-hard transition-all duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-cozy-hard-lg"
               target="_blank"
               rel="noopener noreferrer"
+              data-store-location="mobile_menu"
               onClick={() => trackCTAClick('mobile_menu', 'Download now on iOS')}
             >
               Download now on iOS

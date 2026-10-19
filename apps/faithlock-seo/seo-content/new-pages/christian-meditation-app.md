@@ -183,4 +183,4 @@ For related reading, see our guides to the [best Christian Bible app](/resources
 
 ---
 
-*Sources: [Hallow on the App Store](https://apps.apple.com/us/app/hallow-prayer-meditation/id1405323394), [Abide on the App Store](https://apps.apple.com/us/app/abide-bible-prayer-meditation/id726031617), [Abide Help Center pricing](https://help.abide.com/hc/en-us/articles/23119147863955-How-Much-Does-Abide-Cost), [Lectio 365 on the App Store](https://apps.apple.com/us/app/lectio-365/id1483974820), [Pray.com Help Center](https://help.pray.com/hc/en-us/articles/15255693841565-Pray-com-Subscription-Plans), [Soultime on the App Store](https://apps.apple.com/us/app/soultime-christian-meditation/id1369059690)*
+*Sources: Hallow on the App Store, Abide on the App Store, Abide Help Center pricing, Lectio 365 on the App Store, Pray.com Help Center, Soultime on the App Store*

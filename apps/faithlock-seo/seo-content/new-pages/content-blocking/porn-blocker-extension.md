@@ -53,7 +53,7 @@ Where an extension is the wrong answer: as the only thing you install, on a phon
 
 The more durable version of this idea is an extension that reports rather than blocks, tied to an account that notices when it stops working.
 
-Accountable2You publishes a Chrome extension as part of its monitoring service, which logs browsing including private browsing activity and sends reports to partners you choose. Its Chrome Web Store reviews are worth reading before you commit, including one describing having to uninstall and reinstall it daily without support resolving the issue ([Chrome Web Store](https://chromewebstore.google.com/detail/accountable2you/efbfdmcbmjkdkhopodcpmajcdbkiljaa/reviews), checked 2026-08-16).
+Accountable2You publishes a Chrome extension as part of its monitoring service, which logs browsing including private browsing activity and sends reports to partners you choose. Its Chrome Web Store reviews are worth reading before you commit, including one describing having to uninstall and reinstall it daily without support resolving the issue (Chrome Web Store, checked 2026-08-16).
 
 Truple also ships a Chrome extension alongside its desktop coverage, as part of a screenshot based accountability product rather than a blocker (verified on the vendor's own platform documentation, checked 2026-08-16).
 
@@ -120,4 +120,4 @@ No. It leaves apps, other browsers, and every phone in the house uncovered. Trea
 
 ---
 
-*Sources: [Chrome Web Store Help on installing and managing extensions](https://support.google.com/chrome_webstore/answer/2664769), [Accountable2You on the Chrome Web Store](https://chromewebstore.google.com/detail/accountable2you/efbfdmcbmjkdkhopodcpmajcdbkiljaa/reviews), [Truple](https://truple.io/), [988 Suicide and Crisis Lifeline](https://988lifeline.org/). All checked 2026-08-16.*
+*Sources: [Chrome Web Store Help on installing and managing extensions](https://support.google.com/chrome_webstore/answer/2664769), Accountable2You on the Chrome Web Store, Truple, [988 Suicide and Crisis Lifeline](https://988lifeline.org/). All checked 2026-08-16.*

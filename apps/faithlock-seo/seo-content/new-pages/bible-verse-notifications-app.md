@@ -53,7 +53,7 @@ Life.Church's Bible app carries 4.9 out of 5 across 14M ratings and is free with
 | Price | Free |
 | Requires | iOS 17.0 or later |
 
-[View on the App Store](https://apps.apple.com/us/app/bible/id282935706)
+View on the App Store
 
 ---
 
@@ -72,7 +72,7 @@ Abide's notification opens into a guided meditation built around Scripture rathe
 | Price | Free download; in-app purchases from $4.99 to $44.99 |
 | Requires | iOS 15.0 or later |
 
-[View on the App Store](https://apps.apple.com/us/app/abide-bible-prayer-meditation/id726031617)
+View on the App Store
 
 ---
 
@@ -91,7 +91,7 @@ Glorify structures its reminders around a morning and evening routine, with the 
 | Price | Free download; in-app purchases from $4.99 to $69.99 |
 | Requires | iOS 16.0 or later |
 
-[View on the App Store](https://apps.apple.com/us/app/glorify-daily-christian-app/id1490587079)
+View on the App Store
 
 ---
 
@@ -186,4 +186,4 @@ Use one app, one notification, timed for a gap you actually have. If a month pas
 
 ---
 
-*Sources: App Store listings for [Bible](https://apps.apple.com/us/app/bible/id282935706), [Abide](https://apps.apple.com/us/app/abide-bible-prayer-meditation/id726031617), [Glorify](https://apps.apple.com/us/app/glorify-daily-christian-app/id1490587079), and [Faith Lock](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), all checked August 2026. Scripture quoted from [Bible Gateway](https://www.biblegateway.com/).*
+*Sources: App Store listings for Bible, Abide, Glorify, and [Faith Lock](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), all checked August 2026. Scripture quoted from [Bible Gateway](https://www.biblegateway.com/).*

@@ -1,7 +1,7 @@
 import { getAllContentForFooter } from '@/lib/contentful'
-import { COMPANY } from '@/lib/constants'
+import { COMPANY, APP_STORE_URL } from '@/lib/constants'
 
-const APP_LINK = 'https://pim.ms/kTxgKF4'
+const APP_LINK = APP_STORE_URL
 
 const TOP_BIBLE_VERSES = [
   'bible-verses-about-love',
@@ -65,6 +65,7 @@ export default async function LandingFooter() {
             </p>
             <a
               href={APP_LINK}
+              data-store-location="landing_footer"
               className="inline-flex items-center gap-2 bg-cozy-primary text-white border-[2px] border-cozy-ink shadow-cozy-hard-sm px-4 py-2 rounded-full font-bold text-xs transition-all duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-cozy-hard"
               target="_blank"
               rel="noopener noreferrer"

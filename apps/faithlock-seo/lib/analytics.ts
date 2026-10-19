@@ -1,4 +1,30 @@
 import posthog from 'posthog-js'
+import { APP_STORE_URL } from '@/lib/constants'
+
+// ─── Store click (every link to the FaithLock App Store listing) ──
+// Matches the tracked short link and the raw App Store listing (any locale).
+const FAITHLOCK_STORE_PATTERNS = [
+  /^https?:\/\/pim\.ms\/kTxgKF4/i,
+  /^https?:\/\/apps\.apple\.com\/.*\/id6754208209/i,
+]
+
+export function isFaithLockStoreUrl(href: string): boolean {
+  return href === APP_STORE_URL || FAITHLOCK_STORE_PATTERNS.some((re) => re.test(href))
+}
+
+export function trackStoreClick(href: string, location: string, text?: string) {
+  posthog.capture(
+    'faithlock_store_click',
+    {
+      href,
+      location,
+      button_text: text,
+      url: window.location.pathname,
+    },
+    // Same-tab links navigate away immediately: beacon survives the unload.
+    { transport: 'sendBeacon' }
+  )
+}
 
 // ─── CTA / Download ─────────────────────────────────────────
 export function trackCTAClick(location: string, text?: string) {

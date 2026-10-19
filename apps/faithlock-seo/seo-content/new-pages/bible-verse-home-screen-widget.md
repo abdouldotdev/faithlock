@@ -52,7 +52,7 @@ Life.Church's Bible app is the default answer, and it earns it. The Verse of the
 | Price | Free |
 | Size / iOS | 169 MB, requires iOS 17.0 or later |
 
-[View on the App Store](https://apps.apple.com/us/app/bible/id282935706)
+View on the App Store
 
 ---
 
@@ -73,7 +73,7 @@ Heavenly is built around the widget rather than treating it as a side feature. I
 | Price | Free download; Pro at $9.99/month, $49.99/year, or $99.99 lifetime |
 | Size / iOS | 159.6 MB, requires iOS 17 or later |
 
-[View on the App Store](https://apps.apple.com/us/app/heavenly-bible-verse-widget/id6751951584)
+View on the App Store
 
 ---
 
@@ -94,7 +94,7 @@ Widgetsmith is not a Bible app. It is a widget builder with a custom text field,
 | Price | Free download; in-app purchases at $1.99, $3.99, $19.99, and $29.99 |
 | Size / iOS | 215.3 MB, requires iOS 15.0 or later |
 
-[View on the App Store](https://apps.apple.com/us/app/widgetsmith/id1523682319)
+View on the App Store
 
 ---
 
@@ -139,7 +139,7 @@ Glorify wraps daily Scripture in guided prayer, meditation, and a Bible journal.
 | Price | Free download; in-app purchases from $4.99 to $69.99 |
 | Size / iOS | 347.3 MB, requires iOS 16.0 or later |
 
-[View on the App Store](https://apps.apple.com/us/app/glorify-daily-christian-app/id1490587079)
+View on the App Store
 
 ---
 
@@ -210,4 +210,4 @@ A widget cannot make you read. It can only make Scripture the thing your eyes la
 
 ---
 
-*Sources: App Store listings for [Bible](https://apps.apple.com/us/app/bible/id282935706), [Heavenly](https://apps.apple.com/us/app/heavenly-bible-verse-widget/id6751951584), [Widgetsmith](https://apps.apple.com/us/app/widgetsmith/id1523682319), [Glorify](https://apps.apple.com/us/app/glorify-daily-christian-app/id1490587079), and [Faith Lock](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), all checked August 2026. Scripture quoted from [Bible Gateway](https://www.biblegateway.com/).*
+*Sources: App Store listings for Bible, Heavenly, Widgetsmith, Glorify, and [Faith Lock](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), all checked August 2026. Scripture quoted from [Bible Gateway](https://www.biblegateway.com/).*

@@ -96,7 +96,7 @@ TikTok fills a real need — entertainment, connection, learning. But it fills i
 ## Frequently Asked Questions
 
 **How addictive is TikTok compared to other apps?**
-A [2022 study by Qustodio](https://www.qustodio.com/en/research/annual-report-2022/) found that children and teens spend more time on TikTok than any other app — averaging 107 minutes per day, surpassing YouTube. Among adults, TikTok has the highest average session duration of any social media platform.
+A 2022 study by Qustodio found that children and teens spend more time on TikTok than any other app — averaging 107 minutes per day, surpassing YouTube. Among adults, TikTok has the highest average session duration of any social media platform.
 
 **Is TikTok worse for your brain than other social media?**
 The short-form video format is uniquely damaging to attention span. Researchers at Beijing Normal University found that [heavy TikTok users showed reduced ability to sustain attention](https://www.nature.com/articles/s41598-023-46605-6) compared to moderate users. The rapid content switching trains your brain to expect constant novelty, making slower activities (reading, prayer, conversation) feel unbearable.
@@ -115,4 +115,4 @@ Post using a scheduling tool, not the app itself. Set two specific check-in time
 
 ---
 
-*Sources: [Wall Street Journal TikTok Algorithm Investigation, 2021](https://www.wsj.com/articles/tiktok-algorithm-sex-drugs-11631052944), [Qustodio Annual Report 2022](https://www.qustodio.com/en/research/annual-report-2022/), [Nature Scientific Reports - TikTok and Attention, 2023](https://www.nature.com/articles/s41598-023-46605-6), [Dr. Anna Lembke, Dopamine Nation](https://www.annalembke.com/dopamine-nation)*
+*Sources: [Wall Street Journal TikTok Algorithm Investigation, 2021](https://www.wsj.com/articles/tiktok-algorithm-sex-drugs-11631052944), Qustodio Annual Report 2022, [Nature Scientific Reports - TikTok and Attention, 2023](https://www.nature.com/articles/s41598-023-46605-6), [Dr. Anna Lembke, Dopamine Nation](https://www.annalembke.com/dopamine-nation)*

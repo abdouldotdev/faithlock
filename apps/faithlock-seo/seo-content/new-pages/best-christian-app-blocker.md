@@ -275,4 +275,4 @@ What matters more than which app you pick is that you're taking the step. [57% o
 
 ---
 
-*Sources: [App Store listings](https://apps.apple.com), [Desiring God](https://www.desiringgod.org/articles/smartphone-addiction-and-our-spiritual-add), [Reviews.org Phone Addiction Study](https://www.reviews.org/mobile/2023-cell-phone-addiction/), [Riedel et al., PNAS 2023](https://pmc.ncbi.nlm.nih.gov/articles/PMC9974409/), [faith.tools](https://faith.tools/internet-filtering)*
+*Sources: App Store listings, [Desiring God](https://www.desiringgod.org/articles/smartphone-addiction-and-our-spiritual-add), [Reviews.org Phone Addiction Study](https://www.reviews.org/mobile/2023-cell-phone-addiction/), [Riedel et al., PNAS 2023](https://pmc.ncbi.nlm.nih.gov/articles/PMC9974409/), [faith.tools](https://faith.tools/internet-filtering)*

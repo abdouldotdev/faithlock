@@ -143,4 +143,4 @@ It works to the extent that a specific person reads the reports and is willing t
 
 ---
 
-*Sources: [Accountable2You pricing](https://accountable2you.com/pricing/), [Accountable2You on the App Store](https://apps.apple.com/us/app/accountable2you-monitoring/id1531309290), [Truple](https://truple.io/), [Truple FAQ](https://truple.io/faq.html), [Covenant Eyes pricing](https://www.covenanteyes.com/pricing/), [TechLockdown on Covenant Eyes for iPhone](https://www.techlockdown.com/articles/covenant-eyes-iphone-review), [Bark Sync support](https://support.bark.us/en/articles/13928365-how-to-monitor-ios-devices-with-the-bark-sync), [988 Suicide and Crisis Lifeline](https://988lifeline.org/). All checked 2026-08-16.*
+*Sources: Accountable2You pricing, Accountable2You on the App Store, Truple, Truple FAQ, Covenant Eyes pricing, [TechLockdown on Covenant Eyes for iPhone](https://www.techlockdown.com/articles/covenant-eyes-iphone-review), Bark Sync support, [988 Suicide and Crisis Lifeline](https://988lifeline.org/). All checked 2026-08-16.*

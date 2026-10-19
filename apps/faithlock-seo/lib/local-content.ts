@@ -27,7 +27,7 @@ function extractFaqs(body: string): FAQ[] {
   )
   for (const match of faqMatches) {
     const question = match[1].trim()
-    const answer = match[2].trim().slice(0, 1000)
+    const answer = match[2].trim().replace(/\[([^\]]*)\]\([^)]*\)/g, '$1').slice(0, 1000)
     if (question && answer) faqs.push({ question, answer })
   }
   return faqs

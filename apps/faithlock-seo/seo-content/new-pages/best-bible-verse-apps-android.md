@@ -44,7 +44,7 @@ On the iOS side, where the listing data is available, the app carries 4.9 out of
 
 **What you do not get**: design control. The widget looks the way YouVersion decided it looks.
 
-[View on the App Store](https://apps.apple.com/us/app/bible/id282935706) for the iOS listing details cited above, or search "Bible" by Life.Church on Google Play for the Android build.
+View on the App Store for the iOS listing details cited above, or search "Bible" by Life.Church on Google Play for the Android build.
 
 ---
 
@@ -146,4 +146,4 @@ That setup takes about three minutes, costs nothing, and will outperform an hour
 
 ---
 
-*Sources: the [YouVersion Bible App page](https://www.youversion.com/the-bible-app/) and [Bible.com](https://www.bible.com/), [Google's Android Help documentation on adding widgets](https://support.google.com/android/answer/9450271), and App Store listings for [Bible](https://apps.apple.com/us/app/bible/id282935706), [Heavenly](https://apps.apple.com/us/app/heavenly-bible-verse-widget/id6751951584), [Widgetsmith](https://apps.apple.com/us/app/widgetsmith/id1523682319), [Glorify](https://apps.apple.com/us/app/glorify-daily-christian-app/id1490587079), [Abide](https://apps.apple.com/us/app/abide-bible-prayer-meditation/id726031617), and [Faith Lock](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), all checked August 2026. Google Play listing data was not retrievable at the time of writing and is not quoted. Scripture quoted from [Bible Gateway](https://www.biblegateway.com/).*
+*Sources: the [YouVersion Bible App page](https://www.youversion.com/the-bible-app/) and [Bible.com](https://www.bible.com/), [Google's Android Help documentation on adding widgets](https://support.google.com/android/answer/9450271), and App Store listings for Bible, Heavenly, Widgetsmith, Glorify, Abide, and [Faith Lock](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), all checked August 2026. Google Play listing data was not retrievable at the time of writing and is not quoted. Scripture quoted from [Bible Gateway](https://www.biblegateway.com/).*

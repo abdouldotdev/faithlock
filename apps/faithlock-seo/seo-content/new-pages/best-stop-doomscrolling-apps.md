@@ -48,7 +48,7 @@ When you try to open a distracting app, One Sec intercepts with a full-screen br
 | Platforms | iOS + Android |
 | Method | Breathing pause before app opens |
 
-[Download on the App Store](https://apps.apple.com/app/one-sec-app-screen-time/id1532875441)
+Download on the App Store
 
 ---
 
@@ -92,7 +92,7 @@ When you block an app with Opal, it's blocked. No "just this once." No override 
 | Platforms | iOS |
 | Method | Hard app blocking with no override |
 
-[Download on the App Store](https://apps.apple.com/app/opal-screen-time-for-focus/id1497465230)
+Download on the App Store
 
 ---
 
@@ -113,7 +113,7 @@ Start a focus session, a virtual tree grows. Pick up your phone, the tree dies. 
 | Platforms | iOS + Android |
 | Method | Gamified focus sessions (grow trees by not using phone) |
 
-[Download on the App Store](https://apps.apple.com/app/forest-focus-for-productivity/id866450515)
+Download on the App Store
 
 ---
 
@@ -134,7 +134,7 @@ ScreenZen shows you how long you've been scrolling — in real time. "You've bee
 | Platforms | iOS + Android |
 | Method | Real-time usage awareness overlay |
 
-[Download on the App Store](https://apps.apple.com/app/screenzen-screen-time-control/id1541309464)
+Download on the App Store
 
 ---
 
@@ -155,7 +155,7 @@ Sanctum intercepts apps with a "Sacred Pause" — verse, prayer, and mood check:
 | Platforms | iOS + Android |
 | Method | Sacred Pause with mood check + Bible verse |
 
-[Download on the App Store](https://apps.apple.com/app/sanctum)
+Download on the App Store
 
 ---
 
@@ -195,7 +195,7 @@ Monitors your screen activity and sends reports to an accountability partner —
 | Platforms | iOS + Android + Desktop |
 | Method | Screen monitoring + accountability partner reports |
 
-[Website](https://www.covenanteyes.com/)
+Website
 
 ---
 
@@ -262,4 +262,4 @@ Start with one app for one week. If it doesn't work, try a different approach. T
 
 ---
 
-*Sources: [PNAS Doomscrolling & Mental Health](https://doi.org/10.1037/tmb0000090), [University of Florida Doomscrolling Study](https://news.ufl.edu/2023/11/doomscrolling-study/), [Lukoff et al., CHI 2022](https://dl.acm.org/doi/10.1145/3491102.3517527), [One Sec Research Study](https://www.sciencedirect.com/science/article/pii/S2352250X22001440), [NBER Commitment Devices Paper](https://www.nber.org/papers/w16658), [Montag & Hegelich, Frontiers 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7340700/), [App Store listings](https://apps.apple.com)*
+*Sources: [PNAS Doomscrolling & Mental Health](https://doi.org/10.1037/tmb0000090), [University of Florida Doomscrolling Study](https://news.ufl.edu/2023/11/doomscrolling-study/), [Lukoff et al., CHI 2022](https://dl.acm.org/doi/10.1145/3491102.3517527), [One Sec Research Study](https://www.sciencedirect.com/science/article/pii/S2352250X22001440), [NBER Commitment Devices Paper](https://www.nber.org/papers/w16658), [Montag & Hegelich, Frontiers 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7340700/), App Store listings*

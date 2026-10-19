@@ -183,4 +183,4 @@ This Truple review's honest conclusion: buy the DNS filter for the block, and th
 
 ---
 
-*Sources: [Truple official site](https://truple.io/), [Truple FAQ](https://truple.io/faq.html), [Truple Support, iPhone Setup Guide](https://support.truple.io/articles/ios/iphone-setup-guide), [Truple Support, Why the iPhone App Is Designed This Way](https://support.truple.io/articles/ios/why-iphone-app-is-designed-the-way-it-is), [AppGrooves, Truple Reviews](https://appgrooves.com/android/com.camhart.netcountable/truple-screenshot-accountability/truple)*
+*Sources: Truple official site, Truple FAQ, Truple Support, iPhone Setup Guide, Truple Support, Why the iPhone App Is Designed This Way, [AppGrooves, Truple Reviews](https://appgrooves.com/android/com.camhart.netcountable/truple-screenshot-accountability/truple)*

@@ -88,4 +88,4 @@ Freedom. The ability to schedule work-mode blocks across all devices — blockin
 No faith-based blocker currently offers cross-platform coverage comparable to Freedom. FaithLock provides strong iOS blocking with Bible engagement, and Sanctum covers iOS and Android, but desktop blocking with faith content doesn't exist yet.
 
 ---
-*Sources: [Freedom](https://freedom.to), [Freedom on App Store](https://apps.apple.com/app/freedom-block-distractions), [Opal on App Store](https://apps.apple.com/app/opal-screen-time-for-focus)*
+*Sources: Freedom, Freedom on App Store, Opal on App Store*

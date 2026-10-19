@@ -60,7 +60,7 @@ A filter acts on requests your device makes. Something another person sends you 
 
 Screenshot based accountability sees whatever is on screen regardless of how it arrived. That is the one area where it genuinely reaches further.
 
-**Caveat:** on iPhone this advantage largely evaporates. Covenant Eyes captures screenshots in Safari only ([TechLockdown](https://www.techlockdown.com/articles/covenant-eyes-iphone-review)), Truple requires separate companion apps and describes its own iOS solutions as workarounds for Apple's limitations ([Truple support](https://support.truple.io/articles/ios/why-iphone-app-is-designed-the-way-it-is)), and Bark needs a physical accessory that only scans when plugged in ([Bark support](https://support.bark.us/en/articles/13928365-how-to-monitor-ios-devices-with-the-bark-sync)). All checked 2026-08-16. On Android the advantage is real. On iPhone it is much thinner than the marketing suggests.
+**Caveat:** on iPhone this advantage largely evaporates. Covenant Eyes captures screenshots in Safari only ([TechLockdown](https://www.techlockdown.com/articles/covenant-eyes-iphone-review)), Truple requires separate companion apps and describes its own iOS solutions as workarounds for Apple's limitations (Truple support), and Bark needs a physical accessory that only scans when plugged in (Bark support). All checked 2026-08-16. On Android the advantage is real. On iPhone it is much thinner than the marketing suggests.
 
 ### Acting in the moment: blocking, decisively
 
@@ -80,7 +80,7 @@ Truple's claim of end-to-end encryption is substantive for exactly this reason. 
 
 ### False positives: accountability, by default
 
-Filters break things. Canopy reviewers report ordinary content blocked and incompatibilities with banking and streaming apps ([App Store](https://apps.apple.com/us/app/canopy-ai-online-safety-app/id1492266682), checked 2026-08-16). Monitoring breaks nothing because it never intervenes, though it produces false alerts of its own: Accountable2You reviewers describe ordinary beach photos flagged as suspicious ([App Store](https://apps.apple.com/us/app/accountable2you-monitoring/id1531309290), checked 2026-08-16). The difference is that a false alert is an awkward conversation, while a false block is a bank app that will not open.
+Filters break things. Canopy reviewers report ordinary content blocked and incompatibilities with banking and streaming apps (App Store, checked 2026-08-16). Monitoring breaks nothing because it never intervenes, though it produces false alerts of its own: Accountable2You reviewers describe ordinary beach photos flagged as suspicious (App Store, checked 2026-08-16). The difference is that a false alert is an awkward conversation, while a false block is a bank app that will not open.
 
 ### Cost: a tie, and both lose to free
 
@@ -147,4 +147,4 @@ Usually monitoring with the teenager's knowledge, plus native parental controls,
 
 ---
 
-*Sources: [Cranky Old Dan](https://crankyolddan.substack.com/p/you-cant-hide-those-covenant-eyes), [TechLockdown on Covenant Eyes for iPhone](https://www.techlockdown.com/articles/covenant-eyes-iphone-review), [Truple on iOS design](https://support.truple.io/articles/ios/why-iphone-app-is-designed-the-way-it-is), [Bark Sync support](https://support.bark.us/en/articles/13928365-how-to-monitor-ios-devices-with-the-bark-sync), [Canopy on the App Store](https://apps.apple.com/us/app/canopy-ai-online-safety-app/id1492266682), [Accountable2You on the App Store](https://apps.apple.com/us/app/accountable2you-monitoring/id1531309290), [988 Suicide and Crisis Lifeline](https://988lifeline.org/). All checked 2026-08-16.*
+*Sources: [Cranky Old Dan](https://crankyolddan.substack.com/p/you-cant-hide-those-covenant-eyes), [TechLockdown on Covenant Eyes for iPhone](https://www.techlockdown.com/articles/covenant-eyes-iphone-review), Truple on iOS design, Bark Sync support, Canopy on the App Store, Accountable2You on the App Store, [988 Suicide and Crisis Lifeline](https://988lifeline.org/). All checked 2026-08-16.*

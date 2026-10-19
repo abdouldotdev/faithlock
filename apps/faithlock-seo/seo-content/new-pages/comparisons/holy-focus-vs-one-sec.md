@@ -87,4 +87,4 @@ Not at One Sec's level. FaithLock tracks streaks and engagement, but no faith-ba
 Some users open Holy Focus deliberately for prayer content, separate from the blocking function. The 300+ prayer library has standalone devotional value.
 
 ---
-*Sources: [Holy Focus on App Store](https://apps.apple.com/app/holy-focus), [One Sec on App Store](https://apps.apple.com/app/one-sec-app-blocker), [One Sec on Google Play](https://play.google.com/store/apps/details?id=one.sec)*
+*Sources: Holy Focus on App Store, One Sec on App Store, One Sec on Google Play*

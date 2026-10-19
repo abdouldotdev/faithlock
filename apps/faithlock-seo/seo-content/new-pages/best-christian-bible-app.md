@@ -204,4 +204,4 @@ For related reading, see our guides to the [best Christian meditation app](/reso
 
 ---
 
-*Sources: [YouVersion on the App Store](https://apps.apple.com/us/app/bible-app-by-life-church/id282935706), [Bible Gateway on the App Store](https://apps.apple.com/us/app/bible-gateway/id506512797), [Blue Letter Bible on the App Store](https://apps.apple.com/us/app/blue-letter-bible/id365547505), [Logos on the App Store](https://apps.apple.com/us/app/logos-deep-bible-study/id336400266), [Dwell on the App Store](https://apps.apple.com/us/app/dwell-audio-bible/id1343917374), [Olive Tree apps](https://www.olivetree.com/apps/)*
+*Sources: YouVersion on the App Store, Bible Gateway on the App Store, Blue Letter Bible on the App Store, Logos on the App Store, Dwell on the App Store, [Olive Tree apps](https://www.olivetree.com/apps/)*

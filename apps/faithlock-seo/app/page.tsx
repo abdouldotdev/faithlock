@@ -1,11 +1,11 @@
-import { COMPANY } from '@/lib/constants'
+import { COMPANY, APP_STORE_URL } from '@/lib/constants'
 import InteractivePhone from '@/components/landing/InteractivePhone'
 import TypewriterHeadline from '@/components/landing/TypewriterHeadline'
 import ScrollReveal from '@/components/landing/ScrollReveal'
 import LandingTracker from '@/components/landing/LandingTracker'
 import LandingFooter from '@/components/landing/LandingFooter'
 
-const APP_LINK = 'https://pim.ms/kTxgKF4'
+const APP_LINK = APP_STORE_URL
 
 export default function LandingPage() {
   return (

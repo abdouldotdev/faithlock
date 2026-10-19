@@ -45,6 +45,7 @@ export default function CTAButton({
       className={`${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]}`}
       target="_blank"
       rel="noopener noreferrer"
+      data-store-location={trackingLocation}
       onClick={() => trackCTAClick(trackingLocation, text)}
     >
       {showAppleIcon && (

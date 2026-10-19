@@ -43,7 +43,7 @@ Anyone who has not tried this properly should not be shopping for anything else 
 
 These insert a pause, a breathing exercise, or a reflection prompt before the app opens. This is the mechanic with the actual trial behind it.
 
-The honest weakness is repetition. Reviewers of one sec describe the intervention as a speed bump rather than a wall, since determined users tap through the breathing prompt without pausing, and long-term users report the pause loses its psychological impact by around week four as novelty fades ([blok.so review](https://www.blok.so/resources/one-sec-app-review-does-adding-friction-actually-reduce-screen-time), [WhistleOut review](https://www.whistleout.com/CellPhones/Apps/one-sec-app-review)). ScreenZen sits in the same family, and one independent review lists "can be bypassed" among its weak points, noting the friction mechanic fades once tapping through becomes habitual ([nibble-app.com](https://nibble-app.com/blog/screenzen)).
+The honest weakness is repetition. Reviewers of one sec describe the intervention as a speed bump rather than a wall, since determined users tap through the breathing prompt without pausing, and long-term users report the pause loses its psychological impact by around week four as novelty fades (blok.so review, [WhistleOut review](https://www.whistleout.com/CellPhones/Apps/one-sec-app-review)). ScreenZen sits in the same family, and one independent review lists "can be bypassed" among its weak points, noting the friction mechanic fades once tapping through becomes habitual (nibble-app.com).
 
 So the mechanic works, and it decays. Plan to change the friction periodically rather than expecting one setting to hold for a year.
 
@@ -51,7 +51,7 @@ So the mechanic works, and it decays. Plan to change the friction periodically r
 
 On iOS, most serious blockers use Apple's Family Controls and Screen Time APIs to shield apps at system level. This is a genuine block rather than a suggestion.
 
-The catch is shared across all of them. Opal's own help center indicates that unless you enable its optional Screen Time Passcode and App Uninstall Protection, the app can be turned off in one step via Settings, Screen Time, then toggling off Apps with Screen Time Access. An independent review found that even with Deep Focus enabled, users can still delete the app or change phone settings, and concluded the software can be bypassed by the person it is trying to help ([blok.so review](https://www.blok.so/resources/opal-app-review-is-it-worth-100-year-for-screen-time-management)).
+The catch is shared across all of them. Opal's own help center indicates that unless you enable its optional Screen Time Passcode and App Uninstall Protection, the app can be turned off in one step via Settings, Screen Time, then toggling off Apps with Screen Time Access. An independent review found that even with Deep Focus enabled, users can still delete the app or change phone settings, and concluded the software can be bypassed by the person it is trying to help (blok.so review).
 
 That is not a knock on one product. It is the structural reality of the platform, and any blocker claiming to be truly unbeatable on a phone you control is overstating it.
 
@@ -137,4 +137,4 @@ No. A blocker changes the environment, which is one layer of the problem. If the
 
 ---
 
-*Sources: [Grüning, Riedel and Lorenz-Spreen, PNAS, 2023](https://pmc.ncbi.nlm.nih.gov/articles/PMC9974409/), [Google Digital Wellbeing support](https://support.google.com/android/answer/9346420), [Opal help center on Screen Time access](https://opalapp.com/help/how-to-lock-opals-screen-time-access), [blok.so Opal review](https://www.blok.so/resources/opal-app-review-is-it-worth-100-year-for-screen-time-management), [blok.so one sec review](https://www.blok.so/resources/one-sec-app-review-does-adding-friction-actually-reduce-screen-time), [WhistleOut one sec review](https://www.whistleout.com/CellPhones/Apps/one-sec-app-review), [nibble-app.com ScreenZen review](https://nibble-app.com/blog/screenzen), [screenfreezone.com Unpluq review](https://screenfreezone.com/reviews/unpluq/)*
+*Sources: [Grüning, Riedel and Lorenz-Spreen, PNAS, 2023](https://pmc.ncbi.nlm.nih.gov/articles/PMC9974409/), [Google Digital Wellbeing support](https://support.google.com/android/answer/9346420), Opal help center on Screen Time access, blok.so Opal review, blok.so one sec review, [WhistleOut one sec review](https://www.whistleout.com/CellPhones/Apps/one-sec-app-review), nibble-app.com ScreenZen review, [screenfreezone.com Unpluq review](https://screenfreezone.com/reviews/unpluq/)*

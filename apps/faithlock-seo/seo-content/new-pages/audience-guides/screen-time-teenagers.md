@@ -84,7 +84,7 @@ The American Academy of Pediatrics recommends consistent limits but doesn't set 
 
 ### My school requires a laptop and phone for assignments. How do I limit screen time?
 
-Separate school screens from personal screens mentally and physically. Use your school device only for school. When homework requires YouTube or a browser, close every other tab. Apps like [Cold Turkey](https://getcoldturkey.com/) or the [best Christian app blocker](/resources/best-christian-app-blocker) options can block distracting sites during study hours while leaving educational tools accessible.
+Separate school screens from personal screens mentally and physically. Use your school device only for school. When homework requires YouTube or a browser, close every other tab. Apps like Cold Turkey or the [best Christian app blocker](/resources/best-christian-app-blocker) options can block distracting sites during study hours while leaving educational tools accessible.
 
 ### All my friends are on social media constantly. Won't I lose friendships?
 

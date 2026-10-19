@@ -35,7 +35,7 @@ Good parental control software serves both principles. The best tools aren't the
 
 Bark uses AI to scan content and only alerts you when it detects something concerning — cyberbullying, depression indicators, sexual content, drug references, grooming patterns. You never see normal everyday messages. Monitors 30+ platforms including texts, YouTube, Instagram, TikTok, Snapchat, and Discord.
 
-**What stands out**: Monitoring without surveillance. A [Bark case study](https://www.bark.us/blog/bark-prevented-school-shootings/) documented detection of self-harm threats and school violence that parents missed. Screen time scheduling and web filtering (including a "faith and values" category) round out the feature set.
+**What stands out**: Monitoring without surveillance. A Bark case study documented detection of self-harm threats and school violence that parents missed. Screen time scheduling and web filtering (including a "faith and values" category) round out the feature set.
 
 **Where it falls short**: No real-time visibility. AI occasionally flags innocent content. Newer or niche apps might not be covered. Bark Premium: $14/month or $99/year. Bark Jr: $5/month.
 
@@ -46,7 +46,7 @@ Bark uses AI to scan content and only alerts you when it detects something conce
 | Platforms | iOS + Android + Windows + Mac + Chromebook |
 | Key feature | AI-powered content monitoring with smart alerts |
 
-[Website](https://www.bark.us/)
+Website
 
 ---
 
@@ -67,7 +67,7 @@ Canopy uses real-time AI to filter harmful content — analyzing page content, i
 | Platforms | iOS + Android |
 | Key feature | AI content filtering + sexting detection |
 
-[Website](https://canopy.us/)
+Website
 
 ---
 
@@ -88,7 +88,7 @@ Founded in 2000 by a Christian ministry. The name comes from [Job 31:1](https://
 | Platforms | iOS + Android + Windows + Mac |
 | Key feature | Screen accountability reports to a trusted partner |
 
-[Website](https://www.covenanteyes.com/)
+Website
 
 ---
 
@@ -128,7 +128,7 @@ The Swiss Army knife: web filtering (30+ categories), app blocking, screen time 
 | Platforms | iOS + Android + Windows + Mac + Chromebook + Kindle |
 | Key feature | Comprehensive monitoring and filtering across all devices |
 
-[Website](https://www.qustodio.com/)
+Website
 
 ---
 
@@ -220,4 +220,4 @@ Your goal isn't to control their internet — it's to raise someone who doesn't 
 
 ---
 
-*Sources: [Common Sense Media - Parental Controls Guide](https://www.commonsensemedia.org/articles/everything-you-need-to-know-about-parental-controls), [American Academy of Pediatrics - Media & Children](https://www.aap.org/en/patient-care/media-and-children/), [Bark Safety Reports](https://www.bark.us/blog/bark-prevented-school-shootings/), [BibleGateway](https://www.biblegateway.com), [App Store listings](https://apps.apple.com)*
+*Sources: [Common Sense Media - Parental Controls Guide](https://www.commonsensemedia.org/articles/everything-you-need-to-know-about-parental-controls), [American Academy of Pediatrics - Media & Children](https://www.aap.org/en/patient-care/media-and-children/), Bark Safety Reports, [BibleGateway](https://www.biblegateway.com), App Store listings*

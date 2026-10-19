@@ -196,4 +196,4 @@ If the no-shame approach resonates with your experience — if you've felt judge
 
 ---
 
-*Sources: [Bible Pause on the App Store](https://apps.apple.com/app/bible-pause/id6744748498), [Riedel et al., PNAS 2023 - App Delay Study](https://pmc.ncbi.nlm.nih.gov/articles/PMC9974409/), [faith.tools - Christian App Reviews](https://faith.tools/internet-filtering)*
+*Sources: Bible Pause on the App Store, [Riedel et al., PNAS 2023 - App Delay Study](https://pmc.ncbi.nlm.nih.gov/articles/PMC9974409/), [faith.tools - Christian App Reviews](https://faith.tools/internet-filtering)*

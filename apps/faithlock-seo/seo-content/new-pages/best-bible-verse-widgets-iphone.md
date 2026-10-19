@@ -45,7 +45,7 @@ YouVersion (500+ million installs) shows the Verse of the Day on your home scree
 | Widget sizes | Small, Medium, Large (home) + Lock screen |
 | Refresh | Daily (automatic) |
 
-[Download on the App Store](https://apps.apple.com/app/bible/id282935706)
+Download on the App Store
 
 ---
 
@@ -68,7 +68,7 @@ Heavenly generates a new verse design every day — professional typography, wat
 | Widget sizes | Small, Medium, Large (home) + Lock screen |
 | Refresh | Daily (automatic) |
 
-[Download on the App Store](https://apps.apple.com/app/heavenly-bible-verse-widget/id6751951584)
+Download on the App Store
 
 ---
 
@@ -91,7 +91,7 @@ BitBible does one thing: puts a Bible verse on your iPhone. Built specifically f
 | Widget sizes | Small, Medium (home) + Lock screen |
 | Refresh | Daily (automatic) |
 
-[Download on the App Store](https://apps.apple.com/us/app/bitbible-eng-lockscreen-alarm/id1586189381)
+Download on the App Store
 
 ---
 
@@ -114,7 +114,7 @@ Widgetsmith isn't a Bible app — it's a widget-building tool. You type the vers
 | Widget sizes | All sizes (home) + Lock screen |
 | Refresh | Manual (you update the text) |
 
-[Download on the App Store](https://apps.apple.com/app/widgetsmith/id1523682319)
+Download on the App Store
 
 ---
 
@@ -223,4 +223,4 @@ The real question isn't which app to use. It's why you haven't done this already
 
 ---
 
-*Sources: [Apple WidgetKit Documentation](https://developer.apple.com/documentation/widgetkit/), [Karpicke & Roediger, Science 2008](https://www.science.org/doi/10.1126/science.1152408), [Reviews.org Phone Addiction Study 2023](https://www.reviews.org/mobile/2023-cell-phone-addiction/), [App Store listings](https://apps.apple.com)*
+*Sources: [Apple WidgetKit Documentation](https://developer.apple.com/documentation/widgetkit/), [Karpicke & Roediger, Science 2008](https://www.science.org/doi/10.1126/science.1152408), [Reviews.org Phone Addiction Study 2023](https://www.reviews.org/mobile/2023-cell-phone-addiction/), App Store listings*

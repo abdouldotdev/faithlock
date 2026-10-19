@@ -88,4 +88,4 @@ Opal has a larger team and more established support channels. FaithLock is a new
 One Sec uses a "take a breath" pause before opening apps, which adds a mindfulness dimension to blocking. But nothing secular replicates the Scripture engagement that FaithLock provides.
 
 ---
-*Sources: [FaithLock on App Store](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), [Opal on App Store](https://apps.apple.com/app/opal-screen-time-for-focus)*
+*Sources: [FaithLock on App Store](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), Opal on App Store*

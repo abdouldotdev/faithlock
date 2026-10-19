@@ -180,4 +180,4 @@ This Accountable2You review's bottom line: it's a genuine tool for relational ac
 
 ---
 
-*Sources: [Accountable2You Pricing](https://accountable2you.com/pricing/), [Accountable2You on the App Store](https://apps.apple.com/us/app/accountable2you-monitoring/id1531309290), [Chrome Web Store, Accountable2You Reviews](https://chromewebstore.google.com/detail/accountable2you/efbfdmcbmjkdkhopodcpmajcdbkiljaa/reviews)*
+*Sources: Accountable2You Pricing, Accountable2You on the App Store, Chrome Web Store, Accountable2You Reviews*

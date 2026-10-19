@@ -179,4 +179,4 @@ This ScreenZen review's honest takeaway: use it if the price and the delay mecha
 
 ---
 
-*Sources: [ScreenZen official site](https://screenzen.co/), [ScreenZen on the App Store](https://apps.apple.com/us/app/screenzen-screen-time-control/id1541027222), [Trustpilot, ScreenZen Reviews](https://www.trustpilot.com/review/www.screenzen.co), [Nibble App, ScreenZen Review](https://nibble-app.com/blog/screenzen)*
+*Sources: ScreenZen official site, ScreenZen on the App Store, [Trustpilot, ScreenZen Reviews](https://www.trustpilot.com/review/www.screenzen.co), Nibble App, ScreenZen Review*

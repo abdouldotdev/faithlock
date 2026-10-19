@@ -81,4 +81,4 @@ Some Christians use TikTok to share their faith, and that's a legitimate calling
 
 ---
 
-*Sources: [TikTok Safety Center](https://www.tiktok.com/safety), [TikTok on the App Store](https://apps.apple.com/app/tiktok/id835599320), [data.ai — State of Mobile 2023](https://www.data.ai/en/go/state-of-mobile-2023)*
+*Sources: [TikTok Safety Center](https://www.tiktok.com/safety), TikTok on the App Store, [data.ai — State of Mobile 2023](https://www.data.ai/en/go/state-of-mobile-2023)*

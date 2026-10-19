@@ -69,7 +69,7 @@ Because the verse comes from YouVersion's servers, this is one of the apps where
 | Price | Free |
 | Refresh | Daily, server-curated |
 
-[View on the App Store](https://apps.apple.com/us/app/bible/id282935706)
+View on the App Store
 
 ---
 
@@ -86,7 +86,7 @@ Pro is $9.99 monthly, $49.99 yearly, or $99.99 lifetime. The free tier works but
 | Price | Free download; Pro at $9.99/month, $49.99/year, or $99.99 lifetime |
 | Refresh | Daily |
 
-[View on the App Store](https://apps.apple.com/us/app/heavenly-bible-verse-widget/id6751951584)
+View on the App Store
 
 ---
 
@@ -123,7 +123,7 @@ The opposite of a verse of the day widget, included because a surprising number 
 | Price | Free download; in-app purchases at $1.99, $3.99, $19.99, and $29.99 |
 | Refresh | None, by design |
 
-[View on the App Store](https://apps.apple.com/us/app/widgetsmith/id1523682319)
+View on the App Store
 
 ---
 
@@ -175,4 +175,4 @@ If yours goes stale, open the app. If you want it prettier, Heavenly is the upgr
 
 ---
 
-*Sources: App Store listings for [Bible](https://apps.apple.com/us/app/bible/id282935706), [Heavenly](https://apps.apple.com/us/app/heavenly-bible-verse-widget/id6751951584), [Widgetsmith](https://apps.apple.com/us/app/widgetsmith/id1523682319), and [Faith Lock](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), all checked August 2026. Scripture quoted from [Bible Gateway](https://www.biblegateway.com/).*
+*Sources: App Store listings for Bible, Heavenly, Widgetsmith, and [Faith Lock](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), all checked August 2026. Scripture quoted from [Bible Gateway](https://www.biblegateway.com/).*

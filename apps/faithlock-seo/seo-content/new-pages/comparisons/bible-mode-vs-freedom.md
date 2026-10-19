@@ -87,4 +87,4 @@ Potentially — Freedom for website blocking on desktop, Bible Mode for app bloc
 Not currently. FaithLock and Bible Mode are iOS-only. Sanctum covers iOS and Android but not desktop. Cross-platform faith-based blocking remains a gap in the market.
 
 ---
-*Sources: [Bible Mode on App Store](https://apps.apple.com/app/bible-mode), [Freedom on App Store](https://apps.apple.com/app/freedom-block-distractions), [freedom.to](https://freedom.to)*
+*Sources: Bible Mode on App Store, Freedom on App Store, freedom.to*

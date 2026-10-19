@@ -47,7 +47,7 @@ This is the cheapest strong option, and several resolvers are free. Cloudflare's
 
 Instead of only intercepting the lookup, this routes traffic through a filter that inspects it. On iOS this shows up as a VPN profile in Settings. Canopy works this way and additionally blocks third party VPNs to stop the obvious workaround. Covenant Eyes uses a filtering VPN on iOS that acts at the network level across the device.
 
-**How it fails:** the profile can be deleted unless the device is supervised. It costs battery and speed, and Canopy users report both overblocking of ordinary content and slowdown severe enough to interfere with normal use ([Trustpilot](https://www.trustpilot.com/review/canopy.us), [App Store](https://apps.apple.com/us/app/canopy-ai-online-safety-app/id1492266682), checked 2026-08-16). Real time classification also means real time mistakes in both directions.
+**How it fails:** the profile can be deleted unless the device is supervised. It costs battery and speed, and Canopy users report both overblocking of ordinary content and slowdown severe enough to interfere with normal use ([Trustpilot](https://www.trustpilot.com/review/canopy.us), App Store, checked 2026-08-16). Real time classification also means real time mistakes in both directions.
 
 ### Operating system content restriction
 
@@ -141,4 +141,4 @@ Generally no. Messaging is encrypted and content delivered by another person nev
 
 ---
 
-*Sources: [Cloudflare 1.1.1.1 for Families](https://one.one.one.one/family/), [CleanBrowsing filters](https://cleanbrowsing.org/filters/), [AdGuard public DNS](https://adguard-dns.io/en/public-dns.html), [Apple parental controls](https://support.apple.com/en-us/105121), [Google For Families Help](https://support.google.com/families/answer/7087030), [Chrome Web Store Help](https://support.google.com/chrome_webstore/answer/2664769), [Canopy on Trustpilot](https://www.trustpilot.com/review/canopy.us), [Canopy on the App Store](https://apps.apple.com/us/app/canopy-ai-online-safety-app/id1492266682), [Cranky Old Dan on Covenant Eyes](https://crankyolddan.substack.com/p/you-cant-hide-those-covenant-eyes), [988 Suicide and Crisis Lifeline](https://988lifeline.org/). All links checked 2026-08-16.*
+*Sources: [Cloudflare 1.1.1.1 for Families](https://one.one.one.one/family/), [CleanBrowsing filters](https://cleanbrowsing.org/filters/), [AdGuard public DNS](https://adguard-dns.io/en/public-dns.html), [Apple parental controls](https://support.apple.com/en-us/105121), [Google For Families Help](https://support.google.com/families/answer/7087030), [Chrome Web Store Help](https://support.google.com/chrome_webstore/answer/2664769), [Canopy on Trustpilot](https://www.trustpilot.com/review/canopy.us), Canopy on the App Store, [Cranky Old Dan on Covenant Eyes](https://crankyolddan.substack.com/p/you-cant-hide-those-covenant-eyes), [988 Suicide and Crisis Lifeline](https://988lifeline.org/). All links checked 2026-08-16.*

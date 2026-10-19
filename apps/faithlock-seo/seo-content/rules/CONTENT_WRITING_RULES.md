@@ -57,7 +57,7 @@ Après rédaction, un **agent vérificateur** relit chaque page et :
 1. **Lire le brief de la page** (liste batch : format, mot-clé principal + sous-mots-clés, killer element, slug).
 2. **Charger la fiche du format** (`CONTENT_FORMAT_RULES.md`) + sa scorecard.
 3. **Piocher les faits** dans `COMPETITOR_FACTS.md` / `FAITHLOCK_FACTS.md` (jamais inventer).
-4. **Rédiger** en suivant : keyword aux slots (title / H1 / 1 H2 / 1 FAQ / CTA, 4-6× dans le corps), sous-mots-clés foldés en H2/FAQ, tableau en markdown/HTML réel, concessions honnêtes, FAQ verbatim des requêtes réelles, CTA App Store, maillage interne ≥ 3 liens à ancres exactes.
+4. **Rédiger** en suivant : keyword aux slots (title / H1 / 1 H2 / 1 FAQ / CTA, 4-6× dans le corps), sous-mots-clés foldés en H2/FAQ, tableau en markdown/HTML réel, concessions honnêtes, FAQ verbatim des requêtes réelles, CTA App Store (lien `https://pim.ms/kTxgKF4`), maillage interne ≥ 3 liens à ancres exactes. **Aucun lien vers un concurrent** (site, help center, blog, fiche App Store / Play Store d'une autre app) : on cite le nom en texte brut. Liste et garde-fou au rendu : `lib/competitors.ts`.
 5. **Auto-scorecard** (≥ 80/100, claims interdits = bloquant).
 6. **Passer à l'agent fact-check** → si flags, corriger → sinon « prêt ».
 

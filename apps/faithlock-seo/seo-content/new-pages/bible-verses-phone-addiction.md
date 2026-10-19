@@ -163,7 +163,7 @@ Reading this article won't change your phone habits. Here are 4 things that migh
 
 **2. Set it as your lock screen.** You check your phone [96 times per day](https://www.asurion.com/press-releases/americans-check-their-phones-96-times-a-day/) (Asurion, 2019). That's 96 chances to read Scripture instead of diving straight into apps.
 
-**3. Use a faith-based app blocker.** Apps like [FaithLock](/), [Bible Mode](https://apps.apple.com/us/app/bible-mode-reduce-screen-time/id6744124873), or [Sanctum](https://play.google.com/store/apps/details?id=com.hapibits.sanctum) put a Bible verse between you and your distracting apps. You encounter Scripture at the exact moment you need it most. See our [full comparison of Christian app blockers](/resources/best-christian-app-blocker).
+**3. Use a faith-based app blocker.** Apps like [FaithLock](/), Bible Mode, or Sanctum put a Bible verse between you and your distracting apps. You encounter Scripture at the exact moment you need it most. See our [full comparison of Christian app blockers](/resources/best-christian-app-blocker).
 
 **4. Tell someone.** James 5:16 says "confess your sins to each other and pray for each other." Tell a friend, your small group, or your spouse that you're working on your phone habits. Accountability changes everything.
 

@@ -1,6 +1,8 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Document } from '@contentful/rich-text-types'
 import { marked } from 'marked'
+import { APP_STORE_URL } from '@/lib/constants'
+import { unlinkCompetitors } from '@/lib/competitors'
 
 interface RichTextProps {
   content: Document | string | unknown
@@ -72,6 +74,17 @@ function isMarkdown(text: string): boolean {
 }
 
 /**
+ * Point every raw FaithLock App Store link in content at the tracked store URL,
+ * so content links attribute like the site CTAs (and fire faithlock_store_click),
+ * and drop any link to a competitor.
+ */
+const RAW_FAITHLOCK_STORE_URL = /https?:\/\/apps\.apple\.com\/[^"'\s)<>]*\/id6754208209[^"'\s)<>]*/gi
+
+function withTrackedStoreLinks(html: string): string {
+  return unlinkCompetitors(html.replace(RAW_FAITHLOCK_STORE_URL, APP_STORE_URL))
+}
+
+/**
  * Convert markdown string to sanitized HTML.
  */
 function markdownToHtml(md: string): string {
@@ -84,7 +97,7 @@ export default function RichText({ content, className }: RichTextProps) {
   // String content: could be HTML or Markdown
   if (typeof content === 'string') {
     const html = isMarkdown(content) ? markdownToHtml(content) : content
-    return <div className={className} dangerouslySetInnerHTML={{ __html: html }} />
+    return <div className={className} dangerouslySetInnerHTML={{ __html: withTrackedStoreLinks(html) }} />
   }
 
   // If it's a Contentful Rich Text Document object
@@ -97,12 +110,12 @@ export default function RichText({ content, className }: RichTextProps) {
     // This happens when HTML strings are stored inside Rich Text fields.
     const rawText = extractRawText(content)
     if (/<[a-z][\s\S]*>/i.test(rawText)) {
-      return <div className={className} dangerouslySetInnerHTML={{ __html: rawText }} />
+      return <div className={className} dangerouslySetInnerHTML={{ __html: withTrackedStoreLinks(rawText) }} />
     }
 
     // Check for markdown inside Rich Text text nodes
     if (isMarkdown(rawText)) {
-      return <div className={className} dangerouslySetInnerHTML={{ __html: markdownToHtml(rawText) }} />
+      return <div className={className} dangerouslySetInnerHTML={{ __html: withTrackedStoreLinks(markdownToHtml(rawText)) }} />
     }
 
     // Proper Rich Text Document — render with Contentful's renderer

@@ -165,4 +165,4 @@ Covenant Eyes isn't trying to be a hard technical block, and judged against that
 If what you actually need is a person who sees your activity and holds you to it, and you're prepared to keep that partner engaged, Covenant Eyes does that job. If you were hoping for a filter that quietly blocks content without involving anyone else, or full coverage across every app and browser on an iPhone, look elsewhere first.
 
 ---
-*Sources: [Covenant Eyes pricing](https://www.covenanteyes.com/pricing/), [Covenant Eyes on Trustpilot](https://www.trustpilot.com/review/covenanteyes.com), [Covenant Eyes iPhone review](https://www.techlockdown.com/articles/covenant-eyes-iphone-review), [independent bypass test](https://crankyolddan.substack.com/p/you-cant-hide-those-covenant-eyes)*
+*Sources: Covenant Eyes pricing, [Covenant Eyes on Trustpilot](https://www.trustpilot.com/review/covenanteyes.com), [Covenant Eyes iPhone review](https://www.techlockdown.com/articles/covenant-eyes-iphone-review), [independent bypass test](https://crankyolddan.substack.com/p/you-cant-hide-those-covenant-eyes)*

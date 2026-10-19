@@ -53,7 +53,7 @@ This is the default recommendation for one blunt reason: it costs nothing and it
 | Price | Free |
 | Delivery | Home and lock screen widget, plus in-app |
 
-[View on the App Store](https://apps.apple.com/us/app/bible/id282935706)
+View on the App Store
 
 ---
 
@@ -70,7 +70,7 @@ The free tier limits how many designs you get. Pro is $9.99 monthly, $49.99 year
 | Price | Free download; Pro at $9.99/month, $49.99/year, or $99.99 lifetime |
 | Delivery | Home and lock screen widget |
 
-[View on the App Store](https://apps.apple.com/us/app/heavenly-bible-verse-widget/id6751951584)
+View on the App Store
 
 ---
 
@@ -89,7 +89,7 @@ That is a real advantage if your problem is that a one-line verse is too small t
 | Price | Free download; in-app purchases from $4.99 to $44.99 |
 | Delivery | Daily notification into a guided session |
 
-[View on the App Store](https://apps.apple.com/us/app/abide-bible-prayer-meditation/id726031617)
+View on the App Store
 
 ---
 
@@ -106,7 +106,7 @@ Glorify is the fullest devotional package here. It is also 347.3 MB with in-app 
 | Price | Free download; in-app purchases from $4.99 to $69.99 |
 | Delivery | Daily notification into a devotional |
 
-[View on the App Store](https://apps.apple.com/us/app/glorify-daily-christian-app/id1490587079)
+View on the App Store
 
 ---
 
@@ -146,7 +146,7 @@ That sounds like a downside and sometimes is not. If you are memorizing a passag
 | Price | Free download; in-app purchases at $1.99, $3.99, $19.99, and $29.99 |
 | Delivery | Whatever you typed, until you change it |
 
-[View on the App Store](https://apps.apple.com/us/app/widgetsmith/id1523682319)
+View on the App Store
 
 ---
 
@@ -204,4 +204,4 @@ If you forget, use a widget. If you skim past everything, use something that int
 
 ---
 
-*Sources: App Store listings for [Bible](https://apps.apple.com/us/app/bible/id282935706), [Heavenly](https://apps.apple.com/us/app/heavenly-bible-verse-widget/id6751951584), [Abide](https://apps.apple.com/us/app/abide-bible-prayer-meditation/id726031617), [Glorify](https://apps.apple.com/us/app/glorify-daily-christian-app/id1490587079), [Widgetsmith](https://apps.apple.com/us/app/widgetsmith/id1523682319), and [Faith Lock](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), all checked August 2026. Scripture quoted from [Bible Gateway](https://www.biblegateway.com/).*
+*Sources: App Store listings for Bible, Heavenly, Abide, Glorify, Widgetsmith, and [Faith Lock](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), all checked August 2026. Scripture quoted from [Bible Gateway](https://www.biblegateway.com/).*

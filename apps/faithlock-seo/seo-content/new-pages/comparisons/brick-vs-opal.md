@@ -87,4 +87,4 @@ Neither is designed as a parental control tool. Brick's physical token could wor
 FaithLock offers strong app blocking with Bible verse engagement. Bible Mode requires physical Bible scanning. Neither matches Brick's hardware-level enforcement, but both add a spiritual dimension to the blocking experience.
 
 ---
-*Sources: [Brick on App Store](https://apps.apple.com/app/brick-app-blocker), [getbrick.app](https://getbrick.app), [Opal on App Store](https://apps.apple.com/app/opal-screen-time-for-focus)*
+*Sources: Brick on App Store, getbrick.app, Opal on App Store*
