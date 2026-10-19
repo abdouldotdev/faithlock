@@ -34,3 +34,11 @@ A standard API comment mutation was attempted with the current run ID and reject
 - Code fix committed locally as `b271119`: normalize the exact legacy CMS URL to `https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209` for string/HTML/Contentful hyperlink rendering.
 - Verification: `corepack pnpm test:tracking` passed 8/8; `./node_modules/.bin/tsc --noEmit` passed; `git diff --check` passed.
 - No production mutation, deploy, or external publication performed. Release/Jupiter must publish or provide equivalent served-bundle evidence, then Orion should reread PostHog `324483` after one controlled Production click.
+
+## Current run update — 2026-10-19T12:45:15Z
+
+- Run: `7d054ef6-910c-4cc9-9476-4d17f1e91ee1`.
+- Fresh public Production page loaded: `https://www.getfaithlock.com/resources/best-bible-verse-lock-screen-apps`.
+- The scoped FaithLock link resolved to `https://pim.ms/kTxgKF4`; one controlled browser click was executed on the public page. No additional click was issued.
+- Fresh served-bundle inspection found `faithlock_store_click` and `sendBeacon` in the live SEO layout/resource chunks, so the earlier public-bundle divergence is no longer reproduced on this observation.
+- PostHog receipt and exact event properties remain unverified. Orion must immediately reread landing project `324483` around this click; only that read can classify `DONE` versus `DATA_ABSENT`/`CODE_DEFECT`.
