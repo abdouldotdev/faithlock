@@ -7,7 +7,13 @@ export const FAITHLOCK_APP_STORE_ID = '6754208209'
 export const FAITHLOCK_APP_STORE_DEVELOPER = 'Appbiz Studio, LLC'
 export const FAITHLOCK_APP_STORE_URL =
   'https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209'
+const LEGACY_FAITHLOCK_APP_STORE_URL = 'https://apps.apple.com/app/faithlock'
 const SHORT_LINK_PATH = '/kTxgKF4'
+
+/** Keep legacy CMS CTA links on the verified FaithLock App Store identity. */
+export function normalizeFaithLockStoreUrl(value: string): string {
+  return value.replaceAll(LEGACY_FAITHLOCK_APP_STORE_URL, FAITHLOCK_APP_STORE_URL)
+}
 
 export interface ResourceStoreClickInput {
   href: string

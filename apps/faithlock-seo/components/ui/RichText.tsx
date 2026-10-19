@@ -1,6 +1,7 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { Document } from '@contentful/rich-text-types'
+import { Document, INLINES } from '@contentful/rich-text-types'
 import { marked } from 'marked'
+import { normalizeFaithLockStoreUrl } from '@/lib/resource-store-click'
 
 interface RichTextProps {
   content: Document | string | unknown
@@ -83,7 +84,7 @@ export default function RichText({ content, className }: RichTextProps) {
 
   // String content: could be HTML or Markdown
   if (typeof content === 'string') {
-    const html = isMarkdown(content) ? markdownToHtml(content) : content
+    const html = normalizeFaithLockStoreUrl(isMarkdown(content) ? markdownToHtml(content) : content)
     return <div className={className} dangerouslySetInnerHTML={{ __html: html }} />
   }
 
@@ -97,20 +98,22 @@ export default function RichText({ content, className }: RichTextProps) {
     // This happens when HTML strings are stored inside Rich Text fields.
     const rawText = extractRawText(content)
     if (/<[a-z][\s\S]*>/i.test(rawText)) {
-      return <div className={className} dangerouslySetInnerHTML={{ __html: rawText }} />
+      return <div className={className} dangerouslySetInnerHTML={{ __html: normalizeFaithLockStoreUrl(rawText) }} />
     }
 
     // Check for markdown inside Rich Text text nodes
     if (isMarkdown(rawText)) {
-      return <div className={className} dangerouslySetInnerHTML={{ __html: markdownToHtml(rawText) }} />
+      return <div className={className} dangerouslySetInnerHTML={{ __html: normalizeFaithLockStoreUrl(markdownToHtml(rawText)) }} />
     }
 
     // Proper Rich Text Document — render with Contentful's renderer
-    return (
-      <div className={className}>
-        {documentToReactComponents(content as Document)}
-      </div>
-    )
+    return <div className={className}>{documentToReactComponents(content as Document, {
+      renderNode: {
+        [INLINES.HYPERLINK]: (node, children) => (
+          <a href={normalizeFaithLockStoreUrl(node.data.uri)}>{children}</a>
+        ),
+      },
+    })}</div>
   }
 
   // Fallback

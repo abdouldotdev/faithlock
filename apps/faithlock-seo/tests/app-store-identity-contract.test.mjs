@@ -4,6 +4,7 @@ import {
   FAITHLOCK_APP_STORE_DEVELOPER,
   FAITHLOCK_APP_STORE_ID,
   FAITHLOCK_APP_STORE_URL,
+  normalizeFaithLockStoreUrl,
 } from '../lib/resource-store-click.ts'
 
 const EXPECTED_ID = '6754208209'
@@ -24,4 +25,15 @@ test('does not allow the homonymous App Store id in the production tracker', asy
   const source = await import('node:fs/promises')
   const trackerSource = await source.readFile(new URL('../lib/resource-store-click.ts', import.meta.url), 'utf8')
   assert.doesNotMatch(trackerSource, new RegExp(`id${HOMONYMOUS_APP_ID}`))
+})
+
+test('normalizes the legacy CMS CTA URL to the verified FaithLock listing', () => {
+  assert.equal(
+    normalizeFaithLockStoreUrl('https://apps.apple.com/app/faithlock'),
+    EXPECTED_CANONICAL_URL,
+  )
+  assert.equal(
+    normalizeFaithLockStoreUrl('https://apps.apple.com/app/faithlock?source=cta'),
+    `${EXPECTED_CANONICAL_URL}?source=cta`,
+  )
 })
