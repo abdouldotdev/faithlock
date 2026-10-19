@@ -9,7 +9,14 @@ export default function ResourceStoreClickTracker() {
   useEffect(() => {
     function handleClick(event: MouseEvent) {
       const article = document.querySelector('article.cozy-page')
-      if (article) trackResourceStoreClick(event.target, window.location.pathname, article, posthog.capture.bind(posthog))
+      if (article) {
+        trackResourceStoreClick(
+          event.target,
+          window.location.pathname,
+          article,
+          (eventName, properties) => posthog.capture(eventName, properties, { transport: 'sendBeacon' }),
+        )
+      }
     }
 
     document.addEventListener('click', handleClick)

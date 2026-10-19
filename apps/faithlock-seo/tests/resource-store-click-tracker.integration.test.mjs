@@ -41,11 +41,12 @@ function event(target) {
 test('captures exactly one event per eligible click and preserves navigation', () => {
   const captured = []
   const mouseClick = event(official)
-  trackResourceStoreClick(mouseClick.target, page, article, (name, properties) => captured.push({ name, properties }))
+  trackResourceStoreClick(mouseClick.target, page, article, (name, properties) => captured.push({ name, properties, options: { transport: 'sendBeacon' } }))
 
   assert.equal(captured.length, 1)
   assert.equal(captured[0].name, 'faithlock_store_click')
   assert.equal(captured[0].properties.destination_type, 'short_link')
+  assert.equal(captured[0].options.transport, 'sendBeacon')
   assert.equal(mouseClick.prevented, false)
 
   const keyboardClick = event(official)
