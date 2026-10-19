@@ -1,14 +1,14 @@
-import 'package:faithlock/features/onboarding/constants/onboarding_theme.dart';
 import 'package:faithlock/features/onboarding/controllers/scripture_onboarding_v3_controller.dart';
 import 'package:faithlock/features/onboarding/utils/animation_utils.dart';
 import 'package:faithlock/features/onboarding/widgets/onboarding_wrapper.dart';
-import 'package:faithlock/shared/widgets/buttons/fast_button.dart';
+import 'package:faithlock/shared/widgets/cozy/cozy.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:hugeicons/hugeicons.dart';
 
-/// V3 Attribution - extends V2 sources with faith-specific channels.
-/// Adds "Parish or pastor" and "Podcast or Catholic media" — high-value
-/// signals for organic acquisition through the Christian community.
+/// V3 Attribution — cozy rebuild. Extends V2 sources with faith-specific
+/// channels (parish, podcast/Catholic media — high-value organic signals).
 class V3Attribution extends StatefulWidget {
   final VoidCallback onComplete;
   const V3Attribution({super.key, required this.onComplete});
@@ -22,16 +22,25 @@ class _V3AttributionState extends State<V3Attribution> {
   String? _selected;
   double _opacity = 1.0;
 
-  static const _sources = [
-    _Source('parish_pastor', 'My parish or pastor', '⛪'),
-    _Source('podcast_media', 'A podcast or Catholic media', '🎙️'),
-    _Source('friends_family', 'Friends or family', '👥'),
-    _Source('appstore', 'App Store', '📱'),
-    _Source('google', 'Google search', '🔍'),
-    _Source('tiktok', 'TikTok', '🎵'),
-    _Source('instagram', 'Instagram', '📸'),
-    _Source('ai', 'AI (ChatGPT, Gemini…)', '🤖'),
-    _Source('other', 'Other', '💬'),
+  List<_Source> get _sources => [
+    _Source('parish_pastor', 'onbAttribution_source_parish'.tr,
+        FontAwesomeIcons.church, CozyColors.primary),
+    _Source('podcast_media', 'onbAttribution_source_podcast'.tr,
+        FontAwesomeIcons.microphoneLines, CozyColors.gold),
+    _Source('friends_family', 'onbAttribution_source_friendsFamily'.tr,
+        FontAwesomeIcons.userGroup, Color(0xFF60A5FA)),
+    _Source('appstore', 'onbAttribution_source_appstore'.tr,
+        FontAwesomeIcons.appStore, CozyColors.ink),
+    _Source('google', 'onbAttribution_source_google'.tr,
+        FontAwesomeIcons.google, Color(0xFF4285F4)),
+    _Source('tiktok', 'onbAttribution_source_tiktok'.tr, FontAwesomeIcons.tiktok,
+        Color(0xFFFF0050)),
+    _Source('instagram', 'onbAttribution_source_instagram'.tr,
+        FontAwesomeIcons.instagram, Color(0xFFE4405F)),
+    _Source('ai', 'onbAttribution_source_ai'.tr, FontAwesomeIcons.robot,
+        CozyColors.inkMuted),
+    _Source('other', 'onbAttribution_source_other'.tr,
+        FontAwesomeIcons.commentDots, CozyColors.inkMuted),
   ];
 
   Future<void> _onContinue() async {
@@ -54,22 +63,17 @@ class _V3AttributionState extends State<V3Attribution> {
         child: Stack(
           children: [
             Positioned.fill(
-              bottom: 100,
+              bottom: 110,
               child: SingleChildScrollView(
-                padding: const EdgeInsets.only(
-                  left: OnboardingTheme.horizontalPadding,
-                  right: OnboardingTheme.horizontalPadding,
-                  top: 100,
-                  bottom: OnboardingTheme.space24,
-                ),
+                padding: const EdgeInsets.fromLTRB(24, 96, 24, 24),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'How did you hear about FaithLock?',
-                      style: OnboardingTheme.title2,
+                      'onbAttribution_title'.tr,
+                      style: CozyText.title,
                     ),
-                    const SizedBox(height: OnboardingTheme.space32),
+                    const SizedBox(height: CozyTokens.space24),
                     ..._sources.asMap().entries.map((entry) {
                       final index = entry.key;
                       final src = entry.value;
@@ -103,26 +107,20 @@ class _V3AttributionState extends State<V3Attribution> {
               right: 0,
               bottom: 0,
               child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: OnboardingTheme.horizontalPadding,
-                  vertical: 20,
-                ),
+                padding: const EdgeInsets.fromLTRB(24, 24, 24, 24),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      OnboardingTheme.backgroundColor.withValues(alpha: 0.0),
-                      OnboardingTheme.backgroundColor,
+                      CozyColors.background.withValues(alpha: 0),
+                      CozyColors.background,
                     ],
                   ),
                 ),
-                child: FastButton(
-                  text: 'Continue',
+                child: CozyButton(
+                  text: 'onbAttribution_continue'.tr,
                   onTap: _selected != null ? _onContinue : null,
-                  backgroundColor: OnboardingTheme.goldColor,
-                  textColor: OnboardingTheme.backgroundColor,
-                  style: FastButtonStyle.filled,
                   isDisabled: _selected == null,
                 ),
               ),
@@ -137,8 +135,9 @@ class _V3AttributionState extends State<V3Attribution> {
 class _Source {
   final String id;
   final String label;
-  final String icon;
-  const _Source(this.id, this.label, this.icon);
+  final IconData icon;
+  final Color iconColor;
+  const _Source(this.id, this.label, this.icon, this.iconColor);
 }
 
 class _SourceCard extends StatelessWidget {
@@ -154,46 +153,64 @@ class _SourceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    final accent = CozyColors.primary;
+    return CozyTappable(
       onTap: onTap,
+      pressedScale: 0.98,
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-        decoration: BoxDecoration(
-          color: isSelected
-              ? OnboardingTheme.goldColor.withValues(alpha: 0.15)
-              : OnboardingTheme.cardBackground,
-          borderRadius: BorderRadius.circular(OnboardingTheme.radiusMedium),
-          border: Border.all(
-            color: isSelected
-                ? OnboardingTheme.goldColor
-                : OnboardingTheme.cardBorder,
-            width: isSelected ? 1.5 : 1,
+        duration: CozyTokens.base,
+        curve: Curves.easeOut,
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        decoration: ShapeDecoration(
+          color: isSelected ? CozyColors.selectedFill : CozyColors.surface,
+          shape: CozyTokens.smooth(
+            CozyTokens.radiusLg,
+            side: BorderSide(
+              color: isSelected ? accent : CozyColors.outline,
+              width: CozyTokens.borderWidth,
+            ),
           ),
+          shadows: CozyTokens.shadowHard,
         ),
         child: Row(
           children: [
-            Text(source.icon, style: const TextStyle(fontSize: 22)),
+            SizedBox(
+              width: 28,
+              child: Center(
+                child: FaIcon(
+                  source.icon,
+                  size: 18,
+                  color: source.iconColor,
+                ),
+              ),
+            ),
             const SizedBox(width: 14),
             Expanded(
               child: Text(
                 source.label,
-                style: OnboardingTheme.callout.copyWith(
-                  color: isSelected
-                      ? OnboardingTheme.goldColor
-                      : OnboardingTheme.labelPrimary,
-                  fontWeight:
-                      isSelected ? FontWeight.w600 : FontWeight.w400,
+                style: CozyText.body.copyWith(
+                  color: isSelected ? accent : CozyColors.ink,
+                  fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
                 ),
               ),
             ),
             AnimatedOpacity(
               opacity: isSelected ? 1.0 : 0.0,
               duration: const Duration(milliseconds: 200),
-              child: const Icon(
-                Icons.check_circle,
-                color: OnboardingTheme.goldColor,
-                size: 22,
+              child: Container(
+                width: 26,
+                height: 26,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: accent,
+                  shape: BoxShape.circle,
+                  border: Border.all(color: CozyColors.surface, width: 2),
+                ),
+                child: const HugeIcon(
+                  icon: HugeIcons.strokeRoundedTick02,
+                  size: 14,
+                  color: CozyColors.onPrimary,
+                ),
               ),
             ),
           ],

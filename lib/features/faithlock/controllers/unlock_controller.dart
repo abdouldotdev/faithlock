@@ -120,6 +120,7 @@ class UnlockController extends GetxController {
         wasSuccessful: true,
         attemptCount: attemptCount.value,
         timeToUnlockSeconds: timeToUnlock,
+        method: UnlockMethod.bibleQuiz,
       );
 
       if (_analytics.isReady) {
@@ -165,6 +166,7 @@ class UnlockController extends GetxController {
         verseId: currentVerse.value!.id,
         wasSuccessful: false,
         attemptCount: attemptCount.value,
+        method: UnlockMethod.bibleQuiz,
       );
     } else {
       // Show error and allow retry
@@ -188,6 +190,7 @@ class UnlockController extends GetxController {
         verseId: currentVerse.value?.id ?? 'emergency',
         wasSuccessful: false,
         attemptCount: maxAttempts,
+        method: UnlockMethod.bibleQuiz,
       );
 
       await _lockService.setActiveLock(null);

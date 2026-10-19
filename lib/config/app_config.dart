@@ -11,6 +11,10 @@ class AppConfig {
   static const String appName = 'Fast App';
   static const String appVersion = '1.0.0';
 
+  /// Public App Store listing — used by share / rate flows.
+  static const String appStoreUrl =
+      'https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209';
+
   // Localization
   static const Locale defaultLocale = Locale('en', 'US');
   static const List<Locale> supportedLocales = [
@@ -33,11 +37,14 @@ class AppFeatures {
   final bool editProfile = false;
   final bool deleteAccount = true;
 
+  /// "Your Journey" stats grid on the profile screen.
+  final bool journeyStats = false;
+
   // User preferences features
   final bool pushNotifications = false;
-  final bool languageSelection = false;
+  final bool languageSelection = true;
   final bool analyticsEnabled = false;
-  final bool darkMode = true;
+  final bool darkMode = false;
   final bool privacySettings = true;
   final bool termsSettings = true;
 

@@ -1,28 +1,33 @@
 import 'dart:math';
-import 'package:faithlock/core/constants/core/fast_colors.dart';
-import 'package:faithlock/features/faithlock/services/screen_time_service.dart';
-import 'package:faithlock/shared/widgets/animations/confetti_celebration.dart';
-import 'package:faithlock/shared/widgets/mascot/judah_mascot.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hugeicons/hugeicons.dart';
+
+import 'package:faithlock/features/faithlock/services/screen_time_service.dart';
+import 'package:faithlock/shared/widgets/animations/confetti_celebration.dart';
+import 'package:faithlock/shared/widgets/cozy/cozy.dart';
 
 /// Encouraging Bible verses for re-lock success (translated via GetX)
 List<Map<String, String>> get encouragingVerses => [
-  {'text': 'relock_verse1_text'.tr, 'reference': 'relock_verse1_ref'.tr},
-  {'text': 'relock_verse2_text'.tr, 'reference': 'relock_verse2_ref'.tr},
-  {'text': 'relock_verse3_text'.tr, 'reference': 'relock_verse3_ref'.tr},
-  {'text': 'relock_verse4_text'.tr, 'reference': 'relock_verse4_ref'.tr},
-  {'text': 'relock_verse5_text'.tr, 'reference': 'relock_verse5_ref'.tr},
-  {'text': 'relock_verse6_text'.tr, 'reference': 'relock_verse6_ref'.tr},
-  {'text': 'relock_verse7_text'.tr, 'reference': 'relock_verse7_ref'.tr},
-  {'text': 'relock_verse8_text'.tr, 'reference': 'relock_verse8_ref'.tr},
-  {'text': 'relock_verse9_text'.tr, 'reference': 'relock_verse9_ref'.tr},
-  {'text': 'relock_verse10_text'.tr, 'reference': 'relock_verse10_ref'.tr},
-];
+      {'text': 'relock_verse1_text'.tr, 'reference': 'relock_verse1_ref'.tr},
+      {'text': 'relock_verse2_text'.tr, 'reference': 'relock_verse2_ref'.tr},
+      {'text': 'relock_verse3_text'.tr, 'reference': 'relock_verse3_ref'.tr},
+      {'text': 'relock_verse4_text'.tr, 'reference': 'relock_verse4_ref'.tr},
+      {'text': 'relock_verse5_text'.tr, 'reference': 'relock_verse5_ref'.tr},
+      {'text': 'relock_verse6_text'.tr, 'reference': 'relock_verse6_ref'.tr},
+      {'text': 'relock_verse7_text'.tr, 'reference': 'relock_verse7_ref'.tr},
+      {'text': 'relock_verse8_text'.tr, 'reference': 'relock_verse8_ref'.tr},
+      {'text': 'relock_verse9_text'.tr, 'reference': 'relock_verse9_ref'.tr},
+      {
+        'text': 'relock_verse10_text'.tr,
+        'reference': 'relock_verse10_ref'.tr
+      },
+    ];
 
-/// Screen displayed when re-locking apps after unlock timer expires
-/// Automatically applies shields and navigates back to main screen
+/// Screen displayed when re-locking apps after unlock timer expires.
+/// Cozy (cream) redesign — no mascot; a chunky lock/checkmark badge carries the
+/// moment. Automatically applies shields and navigates back to the main screen.
 class RelockInProgressScreen extends StatefulWidget {
   const RelockInProgressScreen({super.key});
 
@@ -42,19 +47,17 @@ class _RelockInProgressScreenState extends State<RelockInProgressScreen>
   bool _relockSuccess = false;
   String _statusMessage = '';
 
-  // Random encouraging verse
   late Map<String, String> _selectedVerse;
 
   @override
   void initState() {
     super.initState();
 
-    // Initialize status message with translation
     _statusMessage = 'relock_inProgress'.tr;
 
-    // Select a random verse
     final random = Random();
-    _selectedVerse = encouragingVerses[random.nextInt(encouragingVerses.length)];
+    _selectedVerse =
+        encouragingVerses[random.nextInt(encouragingVerses.length)];
 
     _animationController = AnimationController(
       duration: const Duration(milliseconds: 1500),
@@ -76,8 +79,6 @@ class _RelockInProgressScreenState extends State<RelockInProgressScreen>
     );
 
     _animationController.forward();
-
-    // Start re-locking process
     _performRelock();
   }
 
@@ -89,23 +90,17 @@ class _RelockInProgressScreenState extends State<RelockInProgressScreen>
 
   Future<void> _performRelock() async {
     try {
-      // Add slight delay for animation to start
       await Future.delayed(const Duration(milliseconds: 800));
-
-      // Apply shields
       await _screenTimeService.applyShields();
 
-      // Update state
       setState(() {
         _isRelocking = false;
         _relockSuccess = true;
         _statusMessage = 'relock_success'.tr;
       });
 
-      // Wait for user to read the verse before navigating back
       await Future.delayed(const Duration(seconds: 4));
 
-      // Navigate back to main screen
       if (mounted) {
         Get.offAllNamed('/main');
       }
@@ -120,10 +115,48 @@ class _RelockInProgressScreenState extends State<RelockInProgressScreen>
     }
   }
 
+  // ── Status badge (replaces the mascot) ─────────────────────────────────────
+  Widget _statusBadge() {
+    final List<List<dynamic>> icon;
+    final Color bg;
+    final Color fg;
+    if (_isRelocking) {
+      icon = HugeIcons.strokeRoundedSquareLock02;
+      bg = CozyColors.peach;
+      fg = CozyColors.primary;
+    } else if (_relockSuccess) {
+      icon = HugeIcons.strokeRoundedCheckmarkBadge01;
+      bg = CozyColors.primary;
+      fg = CozyColors.onPrimary;
+    } else {
+      icon = HugeIcons.strokeRoundedCancel01;
+      bg = CozyColors.surfaceMuted;
+      fg = CozyColors.inkMuted;
+    }
+
+    return Container(
+      width: 96,
+      height: 96,
+      alignment: Alignment.center,
+      decoration: ShapeDecoration(
+        color: bg,
+        shape: CozyTokens.smooth(
+          CozyTokens.radiusLg,
+          side: const BorderSide(
+            color: CozyColors.outline,
+            width: CozyTokens.borderWidth,
+          ),
+        ),
+        shadows: CozyTokens.shadowHard,
+      ),
+      child: HugeIcon(icon: icon, color: fg, size: 44),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final scaffold = Scaffold(
-      backgroundColor: FastColors.surface(context),
+      backgroundColor: CozyColors.background,
       body: SafeArea(
         child: Center(
           child: Padding(
@@ -131,48 +164,41 @@ class _RelockInProgressScreenState extends State<RelockInProgressScreen>
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Judah mascot - state changes based on relock progress
+                // Chunky status badge — a lock while re-locking, a checkmark on
+                // success. No mascot.
                 ScaleTransition(
                   scale: _scaleAnimation,
                   child: FadeTransition(
                     opacity: _opacityAnimation,
-                    child: JudahMascot(
-                      state: _isRelocking
-                          ? JudahState.encouraging
-                          : _relockSuccess
-                              ? JudahState.happy
-                              : JudahState.sad,
-                      size: JudahSize.xl,
-                      showMessage: false,
-                    ),
+                    child: _statusBadge(),
                   ),
                 ),
 
-                const SizedBox(height: 32),
+                const SizedBox(height: 28),
 
                 // Status message
                 FadeTransition(
                   opacity: _opacityAnimation,
                   child: Text(
                     _statusMessage,
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: FastColors.primaryText(context),
-                    ),
+                    style: CozyText.title.copyWith(fontSize: 24),
                     textAlign: TextAlign.center,
                   ),
                 ),
 
-                const SizedBox(height: 16),
+                const SizedBox(height: 14),
 
                 // Loading indicator
                 if (_isRelocking)
                   FadeTransition(
                     opacity: _opacityAnimation,
-                    child: CupertinoActivityIndicator(
-                      radius: 16,
-                      color: FastColors.primary,
+                    child: const SizedBox(
+                      width: 26,
+                      height: 26,
+                      child: CircularProgressIndicator(
+                        strokeWidth: 3,
+                        color: CozyColors.primary,
+                      ),
                     ),
                   ),
 
@@ -182,47 +208,45 @@ class _RelockInProgressScreenState extends State<RelockInProgressScreen>
                     opacity: _opacityAnimation,
                     child: Text(
                       'relock_appsProtected'.tr,
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: FastColors.secondaryText(context),
-                      ),
+                      style: CozyText.body.copyWith(color: CozyColors.inkMuted),
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  const SizedBox(height: 32),
-                  // Bible verse
+                  const SizedBox(height: 28),
+                  // Cozy verse card
                   FadeTransition(
                     opacity: _opacityAnimation,
                     child: Container(
-                      padding: const EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        color: FastColors.primary.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(
-                          color: FastColors.primary.withValues(alpha: 0.3),
-                          width: 1,
+                      padding: const EdgeInsets.fromLTRB(22, 22, 22, 18),
+                      decoration: ShapeDecoration(
+                        color: CozyColors.surface,
+                        shape: CozyTokens.smooth(
+                          CozyTokens.radiusLg,
+                          side: const BorderSide(
+                            color: CozyColors.outline,
+                            width: CozyTokens.borderWidth,
+                          ),
                         ),
+                        shadows: CozyTokens.shadowHard,
                       ),
                       child: Column(
                         children: [
                           Text(
                             '"${_selectedVerse['text']}"',
-                            style: TextStyle(
-                              fontSize: 18,
+                            style: CozyText.body.copyWith(
+                              fontSize: 17,
                               fontStyle: FontStyle.italic,
-                              fontWeight: FontWeight.w500,
-                              color: FastColors.primaryText(context),
                               height: 1.5,
+                              color: CozyColors.ink,
                             ),
                             textAlign: TextAlign.center,
                           ),
                           const SizedBox(height: 12),
                           Text(
                             '— ${_selectedVerse['reference']}',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600,
-                              color: FastColors.primary,
+                            style: CozyText.label.copyWith(
+                              color: CozyColors.primary,
+                              fontWeight: FontWeight.w800,
                             ),
                             textAlign: TextAlign.center,
                           ),
@@ -232,29 +256,27 @@ class _RelockInProgressScreenState extends State<RelockInProgressScreen>
                   ),
                 ],
 
-                // Error message with retry button
+                // Error message with retry
                 if (!_isRelocking && !_relockSuccess) ...[
                   FadeTransition(
                     opacity: _opacityAnimation,
                     child: Text(
                       'relock_errorOccurred'.tr,
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: FastColors.secondaryText(context),
-                      ),
+                      style: CozyText.body.copyWith(color: CozyColors.inkMuted),
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  const SizedBox(height: 24),
-                  CupertinoButton.filled(
-                    onPressed: () {
+                  const SizedBox(height: 22),
+                  CozyButton(
+                    text: 'retry'.tr,
+                    fullWidth: false,
+                    onTap: () {
                       setState(() {
                         _isRelocking = true;
                         _statusMessage = 'relock_inProgress'.tr;
                       });
                       _performRelock();
                     },
-                    child: Text('retry'.tr),
                   ),
                 ],
               ],
@@ -264,7 +286,6 @@ class _RelockInProgressScreenState extends State<RelockInProgressScreen>
       ),
     );
 
-    // Show confetti when successfully re-locked
     if (_relockSuccess) {
       return ConfettiCelebration(child: scaffold);
     }

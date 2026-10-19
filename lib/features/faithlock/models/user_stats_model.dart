@@ -5,6 +5,8 @@ class UserStats {
   final int currentStreak;
   final int longestStreak;
   final int screenTimeReducedMinutes;
+  final int prayedMinutesToday; // Real prayer time today (audio/text/learning)
+  final int versesReadToday; // Bible-quiz verses read today
   final int successfulUnlocks;
   final int failedAttempts;
   final Map<VerseCategory, int> versesByCategory;
@@ -16,6 +18,8 @@ class UserStats {
     required this.currentStreak,
     required this.longestStreak,
     required this.screenTimeReducedMinutes,
+    this.prayedMinutesToday = 0,
+    this.versesReadToday = 0,
     required this.successfulUnlocks,
     required this.failedAttempts,
     required this.versesByCategory,
@@ -29,6 +33,8 @@ class UserStats {
       currentStreak: 0,
       longestStreak: 0,
       screenTimeReducedMinutes: 0,
+      prayedMinutesToday: 0,
+      versesReadToday: 0,
       successfulUnlocks: 0,
       failedAttempts: 0,
       versesByCategory: {},
@@ -53,6 +59,8 @@ class UserStats {
       longestStreak: json['longest_streak'] as int? ?? 0,
       screenTimeReducedMinutes:
           json['screen_time_reduced_minutes'] as int? ?? 0,
+      prayedMinutesToday: json['prayed_minutes_today'] as int? ?? 0,
+      versesReadToday: json['verses_read_today'] as int? ?? 0,
       successfulUnlocks: json['successful_unlocks'] as int? ?? 0,
       failedAttempts: json['failed_attempts'] as int? ?? 0,
       versesByCategory: versesByCategory,
@@ -74,6 +82,8 @@ class UserStats {
       'current_streak': currentStreak,
       'longest_streak': longestStreak,
       'screen_time_reduced_minutes': screenTimeReducedMinutes,
+      'prayed_minutes_today': prayedMinutesToday,
+      'verses_read_today': versesReadToday,
       'successful_unlocks': successfulUnlocks,
       'failed_attempts': failedAttempts,
       'verses_by_category': categoriesJson,
@@ -87,6 +97,8 @@ class UserStats {
     int? currentStreak,
     int? longestStreak,
     int? screenTimeReducedMinutes,
+    int? prayedMinutesToday,
+    int? versesReadToday,
     int? successfulUnlocks,
     int? failedAttempts,
     Map<VerseCategory, int>? versesByCategory,
@@ -99,6 +111,8 @@ class UserStats {
       longestStreak: longestStreak ?? this.longestStreak,
       screenTimeReducedMinutes:
           screenTimeReducedMinutes ?? this.screenTimeReducedMinutes,
+      prayedMinutesToday: prayedMinutesToday ?? this.prayedMinutesToday,
+      versesReadToday: versesReadToday ?? this.versesReadToday,
       successfulUnlocks: successfulUnlocks ?? this.successfulUnlocks,
       failedAttempts: failedAttempts ?? this.failedAttempts,
       versesByCategory: versesByCategory ?? this.versesByCategory,
@@ -127,6 +141,16 @@ class UserStats {
 
     final months = days ~/ 30;
     return '$months months';
+  }
+
+  /// Today's prayer time, formatted for the "Prayed Today" stat card.
+  String get prayedTodayFormatted {
+    if (prayedMinutesToday < 60) {
+      return '$prayedMinutesToday min';
+    }
+    final hours = prayedMinutesToday ~/ 60;
+    final minutes = prayedMinutesToday % 60;
+    return minutes == 0 ? '$hours h' : '${hours}h ${minutes}m';
   }
 
   double get successRate {

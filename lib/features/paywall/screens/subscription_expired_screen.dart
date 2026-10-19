@@ -1,12 +1,10 @@
 import 'package:faithlock/features/onboarding/constants/onboarding_theme.dart';
 import 'package:faithlock/features/onboarding/utils/animation_utils.dart';
-import 'package:faithlock/features/onboarding/widgets/onboarding_wrapper.dart';
 import 'package:faithlock/features/paywall/screens/paywall_screen_v2.dart';
 import 'package:faithlock/services/notifications/winback_notification_service.dart';
-import 'package:faithlock/shared/widgets/buttons/fast_button.dart';
 import 'package:faithlock/shared/widgets/mascot/judah_mascot.dart';
 import 'package:faithlock/shared/widgets/notifications/fast_toast.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -120,176 +118,203 @@ class _SubscriptionExpiredScreenState extends State<SubscriptionExpiredScreen>
 
   @override
   Widget build(BuildContext context) {
-    return OnboardingWrapper(
-      child: AnimatedOpacity(
-        opacity: _showContent ? 1.0 : 0.0,
-        duration: const Duration(milliseconds: 800),
-        child: Center(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(
-              horizontal: OnboardingTheme.horizontalPadding,
-              vertical: OnboardingTheme.verticalPadding,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // Judah sad mascot
-                AnimatedBuilder(
-                  animation: _pulseAnimation,
-                  builder: (context, child) {
-                    return Transform.scale(
-                      scale: _pulseAnimation.value,
-                      child: const JudahMascot(
-                        state: JudahState.sad,
-                        size: JudahSize.xl,
-                        showMessage: false,
-                      ),
-                    );
-                  },
+    final scaffoldBg = CupertinoColors.secondarySystemGroupedBackground
+        .resolveFrom(context);
+
+    return CupertinoTheme(
+      data: const CupertinoThemeData(
+        brightness: Brightness.dark,
+        primaryColor: OnboardingTheme.goldColor,
+      ),
+      child: CupertinoPageScaffold(
+        backgroundColor: scaffoldBg,
+        child: SafeArea(
+          child: AnimatedOpacity(
+            opacity: _showContent ? 1.0 : 0.0,
+            duration: const Duration(milliseconds: 800),
+            child: Center(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: OnboardingTheme.horizontalPadding,
+                  vertical: OnboardingTheme.verticalPadding,
                 ),
-
-                const SizedBox(height: OnboardingTheme.space40),
-
-                // Title
-                Text(
-                  _getTitle(),
-                  style: OnboardingTheme.title2.copyWith(
-                    color: OnboardingTheme.labelPrimary,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-
-                const SizedBox(height: OnboardingTheme.space24),
-
-                // Message
-                Text(
-                  _getMessage(),
-                  style: OnboardingTheme.body.copyWith(
-                    color: OnboardingTheme.labelSecondary,
-                    height: 1.5,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-
-                const SizedBox(height: OnboardingTheme.space40),
-
-                // What you'll get back section
-                Container(
-                  padding: const EdgeInsets.all(OnboardingTheme.space24),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        OnboardingTheme.goldColor.withValues(alpha: 0.1),
-                        OnboardingTheme.goldColor.withValues(alpha: 0.05),
-                      ],
-                    ),
-                    borderRadius:
-                        BorderRadius.circular(OnboardingTheme.radiusLarge),
-                    border: Border.all(
-                      color: OnboardingTheme.goldColor.withValues(alpha: 0.3),
-                      width: 1.5,
-                    ),
-                  ),
-                  child: Column(
-                    children: [
-                      Text(
-                        'expired_continueJourney'.tr,
-                        style: OnboardingTheme.callout.copyWith(
-                          color: OnboardingTheme.labelPrimary,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      const SizedBox(height: OnboardingTheme.space20),
-                      _buildBenefit(
-                        icon: Icons.shield,
-                        text: 'expired_benefit1'.tr,
-                      ),
-                      const SizedBox(height: OnboardingTheme.space16),
-                      _buildBenefit(
-                        icon: Icons.schedule,
-                        text: 'expired_benefit2'.tr,
-                      ),
-                      const SizedBox(height: OnboardingTheme.space16),
-                      _buildBenefit(
-                        icon: Icons.church,
-                        text: 'expired_benefit3'.tr,
-                      ),
-                      const SizedBox(height: OnboardingTheme.space16),
-                      _buildBenefit(
-                        icon: Icons.trending_up,
-                        text: 'expired_benefit4'.tr,
-                      ),
-                    ],
-                  ),
-                ),
-
-                const SizedBox(height: OnboardingTheme.space40),
-
-                // Stats reminder
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: OnboardingTheme.space16,
-                    vertical: OnboardingTheme.space12,
-                  ),
-                  decoration: BoxDecoration(
-                    color:
-                        OnboardingTheme.systemGreen.withValues(alpha: 0.1),
-                    borderRadius:
-                        BorderRadius.circular(OnboardingTheme.radiusMedium),
-                    border: Border.all(
-                      color: OnboardingTheme.systemGreen.withValues(alpha: 0.3),
-                      width: 1,
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.trending_up,
-                        size: 20,
-                        color: OnboardingTheme.systemGreen,
-                      ),
-                      const SizedBox(width: OnboardingTheme.space8),
-                      Flexible(
-                        child: Text(
-                          'expired_usersReport'.tr,
-                          style: OnboardingTheme.footnote.copyWith(
-                            color: OnboardingTheme.systemGreen,
-                            fontWeight: FontWeight.w600,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Judah sad mascot
+                    AnimatedBuilder(
+                      animation: _pulseAnimation,
+                      builder: (context, child) {
+                        return Transform.scale(
+                          scale: _pulseAnimation.value,
+                          child: const JudahMascot(
+                            state: JudahState.sad,
+                            size: JudahSize.xl,
+                            showMessage: false,
                           ),
-                          textAlign: TextAlign.center,
+                        );
+                      },
+                    ),
+
+                    const SizedBox(height: OnboardingTheme.space40),
+
+                    // Title
+                    Text(
+                      _getTitle(),
+                      style: OnboardingTheme.title2.copyWith(
+                        color: OnboardingTheme.labelPrimary,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+
+                    const SizedBox(height: OnboardingTheme.space24),
+
+                    // Message
+                    Text(
+                      _getMessage(),
+                      style: OnboardingTheme.body.copyWith(
+                        color: OnboardingTheme.labelSecondary,
+                        height: 1.5,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+
+                    const SizedBox(height: OnboardingTheme.space40),
+
+                    // What you'll get back section
+                    Container(
+                      padding: const EdgeInsets.all(OnboardingTheme.space24),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            OnboardingTheme.goldColor.withValues(alpha: 0.1),
+                            OnboardingTheme.goldColor.withValues(alpha: 0.05),
+                          ],
+                        ),
+                        borderRadius:
+                            BorderRadius.circular(OnboardingTheme.radiusLarge),
+                        border: Border.all(
+                          color: OnboardingTheme.goldColor.withValues(alpha: 0.3),
+                          width: 1.5,
                         ),
                       ),
-                    ],
-                  ),
-                ),
-
-                const SizedBox(height: OnboardingTheme.space40),
-
-                // Renew button
-                FastButton(
-                  text: 'expired_renewBtn'.tr,
-                  onTap: _onRenewNow,
-                  backgroundColor: OnboardingTheme.goldColor,
-                  textColor: OnboardingTheme.backgroundColor,
-                  style: FastButtonStyle.filled,
-                ),
-
-                const SizedBox(height: OnboardingTheme.space16),
-
-                // Optional: Contact support
-                TextButton(
-                  onPressed: _onContactSupport,
-                  child: Text(
-                    'expired_needHelp'.tr,
-                    style: OnboardingTheme.footnote.copyWith(
-                      color: OnboardingTheme.labelTertiary,
+                      child: Column(
+                        children: [
+                          Text(
+                            'expired_continueJourney'.tr,
+                            style: OnboardingTheme.callout.copyWith(
+                              color: OnboardingTheme.labelPrimary,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          const SizedBox(height: OnboardingTheme.space20),
+                          _buildBenefit(
+                            icon: CupertinoIcons.shield_fill,
+                            text: 'expired_benefit1'.tr,
+                          ),
+                          const SizedBox(height: OnboardingTheme.space16),
+                          _buildBenefit(
+                            icon: CupertinoIcons.clock_fill,
+                            text: 'expired_benefit2'.tr,
+                          ),
+                          const SizedBox(height: OnboardingTheme.space16),
+                          _buildBenefit(
+                            icon: CupertinoIcons.heart_fill,
+                            text: 'expired_benefit3'.tr,
+                          ),
+                          const SizedBox(height: OnboardingTheme.space16),
+                          _buildBenefit(
+                            icon: CupertinoIcons.graph_circle_fill,
+                            text: 'expired_benefit4'.tr,
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
+
+                    const SizedBox(height: OnboardingTheme.space40),
+
+                    // Stats reminder
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: OnboardingTheme.space16,
+                        vertical: OnboardingTheme.space12,
+                      ),
+                      decoration: BoxDecoration(
+                        color: OnboardingTheme.systemGreen.withValues(alpha: 0.1),
+                        borderRadius:
+                            BorderRadius.circular(OnboardingTheme.radiusMedium),
+                        border: Border.all(
+                          color: OnboardingTheme.systemGreen.withValues(alpha: 0.3),
+                          width: 1,
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                            CupertinoIcons.graph_circle_fill,
+                            size: 20,
+                            color: OnboardingTheme.systemGreen,
+                          ),
+                          const SizedBox(width: OnboardingTheme.space8),
+                          Flexible(
+                            child: Text(
+                              'expired_usersReport'.tr,
+                              style: OnboardingTheme.footnote.copyWith(
+                                color: OnboardingTheme.systemGreen,
+                                fontWeight: FontWeight.w600,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    const SizedBox(height: OnboardingTheme.space40),
+
+                    // Renew button
+                    GestureDetector(
+                      onTap: _onRenewNow,
+                      child: Container(
+                        width: double.infinity,
+                        height: 56,
+                        decoration: BoxDecoration(
+                          color: OnboardingTheme.goldColor,
+                          borderRadius:
+                              BorderRadius.circular(OnboardingTheme.radiusMedium),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'expired_renewBtn'.tr,
+                            style: OnboardingTheme.callout.copyWith(
+                              color: OnboardingTheme.backgroundColor,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    const SizedBox(height: OnboardingTheme.space16),
+
+                    // Optional: Contact support
+                    CupertinoButton(
+                      padding: EdgeInsets.zero,
+                      minimumSize: Size.zero,
+                      onPressed: _onContactSupport,
+                      child: Text(
+                        'expired_needHelp'.tr,
+                        style: OnboardingTheme.footnote.copyWith(
+                          color: OnboardingTheme.labelTertiary,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
         ),

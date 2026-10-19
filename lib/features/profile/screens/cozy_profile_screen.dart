@@ -275,21 +275,23 @@ class CozyProfileScreen extends StatelessWidget {
   Widget _supportGroup(SettingsController settings) {
     final features = AppConfig.appFeatures;
     final tiles = <Widget>[
-      _tile(
-        icon: HugeIcons.strokeRoundedSparkles,
-        iconBg: CozyColors.primaryLight,
-        title: 'replayTour_title'.tr,
-        subtitle: 'replayTour_sub'.tr,
-        onTap: () {
-          if (Get.isRegistered<NavigationController>()) {
-            Get.find<NavigationController>().changePage(0);
-          }
-          if (Get.isRegistered<FeatureTourController>()) {
-            Get.find<FeatureTourController>()
-                .begin(buildFirstDayTour(), source: 'replay');
-          }
-        },
-      ),
+      // Dev-only, like the other replay tools — hidden in the App Store release.
+      if (!kReleaseMode)
+        _tile(
+          icon: HugeIcons.strokeRoundedSparkles,
+          iconBg: CozyColors.primaryLight,
+          title: 'replayTour_title'.tr,
+          subtitle: 'replayTour_sub'.tr,
+          onTap: () {
+            if (Get.isRegistered<NavigationController>()) {
+              Get.find<NavigationController>().changePage(0);
+            }
+            if (Get.isRegistered<FeatureTourController>()) {
+              Get.find<FeatureTourController>()
+                  .begin(buildFirstDayTour(), source: 'replay');
+            }
+          },
+        ),
       _tile(
         icon: HugeIcons.strokeRoundedStar,
         iconBg: CozyColors.peach,

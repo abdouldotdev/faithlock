@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:faithlock/features/faithlock/services/screen_time_service.dart';
+import 'package:faithlock/services/analytics/posthog/export.dart';
 import 'package:faithlock/services/notifications/local_notification_service.dart';
 import 'package:faithlock/services/storage/secure_storage_service.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,11 @@ class UnlockTimerService with WidgetsBindingObserver {
   final StorageService _storage = StorageService();
   final LocalNotificationService _notificationService =
       LocalNotificationService();
+  final PostHogService _analytics = PostHogService.instance;
+
+  void _track(String event, [Map<String, dynamic> props = const {}]) {
+    if (_analytics.isReady) _analytics.events.trackCustom(event, props);
+  }
 
   // Storage keys
   static const String _keyUnlockEndTime = 'unlock_end_time';
@@ -110,10 +116,14 @@ class UnlockTimerService with WidgetsBindingObserver {
   void _startUnlockTimer(Duration duration) {
     _unlockTimer = Timer(duration, () async {
       debugPrint('⏰ Unlock timer expired');
+      _track('unlock_expired', {
+        'duration_minutes': duration.inMinutes,
+        'foreground': _isAppInForeground,
+      });
 
       if (_isAppInForeground) {
         // App in foreground - relock directly
-        await _relockApps();
+        await _relockApps(reason: 'timer_foreground');
 
         // Cancel scheduled notification since we relocked in-app
         await _notificationService.cancelNotification(100);
@@ -128,7 +138,7 @@ class UnlockTimerService with WidgetsBindingObserver {
   }
 
   /// Relock apps immediately (user in app)
-  Future<void> _relockApps() async {
+  Future<void> _relockApps({String reason = 'timer'}) async {
     try {
       await _screenTimeService.applyShields();
       await _storage.writeBool(_keyNeedsRelock, false);
@@ -137,6 +147,7 @@ class UnlockTimerService with WidgetsBindingObserver {
       // Cancel all reminders since apps are now locked
       await _cancelReminders();
 
+      _track('apps_relocked', {'reason': reason});
       debugPrint('🔒 Apps re-locked (user in app)');
 
       // Show toast to user
@@ -212,7 +223,7 @@ class UnlockTimerService with WidgetsBindingObserver {
 
       if (needsRelock) {
         debugPrint('🔒 Relock needed - applying shields');
-        await _relockApps();
+        await _relockApps(reason: 'timer_background_return');
       }
     } catch (e) {
       debugPrint('❌ Error checking relock status: $e');
@@ -261,6 +272,7 @@ class UnlockTimerService with WidgetsBindingObserver {
 
       await _screenTimeService.applyShields();
 
+      _track('unlock_cancelled', {});
       debugPrint('🔒 Unlock cancelled - apps relocked');
     } catch (e) {
       debugPrint('❌ Error cancelling unlock: $e');

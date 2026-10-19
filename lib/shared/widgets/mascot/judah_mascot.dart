@@ -87,6 +87,7 @@ class JudahMascot extends StatelessWidget {
     this.message,
     this.messageStyle,
     this.showMessage = true,
+    this.circular = false,
   });
 
   /// The emotional state determining which GIF to display.
@@ -104,22 +105,17 @@ class JudahMascot extends StatelessWidget {
   /// Whether to show the message bubble. Defaults to true.
   final bool showMessage;
 
+  /// When true, the GIF is clipped to a circle (with a slight zoom to crop the
+  /// white background margins) — useful as an avatar on colored surfaces.
+  final bool circular;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        // Mascot GIF
-        Image.asset(
-          state.assetPath,
-          width: size.pixels,
-          height: size.pixels,
-          fit: BoxFit.contain,
-          // Placeholder while GIF loads or if asset missing
-          errorBuilder: (context, error, stackTrace) {
-            return _buildPlaceholder();
-          },
-        ),
+        // Mascot GIF (optionally clipped to a circle, white margins cropped)
+        _buildMascotImage(),
 
         // Message bubble
         if (showMessage && message != null && message!.isNotEmpty) ...[
@@ -131,6 +127,29 @@ class JudahMascot extends StatelessWidget {
           ),
         ],
       ],
+    );
+  }
+
+  /// The mascot GIF, optionally clipped to a circle with the white background
+  /// margins cropped out (avatar style for colored surfaces).
+  Widget _buildMascotImage() {
+    final image = Image.asset(
+      state.assetPath,
+      width: size.pixels,
+      height: size.pixels,
+      fit: BoxFit.contain,
+      errorBuilder: (context, error, stackTrace) => _buildPlaceholder(),
+    );
+    if (!circular) return image;
+    return ClipOval(
+      child: SizedBox(
+        width: size.pixels,
+        height: size.pixels,
+        child: Transform.scale(
+          scale: 1.15,
+          child: image,
+        ),
+      ),
     );
   }
 

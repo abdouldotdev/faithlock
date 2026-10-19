@@ -6,8 +6,8 @@ class OnboardingTheme {
   // ==================== COLOR SYSTEM ====================
   // iOS Semantic Colors
 
-  /// Pure black background (iOS dark mode)
-  static const Color backgroundColor = Color(0xFF000000);
+  /// App background — Apple dark-gray (NOT pure black) for layered depth.
+  static const Color backgroundColor = Color(0xFF1C1C1E);
 
   /// Primary gold - more subtle and refined
   static const Color goldColor = Color(0xFFC9A962);
@@ -38,11 +38,19 @@ class OnboardingTheme {
   // ==================== TYPOGRAPHY ====================
   // Garamond Font System - Optimized for elegance and readability
 
-  /// Garamond for all text (serif elegance)
-  static const String fontFamily = 'Garamond';
+  /// Satoshi for all text
+  static const String fontFamily = 'Satoshi';
 
-  /// Garamond for body text
-  static const String bodyFontFamily = 'Garamond';
+  /// Satoshi for body text
+  static const String bodyFontFamily = 'Satoshi';
+
+  /// Font family for numeric / glyph-heavy displays (percentages, big stats,
+  /// option pills with symbols like '×').
+  ///
+  /// Set to `null` to fall back to the platform default (SF Pro on iOS,
+  /// Roboto on Android). Garamond is avoided here because it lacks proper
+  /// glyphs for several symbols (×, %) and renders digits stylistically.
+  static const String? numericFontFamily = null;
 
   // Garamond Font Sizes (optimized for serif readability)
   static const double largeTitleSize = 42.0;
@@ -55,10 +63,10 @@ class OnboardingTheme {
   static const double footnoteSize = 14.0;
   static const double caption1Size = 13.0;
 
-  // Garamond Line Heights (more spacious for serif)
-  static const double lineHeightTight = 1.3; // Increased for Garamond
-  static const double lineHeightNormal = 1.5; // More breathing room
-  static const double lineHeightRelaxed = 1.7; // Extra spacious
+  // Satoshi Line Heights (sans-serif — tight & punchy)
+  static const double lineHeightTight = 1.05; // Headlines / large titles
+  static const double lineHeightNormal = 1.15; // Body / callouts
+  static const double lineHeightRelaxed = 1.3; // Long-form reading
 
   // ==================== SPACING ====================
   // iOS Standard Spacing (multiples of 4)
@@ -89,7 +97,7 @@ class OnboardingTheme {
   static TextStyle get largeTitle => const TextStyle(
         fontFamily: fontFamily,
         fontSize: largeTitleSize,
-        fontWeight: FontWeight.w400, // Regular for elegance
+        fontWeight: FontWeight.w700, // Bold
         color: labelPrimary,
         height: lineHeightTight,
         letterSpacing: -0.3, // Tighter for large Garamond
@@ -99,7 +107,7 @@ class OnboardingTheme {
   static TextStyle get title1 => const TextStyle(
         fontFamily: fontFamily,
         fontSize: title1Size,
-        fontWeight: FontWeight.w400, // Regular
+        fontWeight: FontWeight.w600, // Bold
         color: labelPrimary,
         height: lineHeightNormal,
         letterSpacing: -0.2,
@@ -109,7 +117,7 @@ class OnboardingTheme {
   static TextStyle get title2 => const TextStyle(
         fontFamily: fontFamily,
         fontSize: title2Size,
-        fontWeight: FontWeight.w400, // Regular
+        fontWeight: FontWeight.w600, // Bold
         color: labelPrimary,
         height: lineHeightNormal,
         letterSpacing: 0.0,
@@ -119,7 +127,7 @@ class OnboardingTheme {
   static TextStyle get title3 => const TextStyle(
         fontFamily: fontFamily,
         fontSize: title3Size,
-        fontWeight: FontWeight.w400, // Regular for clarity
+        fontWeight: FontWeight.w600, // Bold
         color: labelPrimary,
         height: lineHeightNormal,
         letterSpacing: 0.0,
@@ -129,7 +137,7 @@ class OnboardingTheme {
   static TextStyle get body => const TextStyle(
         fontFamily: bodyFontFamily,
         fontSize: bodySize,
-        fontWeight: FontWeight.w400, // Regular
+        fontWeight: FontWeight.w400, // Medium
         color: labelPrimary,
         height: lineHeightNormal,
         letterSpacing: 0.0,
@@ -149,7 +157,7 @@ class OnboardingTheme {
   static TextStyle get callout => const TextStyle(
         fontFamily: bodyFontFamily,
         fontSize: calloutSize,
-        fontWeight: FontWeight.w400, // Regular
+        fontWeight: FontWeight.w500, // Medium
         color: labelSecondary,
         height: lineHeightNormal,
         letterSpacing: 0.0,

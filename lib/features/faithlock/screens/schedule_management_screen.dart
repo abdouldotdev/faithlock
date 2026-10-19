@@ -3,7 +3,7 @@ import 'package:faithlock/features/faithlock/services/screen_time_service.dart';
 import 'package:faithlock/features/onboarding/constants/onboarding_theme.dart';
 import 'package:faithlock/services/storage/secure_storage_service.dart';
 import 'package:faithlock/shared/widgets/notifications/fast_toast.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 /// Screen for managing lock schedules
@@ -47,7 +47,7 @@ class _ScheduleManagementScreenState extends State<ScheduleManagementScreen> {
         });
       }
     } catch (e) {
-      print('Error loading schedules: $e');
+      debugPrint('Error loading schedules: $e');
       setState(() {
         _isLoading = false;
       });
@@ -56,13 +56,11 @@ class _ScheduleManagementScreenState extends State<ScheduleManagementScreen> {
 
   Future<void> _saveAndResetupSchedules() async {
     try {
-      // Save to storage
       await _storage.writeString(
         'onboarding_schedules',
         jsonEncode(_schedules),
       );
 
-      // Re-setup native DeviceActivity schedules
       await _screenTimeService.setupSchedules(_schedules);
 
       if (mounted) {
@@ -73,7 +71,7 @@ class _ScheduleManagementScreenState extends State<ScheduleManagementScreen> {
         );
       }
     } catch (e) {
-      print('Error saving schedules: $e');
+      debugPrint('Error saving schedules: $e');
       if (mounted) {
         FastToast.showError(
           context: context,
@@ -92,74 +90,147 @@ class _ScheduleManagementScreenState extends State<ScheduleManagementScreen> {
   }
 
   Future<void> _editScheduleTime(int index, bool isStart) async {
-    final currentHour = _schedules[index][isStart ? 'startHour' : 'endHour'] as int;
-    final currentMinute = _schedules[index][isStart ? 'startMinute' : 'endMinute'] as int;
+    final currentHour =
+        _schedules[index][isStart ? 'startHour' : 'endHour'] as int;
+    final currentMinute =
+        _schedules[index][isStart ? 'startMinute' : 'endMinute'] as int;
 
-    final TimeOfDay? picked = await showTimePicker(
-      context: context,
-      initialTime: TimeOfDay(hour: currentHour, minute: currentMinute),
-      builder: (context, child) {
-        return Theme(
-          data: Theme.of(context).copyWith(
-            colorScheme: ColorScheme.dark(
-              primary: OnboardingTheme.goldColor,
-              onPrimary: Colors.black,
-              surface: OnboardingTheme.cardBackground,
-              onSurface: OnboardingTheme.labelPrimary,
-              shadow: Colors.transparent,
-            ),
-            dialogTheme: DialogThemeData(
-              backgroundColor: OnboardingTheme.cardBackground,
-            ),
-          ),
-          child: child!,
-        );
-      },
+    DateTime selectedTime = DateTime(
+      DateTime.now().year,
+      DateTime.now().month,
+      DateTime.now().day,
+      currentHour,
+      currentMinute,
     );
 
-    if (picked != null) {
-      setState(() {
-        _schedules[index][isStart ? 'startHour' : 'endHour'] = picked.hour;
-        _schedules[index][isStart ? 'startMinute' : 'endMinute'] = picked.minute;
-      });
-      _saveAndResetupSchedules();
-    }
+    await showCupertinoModalPopup<void>(
+      context: context,
+      barrierColor: const Color(0x66000000), // 40% black
+      builder: (BuildContext ctx) => Container(
+        height: 260,
+        decoration: BoxDecoration(
+          color: CupertinoColors.tertiarySystemGroupedBackground.resolveFrom(ctx),
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+        ),
+        child: SafeArea(
+          top: false,
+          child: Column(
+            children: [
+              // Toolbar
+              Container(
+                height: 44,
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                      color: CupertinoColors.separator.resolveFrom(ctx),
+                      width: 0.5,
+                    ),
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CupertinoButton(
+                      padding: EdgeInsets.zero,
+                      child: Text(
+                        'cancel'.tr,
+                        style: TextStyle(
+                          fontFamily: OnboardingTheme.fontFamily,
+                          color: CupertinoColors.secondaryLabel.resolveFrom(ctx),
+                          fontSize: 17,
+                        ),
+                      ),
+                      onPressed: () => Navigator.of(ctx).pop(),
+                    ),
+                    CupertinoButton(
+                      padding: EdgeInsets.zero,
+                      child: Text(
+                        'done'.tr,
+                        style: TextStyle(
+                          fontFamily: OnboardingTheme.fontFamily,
+                          color: OnboardingTheme.goldColor,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _schedules[index][isStart ? 'startHour' : 'endHour'] =
+                              selectedTime.hour;
+                          _schedules[index]
+                                  [isStart ? 'startMinute' : 'endMinute'] =
+                              selectedTime.minute;
+                        });
+                        Navigator.of(ctx).pop();
+                        _saveAndResetupSchedules();
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: CupertinoDatePicker(
+                  mode: CupertinoDatePickerMode.time,
+                  initialDateTime: selectedTime,
+                  use24hFormat: true,
+                  onDateTimeChanged: (DateTime newTime) {
+                    selectedTime = newTime;
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: OnboardingTheme.backgroundColor,
-      appBar: AppBar(
-        backgroundColor: OnboardingTheme.backgroundColor,
-        elevation: 0,
-        title: Text(
-          'schedule_lockSchedules'.tr,
-          style: OnboardingTheme.title2.copyWith(
-            color: OnboardingTheme.labelPrimary,
-          ),
-        ),
-        iconTheme: IconThemeData(
-          color: OnboardingTheme.goldColor,
+    return CupertinoTheme(
+      data: CupertinoThemeData(
+        brightness: Brightness.dark,
+        primaryColor: OnboardingTheme.goldColor,
+        textTheme: CupertinoTextThemeData(
+          primaryColor: OnboardingTheme.goldColor,
         ),
       ),
-      body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : _schedules.isEmpty
-              ? _buildEmptyState()
-              : _buildScheduleList(),
+      child: CupertinoPageScaffold(
+        backgroundColor:
+            CupertinoColors.secondarySystemGroupedBackground.resolveFrom(context),
+        navigationBar: CupertinoNavigationBar(
+          middle: Text(
+            'schedule_lockSchedules'.tr,
+            style: TextStyle(
+              fontFamily: OnboardingTheme.fontFamily,
+              fontWeight: FontWeight.w600,
+              color: OnboardingTheme.labelPrimary,
+              fontSize: 17,
+            ),
+          ),
+          backgroundColor: const Color(0x00000000), // transparent
+          border: null,
+          previousPageTitle: '',
+        ),
+        child: _isLoading
+            ? const Center(child: CupertinoActivityIndicator(radius: 14))
+            : _schedules.isEmpty
+                ? _buildEmptyState(context)
+                : _buildScheduleList(context),
+      ),
     );
   }
 
-  Widget _buildEmptyState() {
+  Widget _buildEmptyState(BuildContext context) {
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(32),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.schedule,
+            const Icon(
+              CupertinoIcons.calendar_badge_minus,
               size: 80,
               color: OnboardingTheme.labelTertiary,
             ),
@@ -175,6 +246,7 @@ class _ScheduleManagementScreenState extends State<ScheduleManagementScreen> {
               'schedule_completeOnboarding'.tr,
               style: OnboardingTheme.body.copyWith(
                 color: OnboardingTheme.labelSecondary,
+                fontSize: 15,
               ),
               textAlign: TextAlign.center,
             ),
@@ -184,9 +256,9 @@ class _ScheduleManagementScreenState extends State<ScheduleManagementScreen> {
     );
   }
 
-  Widget _buildScheduleList() {
+  Widget _buildScheduleList(BuildContext context) {
     return ListView(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.fromLTRB(20, 20, 20, 40),
       children: [
         Text(
           'schedule_manageDescription'.tr,
@@ -198,13 +270,13 @@ class _ScheduleManagementScreenState extends State<ScheduleManagementScreen> {
         const SizedBox(height: 24),
         ...List.generate(
           _schedules.length,
-          (index) => _buildScheduleCard(index),
+          (index) => _buildScheduleCard(context, index),
         ),
       ],
     );
   }
 
-  Widget _buildScheduleCard(int index) {
+  Widget _buildScheduleCard(BuildContext context, int index) {
     final schedule = _schedules[index];
     final isEnabled = schedule['enabled'] as bool;
     final name = schedule['name'] as String;
@@ -218,7 +290,6 @@ class _ScheduleManagementScreenState extends State<ScheduleManagementScreen> {
       return '${hour.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')}';
     }
 
-    // Calculate duration
     final startMinutes = startHour * 60 + startMinute;
     final endMinutes = endHour * 60 + endMinute;
     var durationMinutes = endMinutes - startMinutes;
@@ -231,8 +302,10 @@ class _ScheduleManagementScreenState extends State<ScheduleManagementScreen> {
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: isEnabled
-            ? OnboardingTheme.cardBackground
-            : OnboardingTheme.cardBackground.withValues(alpha: 0.5),
+            ? CupertinoColors.tertiarySystemGroupedBackground.resolveFrom(context)
+            : CupertinoColors.tertiarySystemGroupedBackground
+                .resolveFrom(context)
+                .withValues(alpha: 0.5),
         borderRadius: BorderRadius.circular(OnboardingTheme.radiusMedium),
         border: Border.all(
           color: isEnabled
@@ -245,11 +318,7 @@ class _ScheduleManagementScreenState extends State<ScheduleManagementScreen> {
         children: [
           Row(
             children: [
-              // Icon & Name
-              Text(
-                icon,
-                style: const TextStyle(fontSize: 24),
-              ),
+              Text(icon, style: const TextStyle(fontSize: 24)),
               const SizedBox(width: 12),
               Expanded(
                 child: Column(
@@ -276,33 +345,10 @@ class _ScheduleManagementScreenState extends State<ScheduleManagementScreen> {
                   ],
                 ),
               ),
-              // Toggle switch
-              GestureDetector(
-                onTap: () => _toggleSchedule(index),
-                child: Container(
-                  width: 51,
-                  height: 31,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: isEnabled
-                        ? OnboardingTheme.goldColor
-                        : OnboardingTheme.labelTertiary.withValues(alpha: 0.3),
-                  ),
-                  child: AnimatedAlign(
-                    duration: const Duration(milliseconds: 200),
-                    alignment:
-                        isEnabled ? Alignment.centerRight : Alignment.centerLeft,
-                    child: Container(
-                      margin: const EdgeInsets.all(2),
-                      width: 27,
-                      height: 27,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
+              CupertinoSwitch(
+                value: isEnabled,
+                activeTrackColor: OnboardingTheme.goldColor,
+                onChanged: (_) => _toggleSchedule(index),
               ),
             ],
           ),
@@ -316,15 +362,16 @@ class _ScheduleManagementScreenState extends State<ScheduleManagementScreen> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 16, vertical: 12),
                     decoration: BoxDecoration(
-                      color: OnboardingTheme.backgroundColor.withValues(
-                        alpha: isEnabled ? 1.0 : 0.5,
-                      ),
+                      color: CupertinoColors.secondarySystemGroupedBackground
+                          .resolveFrom(context)
+                          .withValues(alpha: isEnabled ? 1.0 : 0.5),
                       borderRadius:
                           BorderRadius.circular(OnboardingTheme.radiusSmall),
                       border: Border.all(
                         color: (isEnabled
-                            ? OnboardingTheme.goldColor
-                            : OnboardingTheme.labelTertiary).withValues(alpha: 0.2),
+                                ? OnboardingTheme.goldColor
+                                : OnboardingTheme.labelTertiary)
+                            .withValues(alpha: 0.2),
                         width: 1,
                       ),
                     ),
@@ -370,15 +417,16 @@ class _ScheduleManagementScreenState extends State<ScheduleManagementScreen> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 16, vertical: 12),
                     decoration: BoxDecoration(
-                      color: OnboardingTheme.backgroundColor.withValues(
-                        alpha: isEnabled ? 1.0 : 0.5,
-                      ),
+                      color: CupertinoColors.secondarySystemGroupedBackground
+                          .resolveFrom(context)
+                          .withValues(alpha: isEnabled ? 1.0 : 0.5),
                       borderRadius:
                           BorderRadius.circular(OnboardingTheme.radiusSmall),
                       border: Border.all(
                         color: (isEnabled
-                            ? OnboardingTheme.goldColor
-                            : OnboardingTheme.labelTertiary).withValues(alpha: 0.2),
+                                ? OnboardingTheme.goldColor
+                                : OnboardingTheme.labelTertiary)
+                            .withValues(alpha: 0.2),
                         width: 1,
                       ),
                     ),
@@ -415,3 +463,4 @@ class _ScheduleManagementScreenState extends State<ScheduleManagementScreen> {
     );
   }
 }
+

@@ -132,19 +132,13 @@ class _OnboardingCTAButtonState extends State<OnboardingCTAButton>
                 padding:
                     const EdgeInsets.symmetric(horizontal: 40, vertical: 18),
                 child: widget.isLoading
-                    ? SizedBox(
+                    ? const SizedBox(
                         width: 24,
                         height: 24,
-                        child: isIOS
-                            ? const CupertinoActivityIndicator(
-                                color: Colors.white,
-                                radius: 12,
-                              )
-                            : const CircularProgressIndicator(
-                                strokeWidth: 2,
-                                valueColor:
-                                    AlwaysStoppedAnimation<Color>(Colors.white),
-                              ),
+                        child: CupertinoActivityIndicator(
+                          color: Colors.white,
+                          radius: 12,
+                        ),
                       )
                     : Row(
                         mainAxisSize: MainAxisSize.min,

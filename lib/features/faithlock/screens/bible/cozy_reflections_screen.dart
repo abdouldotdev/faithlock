@@ -3,6 +3,7 @@ import 'package:faithlock/features/bible/controllers/bible_engagement_controller
 import 'package:faithlock/features/bible/models/bible_engagement_models.dart';
 import 'package:faithlock/features/faithlock/screens/bible/cozy_reading_screen.dart';
 import 'package:faithlock/shared/widgets/cozy/cozy.dart';
+import 'package:faithlock/services/analytics/posthog/export.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hugeicons/hugeicons.dart';
@@ -40,6 +41,8 @@ class _CozyReflectionsScreenState extends State<CozyReflectionsScreen> {
   }
 
   bool _opening = false;
+
+  final PostHogService _analytics = PostHogService.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -171,6 +174,11 @@ class _CozyReflectionsScreenState extends State<CozyReflectionsScreen> {
       final verses =
           await _bible.versesFor(bookName: bookName, chapter: chapter);
       if (!mounted || verses.isEmpty) return;
+      if (_analytics.isReady) {
+        _analytics.events.trackCustom('reflections_bookmark_opened', {
+          'reference': '$bookName $chapter',
+        });
+      }
       Get.to(() => CozyReadingScreen(
             reference: '$bookName $chapter',
             verses: verses,

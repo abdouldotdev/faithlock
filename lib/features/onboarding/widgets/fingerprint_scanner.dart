@@ -3,7 +3,7 @@ import 'dart:ui';
 
 import 'package:faithlock/features/onboarding/constants/onboarding_theme.dart';
 import 'package:faithlock/features/onboarding/utils/animation_utils.dart';
-import 'package:faithlock/shared/widgets/buttons/fast_button.dart';
+import 'package:faithlock/shared/widgets/cozy/cozy.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -390,10 +390,10 @@ class _FingerprintScannerState extends State<FingerprintScanner>
                           Center(
                             child: Text(
                               'covenant_sealedBeforeGod'.tr,
-                              style: OnboardingTheme.body.copyWith(
+                              style: CozyText.body.copyWith(
                                 fontSize: 15,
-                                fontWeight: FontWeight.w600,
-                                color: OnboardingTheme.goldColor,
+                                fontWeight: FontWeight.w700,
+                                color: CozyColors.primary,
                                 letterSpacing: 0.2,
                               ),
                               textAlign: TextAlign.center,
@@ -403,14 +403,9 @@ class _FingerprintScannerState extends State<FingerprintScanner>
                           // Button appears after 2 seconds
                           if (_showButton) ...[
                             const SizedBox(height: 24),
-                            Center(
-                              child: FastButton(
-                                text: 'covenant_readyLockIn'.tr,
-                                onTap: widget.onComplete,
-                                backgroundColor: OnboardingTheme.goldColor,
-                                textColor: OnboardingTheme.backgroundColor,
-                                style: FastButtonStyle.filled,
-                              ),
+                            CozyButton(
+                              text: 'covenant_readyLockIn'.tr,
+                              onTap: widget.onComplete,
                             ),
                           ],
                         ],
@@ -464,12 +459,12 @@ class _FingerprintScannerState extends State<FingerprintScanner>
                               children: [
                                 // Fingerprint icon with glow
                                 AnimatedOpacity(
-                                  opacity: _isScanning ? 0.7 : 0.4,
+                                  opacity: _isScanning ? 1.0 : 0.9,
                                   duration: const Duration(milliseconds: 300),
                                   child: Icon(
                                     Icons.fingerprint,
                                     size: 100,
-                                    color: OnboardingTheme.goldColor,
+                                    color: CozyColors.primary,
                                   ),
                                 ),
                                 // Scanning line
@@ -519,10 +514,10 @@ class _FingerprintScannerState extends State<FingerprintScanner>
                                   : 'covenant_holdThumb'.tr,
                               key: ValueKey<String>(
                                   _isScanning ? 'scanning' : 'waiting'),
-                              style: OnboardingTheme.body.copyWith(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w400,
-                                color: OnboardingTheme.labelSecondary,
+                              style: CozyText.body.copyWith(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w800,
+                                color: CozyColors.primary,
                                 letterSpacing: 0.2,
                               ),
                               textAlign: TextAlign.center,

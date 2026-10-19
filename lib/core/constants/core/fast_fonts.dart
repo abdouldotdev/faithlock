@@ -36,8 +36,8 @@ import 'package:flutter/material.dart';
 class FastFonts {
   FastFonts._();
 
-  // Primary brand font (Garamond)
-  static const String primary = 'Garamond';
+  // Primary brand font (Satoshi)
+  static const String primary = 'Satoshi';
 
   // System fonts for better performance and accessibility
   static const String system = '.AppleSystemUIFont'; // iOS will use SF Pro, Android will use Roboto
@@ -73,12 +73,12 @@ class FastFonts {
 
   // Font family with fallbacks for maximum compatibility
   static const List<String> primaryWithFallback = [
-    'Garamond',
+    'Satoshi',
     '.AppleSystemUIFont', // iOS fallback
     'Roboto',             // Android fallback
     'Segoe UI',           // Windows fallback
     'Ubuntu',             // Linux fallback
-    'serif',              // Web fallback (serif for Garamond)
+    'sans-serif',         // Web fallback (sans-serif for Satoshi)
   ];
 
   // System font family with platform optimization
@@ -105,7 +105,7 @@ class FastFonts {
     double? height,
     double? letterSpacing,
   }) => TextStyle(
-    fontFamily: 'Garamond',
+    fontFamily: 'Satoshi',
     fontWeight: weight ?? regular,
     fontSize: size,
     color: color,

@@ -6,6 +6,7 @@ import 'package:faithlock/features/onboarding/controllers/scripture_onboarding_v
 import 'package:faithlock/features/onboarding/utils/animation_utils.dart';
 import 'package:faithlock/shared/widgets/buttons/fast_button.dart';
 import 'package:faithlock/shared/widgets/mascot/judah_mascot.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -103,9 +104,9 @@ class _V2SummaryScreenState extends State<V2SummaryScreen>
   Widget build(BuildContext context) {
     final projection = controller.calculateProjection();
 
-    return Scaffold(
+    return CupertinoPageScaffold(
       backgroundColor: OnboardingTheme.backgroundColor,
-      body: Stack(
+      child: Stack(
         children: [
           // Scrollable content
           Positioned.fill(

@@ -1,6 +1,7 @@
 import 'package:faithlock/features/onboarding/models/interactive_action_model.dart';
 import 'package:faithlock/features/onboarding/widgets/interactive_action_widget.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart' show Colors;
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
@@ -89,23 +90,21 @@ class _CleanActionModalScreenState extends State<CleanActionModalScreen> {
                 SizedBox(
                   width: double.infinity,
                   height: 50,
-                  child: ElevatedButton(
+                  child: CupertinoButton(
                     onPressed: _canComplete ? _handleComplete : null,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                          _canComplete ? Colors.black87 : Colors.grey[300],
-                      foregroundColor: Colors.white,
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
+                    color: _canComplete
+                        ? const Color(0xDD000000)
+                        : CupertinoColors.systemGrey3,
+                    borderRadius: BorderRadius.circular(12),
+                    padding: EdgeInsets.zero,
                     child: Text(
                       'Continue',
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
-                        color: _canComplete ? Colors.white : Colors.grey[600],
+                        color: _canComplete
+                            ? CupertinoColors.white
+                            : CupertinoColors.systemGrey,
                       ),
                     ),
                   ),
@@ -114,15 +113,16 @@ class _CleanActionModalScreenState extends State<CleanActionModalScreen> {
                 // Skip button si permis
                 if (widget.canSkip) ...[
                   const SizedBox(height: 12),
-                  TextButton(
+                  CupertinoButton(
                     onPressed: () {
                       HapticFeedback.lightImpact();
                       widget.onSkip?.call();
                     },
-                    child: Text(
+                    padding: EdgeInsets.zero,
+                    child: const Text(
                       'Skip for now',
                       style: TextStyle(
-                        color: Colors.grey[600],
+                        color: CupertinoColors.systemGrey,
                         fontSize: 14,
                       ),
                     ),

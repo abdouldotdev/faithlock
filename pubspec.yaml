@@ -1,7 +1,7 @@
 name: faithlock
 description: "Created with AppBiz Studio Boilerplate."
 publish_to: "none"
-version: 1.0.5+11
+version: 1.0.7+13
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -39,9 +39,11 @@ dependencies:
   device_info_plus: ^11.3.0
   shared_preferences: ^2.5.3
   purchases_flutter: ^9.1.0
-  image_picker: ^1.1.2
   in_app_review: ^2.0.10
   uni_links: ^0.5.1
+  # image_picker removed: it was only referenced by dead boilerplate
+  # (FastImagePicker) and pulled Camera + Photo Library APIs, forcing
+  # unused-permission purpose strings that risk App Store rejection (5.1.1).
   url_launcher: ^6.3.1
   confetti: ^0.7.0
   http: ^1.1.0

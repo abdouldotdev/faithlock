@@ -1,7 +1,11 @@
 import 'package:faithlock/config/app_config.dart';
 import 'package:faithlock/features/faithlock/controllers/faithlock_settings_controller.dart';
+import 'package:faithlock/features/faithlock/controllers/stats_controller.dart';
 import 'package:faithlock/features/faithlock/models/export.dart';
 import 'package:faithlock/features/faithlock/services/export.dart';
+import 'package:faithlock/features/onboarding/constants/onboarding_theme.dart';
+import 'package:faithlock/features/onboarding/controllers/scripture_onboarding_controller.dart';
+import 'package:faithlock/features/onboarding/screens/scripture_onboarding_v3_screen.dart';
 import 'package:faithlock/features/paywall/screens/paywall_screen_v2.dart';
 import 'package:faithlock/features/profile/controllers/settings_controller.dart';
 import 'package:faithlock/services/notifications/daily_verse_notification_service.dart';
@@ -22,6 +26,11 @@ class ProfileScreen extends StatelessWidget {
   FaithLockSettingsController get faithLockController =>
       Get.put(FaithLockSettingsController());
 
+  // Stats controller — already initialized by the Today tab; find or put lazily
+  StatsController get statsController => Get.isRegistered<StatsController>()
+      ? Get.find<StatsController>()
+      : Get.put(StatsController());
+
   @override
   Widget build(BuildContext context) {
     final bool isIOS = GetPlatform.isIOS;
@@ -35,17 +44,28 @@ class ProfileScreen extends StatelessWidget {
 
   // iOS Native Style
   Widget _buildIOSProfileScreen(BuildContext context) {
-    return CupertinoPageScaffold(
-      backgroundColor:
-          CupertinoColors.systemGroupedBackground.resolveFrom(context),
-      child: SafeArea(
-        child: CustomScrollView(
-          physics: const BouncingScrollPhysics(),
-          slivers: [
-            SliverToBoxAdapter(
-              child: _buildIOSSettingsList(context),
+    // Force dark Cupertino brightness so system colors resolve to Apple's
+    // dark-gray surfaces (#1C1C1E / #2C2C2E) like the rest of the app —
+    // otherwise this screen follows the system theme and renders white.
+    return CupertinoTheme(
+      data: const CupertinoThemeData(
+        brightness: Brightness.dark,
+        primaryColor: OnboardingTheme.goldColor,
+      ),
+      child: Builder(
+        builder: (context) => CupertinoPageScaffold(
+          backgroundColor: CupertinoColors.secondarySystemGroupedBackground
+              .resolveFrom(context),
+          child: SafeArea(
+            child: CustomScrollView(
+              physics: const BouncingScrollPhysics(),
+              slivers: [
+                SliverToBoxAdapter(
+                  child: _buildIOSSettingsList(context),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
@@ -226,13 +246,398 @@ class ProfileScreen extends StatelessWidget {
           ], title: 'subscription'.tr);
         }),
 
+        // ── Your Journey — detailed stats ──────────────────────────────────
+        _buildJourneySection(context),
+
         // Debug Panel (only in debug mode)
         if (kDebugMode) _buildDebugPanel(context),
       ],
     );
   }
 
+  // ─── YOUR JOURNEY — moved from Home ──────────────────────────────────────
+
+  Widget _buildJourneySection(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.fromLTRB(16, 0, 16, 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(4, 0, 16, 12),
+            child: Text(
+              'YOUR JOURNEY',
+              style: TextStyle(
+                fontFamily: OnboardingTheme.fontFamily,
+                fontSize: 13,
+                fontWeight: FontWeight.w700,
+                color: OnboardingTheme.goldColor,
+                letterSpacing: 0.8,
+              ),
+            ),
+          ),
+          Obx(() {
+            final ctrl = statsController;
+            final stats = ctrl.userStats.value;
+            final streak = stats?.currentStreak ?? 0;
+            final longestStreak = stats?.longestStreak ?? 0;
+            final versesRead = stats?.totalVersesRead ?? 0;
+            final timeSaved = stats?.screenTimeReducedFormatted ?? '0 min';
+            final successRate = stats?.successRateFormatted ?? '0%';
+            final progress = ctrl.getProgressToNextMilestone();
+
+            return Column(
+              children: [
+                // ── Streak card ─────────────────────────────────────────
+                _buildJourneyCard(context, [
+                  _buildJourneyRow(
+                    context,
+                    icon: CupertinoIcons.flame_fill,
+                    iconColor: const Color(0xFFFF9500),
+                    title: 'Current Streak',
+                    value: '$streak day${streak == 1 ? '' : 's'}',
+                  ),
+                  _divider(context),
+                  _buildJourneyRow(
+                    context,
+                    icon: CupertinoIcons.rosette,
+                    iconColor: OnboardingTheme.goldColor,
+                    title: 'Longest Streak',
+                    value: '$longestStreak day${longestStreak == 1 ? '' : 's'}',
+                  ),
+                  _divider(context),
+                  // Progress to next milestone
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 14),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Next Milestone',
+                              style: TextStyle(
+                                fontFamily: OnboardingTheme.fontFamily,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                                color: CupertinoColors.label.resolveFrom(context),
+                              ),
+                            ),
+                            Text(
+                              ctrl.getNextMilestoneText(),
+                              style: TextStyle(
+                                fontFamily: OnboardingTheme.fontFamily,
+                                fontSize: 14,
+                                color:
+                                    CupertinoColors.secondaryLabel.resolveFrom(context),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 10),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(4),
+                          child: LinearProgressIndicator(
+                            value: progress,
+                            minHeight: 6,
+                            backgroundColor: CupertinoColors.systemGrey5
+                                .resolveFrom(context),
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                                OnboardingTheme.goldColor),
+                          ),
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          '${(progress * 100).toInt()}% complete',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: CupertinoColors.secondaryLabel
+                                .resolveFrom(context),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ]),
+
+                const SizedBox(height: 12),
+
+                // ── Verse & time stats ──────────────────────────────────
+                _buildJourneyCard(context, [
+                  _buildJourneyRow(
+                    context,
+                    icon: CupertinoIcons.book_fill,
+                    iconColor: const Color(0xFF5AC8FA),
+                    title: 'Verses Read',
+                    value: '$versesRead',
+                  ),
+                  _divider(context),
+                  _buildJourneyRow(
+                    context,
+                    icon: CupertinoIcons.timer,
+                    iconColor: const Color(0xFF34C759),
+                    title: 'Time Saved',
+                    value: timeSaved,
+                  ),
+                  _divider(context),
+                  _buildJourneyRow(
+                    context,
+                    icon: CupertinoIcons.checkmark_seal_fill,
+                    iconColor: const Color(0xFF5856D6),
+                    title: 'Success Rate',
+                    value: successRate,
+                  ),
+                ]),
+
+                const SizedBox(height: 12),
+
+                // ── Badges ──────────────────────────────────────────────
+                _buildBadgesCard(context, ctrl),
+              ],
+            );
+          }),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildJourneyCard(BuildContext context, List<Widget> children) {
+    return Container(
+      decoration: BoxDecoration(
+        // Apple's elevated grouped surface (#1C1C1E in dark) for real layering.
+        color: CupertinoColors.tertiarySystemGroupedBackground
+            .resolveFrom(Get.context!),
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: CupertinoColors.systemGrey
+                .resolveFrom(Get.context!)
+                .withValues(alpha: 0.08),
+            blurRadius: 8,
+            offset: const Offset(0, 1),
+          ),
+        ],
+      ),
+      child: Column(children: children),
+    );
+  }
+
+  Widget _buildJourneyRow(
+    BuildContext context, {
+    required IconData icon,
+    required Color iconColor,
+    required String title,
+    required String value,
+  }) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+      child: Row(
+        children: [
+          Container(
+            width: 32,
+            height: 32,
+            decoration: BoxDecoration(
+              color: iconColor.withValues(alpha: 0.12),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Icon(icon, color: iconColor, size: 18),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Text(
+              title,
+              style: TextStyle(
+                fontFamily: OnboardingTheme.fontFamily,
+                fontSize: 17,
+                fontWeight: FontWeight.w400,
+                color: CupertinoColors.label.resolveFrom(context),
+              ),
+            ),
+          ),
+          Text(
+            value,
+            style: TextStyle(
+              fontFamily: OnboardingTheme.fontFamily,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: CupertinoColors.secondaryLabel.resolveFrom(context),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _divider(BuildContext context) {
+    return Divider(
+      height: 1,
+      thickness: 0.5,
+      indent: 56,
+      color: CupertinoColors.separator.resolveFrom(Get.context!),
+    );
+  }
+
+  Widget _buildBadgesCard(BuildContext context, StatsController ctrl) {
+    final allBadges = BadgeDefinitions.allBadges;
+    final earnedIds = ctrl.earnedBadges.map((e) => e.badgeId).toSet();
+
+    return Container(
+      decoration: BoxDecoration(
+        // Apple's elevated grouped surface (#1C1C1E in dark) for real layering.
+        color: CupertinoColors.tertiarySystemGroupedBackground
+            .resolveFrom(Get.context!),
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: CupertinoColors.systemGrey
+                .resolveFrom(Get.context!)
+                .withValues(alpha: 0.08),
+            blurRadius: 8,
+            offset: const Offset(0, 1),
+          ),
+        ],
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'ACHIEVEMENTS',
+                  style: TextStyle(
+                    fontFamily: OnboardingTheme.fontFamily,
+                    fontSize: 11,
+                    fontWeight: FontWeight.w700,
+                    color: CupertinoColors.secondaryLabel.resolveFrom(context),
+                    letterSpacing: 0.8,
+                  ),
+                ),
+                Text(
+                  '${earnedIds.length}/${allBadges.length}',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: OnboardingTheme.goldColor,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 12),
+            SizedBox(
+              height: 72,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemCount: allBadges.length,
+                separatorBuilder: (_, __) => const SizedBox(width: 10),
+                itemBuilder: (context, index) {
+                  final badge = allBadges[index];
+                  final isEarned = earnedIds.contains(badge.id.name);
+                  return GestureDetector(
+                    onTap: () => _showBadgeInfoInProfile(context, badge, isEarned),
+                    child: Column(
+                      children: [
+                        Container(
+                          width: 48,
+                          height: 48,
+                          decoration: BoxDecoration(
+                            color: isEarned
+                                ? OnboardingTheme.goldColor.withValues(alpha: 0.12)
+                                : CupertinoColors.systemGrey6.resolveFrom(context),
+                            borderRadius: BorderRadius.circular(12),
+                            border: isEarned
+                                ? Border.all(
+                                    color: OnboardingTheme.goldColor
+                                        .withValues(alpha: 0.4),
+                                    width: 1.5,
+                                  )
+                                : null,
+                          ),
+                          child: Center(
+                            child: Text(
+                              badge.emoji,
+                              style: TextStyle(
+                                fontSize: 24,
+                                color: isEarned
+                                    ? null
+                                    : CupertinoColors.systemGrey3
+                                        .resolveFrom(context),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        SizedBox(
+                          width: 48,
+                          child: Text(
+                            isEarned ? badge.name.split(' ').first : '???',
+                            style: TextStyle(
+                              fontSize: 8,
+                              fontWeight: FontWeight.w600,
+                              color: isEarned
+                                  ? CupertinoColors.label.resolveFrom(context)
+                                  : CupertinoColors.tertiaryLabel
+                                      .resolveFrom(context),
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _showBadgeInfoInProfile(
+      BuildContext context, Badge badge, bool isEarned) {
+    showCupertinoDialog<void>(
+      context: context,
+      builder: (ctx) => CupertinoAlertDialog(
+        title: Text('${badge.emoji} ${badge.name}'),
+        content: Padding(
+          padding: const EdgeInsets.only(top: 8),
+          child: Text(
+            isEarned
+                ? badge.description
+                : '${badge.description}\n\nNot yet earned.',
+            style: TextStyle(
+              color: isEarned ? null : CupertinoColors.secondaryLabel.resolveFrom(context),
+            ),
+          ),
+        ),
+        actions: [
+          CupertinoDialogAction(
+            isDefaultAction: true,
+            onPressed: () => Navigator.of(ctx).pop(),
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
+  }
+
   // ─── DEBUG PANEL ─────────────────────────────────────────
+
+  Future<void> _debugResetOnboarding(BuildContext context) async {
+    final controller = Get.isRegistered<ScriptureOnboardingController>()
+        ? Get.find<ScriptureOnboardingController>()
+        : Get.put(ScriptureOnboardingController());
+    await controller.resetOnboarding();
+    // Relaunch V3 onboarding — it registers its own controller in initState.
+    Get.offAll(() => const ScriptureOnboardingV3Screen());
+  }
 
   Widget _buildDebugPanel(BuildContext context) {
     return Column(
@@ -296,6 +701,18 @@ class ProfileScreen extends StatelessWidget {
             onTap: () => _debugResetWinBack(context),
           ),
         ], title: '🛠 DEBUG PANEL'),
+
+        _buildIOSSection([
+          _buildIOSSectionHeader(context, 'Onboarding'),
+          _buildIOSListTile(
+            context,
+            leading: CupertinoIcons.arrow_2_circlepath,
+            title: 'Reset & Replay Onboarding',
+            subtitle: 'Clear flags → relaunch V3 from step 1',
+            iconColor: CupertinoColors.systemPurple,
+            onTap: () => _debugResetOnboarding(context),
+          ),
+        ]),
 
         _buildIOSSection([
           _buildIOSSectionHeader(context, 'Streak & Freeze'),
@@ -613,15 +1030,17 @@ class ProfileScreen extends StatelessWidget {
           ],
           Container(
             decoration: BoxDecoration(
-              color: CupertinoColors.systemBackground.resolveFrom(Get.context!),
+              // Use tertiarySystemGroupedBackground (#2C2C2E in dark) so tiles
+              // are visibly elevated above the #1C1C1E base — systemBackground
+              // resolves to pure black in dark mode, producing no contrast.
+              color: CupertinoColors.tertiarySystemGroupedBackground
+                  .resolveFrom(Get.context!),
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
-                  color: CupertinoColors.systemGrey
-                      .resolveFrom(Get.context!)
-                      .withValues(alpha: 0.08),
+                  color: Colors.black.withValues(alpha: 0.18),
                   blurRadius: 8,
-                  offset: const Offset(0, 1),
+                  offset: const Offset(0, 2),
                 ),
               ],
             ),

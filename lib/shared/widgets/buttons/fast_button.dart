@@ -43,6 +43,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_corner/smooth_corner.dart';
 import '../../../core/constants/export.dart';
 import 'package:flutter/services.dart';
 
@@ -98,6 +99,19 @@ class FastButton extends StatelessWidget {
     this.hapticFeedback = true,
   });
 
+  /// Default corner radius for the squircle curve.
+  static const double _smoothRadius = 20.0;
+
+  /// True iOS-style squircle (smooth continuous corners) used across all
+  /// platforms/styles. Honors a caller-supplied [borderRadius] when provided.
+  OutlinedBorder _smoothBorder({BorderSide side = BorderSide.none}) {
+    return SmoothRectangleBorder(
+      smoothness: 0.6,
+      side: side,
+      borderRadius: borderRadius ?? BorderRadius.circular(_smoothRadius),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final bool isIOS = Theme.of(context).platform == TargetPlatform.iOS;
@@ -116,14 +130,15 @@ class FastButton extends StatelessWidget {
       return Container(
         width: width,
         height: height ?? 42,
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: isEnabled
-                ? colors.backgroundColor
-                : CupertinoColors.inactiveGray.resolveFrom(context),
-            width: 1,
+        decoration: ShapeDecoration(
+          shape: _smoothBorder(
+            side: BorderSide(
+              color: isEnabled
+                  ? colors.backgroundColor
+                  : CupertinoColors.inactiveGray.resolveFrom(context),
+              width: 1,
+            ),
           ),
-          borderRadius: borderRadius ?? BorderRadius.circular(12),
         ),
         child: CupertinoButton(
           onPressed: isEnabled ? _handleTap : null,
@@ -140,20 +155,34 @@ class FastButton extends StatelessWidget {
         child: buttonContent,
       );
     } else {
-      // Filled and destructive styles
-      return CupertinoButton.filled(
-        onPressed: isEnabled ? _handleTap : null,
-        color: colors.backgroundColor,
-        disabledColor: disabledColor ?? CupertinoColors.inactiveGray,
-        padding:
-            padding ?? const EdgeInsets.symmetric(horizontal: 16, vertical: 7),
-        borderRadius: borderRadius ?? BorderRadius.circular(12),
-        child: Container(
-          width: width,
-          height: height,
-          constraints: const BoxConstraints(minHeight: 40),
-          alignment: Alignment.center,
-          child: buttonContent,
+      // Filled and destructive styles — true squircle corners.
+      // CupertinoButton only accepts a BorderRadius, so the shape is painted
+      // by a ShapeDecoration and the button just handles tap + press fade.
+      // Full-width + comfortable height by default (primary CTA look).
+      return SizedBox(
+        width: width ?? double.infinity,
+        height: height ?? 56,
+        child: CupertinoButton(
+          onPressed: isEnabled ? _handleTap : null,
+          padding: EdgeInsets.zero,
+          minimumSize: Size.zero,
+          borderRadius: BorderRadius.zero,
+          child: DecoratedBox(
+            decoration: ShapeDecoration(
+              color: isEnabled
+                  ? colors.backgroundColor
+                  : (disabledColor ??
+                      CupertinoColors.inactiveGray.resolveFrom(context)),
+              shape: _smoothBorder(),
+            ),
+            child: Container(
+              constraints: const BoxConstraints(minHeight: 40),
+              padding: padding ??
+                  const EdgeInsets.symmetric(horizontal: 16, vertical: 7),
+              alignment: Alignment.center,
+              child: buttonContent,
+            ),
+          ),
         ),
       );
     }
@@ -171,9 +200,7 @@ class FastButton extends StatelessWidget {
           side: BorderSide(color: colors.backgroundColor),
           padding: padding ??
               const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          shape: RoundedRectangleBorder(
-            borderRadius: borderRadius ?? BorderRadius.circular(12),
-          ),
+          shape: _smoothBorder(),
           minimumSize: Size(width ?? 48, height ?? 48),
         ),
         child: buttonContent,
@@ -185,9 +212,7 @@ class FastButton extends StatelessWidget {
           foregroundColor: colors.textColor,
           padding: padding ??
               const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          shape: RoundedRectangleBorder(
-            borderRadius: borderRadius ?? BorderRadius.circular(12),
-          ),
+          shape: _smoothBorder(),
           minimumSize: Size(width ?? 48, height ?? 48),
         ),
         child: buttonContent,
@@ -202,10 +227,8 @@ class FastButton extends StatelessWidget {
           elevation: elevation ?? 1,
           padding: padding ??
               const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          shape: RoundedRectangleBorder(
-            borderRadius: borderRadius ?? BorderRadius.circular(12),
-          ),
-          minimumSize: Size(width ?? 48, height ?? 48),
+          shape: _smoothBorder(),
+          minimumSize: Size(width ?? double.infinity, height ?? 56),
         ),
         child: buttonContent,
       );
@@ -250,6 +273,8 @@ class FastButton extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                 color: colors.textColor,
+                fontWeight: FontWeight.w700,
+                fontSize: 17,
               ),
             ),
           ),

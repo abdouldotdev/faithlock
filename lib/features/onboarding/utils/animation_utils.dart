@@ -7,7 +7,7 @@ class AnimationUtils {
   // iOS-optimized durations
 
   /// Fast typing for better engagement
-  static const int typingSpeedMs = 25;
+  static const int typingSpeedMs = 12;
 
   /// Short pause between elements
   static const int pauseShort = 500;

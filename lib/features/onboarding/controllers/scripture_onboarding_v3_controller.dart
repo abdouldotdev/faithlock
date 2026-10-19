@@ -39,7 +39,7 @@ class ScriptureOnboardingV3Controller extends ScriptureOnboardingV2Controller {
   ///   19. Social proof
   ///   20. Attribution → Building plan loader → paywall
   @override
-  int get totalSteps => 20;
+  int get totalSteps => 22;
 
   // V3 state
   final RxList<String> diagnosticAnswers = <String>[].obs;
@@ -85,20 +85,24 @@ class ScriptureOnboardingV3Controller extends ScriptureOnboardingV2Controller {
       case 12:
         return 'V3 Reveal';
       case 13:
-        return 'V3 Personalization';
-      case 14:
-        return 'V3 Prayer Intent';
-      case 15:
-        return 'V3 Apps & Rules';
-      case 16:
-        return 'V3 Dual Name Capture';
-      case 17:
-        return 'V3 Commitment Seal';
-      case 18:
-        return 'V3 Screen Time Permission';
-      case 19:
         return 'V3 Social Proof';
+      case 14:
+        return 'V3 Personalization';
+      case 15:
+        return 'V3 Prayer Times';
+      case 16:
+        return 'V3 Prayer Frequency';
+      case 17:
+        return 'V3 Apps & Rules';
+      case 18:
+        return 'V3 Dual Name Capture';
+      case 19:
+        return 'V3 Commitment Seal';
       case 20:
+        return 'V3 Screen Time Permission';
+      case 21:
+        return 'V3 Notifications Permission';
+      case 22:
         return 'V3 Attribution';
       default:
         return 'V3 Unknown Step';
@@ -202,6 +206,9 @@ class ScriptureOnboardingV3Controller extends ScriptureOnboardingV2Controller {
     final lifetimeDays = (daysPerYear * yearsRemaining).floor();
     final lifetimeYears = (lifetimeDays / 365).toStringAsFixed(1);
 
+    // Total hours spent on the phone over the remaining lifetime.
+    final lifetimeHours = (hours * 365 * yearsRemaining).floor();
+
     // Time reclaimed if user reduces 80%
     final reclaimedDaysPerYear = (daysPerYear * 0.8).floor();
 
@@ -209,6 +216,7 @@ class ScriptureOnboardingV3Controller extends ScriptureOnboardingV2Controller {
       'daysPerYear': daysPerYear.floor(),
       'hoursPerYear': (hours * 365).floor(),
       'lifetimeDays': lifetimeDays,
+      'lifetimeHours': lifetimeHours,
       'lifetimeYears': lifetimeYears,
       'reclaimedDaysPerYear': reclaimedDaysPerYear,
     };

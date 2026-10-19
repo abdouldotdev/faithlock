@@ -66,8 +66,8 @@ class EventTrackingModule {
 
     try {
       // Property validation and sanitization
-      final sanitizedProperties = PostHogPrivacyManager.instance
-          .sanitizeProperties(properties);
+      final sanitizedProperties =
+          PostHogPrivacyManager.instance.sanitizeProperties(properties);
 
       // Add context properties
       final enrichedProperties = _enrichProperties(sanitizedProperties);
@@ -84,6 +84,19 @@ class EventTrackingModule {
       // Add to queue and send
       _eventQueue.add(event);
       await _sendEvent(event);
+
+      // Met a jour les person properties derivees de cet event (compteurs,
+      // dates de derniere activite). Un seul point d'appel ici couvre tout le
+      // catalogue : voir PersonPropertiesModule pour la table event -> props.
+      // Isole dans son propre try : l'event est deja parti, un echec ici ne
+      // doit ni le faire passer pour rate, ni remonter a l'appelant.
+      try {
+        await _postHogService.personProperties.onEvent(eventName, properties);
+      } catch (e) {
+        if (kDebugMode) {
+          debugPrint('Failed to update person properties for $eventName: $e');
+        }
+      }
 
       if (kDebugMode) {
         debugPrint('Event tracked: $eventName');
@@ -250,10 +263,17 @@ class EventTrackingModule {
 
   Future<void> _sendEvent(PostHogEvent event) async {
     try {
+      // PostHog properties must be non-null Objects. Drop null-valued props
+      // instead of casting them (`null as Object` throws, which silently
+      // dropped any event carrying an optional property — and our spec uses
+      // many nullable props: prayer_id?, mode:null, mood?, step_id on skip…).
+      final safeProps = <String, Object>{};
+      event.properties.forEach((key, value) {
+        if (value != null) safeProps[key] = value as Object;
+      });
       await Posthog().capture(
         eventName: event.name,
-        properties: event.properties.map((key, value) =>
-          MapEntry(key, value as Object)).cast<String, Object>(),
+        properties: safeProps,
       );
     } catch (e) {
       if (kDebugMode) {

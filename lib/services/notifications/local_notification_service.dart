@@ -87,7 +87,7 @@ class LocalNotificationService {
 
       // Navigate to prayer learning screen
       // Use Get.offAllNamed to clear navigation stack and start fresh
-      Get.offAllNamed(AppRoutes.prayerLearning);
+      Get.offAllNamed(AppRoutes.unlockChooser);
 
       debugPrint('🙏 Navigated to prayer learning screen');
     } else {

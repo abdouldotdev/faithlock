@@ -421,23 +421,10 @@ class _InteractiveActionWidgetState extends State<InteractiveActionWidget>
           const SizedBox(height: 16),
           SizedBox(
             width: double.infinity,
-            child: widget.isIOS
-                ? CupertinoButton.filled(
-                    onPressed: () => _completeAction(true),
-                    child: Text('tryItNow'.tr),
-                  )
-                : ElevatedButton(
-                    onPressed: () => _completeAction(true),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: widget.action.color ?? Colors.blue,
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.all(16),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                    child: Text('tryItNow'.tr),
-                  ),
+            child: CupertinoButton.filled(
+              onPressed: () => _completeAction(true),
+              child: Text('tryItNow'.tr),
+            ),
           ),
         ],
       ),
@@ -472,23 +459,10 @@ class _InteractiveActionWidgetState extends State<InteractiveActionWidget>
           ],
           SizedBox(
             width: double.infinity,
-            child: widget.isIOS
-                ? CupertinoButton.filled(
-                    onPressed: () => _requestPermissions(),
-                    child: Text('authorize'.tr),
-                  )
-                : ElevatedButton(
-                    onPressed: () => _requestPermissions(),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.orange,
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.all(16),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                    child: Text('authorize'.tr),
-                  ),
+            child: CupertinoButton.filled(
+              onPressed: () => _requestPermissions(),
+              child: Text('authorize'.tr),
+            ),
           ),
         ],
       ),
@@ -512,23 +486,10 @@ class _InteractiveActionWidgetState extends State<InteractiveActionWidget>
           const SizedBox(height: 12),
           SizedBox(
             width: double.infinity,
-            child: widget.isIOS
-                ? CupertinoButton.filled(
-                    onPressed: () => _completeAction(true),
-                    child: Text('configure'.tr),
-                  )
-                : ElevatedButton(
-                    onPressed: () => _completeAction(true),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: widget.action.color ?? Colors.blue,
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.all(16),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                    child: Text('configure'.tr),
-                  ),
+            child: CupertinoButton.filled(
+              onPressed: () => _completeAction(true),
+              child: Text('configure'.tr),
+            ),
           ),
         ],
       ),

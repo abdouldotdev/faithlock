@@ -11,7 +11,7 @@ import 'package:faithlock/features/onboarding/screens/v2_daily_verses_setup.dart
 import 'package:faithlock/features/onboarding/screens/v2_summary_screen.dart';
 import 'package:faithlock/features/onboarding/screens/v2_commitment_level.dart';
 import 'package:faithlock/features/onboarding/screens/v2_free_for_you.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 /// V2 Onboarding Screen - Optimized 11-step flow
@@ -52,8 +52,8 @@ class _ScriptureOnboardingV2ScreenState
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
+    return CupertinoPageScaffold(
+      child: Stack(
         children: [
           Obx(() {
             switch (v2Controller.currentStep.value) {
@@ -112,14 +112,14 @@ class _ScriptureOnboardingV2ScreenState
                 return const V2FreeForYou();
 
               default:
-                return Scaffold(
-                  body: Center(
+                return CupertinoPageScaffold(
+                  backgroundColor: const Color(0xFF1C1C1E),
+                  child: Center(
                     child: Text(
                       'Step ${v2Controller.currentStep.value} - Error',
-                      style: const TextStyle(color: Colors.white),
+                      style: const TextStyle(color: CupertinoColors.white),
                     ),
                   ),
-                  backgroundColor: Colors.black,
                 );
             }
           }),

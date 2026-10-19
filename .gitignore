@@ -90,3 +90,24 @@ tooling/bible-prompt-eval/results.json
 # logs et lots générés par la tâche d indexation quotidienne
 apps/faithlock-seo/seo-content/index-logs/
 apps/faithlock-seo/seo-content/index-tracker-batch-*.txt
+
+# Native build artifacts — any depth (root-only /build/ above missed ios/build/)
+build/
+ios/Pods/
+ios/.symlinks/
+DerivedData/
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+
+# Node — web apps under apps/
+node_modules/
+**/dist/
+*.tsbuildinfo
+.next/
+
+# Prayer pipeline — generated audio/text, regenerable, uploaded to storage
+scripts/prayer_pipeline/output/
+
+# Editor/session local scratch
+.zcode/
+failed_users.txt

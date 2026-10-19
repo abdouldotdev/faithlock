@@ -1,13 +1,13 @@
-import 'package:faithlock/features/onboarding/constants/onboarding_theme.dart';
 import 'package:faithlock/features/onboarding/controllers/scripture_onboarding_v3_controller.dart';
 import 'package:faithlock/features/onboarding/utils/animation_utils.dart';
 import 'package:faithlock/features/onboarding/widgets/onboarding_wrapper.dart';
-import 'package:faithlock/shared/widgets/mascot/judah_mascot.dart';
+import 'package:faithlock/shared/widgets/cozy/cozy.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-/// V3 Building Plan Loader - Pre-paywall theatrical loader.
-/// Communicates value before the paywall: "we crafted this for you".
+/// V3 Building Plan Loader — cozy rebuild. Pre-paywall theatrical loader
+/// ("we crafted this for you") with a chunky lion hero, a thick terracotta
+/// progress pill, and rotating status lines.
 class V3BuildingPlanLoader extends StatefulWidget {
   final VoidCallback onComplete;
   const V3BuildingPlanLoader({super.key, required this.onComplete});
@@ -22,11 +22,11 @@ class _V3BuildingPlanLoaderState extends State<V3BuildingPlanLoader>
   late AnimationController _progressController;
   int _stepIndex = 0;
 
-  static const _steps = [
-    'Building your personalized plan…',
-    'Configuring your prayer rhythm…',
-    'Selecting verses for your tradition…',
-    'Sealing your covenant…',
+  List<String> get _steps => [
+    'onbV3BuildingPlanLoader_stepBuilding'.tr,
+    'onbV3BuildingPlanLoader_stepConfiguring'.tr,
+    'onbV3BuildingPlanLoader_stepSelecting'.tr,
+    'onbV3BuildingPlanLoader_stepSealing'.tr,
   ];
 
   @override
@@ -62,66 +62,70 @@ class _V3BuildingPlanLoaderState extends State<V3BuildingPlanLoader>
   Widget build(BuildContext context) {
     final name = controller.userName.value;
     final greeting = name.isNotEmpty && name != 'User'
-        ? 'Almost there, $name.'
-        : 'Almost there.';
+        ? 'onbV3BuildingPlanLoader_greetingWithName'.trParams({'name': name})
+        : 'onbV3BuildingPlanLoader_greetingDefault'.tr;
 
     return OnboardingWrapper(
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: OnboardingTheme.horizontalPadding,
-          vertical: OnboardingTheme.verticalPadding,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Spacer(),
-            const JudahMascot(
-              state: JudahState.proud,
-              size: JudahSize.l,
-              showMessage: false,
-            ),
-            const SizedBox(height: OnboardingTheme.space24),
-            Text(
-              greeting,
-              style: OnboardingTheme.title3.copyWith(
-                color: OnboardingTheme.goldColor,
-              ),
-            ),
-            const SizedBox(height: OnboardingTheme.space24),
-            AnimatedBuilder(
-              animation: _progressController,
-              builder: (context, _) {
-                return SizedBox(
-                  width: 220,
-                  child: LinearProgressIndicator(
-                    value: _progressController.value,
-                    minHeight: 6,
-                    borderRadius: BorderRadius.circular(8),
-                    backgroundColor:
-                        OnboardingTheme.labelTertiary.withValues(alpha: 0.2),
-                    valueColor: const AlwaysStoppedAnimation<Color>(
-                      OnboardingTheme.goldColor,
-                    ),
-                  ),
-                );
-              },
-            ),
-            const SizedBox(height: OnboardingTheme.space20),
-            AnimatedSwitcher(
-              duration: const Duration(milliseconds: 400),
-              child: Text(
-                _steps[_stepIndex],
-                key: ValueKey(_stepIndex),
-                style: OnboardingTheme.callout.copyWith(
-                  color: OnboardingTheme.labelSecondary,
-                ),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                greeting,
+                style: CozyText.title.copyWith(color: CozyColors.primary),
                 textAlign: TextAlign.center,
               ),
-            ),
-            const Spacer(flex: 2),
-          ],
+              const SizedBox(height: CozyTokens.space24),
+              AnimatedBuilder(
+                animation: _progressController,
+                builder: (context, _) {
+                  return SizedBox(
+                    width: 240,
+                    child: Container(
+                      height: 12,
+                      decoration: ShapeDecoration(
+                        color: CozyColors.surfaceMuted,
+                        shape: CozyTokens.smooth(
+                          CozyTokens.radiusPill,
+                          side: const BorderSide(
+                            color: CozyColors.outline,
+                            width: CozyTokens.borderWidthThin,
+                          ),
+                        ),
+                      ),
+                      child: ClipRRect(
+                        borderRadius:
+                            BorderRadius.circular(CozyTokens.radiusPill),
+                        child: LinearProgressIndicator(
+                          value: _progressController.value,
+                          minHeight: 12,
+                          backgroundColor: Colors.transparent,
+                          valueColor: const AlwaysStoppedAnimation<Color>(
+                            CozyColors.primary,
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: CozyTokens.space20),
+              AnimatedSwitcher(
+                duration: const Duration(milliseconds: 400),
+                child: Text(
+                  _steps[_stepIndex],
+                  key: ValueKey(_stepIndex),
+                  style: CozyText.body.copyWith(color: CozyColors.inkMuted),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
+

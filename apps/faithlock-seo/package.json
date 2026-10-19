@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test:tracking": "node --experimental-strip-types --test tests/store-click.test.mjs tests/competitors.test.mjs",
     "test:contentful": "node scripts/test-contentful.js"
   },
   "dependencies": {

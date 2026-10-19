@@ -62,9 +62,13 @@ class FastBottomBar extends StatelessWidget {
           onTap(index);
         },
         items: items,
-        backgroundColor: CupertinoColors.systemBackground,
+        // null → system supplies the translucent/liquid-glass material.
+        // On iOS 26+ (Xcode 26 SDK) this renders the new Liquid Glass blur;
+        // on older SDKs it renders the standard frosted-glass translucency.
+        // Do NOT set an opaque color here — that would defeat the effect.
+        backgroundColor: null,
         activeColor: OnboardingTheme.goldColor,
-        inactiveColor: CupertinoColors.systemGrey,
+        inactiveColor: CupertinoColors.inactiveGray,
         iconSize: 24,
         border: null,
       );

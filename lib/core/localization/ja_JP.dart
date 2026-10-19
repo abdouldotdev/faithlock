@@ -377,9 +377,16 @@ const Map<String, String> ja_JP = {
   'summaryScreen_promise4': '本当のデジタルフリーダムと平安を体験する',
   'summaryScreen_graph_title': '取り戻せる時間',
   'summaryScreen_graph_subtitle': '祈りと家族のための時間がすべて戻ります',
-  'summaryScreen_graph_note': '500人以上のユーザーの平均に基づく',
-  'summaryScreen_testimonial': '「何年もスマートフォンに支配されていました。FaithLockのおかげで毎日3時間以上を取り戻せました。今はその時間を祈り、子どもたち、そして神様のみことばに使っています。人生が完全に変わりました。」',
-  'summaryScreen_testimonial_author': '— サラ M.、FaithLockユーザー',
+  'summaryScreen_graph_note': '1000人以上のユーザーの平均に基づく',
+  'summaryScreen_testimonial':
+      '「FaithLockのおかげで毎日3時間取り戻せました。今はその時間が祈り、子ども、み言葉に注がれています。」',
+  'summaryScreen_testimonial_author': '— サラ M.、東京',
+  'summaryScreen_testimonial2':
+      '「スマホ時間が5時間から2時間以下に。やっと祈りの時間が戻ってきました。」',
+  'summaryScreen_testimonial2_author': '— デイビッド K.、大阪',
+  'summaryScreen_testimonial3':
+      '「起きてInstagramではなく聖書を読むようになりました。本当に変わりました。」',
+  'summaryScreen_testimonial3_author': '— グレース L.、京都',
   'summaryScreen_stats_title': 'FaithLockを使っている信者の報告:',
   'summaryScreen_stat1_value': '70%',
   'summaryScreen_stat1_label': 'スクリーンタイム\n削減',
@@ -406,6 +413,9 @@ const Map<String, String> ja_JP = {
   'paywall_headline3': 'を奪っています。',
   'paywall_subheadline': 'その時間を神様のために取り戻しましょう。',
   'paywall_socialProof': '@count人の信者が時間を取り戻しています',
+  'paywall_headlineMain': '霊的な可能性を最大限に引き出そう',
+  'paywall_trialReminderDay2': '2日目にトライアルのリマインダー',
+  'paywall_cancelAnytimeShort': '契約なし — いつでもキャンセル可能',
   'paywall_benefit1': '祈りの時間に気を散らすアプリをブロック',
   'paywall_benefit2': '本当に続く毎日の聖書の習慣を築く',
   'paywall_benefit3': 'スクロールを減らし、みことばとの時間を増やす',
@@ -794,11 +804,13 @@ const Map<String, String> ja_JP = {
       'もうひとつだけ、@nameさん...集中力を保つために...',
   'notifPerm_explanation':
       'アプリを再ロックして祈る時間になったら、リマインダーを送る必要があります。\n\nやさしい通知で軌道を保ちます。',
-  'notifPerm_enableTitle': '祈りのリマインダーを有効にする',
-  'notifPerm_benefit1': 'アプリ再ロックのタイムリーなリマインダー',
-  'notifPerm_benefit2': '祈りの時間の通知',
-  'notifPerm_benefit3': '霊的な目標への責任感を保つ',
-  'notifPerm_noSpam': 'スパムではなく、役立つリマインダーのみお送りします',
+  'notifPerm_enableTitle': 'ロック解除のために通知をオンにする',
+  'notifPerm_subtitle':
+      'ロック解除の時間になると、FaithLockが通知を送ります。タップしてクイズを始めましょう。',
+  'notifPerm_benefit1': '時間になると、FaithLockが通知を送ります',
+  'notifPerm_benefit2': 'タップしてクイズを始め、アプリのロックを解除',
+  'notifPerm_benefit3': '休憩の終わりに再ロックを促すやさしいリマインダー',
+  'notifPerm_noSpam': '必須 — FaithLockはこの通知であなたに届きます',
   'notifPerm_requesting': 'リクエスト中...',
   'notifPerm_enableBtn': '通知を有効にする',
   'notifPerm_skipTitle': 'リマインダーをスキップしますか？',
@@ -843,7 +855,10 @@ const Map<String, String> ja_JP = {
   // Navigation Labels
   'nav_stats': '統計',
   'nav_library': 'ライブラリ',
+  'nav_pray': '祈り',
   'nav_profile': 'プロフィール',
+  'share_app_message':
+      "🙏 スクロールをやめて、み言葉から始めよう。FaithLockは気を散らすアプリを聖書の御言葉の先にロックし、スクリーンタイムを神様との時間に変えます。試してみて:",
 
   // Progress Screen
   'progress_title': '進捗',
@@ -973,4 +988,29 @@ const Map<String, String> ja_JP = {
   'meditation_thankYouReflection': '振り返りをありがとうございます！',
   'meditation_shareBriefThought':
       'この聖句について簡単な感想を共有してください。',
+
+  // Bible UI (cozy)
+  'bible_holyBible': '聖書',
+  'bible_searchBooks': '書を検索',
+  'bible_noVersesAvailable': '節がありません。',
+  'bible_readingMode': '読書モード',
+  'bible_availableVersions': '利用可能な訳',
+  'bible_bibleVersion': '聖書の訳',
+  'bible_thoughtTitle': '思いのタイトル',
+  'bible_heartsNote': '心のノート',
+  'bible_reflectionTitleHint': 'この振り返りの名前…',
+  'bible_reflectionNoteHint': '心に響いたことを書きとめる…',
+  'bible_saveReflection': '振り返りを保存',
+  'bible_reflection': '振り返り',
+  'bible_verseHighlighted': '節をハイライトしました',
+  'bible_highlightRemoved': 'ハイライトを解除しました',
+  'bible_verseBookmarked': '節をブックマークしました',
+  'bible_bookmarkRemoved': 'ブックマークを解除しました',
+  'bible_chapterBookmarked': '@referenceをブックマークしました',
+  'bible_toolbarCopy': 'コピー',
+  'bible_toolbarHighlight': 'ハイライト',
+  'bible_toolbarBookmark': 'ブックマーク',
+  'bible_toolbarShare': 'シェア',
+  'bible_toolbarReflect': '振り返る',
+  'bible_comingSoon': '近日公開',
 };

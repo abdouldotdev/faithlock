@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:faithlock/features/faithlock/models/export.dart';
 import 'package:faithlock/features/faithlock/services/export.dart';
 import 'package:faithlock/services/analytics/posthog/export.dart';
+import 'package:faithlock/services/home_widget_service.dart';
 import 'package:faithlock/services/storage/secure_storage_service.dart';
 import 'package:get/get.dart';
 
@@ -72,6 +73,8 @@ class StatsController extends GetxController {
 
       final stats = await _statsService.getUserStats();
       userStats.value = stats;
+      // Keep the iOS home-screen widget in step with fresh stats (no-op off iOS).
+      unawaited(HomeWidgetService.instance.refreshFromControllers());
     } catch (e) {
       errorMessage.value = 'Failed to load statistics: $e';
     } finally {

@@ -79,12 +79,19 @@ class $AssetsImagesGen {
   AssetGenImage get appIcon =>
       const AssetGenImage('assets/images/app-icon.png');
 
+  /// File path: assets/images/bible_verse_illustration.png
+  AssetGenImage get bibleVerseIllustration =>
+      const AssetGenImage('assets/images/bible_verse_illustration.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [appIcon];
+  List<AssetGenImage> get values => [appIcon, bibleVerseIllustration];
 }
 
 class $AssetsMascotGen {
   const $AssetsMascotGen();
+
+  /// File path: assets/mascot/happy.mov
+  String get happy => 'assets/mascot/happy.mov';
 
   /// File path: assets/mascot/judah_app_protection.gif
   AssetGenImage get judahAppProtection =>
@@ -130,8 +137,18 @@ class $AssetsMascotGen {
   AssetGenImage get judahTimeSelection =>
       const AssetGenImage('assets/mascot/judah_time_selection.gif');
 
+  /// File path: assets/mascot/neutral.mov
+  String get neutral => 'assets/mascot/neutral.mov';
+
+  /// File path: assets/mascot/sad.mov
+  String get sad => 'assets/mascot/sad.mov';
+
+  /// File path: assets/mascot/very_happy.mov
+  String get veryHappy => 'assets/mascot/very_happy.mov';
+
   /// List of all assets
-  List<AssetGenImage> get values => [
+  List<dynamic> get values => [
+        happy,
         judahAppProtection,
         judahAppProtectionn,
         judahEncouraging,
@@ -142,8 +159,22 @@ class $AssetsMascotGen {
         judahProud,
         judahSad,
         judahSleeping,
-        judahTimeSelection
+        judahTimeSelection,
+        neutral,
+        sad,
+        veryHappy
       ];
+}
+
+class $AssetsPromptsGen {
+  const $AssetsPromptsGen();
+
+  /// File path: assets/prompts/companion_system_prompt.txt
+  String get companionSystemPrompt =>
+      'assets/prompts/companion_system_prompt.txt';
+
+  /// List of all assets
+  List<String> get values => [companionSystemPrompt];
 }
 
 class Assets {
@@ -153,6 +184,7 @@ class Assets {
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsMascotGen mascot = $AssetsMascotGen();
+  static const $AssetsPromptsGen prompts = $AssetsPromptsGen();
   static const String shorebird = 'shorebird.yaml';
 
   /// List of all assets

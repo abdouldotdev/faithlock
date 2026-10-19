@@ -69,7 +69,7 @@ class NotificationNavigationService {
       }
 
       // Navigate to prayer screen
-      Get.offAllNamed(AppRoutes.prayerLearning);
+      Get.offAllNamed(AppRoutes.unlockChooser);
       debugPrint('✅ Navigation complete');
     } catch (e) {
       debugPrint('❌ Error navigating to prayer: $e');

@@ -36,6 +36,7 @@ class StatsService {
     required int attemptCount,
     int? timeToUnlockSeconds,
     int? unlockDurationMinutes,
+    UnlockMethod? method,
   }) async {
     final attempt = UnlockAttempt(
       verseId: verseId,
@@ -44,6 +45,7 @@ class StatsService {
       attemptCount: attemptCount,
       timeToUnlockSeconds: timeToUnlockSeconds,
       unlockDurationMinutes: unlockDurationMinutes,
+      method: method,
     );
 
     await _db.insertUnlockAttempt(attempt);
@@ -185,10 +187,21 @@ class StatsService {
       unlockHistory = [];
     }
 
-    // Calculate totals
-    final totalVersesRead = unlockHistory.where((a) => a.wasSuccessful).length;
+    // Calculate totals.
+    // "Verses read" counts ONLY Bible verse quiz unlocks — prayer-based unlocks
+    // (audio/text/learning) are surfaced through "prayed today" instead.
+    // Legacy rows have no method (null) and default to Bible to preserve history.
+    final totalVersesRead = unlockHistory
+        .where((a) => a.wasSuccessful && (a.method?.isBible ?? true))
+        .length;
     final successfulUnlocks = unlockHistory.where((a) => a.wasSuccessful).length;
     final failedAttempts = unlockHistory.where((a) => !a.wasSuccessful).length;
+
+    // Real prayer time today, from prayer-based unlock flows only.
+    final prayedMinutesToday = _calculatePrayedMinutesToday(unlockHistory);
+
+    // Bible-quiz verses read today (the home "Today" card; total stays all-time).
+    final versesReadToday = _calculateVersesReadToday(unlockHistory);
 
     // Get verses by category
     final versesByCategory = await _getVersesByCategory(unlockHistory);
@@ -204,6 +217,8 @@ class StatsService {
       currentStreak: currentStreak,
       longestStreak: longestStreak,
       screenTimeReducedMinutes: screenTimeReduced,
+      prayedMinutesToday: prayedMinutesToday,
+      versesReadToday: versesReadToday,
       successfulUnlocks: successfulUnlocks,
       failedAttempts: failedAttempts,
       versesByCategory: versesByCategory,
@@ -251,6 +266,41 @@ class StatsService {
     }
 
     return totalMinutes;
+  }
+
+  // Calculate today's prayer time (minutes) from prayer-based unlock flows.
+  // Uses the time spent in the prayer flow (audio/text/learning) before
+  // unlocking. Bible quiz unlocks are excluded — they feed "verses read".
+  int _calculatePrayedMinutesToday(List<UnlockAttempt> history) {
+    final now = DateTime.now();
+    final startOfDay = DateTime(now.year, now.month, now.day);
+
+    int totalSeconds = 0;
+    for (final attempt in history) {
+      if (!attempt.wasSuccessful) continue;
+      if (!(attempt.method?.isPrayer ?? false)) continue;
+      if (attempt.timestamp.isBefore(startOfDay)) continue;
+      totalSeconds += attempt.timeToUnlockSeconds ?? 0;
+    }
+
+    return (totalSeconds / 60).round();
+  }
+
+  // Count today's Bible-quiz verses read. Mirrors the "today" window used for
+  // prayed minutes so the home card's two stats are both day-scoped.
+  int _calculateVersesReadToday(List<UnlockAttempt> history) {
+    final now = DateTime.now();
+    final startOfDay = DateTime(now.year, now.month, now.day);
+
+    int count = 0;
+    for (final attempt in history) {
+      if (!attempt.wasSuccessful) continue;
+      if (!(attempt.method?.isBible ?? true)) continue;
+      if (attempt.timestamp.isBefore(startOfDay)) continue;
+      count++;
+    }
+
+    return count;
   }
 
   // Get weekly progress

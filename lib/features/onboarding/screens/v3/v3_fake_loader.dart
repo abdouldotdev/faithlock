@@ -1,11 +1,13 @@
-import 'package:faithlock/features/onboarding/constants/onboarding_theme.dart';
+import 'dart:math' as math;
+
 import 'package:faithlock/features/onboarding/utils/animation_utils.dart';
 import 'package:faithlock/features/onboarding/widgets/onboarding_wrapper.dart';
-import 'package:faithlock/shared/widgets/mascot/judah_mascot.dart';
-import 'package:flutter/material.dart';
+import 'package:faithlock/shared/widgets/cozy/cozy.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
 
-/// V3 Fake Loader - Calculates user's "spiritual time profile".
-/// Pure perception screen: builds anticipation before the reveal.
+/// V3 Fake Loader — cozy rebuild. Centered terracotta gauge with a soft
+/// pulsing halo + trust footer on the cream canvas.
 class V3FakeLoader extends StatefulWidget {
   final VoidCallback onComplete;
   const V3FakeLoader({super.key, required this.onComplete});
@@ -16,42 +18,27 @@ class V3FakeLoader extends StatefulWidget {
 
 class _V3FakeLoaderState extends State<V3FakeLoader>
     with TickerProviderStateMixin {
-  late AnimationController _progressController;
-  int _stepIndex = 0;
+  static const _totalDuration = Duration(milliseconds: 5400);
 
-  static const _steps = [
-    'Analyzing your screen habits…',
-    'Comparing time on phone vs. time in prayer…',
-    'Calculating what could be reclaimed…',
-    'Preparing your honest reflection…',
-  ];
+  late final AnimationController _progress;
 
   @override
   void initState() {
     super.initState();
-    _progressController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 4500),
-    )..forward();
-    _runSequence();
-  }
 
-  Future<void> _runSequence() async {
-    for (int i = 0; i < _steps.length; i++) {
-      await Future.delayed(const Duration(milliseconds: 1100));
-      if (!mounted) return;
-      setState(() => _stepIndex = i);
-      await AnimationUtils.lightHaptic();
-    }
-    await Future.delayed(const Duration(milliseconds: 600));
-    if (!mounted) return;
-    await AnimationUtils.heavyHaptic();
-    widget.onComplete();
+    _progress = AnimationController(vsync: this, duration: _totalDuration)
+      ..addStatusListener((status) async {
+        if (status == AnimationStatus.completed && mounted) {
+          await AnimationUtils.heavyHaptic();
+          widget.onComplete();
+        }
+      })
+      ..forward();
   }
 
   @override
   void dispose() {
-    _progressController.dispose();
+    _progress.dispose();
     super.dispose();
   }
 
@@ -59,54 +46,185 @@ class _V3FakeLoaderState extends State<V3FakeLoader>
   Widget build(BuildContext context) {
     return OnboardingWrapper(
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: OnboardingTheme.horizontalPadding,
-          vertical: OnboardingTheme.verticalPadding,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Spacer(),
-            const JudahMascot(
-              state: JudahState.sleeping,
-              size: JudahSize.l,
-              showMessage: false,
-            ),
-            const SizedBox(height: OnboardingTheme.space40),
-            AnimatedBuilder(
-              animation: _progressController,
-              builder: (context, _) {
-                return SizedBox(
-                  width: 220,
-                  child: LinearProgressIndicator(
-                    value: _progressController.value,
-                    minHeight: 6,
-                    borderRadius: BorderRadius.circular(8),
-                    backgroundColor:
-                        OnboardingTheme.labelTertiary.withValues(alpha: 0.2),
-                    valueColor: const AlwaysStoppedAnimation<Color>(
-                      OnboardingTheme.goldColor,
+            Expanded(
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    _Gauge(controller: _progress),
+                    const SizedBox(height: CozyTokens.space32),
+                    Text(
+                      'onbFakeLoader_mainTitle'.tr,
+                      style: CozyText.title,
+                      textAlign: TextAlign.center,
                     ),
-                  ),
-                );
-              },
-            ),
-            const SizedBox(height: OnboardingTheme.space24),
-            AnimatedSwitcher(
-              duration: const Duration(milliseconds: 400),
-              child: Text(
-                _steps[_stepIndex],
-                key: ValueKey(_stepIndex),
-                style: OnboardingTheme.callout.copyWith(
-                  color: OnboardingTheme.labelSecondary,
+                  ],
                 ),
-                textAlign: TextAlign.center,
               ),
             ),
-            const Spacer(flex: 2),
+            const _TrustFooter(),
+            const SizedBox(height: CozyTokens.space24),
           ],
         ),
       ),
+    );
+  }
+}
+
+/// Terracotta circular gauge with animated percentage at the center.
+class _Gauge extends StatelessWidget {
+  final AnimationController controller;
+  const _Gauge({required this.controller});
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: controller,
+      builder: (context, _) {
+        final v = controller.value;
+        final pct = (v * 100).clamp(0, 100).round();
+        return SizedBox(
+          width: 232,
+          height: 232,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              CustomPaint(
+                size: const Size(220, 220),
+                painter: _GaugePainter(progress: v),
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '$pct',
+                    style: CozyText.display.copyWith(
+                      fontSize: 76,
+                      letterSpacing: -2,
+                    ),
+                  ),
+                  const SizedBox(width: 4),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 14),
+                    child: Text(
+                      '%',
+                      style: CozyText.heading.copyWith(
+                        color: CozyColors.primary,
+                        fontSize: 30,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}
+
+class _GaugePainter extends CustomPainter {
+  final double progress;
+  _GaugePainter({required this.progress});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final center = size.center(Offset.zero);
+    final radius = size.width / 2 - 8;
+    final rect = Rect.fromCircle(center: center, radius: radius);
+
+    // Track — cozy surface-muted.
+    final track = Paint()
+      ..color = CozyColors.surfaceMuted
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 12
+      ..strokeCap = StrokeCap.round;
+    canvas.drawCircle(center, radius, track);
+
+    if (progress <= 0) return;
+
+    // Terracotta gradient arc.
+    final sweep = progress * 2 * math.pi;
+    final shader = SweepGradient(
+      startAngle: -math.pi / 2,
+      endAngle: -math.pi / 2 + sweep,
+      colors: const [
+        CozyColors.primaryLight,
+        CozyColors.primary,
+        CozyColors.primaryDark,
+      ],
+      tileMode: TileMode.clamp,
+    ).createShader(rect);
+
+    final arc = Paint()
+      ..shader = shader
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 12
+      ..strokeCap = StrokeCap.round;
+
+    canvas.drawArc(rect, -math.pi / 2, sweep, false, arc);
+
+    // Leading dot at the tip of the arc.
+    final tipAngle = -math.pi / 2 + sweep;
+    final tip = Offset(
+      center.dx + radius * math.cos(tipAngle),
+      center.dy + radius * math.sin(tipAngle),
+    );
+    final tipBorder = Paint()..color = CozyColors.surface;
+    canvas.drawCircle(tip, 9, tipBorder);
+    final tipPaint = Paint()..color = CozyColors.primary;
+    canvas.drawCircle(tip, 7, tipPaint);
+  }
+
+  @override
+  bool shouldRepaint(covariant _GaugePainter oldDelegate) =>
+      oldDelegate.progress != progress;
+}
+
+/// Privacy reassurance footer (lock chip + two short lines).
+class _TrustFooter extends StatelessWidget {
+  const _TrustFooter();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          width: 38,
+          height: 38,
+          alignment: Alignment.center,
+          decoration: ShapeDecoration(
+            color: CozyColors.surface,
+            shape: const CircleBorder(
+              side: BorderSide(
+                color: CozyColors.outline,
+                width: CozyTokens.borderWidth,
+              ),
+            ),
+          ),
+          child: const Icon(
+            CupertinoIcons.lock_fill,
+            color: CozyColors.ink,
+            size: 16,
+          ),
+        ),
+        const SizedBox(height: CozyTokens.space12),
+        Text(
+          'onbFakeLoader_trustTitle'.tr,
+          style: CozyText.body.copyWith(fontWeight: FontWeight.w700),
+        ),
+        const SizedBox(height: 4),
+        Text(
+          'onbFakeLoader_trustSubtitle'.tr,
+          style: CozyText.subtitle,
+        ),
+      ],
     );
   }
 }

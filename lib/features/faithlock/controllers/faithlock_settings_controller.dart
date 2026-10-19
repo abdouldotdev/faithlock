@@ -1,8 +1,10 @@
 import 'dart:convert';
 import 'package:faithlock/features/faithlock/services/export.dart';
 import 'package:faithlock/features/faithlock/controllers/schedule_controller.dart';
+import 'package:faithlock/features/onboarding/feature_tour/feature_tour.dart';
 import 'package:faithlock/services/notifications/local_notification_service.dart';
 import 'package:faithlock/services/storage/secure_storage_service.dart';
+import 'package:faithlock/services/analytics/posthog/export.dart';
 import 'package:faithlock/shared/widgets/dialogs/fast_alert_dialog.dart';
 import 'package:faithlock/shared/widgets/notifications/fast_toast.dart';
 import 'package:flutter/cupertino.dart';
@@ -13,12 +15,20 @@ import 'package:permission_handler/permission_handler.dart';
 
 /// Controller for FaithLock Settings Screen
 /// Manages permissions and app configuration
-class FaithLockSettingsController extends GetxController with WidgetsBindingObserver {
+class FaithLockSettingsController extends GetxController
+    with WidgetsBindingObserver {
   final ScreenTimeService _screenTimeService = ScreenTimeService();
   final LockService _lockService = LockService();
-  final LocalNotificationService _notificationService = LocalNotificationService();
+  final LocalNotificationService _notificationService =
+      LocalNotificationService();
 
   final StorageService _storage = StorageService();
+
+  final PostHogService _analytics = PostHogService.instance;
+
+  void _track(String event, [Map<String, dynamic> props = const {}]) {
+    if (_analytics.isReady) _analytics.events.trackCustom(event, props);
+  }
 
   // Observable state
   final RxInt userAge = RxInt(0);
@@ -77,7 +87,8 @@ class FaithLockSettingsController extends GetxController with WidgetsBindingObse
     try {
       final hasApps = await _screenTimeService.hasSelectedApps();
       selectedAppsCount.value = hasApps ? 1 : 0;
-      debugPrint('📱 Apps selected: $hasApps (count: ${selectedAppsCount.value})');
+      debugPrint(
+          '📱 Apps selected: $hasApps (count: ${selectedAppsCount.value})');
     } catch (e) {
       selectedAppsCount.value = 0;
     }
@@ -180,7 +191,8 @@ class FaithLockSettingsController extends GetxController with WidgetsBindingObse
         notificationsStatus.value = 'Not Set';
       }
 
-      debugPrint('📱 Notification permission status: ${notificationsStatus.value}');
+      debugPrint(
+          '📱 Notification permission status: ${notificationsStatus.value}');
     } catch (e) {
       debugPrint('❌ Error checking notification permission: $e');
       notificationsStatus.value = 'Unknown';
@@ -213,6 +225,8 @@ class FaithLockSettingsController extends GetxController with WidgetsBindingObse
 
       // Refresh status
       await checkNotificationsPermission();
+
+      _track('settings_notification_permission_result', {'granted': granted});
 
       if (granted) {
         FastToast.showSuccess(
@@ -276,6 +290,8 @@ class FaithLockSettingsController extends GetxController with WidgetsBindingObse
       await _lockService.setLockEnabled(enabled);
       isLockEnabled.value = enabled;
 
+      _track('settings_lock_toggled', {'enabled': enabled});
+
       FastToast.showSuccess(
         context: context,
         title: enabled ? 'settings_lockEnabled'.tr : 'settings_lockDisabled'.tr,
@@ -330,6 +346,10 @@ class FaithLockSettingsController extends GetxController with WidgetsBindingObse
 
       await _screenTimeService.presentAppPicker();
       await loadSelectedAppsCount();
+
+      if (Get.isRegistered<FeatureTourController>()) {
+        Get.find<FeatureTourController>().completeInteractiveStep('lock_apps');
+      }
 
       try {
         final scheduleController = Get.find<ScheduleController>();
@@ -408,7 +428,7 @@ class FaithLockSettingsController extends GetxController with WidgetsBindingObse
     try {
       // Read schedules from storage
       final schedulesJson = await _storage.readString('onboarding_schedules');
- 
+
       if (schedulesJson == null || schedulesJson.isEmpty) {
         print('⚠️ No schedules found in storage');
         return;

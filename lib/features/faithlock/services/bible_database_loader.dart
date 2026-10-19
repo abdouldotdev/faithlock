@@ -1,3 +1,4 @@
+import 'package:faithlock/features/bible/data/bible_repository.dart';
 import 'package:faithlock/features/faithlock/models/export.dart';
 import 'package:flutter/services.dart';
 import 'package:sqflite/sqflite.dart';
@@ -74,13 +75,17 @@ class BibleDatabaseLoader {
       final List<BibleVerse> verses = [];
       for (var i = 0; i < results.length; i++) {
         final row = results[i];
-        final reference = '${row['book_name']} ${row['chapter']}:${row['verse']}';
+        // Normalize DB-side Roman / "Revelation of John" back to display
+        // form so the UI sees "1 Samuel" instead of "I Samuel".
+        final bookDisplay =
+            BibleRepository.displayBookName(row['book_name'] as String);
+        final reference = '$bookDisplay ${row['chapter']}:${row['verse']}';
 
         verses.add(BibleVerse(
           id: 'verse_${i + 1}',
           text: row['text'] as String,
           reference: reference,
-          book: row['book_name'] as String,
+          book: bookDisplay,
           chapter: row['chapter'] as int,
           verse: row['verse'] as int,
           category: VerseCategoryExtension.fromString(row['category'] as String),
@@ -134,9 +139,13 @@ class BibleDatabaseLoader {
         } else {
           whereClause += ' AND ';
         }
-        whereClause += '(v.text LIKE ? OR b.name LIKE ?)';
+        // The third LIKE handles "1 Sam" → "I Sam" so Arabic-numeral
+        // searches still find Roman-named books in the BSB DB.
+        final normalized = BibleRepository.dbSearchPattern(searchQuery);
+        whereClause += '(v.text LIKE ? OR b.name LIKE ? OR b.name LIKE ?)';
         whereArgs.add('%$searchQuery%');
         whereArgs.add('%$searchQuery%');
+        whereArgs.add('%$normalized%');
       }
 
       // Query with pagination
@@ -161,13 +170,15 @@ class BibleDatabaseLoader {
       final List<BibleVerse> verses = [];
       for (var i = 0; i < results.length; i++) {
         final row = results[i];
-        final reference = '${row['book_name']} ${row['chapter']}:${row['verse']}';
+        final bookDisplay =
+            BibleRepository.displayBookName(row['book_name'] as String);
+        final reference = '$bookDisplay ${row['chapter']}:${row['verse']}';
 
         verses.add(BibleVerse(
-          id: 'verse_${row['book_name']}_${row['chapter']}_${row['verse']}',
+          id: 'verse_${bookDisplay}_${row['chapter']}_${row['verse']}',
           text: row['text'] as String,
           reference: reference,
-          book: row['book_name'] as String,
+          book: bookDisplay,
           chapter: row['chapter'] as int,
           verse: row['verse'] as int,
           category: row['category'] != null
@@ -217,9 +228,13 @@ class BibleDatabaseLoader {
         } else {
           whereClause += ' AND ';
         }
-        whereClause += '(v.text LIKE ? OR b.name LIKE ?)';
+        // Same trick as the paginated query so COUNT() stays in sync with
+        // the rows that will actually be returned.
+        final normalized = BibleRepository.dbSearchPattern(searchQuery);
+        whereClause += '(v.text LIKE ? OR b.name LIKE ? OR b.name LIKE ?)';
         whereArgs.add('%$searchQuery%');
         whereArgs.add('%$searchQuery%');
+        whereArgs.add('%$normalized%');
       }
 
       final result = await db.rawQuery('''
@@ -268,18 +283,20 @@ class BibleDatabaseLoader {
         JOIN BSB_books b ON v.book_id = b.id
         WHERE b.name = ? AND v.chapter = ? AND v.verse = ?
         LIMIT 1
-      ''', [bookName, chapter, verse]);
+      ''', [BibleRepository.dbBookName(bookName), chapter, verse]);
 
       if (results.isEmpty) return null;
 
       final row = results.first;
-      final reference = '$bookName $chapter:$verse';
+      final bookDisplay =
+          BibleRepository.displayBookName(row['book_name'] as String);
+      final reference = '$bookDisplay $chapter:$verse';
 
       return BibleVerse(
-        id: 'verse_${row['book_name']}_${row['chapter']}_${row['verse']}',
+        id: 'verse_${bookDisplay}_${row['chapter']}_${row['verse']}',
         text: row['text'] as String,
         reference: reference,
-        book: row['book_name'] as String,
+        book: bookDisplay,
         chapter: row['chapter'] as int,
         verse: row['verse'] as int,
         category: row['category'] != null

@@ -39,5 +39,30 @@ end
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     flutter_additional_ios_build_settings(target)
+
+    # Strip permission_handler permissions the app does not use so their APIs
+    # are not compiled into the binary. Prevents App Store "missing purpose
+    # string" (90683) errors AND "unused permission" rejections (5.1.1).
+    # Kept ENABLED (default): microphone (audio/prayer), notifications,
+    # app-tracking-transparency — all backed by real features + purpose strings.
+    target.build_configurations.each do |config|
+      defs = config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] || ['$(inherited)']
+      defs = [defs] unless defs.is_a?(Array)
+      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = defs + %w[
+        PERMISSION_LOCATION=0
+        PERMISSION_CAMERA=0
+        PERMISSION_PHOTOS=0
+        PERMISSION_MEDIA_LIBRARY=0
+        PERMISSION_CONTACTS=0
+        PERMISSION_EVENTS=0
+        PERMISSION_EVENTS_FULL_ACCESS=0
+        PERMISSION_REMINDERS=0
+        PERMISSION_SENSORS=0
+        PERMISSION_BLUETOOTH=0
+        PERMISSION_SPEECH_RECOGNIZER=0
+        PERMISSION_CRITICAL_ALERTS=0
+        PERMISSION_ASSISTANT=0
+      ]
+    end
   end
 end

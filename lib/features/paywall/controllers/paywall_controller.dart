@@ -321,6 +321,30 @@ class PaywallController extends GetxController
     return price;
   }
 
+  /// Per-day price of the yearly plan, formatted with the store's own currency
+  /// symbol and decimal style — e.g. "$0.07" or "0,07 €". Empty if no yearly
+  /// plan is loaded.
+  String getYearlyPerDayPrice() {
+    final yearly = packages.firstWhereOrNull(isYearlyPackage);
+    if (yearly == null) return '';
+
+    final product = yearly.storeProduct;
+    final perDay = product.price / 365.0;
+
+    // Reuse the decimal separator the store already used (e.g. comma in fr_FR).
+    final usesComma = RegExp(r'\d,\d\d').hasMatch(product.priceString);
+    var amount = perDay.toStringAsFixed(2);
+    if (usesComma) amount = amount.replaceAll('.', ',');
+
+    // Pull the currency symbol out of the formatted price and keep its position.
+    final symbol =
+        product.priceString.replaceAll(RegExp(r'[0-9.,\s ]'), '').trim();
+    if (symbol.isEmpty) return amount;
+
+    final symbolIsPrefix = product.priceString.trimLeft().startsWith(symbol);
+    return symbolIsPrefix ? '$symbol$amount' : '$amount $symbol';
+  }
+
   String getSavingsText(Package package) {
     debugPrint('📊 getSavingsText called for package: ${package.identifier}');
     debugPrint('📊 Package period: ${package.storeProduct.subscriptionPeriod}');
@@ -392,6 +416,14 @@ class PaywallController extends GetxController
     } else {
       Get.back(result: false);
     }
+  }
+
+  /// Debug-only: skip the paywall straight into the app without a purchase.
+  /// Marks [_didPurchase] so the win-back sequence isn't scheduled on dispose.
+  void debugBypassPaywall() {
+    _didPurchase = true;
+    HapticFeedback.mediumImpact();
+    Get.offAllNamed(AppRoutes.main);
   }
 
   // Track whether the user purchased successfully (to avoid winback on success)
@@ -564,6 +596,10 @@ class PaywallController extends GetxController
       isLoading.value = true;
       lastError.value = '';
 
+      if (_analytics.isReady) {
+        _analytics.events.trackCustom('subscription_restore_started', const {});
+      }
+
       final result = await _revenueCat.restorePurchases();
 
       if (result.success && result.hasActiveSubscriptions) {
@@ -586,6 +622,10 @@ class PaywallController extends GetxController
 
         await _handleSuccessfulSubscription();
       } else if (result.success && !result.hasActiveSubscriptions) {
+        if (_analytics.isReady) {
+          _analytics.events
+              .trackCustom('subscription_restore_no_purchases', const {});
+        }
         FastToast.warning(
           'paywall_noPurchasesMessage'.tr,
           title: 'paywall_noPurchasesFound'.tr,
@@ -595,6 +635,12 @@ class PaywallController extends GetxController
       }
     } catch (e) {
       lastError.value = e.toString();
+
+      if (_analytics.isReady) {
+        _analytics.events.trackCustom('subscription_restore_failed', {
+          'error': e.toString(),
+        });
+      }
 
       FastToast.error(
         'paywall_restoreFailedMessage'.tr,

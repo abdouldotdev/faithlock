@@ -66,7 +66,6 @@ export 'modals/fast_modal_presentation.dart';
 export 'notifications/fast_toast.dart';
 // Pickers
 export 'pickers/fast_date_picker.dart';
-export 'pickers/fast_image_picker.dart';
 export 'pickers/fast_picker_wheel.dart';
 // Typography
 export 'typography/export.dart';

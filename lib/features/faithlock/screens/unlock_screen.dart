@@ -1,353 +1,647 @@
-import 'package:faithlock/core/constants/core/fast_colors.dart';
-import 'package:faithlock/core/constants/core/fast_spacing.dart';
 import 'package:faithlock/features/faithlock/controllers/unlock_controller.dart';
-import 'package:faithlock/shared/widgets/buttons/fast_button.dart';
-import 'package:faithlock/shared/widgets/layout/export.dart';
+import 'package:faithlock/features/onboarding/constants/onboarding_theme.dart';
 import 'package:faithlock/shared/widgets/mascot/judah_mascot.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Unlock Screen — 100 % Cupertino/iOS-native, Apple dark design language.
+// ─────────────────────────────────────────────────────────────────────────────
 
 class UnlockScreen extends StatelessWidget {
   const UnlockScreen({super.key});
+
+  // ── Theme constants ────────────────────────────────────────────────────────
+  static const _gold = OnboardingTheme.goldColor;
 
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(UnlockController());
 
-    return Scaffold(
-      backgroundColor: FastColors.surface(context),
-      body: SafeArea(
-        child: Obx(() {
-          if (controller.isLoading.value) {
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const JudahMascot(
-                    state: JudahState.sleeping,
-                    size: JudahSize.l,
-                  ),
-                  FastSpacing.h16,
-                  Text(
-                    'loadingVerse'.tr,
-                    style: TextStyle(color: FastColors.secondaryText(context)),
-                  ),
-                ],
+    return CupertinoTheme(
+      data: const CupertinoThemeData(
+        brightness: Brightness.dark,
+        primaryColor: _gold,
+        textTheme: CupertinoTextThemeData(
+          navTitleTextStyle: TextStyle(
+            fontFamily: OnboardingTheme.fontFamily,
+            fontSize: 17,
+            fontWeight: FontWeight.w600,
+            color: OnboardingTheme.labelPrimary,
+          ),
+        ),
+      ),
+      child: Builder(
+        builder: (ctx) => CupertinoPageScaffold(
+          // Nil backgroundColor → liquid-glass nav bar renders correctly.
+          backgroundColor:
+              CupertinoColors.secondarySystemGroupedBackground.resolveFrom(ctx),
+          navigationBar: CupertinoNavigationBar(
+            // Liquid-glass: do NOT set an opaque backgroundColor.
+            middle: Text(
+              'readAndAnswer'.tr,
+              style: const TextStyle(
+                fontFamily: OnboardingTheme.fontFamily,
+                fontSize: 17,
+                fontWeight: FontWeight.w600,
+                color: OnboardingTheme.labelPrimary,
               ),
-            );
-          }
+            ),
+          ),
+          child: SafeArea(
+            child: Obx(() => _buildBody(ctx, controller)),
+          ),
+        ),
+      ),
+    );
+  }
 
-          if (controller.currentVerse.value == null || controller.currentQuiz.value == null) {
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.error_outline, size: 64, color: FastColors.error),
-                  FastSpacing.h16,
-                  Text(
-                    'failedToLoadVerse'.tr,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: FastColors.primaryText(context),
-                    ),
-                  ),
-                  FastSpacing.h8,
-                  Text(
-                    controller.errorMessage.value,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: FastColors.secondaryText(context)),
-                  ),
-                  FastSpacing.h24,
-                  FastButton(
-                    text: 'retry'.tr,
-                    onTap: controller.retryWithNewVerse,
-                  ),
-                ],
+  // ── Body dispatch ──────────────────────────────────────────────────────────
+
+  Widget _buildBody(BuildContext context, UnlockController controller) {
+    if (controller.isLoading.value) {
+      return _LoadingState();
+    }
+
+    if (controller.currentVerse.value == null ||
+        controller.currentQuiz.value == null) {
+      return _ErrorState(controller: controller);
+    }
+
+    return _QuizContent(controller: controller);
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Loading state — skeleton-style with Judah sleeping mascot
+// ─────────────────────────────────────────────────────────────────────────────
+
+class _LoadingState extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const JudahMascot(
+            state: JudahState.sleeping,
+            size: JudahSize.l,
+          ),
+          const SizedBox(height: 20),
+          const CupertinoActivityIndicator(
+            radius: 12,
+            color: OnboardingTheme.goldColor,
+          ),
+          const SizedBox(height: 16),
+          Text(
+            'loadingVerse'.tr,
+            style: const TextStyle(
+              fontFamily: OnboardingTheme.fontFamily,
+              fontSize: 15,
+              color: OnboardingTheme.labelSecondary,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Error state
+// ─────────────────────────────────────────────────────────────────────────────
+
+class _ErrorState extends StatelessWidget {
+  const _ErrorState({required this.controller});
+  final UnlockController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 32),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(
+              CupertinoIcons.exclamationmark_circle,
+              size: 56,
+              color: CupertinoColors.systemRed,
+            ),
+            const SizedBox(height: 20),
+            Text(
+              'failedToLoadVerse'.tr,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontFamily: OnboardingTheme.fontFamily,
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+                color: OnboardingTheme.labelPrimary,
               ),
-            );
-          }
+            ),
+            const SizedBox(height: 10),
+            Obx(() => Text(
+                  controller.errorMessage.value,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontFamily: OnboardingTheme.fontFamily,
+                    fontSize: 15,
+                    color: OnboardingTheme.labelSecondary,
+                  ),
+                )),
+            const SizedBox(height: 32),
+            _GoldButton(
+              text: 'retry'.tr,
+              onTap: controller.retryWithNewVerse,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
-          final verse = controller.currentVerse.value!;
-          final quiz = controller.currentQuiz.value!;
+// ─────────────────────────────────────────────────────────────────────────────
+// Main quiz content — scrollable
+// ─────────────────────────────────────────────────────────────────────────────
 
-          return FastScrollableLayout(
-            padding: FastSpacing.px16,
+class _QuizContent extends StatelessWidget {
+  const _QuizContent({required this.controller});
+  final UnlockController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    final verse = controller.currentVerse.value!;
+    final quiz = controller.currentQuiz.value!;
+
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
+      slivers: [
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 16, 20, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                FastSpacing.h24,
+                // ── Mascot ─────────────────────────────────────────────────
+                Center(child: Obx(() => _buildMascot())),
+                const SizedBox(height: 8),
 
-                // Judah mascot - state changes based on answer
-                Center(
-                  child: Obx(() {
-                    final isRevealed = controller.isAnswerRevealed.value;
-                    final selectedIdx = controller.selectedAnswer.value;
-                    final correctIdx = controller.currentQuiz.value?.correctAnswerIndex;
-                    final isCorrect = isRevealed && selectedIdx == correctIdx;
-                    final isWrong = isRevealed && selectedIdx != correctIdx;
-
-                    final JudahState mascotState;
-                    final String? mascotMessage;
-
-                    if (isCorrect) {
-                      mascotState = JudahState.happy;
-                      mascotMessage = 'correctAnswer'.tr;
-                    } else if (isWrong) {
-                      mascotState = JudahState.encouraging;
-                      mascotMessage = 'wrongAnswer'.tr;
-                    } else {
-                      mascotState = JudahState.encouraging;
-                      mascotMessage = null;
-                    }
-
-                    return JudahMascot(
-                      state: mascotState,
-                      size: JudahSize.l,
-                      message: mascotMessage,
-                    );
-                  }),
-                ),
-
-                FastSpacing.h24,
-
-                // Title
-                Text(
-                  'readAndAnswer'.tr,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: FastColors.primaryText(context),
-                  ),
-                ),
-
-                FastSpacing.h8,
-
+                // ── Subtitle ───────────────────────────────────────────────
                 Text(
                   'reflectOnVerse'.tr,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: FastColors.secondaryText(context),
+                  style: const TextStyle(
+                    fontFamily: OnboardingTheme.fontFamily,
+                    fontSize: 15,
+                    color: OnboardingTheme.labelSecondary,
                   ),
                 ),
 
-                FastSpacing.h32,
+                const SizedBox(height: 28),
 
-                // Verse card
-                Container(
-                  padding: FastSpacing.p24,
-                  decoration: BoxDecoration(
-                    color: FastColors.surfaceVariant(context),
-                    borderRadius: BorderRadius.circular(16),
-                    border: Border.all(
-                      color: FastColors.border(context),
-                      width: 1,
-                    ),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        '"${verse.text}"',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontStyle: FontStyle.italic,
-                          height: 1.6,
-                          color: FastColors.primaryText(context),
-                        ),
-                      ),
-                      FastSpacing.h16,
-                      Text(
-                        verse.reference,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: FastColors.primary,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                // ── Verse card ─────────────────────────────────────────────
+                _VerseCard(verse: verse),
 
-                FastSpacing.h32,
+                const SizedBox(height: 28),
 
-                // Quiz question
+                // ── Question ───────────────────────────────────────────────
                 Text(
                   quiz.question,
-                  style: TextStyle(
+                  style: const TextStyle(
+                    fontFamily: OnboardingTheme.fontFamily,
                     fontSize: 17,
                     fontWeight: FontWeight.w600,
-                    color: FastColors.primaryText(context),
+                    color: OnboardingTheme.labelPrimary,
                   ),
                 ),
 
-                FastSpacing.h16,
+                const SizedBox(height: 16),
 
-                // Answer options
-                ...List.generate(quiz.options.length, (index) {
-                  final isSelected = controller.selectedAnswer.value == index;
-                  final isCorrect = index == quiz.correctAnswerIndex;
-                  final showCorrect = controller.isAnswerRevealed.value && isCorrect;
-                  final showWrong = controller.isAnswerRevealed.value && isSelected && !isCorrect;
-
-                  Color borderColor = FastColors.border(context);
-                  Color bgColor = FastColors.surface(context);
-
-                  if (showCorrect) {
-                    borderColor = FastColors.success;
-                    bgColor = FastColors.success.withValues(alpha: 0.1);
-                  } else if (showWrong) {
-                    borderColor = FastColors.error;
-                    bgColor = FastColors.error.withValues(alpha: 0.1);
-                  } else if (isSelected) {
-                    borderColor = FastColors.primary;
-                    bgColor = FastColors.primary.withValues(alpha: 0.05);
-                  }
-
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: 12),
-                    child: GestureDetector(
-                      onTap: () => controller.selectAnswer(index),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                        decoration: BoxDecoration(
-                          color: bgColor,
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(
-                            color: borderColor,
-                            width: isSelected || showCorrect || showWrong ? 2 : 1,
-                          ),
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              width: 24,
-                              height: 24,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: borderColor,
-                                  width: 2,
-                                ),
-                                color: isSelected || showCorrect ? borderColor : Colors.transparent,
-                              ),
-                              child: (isSelected || showCorrect) ? const Icon(Icons.check, size: 16, color: Colors.white) : null,
-                            ),
-                            const SizedBox(width: 12),
-                            Expanded(
-                              child: Text(
-                                quiz.options[index],
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
-                                  color: FastColors.primaryText(context),
-                                ),
-                              ),
-                            ),
-                          ],
+                // ── Answer options ─────────────────────────────────────────
+                Obx(() => Column(
+                      children: List.generate(
+                        quiz.options.length,
+                        (i) => _AnswerOption(
+                          label: quiz.options[i],
+                          index: i,
+                          controller: controller,
                         ),
                       ),
+                    )),
+
+                // ── Inline error / hint banner ─────────────────────────────
+                Obx(() {
+                  if (!controller.showError.value) return const SizedBox();
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 4),
+                    child: _FeedbackBanner(
+                      message: controller.errorMessage.value,
+                      isWarning: controller.isAnswerRevealed.value,
                     ),
                   );
                 }),
 
-                FastSpacing.h16,
+                const SizedBox(height: 12),
 
-                // Error message
-                if (controller.showError.value)
-                  Container(
-                    padding: FastSpacing.p16,
-                    decoration: BoxDecoration(
-                      color: controller.isAnswerRevealed.value
-                          ? FastColors.warning.withValues(alpha: 0.1)
-                          : FastColors.error.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(
-                        color: controller.isAnswerRevealed.value ? FastColors.warning : FastColors.error,
+                // ── Attempt counter ────────────────────────────────────────
+                Obx(() => Text(
+                      'attemptCount'.trParams({
+                        'current': controller.attemptCount.value.toString(),
+                        'max': UnlockController.maxAttempts.toString(),
+                      }),
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontFamily: OnboardingTheme.fontFamily,
+                        fontSize: 13,
+                        color: OnboardingTheme.labelTertiary,
                       ),
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(
-                          controller.isAnswerRevealed.value ? Icons.info_outline : Icons.error_outline,
-                          color: controller.isAnswerRevealed.value ? FastColors.warning : FastColors.error,
-                        ),
-                        const SizedBox(width: 12),
-                        Expanded(
-                          child: Text(
-                            controller.errorMessage.value,
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: FastColors.primaryText(context),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                    )),
 
-                if (controller.showError.value) FastSpacing.h16,
+                const SizedBox(height: 20),
 
-                // Attempt counter
-                Text(
-                  'attemptCount'.trParams({
-                    'current': controller.attemptCount.value.toString(),
-                    'max': UnlockController.maxAttempts.toString(),
-                  }),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: FastColors.tertiaryText(context),
-                  ),
-                ),
-
-                FastSpacing.h24,
-
-                // Submit button
-                if (!controller.isAnswerRevealed.value)
-                  FastButton(
-                    text: 'submitAnswer'.tr,
-                    onTap: controller.submitAnswer,
-                    isDisabled: controller.selectedAnswer.value == -1,
-                  )
-                else
-                  FastButton(
-                    text: 'tryNewVerse'.tr,
-                    onTap: controller.retryWithNewVerse,
-                  ),
-
-                FastSpacing.h16,
-
-                // Emergency bypass button
-                FastButton(
-                  text: 'emergencyBypassTitle'.tr,
-                  style: FastButtonStyle.plain,
-                  textColor: FastColors.tertiaryText(context),
-                  onTap: () {
-                    Get.defaultDialog(
-                      title: 'emergencyBypassTitle'.tr,
-                      titleStyle: TextStyle(color: FastColors.primaryText(context)),
-                      backgroundColor: FastColors.surface(context),
-                      middleText: 'emergencyBypassMessage'.tr,
-                      middleTextStyle: TextStyle(color: FastColors.secondaryText(context)),
-                      textCancel: 'cancel'.tr,
-                      textConfirm: 'bypass'.tr,
-                      confirmTextColor: FastColors.error,
-                      onConfirm: () {
-                        Get.back();
-                        controller.useEmergencyBypass();
-                      },
+                // ── Primary CTA ────────────────────────────────────────────
+                Obx(() {
+                  final revealed = controller.isAnswerRevealed.value;
+                  final noSelection = controller.selectedAnswer.value == -1;
+                  if (revealed) {
+                    return _GoldButton(
+                      text: 'tryNewVerse'.tr,
+                      onTap: controller.retryWithNewVerse,
                     );
-                  },
+                  }
+                  return _GoldButton(
+                    text: 'submitAnswer'.tr,
+                    onTap: noSelection ? null : controller.submitAnswer,
+                    disabled: noSelection,
+                  );
+                }),
+
+                const SizedBox(height: 12),
+
+                // ── Emergency bypass ───────────────────────────────────────
+                CupertinoButton(
+                  padding: EdgeInsets.zero,
+                  minimumSize: const Size(44, 44),
+                  onPressed: () => _showBypassDialog(context, controller),
+                  child: Text(
+                    'emergencyBypassTitle'.tr,
+                    style: const TextStyle(
+                      fontFamily: OnboardingTheme.fontFamily,
+                      fontSize: 14,
+                      color: OnboardingTheme.labelTertiary,
+                    ),
+                  ),
                 ),
 
-                FastSpacing.h24,
+                const SizedBox(height: 32),
               ],
             ),
-          );
-        }),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildMascot() {
+    final revealed = controller.isAnswerRevealed.value;
+    final selected = controller.selectedAnswer.value;
+    final correct = controller.currentQuiz.value?.correctAnswerIndex;
+    final isCorrect = revealed && selected == correct;
+    final isWrong = revealed && selected != correct;
+
+    final JudahState state;
+    final String? msg;
+
+    if (isCorrect) {
+      state = JudahState.happy;
+      msg = 'correctAnswer'.tr;
+    } else if (isWrong) {
+      state = JudahState.encouraging;
+      msg = 'wrongAnswer'.tr;
+    } else {
+      state = JudahState.encouraging;
+      msg = null;
+    }
+
+    return JudahMascot(state: state, size: JudahSize.l, message: msg);
+  }
+
+  Future<void> _showBypassDialog(
+    BuildContext context,
+    UnlockController controller,
+  ) async {
+    HapticFeedback.mediumImpact();
+    return showCupertinoDialog<void>(
+      context: context,
+      builder: (_) => CupertinoAlertDialog(
+        title: Text(
+          'emergencyBypassTitle'.tr,
+          style: const TextStyle(fontFamily: OnboardingTheme.fontFamily),
+        ),
+        content: Padding(
+          padding: const EdgeInsets.only(top: 8),
+          child: Text(
+            'emergencyBypassMessage'.tr,
+            style: const TextStyle(
+              fontFamily: OnboardingTheme.fontFamily,
+              fontSize: 13,
+            ),
+          ),
+        ),
+        actions: [
+          CupertinoDialogAction(
+            onPressed: () => Navigator.of(context).pop(),
+            child: Text(
+              'cancel'.tr,
+              style: const TextStyle(fontFamily: OnboardingTheme.fontFamily),
+            ),
+          ),
+          CupertinoDialogAction(
+            isDestructiveAction: true,
+            onPressed: () {
+              Navigator.of(context).pop();
+              controller.useEmergencyBypass();
+            },
+            child: Text(
+              'bypass'.tr,
+              style: const TextStyle(fontFamily: OnboardingTheme.fontFamily),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Verse card
+// ─────────────────────────────────────────────────────────────────────────────
+
+class _VerseCard extends StatelessWidget {
+  const _VerseCard({required this.verse});
+  final dynamic verse; // BibleVerse
+
+  @override
+  Widget build(BuildContext context) {
+    // Elevated card: slightly lighter than the grouped bg
+    final cardSurface =
+        CupertinoColors.tertiarySystemGroupedBackground.resolveFrom(context);
+
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: cardSurface,
+        borderRadius: BorderRadius.circular(OnboardingTheme.radiusLarge),
+        border: Border.all(color: OnboardingTheme.goldColor, width: 1.5),
+        boxShadow: [
+          BoxShadow(
+            color: OnboardingTheme.goldColor.withValues(alpha: 0.18),
+            blurRadius: 20,
+            spreadRadius: 0,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            '"${verse.text}"',
+            style: const TextStyle(
+              fontFamily: OnboardingTheme.fontFamily,
+              fontSize: 18,
+              fontStyle: FontStyle.italic,
+              height: 1.65,
+              color: OnboardingTheme.labelPrimary,
+              letterSpacing: 0.1,
+            ),
+          ),
+          const SizedBox(height: 14),
+          Text(
+            verse.reference,
+            style: const TextStyle(
+              fontFamily: OnboardingTheme.fontFamily,
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+              color: OnboardingTheme.goldColor,
+              letterSpacing: 0.3,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Answer option row
+// ─────────────────────────────────────────────────────────────────────────────
+
+class _AnswerOption extends StatelessWidget {
+  const _AnswerOption({
+    required this.label,
+    required this.index,
+    required this.controller,
+  });
+
+  final String label;
+  final int index;
+  final UnlockController controller;
+
+  static const _font = OnboardingTheme.fontFamily;
+  static const _gold = OnboardingTheme.goldColor;
+  static const _textPrimary = OnboardingTheme.labelPrimary;
+
+  @override
+  Widget build(BuildContext context) {
+    final isSelected = controller.selectedAnswer.value == index;
+    final isCorrect = index == controller.currentQuiz.value!.correctAnswerIndex;
+    final revealed = controller.isAnswerRevealed.value;
+
+    final showCorrect = revealed && isCorrect;
+    final showWrong = revealed && isSelected && !isCorrect;
+
+    Color borderColor;
+    Color bgColor;
+    Color bulletColor;
+
+    if (showCorrect) {
+      borderColor = CupertinoColors.systemGreen;
+      bgColor = CupertinoColors.systemGreen.withValues(alpha: 0.12);
+      bulletColor = CupertinoColors.systemGreen;
+    } else if (showWrong) {
+      borderColor = CupertinoColors.systemRed;
+      bgColor = CupertinoColors.systemRed.withValues(alpha: 0.12);
+      bulletColor = CupertinoColors.systemRed;
+    } else if (isSelected) {
+      borderColor = _gold;
+      bgColor = _gold.withValues(alpha: 0.08);
+      bulletColor = _gold;
+    } else {
+      borderColor = OnboardingTheme.cardBorder;
+      bgColor = OnboardingTheme.cardBackground;
+      bulletColor = OnboardingTheme.labelTertiary;
+    }
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: GestureDetector(
+        onTap: () {
+          if (!revealed) {
+            HapticFeedback.selectionClick();
+            controller.selectAnswer(index);
+          }
+        },
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          curve: Curves.easeOut,
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
+          decoration: BoxDecoration(
+            color: bgColor,
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(
+              color: borderColor,
+              width: isSelected || showCorrect || showWrong ? 1.5 : 1.0,
+            ),
+          ),
+          child: Row(
+            children: [
+              // Bullet / checkmark
+              AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                width: 22,
+                height: 22,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: (isSelected || showCorrect)
+                      ? bulletColor
+                      : CupertinoColors.transparent,
+                  border: Border.all(color: bulletColor, width: 1.5),
+                ),
+                child: (isSelected || showCorrect)
+                    ? const Icon(
+                        CupertinoIcons.check_mark,
+                        size: 13,
+                        color: CupertinoColors.white,
+                      )
+                    : null,
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Text(
+                  label,
+                  style: TextStyle(
+                    fontFamily: _font,
+                    fontSize: 16,
+                    fontWeight:
+                        isSelected ? FontWeight.w600 : FontWeight.w400,
+                    color: _textPrimary,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Feedback banner (error / warning)
+// ─────────────────────────────────────────────────────────────────────────────
+
+class _FeedbackBanner extends StatelessWidget {
+  const _FeedbackBanner({required this.message, required this.isWarning});
+  final String message;
+  final bool isWarning;
+
+  static const _font = OnboardingTheme.fontFamily;
+
+  @override
+  Widget build(BuildContext context) {
+    final color =
+        isWarning ? CupertinoColors.systemOrange : CupertinoColors.systemRed;
+    final icon = isWarning
+        ? CupertinoIcons.info_circle_fill
+        : CupertinoIcons.exclamationmark_circle_fill;
+
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.12),
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: color.withValues(alpha: 0.35)),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(icon, color: color, size: 18),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Text(
+              message,
+              style: TextStyle(
+                fontFamily: _font,
+                fontSize: 14,
+                color: color,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Gold primary button — matches onboarding CTA style
+// ─────────────────────────────────────────────────────────────────────────────
+
+class _GoldButton extends StatelessWidget {
+  const _GoldButton({
+    required this.text,
+    required this.onTap,
+    this.disabled = false,
+  });
+
+  final String text;
+  final VoidCallback? onTap;
+  final bool disabled;
+
+  static const _font = OnboardingTheme.fontFamily;
+  static const _gold = OnboardingTheme.goldColor;
+  static const _bg = OnboardingTheme.backgroundColor;
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoButton(
+      padding: EdgeInsets.zero,
+      onPressed: disabled ? null : () {
+        HapticFeedback.lightImpact();
+        onTap?.call();
+      },
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 150),
+        width: double.infinity,
+        height: 52,
+        decoration: BoxDecoration(
+          color: disabled ? _gold.withValues(alpha: 0.35) : _gold,
+          borderRadius: BorderRadius.circular(14),
+        ),
+        alignment: Alignment.center,
+        child: Text(
+          text,
+          style: TextStyle(
+            fontFamily: _font,
+            fontSize: 17,
+            fontWeight: FontWeight.w600,
+            color: disabled ? _bg.withValues(alpha: 0.5) : _bg,
+            letterSpacing: 0.2,
+          ),
+        ),
       ),
     );
   }

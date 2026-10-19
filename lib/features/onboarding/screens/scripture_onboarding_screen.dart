@@ -13,10 +13,10 @@ import 'package:faithlock/features/onboarding/screens/step7_screen_time_permissi
 import 'package:faithlock/features/onboarding/screens/step9_notification_permission.dart';
 import 'package:faithlock/features/onboarding/screens/v2_free_for_you.dart';
 import 'package:faithlock/features/onboarding/screens/onboarding_welcome_screen.dart';
-import 'package:faithlock/features/onboarding/screens/onboarding_summary_screen.dart';
 import 'package:faithlock/features/onboarding/constants/onboarding_theme.dart';
 import 'package:faithlock/features/onboarding/widgets/onboarding_wrapper.dart';
 import 'package:faithlock/shared/widgets/mascot/judah_mascot.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,14 +26,14 @@ class ScriptureOnboardingScreen extends StatelessWidget {
   const ScriptureOnboardingScreen({super.key});
 
   // Set to true to show skip button for testing
-  static const bool isTesting = false;
+  static const bool isTesting = true;
 
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(ScriptureOnboardingController());
 
-    return Scaffold(
-      body: Stack(
+    return CupertinoPageScaffold(
+      child: Stack(
         children: [
           Obx(() {
             switch (controller.currentStep.value) {
@@ -97,14 +97,14 @@ class ScriptureOnboardingScreen extends StatelessWidget {
                 return const V2FreeForYou();
 
               default:
-                return Scaffold(
-                  body: Center(
+                return CupertinoPageScaffold(
+                  backgroundColor: OnboardingTheme.backgroundColor,
+                  child: Center(
                     child: Text(
                       'Step ${controller.currentStep.value} - Error',
-                      style: const TextStyle(color: Colors.white),
+                      style: const TextStyle(color: CupertinoColors.white),
                     ),
                   ),
-                  backgroundColor: Colors.black,
                 );
             }
           }),

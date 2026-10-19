@@ -114,6 +114,13 @@ class ScriptureOnboardingController extends GetxController {
       hoursPerDay.value = double.tryParse(savedHoursStr) ?? 0.0;
     }
 
+    // Restore the user's name so re-engagement screens (e.g. the summary shown
+    // on relaunch) display it instead of the default placeholder.
+    final savedName = await _storage.readString(_keyUserName);
+    if (savedName != null && savedName.isNotEmpty) {
+      userName.value = savedName;
+    }
+
     // Load age data
     final savedAgeStr = await _storage.readString(_keyUserAge);
     if (savedAgeStr != null) {
@@ -353,8 +360,11 @@ class ScriptureOnboardingController extends GetxController {
 
   /// Save schedules from Step 5 (Armor Configuration)
   Future<void> saveSchedules(List<Map<String, dynamic>> schedules) async {
-    // Convert TimeOfDay to string format for storage
-    final schedulesData = schedules.map((schedule) {
+    // Convert TimeOfDay to string format for storage. Skip any malformed
+    // entries so a missing/mistyped 'start'|'end' can't crash the save.
+    final schedulesData = schedules
+        .where((s) => s['start'] is TimeOfDay && s['end'] is TimeOfDay)
+        .map((schedule) {
       final start = schedule['start'] as TimeOfDay;
       final end = schedule['end'] as TimeOfDay;
 

@@ -69,7 +69,7 @@ class FastToast {
   static OverlayEntry? _currentToast;
 
   static void show({
-    required BuildContext context,
+    BuildContext? context,
     required String message,
     FastToastType type = FastToastType.info,
     Duration duration = const Duration(seconds: 3),
@@ -77,12 +77,16 @@ class FastToast {
     IconData? icon,
     VoidCallback? onTap,
   }) {
-    _removeCurrentToast();
+    // ✅ Resolve an Overlay-bearing context robustly to stay crash-free even
+    // when called from a GetX controller with a stale/missing context.
+    // Prefer the passed context only if it actually has an Overlay ancestor,
+    // then fall back to the global GetX overlay/root contexts. Use
+    // Overlay.maybeOf (never Overlay.of) so we never throw, and bail out
+    // gracefully if no overlay exists instead of crashing.
+    final overlay = _resolveOverlay(context);
+    if (overlay == null) return;
 
-    // ✅ Use Get.overlayContext for GetX compatibility
-    // This ensures we get a context that has Overlay ancestor
-    final overlayContext = Get.overlayContext ?? context;
-    final overlay = Overlay.of(overlayContext);
+    _removeCurrentToast();
 
     _currentToast = OverlayEntry(
       builder: (context) => _FastToastWidget(
@@ -100,7 +104,7 @@ class FastToast {
   }
 
   static void showSuccess({
-    required BuildContext context,
+    BuildContext? context,
     required String message,
     String? title,
     Duration duration = const Duration(seconds: 3),
@@ -117,7 +121,7 @@ class FastToast {
   }
 
   static void showError({
-    required BuildContext context,
+    BuildContext? context,
     required String message,
     String? title,
     Duration duration = const Duration(seconds: 4),
@@ -134,7 +138,7 @@ class FastToast {
   }
 
   static void showWarning({
-    required BuildContext context,
+    BuildContext? context,
     required String message,
     String? title,
     Duration duration = const Duration(seconds: 3),
@@ -151,7 +155,7 @@ class FastToast {
   }
 
   static void showInfo({
-    required BuildContext context,
+    BuildContext? context,
     required String message,
     String? title,
     Duration duration = const Duration(seconds: 3),
@@ -168,34 +172,39 @@ class FastToast {
   }
 
   // ✅ GetX-friendly methods that don't require context
-  // Use these when calling from GetX controllers
+  // Use these when calling from GetX controllers. Context resolution and
+  // overlay safety are handled centrally in [show].
 
   static void success(String message, {String? title}) {
-    final context = Get.overlayContext;
-    if (context == null) return;
-    showSuccess(context: context, message: message, title: title);
+    showSuccess(message: message, title: title);
   }
 
   static void error(String message, {String? title}) {
-    final context = Get.overlayContext;
-    if (context == null) return;
-    showError(context: context, message: message, title: title);
+    showError(message: message, title: title);
   }
 
   static void warning(String message, {String? title}) {
-    final context = Get.overlayContext;
-    if (context == null) return;
-    showWarning(context: context, message: message, title: title);
+    showWarning(message: message, title: title);
   }
 
   static void info(String message, {String? title}) {
-    final context = Get.overlayContext;
-    if (context == null) return;
-    showInfo(context: context, message: message, title: title);
+    showInfo(message: message, title: title);
   }
 
   static void dismiss() {
     _removeCurrentToast();
+  }
+
+  /// Resolve an Overlay that is guaranteed to have an Overlay ancestor, or
+  /// null if none is available. Tries the explicitly passed context first,
+  /// then GetX's root overlay/navigator contexts. Never throws.
+  static OverlayState? _resolveOverlay(BuildContext? context) {
+    for (final candidate in [context, Get.overlayContext, Get.context]) {
+      if (candidate == null) continue;
+      final overlay = Overlay.maybeOf(candidate);
+      if (overlay != null) return overlay;
+    }
+    return null;
   }
 
   static void _removeCurrentToast() {

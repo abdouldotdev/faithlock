@@ -9,11 +9,16 @@ import UserNotifications
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
     if #available(iOS 16.0, *) {
-      let registrar = self.registrar(forPlugin: "ScreenTimePlugin")
-      ScreenTimePlugin.register(with: registrar!)
+      if let registrar = self.registrar(forPlugin: "ScreenTimePlugin") {
+        ScreenTimePlugin.register(with: registrar)
+      }
     }
 
     GeneratedPluginRegistrant.register(with: self)
+
+    if let controller = window?.rootViewController as? FlutterViewController {
+      LiveActivityBridge.register(with: controller.binaryMessenger)
+    }
 
     UNUserNotificationCenter.current().delegate = self
 

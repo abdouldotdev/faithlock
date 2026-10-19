@@ -76,6 +76,8 @@
 		<false/>
 		<key>NSUserTrackingUsageDescription</key>
 		<string>This identifier will be used to deliver personalized ads to you and improve our service.</string>
+		<key>NSMicrophoneUsageDescription</key>
+		<string>FaithLock uses the microphone only if you choose to speak or record a prayer aloud.</string>
 		<key>LSApplicationQueriesSchemes</key>
 		<array>
 			<string>fbapi</string>
@@ -93,5 +95,7 @@
 		<false/>
 		<key>UIStatusBarHidden</key>
 		<false/>
+		<key>NSSupportsLiveActivities</key>
+		<true/>
 	</dict>
 </plist>

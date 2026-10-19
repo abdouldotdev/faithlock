@@ -41,7 +41,7 @@ class FaithLockDatabaseService {
 
     return await openDatabase(
       path,
-      version: 4,
+      version: 5,
       onCreate: _onCreate,
       onUpgrade: _onUpgrade,
     );
@@ -101,6 +101,7 @@ class FaithLockDatabaseService {
         attempt_count INTEGER DEFAULT 1,
         time_to_unlock INTEGER,
         unlock_duration_minutes INTEGER,
+        unlock_method TEXT,
         FOREIGN KEY (verse_id) REFERENCES verses(id)
       )
     ''');
@@ -146,6 +147,13 @@ class FaithLockDatabaseService {
         )
       ''');
       debugPrint('✅ Database upgraded to version 4: Added earned_badges table');
+    }
+    if (oldVersion < 5) {
+      await db.execute('''
+        ALTER TABLE unlock_history
+        ADD COLUMN unlock_method TEXT
+      ''');
+      debugPrint('✅ Database upgraded to version 5: Added unlock_method column');
     }
   }
 

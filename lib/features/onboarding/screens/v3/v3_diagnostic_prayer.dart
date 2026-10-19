@@ -1,14 +1,12 @@
-import 'package:faithlock/features/onboarding/constants/onboarding_theme.dart';
 import 'package:faithlock/features/onboarding/controllers/scripture_onboarding_v3_controller.dart';
 import 'package:faithlock/features/onboarding/utils/animation_utils.dart';
 import 'package:faithlock/features/onboarding/widgets/onboarding_wrapper.dart';
-import 'package:faithlock/shared/widgets/buttons/fast_button.dart';
-import 'package:faithlock/shared/widgets/controls/fast_slider.dart';
+import 'package:faithlock/shared/widgets/cozy/cozy.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-/// V3 Diagnostic - Prayer frequency per week.
-/// Slider input. Saves to controller.prayerTimesPerWeek (inherited from V1).
+/// V3 Diagnostic — Prayer frequency per week (cozy).
+/// Slider input. Saves to controller.prayerTimesPerWeek.
 class V3DiagnosticPrayer extends StatefulWidget {
   final VoidCallback onComplete;
   const V3DiagnosticPrayer({super.key, required this.onComplete});
@@ -23,11 +21,11 @@ class _V3DiagnosticPrayerState extends State<V3DiagnosticPrayer> {
   double _opacity = 1.0;
 
   Color _color() {
-    if (_times == 0) return OnboardingTheme.labelTertiary;
-    if (_times < 4) return OnboardingTheme.systemRed;
-    if (_times < 7) return OnboardingTheme.systemOrange;
-    if (_times < 14) return OnboardingTheme.goldColor;
-    return OnboardingTheme.systemGreen;
+    if (_times == 0) return CozyColors.inkMuted;
+    if (_times < 4) return CozyColors.error;
+    if (_times < 7) return CozyColors.warning;
+    if (_times < 14) return CozyColors.primary;
+    return CozyColors.success;
   }
 
   Future<void> _onContinue() async {
@@ -46,52 +44,43 @@ class _V3DiagnosticPrayerState extends State<V3DiagnosticPrayer> {
         opacity: _opacity,
         duration: const Duration(milliseconds: 400),
         child: Padding(
-          padding: const EdgeInsets.only(
-            left: OnboardingTheme.horizontalPadding,
-            right: OnboardingTheme.horizontalPadding,
-            top: 100,
-            bottom: OnboardingTheme.verticalPadding,
-          ),
+          padding: const EdgeInsets.fromLTRB(24, 96, 24, 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                'And how often do you pray each week — honestly?',
-                style: OnboardingTheme.title2,
+                'onbDiagnosticPrayer_title'.tr,
+                style: CozyText.title,
               ),
               const Spacer(),
               Center(
                 child: Text(
                   _times.toInt().toString(),
-                  style: OnboardingTheme.displayNumber.copyWith(color: _color()),
+                  style: CozyText.display.copyWith(
+                    color: _color(),
+                    fontSize: 72,
+                  ),
                 ),
               ),
-              const SizedBox(height: OnboardingTheme.space4),
+              const SizedBox(height: 4),
               Center(
-                child: Text(
-                  'times per week',
-                  style: OnboardingTheme.displayUnit,
-                ),
+                child: Text('onbDiagnosticPrayer_frequencyLabel'.tr, style: CozyText.label),
               ),
-              const SizedBox(height: OnboardingTheme.space40),
-              FastSlider(
+              const SizedBox(height: CozyTokens.space32),
+              CozyGlassSlider(
                 value: _times,
                 min: 0,
                 max: 21,
                 divisions: 21,
+                trackHeight: 24,
+                thumbSize: 40,
                 activeColor: _color(),
-                onChanged: (v) {
-                  AnimationUtils.selectionHaptic();
-                  setState(() => _times = v);
-                },
+                onChanged: (v) => setState(() => _times = v),
               ),
               const Spacer(),
-              FastButton(
-                text: 'Continue',
+              CozyButton(
+                text: 'onbDiagnosticPrayer_cta'.tr,
                 onTap: _onContinue,
-                backgroundColor: OnboardingTheme.goldColor,
-                textColor: OnboardingTheme.backgroundColor,
-                style: FastButtonStyle.filled,
               ),
             ],
           ),

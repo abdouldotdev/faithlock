@@ -3,7 +3,8 @@
 import posthog from 'posthog-js'
 import { PostHogProvider as PHProvider } from 'posthog-js/react'
 import { useEffect } from 'react'
-import { isFaithLockStoreUrl, trackStoreClick } from '@/lib/analytics'
+import { trackStoreClick } from '@/lib/analytics'
+import { storeDestinationType, storeLinkLocation } from '@/lib/store-click'
 
 export function PostHogProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -21,14 +22,8 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
     function handleClick(e: MouseEvent) {
       if (e.type === 'auxclick' && e.button !== 1) return
       const link = (e.target as HTMLElement | null)?.closest('a[href]') as HTMLAnchorElement | null
-      if (!link || !isFaithLockStoreUrl(link.href)) return
-
-      const location =
-        link.dataset.storeLocation ||
-        link.dataset.trackCta ||
-        (link.closest('[data-track-section]') as HTMLElement | null)?.dataset.trackSection ||
-        'content'
-      trackStoreClick(link.href, location, link.textContent?.trim())
+      if (!link || !storeDestinationType(link.href)) return
+      trackStoreClick(link.href, storeLinkLocation(link), link.textContent?.trim())
     }
 
     document.addEventListener('click', handleClick, true)

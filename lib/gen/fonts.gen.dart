@@ -15,4 +15,7 @@ class FontFamily {
 
   /// Font family: Garamond
   static const String garamond = 'Garamond';
+
+  /// Font family: Satoshi
+  static const String satoshi = 'Satoshi';
 }

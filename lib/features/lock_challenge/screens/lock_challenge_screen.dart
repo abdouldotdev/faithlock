@@ -1,7 +1,6 @@
 import 'package:faithlock/features/lock_challenge/controllers/lock_challenge_controller.dart';
 import 'package:faithlock/features/onboarding/constants/onboarding_theme.dart';
-import 'package:faithlock/shared/widgets/buttons/fast_button.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 /// Lock Challenge Screen - Powerful conviction-based quiz to unlock apps
@@ -12,29 +11,39 @@ class LockChallengeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(LockChallengeController());
 
-    return Scaffold(
-      backgroundColor: OnboardingTheme.backgroundColor,
-      body: SafeArea(
-        child: Obx(() {
-          if (controller.isCompleted.value) {
-            return _buildVictoryScreen(controller);
-          }
-
-          return _buildQuizScreen(controller);
-        }),
+    return CupertinoTheme(
+      data: CupertinoThemeData(
+        brightness: Brightness.dark,
+        primaryColor: OnboardingTheme.goldColor,
+        textTheme: CupertinoTextThemeData(
+          primaryColor: OnboardingTheme.goldColor,
+        ),
+      ),
+      child: CupertinoPageScaffold(
+        backgroundColor:
+            CupertinoColors.secondarySystemGroupedBackground.resolveFrom(context),
+        child: SafeArea(
+          child: Obx(() {
+            if (controller.isCompleted.value) {
+              return _buildVictoryScreen(context, controller);
+            }
+            return _buildQuizScreen(context, controller);
+          }),
+        ),
       ),
     );
   }
 
-  Widget _buildQuizScreen(LockChallengeController controller) {
+  Widget _buildQuizScreen(
+      BuildContext context, LockChallengeController controller) {
     return Column(
       children: [
         // Progress bar
-        _buildProgressBar(controller),
+        _buildProgressBar(context, controller),
 
-        // Main content
         Expanded(
           child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
             padding: const EdgeInsets.all(24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,38 +51,39 @@ class LockChallengeScreen extends StatelessWidget {
                 const SizedBox(height: 20),
 
                 // Header icon
-                Center(
-                  child: Text(
-                    '🔥⚔️🔥',
-                    style: TextStyle(fontSize: 48),
-                  ),
+                const Center(
+                  child: Text('🔥⚔️🔥', style: TextStyle(fontSize: 48)),
                 ),
 
                 const SizedBox(height: 24),
 
                 // Title
-                Text(
-                  'challenge_momentOfTruth'.tr,
-                  style: OnboardingTheme.title1.copyWith(
-                    color: Colors.orange,
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
+                Center(
+                  child: Text(
+                    'challenge_momentOfTruth'.tr,
+                    style: OnboardingTheme.title1.copyWith(
+                      color: CupertinoColors.systemOrange,
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
                 ),
 
                 const SizedBox(height: 16),
 
                 // Challenge message
-                Obx(() => Text(
-                      controller.challengeMessage.value,
-                      style: OnboardingTheme.body.copyWith(
-                        color: OnboardingTheme.labelPrimary,
-                        fontSize: 17,
-                        fontStyle: FontStyle.italic,
-                        height: 1.5,
+                Obx(() => Center(
+                      child: Text(
+                        controller.challengeMessage.value,
+                        style: OnboardingTheme.body.copyWith(
+                          color: OnboardingTheme.labelPrimary,
+                          fontSize: 17,
+                          fontStyle: FontStyle.italic,
+                          height: 1.5,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
                     )),
 
                 const SizedBox(height: 40),
@@ -84,12 +94,12 @@ class LockChallengeScreen extends StatelessWidget {
                 const SizedBox(height: 32),
 
                 // Answer options
-                Obx(() => _buildAnswerOptions(controller)),
+                Obx(() => _buildAnswerOptions(context, controller)),
 
                 const SizedBox(height: 40),
 
-                // Emergency bypass
-                _buildEmergencyBypass(controller),
+                // Emergency bypass / action buttons
+                _buildEmergencyBypass(context, controller),
               ],
             ),
           ),
@@ -98,31 +108,15 @@ class LockChallengeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildProgressBar(LockChallengeController controller) {
+  Widget _buildProgressBar(
+      BuildContext context, LockChallengeController controller) {
     return Obx(() {
       final progress = controller.progress;
       return Column(
         children: [
-          Container(
+          SizedBox(
             height: 4,
-            decoration: BoxDecoration(
-              color: OnboardingTheme.cardBackground,
-            ),
-            child: FractionallySizedBox(
-              alignment: Alignment.centerLeft,
-              widthFactor: progress,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: OnboardingTheme.goldColor,
-                  boxShadow: [
-                    BoxShadow(
-                      color: OnboardingTheme.goldColor.withValues(alpha: 0.5),
-                      blurRadius: 8,
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            child: _ProgressBar(progress: progress),
           ),
           const SizedBox(height: 12),
           Text(
@@ -142,7 +136,7 @@ class LockChallengeScreen extends StatelessWidget {
 
   Widget _buildVerseCard(LockChallengeController controller) {
     final question = controller.currentQuestion;
-    if (question == null) return const SizedBox();
+    if (question == null) return const SizedBox.shrink();
 
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
@@ -165,7 +159,6 @@ class LockChallengeScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Verse with blank
           Text(
             question.verseWithBlank,
             style: OnboardingTheme.body.copyWith(
@@ -175,10 +168,7 @@ class LockChallengeScreen extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
           ),
-
           const SizedBox(height: 16),
-
-          // Reference
           Text(
             '— ${question.reference}',
             style: OnboardingTheme.footnote.copyWith(
@@ -192,23 +182,22 @@ class LockChallengeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildAnswerOptions(LockChallengeController controller) {
+  Widget _buildAnswerOptions(
+      BuildContext context, LockChallengeController controller) {
     final question = controller.currentQuestion;
-    if (question == null) return const SizedBox();
+    if (question == null) return const SizedBox.shrink();
 
     return Column(
       children: List.generate(
         question.options.length,
-        (index) => _buildAnswerOption(
-          controller,
-          index,
-          question.options[index],
-        ),
+        (index) => _buildAnswerOption(context, controller, index,
+            question.options[index]),
       ),
     );
   }
 
   Widget _buildAnswerOption(
+    BuildContext context,
     LockChallengeController controller,
     int index,
     String option,
@@ -223,19 +212,18 @@ class LockChallengeScreen extends StatelessWidget {
       Color textColor;
 
       if (showResult && isSelected) {
-        // Show result colors
         backgroundColor = isCorrect
-            ? Colors.green.withValues(alpha: 0.15)
-            : Colors.red.withValues(alpha: 0.15);
-        borderColor = isCorrect ? Colors.green : Colors.red;
-        textColor = isCorrect ? Colors.green : Colors.red;
+            ? CupertinoColors.systemGreen.withValues(alpha: 0.15)
+            : CupertinoColors.systemRed.withValues(alpha: 0.15);
+        borderColor =
+            isCorrect ? CupertinoColors.systemGreen : CupertinoColors.systemRed;
+        textColor =
+            isCorrect ? CupertinoColors.systemGreen : CupertinoColors.systemRed;
       } else if (isSelected) {
-        // Selected but not submitted
         backgroundColor = OnboardingTheme.goldColor.withValues(alpha: 0.15);
         borderColor = OnboardingTheme.goldColor;
         textColor = OnboardingTheme.goldColor;
       } else {
-        // Default state
         backgroundColor = OnboardingTheme.cardBackground;
         borderColor = OnboardingTheme.cardBorder;
         textColor = OnboardingTheme.labelPrimary;
@@ -249,31 +237,27 @@ class LockChallengeScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
           decoration: BoxDecoration(
             color: backgroundColor,
-            borderRadius: BorderRadius.circular(OnboardingTheme.radiusMedium),
-            border: Border.all(
-              color: borderColor,
-              width: 2,
-            ),
+            borderRadius:
+                BorderRadius.circular(OnboardingTheme.radiusMedium),
+            border: Border.all(color: borderColor, width: 2),
           ),
           child: Row(
             children: [
-              // Answer icon
               Container(
                 width: 28,
                 height: 28,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: backgroundColor,
-                  border: Border.all(
-                    color: borderColor,
-                    width: 2,
-                  ),
+                  border: Border.all(color: borderColor, width: 2),
                 ),
                 child: showResult && isSelected
                     ? Icon(
-                        isCorrect ? Icons.check : Icons.close,
+                        isCorrect
+                            ? CupertinoIcons.checkmark
+                            : CupertinoIcons.xmark,
                         color: textColor,
-                        size: 18,
+                        size: 16,
                       )
                     : Center(
                         child: Text(
@@ -282,14 +266,12 @@ class LockChallengeScreen extends StatelessWidget {
                             color: textColor,
                             fontWeight: FontWeight.bold,
                             fontSize: 14,
+                            fontFamily: OnboardingTheme.fontFamily,
                           ),
                         ),
                       ),
               ),
-
               const SizedBox(width: 16),
-
-              // Answer text
               Expanded(
                 child: Text(
                   option,
@@ -307,46 +289,54 @@ class LockChallengeScreen extends StatelessWidget {
     });
   }
 
-  Widget _buildActionButtons(LockChallengeController controller) {
+  Widget _buildActionButtons(
+      BuildContext context, LockChallengeController controller) {
     return Obx(() {
       final showResult = controller.showResult.value;
       final isCorrect = controller.isAnswerCorrect.value;
 
-      if (!showResult) {
-        return const SizedBox();
-      }
+      if (!showResult) return const SizedBox.shrink();
 
-      if (isCorrect) {
-        // Correct answer - show continue button
-        return Center(
-          child: FastButton(
-            text: controller.hasNextQuestion ? 'challenge_nextQuestion'.tr : 'challenge_complete'.tr,
-            onTap: () => controller.nextQuestion(),
-            backgroundColor: Colors.green,
-            textColor: Colors.white,
-            style: FastButtonStyle.filled,
-          ),
-        );
-      } else {
-        // Incorrect answer - show retry button
-        return Center(
-          child: FastButton(
-            text: 'challenge_tryAgain'.tr,
-            onTap: () => controller.retryQuestion(),
-            backgroundColor: Colors.orange,
-            textColor: Colors.white,
-            style: FastButtonStyle.filled,
-          ),
-        );
-      }
+      return Center(
+        child: isCorrect
+            ? CupertinoButton(
+                color: CupertinoColors.systemGreen,
+                borderRadius: BorderRadius.circular(12),
+                onPressed: () => controller.nextQuestion(),
+                child: Text(
+                  controller.hasNextQuestion
+                      ? 'challenge_nextQuestion'.tr
+                      : 'challenge_complete'.tr,
+                  style: TextStyle(
+                    fontFamily: OnboardingTheme.fontFamily,
+                    fontWeight: FontWeight.w600,
+                    color: OnboardingTheme.labelPrimary,
+                  ),
+                ),
+              )
+            : CupertinoButton(
+                color: CupertinoColors.systemOrange,
+                borderRadius: BorderRadius.circular(12),
+                onPressed: () => controller.retryQuestion(),
+                child: Text(
+                  'challenge_tryAgain'.tr,
+                  style: TextStyle(
+                    fontFamily: OnboardingTheme.fontFamily,
+                    fontWeight: FontWeight.w600,
+                    color: OnboardingTheme.labelPrimary,
+                  ),
+                ),
+              ),
+      );
     });
   }
 
-  Widget _buildEmergencyBypass(LockChallengeController controller) {
+  Widget _buildEmergencyBypass(
+      BuildContext context, LockChallengeController controller) {
     return Center(
       child: Column(
         children: [
-          Obx(() => _buildActionButtons(controller)),
+          Obx(() => _buildActionButtons(context, controller)),
           const SizedBox(height: 24),
           Text(
             'challenge_easyWayOut'.tr,
@@ -358,12 +348,14 @@ class LockChallengeScreen extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 12),
-          TextButton(
-            onPressed: () => _showBreakCovenantDialog(controller),
+          CupertinoButton(
+            padding: EdgeInsets.zero,
+            onPressed: () => _showBreakCovenantDialog(context, controller),
             child: Text(
               'challenge_surrenderCovenant'.tr,
               style: TextStyle(
-                color: Colors.red.withValues(alpha: 0.7),
+                fontFamily: OnboardingTheme.fontFamily,
+                color: CupertinoColors.systemRed.withValues(alpha: 0.7),
                 fontSize: 14,
                 decoration: TextDecoration.underline,
               ),
@@ -374,45 +366,71 @@ class LockChallengeScreen extends StatelessWidget {
     );
   }
 
-  void _showBreakCovenantDialog(LockChallengeController controller) {
-    Get.defaultDialog(
-      title: 'challenge_breakCovenant'.tr,
-      titleStyle: const TextStyle(
-        fontSize: 20,
-        fontWeight: FontWeight.bold,
-        color: Colors.red,
+  void _showBreakCovenantDialog(
+      BuildContext context, LockChallengeController controller) {
+    showCupertinoDialog<void>(
+      context: context,
+      builder: (ctx) => CupertinoAlertDialog(
+        title: Text(
+          'challenge_breakCovenant'.tr,
+          style: const TextStyle(
+            fontFamily: OnboardingTheme.fontFamily,
+            fontSize: 17,
+            fontWeight: FontWeight.bold,
+            color: CupertinoColors.systemRed,
+          ),
+        ),
+        content: Text(
+          'challenge_breakCovenantMessage'.tr,
+          style: const TextStyle(
+            fontFamily: OnboardingTheme.fontFamily,
+            fontSize: 14,
+          ),
+        ),
+        actions: [
+          CupertinoDialogAction(
+            isDefaultAction: true,
+            child: Text(
+              'challenge_stayStrong'.tr,
+              style: const TextStyle(
+                fontFamily: OnboardingTheme.fontFamily,
+                color: OnboardingTheme.goldColor,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            onPressed: () => Navigator.of(ctx).pop(),
+          ),
+          CupertinoDialogAction(
+            isDestructiveAction: true,
+            child: Text(
+              'challenge_breakCovenantConfirm'.tr,
+              style: const TextStyle(
+                fontFamily: OnboardingTheme.fontFamily,
+              ),
+            ),
+            onPressed: () async {
+              Navigator.of(ctx).pop(); // Close dialog
+              await controller.breakCovenant();
+              Get.back(); // Close challenge screen
+            },
+          ),
+        ],
       ),
-      middleText: 'challenge_breakCovenantMessage'.tr,
-      textConfirm: 'challenge_breakCovenantConfirm'.tr,
-      textCancel: 'challenge_stayStrong'.tr,
-      confirmTextColor: Colors.white,
-      cancelTextColor: OnboardingTheme.goldColor,
-      buttonColor: Colors.red,
-      onConfirm: () async {
-        await controller.breakCovenant();
-        Get.back(); // Close dialog
-        Get.back(); // Close challenge screen
-        // TODO: Trigger temporary unlock via native code
-      },
     );
   }
 
-  Widget _buildVictoryScreen(LockChallengeController controller) {
+  Widget _buildVictoryScreen(
+      BuildContext context, LockChallengeController controller) {
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(32),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Victory icon
-            Text(
-              '🏆✨',
-              style: TextStyle(fontSize: 80),
-            ),
+            const Text('🏆✨', style: TextStyle(fontSize: 80)),
 
             const SizedBox(height: 32),
 
-            // Victory message
             Text(
               'challenge_victory'.tr,
               style: OnboardingTheme.title1.copyWith(
@@ -437,7 +455,6 @@ class LockChallengeScreen extends StatelessWidget {
 
             const SizedBox(height: 48),
 
-            // Stats
             Obx(() => Text(
                   'challenge_correctCount'.trParams({
                     'correct': '${controller.correctAnswersCount.value}',
@@ -451,18 +468,61 @@ class LockChallengeScreen extends StatelessWidget {
 
             const SizedBox(height: 48),
 
-            // Continue button
-            FastButton(
-              text: 'continue_btn'.tr,
-              onTap: () {
-                Get.back(); // Return to previous screen
-                // TODO: Trigger temporary unlock via native code
-              },
-              backgroundColor: OnboardingTheme.goldColor,
-              textColor: OnboardingTheme.backgroundColor,
-              style: FastButtonStyle.filled,
+            SizedBox(
+              width: double.infinity,
+              child: CupertinoButton(
+                color: OnboardingTheme.goldColor,
+                borderRadius: BorderRadius.circular(14),
+                onPressed: () {
+                  Get.back();
+                },
+                child: Text(
+                  'continue_btn'.tr,
+                  style: TextStyle(
+                    fontFamily: OnboardingTheme.fontFamily,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 17,
+                    color: OnboardingTheme.backgroundColor,
+                  ),
+                ),
+              ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Gold progress bar with no Material dependency
+class _ProgressBar extends StatelessWidget {
+  final double progress;
+
+  const _ProgressBar({required this.progress});
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) => Container(
+        width: constraints.maxWidth,
+        height: 4,
+        color: OnboardingTheme.cardBackground,
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: FractionallySizedBox(
+            widthFactor: progress.clamp(0.0, 1.0),
+            child: Container(
+              decoration: BoxDecoration(
+                color: OnboardingTheme.goldColor,
+                boxShadow: [
+                  BoxShadow(
+                    color: OnboardingTheme.goldColor.withValues(alpha: 0.5),
+                    blurRadius: 8,
+                  ),
+                ],
+              ),
+            ),
+          ),
         ),
       ),
     );

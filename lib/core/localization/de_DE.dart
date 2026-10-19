@@ -140,6 +140,23 @@ const Map<String, String> de_DE = {
   'judahAlmostThere': 'Fast geschafft, @name.',
   'judahEvening': 'Friedlichen Abend,\n@name.',
 
+  // Garten-Begleiter (Toby) — Vollbild-Topf-Nachrichten
+  'garden_stageSeed': 'Samen',
+  'garden_stageSprout': 'Keimling',
+  'garden_stageGrowing': 'Wachstum',
+  'garden_stageBlooming': 'Blüte',
+  'garden_stageFruit': 'Früchte',
+  'garden_msgSeed': 'Ein Samen ist gepflanzt. Gieße ihn morgen 💧',
+  'garden_msgSprout': 'Es keimt! Noch ein paar Tage bis zu den ersten Blättern 🌿',
+  'garden_msgGrowing': 'Schön kräftig — deine Gegenwart lässt sie wachsen ✨',
+  'garden_msgBlooming': 'Sie blüht 🌸 Mach weiter, die Frucht kommt',
+  'garden_msgFruit': 'Sie trägt Frucht! Deine Treue hat sich gelohnt 🙌',
+  'garden_msgThirsty': 'Sie ist durstig 🥺 Ein Vers genügt, um sie zu retten',
+  'garden_msgStreak': '🔥 @streak Tage in Folge — halte die Kette',
+  'garden_msgTendToday': 'Toby wartet… kümmere dich heute um sie 💧',
+  'garden_hdrStreak': '🔥 @count Tage in Folge',
+  'garden_hdrPrayed': '@count Min. Gebet heute',
+
   // ═══════════════════════════════════════════
   // UNLOCK SCREEN
   // ═══════════════════════════════════════════
@@ -178,9 +195,9 @@ const Map<String, String> de_DE = {
   // ONBOARDING: WELCOME (Step 1)
   // ═══════════════════════════════════════════
   'welcome_message':
-      'Willkommen! Ich bin Judah und ich helfe Ihnen, das gedankenlose Scrollen zu beenden und eine echte Gegenwart mit Gott aufzubauen.',
+      'Willkommen! Ich bin Toby und ich helfe Ihnen, das gedankenlose Scrollen zu beenden und eine echte Gegenwart mit Gott aufzubauen.',
   'welcome_part1': 'Willkommen! Ich bin ',
-  'welcome_name': 'Judah',
+  'welcome_name': 'Toby',
   'welcome_part2': ', und ich helfe Ihnen, ',
   'welcome_highlight1': 'das gedankenlose Scrollen zu beenden',
   'welcome_part3': ' und eine ',
@@ -377,9 +394,16 @@ const Map<String, String> de_DE = {
   'summaryScreen_promise4': 'Wahre digitale Freiheit & Frieden erleben',
   'summaryScreen_graph_title': 'Zeit, die Sie zurückgewinnen werden',
   'summaryScreen_graph_subtitle': 'Jede Stunde zurück für Gebet & Familie',
-  'summaryScreen_graph_note': 'Basierend auf Durchschnittswerten von über 500 Nutzern',
-  'summaryScreen_testimonial': '„Ich war jahrelang an mein Handy gefesselt. FaithLock hat mir täglich über 3 Stunden zurückgegeben – die ich jetzt im Gebet, mit meinen Kindern und in Gottes Wort verbringe. Mein Leben hat sich komplett verändert."',
-  'summaryScreen_testimonial_author': '— Sarah M., FaithLock Nutzerin',
+  'summaryScreen_graph_note': 'Basierend auf Durchschnittswerten von über 1000 Nutzern',
+  'summaryScreen_testimonial':
+      '„FaithLock hat mir 3 Stunden am Tag zurückgegeben. Sie gehen jetzt ins Gebet, zu meinen Kindern, in Gottes Wort."',
+  'summaryScreen_testimonial_author': '— Sarah M., Berlin',
+  'summaryScreen_testimonial2':
+      '„Meine Bildschirmzeit fiel von 5h auf unter 2h. Mein Gebetsleben hat endlich wieder Raum."',
+  'summaryScreen_testimonial2_author': '— David K., München',
+  'summaryScreen_testimonial3':
+      '„Ich wache jetzt auf und lese die Schrift, nicht Instagram. Komplett anders."',
+  'summaryScreen_testimonial3_author': '— Grace L., Hamburg',
   'summaryScreen_stats_title': 'Gläubige, die FaithLock nutzen, berichten:',
   'summaryScreen_stat1_value': '70%',
   'summaryScreen_stat1_label': 'Weniger\nBildschirmzeit',
@@ -406,6 +430,9 @@ const Map<String, String> de_DE = {
   'paywall_headline3': ' am Tag.',
   'paywall_subheadline': 'Gewinnen Sie diese Zeit für Gott zurück.',
   'paywall_socialProof': 'Schließen Sie sich @count Gläubigen an, die ihre Zeit zurückerobern',
+  'paywall_headlineMain': 'Entfalte dein volles spirituelles Potenzial',
+  'paywall_trialReminderDay2': 'Testphasen-Erinnerung an Tag 2',
+  'paywall_cancelAnytimeShort': 'Keine Verpflichtung — Jederzeit kündbar',
   'paywall_benefit1': 'Ablenkende Apps während der Gebetszeit blockieren',
   'paywall_benefit2': 'Eine tägliche Schrift-Gewohnheit aufbauen, die wirklich hält',
   'paywall_benefit3': 'Weniger Scrollen, mehr Zeit im Wort',
@@ -794,11 +821,13 @@ const Map<String, String> de_DE = {
       'Noch eine Sache, @name... um Ihnen zu helfen, konzentriert zu bleiben...',
   'notifPerm_explanation':
       'Ich muss Ihnen Erinnerungen senden, wenn es Zeit ist, Ihre Apps erneut zu sperren und zu beten.\n\nDiese sanften Impulse halten Sie auf Kurs.',
-  'notifPerm_enableTitle': 'Gebetserinnerungen aktivieren',
-  'notifPerm_benefit1': 'Rechtzeitige Erinnerungen zum erneuten Sperren Ihrer Apps',
-  'notifPerm_benefit2': 'Gebetszeit-Benachrichtigungen',
-  'notifPerm_benefit3': 'Bleiben Sie Ihren geistlichen Zielen treu',
-  'notifPerm_noSpam': 'Wir senden nur hilfreiche Erinnerungen, keinen Spam',
+  'notifPerm_enableTitle': 'Benachrichtigungen zum Entsperren aktivieren',
+  'notifPerm_subtitle':
+      'Wenn es Zeit zum Entsperren ist, sendet FaithLock eine Benachrichtigung — tippe darauf, um dein Quiz zu starten.',
+  'notifPerm_benefit1': 'Zur richtigen Zeit sendet dir FaithLock eine Benachrichtigung',
+  'notifPerm_benefit2': 'Tippe darauf, um dein Quiz zu starten und Apps zu entsperren',
+  'notifPerm_benefit3': 'Ein sanfter Hinweis zum erneuten Sperren nach deiner Pause',
+  'notifPerm_noSpam': 'Erforderlich — so erreicht dich FaithLock zum Entsperren',
   'notifPerm_requesting': 'Wird angefragt...',
   'notifPerm_enableBtn': 'Benachrichtigungen aktivieren',
   'notifPerm_skipTitle': 'Erinnerungen überspringen?',
@@ -843,7 +872,10 @@ const Map<String, String> de_DE = {
   // Navigation Labels
   'nav_stats': 'Statistiken',
   'nav_library': 'Bibliothek',
+  'nav_pray': 'Beten',
   'nav_profile': 'Profil',
+  'share_app_message':
+      "🙏 Hör auf zu scrollen, fang mit der Schrift an. FaithLock sperrt meine ablenkenden Apps hinter einem Bibelvers – so wird Bildschirmzeit zu Zeit mit Gott. Probier es aus:",
 
   // Progress Screen
   'progress_title': 'Fortschritt',
@@ -973,4 +1005,29 @@ const Map<String, String> de_DE = {
   'meditation_thankYouReflection': 'Danke für Ihre Reflexion!',
   'meditation_shareBriefThought':
       'Bitte teilen Sie einen kurzen Gedanken über den Vers.',
+
+  // Bible UI (cozy)
+  'bible_holyBible': 'Heilige Bibel',
+  'bible_searchBooks': 'Bücher suchen',
+  'bible_noVersesAvailable': 'Keine Verse verfügbar.',
+  'bible_readingMode': 'Lesemodus',
+  'bible_availableVersions': 'Verfügbare Versionen',
+  'bible_bibleVersion': 'Bibel-Version',
+  'bible_thoughtTitle': 'Gedankentitel',
+  'bible_heartsNote': 'Notiz deines Herzens',
+  'bible_reflectionTitleHint': 'Ein Name für diese Reflexion…',
+  'bible_reflectionNoteHint': 'Schreib auf, was bei dir nachklingt…',
+  'bible_saveReflection': 'Reflexion speichern',
+  'bible_reflection': 'Reflexion',
+  'bible_verseHighlighted': 'Vers markiert',
+  'bible_highlightRemoved': 'Markierung entfernt',
+  'bible_verseBookmarked': 'Vers gespeichert',
+  'bible_bookmarkRemoved': 'Lesezeichen entfernt',
+  'bible_chapterBookmarked': '@reference gespeichert',
+  'bible_toolbarCopy': 'Kopieren',
+  'bible_toolbarHighlight': 'Markieren',
+  'bible_toolbarBookmark': 'Lesezeichen',
+  'bible_toolbarShare': 'Teilen',
+  'bible_toolbarReflect': 'Nachdenken',
+  'bible_comingSoon': 'Bald verfügbar',
 };

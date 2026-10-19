@@ -97,6 +97,9 @@ class DeepLinkService {
       case 'unlock':
         _navigateToUnlock();
         break;
+      case 'promo':
+        _navigateToPromoOffer(uri);
+        break;
       default:
         debugPrint('⚠️ Unknown deep link host: $host');
     }
@@ -108,7 +111,7 @@ class DeepLinkService {
 
     // Small delay to ensure app is ready
     Future.delayed(const Duration(milliseconds: 500), () {
-      Get.toNamed(AppRoutes.prayerLearning);
+      Get.toNamed(AppRoutes.unlockChooser);
     });
   }
 
@@ -119,6 +122,22 @@ class DeepLinkService {
     Future.delayed(const Duration(milliseconds: 500), () {
       // Navigate to unlock challenge or main screen
       Get.toNamed(AppRoutes.main);
+    });
+  }
+
+  /// Navigate to the welcome-offer page (tapped from the Live Activity).
+  void _navigateToPromoOffer(Uri uri) {
+    final source = uri.queryParameters['src'] ?? 'deeplink';
+    debugPrint('🎁 Navigating to promo offer (source: $source)...');
+
+    // Guard against stacking a second copy if the page is already up.
+    if (Get.currentRoute == AppRoutes.promoOffer) return;
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      Get.toNamed<void>(
+        AppRoutes.promoOffer,
+        arguments: <String, dynamic>{'source': source},
+      );
     });
   }
 

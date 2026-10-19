@@ -3,7 +3,7 @@
 *Last updated: 2026-03-13*
 
 ## Product Overview
-**One-liner:** The only app blocker that unlocks your phone with Scripture.
+**One-liner:** The only app blocker that unlocks   with Scripture.
 **What it does:** FaithLock is a faith-based screen time app blocker that uses Bible verses and scripture quizzes to create intentional friction before accessing distracting apps. Rather than simply blocking, it interrupts the dopamine loop by requiring users to read and engage with Scripture (15-second minimum) before gaining access — creating a spiritual discipline layer on top of technical blocking.
 **Product category:** Digital Wellness / Screen Time Management (Faith-Based)
 **Product type:** Mobile app (iOS-first, Flutter)

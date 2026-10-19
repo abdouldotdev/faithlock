@@ -1,14 +1,17 @@
-import 'package:faithlock/features/onboarding/constants/onboarding_theme.dart';
+import 'dart:async';
+
 import 'package:faithlock/features/onboarding/controllers/scripture_onboarding_controller.dart';
 import 'package:faithlock/features/onboarding/utils/animation_utils.dart';
-import 'package:faithlock/features/onboarding/widgets/feather_cursor.dart';
 import 'package:faithlock/features/onboarding/widgets/fingerprint_scanner.dart';
 import 'package:faithlock/features/onboarding/widgets/onboarding_wrapper.dart';
+import 'package:faithlock/shared/widgets/cozy/cozy.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-/// Step 6: Final Encouragement - Launch into Freedom
-/// Final message of hope and launch button
+/// Step 6: Final Encouragement — cozy rebuild. Two phases on the cream canvas
+/// (no typewriter):
+///   Phase 0: encouragement message + Scripture promise — auto-navigates.
+///   Phase 1: the fingerprint covenant scanner.
 class Step6FinalEncouragement extends StatefulWidget {
   final VoidCallback onComplete;
 
@@ -25,131 +28,37 @@ class Step6FinalEncouragement extends StatefulWidget {
 class _Step6FinalEncouragementState extends State<Step6FinalEncouragement> {
   final controller = Get.find<ScriptureOnboardingController>();
 
-  // Phase 9.1 - Encouragement
-  String _encouragementText = '';
-  bool _showEncouragementCursor = false;
+  /// 0 = message + verse (auto-navigates), 1 = fingerprint covenant.
+  int _phase = 0;
 
-  // Phase 9.2 - Scripture Promise
-  String _scriptureText = '';
-  bool _showScriptureCursor = false;
+  /// The verse fades in a beat after the message (staged appear on phase 0).
+  bool _showVerse = false;
 
-  // Phase 9.3 - Final Message
-  String _finalText = '';
-  bool _showFinalCursor = false;
-
-  // Phase 9.4 - Signature
-  String _signatureText = '';
-  bool _showSignatureCursor = false;
-  String _covenantText = '';
-  bool _showCovenantText = false;
-  bool _showScanner = false;
-
-  double _opacity = 1.0;
+  Timer? _verseTimer;
+  Timer? _advanceTimer;
 
   @override
   void initState() {
     super.initState();
-    _startAnimation();
-  }
-
-  Future<void> _startAnimation() async {
-    await Future.delayed(const Duration(milliseconds: 500));
-
-    // Phase 9.1: Encouragement
-    await _phase91Encouragement();
-
-    // Phase 9.2: Scripture Promise
-    await _phase92ScripturePromise();
-
-    // Phase 9.3: Final Message
-    await _phase93FinalMessage();
-
-    // Phase 9.4: Signature (wait for user scan)
-    await _phase94Signature();
-  }
-
-  Future<void> _phase91Encouragement() async {
-    final userName = controller.userName.value;
-
-    await AnimationUtils.typeText(
-      fullText:
-          'finalEnc_message'.trParams({'name': userName}),
-      onUpdate: (text) => setState(() => _encouragementText = text),
-      onCursorVisibility: (visible) =>
-          setState(() => _showEncouragementCursor = visible),
-      speedMs: 40,
-    );
-
-    await AnimationUtils.pause(durationMs: 2500);
-  }
-
-  Future<void> _phase92ScripturePromise() async {
-    setState(() {
-      _encouragementText = '';
-      _showEncouragementCursor = false;
+    // Phase 0: message appears, then the verse fades in, then the whole screen
+    // auto-navigates to the fingerprint covenant — no tap, no typewriter.
+    _verseTimer = Timer(const Duration(milliseconds: 1200), () {
+      if (!mounted) return;
+      setState(() => _showVerse = true);
+      AnimationUtils.lightHaptic();
     });
-
-    await AnimationUtils.typeText(
-      fullText:
-          'finalEnc_verse'.tr,
-      onUpdate: (text) => setState(() => _scriptureText = text),
-      onCursorVisibility: (visible) =>
-          setState(() => _showScriptureCursor = visible),
-      speedMs: 40,
-    );
-
-    await AnimationUtils.pause(durationMs: 2500);
+    _advanceTimer = Timer(const Duration(milliseconds: 3400), () {
+      if (!mounted) return;
+      setState(() => _phase = 1);
+      AnimationUtils.mediumHaptic();
+    });
   }
 
-  Future<void> _phase93FinalMessage() async {
-    setState(() {
-      _scriptureText = '';
-      _showScriptureCursor = false;
-    });
-
-    await AnimationUtils.typeText(
-      fullText:
-          'finalEnc_final'.tr,
-      onUpdate: (text) => setState(() => _finalText = text),
-      onCursorVisibility: (visible) =>
-          setState(() => _showFinalCursor = visible),
-      speedMs: 40,
-    );
-
-    await AnimationUtils.pause(durationMs: 2000);
-  }
-
-  Future<void> _phase94Signature() async {
-    setState(() {
-      _finalText = '';
-      _showFinalCursor = false;
-    });
-
-    // // First: Show intro text
-    // await AnimationUtils.typeText(
-    //   fullText:
-    //       '${controller.userName.value}, seal your commitment before God...',
-    //   onUpdate: (text) => setState(() => _signatureText = text),
-    //   onCursorVisibility: (visible) =>
-    //       setState(() => _showSignatureCursor = visible),
-    //   speedMs: 40,
-    // );
-
-    // await AnimationUtils.pause(durationMs: 1000);
-
-    // // Then: Show the covenant text
-    // setState(() {
-    //   _showSignatureCursor = false;
-    //   _covenantText =
-    //       'Before God, ${controller.userName.value}, I commit to guard my heart.\n\nI will use Scripture as my shield.';
-    //   _showCovenantText = true;
-    // });
-
-    // await AnimationUtils.pause(durationMs: 2000, withHaptic: true);
-
-    // // Finally: Show scanner
-    setState(() => _showScanner = true);
-    await AnimationUtils.mediumHaptic();
+  @override
+  void dispose() {
+    _verseTimer?.cancel();
+    _advanceTimer?.cancel();
+    super.dispose();
   }
 
   Future<void> _onScanComplete() async {
@@ -159,127 +68,94 @@ class _Step6FinalEncouragementState extends State<Step6FinalEncouragement> {
     widget.onComplete();
   }
 
+  TextStyle get _emphasisStyle => CozyText.title.copyWith(
+        fontSize: 22,
+        fontWeight: FontWeight.w700,
+        height: 1.35,
+      );
+
+  TextStyle get _verseStyle => CozyText.body.copyWith(
+        fontSize: 16,
+        fontStyle: FontStyle.italic,
+        color: CozyColors.primary,
+        height: 1.5,
+      );
+
   @override
   Widget build(BuildContext context) {
+    final userName = controller.userName.value;
     return OnboardingWrapper(
-      child: AnimatedOpacity(
-        opacity: _opacity,
-        duration: const Duration(milliseconds: 1000),
-        child: Center(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.only(
-              left: OnboardingTheme.horizontalPadding,
-              right: OnboardingTheme.horizontalPadding,
-              top: 40,
-              bottom: OnboardingTheme.verticalPadding,
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(24, 40, 24, 24),
+          child: AnimatedSwitcher(
+            duration: const Duration(milliseconds: 500),
+            switchInCurve: Curves.easeOut,
+            switchOutCurve: Curves.easeIn,
+            child: _phase == 0
+                ? _messageView(userName)
+                : _fingerprintView(userName),
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// Phase 0 — encouragement appears, then the verse fades in. Auto-navigates.
+  Widget _messageView(String userName) {
+    return Column(
+      key: const ValueKey('message'),
+      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        // Message: gentle fade + slide on mount.
+        TweenAnimationBuilder<double>(
+          tween: Tween(begin: 0.0, end: 1.0),
+          duration: const Duration(milliseconds: 600),
+          curve: Curves.easeOut,
+          builder: (context, t, child) => Opacity(
+            opacity: t,
+            child: Transform.translate(
+              offset: Offset(0, 12 * (1 - t)),
+              child: child,
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // Phase 9.1 - Encouragement
-                if (_encouragementText.isNotEmpty)
-                  RichText(
-                    text: TextSpan(
-                      style: OnboardingTheme.emphasisText,
-                      children: [
-                        TextSpan(text: _encouragementText),
-                        if (_showEncouragementCursor)
-                          const WidgetSpan(
-                            child: FeatherCursor(),
-                            alignment: PlaceholderAlignment.middle,
-                          ),
-                      ],
-                    ),
-                  ),
-
-                // Phase 9.2 - Scripture Promise
-                if (_scriptureText.isNotEmpty)
-                  RichText(
-                    text: TextSpan(
-                      style: OnboardingTheme.verseText,
-                      children: [
-                        TextSpan(text: _scriptureText),
-                        if (_showScriptureCursor)
-                          const WidgetSpan(
-                            child: FeatherCursor(),
-                            alignment: PlaceholderAlignment.middle,
-                          ),
-                      ],
-                    ),
-                  ),
-
-                // Phase 9.3 - Final Message
-                if (_finalText.isNotEmpty)
-                  RichText(
-                    text: TextSpan(
-                      style: OnboardingTheme.emphasisText,
-                      children: [
-                        TextSpan(text: _finalText),
-                        if (_showFinalCursor)
-                          const WidgetSpan(
-                            child: FeatherCursor(),
-                            alignment: PlaceholderAlignment.middle,
-                          ),
-                      ],
-                    ),
-                  ),
-
-                // Phase 9.4 - Signature intro text
-                if (_signatureText.isNotEmpty)
-                  RichText(
-                    text: TextSpan(
-                      style: OnboardingTheme.emphasisText,
-                      children: [
-                        TextSpan(text: _signatureText),
-                        if (_showSignatureCursor)
-                          const WidgetSpan(
-                            child: FeatherCursor(),
-                            alignment: PlaceholderAlignment.middle,
-                          ),
-                      ],
-                    ),
-                  ),
-
-                // Covenant text (displayed after intro)
-                if (_showCovenantText) ...[
-                  const SizedBox(height: 16),
-                  Container(
-                    padding: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: OnboardingTheme.goldColor.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(16),
-                      border: Border.all(
-                        color: OnboardingTheme.goldColor.withValues(alpha: 0.3),
-                        width: 1.5,
-                      ),
-                    ),
-                    child: Text(
-                      _covenantText,
-                      style: OnboardingTheme.body.copyWith(
-                        fontSize: 17,
-                        height: 1.6,
-                        color: OnboardingTheme.goldColor,
-                        fontWeight: FontWeight.w500,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-
-                // Fingerprint scanner for final seal
-                if (_showScanner) ...[
-                  const SizedBox(height: 40),
-                  FingerprintScanner(
-                    userName: controller.userName.value,
-                    onComplete: _onScanComplete,
-                  ),
-                ],
-              ],
+          ),
+          child: Text(
+            'finalEnc_message'.trParams({'name': userName}),
+            style: _emphasisStyle,
+            textAlign: TextAlign.center,
+          ),
+        ),
+        // Verse: appears a beat later.
+        AnimatedOpacity(
+          opacity: _showVerse ? 1.0 : 0.0,
+          duration: const Duration(milliseconds: 600),
+          curve: Curves.easeOut,
+          child: AnimatedSlide(
+            offset: _showVerse ? Offset.zero : const Offset(0, 0.2),
+            duration: const Duration(milliseconds: 600),
+            curve: Curves.easeOut,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 18),
+              child: Text(
+                'finalEnc_verse'.tr,
+                style: _verseStyle,
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
         ),
+      ],
+    );
+  }
+
+  /// Phase 1 — the fingerprint covenant scanner.
+  Widget _fingerprintView(String userName) {
+    return SingleChildScrollView(
+      key: const ValueKey('fingerprint'),
+      child: FingerprintScanner(
+        userName: userName,
+        onComplete: _onScanComplete,
       ),
     );
   }

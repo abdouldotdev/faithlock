@@ -51,11 +51,11 @@ class StartupCheckService {
       await Future.delayed(const Duration(seconds: 2));
     }
 
-    // Check if apps are selected
+    // Apps not selected? Don't nag with a launch dialog — the dashboard
+    // already surfaces an inline "Select Apps" empty state for that.
     final hasApps = await _screenTimeService.hasSelectedApps();
     if (!hasApps) {
-      debugPrint('⚠️ No apps selected - prompting user');
-      await _promptToSelectApps(context);
+      debugPrint('ℹ️ No apps selected - skipping startup prompt (handled in dashboard)');
       return;
     }
 
@@ -107,50 +107,6 @@ class StartupCheckService {
     }
 
     return granted;
-  }
-
-  /// Prompt user to select apps to block
-  Future<void> _promptToSelectApps(BuildContext context) async {
-    if (!context.mounted) return;
-
-    // Check if we already asked
-    final hasAskedBefore =
-        await _storage.readBool('app_selection_prompt_shown') ?? false;
-
-    await FastAlertDialog.show(
-      context: context,
-      title: 'startup_selectAppsTitle'.tr,
-      message: 'startup_selectAppsMessage'.tr,
-      actions: [
-        if (hasAskedBefore)
-          FastDialogAction(
-            text: 'later'.tr,
-            isCancel: true,
-            onPressed: () => Navigator.pop(context),
-          ),
-        FastDialogAction(
-          text: 'selectApps'.tr,
-          isDefault: true,
-          onPressed: () async {
-            Navigator.pop(context);
-
-            // Wait for dialog animation
-            await Future.delayed(const Duration(milliseconds: 300));
-
-            // Open app picker
-            try {
-              await _screenTimeService.presentAppPicker();
-              debugPrint('✅ User selected apps from startup prompt');
-
-              // Mark that we asked
-              await _storage.writeBool('app_selection_prompt_shown', true);
-            } catch (e) {
-              debugPrint('❌ Error showing app picker: $e');
-            }
-          },
-        ),
-      ],
-    );
   }
 
   /// Reset check flag (for testing)

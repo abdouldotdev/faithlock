@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:faithlock/app_routes.dart';
+import 'package:faithlock/services/analytics/posthog/export.dart';
 import 'package:faithlock/services/app_group_storage.dart';
 import 'package:faithlock/services/storage/secure_storage_service.dart';
 import 'package:flutter/foundation.dart';
@@ -12,7 +13,12 @@ class AutoNavigationService {
   AutoNavigationService._internal();
 
   final StorageService _storage = StorageService();
+  final PostHogService _analytics = PostHogService.instance;
   static const String _keyOnboardingSchedules = 'onboarding_schedules';
+
+  void _track(String event, [Map<String, dynamic> props = const {}]) {
+    if (_analytics.isReady) _analytics.events.trackCustom(event, props);
+  }
 
   Future<void> checkAndNavigate() async {
     try {
@@ -33,7 +39,8 @@ class AutoNavigationService {
         // DON'T clear the flag here - let LocalNotificationService handle it
         // This ensures the notification tap handler can also see the flag
         // _clearPrayerFlag(); // REMOVED
-        Get.toNamed(AppRoutes.prayerLearning);
+        _track('unlock_entry', {'source': 'shield_notification'});
+        Get.toNamed(AppRoutes.unlockChooser);
         return;
       }
 
@@ -41,7 +48,8 @@ class AutoNavigationService {
       if (!await _hasSelectedApps()) return;
 
       if (await _isCurrentlyInActiveSchedule()) {
-        Get.toNamed(AppRoutes.prayerLearning);
+        _track('unlock_entry', {'source': 'active_schedule'});
+        Get.toNamed(AppRoutes.unlockChooser);
       }
     } catch (e) {
       debugPrint('❌ Error checking auto-navigation: $e');

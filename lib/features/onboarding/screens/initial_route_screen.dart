@@ -2,10 +2,11 @@ import 'package:faithlock/config/app_config.dart';
 import 'package:faithlock/features/onboarding/controllers/scripture_onboarding_controller.dart';
 import 'package:faithlock/features/onboarding/screens/scripture_onboarding_screen.dart';
 import 'package:faithlock/features/onboarding/screens/scripture_onboarding_v3_screen.dart';
+import 'package:faithlock/features/onboarding/screens/onboarding_summary_screen.dart';
 import 'package:faithlock/navigation/screens/main_screen.dart';
 import 'package:faithlock/services/storage/preferences_service.dart';
 import 'package:faithlock/services/subscription/paywall_guard_service.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class InitialRouteScreen extends StatefulWidget {
@@ -39,13 +40,10 @@ class _InitialRouteScreenState extends State<InitialRouteScreen> {
       final prefs = PreferencesService();
       final hasCompletedOnboarding =
           await prefs.readBool('scripture_onboarding_complete') ?? false;
-      final hasSummaryComplete =
-          await prefs.readBool('onboarding_summary_complete') ?? false;
       final hasAccessedFeatures =
           await prefs.readBool('has_accessed_app_features') ?? false;
 
       debugPrint('📋 [InitialRoute] Onboarding completed: $hasCompletedOnboarding');
-      debugPrint('📋 [InitialRoute] Summary completed: $hasSummaryComplete');
       debugPrint('📋 [InitialRoute] Features accessed: $hasAccessedFeatures');
 
       if (!hasCompletedOnboarding) {
@@ -61,22 +59,13 @@ class _InitialRouteScreenState extends State<InitialRouteScreen> {
         return;
       }
 
-      // User has completed onboarding but not summary - show summary screen
-      if (!hasSummaryComplete) {
-        debugPrint('🎯 [InitialRoute] Navigating to summary screen (step 11)');
-        final controller = Get.put(ScriptureOnboardingController(), permanent: true);
-        controller.currentStep.value = 11; // Jump to summary step
-        Get.off(() => const ScriptureOnboardingScreen());
-        return;
-      }
-
-      // User has completed summary but never accessed features (never paid)
-      // Keep them on summary until they pay
+      // Onboarding done but the user hasn't subscribed yet → re-engage with the
+      // personalized summary on each relaunch, then the paywall. The controller
+      // restores userName + hoursPerDay from storage so the projection is real.
       if (!hasAccessedFeatures) {
-        debugPrint('🎯 [InitialRoute] User never accessed features - returning to summary');
-        final controller = Get.put(ScriptureOnboardingController(), permanent: true);
-        controller.currentStep.value = 11; // Jump to summary step
-        Get.off(() => const ScriptureOnboardingScreen());
+        debugPrint('🎯 [InitialRoute] Returning unpaid user → summary → paywall');
+        Get.put(ScriptureOnboardingController(), permanent: true);
+        Get.off(() => const OnboardingSummaryScreen());
         return;
       }
 
@@ -109,9 +98,9 @@ class _InitialRouteScreenState extends State<InitialRouteScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: CircularProgressIndicator(),
+    return const CupertinoPageScaffold(
+      child: Center(
+        child: CupertinoActivityIndicator(),
       ),
     );
   }

@@ -1,8 +1,6 @@
 import 'package:faithlock/features/onboarding/constants/onboarding_theme.dart';
 import 'package:faithlock/features/paywall/controllers/paywall_controller.dart';
-// 🚫 DISABLED: Unused import (CupertinoSwitch is commented out)
-// import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
@@ -23,81 +21,81 @@ class PaywallScreen extends StatelessWidget {
       redirectToHomeOnClose: redirectToHomeOnClose,
     ));
 
-    final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
+    final scaffoldBg = CupertinoColors.secondarySystemGroupedBackground
+        .resolveFrom(context);
 
-    return Scaffold(
-      backgroundColor: OnboardingTheme.backgroundColor,
-      appBar: AppBar(
-        backgroundColor: OnboardingTheme.backgroundColor,
-        elevation: 0,
-        leading: const SizedBox(width: 48),
-        title: _buildHeader(isDark),
-        actions: [
-          TweenAnimationBuilder<double>(
-              tween: Tween(begin: 0.0, end: 1.0),
-              duration: const Duration(seconds: 5),
-              builder: (context, value, child) {
-                if (value < 1.0) {
-                  return Container(
-                    height: 24,
-                    width: 24,
-                    margin: const EdgeInsets.only(right: 8),
-                    child: CircularProgressIndicator(
-                      strokeWidth: 2,
-                      value: value,
-                      valueColor:
-                          const AlwaysStoppedAnimation<Color>(Colors.grey),
-                      backgroundColor: Colors.grey.withValues(alpha: 0.2),
-                    ),
-                  );
-                }
-                return GestureDetector(
-                  onTap: controller.closePaywall,
-                  child: Container(
-                    width: 32,
-                    height: 32,
-                    margin: const EdgeInsets.only(right: 8),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.08),
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Icon(
-                      Icons.close,
-                      size: 18,
-                      color: Colors.white,
-                    ),
+    return CupertinoTheme(
+      data: const CupertinoThemeData(
+        brightness: Brightness.dark,
+        primaryColor: OnboardingTheme.goldColor,
+      ),
+      child: CupertinoPageScaffold(
+        backgroundColor: scaffoldBg,
+        navigationBar: CupertinoNavigationBar(
+          backgroundColor: const Color(0x00000000),
+          border: null,
+          leading: const SizedBox(width: 48),
+          middle: _buildHeader(),
+          trailing: TweenAnimationBuilder<double>(
+            tween: Tween(begin: 0.0, end: 1.0),
+            duration: const Duration(seconds: 5),
+            builder: (context, value, child) {
+              if (value < 1.0) {
+                return SizedBox(
+                  height: 24,
+                  width: 24,
+                  child: CupertinoActivityIndicator(
+                    color: CupertinoColors.systemGrey.resolveFrom(context),
+                    radius: 10,
                   ),
                 );
-              }),
-        ],
-      ),
-      body: SafeArea(
-        top: false,
-        bottom: false,
-        child: Column(
-          children: [
-            Expanded(
-              child: Obx(() {
-                if (controller.isLoading.value && controller.packages.isEmpty) {
-                  return _buildLoadingState(isDark);
-                }
+              }
+              return GestureDetector(
+                onTap: controller.closePaywall,
+                child: Container(
+                  width: 32,
+                  height: 32,
+                  decoration: BoxDecoration(
+                    color: CupertinoColors.white.withValues(alpha: 0.08),
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(
+                    CupertinoIcons.xmark,
+                    size: 18,
+                    color: CupertinoColors.white,
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+        child: SafeArea(
+          top: false,
+          bottom: false,
+          child: Column(
+            children: [
+              Expanded(
+                child: Obx(() {
+                  if (controller.isLoading.value && controller.packages.isEmpty) {
+                    return _buildLoadingState(context);
+                  }
 
-                if (controller.lastError.value.isNotEmpty &&
-                    controller.packages.isEmpty) {
-                  return _buildErrorState(isDark, controller);
-                }
+                  if (controller.lastError.value.isNotEmpty &&
+                      controller.packages.isEmpty) {
+                    return _buildErrorState(context, controller);
+                  }
 
-                return _buildContent(context, controller, isDark);
-              }),
-            ),
-          ],
+                  return _buildContent(context, controller);
+                }),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 
-  Widget _buildHeader(bool isDark) {
+  Widget _buildHeader() {
     return Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -130,25 +128,24 @@ class PaywallScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildLoadingState(bool isDark) {
-    return Center(
-      child: CircularProgressIndicator.adaptive(
-        valueColor: AlwaysStoppedAnimation<Color>(
-          OnboardingTheme.goldColor,
-        ),
+  Widget _buildLoadingState(BuildContext context) {
+    return const Center(
+      child: CupertinoActivityIndicator(
+        color: OnboardingTheme.goldColor,
+        radius: 14,
       ),
     );
   }
 
-  Widget _buildErrorState(bool isDark, PaywallController controller) {
+  Widget _buildErrorState(BuildContext context, PaywallController controller) {
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(OnboardingTheme.space20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.error_outline,
+            const Icon(
+              CupertinoIcons.exclamationmark_circle,
               size: 64,
               color: OnboardingTheme.labelTertiary,
             ),
@@ -161,12 +158,9 @@ class PaywallScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: OnboardingTheme.space24),
-            ElevatedButton(
+            CupertinoButton.filled(
+              color: OnboardingTheme.goldColor,
               onPressed: () => controller.onInit(),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: OnboardingTheme.goldColor,
-                foregroundColor: OnboardingTheme.backgroundColor,
-              ),
               child: Text(
                 'Retry',
                 style: OnboardingTheme.callout.copyWith(
@@ -181,8 +175,7 @@ class PaywallScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildContent(
-      BuildContext context, PaywallController controller, bool isDark) {
+  Widget _buildContent(BuildContext context, PaywallController controller) {
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(
         horizontal: OnboardingTheme.horizontalPadding,
@@ -222,8 +215,8 @@ class PaywallScreen extends StatelessWidget {
                     color: OnboardingTheme.goldColor.withValues(alpha: 0.2),
                     shape: BoxShape.circle,
                   ),
-                  child: Icon(
-                    Icons.shield,
+                  child: const Icon(
+                    CupertinoIcons.shield_fill,
                     size: 24,
                     color: OnboardingTheme.goldColor,
                   ),
@@ -246,7 +239,7 @@ class PaywallScreen extends StatelessWidget {
           const SizedBox(height: OnboardingTheme.space32),
 
           // Features list
-          _buildFeaturesList(isDark),
+          _buildFeaturesList(),
 
           // Win-back promo banner
           Obx(() {
@@ -254,8 +247,7 @@ class PaywallScreen extends StatelessWidget {
               return const SizedBox.shrink();
             }
             return Padding(
-              padding:
-                  const EdgeInsets.only(bottom: OnboardingTheme.space20),
+              padding: const EdgeInsets.only(bottom: OnboardingTheme.space20),
               child: Container(
                 padding: const EdgeInsets.all(OnboardingTheme.space16),
                 decoration: BoxDecoration(
@@ -277,15 +269,13 @@ class PaywallScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     Container(
-                      padding:
-                          const EdgeInsets.all(OnboardingTheme.space8),
+                      padding: const EdgeInsets.all(OnboardingTheme.space8),
                       decoration: BoxDecoration(
-                        color:
-                            OnboardingTheme.goldColor.withValues(alpha: 0.2),
+                        color: OnboardingTheme.goldColor.withValues(alpha: 0.2),
                         shape: BoxShape.circle,
                       ),
-                      child: Icon(
-                        Icons.card_giftcard,
+                      child: const Icon(
+                        CupertinoIcons.gift_fill,
                         size: 20,
                         color: OnboardingTheme.goldColor,
                       ),
@@ -321,42 +311,21 @@ class PaywallScreen extends StatelessWidget {
           const SizedBox(height: OnboardingTheme.space12),
 
           // Pricing plans
-          Obx(() => _buildPricingPlans(isDark, controller)),
+          Obx(() => _buildPricingPlans(context, controller)),
 
           const SizedBox(height: OnboardingTheme.space20),
 
           // 🚫 DISABLED: Apple App Review rejection - Free trial toggle
           // Will be re-enabled once Apple approves this feature
-          // Free trial toggle
-          // _buildFreeTrialToggle(isDark, controller),
 
           const SizedBox(height: OnboardingTheme.space24),
 
-          _buildUnlockButton(controller),
-
-          // Unlock button
-          // Obx(() {
-          //   // final selectedIndex = controller.selectedPlanIndex.value;
-          //   return Column(
-          //     children: [
-          //       // if (selectedIndex == 1) ...[
-          //       //   Text(
-          //       //     'Cancel anytime. No commitment required.',
-          //       //     style: OnboardingTheme.caption.copyWith(
-          //       //       color: OnboardingTheme.labelSecondary,
-          //       //     ),
-          //       //   ),
-          //       //   const SizedBox(height: OnboardingTheme.space12),
-          //       // ],
-          //       _buildUnlockButton(controller),
-          //     ],
-          //   );
-          // }),
+          _buildUnlockButton(context, controller),
 
           const SizedBox(height: OnboardingTheme.space20),
 
           // Footer links
-          _buildFooterLinks(isDark, controller),
+          _buildFooterLinks(context, controller),
 
           const SizedBox(height: OnboardingTheme.space24),
         ],
@@ -364,12 +333,12 @@ class PaywallScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildFeaturesList(bool isDark) {
+  Widget _buildFeaturesList() {
     final features = [
-      {'icon': Icons.auto_awesome, 'text': 'Deepen your spiritual journey'},
-      {'icon': Icons.psychology, 'text': 'Build stronger faith habits'},
-      {'icon': Icons.shield, 'text': 'Stay protected from distractions'},
-      {'icon': Icons.trending_up, 'text': 'Grow closer to your purpose'},
+      {'icon': CupertinoIcons.sparkles, 'text': 'Deepen your spiritual journey'},
+      {'icon': CupertinoIcons.heart_fill, 'text': 'Build stronger faith habits'},
+      {'icon': CupertinoIcons.shield_fill, 'text': 'Stay protected from distractions'},
+      {'icon': CupertinoIcons.graph_circle_fill, 'text': 'Grow closer to your purpose'},
     ];
 
     return Column(
@@ -398,7 +367,7 @@ class PaywallScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildPricingPlans(bool isDark, PaywallController controller) {
+  Widget _buildPricingPlans(BuildContext context, PaywallController controller) {
     if (controller.packages.isEmpty) {
       return const SizedBox.shrink();
     }
@@ -432,14 +401,14 @@ class PaywallScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: isSelected
                         ? OnboardingTheme.goldColor.withValues(alpha: 0.1)
-                        : OnboardingTheme.cardBackground,
+                        : CupertinoColors.tertiarySystemGroupedBackground
+                            .resolveFrom(context),
                     borderRadius:
                         BorderRadius.circular(OnboardingTheme.radiusMedium),
                     border: Border.all(
                       color: isSelected
                           ? OnboardingTheme.goldColor
-                          : OnboardingTheme.labelTertiary
-                              .withValues(alpha: 0.3),
+                          : OnboardingTheme.labelTertiary.withValues(alpha: 0.3),
                       width: isSelected ? 2 : 1,
                     ),
                   ),
@@ -502,26 +471,8 @@ class PaywallScreen extends StatelessWidget {
   // Will be re-enabled once Apple approves this feature
   // Reason: Apple rejected the ability for users to disable free trial
   // This UI allows users to toggle free trial on/off
-  // Widget _buildFreeTrialToggle(bool isDark, PaywallController controller) {
-  //   return Row(
-  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //     children: [
-  //       Text(
-  //         'Enable free trial',
-  //         style: OnboardingTheme.callout.copyWith(
-  //           color: OnboardingTheme.labelPrimary,
-  //         ),
-  //       ),
-  //       Obx(() => CupertinoSwitch(
-  //             value: controller.freeTrialEnabled.value,
-  //             onChanged: controller.toggleFreeTrial,
-  //             activeTrackColor: OnboardingTheme.goldColor,
-  //           )),
-  //     ],
-  //   );
-  // }
 
-  Widget _buildUnlockButton(PaywallController controller) {
+  Widget _buildUnlockButton(BuildContext context, PaywallController controller) {
     return Obx(() {
       final hasFreeTrial = controller.selectedPlanIndex.value <
               controller.packages.length &&
@@ -531,46 +482,38 @@ class PaywallScreen extends StatelessWidget {
 
       return Column(
         children: [
-          SizedBox(
-            width: double.infinity,
-            height: 56,
-            child: ElevatedButton(
-              onPressed: controller.isPurchasing.value
-                  ? null
-                  : () {
-                      HapticFeedback.mediumImpact();
-                      controller.startSubscription();
-                    },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: OnboardingTheme.goldColor,
-                foregroundColor: OnboardingTheme.backgroundColor,
-                disabledBackgroundColor:
-                    OnboardingTheme.goldColor.withValues(alpha: 0.6),
-                shape: RoundedRectangleBorder(
-                  borderRadius:
-                      BorderRadius.circular(OnboardingTheme.radiusMedium),
-                ),
+          GestureDetector(
+            onTap: controller.isPurchasing.value
+                ? null
+                : () {
+                    HapticFeedback.mediumImpact();
+                    controller.startSubscription();
+                  },
+            child: Container(
+              width: double.infinity,
+              height: 56,
+              decoration: BoxDecoration(
+                color: controller.isPurchasing.value
+                    ? OnboardingTheme.goldColor.withValues(alpha: 0.6)
+                    : OnboardingTheme.goldColor,
+                borderRadius: BorderRadius.circular(OnboardingTheme.radiusMedium),
               ),
-              child: controller.isPurchasing.value
-                  ? SizedBox(
-                      height: 24,
-                      width: 24,
-                      child: CircularProgressIndicator(
-                        strokeWidth: 2,
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          OnboardingTheme.backgroundColor,
+              child: Center(
+                child: controller.isPurchasing.value
+                    ? const CupertinoActivityIndicator(
+                        color: OnboardingTheme.backgroundColor,
+                        radius: 12,
+                      )
+                    : Text(
+                        hasFreeTrial
+                            ? 'paywall_tryForZero'.tr
+                            : 'paywall_startJourney'.tr,
+                        style: OnboardingTheme.callout.copyWith(
+                          color: OnboardingTheme.backgroundColor,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
-                    )
-                  : Text(
-                      hasFreeTrial
-                          ? 'paywall_tryForZero'.tr
-                          : 'paywall_startJourney'.tr,
-                      style: OnboardingTheme.callout.copyWith(
-                        color: OnboardingTheme.backgroundColor,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
+              ),
             ),
           ),
           if (hasFreeTrial) ...[
@@ -589,11 +532,13 @@ class PaywallScreen extends StatelessWidget {
     });
   }
 
-  Widget _buildFooterLinks(bool isDark, PaywallController controller) {
+  Widget _buildFooterLinks(BuildContext context, PaywallController controller) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        TextButton(
+        CupertinoButton(
+          padding: EdgeInsets.zero,
+          minimumSize: Size.zero,
           onPressed: controller.restorePurchases,
           child: Text(
             'Restore',
@@ -602,7 +547,9 @@ class PaywallScreen extends StatelessWidget {
             ),
           ),
         ),
-        TextButton(
+        CupertinoButton(
+          padding: EdgeInsets.zero,
+          minimumSize: Size.zero,
           onPressed: controller.openPrivacyPolicy,
           child: Text(
             'Privacy',
@@ -611,7 +558,9 @@ class PaywallScreen extends StatelessWidget {
             ),
           ),
         ),
-        TextButton(
+        CupertinoButton(
+          padding: EdgeInsets.zero,
+          minimumSize: Size.zero,
           onPressed: controller.openTermsOfService,
           child: Text(
             'Terms',

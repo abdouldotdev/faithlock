@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:faithlock/services/analytics/posthog/export.dart';
 
 /// Controller for managing application settings
 class SettingsController extends GetxController {
@@ -17,6 +18,8 @@ class SettingsController extends GetxController {
   static const String _keyCrashReporting = 'crash_reporting_enabled';
 
   late final SharedPreferences _prefs;
+
+  final PostHogService _analytics = PostHogService.instance;
 
   // Observable settings
   final RxBool isDarkMode = false.obs;
@@ -71,8 +74,16 @@ class SettingsController extends GetxController {
 
   // Language settings
   Future<void> changeLanguage(String languageCode) async {
+    final previous = appLanguage.value;
     appLanguage.value = languageCode;
     await _prefs.setString(_keyLanguage, languageCode);
+
+    if (_analytics.isReady) {
+      _analytics.events.trackCustom('language_changed', {
+        'language': languageCode,
+        'previous': previous,
+      });
+    }
 
     // Update app locale
     final locale = Locale(languageCode);

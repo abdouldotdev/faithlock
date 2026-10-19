@@ -5,6 +5,7 @@ import 'package:faithlock/services/analytics/posthog/modules/event_tracking_modu
 import 'package:faithlock/services/analytics/posthog/modules/feature_flags_module.dart';
 import 'package:faithlock/services/analytics/posthog/modules/onboarding_analytics_module.dart';
 import 'package:faithlock/services/analytics/posthog/modules/paywall_analytics_module.dart';
+import 'package:faithlock/services/analytics/posthog/modules/person_properties_module.dart';
 import 'package:faithlock/services/analytics/posthog/modules/screen_tracking_module.dart';
 import 'package:faithlock/services/analytics/posthog/modules/session_recording_module.dart';
 import 'package:faithlock/services/analytics/posthog/modules/surveys_module.dart';
@@ -68,6 +69,7 @@ class PostHogService {
   late final SurveysModule _surveysModule;
   late final OnboardingAnalyticsModule _onboardingModule;
   late final PaywallAnalyticsModule _paywallModule;
+  late final PersonPropertiesModule _personPropertiesModule;
 
   // Getters with safety checks
   EventTrackingModule get events {
@@ -150,6 +152,14 @@ class PostHogService {
     return _paywallModule;
   }
 
+  PersonPropertiesModule get personProperties {
+    if (!_isInitialized) {
+      throw StateError(
+          'PostHogService must be initialized before accessing personProperties module');
+    }
+    return _personPropertiesModule;
+  }
+
   bool get isInitialized => _isInitialized;
   bool get isEnabled => _isEnabled;
   String? get currentUserId => _currentUserId;
@@ -172,14 +182,17 @@ class PostHogService {
 
       await PostHogPrivacyManager.instance.init();
 
-      // if (!PostHogPrivacyManager.instance.canTrackEvent('init')) {
-      //   if (kDebugMode) {
-      //     debugPrint(
-      //         'PostHog tracking not allowed. User opted out or no consent.');
-      //   }
-      //   _isEnabled = false;
-      //   return;
-      // }
+      // Analytics is on by default for this app: the onboarding module already
+      // captures directly and [_isEnabled] defaults to true. The consent gate
+      // that guards every `events.trackCustom` call (PostHogPrivacyManager
+      // .canTrackEvent → requires ConsentStatus.granted) was never wired to
+      // grant, so every custom event was silently dropped while only the
+      // direct-capture onboarding events came through. Default-grant exactly
+      // once when undecided, so an explicit later opt-out / denial is honoured.
+      if (PostHogPrivacyManager.instance.consentStatus ==
+          ConsentStatus.pending) {
+        await PostHogPrivacyManager.instance.setConsent(ConsentStatus.granted);
+      }
 
       final config = PostHogConfigManager.createConfig(
         apiKey: customApiKey,
@@ -205,7 +218,9 @@ class PostHogService {
       _surveysModule = SurveysModule(this);
       _onboardingModule = OnboardingAnalyticsModule(this);
       _paywallModule = PaywallAnalyticsModule(this);
+      _personPropertiesModule = PersonPropertiesModule(this);
 
+      await _personPropertiesModule.init();
       await _eventModule.init();
       await _userModule.init();
       await _screenModule.init();
@@ -283,6 +298,7 @@ class PostHogService {
       await _campaignModule.reset();
       await _onboardingModule.reset();
       await _paywallModule.reset();
+      await _personPropertiesModule.reset();
 
       if (kDebugMode) {
         debugPrint('PostHog service reset');
@@ -311,6 +327,7 @@ class PostHogService {
       await _surveysModule.shutdown();
       await _onboardingModule.shutdown();
       await _paywallModule.shutdown();
+      await _personPropertiesModule.shutdown();
 
       // Arrêt du SDK PostHog
       await Posthog().close();
@@ -377,7 +394,7 @@ class PostHogService {
       'enabled': _isEnabled,
       'current_user_id': _currentUserId,
       'session_id': _sessionId,
-      'modules_loaded': _isInitialized ? 10 : 0,
+      'modules_loaded': _isInitialized ? 11 : 0,
       'privacy_opt_out': PostHogPrivacyManager.instance.isOptedOut,
       'consent_status': PostHogPrivacyManager.instance.consentStatus.name,
     };

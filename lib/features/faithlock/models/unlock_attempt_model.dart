@@ -1,5 +1,36 @@
 import 'package:faithlock/features/faithlock/models/bible_verse_model.dart';
 
+/// How an unlock was earned. Drives which home stat the attempt feeds:
+/// [bibleQuiz] counts toward "Verses Read", the prayer methods count toward
+/// "Prayed Today".
+enum UnlockMethod {
+  bibleQuiz('bible_quiz'),
+  prayerAudio('prayer_audio'),
+  prayerText('prayer_text'),
+  prayerLearning('prayer_learning');
+
+  const UnlockMethod(this.value);
+
+  final String value;
+
+  /// Parse a stored value. Legacy rows without a method default to [bibleQuiz]
+  /// to preserve the original "verses read" semantics.
+  static UnlockMethod? fromValue(String? value) {
+    if (value == null) return null;
+    return UnlockMethod.values.firstWhere(
+      (m) => m.value == value,
+      orElse: () => UnlockMethod.bibleQuiz,
+    );
+  }
+
+  /// True for prayer-based unlocks (audio, text, learning session).
+  bool get isPrayer =>
+      this == prayerAudio || this == prayerText || this == prayerLearning;
+
+  /// True for Bible verse quiz unlocks.
+  bool get isBible => this == bibleQuiz;
+}
+
 class UnlockAttempt {
   final int? id;
   final String verseId;
@@ -8,6 +39,7 @@ class UnlockAttempt {
   final int attemptCount;
   final int? timeToUnlockSeconds;
   final int? unlockDurationMinutes; // Duration user selected to unlock apps
+  final UnlockMethod? method; // How the unlock was earned (quiz vs prayer)
   final BibleVerse? verse; // Optional, for joins
 
   const UnlockAttempt({
@@ -18,6 +50,7 @@ class UnlockAttempt {
     required this.attemptCount,
     this.timeToUnlockSeconds,
     this.unlockDurationMinutes,
+    this.method,
     this.verse,
   });
 
@@ -30,6 +63,7 @@ class UnlockAttempt {
       attemptCount: json['attempt_count'] as int,
       timeToUnlockSeconds: json['time_to_unlock'] as int?,
       unlockDurationMinutes: json['unlock_duration_minutes'] as int?,
+      method: UnlockMethod.fromValue(json['unlock_method'] as String?),
       verse: json['verse'] != null
           ? BibleVerse.fromJson(json['verse'] as Map<String, dynamic>)
           : null,
@@ -45,6 +79,7 @@ class UnlockAttempt {
       'attempt_count': attemptCount,
       if (timeToUnlockSeconds != null) 'time_to_unlock': timeToUnlockSeconds,
       if (unlockDurationMinutes != null) 'unlock_duration_minutes': unlockDurationMinutes,
+      if (method != null) 'unlock_method': method!.value,
     };
   }
 
@@ -56,6 +91,7 @@ class UnlockAttempt {
     int? attemptCount,
     int? timeToUnlockSeconds,
     int? unlockDurationMinutes,
+    UnlockMethod? method,
     BibleVerse? verse,
   }) {
     return UnlockAttempt(
@@ -66,6 +102,7 @@ class UnlockAttempt {
       attemptCount: attemptCount ?? this.attemptCount,
       timeToUnlockSeconds: timeToUnlockSeconds ?? this.timeToUnlockSeconds,
       unlockDurationMinutes: unlockDurationMinutes ?? this.unlockDurationMinutes,
+      method: method ?? this.method,
       verse: verse ?? this.verse,
     );
   }

@@ -1,6 +1,7 @@
-import 'package:faithlock/features/onboarding/constants/onboarding_theme.dart';
 import 'package:faithlock/features/onboarding/controllers/scripture_onboarding_controller.dart';
 import 'package:faithlock/features/onboarding/widgets/onboarding_progress_bar.dart';
+import 'package:faithlock/shared/widgets/cozy/cozy.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,18 +21,25 @@ class OnboardingWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<ScriptureOnboardingController>();
 
-    return Scaffold(
-      backgroundColor: OnboardingTheme.backgroundColor,
-      body: SafeArea(
-        child: Stack(
-          children: [
-            // Main content
-            child,
+    return CupertinoPageScaffold(
+      backgroundColor: CozyColors.background,
+      // Provide a Material ancestor for the otherwise pure-Cupertino tree.
+      // Without it, Text widgets render with the yellow "missing Material"
+      // debug underlines (the app root is GetMaterialApp, but these screens
+      // use CupertinoPageScaffold and never hit a Scaffold/Material layer).
+      // Transparent type keeps it visually invisible — no color/elevation.
+      child: Material(
+        type: MaterialType.transparency,
+        child: SafeArea(
+          child: Stack(
+            children: [
+              // Main content
+              child,
 
-            OnboardingProgressBar(
-              currentStep: controller.currentStep.value,
-              totalSteps: controller.totalSteps,
-            ),
+              OnboardingProgressBar(
+                currentStep: controller.currentStep.value,
+                totalSteps: controller.totalSteps,
+              ),
 
             // Positioned(
             //   top: 20,
@@ -51,9 +59,11 @@ class OnboardingWrapper extends StatelessWidget {
             //       onPressed: () => controller.previousStep(),
             //     ),
             //   ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
 }
+

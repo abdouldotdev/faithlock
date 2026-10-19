@@ -1,11 +1,11 @@
-import 'package:faithlock/features/onboarding/constants/onboarding_theme.dart';
 import 'package:faithlock/features/onboarding/controllers/scripture_onboarding_controller.dart';
+import 'package:faithlock/shared/widgets/cozy/cozy.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-/// Onboarding progress bar widget
-/// Shows "Step X of 9" with a linear progress indicator
+/// Onboarding progress bar — cozy: a chunky bordered back chip + a thick
+/// terracotta-filled progress pill on the cream canvas.
 class OnboardingProgressBar extends StatelessWidget {
   final int currentStep;
   final int totalSteps;
@@ -21,44 +21,61 @@ class OnboardingProgressBar extends StatelessWidget {
     final progress = currentStep / totalSteps;
     final controller = Get.find<ScriptureOnboardingController>();
 
+    final isFirstStep = currentStep <= 1;
+
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Row(
-        spacing: 8,
+        spacing: 10,
         children: [
-          GestureDetector(
-            onTap: () {
-              if (currentStep <= 1) return;
-              controller.previousStep();
-            },
-            child: Container(
-              height: 30,
-              width: 40,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: currentStep <= 1
-                    ? OnboardingTheme.labelTertiary.withValues(alpha: 0.3)
-                    : OnboardingTheme.goldColor,
-              ),
-              child: Icon(
-                CupertinoIcons.back,
-                color: currentStep <= 1
-                    ? OnboardingTheme.labelTertiary
-                    : OnboardingTheme.backgroundColor,
-                size: 20,
+          if (!isFirstStep)
+            CozyTappable(
+              onTap: controller.previousStep,
+              pressedScale: 0.92,
+              child: Container(
+                height: 32,
+                width: 42,
+                alignment: Alignment.center,
+                decoration: ShapeDecoration(
+                  color: CozyColors.surface,
+                  shape: CozyTokens.smooth(
+                    CozyTokens.radiusSm,
+                    side: const BorderSide(
+                      color: CozyColors.outline,
+                      width: CozyTokens.borderWidth,
+                    ),
+                  ),
+                ),
+                child: const Icon(
+                  CupertinoIcons.back,
+                  color: CozyColors.ink,
+                  size: 18,
+                ),
               ),
             ),
-          ),
           Expanded(
             flex: 4,
-            child: LinearProgressIndicator(
-              value: progress,
-              minHeight: 14,
-              borderRadius: BorderRadius.circular(12),
-              backgroundColor:
-                  OnboardingTheme.labelTertiary.withValues(alpha: 0.2),
-              valueColor: const AlwaysStoppedAnimation<Color>(
-                OnboardingTheme.goldColor,
+            child: Container(
+              height: 14,
+              decoration: ShapeDecoration(
+                color: CozyColors.surfaceMuted,
+                shape: CozyTokens.smooth(
+                  CozyTokens.radiusPill,
+                  side: const BorderSide(
+                    color: CozyColors.outline,
+                    width: CozyTokens.borderWidthThin,
+                  ),
+                ),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(CozyTokens.radiusPill),
+                child: LinearProgressIndicator(
+                  value: progress,
+                  minHeight: 14,
+                  backgroundColor: Colors.transparent,
+                  valueColor:
+                      const AlwaysStoppedAnimation<Color>(CozyColors.primary),
+                ),
               ),
             ),
           ),

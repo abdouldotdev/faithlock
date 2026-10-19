@@ -4,6 +4,7 @@ import 'package:faithlock/features/onboarding/widgets/feather_cursor.dart';
 import 'package:faithlock/features/onboarding/widgets/onboarding_wrapper.dart';
 import 'package:faithlock/shared/widgets/buttons/fast_button.dart';
 import 'package:faithlock/shared/widgets/buttons/fast_plain_button.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -311,10 +312,10 @@ class _RatingRequestScreenState extends State<RatingRequestScreen> {
       );
     }
 
-    // Use plain Scaffold when called outside onboarding
-    return Scaffold(
+    // Use plain CupertinoPageScaffold when called outside onboarding
+    return CupertinoPageScaffold(
       backgroundColor: OnboardingTheme.backgroundColor,
-      body: SafeArea(
+      child: SafeArea(
         child: _buildContent(),
       ),
     );
