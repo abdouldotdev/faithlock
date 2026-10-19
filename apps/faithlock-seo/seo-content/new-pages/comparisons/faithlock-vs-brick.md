@@ -87,4 +87,4 @@ The quiz draws from 31,000+ verses and changes each time, so memorizing answers 
 Not currently. The faith-based blocker market is entirely software-based. If you want both extreme blocking and Scripture engagement, you'd need to use Brick for blocking and a separate Bible app for devotional time.
 
 ---
-*Sources: [FaithLock on App Store](https://apps.apple.com/app/faithlock), [Brick on App Store](https://apps.apple.com/app/brick-app-blocker), [getbrick.app](https://getbrick.app)*
+*Sources: [FaithLock on App Store](https://apps.apple.com/us/app/faithlock/id6754208209), Brick on App Store, [getbrick.app](https://getbrick.app)*

@@ -184,4 +184,4 @@ If you're on Android and want to start somewhere, download it today. It costs no
 
 ---
 
-*Sources: [Pray Screen Time on the App Store](https://apps.apple.com/app/pray-screen-time/id6737752498), [Pray Screen Time on Google Play](https://play.google.com/store/apps/details?id=com.prayscreentime), [faith.tools - Christian App Reviews](https://faith.tools/internet-filtering)*
+*Sources: Pray Screen Time on the App Store, [Pray Screen Time on Google Play](https://play.google.com/store/apps/details?id=com.prayscreentime), [faith.tools - Christian App Reviews](https://faith.tools/internet-filtering)*

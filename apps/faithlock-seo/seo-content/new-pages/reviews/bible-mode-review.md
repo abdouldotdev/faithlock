@@ -181,4 +181,4 @@ Start with the free tier. If the scanning habit sticks after a couple of weeks, 
 
 ---
 
-*Sources: [Bible Mode on the App Store](https://apps.apple.com/app/bible-mode/id6502637936), [Friday Labs LLC](https://fridaylabs.co), [faith.tools - Christian App Reviews](https://faith.tools/internet-filtering)*
+*Sources: Bible Mode on the App Store, [Friday Labs LLC](https://fridaylabs.co), [faith.tools - Christian App Reviews](https://faith.tools/internet-filtering)*

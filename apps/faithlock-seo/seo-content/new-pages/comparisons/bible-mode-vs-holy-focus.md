@@ -90,4 +90,4 @@ Bible Mode supports KJV and ESV for scanning. Most standard printed Bibles in th
 Not exactly, but FaithLock offers Bible verse engagement through quizzes combined with prayer reminders, which bridges some of the gap between these two approaches.
 
 ---
-*Sources: [Bible Mode on App Store](https://apps.apple.com/app/bible-mode), [Holy Focus on App Store](https://apps.apple.com/app/holy-focus)*
+*Sources: Bible Mode on App Store, Holy Focus on App Store*

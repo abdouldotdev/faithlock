@@ -87,4 +87,4 @@ Yes, actually. Since Forest is session-based and FaithLock is app-based, they ca
 Yes. Forest partners with Trees for the Future and reports planting millions of real trees funded by user coin purchases. The real-world impact is verified and ongoing.
 
 ---
-*Sources: [FaithLock on App Store](https://apps.apple.com/app/faithlock), [Forest on App Store](https://apps.apple.com/app/forest-focus-for-productivity), [Forest on Google Play](https://play.google.com/store/apps/details?id=cc.forestapp)*
+*Sources: [FaithLock on App Store](https://apps.apple.com/us/app/faithlock/id6754208209), Forest on App Store, [Forest on Google Play](https://play.google.com/store/apps/details?id=cc.forestapp)*

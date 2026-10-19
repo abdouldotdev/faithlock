@@ -73,4 +73,4 @@ Yes. Use Screen Time's Downtime feature to block Twitch during hours you want to
 
 ---
 
-*Sources: [Twitch Help](https://help.twitch.tv/), [Twitch on the App Store](https://apps.apple.com/app/twitch-live-game-streaming/id460177396)*
+*Sources: [Twitch Help](https://help.twitch.tv/), Twitch on the App Store*

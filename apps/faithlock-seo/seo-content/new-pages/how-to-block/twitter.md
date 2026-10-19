@@ -79,4 +79,4 @@ Moving to a Twitter alternative might just recreate the same habit on a differen
 
 ---
 
-*Sources: [X Help Center](https://help.twitter.com/), [X on the App Store](https://apps.apple.com/app/x/id333903271), [MIT — The Spread of True and False News Online](https://www.science.org/doi/10.1126/science.aap9559)*
+*Sources: [X Help Center](https://help.twitter.com/), X on the App Store, [MIT — The Spread of True and False News Online](https://www.science.org/doi/10.1126/science.aap9559)*

@@ -49,7 +49,7 @@ The app uses iOS widgets for both lock screen and home screen, refreshes automat
 | Platforms | iOS |
 | Lock screen method | iOS widget (auto-refresh daily) |
 
-[Download on the App Store](https://apps.apple.com/app/heavenly-bible-verse-widget/id6751951584)
+Download on the App Store
 
 ---
 
@@ -70,7 +70,7 @@ BitBible focuses on one thing: putting a Bible verse on your lock screen every d
 | Platforms | iOS |
 | Lock screen method | iOS widget |
 
-[Download on the App Store](https://apps.apple.com/us/app/bitbible-eng-lockscreen-alarm/id1586189381)
+Download on the App Store
 
 ---
 
@@ -91,7 +91,7 @@ YouVersion is the most downloaded Bible app in history (500+ million installs). 
 | Platforms | iOS + Android |
 | Lock screen method | iOS widget |
 
-[Download on the App Store](https://apps.apple.com/app/bible/id282935706)
+Download on the App Store
 
 ---
 
@@ -112,7 +112,7 @@ Built specifically for putting Bible verses on your lock screen with maximum cus
 | Platforms | iOS |
 | Lock screen method | iOS widget (customizable) |
 
-[Download on the App Store](https://apps.apple.com/app/lockscreen-bible-verse-widget/id1643879853)
+Download on the App Store
 
 ---
 
@@ -135,7 +135,7 @@ FaithLock takes a different approach — it uses Bible verses as the key to unlo
 | Platforms | iOS |
 | Lock screen method | App-blocking with verse engagement |
 
-[Download on the App Store](https://apps.apple.com/app/faithlock)
+[Download on the App Store](https://apps.apple.com/us/app/faithlock/id6754208209)
 
 ---
 
@@ -156,7 +156,7 @@ Glorify combines Bible verse wallpapers with guided prayers, worship music, and 
 | Platforms | iOS + Android |
 | Lock screen method | Downloadable wallpapers + widget |
 
-[Download on the App Store](https://apps.apple.com/app/glorify-daily-bible-verses/id1490587079)
+Download on the App Store
 
 ---
 
@@ -177,7 +177,7 @@ Bible Mode primarily works as a faith-based app blocker (scan your physical Bibl
 | Platforms | iOS |
 | Lock screen method | Home screen widget |
 
-[Download on the App Store](https://apps.apple.com/app/bible-mode)
+Download on the App Store
 
 ---
 
@@ -218,7 +218,7 @@ No. iOS widgets use Apple's WidgetKit framework, which refreshes on a schedule s
 Depends on the app. Lockscreen Bible Verse Widget gives you full control — pick specific verses, books, or topics. BitBible and YouVersion use curated daily selections you can't override. Heavenly lets premium users set verse preferences. FaithLock pulls from the complete BSB library but selects verses automatically.
 
 **Do these work on Android?**
-YouVersion and Glorify work on Android. The rest are iOS-only. Android's widget system is actually more flexible than iOS, so YouVersion's Android widget has more customization options than its iOS counterpart. For Android-specific Bible verse widgets, [Widgetsmith](https://apps.apple.com/us/app/widgetsmith/id1523682319) alternatives like KWGT can display Bible verses with full design control.
+YouVersion and Glorify work on Android. The rest are iOS-only. Android's widget system is actually more flexible than iOS, so YouVersion's Android widget has more customization options than its iOS counterpart. For Android-specific Bible verse widgets, Widgetsmith alternatives like KWGT can display Bible verses with full design control.
 
 **What's the best Bible translation for lock screen display?**
 Short verses work best on lock screens — there's limited space. NIV and ESV tend to be concise and readable. KJV is beautiful but often longer. The Berean Standard Bible (used by FaithLock) balances accuracy with modern readability. Most apps let you choose your translation.
@@ -239,4 +239,4 @@ Pick an app, set it up (most take under two minutes), and let your phone do the 
 
 ---
 
-*Sources: [Reviews.org Phone Addiction Study 2023](https://www.reviews.org/mobile/2023-cell-phone-addiction/), [Statista Mobile Usage Report](https://www.statista.com/statistics/1045353/mobile-internet-usage-worldwide/), [Karpicke & Roediger, PNAS 2008](https://www.pnas.org/doi/10.1073/pnas.0711910105), [App Store listings](https://apps.apple.com)*
+*Sources: [Reviews.org Phone Addiction Study 2023](https://www.reviews.org/mobile/2023-cell-phone-addiction/), [Statista Mobile Usage Report](https://www.statista.com/statistics/1045353/mobile-internet-usage-worldwide/), [Karpicke & Roediger, PNAS 2008](https://www.pnas.org/doi/10.1073/pnas.0711910105), App Store listings*

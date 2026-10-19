@@ -85,4 +85,4 @@ Holy Focus allows some content preferences. Prayer Lock's customization is limit
 Not exactly. FaithLock takes a different approach with Bible verse quizzes and prayer reminders, which offers active engagement but through Scripture rather than curated prayers.
 
 ---
-*Sources: [Holy Focus on App Store](https://apps.apple.com/app/holy-focus), [Prayer Lock on App Store](https://apps.apple.com/app/prayer-lock)*
+*Sources: Holy Focus on App Store, Prayer Lock on App Store*

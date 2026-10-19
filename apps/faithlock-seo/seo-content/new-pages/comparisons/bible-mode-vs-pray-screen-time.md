@@ -87,4 +87,4 @@ Neither is designed as a parental control tool. Pray Screen Time's simplicity ma
 This remains a gap in the market. FaithLock offers strong Bible-verse-based blocking on iOS with quiz engagement, but Android users are currently limited to Sanctum and Pray Screen Time for faith-based options.
 
 ---
-*Sources: [Bible Mode on App Store](https://apps.apple.com/app/bible-mode), [Pray Screen Time on App Store](https://apps.apple.com/app/pray-screen-time), [Pray Screen Time on Google Play](https://play.google.com/store/apps/details?id=prayscreentime)*
+*Sources: Bible Mode on App Store, Pray Screen Time on App Store, [Pray Screen Time on Google Play](https://play.google.com/store/apps/details?id=prayscreentime)*

@@ -1,6 +1,11 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { Document } from '@contentful/rich-text-types'
+import { Document, INLINES } from '@contentful/rich-text-types'
 import { marked } from 'marked'
+import type { ReactNode } from 'react'
+import {
+  normalizeAppStoreUrl,
+  sanitizeAppStoreLinksInHtml,
+} from '@/lib/app-store-links'
 
 interface RichTextProps {
   content: Document | string | unknown
@@ -75,7 +80,17 @@ function isMarkdown(text: string): boolean {
  * Convert markdown string to sanitized HTML.
  */
 function markdownToHtml(md: string): string {
-  return marked.parse(md, { async: false }) as string
+  return sanitizeAppStoreLinksInHtml(marked.parse(md, { async: false }) as string)
+}
+
+const richTextRenderOptions = {
+  renderNode: {
+    [INLINES.HYPERLINK]: (node: { data: { uri?: string } }, children: ReactNode) => {
+      const href = node.data.uri || ''
+      const destination = normalizeAppStoreUrl(href)
+      return destination ? <a href={destination}>{children}</a> : <>{children}</>
+    },
+  },
 }
 
 export default function RichText({ content, className }: RichTextProps) {
@@ -83,7 +98,7 @@ export default function RichText({ content, className }: RichTextProps) {
 
   // String content: could be HTML or Markdown
   if (typeof content === 'string') {
-    const html = isMarkdown(content) ? markdownToHtml(content) : content
+    const html = isMarkdown(content) ? markdownToHtml(content) : sanitizeAppStoreLinksInHtml(content)
     return <div className={className} dangerouslySetInnerHTML={{ __html: html }} />
   }
 
@@ -97,7 +112,7 @@ export default function RichText({ content, className }: RichTextProps) {
     // This happens when HTML strings are stored inside Rich Text fields.
     const rawText = extractRawText(content)
     if (/<[a-z][\s\S]*>/i.test(rawText)) {
-      return <div className={className} dangerouslySetInnerHTML={{ __html: rawText }} />
+      return <div className={className} dangerouslySetInnerHTML={{ __html: sanitizeAppStoreLinksInHtml(rawText) }} />
     }
 
     // Check for markdown inside Rich Text text nodes
@@ -108,7 +123,7 @@ export default function RichText({ content, className }: RichTextProps) {
     // Proper Rich Text Document — render with Contentful's renderer
     return (
       <div className={className}>
-        {documentToReactComponents(content as Document)}
+        {documentToReactComponents(content as Document, richTextRenderOptions)}
       </div>
     )
   }

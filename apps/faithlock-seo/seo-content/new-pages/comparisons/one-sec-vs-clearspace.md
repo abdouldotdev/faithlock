@@ -86,4 +86,4 @@ Neither is a hard blocker. Both add friction before app access but ultimately le
 Not practically on iOS — running two blocking apps creates API conflicts. On Android, only One Sec is available.
 
 ---
-*Sources: [One Sec on App Store](https://apps.apple.com/app/one-sec-app-blocker), [One Sec on Google Play](https://play.google.com/store/apps/details?id=one.sec), [Clearspace on App Store](https://apps.apple.com/app/clearspace-reduce-screen-time)*
+*Sources: One Sec on App Store, [One Sec on Google Play](https://play.google.com/store/apps/details?id=one.sec), Clearspace on App Store*

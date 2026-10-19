@@ -87,4 +87,4 @@ FaithLock tracks engagement streaks and offers scheduled blocking, but no faith-
 Yes. You can set different delay periods for different apps — a 5-second delay for email, a 30-second delay for TikTok. This customization is one of ScreenZen's strengths.
 
 ---
-*Sources: [Prayer Lock on App Store](https://apps.apple.com/app/prayer-lock), [ScreenZen on App Store](https://apps.apple.com/app/screenzen), [ScreenZen on Google Play](https://play.google.com/store/apps/details?id=screenzen)*
+*Sources: Prayer Lock on App Store, ScreenZen on App Store, [ScreenZen on Google Play](https://play.google.com/store/apps/details?id=screenzen)*

@@ -97,7 +97,7 @@ The reason your phone is so addictive is zero friction. It's always in your pock
 - Move social media apps off your home screen (put them in a folder on page 3)
 - Turn off all non-essential notifications (keep calls, texts, calendar only)
 - Set your phone to grayscale mode (Settings > Accessibility > Color Filters). Color drives engagement. Remove it and TikTok becomes surprisingly boring.
-- Use a faith-based app blocker like [FaithLock](/), [Bible Mode](https://apps.apple.com/us/app/bible-mode-reduce-screen-time/id6744124873), or [Sanctum](https://play.google.com/store/apps/details?id=com.hapibits.sanctum) that puts a Bible verse between you and your distracting apps. See our [comparison of 7 Christian app blockers](/learn/best-christian-app-blocker).
+- Use a faith-based app blocker like [FaithLock](/), Bible Mode, or [Sanctum](https://play.google.com/store/apps/details?id=com.hapibits.sanctum) that puts a Bible verse between you and your distracting apps. See our [comparison of 7 Christian app blockers](/learn/best-christian-app-blocker).
 - Set "Do Not Disturb" schedules for prayer time, family dinner, and bedtime
 
 Friction doesn't need to be aggressive. Even a self-nudging intervention before opening an app reduced usage by [57%](https://pmc.ncbi.nlm.nih.gov/articles/PMC9974409/) (Riedel et al., PNAS, 2023).

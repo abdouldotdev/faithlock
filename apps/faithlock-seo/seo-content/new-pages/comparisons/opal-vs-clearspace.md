@@ -87,4 +87,4 @@ ScreenZen offers waiting periods and analytics at a lower price point. One Sec p
 Not reliably on iOS. Both use the Screen Time API, and running two blockers creates conflicts.
 
 ---
-*Sources: [Opal on App Store](https://apps.apple.com/app/opal-screen-time-for-focus), [Clearspace on App Store](https://apps.apple.com/app/clearspace-reduce-screen-time)*
+*Sources: Opal on App Store, Clearspace on App Store*

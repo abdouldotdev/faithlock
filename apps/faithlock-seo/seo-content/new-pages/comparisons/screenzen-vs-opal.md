@@ -88,4 +88,4 @@ FaithLock uses Bible verse quizzes as its friction mechanism, replacing waiting 
 Both work alongside Apple Screen Time but can create conflicts if both are actively blocking the same apps. Most users choose one or the other rather than running both simultaneously.
 
 ---
-*Sources: [ScreenZen on App Store](https://apps.apple.com/app/screenzen), [ScreenZen on Google Play](https://play.google.com/store/apps/details?id=screenzen), [Opal on App Store](https://apps.apple.com/app/opal-screen-time-for-focus)*
+*Sources: ScreenZen on App Store, [ScreenZen on Google Play](https://play.google.com/store/apps/details?id=screenzen), Opal on App Store*

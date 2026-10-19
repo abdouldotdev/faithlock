@@ -88,4 +88,4 @@ Check the current version for export options. Journaling apps that lock your dat
 Both Sanctum and Pray Screen Time offer moderate blocking strength on Android. Android's more open architecture makes hard blocking more difficult than on iOS. For the strongest faith-based blocking, iOS-only apps like FaithLock or Bible Mode use Apple's Family Controls framework, which is harder to bypass.
 
 ---
-*Sources: [Sanctum on App Store](https://apps.apple.com/app/sanctum), [Sanctum on Google Play](https://play.google.com/store/apps/details?id=sanctum), [Pray Screen Time on Google Play](https://play.google.com/store/apps/details?id=prayscreentime)*
+*Sources: Sanctum on App Store, [Sanctum on Google Play](https://play.google.com/store/apps/details?id=sanctum), [Pray Screen Time on Google Play](https://play.google.com/store/apps/details?id=prayscreentime)*

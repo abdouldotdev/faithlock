@@ -87,4 +87,4 @@ The quiz changes each time and draws from 31,000+ verses, making it impractical 
 Sanctum offers some community elements on both iOS and Android, though its blocking is less aggressive than either FaithLock or Clearspace.
 
 ---
-*Sources: [FaithLock on App Store](https://apps.apple.com/app/faithlock), [Clearspace on App Store](https://apps.apple.com/app/clearspace-reduce-screen-time)*
+*Sources: [FaithLock on App Store](https://apps.apple.com/us/app/faithlock/id6754208209), Clearspace on App Store*

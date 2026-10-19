@@ -75,4 +75,4 @@ That's a theological question worth discussing with your pastor, but practically
 
 ---
 
-*Sources: [YouTube Help Center](https://support.google.com/youtube/), [YouTube on the App Store](https://apps.apple.com/app/youtube-watch-listen-stream/id544007664), [YouTube Official Blog](https://blog.youtube/)*
+*Sources: [YouTube Help Center](https://support.google.com/youtube/), YouTube on the App Store, [YouTube Official Blog](https://blog.youtube/)*

@@ -74,4 +74,4 @@ Chess apps (Chess.com, Lichess) offer genuine competitive gaming without monetiz
 
 ---
 
-*Sources: [Supercell Support](https://supercell.com/en/support/), [Clash Royale on the App Store](https://apps.apple.com/app/clash-royale/id1053012308)*
+*Sources: [Supercell Support](https://supercell.com/en/support/), Clash Royale on the App Store*

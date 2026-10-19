@@ -71,4 +71,4 @@ Pinterest requires users to be 13+ (16+ in Europe). Use Family Sharing with Scre
 
 ---
 
-*Sources: [Pinterest Help](https://help.pinterest.com/), [Pinterest on the App Store](https://apps.apple.com/app/pinterest/id429047995), [Pinterest Business Blog](https://business.pinterest.com/)*
+*Sources: [Pinterest Help](https://help.pinterest.com/), Pinterest on the App Store, [Pinterest Business Blog](https://business.pinterest.com/)*

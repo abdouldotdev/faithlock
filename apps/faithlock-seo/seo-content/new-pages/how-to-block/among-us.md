@@ -74,4 +74,4 @@ Among Us VR is a separate product for VR headsets, not available on iPhone. If y
 
 ---
 
-*Sources: [Among Us Official](https://www.innersloth.com/games/among-us/), [Among Us on the App Store](https://apps.apple.com/app/among-us/id1351168404)*
+*Sources: [Among Us Official](https://www.innersloth.com/games/among-us/), Among Us on the App Store*

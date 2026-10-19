@@ -87,4 +87,4 @@ Bible Pause's non-judgmental, choice-based approach may feel more accessible to 
 FaithLock combines firm Bible-verse-based blocking with scheduled lock times and prayer reminders on iOS, offering stronger boundaries than either of these two apps.
 
 ---
-*Sources: [Sanctum on App Store](https://apps.apple.com/app/sanctum), [Sanctum on Google Play](https://play.google.com/store/apps/details?id=sanctum), [Bible Pause on App Store](https://apps.apple.com/app/bible-pause)*
+*Sources: Sanctum on App Store, [Sanctum on Google Play](https://play.google.com/store/apps/details?id=sanctum), Bible Pause on App Store*

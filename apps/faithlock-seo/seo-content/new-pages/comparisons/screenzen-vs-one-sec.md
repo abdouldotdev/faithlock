@@ -86,4 +86,4 @@ Both can help with ADHD-related impulsive phone checking. One Sec's breathing co
 FaithLock uses Bible verse quizzes as the interruption, and Holy Focus uses curated prayers — both add faith-based content to the nudge moment rather than timers or breathing exercises.
 
 ---
-*Sources: [ScreenZen on App Store](https://apps.apple.com/app/screenzen), [ScreenZen on Google Play](https://play.google.com/store/apps/details?id=screenzen), [One Sec on App Store](https://apps.apple.com/app/one-sec-app-blocker), [One Sec on Google Play](https://play.google.com/store/apps/details?id=one.sec)*
+*Sources: ScreenZen on App Store, [ScreenZen on Google Play](https://play.google.com/store/apps/details?id=screenzen), One Sec on App Store, [One Sec on Google Play](https://play.google.com/store/apps/details?id=one.sec)*

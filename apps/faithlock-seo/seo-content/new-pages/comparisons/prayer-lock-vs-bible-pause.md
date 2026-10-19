@@ -87,4 +87,4 @@ For serious addiction, hard blocking (Prayer Lock) is generally more effective. 
 Not exactly in this combination, but FaithLock offers Bible verse-based blocking with scheduled lock times, providing firm boundaries with Scripture engagement.
 
 ---
-*Sources: [Prayer Lock on App Store](https://apps.apple.com/app/prayer-lock), [Bible Pause on App Store](https://apps.apple.com/app/bible-pause)*
+*Sources: Prayer Lock on App Store, Bible Pause on App Store*

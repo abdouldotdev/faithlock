@@ -194,4 +194,4 @@ At $6.49/month, you're paying for premium prayer content and premium design. Whe
 
 ---
 
-*Sources: [Holy Focus on the App Store](https://apps.apple.com/app/holy-focus-christian-screen/id6502883837), [Holy Focus Website](https://holyfocus.app), [faith.tools - Christian App Reviews](https://faith.tools/internet-filtering)*
+*Sources: Holy Focus on the App Store, [Holy Focus Website](https://holyfocus.app), [faith.tools - Christian App Reviews](https://faith.tools/internet-filtering)*

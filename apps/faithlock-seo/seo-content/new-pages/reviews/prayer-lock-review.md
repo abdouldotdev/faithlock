@@ -199,4 +199,4 @@ Just make sure the subscription math works for your budget first.
 
 ---
 
-*Sources: [Prayer Lock on the App Store](https://apps.apple.com/app/prayer-lock-screen-time/id6738803498), [faith.tools - Christian App Reviews](https://faith.tools/internet-filtering), [Riedel et al., PNAS 2023 - App Delay Study](https://pmc.ncbi.nlm.nih.gov/articles/PMC9974409/)*
+*Sources: Prayer Lock on the App Store, [faith.tools - Christian App Reviews](https://faith.tools/internet-filtering), [Riedel et al., PNAS 2023 - App Delay Study](https://pmc.ncbi.nlm.nih.gov/articles/PMC9974409/)*

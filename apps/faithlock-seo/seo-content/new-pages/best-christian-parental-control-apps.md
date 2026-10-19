@@ -151,7 +151,7 @@ Not a parental control — a self-accountability app. Your teen installs it them
 | Platforms | iOS |
 | Key feature | Self-chosen Bible verse app blocking for teens |
 
-[Download on the App Store](https://apps.apple.com/app/faithlock)
+[Download on the App Store](https://apps.apple.com/us/app/faithlock/id6754208209)
 
 ---
 
@@ -220,4 +220,4 @@ Your goal isn't to control their internet — it's to raise someone who doesn't 
 
 ---
 
-*Sources: [Common Sense Media - Parental Controls Guide](https://www.commonsensemedia.org/articles/everything-you-need-to-know-about-parental-controls), [American Academy of Pediatrics - Media & Children](https://www.aap.org/en/patient-care/media-and-children/), [Bark Safety Reports](https://www.bark.us/blog/bark-prevented-school-shootings/), [BibleGateway](https://www.biblegateway.com), [App Store listings](https://apps.apple.com)*
+*Sources: [Common Sense Media - Parental Controls Guide](https://www.commonsensemedia.org/articles/everything-you-need-to-know-about-parental-controls), [American Academy of Pediatrics - Media & Children](https://www.aap.org/en/patient-care/media-and-children/), [Bark Safety Reports](https://www.bark.us/blog/bark-prevented-school-shootings/), [BibleGateway](https://www.biblegateway.com), App Store listings*

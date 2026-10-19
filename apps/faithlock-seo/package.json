@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test:tracking": "node --experimental-strip-types --test tests/resource-store-click.test.mjs tests/resource-store-click-tracker.integration.test.mjs",
+    "test:app-store-links": "node --experimental-strip-types --test tests/app-store-links.test.mjs",
     "test:contentful": "node scripts/test-contentful.js"
   },
   "dependencies": {
