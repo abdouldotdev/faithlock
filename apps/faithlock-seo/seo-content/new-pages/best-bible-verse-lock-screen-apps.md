@@ -2,7 +2,7 @@
 slug: best-bible-verse-lock-screen-apps
 title: Best Bible Verse Lock Screen Apps 2026
 category: Guides
-meta_title: "Best Bible Verse Lock Screen Apps for iPhone (2026) | FaithLock"
+meta_title: "Best Bible Verse Lock Screen Apps for iPhone (2026)"
 meta_description: "Compare 7 Bible verse lock screen apps for iPhone, ranked by cost, design, and ease of use. Find the best fit for a daily verse on your lock screen."
 ---
 
