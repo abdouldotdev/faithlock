@@ -2,8 +2,8 @@
 slug: bible-verses-about-gods-presence
 title: Bible Verses About God's Presence
 category: Scripture
-meta_title: "10 Bible Verses About God's Presence (+ How to Apply Them)"
-meta_description: "Scripture about experiencing God's presence, with practical ways to access it when He feels distant or silent."
+meta_title: "10 Bible Verses About God’s Presence | FaithLock"
+meta_description: "Explore 10 Bible verses about God’s presence, plus simple ways to apply them when God feels distant or silent."
 ---
 
 ## Key Takeaways
