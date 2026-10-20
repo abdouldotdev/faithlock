@@ -37,7 +37,6 @@ class PrayerLearningController extends GetxController {
   final PostHogService _analytics = PostHogService.instance;
   late final Future<FirstValueInstrumentation> _firstValueInstrumentation =
       _createFirstValueInstrumentation();
-  bool _focusCompletionRecorded = false;
 
   // Text controllers - persist across rebuilds
   late final TextEditingController meditationTextController;
@@ -113,6 +112,7 @@ class PrayerLearningController extends GetxController {
     final preferences = await SharedPreferences.getInstance();
     return FirstValueInstrumentation(
       store: SharedPreferencesFirstValueStore(preferences),
+      isReady: () => PostHogService.instance.isReady,
       emit: (event) async {
         final analytics = PostHogService.instance;
         if (!analytics.isReady) return;
@@ -122,17 +122,12 @@ class PrayerLearningController extends GetxController {
   }
 
   Future<void> _recordFirstFocusStarted() async {
-    if (!_analytics.isReady) return;
     final instrumentation = await _firstValueInstrumentation;
-    if (!_analytics.isReady) return;
     await instrumentation.recordFocusStarted(at: DateTime.now());
   }
 
   Future<void> _recordFirstFocusCompleted() async {
-    if (_focusCompletionRecorded || !_analytics.isReady) return;
-    _focusCompletionRecorded = true;
     final instrumentation = await _firstValueInstrumentation;
-    if (!_analytics.isReady) return;
     await instrumentation.recordFocusCompleted(at: DateTime.now());
   }
 

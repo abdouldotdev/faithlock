@@ -18,6 +18,7 @@ void main() {
     final events = <TrackedEvent>[];
     final instrumentation = FirstValueInstrumentation(
       store: _MemoryStore(),
+      isReady: () => true,
       emit: events.add,
     );
 
@@ -40,6 +41,7 @@ void main() {
     final events = <TrackedEvent>[];
     final instrumentation = FirstValueInstrumentation(
       store: _MemoryStore(),
+      isReady: () => true,
       emit: events.add,
     );
     final first = DateTime.utc(2026, 10, 19, 10);
@@ -74,16 +76,60 @@ void main() {
     });
   });
 
+  test('retries pending milestones when provider becomes ready exactly once', () async {
+    final store = _MemoryStore();
+    final events = <TrackedEvent>[];
+    var isReady = false;
+    final instrumentation = FirstValueInstrumentation(
+      store: store,
+      isReady: () => isReady,
+      emit: events.add,
+    );
+    final first = DateTime.utc(2026, 10, 19, 10);
+
+    await instrumentation.recordFocusStarted(at: first);
+    await instrumentation.recordFocusCompleted(
+      at: first.add(const Duration(minutes: 5)),
+    );
+    expect(events, isEmpty);
+
+    isReady = true;
+    await instrumentation.recordFocusCompleted(
+      at: first.add(const Duration(minutes: 5)),
+    );
+    await instrumentation.recordFocusStarted(at: first);
+    await instrumentation.recordFocusCompleted(
+      at: first.add(const Duration(minutes: 6)),
+    );
+
+    expect(events.map((event) => event.name), [
+      'first_focus_started',
+      'first_focus_completed',
+    ]);
+  });
+
   test('does not emit a completion twice after recreation with persisted state', () async {
     final store = _MemoryStore();
     final events = <TrackedEvent>[];
     final first = DateTime.utc(2026, 10, 19, 10);
 
-    await FirstValueInstrumentation(store: store, emit: events.add)
+    await FirstValueInstrumentation(
+      store: store,
+      isReady: () => true,
+      emit: events.add,
+    )
         .recordFocusStarted(at: first);
-    await FirstValueInstrumentation(store: store, emit: events.add)
+    await FirstValueInstrumentation(
+      store: store,
+      isReady: () => true,
+      emit: events.add,
+    )
         .recordFocusCompleted(at: first.add(const Duration(minutes: 5)));
-    await FirstValueInstrumentation(store: store, emit: events.add)
+    await FirstValueInstrumentation(
+      store: store,
+      isReady: () => true,
+      emit: events.add,
+    )
         .recordFocusCompleted(at: first.add(const Duration(minutes: 5)));
 
     expect(events.map((event) => event.name), [
