@@ -1,9 +1,9 @@
 ---
 slug: best-bible-verse-widgets-iphone
-title: Best Bible Verse Widgets for iPhone 2026
+title: Free Bible Widgets for iPhone: Home Screen vs Lock Screen
 category: Guides
-meta_title: "Best Bible Verse Widgets for iPhone (2026): Home Screen + Lock Screen"
-meta_description: "How to add Bible verse widgets to your iPhone home screen and lock screen. Step-by-step setup for 5 best widget apps."
+meta_title: "Free Bible Widgets for iPhone: Home Screen vs Lock Screen (2026)"
+meta_description: "Looking for free Bible widgets for iPhone? Compare home-screen and lock-screen options, setup steps, and where FaithLock's home-screen widget fits."
 ---
 
 ## Key Takeaways
@@ -16,11 +16,11 @@ meta_description: "How to add Bible verse widgets to your iPhone home screen and
 
 ---
 
-## How iPhone Widgets Work (Quick Primer)
+## Free Bible Widgets for iPhone: Home Screen vs Lock Screen
 
-Apple introduced home screen widgets in iOS 14 and lock screen widgets in iOS 16. Home screen widgets come in three sizes (small, medium, large) and sit alongside your app icons. Lock screen widgets are smaller — they sit below the clock, with room for 2-4 small or 1-2 medium widgets.
+Home-screen and lock-screen widgets are separate iPhone surfaces. A free Bible widget may support one, the other, or both, so check the app's current listing before installing. Home-screen widgets have more room for verse text. Lock-screen widgets are compact and may show only a reference or a shortened verse.
 
-Both update on a schedule managed by iOS (WidgetKit). Most Bible verse widgets refresh once daily. Here's how to get Scripture on both screens.
+The goal of this guide is practical: compare the two placements, explain the setup, and make FaithLock's boundary clear. FaithLock's official app is **Faith Lock: Bible Prayer Focus**, App Store ID **id6754208209**. Its widget is for the iPhone home screen, not the lock screen.
 
 ---
 
@@ -120,24 +120,25 @@ Download on the App Store
 
 ### 5. FaithLock
 
-**Best for**: Turning your phone's verse display into active spiritual practice
+**Best for**: pairing a home-screen verse widget with app-blocking and Scripture engagement
 
-FaithLock uses Bible verses as the unlock mechanism for distracting apps. Try to open Instagram, see a verse from the full Berean Standard Bible (31,000+ verses), engage with it through a quiz, then the app unlocks.
+FaithLock has an iPhone home-screen widget in small and medium sizes. The medium widget can show the verse of the day alongside app information. The small and medium families are home-screen widgets; FaithLock does not offer a native lock-screen widget.
 
-**What stands out**: [Active retrieval practice produces 50% better retention than passive review](https://www.science.org/doi/10.1126/science.1152408). FaithLock makes you interact with Scripture, not just see it. Scheduled lock times align with morning devotion, work hours, and bedtime.
+FaithLock also uses Apple's Family Controls technology to block selected distracting apps. When you try to open a blocked app, FaithLock can show a Bible verse and a quiz question before the app unlocks. That is a separate app-blocking moment, not a lock-screen widget.
 
-**Where it falls short**: Not a traditional widget — verses appear when opening blocked apps, not on your home screen. iOS only. Premium ($24.99/year) for full features.
+**Where it falls short**: FaithLock is iOS only, and its widget is not a lock-screen option. Do not choose it if your requirement is a verse under the iPhone clock. Choose it if you want the home screen widget and the app-blocking flow in the same product.
 
-*Disclosure: This article is published on the FaithLock blog. We've given every app an honest assessment, including our own.*
+*Disclosure: This article is published on the FaithLock blog. FaithLock's official App Store listing is [Faith Lock: Bible Prayer Focus](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), App Store ID id6754208209.*
 
 | Detail | Info |
 |--------|------|
-| Rating | New (building reviews) |
-| Price | Free (Premium $24.99/year) |
-| Widget type | App-blocking verse engagement |
-| Refresh | Per app open (from 31K+ verse library) |
+| App | Faith Lock: Bible Prayer Focus |
+| App Store ID | id6754208209 |
+| Widget | Home screen only, small and medium |
+| Lock screen widget | Not offered |
+| Platform | iOS |
 
-[Download on the App Store](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209)
+[Check FaithLock on the App Store](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209)
 
 ---
 
@@ -149,7 +150,7 @@ FaithLock uses Bible verses as the unlock mechanism for distracting apps. Try to
 | Heavenly | Free/$6.99/mo | Yes | Yes (S/M/L) | Daily | Moderate |
 | BitBible | Free/Premium | Yes | Yes (S/M) | Daily | Low |
 | Widgetsmith | Free/$1.99/mo | Yes | Yes (S/M/L) | Manual | Full |
-| FaithLock | Free/$24.99/yr | N/A (app blocker) | N/A | Per interaction | Low |
+| FaithLock | See current App Store listing | Home screen only | Home-screen widget | Not specified | Limited |
 
 ---
 
@@ -217,9 +218,9 @@ Yes. iPadOS supports the same WidgetKit framework. All five apps on this list wo
 
 A Bible verse widget takes 60 seconds to set up and runs forever. Every time you glance at your phone — which is [around 144 times daily](https://www.reviews.org/mobile/2023-cell-phone-addiction/) — you see Scripture instead of a blank wallpaper or a notification from an app you don't care about.
 
-YouVersion is the obvious starting point if you've never tried this. It's free, it works, and you probably already have it installed. If you want something prettier, try Heavenly. If you want full control, Widgetsmith. If you want your verse encounters to require actual engagement rather than passive glancing, FaithLock is worth exploring.
+YouVersion is a practical starting point if you want a home-screen or lock-screen option. If design matters, compare the current listing for a dedicated widget app. If you want a home-screen widget paired with app blocking and verse engagement, review [FaithLock on the App Store](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), official App Store ID id6754208209. FaithLock is not a lock-screen widget.
 
-The real question isn't which app to use. It's why you haven't done this already. Sixty seconds. Do it now.
+The right choice depends on the screen you want to use and whether you want passive display or an app-blocking prompt. Check the current App Store listing before installing.
 
 ---
 
