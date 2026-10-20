@@ -128,8 +128,20 @@ void main() {
     await instrumentation.recordFocusCompleted(
       at: first.add(const Duration(minutes: 6)),
     );
+    await instrumentation.recordFocusCompleted(
+      at: first.add(const Duration(minutes: 7)),
+    );
 
-    expect(events.map((event) => event.name), ['first_focus_completed']);
+    expect(events.map((event) => event.name), [
+      'first_focus_completed',
+      'focus_completed',
+    ]);
+    expect(events.last.properties, {
+      'schema_version': 1,
+      'focus_kind': 'prayer',
+      'completion_number': 2,
+      'first_completion_at': '2026-10-19T10:00:00.000Z',
+    });
     expect(store.values['faithlock_first_value_completed_at'],
         '2026-10-19T10:00:00.000Z');
   });
