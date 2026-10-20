@@ -105,7 +105,14 @@ void main() {
     expect(events.map((event) => event.name), [
       'first_focus_started',
       'first_focus_completed',
+      'focus_completed',
     ]);
+    expect(events.last.properties, {
+      'schema_version': 1,
+      'focus_kind': 'prayer',
+      'completion_number': 2,
+      'first_completion_at': '2026-10-19T10:05:00.000Z',
+    });
   });
 
   test('preserves the earliest pending completion while provider is unavailable', () async {
