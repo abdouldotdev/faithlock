@@ -79,10 +79,13 @@ class FirstValueInstrumentation {
     final count = int.tryParse(_store.read(_completionCountKey) ?? '') ?? 0;
 
     if (count == 0) {
-      await _store.write(
-        _pendingCompletionAtKey,
-        at.toUtc().toIso8601String(),
-      );
+      final pendingCompletionAt = _store.read(_pendingCompletionAtKey);
+      if (pendingCompletionAt == null || pendingCompletionAt.isEmpty) {
+        await _store.write(
+          _pendingCompletionAtKey,
+          at.toUtc().toIso8601String(),
+        );
+      }
       await flushPending();
       return;
     }

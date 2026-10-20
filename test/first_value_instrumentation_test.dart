@@ -108,6 +108,32 @@ void main() {
     ]);
   });
 
+  test('preserves the earliest pending completion while provider is unavailable', () async {
+    final store = _MemoryStore();
+    final events = <TrackedEvent>[];
+    var isReady = false;
+    final instrumentation = FirstValueInstrumentation(
+      store: store,
+      isReady: () => isReady,
+      emit: events.add,
+    );
+    final first = DateTime.utc(2026, 10, 19, 10);
+
+    await instrumentation.recordFocusCompleted(at: first);
+    await instrumentation.recordFocusCompleted(
+      at: first.add(const Duration(minutes: 5)),
+    );
+
+    isReady = true;
+    await instrumentation.recordFocusCompleted(
+      at: first.add(const Duration(minutes: 6)),
+    );
+
+    expect(events.map((event) => event.name), ['first_focus_completed']);
+    expect(store.values['faithlock_first_value_completed_at'],
+        '2026-10-19T10:00:00.000Z');
+  });
+
   test('does not emit a completion twice after recreation with persisted state', () async {
     final store = _MemoryStore();
     final events = <TrackedEvent>[];
