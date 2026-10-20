@@ -1,9 +1,9 @@
 ---
 slug: bible-verses-about-letting-go
-title: Bible Verses About Letting Go
+title: 10 Bible Verses About Letting Go (With Practical Steps)
 category: Scripture
-meta_title: "10 Bible Verses About Letting Go (+ How to Actually Release)"
-meta_description: "Struggling to let go of hurt, the past, or control? 10 Bible verses about releasing what you're holding too tightly, with practical steps for each."
+meta_title: "10 Bible Verses About Letting Go (With Practical Steps)"
+meta_description: "Explore 10 Bible verses about letting go of hurt, control, and the past, with practical steps to help you release what you are carrying."
 ---
 
 ## Key Takeaways
