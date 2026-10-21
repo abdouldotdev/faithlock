@@ -8,11 +8,13 @@ const here = path.dirname(fileURLToPath(import.meta.url))
 const appRoot = path.resolve(here, '..')
 const read = (relativePath) => fs.readFileSync(path.join(appRoot, relativePath), 'utf8')
 
-test('factual registry contains the two authoritative product sources and excludes the look-alike app', () => {
+test('factual registry names only authoritative sources and excludes look-alike apps', () => {
   const facts = read('seo-content/rules/FAITHLOCK_FACTS.md')
   assert.match(facts, /https:\/\/apps\.apple\.com\/us\/app\/faith-lock-bible-prayer-focus\/id6754208209/)
-  assert.match(facts, /https:\/\/faithlock\.net\//)
+  assert.match(facts, /https:\/\/www\.getfaithlock\.com\//)
+  assert.doesNotMatch(facts, /https:\/\/faithlock\.net\//)
   assert.match(facts, /id6786329834/)
+  assert.match(facts, /id6756815467/)
 })
 
 test('shared product data matches the verified App Store identity and platform', () => {

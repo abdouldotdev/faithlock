@@ -10,7 +10,7 @@ Last verified: 2026-10-21
 |---|---|---|
 | Apple App Store listing | https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209 | Product name, seller, availability, supported devices, minimum OS, description, feature copy, current rating/review count, and displayed in-app purchase prices |
 | Apple iTunes Lookup API | https://itunes.apple.com/lookup?id=6754208209&country=us | Machine-readable verification of the same listing; excludes the homonymous app id6786329834 |
-| Official product site | https://faithlock.net/ | Product positioning and public feature descriptions |
+| Official product site | https://www.getfaithlock.com/ | Product positioning and public feature descriptions |
 | SEO site privacy page | https://www.getfaithlock.com/privacy | Site-published privacy notice; do not infer stronger privacy claims than the page states |
 | SEO site terms page | https://www.getfaithlock.com/terms | Site-published subscription, cancellation, and limitation terms |
 
@@ -40,7 +40,7 @@ Last verified: 2026-10-21
 - “All data stays on your device”, “private and on-device”, or equivalent; the listing explicitly describes Premium cloud sync.
 - User, download, or community totals such as “100k+” unless independently supplied and dated by the owner.
 - “Only app blocker”, “unbreakable”, clinical outcomes, or guaranteed battery percentages.
-- The homonymous App Store app id6786329834.
+- The homonymous App Store apps `id6786329834` and `id6756815467`.
 
 ## Change protocol
 
