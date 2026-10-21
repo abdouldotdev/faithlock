@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { COMPANY, APP_STORE_URL } from '@/lib/constants'
 import InteractivePhone from '@/components/landing/InteractivePhone'
 import TypewriterHeadline from '@/components/landing/TypewriterHeadline'
@@ -6,6 +7,21 @@ import LandingTracker from '@/components/landing/LandingTracker'
 import LandingFooter from '@/components/landing/LandingFooter'
 
 const APP_LINK = APP_STORE_URL
+
+export const metadata: Metadata = {
+  title: 'FaithLock — Stop scrolling. Start Scripture.',
+  description:
+    'FaithLock blocks distracting apps and unlocks them with Bible verses—building a consistent Scripture habit without relying on willpower alone.',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    url: '/',
+    title: 'FaithLock — Stop scrolling. Start Scripture.',
+    description:
+      'FaithLock blocks distracting apps and unlocks them with Bible verses—building a consistent Scripture habit without relying on willpower alone.',
+  },
+}
 
 export default function LandingPage() {
   return (
