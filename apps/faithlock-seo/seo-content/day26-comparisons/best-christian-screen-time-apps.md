@@ -105,7 +105,7 @@ Perhaps most importantly, FaithLock is exclusively on iOS, which means its devel
 
 Choosing the **best Christian screen time apps** depends on your primary objective, platform preference, and digital challenges. Here's how to decide:
 
-**Choose FaithLock if:** You have strong social media addiction, use iOS, want Scripture woven into the moment of temptation, prefer app blocking combined with spiritual intervention, and are willing to invest in a paid subscription. The $24.99 annual price is excellent value for iOS users seeking the most comprehensive Christian screen time solution.
+**Choose FaithLock if:** You have strong social media addiction, use iOS, want Scripture woven into the moment of temptation, prefer app blocking combined with spiritual intervention, and are willing to invest in a paid subscription. It is a faith-based screen time option that combines app blocking with Scripture engagement.
 
 **Choose Bible Mode if:** You prefer data-driven insights into your habits, use Android or want cross-platform flexibility, and respond well to visual dashboards and analytics rather than forced accountability. It's ideal for users in the awareness phase of behavior change.
 
