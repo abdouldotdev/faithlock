@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test:facts": "node --test tests/facts.test.mjs",
     "test:tracking": "node --experimental-strip-types --test tests/store-click.test.mjs tests/competitors.test.mjs",
     "test:seo-metadata": "node --test tests/metadata-title-template.test.mjs",
     "test:canonical-evidence": "node --test tests/canonical-evidence.test.mjs",
