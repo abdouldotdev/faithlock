@@ -1,55 +1,47 @@
-# FAITHLOCK_FACTS — couche de faits produit (source de vérité A)
+# FaithLock — factual source of truth
 
-*Équivalent du `MONTAJ.md §12`. Les agents rédacteurs ne peuvent affirmer au présent QUE ce qui est `✅ LIVRÉ` ici. Tout le reste : au futur ou pas du tout.*
+Versioned factual registry for the SEO site. Public copy may use only claims marked VERIFIED, and must preserve the wording and scope below. Unknown or paywall-dependent details stay unclaimed.
 
-> ⚠️ **À VALIDER PAR LE FONDATEUR avant le batch de 650 pages.** Les statuts ci-dessous sont déduits du code de l'app (`/Users/abdoul/development/appbiz-studio/faithlock`) et des pages déjà publiées sur getfaithlock.com, croisés le 2026-08-15. Tant que ce fichier n'est pas validé, les agents ne peuvent réutiliser que des claims déjà présents sur le site publié.
+Last verified: 2026-10-21
 
-## Statuts
-`✅ LIVRÉ` = affirmable au présent · `◐ PARTIEL` = affirmable avec la nuance exacte · `🔮 CONÇU` = futur uniquement · `❓ À CONFIRMER` = déduit du code mais pas croisé avec une décision produit · `⛔ INTERDIT` = ne jamais mentionner
+## Primary sources
 
-## Faits produit
+| Source | URL | Scope |
+|---|---|---|
+| Apple App Store listing | https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209 | Product name, seller, availability, supported devices, minimum OS, description, feature copy, current rating/review count, and displayed in-app purchase prices |
+| Apple iTunes Lookup API | https://itunes.apple.com/lookup?id=6754208209&country=us | Machine-readable verification of the same listing; excludes the homonymous app id6786329834 |
+| Official product site | https://faithlock.net/ | Product positioning and public feature descriptions |
+| SEO site privacy page | https://www.getfaithlock.com/privacy | Site-published privacy notice; do not infer stronger privacy claims than the page states |
+| SEO site terms page | https://www.getfaithlock.com/terms | Site-published subscription, cancellation, and limitation terms |
 
-| Fait | Statut | Formulation autorisée | Preuve |
-|---|---|---|---|
-| App iOS uniquement | ✅ LIVRÉ | "FaithLock is an iOS app" / "iOS only" | `pubspec.yaml` (commentaires "iOS-only project — no android/ directory exists", `flutter_launcher_icons: android: false`), aucun dossier `/android` dans le repo |
-| Version iOS minimale publiée | ✅ LIVRÉ | "FaithLock requires iOS 13.0 or later" | Fiche App Store officielle **Faith Lock: Bible Prayer Focus**, application `id6754208209`, champ `Requires iOS 13.0 or later` |
-| Blocage d'apps via Apple Screen Time / Family Controls | ✅ LIVRÉ | "FaithLock blocks distracting apps using Apple's Family Controls (Screen Time) API" | `ios/Runner/Runner.entitlements` (`com.apple.developer.family-controls = true`), `lib/features/faithlock/services/screen_time_service.dart` (MethodChannel natif : `isAuthorized`, `requestAuthorization`, `presentAppPicker`, `applyShields`/`removeShields`, schedules via DeviceActivityMonitor) |
-| Déverrouillage par quiz biblique (texte à trous) | ✅ LIVRÉ | "unlock blocked apps by reading a Bible verse and answering a quiz question about it" | `lib/features/lock_challenge/` (écran + contrôleur du quiz), `lib/features/faithlock/services/question_generator.dart` (génère la phrase à trous et 4 choix depuis le verset) |
-| Widget verset du jour sur l'écran d'accueil iPhone | ✅ LIVRÉ — écran d'accueil seulement, PAS lock screen | "home screen widget showing the verse of the day" (taille medium : verset + référence à côté du streak, du stade de jardin et des minutes priées ; taille small : streak + stade). Le verset tourne par graine de date, il avance même si l'app n'est pas ouverte. Ne jamais dire "lock screen widget" pour FaithLock. ⚠️ Deux pages en ligne (best-bible-verse-widgets-iphone.md, best-bible-verse-lock-screen-apps.md) affirment à tort que FaithLock n'a pas de widget : à corriger, elles sous-vendent le produit | `ios/FaithLockWidget/FaithLockWidget.swift:321` → `.supportedFamilies([.systemSmall, .systemMedium])` (familles Home Screen uniquement, aucune famille `accessory*` de lock screen), `lib/services/home_widget_service.dart` (App Group, verset + streak poussés au widget) |
-| Verset affiché à l'écran de blocage (dans le shield, pas sur le lock screen iOS) | ✅ LIVRÉ | "when you try to open a blocked app, you see a Bible verse" | `lib/features/faithlock/services/question_generator.dart` + `lock_challenge_screen.dart` (le verset/quiz s'affiche au moment du déverrouillage, via le shield Screen Time, pas un widget natif iOS lock screen) |
-| Version Android | ⛔ INTERDIT — n'existe pas | ne jamais promettre de version Android | aucun dossier `/android`, `pubspec.yaml` explicitement iOS-only |
-| Prix / abonnement (RevenueCat) | ◐ PARTIEL — modèle confirmé : abonnement payant avec essai gratuit de 3 jours | « FaithLock offers a 3-day free trial » est tolérable ; « FaithLock is free » reste INTERDIT ; montants uniquement tels que déjà publiés sur le site | `lib/services/subscription/revenuecat_service.dart`, `lib/features/paywall/controllers/paywall_controller.dart`, `lib/core/localization/en_US.dart` (`paywall_ctaFreeTrial` = « Start FREE for 3 Days », `paywall_riskReversal` = « 3 days free · Cancel anytime ») |
-| ⚠️ Gate d'accès premium (paywall) | ❓ À CONFIRMER — bypass actif dans le code | ne rien affirmer sur ce qui est "gratuit" vs "premium" tant que non confirmé | `lib/services/subscription/paywall_guard_service.dart` → `checkSubscriptionAccess()` retourne **toujours `true`**, commentaire en dur : `"BYPASS ACTIVE - Always granting access"` "for development/testing". Impossible de dire avec certitude aujourd'hui quelles fonctionnalités sont réellement verrouillées derrière le paywall en prod tant que le fondateur ne confirme pas si ce bypass est un résidu de dev ou un état voulu |
-| Contrôle parental / comptes famille | ❓ À CONFIRMER — probablement absent | ne pas affirmer de fonctionnalité de contrôle parental multi-utilisateur | Aucune mention de "parent", "family account", "child profile" trouvée dans `lib/features` ou `lib/services`. La Family Controls API Apple sert uniquement à l'auto-blocage de l'utilisateur lui-même, pas à un contrôle parental d'un tiers |
-| Statistiques d'usage / streaks / badges | ✅ LIVRÉ | "tracks prayer and Scripture-reading streaks, with badges and a streak-freeze system" | `lib/features/faithlock/services/stats_service.dart`, `stats_controller.dart`, `streak_freeze_service.dart` (1 freeze/semaine gratuit, 3/semaine premium, pas 2 freezes consécutifs), `badge_service.dart` + `badge_definitions.dart` (badges streak, versets, première prière, score parfait, lève-tôt/couche-tard) |
-| Bibliothèque biblique complète (BSB, 31 000+ versets) | ✅ LIVRÉ | "the complete BSB (Berean Standard Bible) library of 31,000+ verses" (déjà publié) | `lib/features/bible/` (`bible_repository.dart`, `bible_controller.dart`), `lib/features/faithlock/services/bible_database_loader.dart`, base SQLite embarquée référencée dans le code (`bible_bsb.db`) |
-| Langues de l'app | ◐ PARTIEL — 5 locales configurées, français réellement actif (⛔ ne JAMAIS écrire "English only" : c'est faux, `lib/main.dart:59` pose Locale('fr','FR') et `bible_version.dart:79` route French → Louis Segond ; la fiche App Store ne liste que l'anglais, c'est un trou de métadonnées store, pas la réalité du produit) | "available in English and French" (les 3 autres locales non vérifiées en profondeur) | `lib/config/app_config.dart` (`supportedLocales`: en_US, fr_FR, pt_BR, de_DE, ja_JP), fichiers `lib/core/localization/{en_US,fr_FR,pt_BR,de_DE,ja_JP}.dart` présents |
-| Compagnon spirituel conversationnel ("The Companion") | ◐ PARTIEL — réel côté code, jamais publié comme claim marketing à ce jour | "an AI-powered spiritual companion chat" — ne jamais nommer le modèle/fournisseur sous-jacent | `lib/features/companion/` (chat, historique, voix). Backend réel via API LLM, prompt système dédié anti-fabrication de versets (`assets/prompts/companion_system_prompt.txt`). Le nom du modèle est un détail d'implémentation interne, à ne jamais exposer publiquement |
-| Prière : audio guidée, prière écrite, mémorisation de versets | ✅ LIVRÉ | "guided audio prayers, written prayer journaling, and verse memorization" | `lib/features/prayer_audio/` (lecteur audio avec script synchronisé), `lib/features/prayer_text/` (journal de prière écrite), `lib/features/prayer_learning/` (suivi de mémorisation de versets) |
-| Jardin de grâce / gamification visuelle ("Grace Garden") | ✅ LIVRÉ dans le code — jamais publié comme claim marketing à ce jour | à ne pas utiliser tant que le fondateur n'a pas validé le nom de la fonctionnalité et de la mascotte | `lib/features/garden/` (arbre/pot qui grandit visuellement selon les prières et streaks, mascotte compagnon) |
-| Engagement / "covenant" de 30 jours | ◐ PARTIEL — rituel d'engagement à l'onboarding, pas un tracker permanent confirmé | "a 30-day commitment ritual during onboarding" (le site dit déjà "30-day spiritual covenant feature" — formulation à garder mais sans sur-vendre un tracking continu) | `lib/features/onboarding/screens/step4_call_to_covenant.dart` (`save30DayGoals`, "Phase 4.4 - 30-Day Goals Selection", clés `covenant_*`). Aucune preuve trouvée ailleurs dans le code d'un compteur "jour X/30" persistant post-onboarding |
-| Microphone / prière parlée | ✅ LIVRÉ | "you can pray aloud using the microphone" (usage optionnel) | `ios/Runner/Info.plist` → `NSMicrophoneUsageDescription`: "FaithLock uses the microphone only if you choose to speak or record a prayer aloud." |
+## Verified claims
 
-## Claims déjà publiés sur le site (réutilisables tels quels)
+| Claim | Allowed wording / scope | Evidence |
+|---|---|---|
+| Product identity | “Faith Lock: Bible Prayer Focus” is the App Store listing name; “FaithLock” is the product brand used by the official site. | App Store listing; official product site |
+| Seller | Appbiz Studio, LLC | App Store listing / iTunes Lookup |
+| Distribution | The verified listing is free to download and offers in-app purchases. | App Store listing / iTunes Lookup |
+| Platforms | The verified listing supports iPhone and iPad. Do not claim Android, macOS, Windows, or cross-platform support. | App Store listing / iTunes Lookup (`features: iosUniversal`, supported devices) |
+| Minimum OS | iOS 13.0 or later for the verified listing. | iTunes Lookup (`minimumOsVersion`) |
+| Core mechanism | FaithLock is a prayer lock app that blocks selected distracting apps and asks users to read Bible verses and pray before access. | App Store description; official product site |
+| Scheduling | The App Store description lists scheduled lock times for prayer, devotion, work, or family time. | App Store description |
+| Progress | The App Store description lists prayer streak tracking and faith insights/stats, including screen time saved and verses read. | App Store description |
+| Reminders and presentation | The App Store description lists prayer reminders and dark mode. | App Store description |
+| Sync | Cloud sync is described as a Premium feature in the App Store listing. Do not call the product fully on-device or claim that all data stays on-device. | App Store description |
+| Pricing | At verification, the listing displayed in-app purchase prices of $6.99 and $39.99. The listing/API evidence used here does not state the billing periods; never attach weekly, monthly, annual, or trial periods without a current paywall source. | App Store listing / iTunes Lookup |
+| Privacy and terms | The site exposes `/privacy` and `/terms`. Link to those pages for policy detail; do not convert policy text into broader “private”, “secure”, or “never tracks” marketing claims. | SEO site privacy and terms pages |
 
-Ces formulations exactes ont été trouvées dans `best-christian-app-blocker.md`, `comparisons/faithlock-vs-opal.md`, `best-bible-verse-lock-screen-apps.md` et `best-bible-verse-widgets-iphone.md`. Ce sont les seuls claims chiffrés/marketing réutilisables tant que ce fichier n'est pas validé par le fondateur.
+## Not verified / prohibited
 
-- "the complete BSB (Berean Standard Bible) library of 31,000+ verses"
-- "unlock blocked apps by reading a Bible verse and answering a quiz question about it" / "Bible verse quiz" / "Active interaction with verses instead of passive exposure"
-- "A 30-day spiritual covenant feature turns the blocking into a commitment device rooted in biblical covenant theology"
-- "Scheduled lock times (morning devotion, work hours, bedtime)" + "Prayer reminders throughout the day"
-- "iOS-only" / "iOS only" (répété sur toutes les pages)
-- ⚠️ Prix : la fiche App Store live (annotation IAP extraite le 2026-08-16) affiche "Premium Membership. $6.99" et "Premium Membership. $39.99", SANS périodicité indiquée. Le site publie "$4.99/week or $24.99/year" sur 3 pages : ces 3 pages sont donc PÉRIMÉES et à corriger. Formulation autorisée : citer les deux montants du store sans inventer de périodicité. À confirmer par le fondateur (changement de tarif ou offres régionales ?). Tant que ce n'est pas tranché, ne citer AUCUN montant FaithLock dans une nouvelle page. Faits store confirmés par l'API iTunes (id 6754208209) : nom "Faith Lock: Bible Prayer Focus", éditeur "Appbiz Studio, LLC", téléchargement gratuit, 4,19/5 sur 16 avis, iOS 13.0+
-- "Strong (Family Controls API)" pour la solidité du blocage
-- "For apps that don't offer a native lock screen widget (like FaithLock), the verse appears when you try to open a blocked app instead of sitting on the lock screen itself" — le site confirme déjà correctement l'absence de widget lock screen, cohérent avec le code
-- Lien App Store utilisé sur le site : `https://pim.ms/kTxgKF4` (lien tracké, = `APP_STORE_URL`). Tout lien brut `apps.apple.com/.../id6754208209` est réécrit vers ce lien au rendu, et chaque clic émet l'événement PostHog `faithlock_store_click`.
+- $4.99/week, $24.99/year, or any other billing period not currently shown by the cited App Store/paywall evidence.
+- A 3-day free trial as a current offer.
+- Android, Windows, macOS, or generic cross-platform availability.
+- iOS 16+ as the minimum OS; the verified listing says iOS 13.0+.
+- “All data stays on your device”, “private and on-device”, or equivalent; the listing explicitly describes Premium cloud sync.
+- User, download, or community totals such as “100k+” unless independently supplied and dated by the owner.
+- “Only app blocker”, “unbreakable”, clinical outcomes, or guaranteed battery percentages.
+- The homonymous App Store app id6786329834.
 
-## Claims interdits
+## Change protocol
 
-- Toute feature non listée `✅ LIVRÉ` ci-dessus.
-- Tout chiffre d'utilisateurs/téléchargements non fourni par le fondateur.
-- Toute mention de "lock screen widget" pour FaithLock (le widget est Home Screen uniquement — voir preuve ci-dessus).
-- Toute mention de "contrôle parental" ou "comptes famille" (non trouvé dans le code).
-- Toute mention du fournisseur/modèle IA derrière le Companion.
-- Tout claim ferme sur ce qui est gratuit vs premium tant que le bypass du paywall (`paywall_guard_service.dart`) n'est pas expliqué par le fondateur.
-- Version Android sous quelque forme que ce soit.
+When the App Store listing or official product site changes, update this file first with the retrieval date and source URL. Then update `lib/faithlock-data.ts` and affected public pages in the same change. Keep pricing periods and paywall entitlements unknown when the sources do not state them.
