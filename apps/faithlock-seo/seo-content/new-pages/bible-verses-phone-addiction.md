@@ -1,9 +1,9 @@
 ---
 slug: bible-verses-phone-addiction
-title: Bible Verses for Phone Addiction
+title: 15 Bible Verses About Phone Addiction (+ How to Actually Use Them)
 category: Guides
-meta_title: "15 Bible Verses for Phone Addiction (+ How to Actually Use Them)"
-meta_description: "15 Scripture passages that speak directly to phone addiction, with practical ways to apply each one. Not just a list — a guide to using God's Word against the scroll."
+meta_title: "15 Bible Verses About Phone Addiction (+ How to Actually Use Them)"
+meta_description: "15 Bible verses about phone addiction, with practical ways to use each passage to break the scroll and refocus on God's Word."
 ---
 
 ## Key Takeaways
@@ -166,6 +166,8 @@ Reading this article won't change your phone habits. Here are 4 things that migh
 **3. Use a faith-based app blocker.** Apps like [FaithLock](/), Bible Mode, or Sanctum put a Bible verse between you and your distracting apps. You encounter Scripture at the exact moment you need it most. See our [full comparison of Christian app blockers](/resources/best-christian-app-blocker).
 
 **4. Tell someone.** James 5:16 says "confess your sins to each other and pray for each other." Tell a friend, your small group, or your spouse that you're working on your phone habits. Accountability changes everything.
+
+Ready to put these practices into action? [Try FaithLock Free](https://pim.ms/kTxgKF4).
 
 ---
 
