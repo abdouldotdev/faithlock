@@ -54,7 +54,7 @@ export const PRICING = {
 // ─── PLATFORM ───────────────────────────────────────────────
 export const PLATFORM = {
   available: ['iOS'] as const,
-  minVersion: 'iOS 16+',
+  minVersion: 'iOS 13.0 or later',
   androidStatus: 'coming soon' as const,
   appStoreUrl: 'https://pim.ms/kTxgKF4',
   requiresScreenTimeAPI: true,
@@ -254,7 +254,7 @@ export const FAITHLOCK_PROS = [
 export const FAITHLOCK_CONS = [
   'iOS only (Android coming soon)',
   'Newer app (less brand awareness)',
-  'Requires iOS 16+ for Family Controls',
+  'Requires iOS 13.0 or later (App Store app id6754208209, Appbiz Studio, LLC)',
 ] as const
 
 // ─── BIBLE VERSES (used across the site for decoration) ─────
