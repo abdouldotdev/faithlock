@@ -7,6 +7,7 @@ import test from 'node:test'
 const contentRoot = fileURLToPath(new URL('../seo-content/', import.meta.url))
 const factsPath = new URL('../seo-content/rules/FAITHLOCK_FACTS.md', import.meta.url)
 const comparisonDataPath = new URL('../lib/faithlock-data.ts', import.meta.url)
+const programmaticComparisonTemplatePath = new URL('../../../programmatic-seo/templates/ComparisonTemplate.tsx', import.meta.url)
 const forbiddenSuperlative = 'The most comprehensive Christian screen time app'
 const forbiddenSolutionSuperlative = 'the most comprehensive Christian screen time solution'
 const faithLockIos16Pattern = /FaithLock[^\n]{0,240}iOS 16(?:\+|(?:\.0)?\s+or\s+later|\s+and\s+later)|iOS 16(?:\+|(?:\.0)?\s+or\s+later|\s+and\s+later)[^\n]{0,240}FaithLock/i
@@ -39,6 +40,12 @@ test('the /compare template data serves the official minimum iOS requirement', a
   assert.doesNotMatch(comparisonData, /Requires iOS 16\+ for Family Controls/)
   assert.doesNotMatch(comparisonData, /most comprehensive Christian screen time/i)
   for (const source of footerSources) assert.doesNotMatch(source, /iOS 16\+/)
+})
+
+test('the checked-in programmatic comparison template matches the official minimum iOS requirement', async () => {
+  const source = await readFile(programmaticComparisonTemplatePath, 'utf8')
+  assert.match(source, /Requires iOS 13\.0 or later/)
+  assert.doesNotMatch(source, /Requires iOS 16\+ for Family Controls/)
 })
 
 test('public SEO Markdown contains no unsupported FaithLock iOS 16 requirement or exact superlative', async () => {
