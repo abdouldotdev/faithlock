@@ -176,7 +176,7 @@ First, attach the Rosary to something that already happens daily: the commute, t
 
 Second, put the phone out of reach. If you want the phone itself to enforce it, a screen time blocker can lock your usual time sinks during a fixed window. [FaithLock](/) is an iOS app that blocks distracting apps on a schedule using Apple's Family Controls, and puts a Bible verse and a short comprehension question in front of you when you try to open one. Its built in library is the Berean Standard Bible, a Protestant translation without the deuterocanonical books, so it is not a Catholic Bible app and does not claim to be. It blocks apps. For the Rosary itself, use a [rosary app](/resources/rosary-app) or beads.
 
-<p><a href="https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209">Get FaithLock on the App Store</a></p>
+<p><a href="https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209" data-store-location="rosary_faithlock_cta">Get FaithLock on the App Store</a></p>
 
 ---
 
