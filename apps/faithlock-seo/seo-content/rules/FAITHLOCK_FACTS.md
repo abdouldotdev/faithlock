@@ -2,7 +2,7 @@
 
 Versioned factual registry for the SEO site. Public copy may use only claims marked VERIFIED, and must preserve the wording and scope below. Unknown or paywall-dependent details stay unclaimed.
 
-Last verified: 2026-10-22
+Last verified: 2026-10-23
 
 ## Primary sources
 
@@ -28,7 +28,7 @@ Last verified: 2026-10-22
 | Progress | The App Store description lists prayer streak tracking and faith insights/stats, including screen time saved and verses read. | App Store description |
 | Reminders and presentation | The App Store description lists prayer reminders and dark mode. | App Store description |
 | Sync | Cloud sync is described as a Premium feature in the App Store listing. Do not call the product fully on-device or claim that all data stays on-device. | App Store description |
-| Pricing | The listing is free to download and offers in-app purchases. Current public listing/API responses do not expose verified amounts or billing periods; do not publish a price until a current paywall or listing source does. | App Store listing / iTunes Lookup |
+| Pricing | The listing is free to download and currently exposes in-app purchase amounts of $6.99 and $39.99 without billing periods. Public SEO copy must not publish those amounts or infer a period until the paywall makes the entitlement and billing period explicit. | App Store listing / iTunes Lookup |
 | Privacy and terms | The site exposes `/privacy` and `/terms`. Link to those pages for policy detail; do not convert policy text into broader “private”, “secure”, or “never tracks” marketing claims. | SEO site privacy and terms pages |
 
 ## Not verified / prohibited
