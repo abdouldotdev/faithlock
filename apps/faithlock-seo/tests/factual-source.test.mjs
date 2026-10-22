@@ -22,7 +22,7 @@ test('shared product data matches the verified App Store identity and platform',
   assert.match(data, /Appbiz Studio, LLC/)
   assert.match(data, /available: \['iPhone', 'iPad'\]/)
   assert.match(data, /minVersion: 'iOS 13\.0\+/)
-  assert.match(data, /displayedPrices: \['\$6\.99', '\$39\.99'\]/)
+  assert.match(data, /displayedPrices: \[\] as const/)
   assert.doesNotMatch(data, /\$4\.99\/week|\$24\.99\/year|iOS 16\+|Android coming soon/)
 })
 
@@ -32,6 +32,8 @@ test('core public pages do not publish unverified product claims', () => {
     'app/(seo)/features/page.tsx',
     'lib/faithlock-data.ts',
     'lib/constants.ts',
+    'components/landing/LandingFooter.tsx',
+    'components/layout/Footer.tsx',
   ].map(read).join('\n')
   for (const pattern of [
     /100k\+/i,

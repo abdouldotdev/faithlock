@@ -16,7 +16,7 @@
 // ─── PRICING ────────────────────────────────────────────────
 export const PRICING = {
   model: 'free download with in-app purchases' as const,
-  displayedPrices: ['$6.99', '$39.99'] as const,
+  displayedPrices: [] as const,
   periodsVerified: false as const,
 } as const
 
