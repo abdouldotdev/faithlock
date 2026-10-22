@@ -190,7 +190,7 @@ No, in any meaningful sense. iOS schedules widget refreshes centrally rather tha
 Most verse widgets are scheduled to reload at the start of the next day, so the change happens at midnight rather than when you wake up. If it is still stale hours later, open the app once. That forces a refresh and re-syncs the widget with the app's data.
 
 **Can I put a Bible verse widget on Android's home screen?**
-Yes. Android home screen widgets have existed far longer than iOS ones and are placed by touching and holding an empty space on the home screen, then tapping Widgets. Our [Android widget walkthrough](/resources/how-to-add-bible-verse-widget-android) has the full steps, and note that FaithLock is iOS only.
+Yes. Android home screen widgets have existed far longer than iOS ones and are placed by touching and holding an empty space on the home screen, then tapping Widgets. Our [Android widget walkthrough](/resources/how-to-add-bible-verse-widget-android) has the full steps, and note that FaithLock is available on iPhone and iPad.
 
 **Which widget size should I choose?**
 Medium for reading, small for status. If the point is to read the verse, small will truncate almost anything longer than a short psalm. If the point is a streak or a reminder that you have not read yet today, small is fine.

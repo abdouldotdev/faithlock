@@ -6,7 +6,24 @@ import { fileURLToPath } from 'node:url'
 
 const here = path.dirname(fileURLToPath(import.meta.url))
 const appRoot = path.resolve(here, '..')
+const contentRoot = path.join(appRoot, 'seo-content')
 const read = (relativePath) => fs.readFileSync(path.join(appRoot, relativePath), 'utf8')
+
+function publicMarkdownFiles() {
+  const files = []
+  const visit = (directory) => {
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      const absolute = path.join(directory, entry.name)
+      if (entry.isDirectory()) {
+        if (entry.name !== 'rules') visit(absolute)
+      } else if (entry.name.endsWith('.md')) {
+        files.push(absolute)
+      }
+    }
+  }
+  visit(contentRoot)
+  return files
+}
 
 test('factual registry names only authoritative sources and excludes look-alike apps', () => {
   const facts = read('seo-content/rules/FAITHLOCK_FACTS.md')
@@ -45,5 +62,24 @@ test('core public pages do not publish unverified product claims', () => {
     /Android coming soon/i,
   ]) {
     assert.doesNotMatch(corePages, pattern, `unverified claim leaked: ${pattern}`)
+  }
+})
+
+test('public SEO Markdown does not leak prohibited FaithLock pricing or attributed claims', () => {
+  const prohibitedEverywhere = [
+    /\$4\.99(?:\/week|\s+weekly|\/wk)/i,
+    /\$24\.99(?:\/year|\s+annually|\/yr)/i,
+  ]
+  const attributed = [
+    /(?:FaithLock|\[FaithLock\])[^\n]{0,100}(?:freemium|free tier|free version|iOS[- ]only|Android[^\n]{0,40}(?:coming|arriving|expected|pending)|30[- ]day covenant|Bible quiz|3-day free trial|works offline|never leaves your device|private and on-device)/i,
+  ]
+  for (const file of publicMarkdownFiles()) {
+    const content = fs.readFileSync(file, 'utf8')
+    for (const pattern of prohibitedEverywhere) {
+      assert.doesNotMatch(content, pattern, `prohibited FaithLock pricing leaked in ${path.relative(appRoot, file)}`)
+    }
+    for (const pattern of attributed) {
+      assert.doesNotMatch(content, pattern, `prohibited FaithLock claim leaked in ${path.relative(appRoot, file)}`)
+    }
   }
 })

@@ -110,7 +110,7 @@ meta_description: "Scripture on unity in the church, in marriage, and in friends
 
 2. **Name your agreement before your disagreement.** Ephesians 4:3 says to "keep" unity, not manufacture it, which means naming friction early instead of letting it sit. Before your next tense conversation, write down what you actually agree on first.
 
-3. **Start a 30-day commitment alongside someone else.** FaithLock's 30-day covenant, built into onboarding, works as a personal commitment device rooted in biblical covenant theology. Starting one the same week as a friend, spouse, or small group member turns a private habit into a shared one. You won't get shared tracking between accounts, but you'll both know you made the same promise on the same day, and that's a small version of the cord of three strands from Ecclesiastes 4:12. Try it with [FaithLock](/).
+3. **Start a 30-day commitment alongside someone else.** FaithLock's faith-based commitment, built into onboarding, works as a personal commitment device rooted in biblical covenant theology. Starting one the same week as a friend, spouse, or small group member turns a private habit into a shared one. You won't get shared tracking between accounts, but you'll both know you made the same promise on the same day, and that's a small version of the cord of three strands from Ecclesiastes 4:12. Try it with [FaithLock](/).
 
 4. **Revisit Psalm 133:1 after every reconciled conflict.** Once a disagreement is actually resolved, take a moment to name what "good and pleasant" feels like now, compared to before. Gratitude for restored unity makes you quicker to protect it next time.
 

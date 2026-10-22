@@ -165,7 +165,7 @@ It uses standard Screen Time and Accessibility permissions to function. The spec
 
 - **one sec**: if you'd rather a breathing/reflection interstitial than an escalating delay, with a free tier that fully covers one app
 - **Clearspace**: if you want a forced pause with an alternative push-up based unlock option
-- **FaithLock**: if you want a hard restriction through Apple's Screen Time API rather than a delay reviewers describe as bypassable. FaithLock requires correctly answering a Bible quiz question to unlock, tying the act of regaining access to scripture engagement rather than waiting out a timer.
+- **FaithLock**: if you want a hard restriction through Apple's Screen Time API rather than a delay reviewers describe as bypassable. FaithLock requires correctly answering a Bible verse and prayer to unlock, tying the act of regaining access to scripture engagement rather than waiting out a timer.
 
 ---
 

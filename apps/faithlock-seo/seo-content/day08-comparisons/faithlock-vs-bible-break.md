@@ -23,7 +23,7 @@ In an era of endless digital distraction, **FaithLock vs Bible Break** represent
 
 | Feature | FaithLock | Bible Break |
 |---------|-----------|------------|
-| **Price** | $4.99/week or $24.99/year (Freemium) | $5/month or $29.99/year |
+| **Price** | pricing not stated in the verified sources or pricing not stated in the verified sources (Freemium) | $5/month or $29.99/year |
 | **Platform** | iOS only (Android coming soon) | iOS only (requires iOS 17.6+) |
 | **Unlock Method** | Read ~30 sec Bible verse to unlock blocked apps | 1 verse read = 1 minute screen time unlocked |
 | **Bible Translations** | Single translation (built-in) | Multiple translations (Full Bible access) |
@@ -55,11 +55,11 @@ FaithLock operates on a simpler premise: when you reach for a blocked app, you e
 
 The philosophy is distinctly covenant-based. The 30-day covenant feature frames app blocking as a spiritual commitment, complete with streak tracking that visualizes your consistency. This appeals to users seeking accountability and rhythmic spiritual practice. Prayer reminders add another layer—the app encourages prayer alongside Scripture, treating digital discipline as a holistic spiritual exercise.
 
-FaithLock's strength lies in customization and ease of use. You choose which apps to block (Instagram, TikTok, etc.) rather than accepting a global screen time lock. The freemium model ($4.99/week or $24.99/year) makes entry friction low, with generous free features for testing compatibility.
+FaithLock's strength lies in customization and ease of use. You choose which apps to block (Instagram, TikTok, etc.) rather than accepting a global screen time lock. The free download with in-app purchases model (pricing not stated in the verified sources or pricing not stated in the verified sources) makes entry friction low, with generous free features for testing compatibility.
 
 Notably, FaithLock doesn't attempt to be a full Bible study tool. There's no highlighting system, no multiple translations, and no AI verse explanations. This narrowness is intentional—it keeps the focus on the interruption moment itself, not competing with your existing Bible app for attention. Many users already have Youversion, Accordance, or other dedicated Scripture tools; FaithLock complements rather than replaces them.
 
-Platform availability is in flux: iOS-only currently, with Android "coming soon." For iPhone users committed to digital minimalism, FaithLock offers friction without overwhelming feature load.
+Platform availability is in flux: available on iPhone and iPad currently, with Android availability is not stated in the verified sources." For iPhone users committed to digital minimalism, FaithLock offers friction without overwhelming feature load.
 
 ---
 
@@ -83,7 +83,7 @@ FaithLock users must context-switch to another app for depth study, which adds f
 
 ### Tracking & Accountability
 
-Both apps track progress, but differently. FaithLock emphasizes the **streak**—how many days you've honored your covenant. A 30-day covenant with visible progress builds psychological momentum. This works for commitment-oriented users.
+Both apps track progress, but differently. FaithLock emphasizes the **streak**—how many days you've honored your covenant. A faith-based commitment with visible progress builds psychological momentum. This works for commitment-oriented users.
 
 Bible Break tracks **learning velocity**: verses read per day, books in progress, projected completion dates. This appeals to analytical users who want to measure biblical literacy growth.
 
@@ -101,11 +101,11 @@ FaithLock uniquely includes prayer reminders, positioning app blocking as part o
 | **Monthly** | ~$21.95 (4.99 × 4.3 weeks) | $5.00 |
 | **Annual** | $24.99 | $29.99 |
 
-**Annual cost:** FaithLock wins at $24.99/year vs. Bible Break's $29.99/year. However, monthly pricing favors Bible Break ($5 vs. ~$21.95 for FaithLock).
+**Annual cost:** FaithLock wins at pricing not stated in the verified sources vs. Bible Break's $29.99/year. However, monthly pricing favors Bible Break ($5 vs. ~$21.95 for FaithLock).
 
 For committed users, FaithLock's annual plan ($24.99) is the better value. For trial periods or month-to-month flexibility, Bible Break's $5/month is lighter entry. Both are reasonably priced for the functionality—far cheaper than most productivity or meditation apps.
 
-FaithLock's freemium tier is generous, allowing extended use before payment. This reduces friction for skeptical users. Bible Break's trial policy is less transparent, though iOS 17.6+ requirement ensures modern hardware compatibility.
+FaithLock's free download with in-app purchases tier is generous, allowing extended use before payment. This reduces friction for skeptical users. Bible Break's trial policy is less transparent, though iOS 17.6+ requirement ensures modern hardware compatibility.
 
 ---
 
@@ -175,14 +175,14 @@ FaithLock's freemium tier is generous, allowing extended use before payment. Thi
 
 **FaithLock vs Bible Break** isn't a matter of one being "better"—it's about alignment with your spiritual practice and device habits.
 
-FaithLock excels as a **minimalist interruption tool** for users already engaged in Scripture. Its strength is simplicity: block distracting apps, read a verse when tempted, move on. The covenant framework and prayer reminders make it feel spiritually cohesive. At $24.99/year, it's the most affordable option, and the freemium tier lets you test thoroughly before paying. The major limitation is iOS-only availability and lack of study features.
+FaithLock excels as a **minimalist interruption tool** for users already engaged in Scripture. Its strength is simplicity: block distracting apps, read a verse when tempted, move on. The covenant framework and prayer reminders make it feel spiritually cohesive. At pricing not stated in the verified sources, it's the most affordable option, and the free download with in-app purchases tier lets you test thoroughly before paying. The major limitation is available on iPhone and iPad availability and lack of study features.
 
 Bible Break is the **all-in-one Scripture + screen time solution** for users wanting depth. The AI Explainer, multiple translations, and spiritual growth tracking transform it into a legitimate Bible study platform, not just a blocker. You're paying for comprehensiveness—$29.99/year is slightly more, but you're getting a full Bible app bundled in. The tradeoff: it assumes your discipline is proactive (read Bible first) rather than reactive (interrupt when tempted).
 
 **Winner for digital discipline focused users:** FaithLock (reactive interruption, lower cost, customizable blocking)
 **Winner for Scripture-first learners:** Bible Break (comprehensive study, AI explanations, translation options)
 
-If you're torn, try FaithLock's freemium tier first. If you need study depth beyond a simple verse-reading prompt, Bible Break will justify its cost. For most users seeking Christian digital wellness, **FaithLock's focused approach and pricing make it the stronger all-around choice**—especially if you already have a preferred Bible app.
+If you're torn, try FaithLock's free download with in-app purchases tier first. If you need study depth beyond a simple verse-reading prompt, Bible Break will justify its cost. For most users seeking Christian digital wellness, **FaithLock's focused approach and pricing make it the stronger all-around choice**—especially if you already have a preferred Bible app.
 
 ---
 
@@ -192,7 +192,7 @@ If you're torn, try FaithLock's freemium tier first. If you need study depth bey
 A: Technically yes, but redundantly. Both target app blocking and Scripture reading; running both simultaneously may create competing notifications and undermine each app's effectiveness. Test one thoroughly first.
 
 **Q: Does FaithLock work on Android?**
-A: Not yet. FaithLock is iOS-only currently, with Android "coming soon." Bible Break is also iOS-only. For Android users, alternatives like AppBlock + YouVersion or Freedom offer similar approaches.
+A: Not yet. FaithLock is available on iPhone and iPad currently, with Android availability is not stated in the verified sources." Bible Break is also available on iPhone and iPad. For Android users, alternatives like AppBlock + YouVersion or Freedom offer similar approaches.
 
 **Q: Can I customize which verses appear in FaithLock?**
 A: FaithLock presents curated verses; direct customization isn't available. Bible Break offers full Bible access, so you can choose your reading path. If verse selection matters, Bible Break offers more control.
@@ -204,7 +204,7 @@ A: Neither app is explicitly designed for parental monitoring (both assume self-
 
 ## Internal Link Suggestions
 
-- [FaithLock Review: Does the 30-Day Covenant Work?](#)
+- [FaithLock Review: Does the faith-based commitment Work?](#)
 - [Best Bible Apps for iPhone 2026](#)
 - [Screen Time Management: A Faith-Based Approach](#)
 - [Digital Minimalism for Christians](#)

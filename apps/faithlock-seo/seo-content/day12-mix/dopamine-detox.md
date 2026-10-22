@@ -119,7 +119,7 @@ Here's how it works:
 - **You recalibrate**. Those 30 seconds of Scripture refocus your mind on what matters.
 - **Over time**, your brain learns that reaching for these apps connects you to God, not mindless stimulation.
 
-FaithLock's **30-day covenant** feature provides a structured dopamine detox framework. It gamifies your journey toward digital freedom while keeping faith at the center. Instead of willpower alone, you have a spiritual partner—Scripture itself—guiding you back to what truly rewards your soul.
+FaithLock's **faith-based commitment** feature provides a structured dopamine detox framework. It gamifies your journey toward digital freedom while keeping faith at the center. Instead of willpower alone, you have a spiritual partner—Scripture itself—guiding you back to what truly rewards your soul.
 
 With features like **streak tracking** and **prayer reminders**, FaithLock transforms every moment you resist temptation into a spiritual practice.
 
@@ -160,4 +160,4 @@ Your brain can heal. Your peace can return. It starts with a single step—and a
 
 ---
 
-*FaithLock is a iOS app that blocks Instagram, TikTok, and other apps until you read a Bible verse. Available on the App Store. Freemium: Free basic version, $4.99/week or $24.99/year for full features including 30-day covenant, prayer reminders, and streak tracking.*
+*FaithLock is a iOS app that blocks Instagram, TikTok, and other apps until you read a Bible verse. Available on the App Store. free download with in-app purchases: Free basic version, pricing not stated in the verified sources or pricing not stated in the verified sources for full features including faith-based commitment, prayer reminders, and streak tracking.*

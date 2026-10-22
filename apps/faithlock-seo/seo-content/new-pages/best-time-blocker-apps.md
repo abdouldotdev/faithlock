@@ -13,7 +13,7 @@ meta_description: "A time blocker app enforces rules on a schedule so you never 
 - **Best synced schedules**: Freedom, where one recurring session applies to phone, laptop, and browser at once
 - **Best on a computer**: Cold Turkey Blocker, whose Frozen Turkey lock cannot be lifted before its deadline
 - **Best calendar integration**: Opal, whose recurring sessions hook into your calendar and iOS Focus Mode
-- **Best for devotion and bedtime windows**: FaithLock, with scheduled lock times and a Bible quiz to reopen anything early
+- **Best for devotion and bedtime windows**: FaithLock, with scheduled lock times and a Bible verse and prayer to reopen anything early
 - **Skip it if scheduling is your priority**: Brick, whose scheduler cannot auto-end a session after a fixed duration, per an independent review
 
 ---
@@ -191,7 +191,7 @@ Full breakdown: [ScreenZen review](/resources/screenzen-review)
 | Freedom | $8.99/mo, $3.33/mo annual, $99.50 lifetime | Scheduled and recurring, synced | No | Yes |
 | Cold Turkey | $39 one-time Pro | Recurring weekly | Blocks clock and region changes | Yes, at the deadline, with no early exit |
 | Opal | Free tier; Pro $99.99/yr | Recurring sessions | Calendar, iOS Focus Mode | Yes |
-| FaithLock | Subscription with a 3-day free trial | Devotion, work hours, bedtime | No | Yes |
+| FaithLock | Subscription with a trial terms are not stated in the verified sources | Devotion, work hours, bedtime | No | Yes |
 | ScreenZen | Free with donations | Daily limits by day and time | No | Yes |
 
 ---

@@ -163,7 +163,7 @@ It depends what you need. Opal offers deeper analytics and gamification than mos
 
 - **Freedom**: if you want cross-device blocking (phone, tablet, computer) synced together, with published pricing on freedom.to
 - **one sec**: if you'd rather a quick mindfulness pause than a hard lock, and only need to protect a single app for free
-- **FaithLock**: if you want the same Screen Time API foundation Opal uses, with a Bible quiz question standing in for Opal's paid Deep Focus lock. FaithLock's unlock is different in kind: instead of a hard lock users try to defeat, it asks you to answer a Bible quiz question, turning the moment of temptation into a moment of reflection.
+- **FaithLock**: if you want the same Screen Time API foundation Opal uses, with a Bible verse and prayer standing in for Opal's paid Deep Focus lock. FaithLock's unlock is different in kind: instead of a hard lock users try to defeat, it asks you to answer a Bible verse and prayer, turning the moment of temptation into a moment of reflection.
 
 ---
 
@@ -173,7 +173,7 @@ Opal is a well built app with a genuinely strict feature in Deep Focus, and the 
 
 What I can't get past is the gap between the pitch and the free experience. A free tier that excludes the app's signature feature isn't really a trial, it's a demo, and $99.99 a year is a real commitment for a screen time tool, especially one an independent reviewer found could still be worked around by a determined user even at the paid tier.
 
-If you want the analytics and don't mind the price, this Opal app review's take is: enable every anti-bypass setting Opal offers, and go in with realistic expectations about what "non-cancellable" actually means in practice. If the pricing gives you pause, FaithLock runs on the same underlying Screen Time API with a Bible quiz standing between you and your blocked apps instead of a paid strict mode.
+If you want the analytics and don't mind the price, this Opal app review's take is: enable every anti-bypass setting Opal offers, and go in with realistic expectations about what "non-cancellable" actually means in practice. If the pricing gives you pause, FaithLock runs on the same underlying Screen Time API with a Bible verse and prayer standing between you and your blocked apps instead of a paid strict mode.
 
 ---
 

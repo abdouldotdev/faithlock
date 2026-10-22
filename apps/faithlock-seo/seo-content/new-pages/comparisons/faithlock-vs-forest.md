@@ -12,7 +12,7 @@ meta_description: "FaithLock uses Bible verse quizzes to manage screen time. For
 
 ## FaithLock in 30 Seconds
 
-FaithLock blocks distracting apps and requires Bible verse engagement to unlock them. The quiz-based system draws from 31,000+ verses in the Berean Standard Bible. A 30-day spiritual covenant adds accountability, while scheduled lock times and prayer reminders structure your day. It's designed for Christians who want their phone habits to become spiritual practice. iOS-only, free tier available, premium at $24.99/year.
+FaithLock blocks distracting apps and requires Bible verse engagement to unlock them. The quiz-based system draws from 31,000+ verses in the Berean Standard Bible. A 30-day spiritual covenant adds accountability, while scheduled lock times and prayer reminders structure your day. It's designed for Christians who want their phone habits to become spiritual practice. available on iPhone and iPad, free download available, premium at pricing not stated in the verified sources.
 
 ## Forest in 30 Seconds
 
@@ -30,7 +30,7 @@ Forest gamifies focus time. Start a session, and a virtual tree begins growing. 
 | Real-world impact | Spiritual growth | Real trees planted |
 | Platforms | iOS only | iOS, Android, Chrome |
 | One-time purchase | No | Yes (~$3.99 iOS) |
-| Subscription | $24.99/year | Optional pro features |
+| Subscription | pricing not stated in the verified sources | Optional pro features |
 | User base | Growing | 50M+ users |
 
 ## Key Differences
@@ -42,16 +42,16 @@ FaithLock's reward is spiritual — you engage with God's Word as part of managi
 FaithLock blocks specific apps and requires a quiz to unlock them. Forest blocks everything during a timed session — you start a 25-minute focus session, and any phone use kills your tree. These are different use cases. FaithLock is always-on protection against specific distracting apps. Forest is session-based focus for work or study periods.
 
 ### Cost Structure
-Forest's iOS app is a one-time ~$3.99 purchase. FaithLock is subscription-based at $24.99/year. For sheer cost-effectiveness, Forest wins. But they serve different purposes, so direct price comparison is slightly misleading.
+Forest's iOS app is a one-time ~$3.99 purchase. FaithLock is subscription-based at pricing not stated in the verified sources. For sheer cost-effectiveness, Forest wins. But they serve different purposes, so direct price comparison is slightly misleading.
 
 ### Cross-Platform Availability
-Forest works everywhere — iOS, Android, Chrome. FaithLock is iOS-only. If you switch between devices or are on Android, Forest covers more ground.
+Forest works everywhere — iOS, Android, Chrome. FaithLock is available on iPhone and iPad. If you switch between devices or are on Android, Forest covers more ground.
 
 ## Pricing
 
 | | FaithLock | Forest |
 |--|----------|--------|
-| iOS | $24.99/year (free tier available) | ~$3.99 one-time |
+| iOS | pricing not stated in the verified sources (free tier available) | ~$3.99 one-time |
 | Android | Not available | Free with ads |
 | Chrome | Not available | Extension available |
 
@@ -67,7 +67,7 @@ Forest works everywhere — iOS, Android, Chrome. FaithLock is iOS-only. If you 
 
 **You're on a tight budget**: Forest's one-time ~$3.99 is hard to beat.
 
-**You want cross-platform support**: Forest. iOS, Android, Chrome. FaithLock is iOS-only.
+**You want cross-platform support**: Forest. iOS, Android, Chrome. FaithLock is available on iPhone and iPad.
 
 ## Frequently Asked Questions
 

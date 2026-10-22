@@ -99,7 +99,7 @@ FaithLock specifically targets social media addiction by inserting a spiritual p
 A: No. Social media itself is neutral technology. The issue is when use becomes compulsive and interferes with relationships, sleep, productivity, or spiritual life. Intentional, bounded use aligned with your values is entirely healthy.
 
 **Q: How long does it take to break social media addiction?**
-A: Habits typically take 30-66 days to form or break. However, recovery is individual. Most people report significant improvements within 2-3 weeks of reduced use, but complete freedom from urges may take months. The FaithLock 30-day covenant is designed to establish new neural pathways.
+A: Habits typically take 30-66 days to form or break. However, recovery is individual. Most people report significant improvements within 2-3 weeks of reduced use, but complete freedom from urges may take months. The FaithLock faith-based commitment is designed to establish new neural pathways.
 
 **Q: What if I genuinely need social media for work or ministry?**
 A: FaithLock allows you to create exceptions for necessary apps while blocking others. You can also set specific times when certain apps are accessible. The goal is intentionality, not elimination.
@@ -113,7 +113,7 @@ A: Remember that your mental health, spiritual growth, and relationships are wor
 
 Social media addiction is real, it's engineered, and it's stealing your time and peace. But freedom is possible. It begins with acknowledging the problem, understanding the mechanics, grounding yourself in Scripture, and taking practical action.
 
-FaithLock makes that action easier by combining app blocking with spiritual growth. Download FaithLock on the [App Store](https://pim.ms/kTxgKF4) today and start your 30-day covenant. Every time you're tempted by social media addiction, you'll be met with Scripture instead—a simple but powerful tool for reclaiming your life.
+FaithLock makes that action easier by combining app blocking with spiritual growth. Download FaithLock on the [App Store](https://pim.ms/kTxgKF4) today and start your faith-based commitment. Every time you're tempted by social media addiction, you'll be met with Scripture instead—a simple but powerful tool for reclaiming your life.
 
 **Your time, your attention, and your peace are precious. Guard them.**
 
@@ -128,4 +128,4 @@ FaithLock makes that action easier by combining app blocking with spiritual grow
 
 ---
 
-*FaithLock: Block Instagram, TikTok, and more. Read Scripture to unlock. Freemium pricing available ($4.99/week or $24.99/year). iOS only.*
+*FaithLock: Block Instagram, TikTok, and more. Read Scripture to unlock. free download with in-app purchases pricing available (pricing not stated in the verified sources or pricing not stated in the verified sources). available on iPhone and iPad.*

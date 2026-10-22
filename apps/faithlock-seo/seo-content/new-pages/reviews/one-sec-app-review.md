@@ -160,7 +160,7 @@ For an initial nudge on a single app, yes, the free tier is genuinely usable. As
 Yes. This one sec app review draws on two independent reviews, one focused on whether the friction mechanic actually reduces screen time, and one covering long-term user experience.
 
 **What's a one sec alternative with a hard block instead of a pause?**
-FaithLock enforces a hard restriction through Apple's Screen Time API that can't be skipped without answering a Bible quiz question correctly, a different kind of friction than a dismissible breathing prompt.
+FaithLock enforces a hard restriction through Apple's Screen Time API that can't be skipped without answering a Bible verse and prayer correctly, a different kind of friction than a dismissible breathing prompt.
 
 ---
 
@@ -178,7 +178,7 @@ One sec is a thoughtfully designed app, and the underlying idea (a few seconds o
 
 The honest problem is durability. Reviews consistently describe the same arc: real friction in week one, an ignorable formality by week four. If you need something you can't simply tap through once it becomes routine, one sec's core mechanic isn't built for that job, even with the stricter blocking mode enabled.
 
-This one sec app review's bottom line: try the free tier on your worst app first. If the pause still works for you after a month, great. If you find yourself swiping past it without thinking, that's your sign to look at something with a harder floor, whether that's one sec's own blocking mode or an app like FaithLock that ties the unlock to more than a breath.
+This one sec app review's bottom line: try the free download on your worst app first. If the pause still works for you after a month, great. If you find yourself swiping past it without thinking, that's your sign to look at something with a harder floor, whether that's one sec's own blocking mode or an app like FaithLock that ties the unlock to more than a breath.
 
 ---
 
