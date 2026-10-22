@@ -20,7 +20,7 @@ In an age where social media feeds consume our attention and steal our time with
 | Feature | FaithLock | Holy Focus |
 |---------|-----------|-----------|
 | **Price** | Freemium; pricing not stated in the verified sources or pricing not stated in the verified sources | Freemium with premium tier |
-| **Platform** | iOS only (Android coming) | Likely cross-platform capable |
+| **Platform** | iOS only; Android availability is not stated in the verified sources | Likely cross-platform capable |
 | **Unlock Method** | Read Bible verse (~30 sec) | View handcrafted image + Bible verse |
 | **Website Blocking** | App-focused | Yes, includes websites |
 | **Prayer Features** | Prayer reminders, customizable | Daily Christ-centered prayers, scheduled |
@@ -113,7 +113,7 @@ For cost-conscious believers, Holy Focus's generous free download may suffice. F
 - ✅ Screen time insights beyond basic blocking
 
 ### FaithLock Cons
-- ❌ iOS only (Android coming, but not yet available)
+- ❌ iOS only; Android availability is not stated in the verified sources
 - ❌ Limited website blocking
 - ❌ Prayer reminders less integrated than competitor
 - ❌ Smaller faith community compared to Holy Focus's church partnerships

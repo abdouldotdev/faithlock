@@ -16,7 +16,7 @@ If you're a Christian struggling with phone addiction, you're not alone. The ave
 | Feature | FaithLock | Bible Mode |
 |---------|-----------|-----------|
 | **Price** | Freemium (pricing not stated in the verified sources or pricing not stated in the verified sources) | Free |
-| **Platform** | iOS (Android coming soon) | iOS & Android |
+| **Platform** | iOS; Android availability is not stated in the verified sources | iOS & Android |
 | **Unlock Method** | Read Bible verse (~30 sec) | Scan physical Bible OR in-app reflection |
 | **Bible Translations** | BSB (Berean Standard Bible) | Multiple (KJV, ESV, more) |
 | **Streak Tracking** | Yes (30-day covenant) | Yes |
@@ -92,7 +92,7 @@ For budget-conscious users, Bible Mode is unbeatable. For those comfortable with
 - 30-second unlock creates consistent friction against habit
 
 ### FaithLock Cons
-- iOS-only (Android coming soon, but not yet available)
+- iOS-only; Android availability is not stated in the verified sources
 - Requires paid subscription for premium features
 - Limited emphasis on multiple Bible translations
 - No physical Bible integration option

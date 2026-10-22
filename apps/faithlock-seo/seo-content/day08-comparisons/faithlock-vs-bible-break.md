@@ -24,7 +24,7 @@ In an era of endless digital distraction, **FaithLock vs Bible Break** represent
 | Feature | FaithLock | Bible Break |
 |---------|-----------|------------|
 | **Price** | pricing not stated in the verified sources or pricing not stated in the verified sources (Freemium) | $5/month or $29.99/year |
-| **Platform** | iOS only (Android coming soon) | iOS only (requires iOS 17.6+) |
+| **Platform** | iOS only; Android availability is not stated in the verified sources | iOS only (requires iOS 17.6+) |
 | **Unlock Method** | Read ~30 sec Bible verse to unlock blocked apps | 1 verse read = 1 minute screen time unlocked |
 | **Bible Translations** | Single translation (built-in) | Multiple translations (Full Bible access) |
 | **AI Features** | ❌ No | ✅ Yes (Verse explainer, theme exploration, difficult passages) |

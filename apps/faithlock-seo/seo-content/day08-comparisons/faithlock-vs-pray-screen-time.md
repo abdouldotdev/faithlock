@@ -18,7 +18,7 @@ In an age of constant digital distraction, many Christians are seeking faith-bas
 | Feature | FaithLock | Pray Screen Time |
 |---------|-----------|-----------------|
 | **Price** | Freemium (pricing not stated in the verified sources or pricing not stated in the verified sources) | Free |
-| **Platform** | iOS (Android coming soon) | iOS & Android |
+| **Platform** | iOS; Android availability is not stated in the verified sources | iOS & Android |
 | **Unlock Method** | Read Bible verse (~30 sec) | Prayer-first unlock |
 | **Daily Verses** | Yes | Yes, integrated daily |
 | **Prayer Reminders** | Yes, customizable | Yes, customizable |
@@ -119,7 +119,7 @@ The pricing decision reflects differing target audiences: Pray Screen Time serve
 - Robust app blocking across social media and gaming platforms
 
 ### FaithLock Cons
-- iOS-only (Android coming later in 2026)
+- iOS-only; Android availability is not stated in the verified sources
 - Subscription required for full feature access
 - Lower current user base and ratings (launching 2026)
 - Premium tier may feel expensive for casual users

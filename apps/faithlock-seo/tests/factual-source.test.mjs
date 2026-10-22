@@ -69,6 +69,8 @@ test('public SEO Markdown does not leak prohibited FaithLock pricing or attribut
   const prohibitedEverywhere = [
     /\$4\.99(?:\/week|\s+weekly|\/wk)/i,
     /\$24\.99(?:\/year|\s+annually|\/yr)/i,
+    /Android\s+(?:coming|arriving|pending)/i,
+    /Q2\s+2026/i,
   ]
   const attributed = [
     /(?:FaithLock|\[FaithLock\])[^\n]{0,100}(?:freemium|free tier|free version|iOS[- ]only|Android[^\n]{0,40}(?:coming|arriving|expected|pending)|30[- ]day covenant|Bible quiz|3-day free trial|works offline|never leaves your device|private and on-device)/i,

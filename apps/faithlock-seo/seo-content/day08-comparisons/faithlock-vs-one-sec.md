@@ -22,7 +22,7 @@ In the battle against digital distraction, two fundamentally different philosoph
 | Feature | FaithLock | One Sec |
 |---------|-----------|---------|
 | **Price** | Freemium, pricing not stated in the verified sources, pricing not stated in the verified sources | Free (basic), $19/year Pro, $99.99 lifetime |
-| **Platform** | iOS only (Android coming Q2 2026) | iOS, Android, browser extensions |
+| **Platform** | iOS only; Android availability is not stated in the verified sources | iOS, Android, browser extensions |
 | **Unlock Method** | Read & reflect on Bible verse (~30 sec) | 10-second countdown timer (pause & breathe) |
 | **Faith Integration** | Yes—verses, prayer reminders, covenants | No—purely secular/scientific approach |
 | **Scientific Validation** | Faith-based framework (Biblical) | Peer-reviewed study with Max Planck Institute |
@@ -121,7 +121,7 @@ The spiritual dimension is FaithLock's unique selling point. It's designed by Ch
 ✓ Community-focused accountability potential
 
 ### FaithLock Cons
-✗ iOS only (Android pending)
+✗ iOS only; Android availability is not stated in the verified sources
 ✗ Limited cross-device support
 ✗ Unlock time (30 seconds) is longer than One Sec
 ✗ Smaller user base than One Sec (less social proof)
@@ -166,7 +166,7 @@ The spiritual dimension is FaithLock's unique selling point. It's designed by Ch
 - You need cross-platform synchronization
 - You're agnostic, atheist, or uncomfortable with explicit Christian messaging
 
-**For Christians using Android:** Unfortunately, FaithLock isn't available yet. One Sec remains your best option until FaithLock launches on Android.
+**For Christians using Android:** FaithLock's verified sources identify iPhone and iPad availability; Android availability is not stated in the verified sources. One Sec remains the Android option documented in this comparison.
 
 ---
 
@@ -194,9 +194,9 @@ FaithLock includes the complete Berean Standard Bible (BSB) with curated verses 
 
 Yes. One Sec's countdown timer and app blocking function offline. However, cloud sync features require internet access. FaithLock also refer to the official privacy and terms pages for data-handling details; Bible verses are downloaded to your device.
 
-### 4. What happens when the FaithLock vs One Sec Android version launches?
+### 4. What is documented about FaithLock on Android?
 
-When FaithLock becomes available on Android (Q2 2026), it will close the platform gap. Android users won't need to choose One Sec by default anymore. At that point, the comparison will be purely about faith integration vs. science-based approach, with both apps offering similar convenience.
+The verified sources identify FaithLock as available on iPhone and iPad. They do not state Android availability or a launch date, so this comparison makes no roadmap claim. One Sec's Android availability remains a documented difference.
 
 ---
 
@@ -210,4 +210,4 @@ When FaithLock becomes available on Android (Q2 2026), it will close the platfor
 
 ---
 
-**Ready to reclaim your digital life?** Download [FaithLock on the Apple App Store](https://pim.ms/kTxgKF4) today and start your faith-based commitment. For Android users, One Sec is available now, with FaithLock coming soon.
+**Ready to reclaim your digital life?** Download [FaithLock on the Apple App Store](https://pim.ms/kTxgKF4) today and start your faith-based commitment. For Android users, this comparison documents One Sec's availability; FaithLock's Android availability is not stated in the verified sources.
