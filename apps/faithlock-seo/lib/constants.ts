@@ -16,6 +16,7 @@ import {
 
 export const SITE_URL = SITE.url
 export const APP_STORE_URL = SITE.appStoreUrl
+export const OFFICIAL_APP_STORE_URL = 'https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209'
 export const SITE_NAME = SITE.name
 export const SITE_TAGLINE = COPY.tagline
 export const SITE_DESCRIPTION = COPY.description
