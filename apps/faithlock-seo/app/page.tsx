@@ -171,8 +171,7 @@ export default function LandingPage() {
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold text-cozy-ink mb-2">The Verse Barrier</h3>
                 <p className="text-cozy-ink/85 text-sm max-w-sm leading-relaxed">
-                  Most blockers just say &ldquo;No.&rdquo; FaithLock says &ldquo;Yes, but first&hellip;&rdquo; — a 15-second
-                  Scripture pause and quiz that disrupts the habit loop before you open a distracting app.
+                  A brief Scripture pause before you open a distracting app.
                 </p>
               </div>
               <div className="absolute right-0 bottom-0 translate-y-8 translate-x-8 group-hover:translate-y-4 group-hover:translate-x-4 transition-transform duration-500">
@@ -229,7 +228,7 @@ export default function LandingPage() {
                 <h4 className="text-lg font-bold text-cozy-ink">The Companion</h4>
                 <p className="text-xs text-cozy-ink/85 mt-2 leading-relaxed">
                   A warm, Scripture-grounded chat woven into the Bible. Ask about any verse and get grounded, gentle
-                  answers — read aloud if you like. Private and on-device.
+                  answers — read aloud if you like.
                 </p>
               </div>
             </div>
@@ -391,15 +390,15 @@ export default function LandingPage() {
             {[
               {
                 q: 'Does it really work for TikTok and Instagram?',
-                a: 'Yes. FaithLock integrates deeply with iOS Screen Time API to block any app you choose until the scripture requirement is met.',
+                a: 'FaithLock uses iOS Screen Time capabilities to block selected apps until the Scripture pause is complete.',
               },
               {
                 q: 'Is it easy to uninstall?',
                 a: "We don't hold your phone hostage. You can uninstall anytime, but we bet you won't want to once you feel the peace it brings.",
               },
               {
-                q: 'Is my data private?',
-                a: 'All data stays on your device. We never sell data, never track browsing, and never share personal information.',
+                q: 'How does FaithLock handle data?',
+                a: 'See the Privacy Policy for the current data practices and the Terms of Use for subscription and service terms.',
               },
             ].map((faq, i) => (
               <details
@@ -453,7 +452,7 @@ export default function LandingPage() {
                 </span>
                 <span className="flex items-center gap-1">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
-                  Private &amp; Secure
+                  Privacy and terms are available on the site.
                 </span>
               </div>
             </div>

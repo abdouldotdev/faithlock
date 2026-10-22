@@ -123,4 +123,4 @@ A: If YouTube is genuinely essential to your work, use FaithLock to limit access
 - [Overcoming TikTok Addiction](/sessions/zen-ecstatic-mayer/mnt/outputs/faithlock-seo/day24-glossary/tiktok-addiction.md)
 - [Escaping the Doomscrolling Trap](/sessions/zen-ecstatic-mayer/mnt/outputs/faithlock-seo/day24-glossary/doomscrolling.md)
 
-**Download FaithLock Today**: Block YouTube and reclaim intentional time. Replace scrolling with Scripture. Available on iOS. [Get FaithLock](https://pim.ms/kTxgKF4) — Steward your time wisely. Freemium, $4.99/week, or $24.99/year.
+**Download FaithLock Today**: Block YouTube and reclaim intentional time. Replace scrolling with Scripture. Available on iOS. [Get FaithLock](https://pim.ms/kTxgKF4) — Steward your time wisely. free download with in-app purchases, pricing not stated in the verified sources, or pricing not stated in the verified sources.

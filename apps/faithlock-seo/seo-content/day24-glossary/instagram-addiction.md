@@ -74,7 +74,7 @@ FaithLock provides a practical, faith-centered tool specifically designed to int
 
 This unique mechanism works on multiple levels. First, it creates friction: you can't automatically open Instagram without engaging your intentionality. Second, it offers a redemptive alternative—instead of turning to social media for comfort or distraction, you turn to God's Word. Reading a Bible verse takes about 30 seconds, enough time for your impulse to fade and your rational mind to reassert control.
 
-FaithLock's streak-tracking feature gamifies recovery in a healthy way. Rather than tracking your Instagram engagement, you track days without opening the app—a metric that actually serves your well-being. The 30-day covenant feature mirrors biblical language of commitment, helping you reframe this as a spiritual discipline rather than mere willpower.
+FaithLock's streak-tracking feature gamifies recovery in a healthy way. Rather than tracking your Instagram engagement, you track days without opening the app—a metric that actually serves your well-being. The faith-based commitment feature mirrors biblical language of commitment, helping you reframe this as a spiritual discipline rather than mere willpower.
 
 With screen time insights and prayer reminders, FaithLock helps you understand your usage patterns and provides ongoing spiritual support. For serious Instagram addiction, FaithLock isn't just an app blocker—it's a digital accountability partner that redirects your need for connection toward God.
 
@@ -102,4 +102,4 @@ A: Initially, you might feel FOMO or worry about missing out. However, most peop
 - [Understanding YouTube Addiction](/sessions/zen-ecstatic-mayer/mnt/outputs/faithlock-seo/day24-glossary/youtube-addiction.md)
 - [Breaking the Doomscrolling Habit](/sessions/zen-ecstatic-mayer/mnt/outputs/faithlock-seo/day24-glossary/doomscrolling.md)
 
-**Download FaithLock Today**: Break free from Instagram addiction with Scripture-based app blocking. Available on iOS. [Get FaithLock](https://pim.ms/kTxgKF4) — Start your covenant journey today. Freemium, $4.99/week, or $24.99/year.
+**Download FaithLock Today**: Break free from Instagram addiction with Scripture-based app blocking. Available on iOS. [Get FaithLock](https://pim.ms/kTxgKF4) — Start your covenant journey today. free download with in-app purchases, pricing not stated in the verified sources, or pricing not stated in the verified sources.

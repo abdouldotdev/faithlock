@@ -12,7 +12,7 @@ meta_description: "FaithLock uses Bible verse quizzes to block apps. Brick uses 
 
 ## FaithLock in 30 Seconds
 
-FaithLock blocks distracting apps and requires Bible verse engagement to unlock them. The quiz-based interaction draws from 31,000+ BSB verses — you can't skim and skip. A 30-day spiritual covenant, scheduled lock times, and prayer reminders add structure. iOS-only, free tier available, premium at $24.99/year.
+FaithLock blocks distracting apps and requires Bible verse engagement to unlock them. The quiz-based interaction draws from 31,000+ BSB verses — you can't skim and skip. A 30-day spiritual covenant, scheduled lock times, and prayer reminders add structure. available on iPhone and iPad, free download available, premium at pricing not stated in the verified sources.
 
 ## Brick in 30 Seconds
 
@@ -31,7 +31,7 @@ Brick takes a radically different approach: it pairs a physical NFC token with a
 | Analytics | Streak tracking | Usage tracking |
 | Platforms | iOS only | iOS only |
 | Upfront cost | Free to start | $49.99 (device + app) |
-| Ongoing cost | $24.99/year | Optional subscription |
+| Ongoing cost | pricing not stated in the verified sources | Optional subscription |
 
 ## Key Differences
 
@@ -45,14 +45,14 @@ FaithLock fills blocked moments with Scripture — you're engaging with God's Wo
 Brick is virtually impossible to bypass without the physical token. You can't delete the app, reset settings, or will yourself past it. FaithLock requires Bible verse engagement, which you can technically complete even when you don't feel like it (though you will engage with Scripture in the process). For someone who has bypassed every software blocker, Brick is the answer.
 
 ### Cost Structure
-Brick's $49.99 upfront for the physical device is a higher entry point than any app-only solution. FaithLock starts free with a $24.99/year premium. However, Brick's upfront cost may actually increase commitment — you've invested money in a physical device, so you're more likely to use it.
+Brick's $49.99 upfront for the physical device is a higher entry point than any app-only solution. FaithLock starts free with a pricing not stated in the verified sources premium. However, Brick's upfront cost may actually increase commitment — you've invested money in a physical device, so you're more likely to use it.
 
 ## Pricing
 
 | | FaithLock | Brick |
 |--|----------|-------|
 | Upfront | Free | $49.99 (device + app) |
-| Annual | $24.99/year | Optional subscription |
+| Annual | pricing not stated in the verified sources | Optional subscription |
 | Total Year 1 | $24.99 | $49.99+ |
 
 ## Which Should You Choose?
@@ -65,7 +65,7 @@ Brick's $49.99 upfront for the physical device is a higher entry point than any 
 
 **You need the absolute strictest blocking available**: Brick. Nothing on the consumer market is harder to bypass.
 
-**Budget is a concern**: FaithLock at $24.99/year vs Brick's $49.99 upfront hardware cost.
+**Budget is a concern**: FaithLock at pricing not stated in the verified sources vs Brick's $49.99 upfront hardware cost.
 
 **You want to block without carrying extra hardware**: FaithLock. It's entirely app-based.
 

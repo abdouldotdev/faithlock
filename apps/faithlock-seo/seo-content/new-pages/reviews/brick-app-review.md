@@ -160,7 +160,7 @@ If a physical tap genuinely gets you to put your phone down where a software tim
 Yes. The weaknesses cited in this Brick app review come from named App Store reviewers and independent review sites, not assumptions.
 
 **What's a Brick alternative that doesn't need hardware?**
-FaithLock blocks the same kind of distracting apps using Apple's Screen Time API alone, with no device to buy or carry, and asks you to answer a Bible quiz question to unlock instead of tapping an object.
+FaithLock blocks the same kind of distracting apps using Apple's Screen Time API alone, with no device to buy or carry, and asks you to answer a Bible verse and prayer to unlock instead of tapping an object.
 
 ---
 

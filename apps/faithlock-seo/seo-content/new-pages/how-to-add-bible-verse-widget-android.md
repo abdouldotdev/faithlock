@@ -12,7 +12,7 @@ meta_description: "Google's official steps for adding a Bible verse widget to yo
 - Google notes that some of these steps only work on Android 14 and up.
 - Android widgets are resizable after placement, which iOS widgets are not. Drag the handles to give a long verse more room.
 - Android has no universal, iPhone-style lock screen widget system. Support varies by manufacturer, so check your own display settings.
-- FaithLock is iOS only. It is not available on Android, and nothing in this guide will surface it.
+- FaithLock is available on iPhone and iPad. It is not available on Android, and nothing in this guide will surface it.
 
 ---
 

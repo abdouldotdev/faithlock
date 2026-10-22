@@ -60,14 +60,14 @@ FaithLock blocks distracting apps and requires Bible verse engagement (quiz-base
 
 **What stands out**: The 30-day covenant feature changes the psychology from "screen time limit" to "spiritual commitment." Scheduled lock times align with morning devotion, work hours, bedtime.
 
-**Where it falls short**: iOS only. Premium ($24.99/year) for full features. If you're not Christian, the approach won't resonate.
+**Where it falls short**: iOS only. Premium (pricing not stated in the verified sources) for full features. If you're not Christian, the approach won't resonate.
 
 *Disclosure: This article is published on the FaithLock blog. We've tested every app here ourselves and given honest assessments across the board.*
 
 | Detail | Info |
 |--------|------|
 | Rating | New (building reviews) |
-| Price | Free (Premium $24.99/year) |
+| Price | Free (Premium pricing not stated in the verified sources) |
 | Platforms | iOS |
 | Method | Bible verse engagement before app unlocks |
 
@@ -204,7 +204,7 @@ Website
 | App | Price | Platforms | Method | Strength | Faith-Based |
 |-----|-------|-----------|--------|----------|-------------|
 | One Sec | Free/$39.99/yr | iOS + Android | Breathing pause | Strong research backing | No |
-| FaithLock | Free/$24.99/yr | iOS | Bible verse engagement | Active Scripture interaction | Yes |
+| FaithLock | Free/pricing not stated in the verified sources | iOS | Bible verse engagement | Active Scripture interaction | Yes |
 | Opal | Free/$99.99/yr | iOS | Hard blocking | Strictest blocker available | No |
 | Forest | $3.99 | iOS + Android | Gamified focus | Fun, visual motivation | No |
 | ScreenZen | Free/$2.99/mo | iOS + Android | Awareness overlay | Gentle, sustainable | No |

@@ -128,4 +128,4 @@ A: Yes. Healthy concern motivates action and prayer. You see a problem, you pray
 - [Overcoming TikTok Addiction](/sessions/zen-ecstatic-mayer/mnt/outputs/faithlock-seo/day24-glossary/tiktok-addiction.md)
 - [Understanding YouTube Addiction](/sessions/zen-ecstatic-mayer/mnt/outputs/faithlock-seo/day24-glossary/youtube-addiction.md)
 
-**Download FaithLock Today**: Block news and social apps that fuel anxiety. Replace compulsive scrolling with Scripture and prayer. Available on iOS. [Get FaithLock](https://pim.ms/kTxgKF4) — Find peace in God, not information. Freemium, $4.99/week, or $24.99/year.
+**Download FaithLock Today**: Block news and social apps that fuel anxiety. Replace compulsive scrolling with Scripture and prayer. Available on iOS. [Get FaithLock](https://pim.ms/kTxgKF4) — Find peace in God, not information. free download with in-app purchases, pricing not stated in the verified sources, or pricing not stated in the verified sources.

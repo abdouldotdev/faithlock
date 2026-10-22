@@ -15,47 +15,15 @@
 
 // ─── PRICING ────────────────────────────────────────────────
 export const PRICING = {
-  model: 'freemium' as const,
-  trial: {
-    enabled: true,
-    days: 3,
-    label: '3-day free trial',
-  },
-  plans: {
-    weekly: {
-      price: 4.99,
-      currency: 'USD',
-      label: '$4.99/week',
-      period: 'week',
-    },
-    annual: {
-      price: 24.99,
-      currency: 'USD',
-      label: '$24.99/year',
-      period: 'year',
-      savings: 'Save 90%',
-    },
-  },
-  // What the free tier includes
-  freeFeatures: [
-    'Daily Bible verse unlock',
-    'Basic app blocking',
-    'Streak tracking',
-  ],
-  premiumFeatures: [
-    'Unlimited app blocking',
-    'Screen time insights',
-    '30-day spiritual covenant',
-    'Custom schedules',
-    'Prayer reminders',
-  ],
+  model: 'free download with in-app purchases' as const,
+  displayedPrices: [] as const,
+  periodsVerified: false as const,
 } as const
 
 // ─── PLATFORM ───────────────────────────────────────────────
 export const PLATFORM = {
-  available: ['iOS'] as const,
-  minVersion: 'iOS 13.0 or later',
-  androidStatus: 'coming soon' as const,
+  available: ['iPhone', 'iPad'] as const,
+  minVersion: 'iOS 13.0+',
   appStoreUrl: 'https://pim.ms/kTxgKF4',
   requiresScreenTimeAPI: true,
 } as const
@@ -63,8 +31,8 @@ export const PLATFORM = {
 // ─── APP FEATURES (verifiable from the actual app) ──────────
 export const FEATURES = {
   bibleVerseUnlock: {
-    name: 'Bible Verse Unlock',
-    description: 'Read a Scripture verse to unlock your blocked apps',
+    name: 'Prayer and Bible Verse Unlock',
+    description: 'Read Bible verses and pray before accessing selected apps',
     unlockTime: '~30 seconds',
   },
   appBlocking: {
@@ -76,8 +44,8 @@ export const FEATURES = {
     description: 'Track your daily consistency with verse reading',
   },
   screenTimeInsights: {
-    name: 'Screen Time Insights',
-    description: 'See how your phone usage changes over time',
+    name: 'Faith Insights and Stats',
+    description: 'Track screen time saved and verses read',
   },
   spiritualCovenant: {
     name: '30-Day Spiritual Covenant',
@@ -150,7 +118,7 @@ export const COPY = {
 
   // CTA copy - no fake user counts
   ctaPrimary: 'Try FaithLock Free',
-  ctaSecondary: 'Start Your Free Trial',
+  ctaSecondary: 'Get the App',
 
   // Social proof without fake numbers
   // Use these INSTEAD of "Join 25,000+ Christians"
@@ -194,7 +162,7 @@ export const COPY = {
 
 // ─── COMPANY ────────────────────────────────────────────────
 export const COMPANY = {
-  name: 'AppBiz Studio',
+  name: 'Appbiz Studio, LLC',
   email: 'hey@appbiz.studio',
   privacyUrl: '/privacy',
   termsUrl: '/terms',
@@ -224,8 +192,8 @@ export function displayMetric(
 // ─── COMPARISON DATA (FaithLock's real features for /compare) ──
 export const FAITHLOCK_COMPARISON = {
   name: 'FaithLock',
-  price: PRICING.plans.weekly.label,
-  pricingModel: `Freemium (${PRICING.plans.weekly.label} Premium)`,
+  price: 'In-app purchases shown in the App Store listing',
+  pricingModel: 'Free download with in-app purchases; billing periods are not stated in the registry',
   platforms: PLATFORM.available,
   features: {
     bibleQuiz: false, // We do verse reading, not quiz
@@ -252,9 +220,9 @@ export const FAITHLOCK_PROS = [
 ] as const
 
 export const FAITHLOCK_CONS = [
-  'iOS only (Android coming soon)',
+  'Available on iPhone and iPad',
   'Newer app (less brand awareness)',
-  'Requires iOS 13.0 or later (App Store app id6754208209, Appbiz Studio, LLC)',
+  'Requires iOS 13.0+ according to the verified listing',
 ] as const
 
 // ─── BIBLE VERSES (used across the site for decoration) ─────

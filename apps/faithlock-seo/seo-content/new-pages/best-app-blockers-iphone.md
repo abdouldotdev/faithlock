@@ -11,7 +11,7 @@ meta_description: "Every iPhone blocker app worth considering in 2026, with the 
 - **Strictest paid mode**: Opal, whose Deep Focus session cannot be cancelled once a timer starts
 - **Best strict mode for the money**: Jomo, with a multi-day lockout and anti-uninstall protection
 - **Best across phone and laptop**: Freedom, which syncs one block list to iOS, Android, Mac, Windows, and the browser
-- **Best Scripture-based friction**: FaithLock, where the way back into a blocked app is a Bible quiz question
+- **Best Scripture-based friction**: FaithLock, where the way back into a blocked app is a Bible verse and prayer
 - **Best gentle friction**: one sec, which shows a breathing interstitial instead of a wall
 - **Best genuinely free option**: ScreenZen, free with optional donations
 - **Best physical ritual**: Brick, an NFC device you tap to lock and unlock
@@ -113,7 +113,7 @@ It also has scheduled lock times for morning devotion, work hours, and bedtime, 
 
 **What stands out**: Most blockers only say no. The quiz turns the moment you reach for Instagram into thirty seconds of active recall on a passage, which is a different kind of friction from waiting out a timer you resent.
 
-**Where it falls short**: iOS only, and there is no Android version. If you are not a Christian, the mechanism has nothing to offer you, and one of the secular options above will fit better. FaithLock is a self-accountability tool, not a parental control. It also runs on the same Screen Time API as everything else here, so it inherits the same platform-level limits Apple imposes on every third-party blocker.
+**Where it falls short**: available on iPhone and iPad, and there is no Android version. If you are not a Christian, the mechanism has nothing to offer you, and one of the secular options above will fit better. FaithLock is a self-accountability tool, not a parental control. It also runs on the same Screen Time API as everything else here, so it inherits the same platform-level limits Apple imposes on every third-party blocker.
 
 | Detail | Info |
 |---|---|
@@ -234,7 +234,7 @@ AppBlock, from MobileSoft s.r.o. in the Czech Republic, is primarily an Android 
 | Opal | Free tier; Pro $99.99/yr per an independent review | Screen Time API | Deep Focus, non-cancellable | Help center: one-step disable without passcode enabled |
 | Jomo | Freemium; $5.99/mo, $29.99/yr, $99.99 lifetime | Screen Time API | Multi-day lockout + anti-uninstall | Own help center documents blocks failing to engage or release |
 | Freedom | Free; $8.99/mo, $3.33/mo annual, $99.50 lifetime | Screen Time API + local VPN | Locked Mode | Own docs: Locked Mode needs a separate Screen Time passcode |
-| FaithLock | Subscription with a 3-day free trial | Family Controls (Screen Time) API | Bible quiz gate | Same Apple platform limits as every third-party blocker |
+| FaithLock | Subscription with a trial terms are not stated in the verified sources | Family Controls (Screen Time) API | Bible verse and prayer gate | Same Apple platform limits as every third-party blocker |
 | one sec | Free for one app; up to $149 family/lifetime | Shortcuts interstitial | Optional blocking mode | Reviewers call the prompt dismissable |
 | ScreenZen | Free with donations | Screen Time + Shortcuts | Optional passcode lock | Review site lists "can be bypassed"; privacy complaint on Trustpilot |
 | Clearspace | Freemium; $6.99/mo, $44.99/yr | Screen Time API + pause screens | Strict Mode | Users can raise their own budgets at any time |

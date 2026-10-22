@@ -75,7 +75,7 @@ export default async function LandingFooter() {
               </svg>
               Download on App Store
             </a>
-            <p className="mt-2 text-[10px] text-cozy-ink-muted">Free &middot; iOS 13.0 or later</p>
+            <p className="mt-2 text-[10px] text-cozy-ink-muted">Free &middot; iOS 13.0+</p>
             <p className="mt-5 text-[10px] text-cozy-ink-muted">
               &copy; {new Date().getFullYear()} {COMPANY.name}
             </p>

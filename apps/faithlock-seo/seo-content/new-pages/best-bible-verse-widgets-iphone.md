@@ -126,14 +126,14 @@ FaithLock uses Bible verses as the unlock mechanism for distracting apps. Try to
 
 **What stands out**: [Active retrieval practice produces 50% better retention than passive review](https://www.science.org/doi/10.1126/science.1152408). FaithLock makes you interact with Scripture, not just see it. Scheduled lock times align with morning devotion, work hours, and bedtime.
 
-**Where it falls short**: Not a traditional widget — verses appear when opening blocked apps, not on your home screen. iOS only. Premium ($24.99/year) for full features.
+**Where it falls short**: Not a traditional widget — verses appear when opening blocked apps, not on your home screen. iOS only. Premium (pricing not stated in the verified sources) for full features.
 
 *Disclosure: This article is published on the FaithLock blog. We've given every app an honest assessment, including our own.*
 
 | Detail | Info |
 |--------|------|
 | Rating | New (building reviews) |
-| Price | Free (Premium $24.99/year) |
+| Price | Free (Premium pricing not stated in the verified sources) |
 | Widget type | App-blocking verse engagement |
 | Refresh | Per app open (from 31K+ verse library) |
 
@@ -149,7 +149,7 @@ FaithLock uses Bible verses as the unlock mechanism for distracting apps. Try to
 | Heavenly | Free/$6.99/mo | Yes | Yes (S/M/L) | Daily | Moderate |
 | BitBible | Free/Premium | Yes | Yes (S/M) | Daily | Low |
 | Widgetsmith | Free/$1.99/mo | Yes | Yes (S/M/L) | Manual | Full |
-| FaithLock | Free/$24.99/yr | N/A (app blocker) | N/A | Per interaction | Low |
+| FaithLock | Free/pricing not stated in the verified sources | N/A (app blocker) | N/A | Per interaction | Low |
 
 ---
 

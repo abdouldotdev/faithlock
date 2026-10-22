@@ -84,7 +84,7 @@ If you use it across multiple devices, yes. One subscription covers your phone, 
 Potentially — Freedom for website blocking on desktop, Bible Mode for app blocking on your phone. Since they operate on different platforms, conflicts are less likely than running two phone-based blockers.
 
 **Is there a faith-based cross-platform blocker?**
-Not currently. FaithLock and Bible Mode are iOS-only. Sanctum covers iOS and Android but not desktop. Cross-platform faith-based blocking remains a gap in the market.
+Not currently. FaithLock and Bible Mode are available on iPhone and iPad. Sanctum covers iOS and Android but not desktop. Cross-platform faith-based blocking remains a gap in the market.
 
 ---
 *Sources: Bible Mode on App Store, Freedom on App Store, freedom.to*

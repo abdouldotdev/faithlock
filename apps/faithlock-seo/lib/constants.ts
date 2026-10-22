@@ -33,11 +33,10 @@ export const FAITHLOCK_STATS = {
   unlockTime: FEATURES.bibleVerseUnlock.unlockTime,
   platforms: [...PLATFORM.available],
 
-  // Pricing (real)
+  // Current listing prices; billing periods are intentionally not inferred.
   price: {
-    trial: PRICING.trial.label,
-    weekly: PRICING.plans.weekly.label,
-    annual: PRICING.plans.annual.label,
+    displayed: [...PRICING.displayedPrices],
+    periodsVerified: PRICING.periodsVerified,
   },
 
   // Conditional display - only show if we have real numbers

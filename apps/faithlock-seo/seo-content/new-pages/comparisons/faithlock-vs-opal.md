@@ -12,7 +12,7 @@ meta_description: "FaithLock uses Bible verse quizzes to unlock blocked apps. Op
 
 ## FaithLock in 30 Seconds
 
-FaithLock blocks distracting apps and requires Bible verse engagement to unlock them. It's not passive — you read a verse and interact with it through a quiz before your apps become accessible. The complete BSB (Berean Standard Bible) library of 31,000+ verses powers the content. A 30-day spiritual covenant feature turns the blocking into a commitment device rooted in biblical covenant theology. Scheduled lock times (morning devotion, work hours, bedtime) and prayer reminders add structure. iOS-only, free to download with a 3-day free trial, premium at $4.99/week or $24.99/year.
+FaithLock blocks distracting apps and requires Bible verse engagement to unlock them. It's not passive — you read a verse and interact with it through a quiz before your apps become accessible. The complete BSB (Berean Standard Bible) library of 31,000+ verses powers the content. A 30-day spiritual covenant feature turns the blocking into a commitment device rooted in biblical covenant theology. Scheduled lock times (morning devotion, work hours, bedtime) and prayer reminders add structure. available on iPhone and iPad, free to download with a trial terms are not stated in the verified sources, premium at pricing not stated in the verified sources or pricing not stated in the verified sources.
 
 ## Opal in 30 Seconds
 
@@ -31,7 +31,7 @@ Opal is one of the most popular screen time management apps available, known for
 | Faith component | Core — Bible, prayer, covenant | None |
 | Free tier | Yes | Yes (limited) |
 | Platforms | iOS only | iOS only |
-| Pricing | $4.99/week or $24.99/year | ~$9.99/month or $59.99/year |
+| Pricing | pricing not stated in the verified sources or pricing not stated in the verified sources | ~$9.99/month or $59.99/year |
 
 ## Key Differences
 
@@ -45,7 +45,7 @@ Opal's analytics are in a different league. AI-driven insights about your usage 
 Both use Apple's Family Controls API, but Opal's "Deep Focus" mode is specifically designed to resist bypass attempts. It's one of the hardest app blockers to circumvent on iOS. FaithLock's blocking is strong but offers the Bible verse quiz as the intentional exit path. The question is whether you want maximum restriction or purposeful friction.
 
 ### Cost
-FaithLock's annual plan ($24.99/year) is less than half of Opal's ($59.99/year). The weekly option at $4.99/week is expensive long-term but works for short commitments. Opal's pricing reflects its more sophisticated analytics platform.
+FaithLock's annual plan (pricing not stated in the verified sources) is less than half of Opal's ($59.99/year). The weekly option at pricing not stated in the verified sources is expensive long-term but works for short commitments. Opal's pricing reflects its more sophisticated analytics platform.
 
 ## Pricing
 
@@ -53,8 +53,8 @@ FaithLock's annual plan ($24.99/year) is less than half of Opal's ($59.99/year).
 |--|----------|------|
 | Free tier | Yes — basic blocking + daily verse | Yes — limited features |
 | Monthly | N/A | ~$9.99/month |
-| Annual | $24.99/year | $59.99/year |
-| Weekly | $4.99/week | N/A |
+| Annual | pricing not stated in the verified sources | $59.99/year |
+| Weekly | pricing not stated in the verified sources | N/A |
 
 ## Which Should You Choose?
 
@@ -64,7 +64,7 @@ FaithLock's annual plan ($24.99/year) is less than half of Opal's ($59.99/year).
 
 **You want the hardest-to-bypass blocking**: Opal's Deep Focus is harder to bypass. FaithLock's blocking is strong but includes the intentional quiz unlock path.
 
-**You're on a budget**: FaithLock at $24.99/year costs less than half of Opal's annual plan.
+**You're on a budget**: FaithLock at pricing not stated in the verified sources costs less than half of Opal's annual plan.
 
 **You want social accountability**: Opal's team challenges and Gem sessions offer peer-based motivation. FaithLock's community features are still developing.
 

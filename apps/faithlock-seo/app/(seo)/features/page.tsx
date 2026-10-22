@@ -1,12 +1,12 @@
 import { Metadata } from 'next'
 import { getAllFeatures } from '@/lib/contentful'
-import { FAITHLOCK_STATS, APP_STORE_URL } from '@/lib/constants'
+import { APP_STORE_URL } from '@/lib/constants'
 import CTAButton from '@/components/ui/CTAButton'
 
 export const metadata: Metadata = {
-  title: 'FaithLock Features - Bible Quiz, Covenant Tracking & More',
+  title: 'FaithLock Features - Prayer Lock, App Blocking & More',
   description:
-    'Explore FaithLock features: Bible quiz unlock, 30-day spiritual covenant, app blocking, accountability partners, and progress analytics. The most comprehensive Christian screen time app.',
+    'Explore FaithLock features listed in the App Store: prayer and Bible verse unlocks, app blocking, scheduled lock times, prayer streaks, faith insights, reminders, and dark mode.',
   alternates: {
     canonical: '/features',
   },
@@ -31,9 +31,8 @@ export default async function FeaturesPage() {
             Everything You Need to Break Free
           </h1>
           <p className="text-lg md:text-xl text-cozy-ink/70 max-w-2xl">
-            Bible quizzes, covenant tracking, smart scheduling, and more.
-            FaithLock gives you the tools to turn phone addiction into
-            spiritual growth.
+            Prayer and Bible verse unlocks, scheduled lock times, faith insights, and more.
+            FaithLock helps turn phone time into prayer time.
           </p>
         </div>
       </div>
@@ -43,9 +42,9 @@ export default async function FeaturesPage() {
         <section className="mb-12 md:mb-16">
           <div className="grid sm:grid-cols-3 gap-4">
             {[
-              { value: FAITHLOCK_STATS.versesInLibrary, label: 'Bible verses in library', color: 'primary' },
-              { value: '~30s', label: 'To unlock with Scripture', color: 'primary' },
-              { value: 'BSB', label: 'Bible translation', color: 'gold' },
+              { value: 'Prayer lock', label: 'Core experience', color: 'primary' },
+              { value: '~30s', label: 'Scripture pause', color: 'primary' },
+              { value: 'iPhone + iPad', label: 'Verified devices', color: 'gold' },
             ].map((stat) => (
               <div key={stat.label} className="cozy-card p-5 text-center">
                 <p className={`text-2xl md:text-3xl font-bold mb-1 ${stat.color === 'gold' ? 'text-cozy-gold' : 'text-cozy-primary'}`}>
@@ -155,7 +154,7 @@ export default async function FeaturesPage() {
         {/* CTA */}
         <section className="bg-cozy-primary text-white p-10 md:p-16 border-[2.5px] border-cozy-ink rounded-cozy-lg shadow-cozy-hard-lg text-center">
           <h2 className="text-2xl md:text-4xl font-bold mb-4 text-balance text-white">
-            Experience every feature for free
+            Explore the listed features without inferring paywall entitlements.
           </h2>
           <p className="text-lg mb-8 text-white/80">
             Join Christians transforming phone addiction into spiritual growth.

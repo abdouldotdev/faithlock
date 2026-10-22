@@ -194,7 +194,7 @@ Forest, from SEEKRTECH, is a gamified focus timer. Start a session and a virtual
 | Opal | Free tier; Pro $99.99/yr | Deepest in category | Recurring, calendar-linked | Strong with Deep Focus, opt-in anti-tamper |
 | Jomo | $5.99/mo, $29.99/yr, $99.99 lifetime | On-device analytics | Strongest per dollar | Strong Strict Mode with anti-uninstall |
 | Freedom | $8.99/mo, $3.33/mo annual, $99.50 lifetime | Cross-device history | Synced across devices | Locked Mode, needs a Screen Time passcode |
-| FaithLock | Subscription with a 3-day free trial | Streaks and badges | Devotion, work, bedtime blocks | Screen Time API, unlock via Bible quiz |
+| FaithLock | Subscription with a trial terms are not stated in the verified sources | Streaks and badges | Devotion, work, bedtime blocks | Screen Time API, unlock via Bible verse and prayer |
 | ScreenZen | Free with donations | Activity and streaks | Per-app daily limits | Escalating delays, bypassable per reviewers |
 | Clearspace | $6.99/mo, $44.99/yr | Accuracy questioned by reviewers | Editable budgets | Pause screens, Strict Mode |
 | Forest | Free with IAP $0.99 to $35.99 | Focus stats and history | Session-based | Honesty-based unless Deep Focus is on |
@@ -222,7 +222,7 @@ Forest, from SEEKRTECH, is a gamified focus timer. Start a session and a virtual
 ## Frequently Asked Questions
 
 **What is the best screen time management app for iPhone?**
-For enforcement per dollar, Jomo. For reporting depth, Opal. For covering phone and computer together, Freedom. If your goal is redirecting the impulse rather than only capping it, FaithLock's Bible quiz gate is a different mechanism entirely. There is no universal winner because these tools differ by approach rather than by quality.
+For enforcement per dollar, Jomo. For reporting depth, Opal. For covering phone and computer together, Freedom. If your goal is redirecting the impulse rather than only capping it, FaithLock's Bible verse and prayer gate is a different mechanism entirely. There is no universal winner because these tools differ by approach rather than by quality.
 
 **Is there a free screen time management app that works?**
 Apple's built-in Screen Time is free and is the foundation most paid apps use. ScreenZen is free with optional donations and adds escalating delays that Apple's version lacks. The paid tier mostly buys you stricter enforcement and better reporting, not a different blocking mechanism.

@@ -12,7 +12,7 @@ meta_description: "An honest guide to Bible verse apps on Android: which options
 - Most of the beautiful verse widget apps in "best of" roundups are iPhone exclusives. This is the single biggest frustration Android users hit in this category.
 - Android's widget system is better than iOS for Scripture in one concrete way: you can resize a widget until the whole verse fits.
 - Android has no universal lock screen widget system. A wallpaper with the verse in the image is the dependable answer there.
-- FaithLock is iOS only and is not available on Android. It is listed here only to save you the search.
+- FaithLock is available on iPhone and iPad and is not available on Android. It is listed here only to save you the search.
 
 ---
 

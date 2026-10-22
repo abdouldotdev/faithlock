@@ -166,7 +166,7 @@ No. The company itself describes it as monitoring and reporting, not a blocking 
 
 - **Covenant Eyes**: if you want some technical filtering alongside reporting, though its iOS screenshot coverage is limited to Safari
 - **Truple**: if you want a dedicated DNS filter for adult content plus a separate screenshot-based accountability layer
-- **FaithLock**: if you want an actual technical block instead of a report someone else has to act on. FaithLock blocks access via iOS's Screen Time API directly and replaces human oversight with an unlock gated on passing a Bible quiz, without sending any activity data to a third party.
+- **FaithLock**: if you want an actual technical block instead of a report someone else has to act on. FaithLock blocks access via iOS's Screen Time API directly and replaces human oversight with an unlock gated on passing a Bible verse and prayer, without sending any activity data to a third party.
 
 ---
 

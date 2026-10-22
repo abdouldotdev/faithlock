@@ -1,5 +1,5 @@
 import { getAllContentForFooter } from '@/lib/contentful'
-import { OFFICIAL_APP_STORE_URL, COMPANY } from '@/lib/constants'
+import { APP_STORE_URL, COMPANY } from '@/lib/constants'
 
 // Top Bible Verse topics by search volume
 const TOP_BIBLE_VERSES = [
@@ -73,7 +73,7 @@ export default async function Footer() {
               Stop scrolling. Start Scripture. Turn phone addiction into daily devotion.
             </p>
             <a
-              href={OFFICIAL_APP_STORE_URL}
+              href={APP_STORE_URL}
               data-store-location="footer"
               className="inline-flex items-center gap-2 bg-cozy-primary text-white border-[2.5px] border-cozy-ink shadow-cozy-hard px-4 py-2.5 rounded-full font-bold text-sm transition-all duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-cozy-hard-lg"
               target="_blank"
@@ -84,7 +84,7 @@ export default async function Footer() {
               </svg>
               Download on App Store
             </a>
-            <p className="mt-2 text-xs text-cozy-ink-muted">Free &middot; iOS 13.0 or later</p>
+            <p className="mt-2 text-xs text-cozy-ink-muted">Free &middot; iOS 13.0+</p>
             <p className="mt-5 text-xs text-cozy-ink-muted">
               &copy; {new Date().getFullYear()} {COMPANY.name}
             </p>

@@ -140,14 +140,14 @@ Not a parental control — a self-accountability app. Your teen installs it them
 
 **What stands out**: Self-chosen accountability respects growing autonomy while keeping faith at the center. The 30-day covenant is a commitment with God, not with you. Teaches self-control as spiritual discipline.
 
-**Where it falls short**: Not a parental control — teen can uninstall anytime. No parent dashboard or reports. For younger kids, use Bark or Qustodio. iOS only. Premium: $24.99/year.
+**Where it falls short**: Not a parental control — teen can uninstall anytime. No parent dashboard or reports. For younger kids, use Bark or Qustodio. iOS only. Premium: pricing not stated in the verified sources.
 
 *Disclosure: This article is published on the FaithLock blog. We've included FaithLock as one option among many and noted its limitations honestly.*
 
 | Detail | Info |
 |--------|------|
 | Rating | New (building reviews) |
-| Price | Free (Premium $24.99/year) |
+| Price | Free (Premium pricing not stated in the verified sources) |
 | Platforms | iOS |
 | Key feature | Self-chosen Bible verse app blocking for teens |
 
@@ -164,7 +164,7 @@ Not a parental control — a self-accountability app. Your teen installs it them
 | Covenant Eyes | $16.99/mo | All major | Accountability reports | Optional | No | 12+ |
 | Apple/Google | Free | iOS / Android | Basic | Basic | Yes | Any |
 | Qustodio | $54.95/yr | All major | Comprehensive | 30+ categories | Yes | 4-18 |
-| FaithLock | Free/$24.99/yr | iOS | None (self-use) | App blocking | Yes | 15+ (self-chosen) |
+| FaithLock | Free/pricing not stated in the verified sources | iOS | None (self-use) | App blocking | Yes | 15+ (self-chosen) |
 
 ---
 

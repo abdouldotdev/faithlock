@@ -68,9 +68,9 @@ FaithLock offers a unique approach to overcoming **nomophobia** by creating heal
 
 This simple mechanism transforms your relationship with **nomophobia**. Instead of fighting anxiety alone, you're redirected toward Scripture. Each time you feel the urge to escape into your app, you encounter God's Word instead. Over time, this creates a profound shift: your phone becomes an avenue to encounter God rather than an escape from Him.
 
-FaithLock's features—app blocking, streak tracking, screen time insights, prayer reminders, and a 30-day covenant—create a comprehensive system for building phone independence. The streak tracker gamifies your progress, while screen time insights help you see the reality of your usage patterns. Most importantly, you're building new neural pathways where reaching for your phone leads first to Scripture.
+FaithLock's features—app blocking, streak tracking, screen time insights, prayer reminders, and a faith-based commitment—create a comprehensive system for building phone independence. The streak tracker gamifies your progress, while screen time insights help you see the reality of your usage patterns. Most importantly, you're building new neural pathways where reaching for your phone leads first to Scripture.
 
-Available exclusively on iOS, FaithLock offers a freemium model with premium plans at $4.99/week or $24.99/year, making faith-based phone freedom accessible to everyone.
+Available exclusively on iOS, FaithLock offers a free download with in-app purchases model with premium plans at pricing not stated in the verified sources or pricing not stated in the verified sources, making faith-based phone freedom accessible to everyone.
 
 ## Frequently Asked Questions About Nomophobia
 

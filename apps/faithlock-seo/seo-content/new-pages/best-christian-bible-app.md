@@ -145,7 +145,7 @@ FaithLock isn't a Bible reading app, and we're not going to pretend it is. If yo
 
 What FaithLock actually does is block distracting apps on iPhone using Apple's Family Controls (Screen Time) API, then requires you to read a Bible verse from the complete BSB (Berean Standard Bible) library of 31,000+ verses and correctly answer a quiz question about it before unlocking. It also shows a verse of the day on a home screen widget and sends prayer reminders throughout the day.
 
-The honest use case: pair FaithLock with a real Bible reading app. YouVersion or Bible Gateway gives you the depth; FaithLock forces actual engagement with a verse at the exact moment you're reaching for a distracting app instead of your Bible. It's iOS only, and Premium runs $4.99/week or $24.99/year.
+The honest use case: pair FaithLock with a real Bible reading app. YouVersion or Bible Gateway gives you the depth; FaithLock forces actual engagement with a verse at the exact moment you're reaching for a distracting app instead of your Bible. It's available on iPhone and iPad, and Premium runs pricing not stated in the verified sources or pricing not stated in the verified sources.
 
 [Download on the App Store](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209)
 
@@ -181,7 +181,7 @@ Blue Letter Bible offers a free Hebrew and Greek lexicon tied to Strong's Concor
 Dwell is built specifically for audio, with 20+ narrators across 14-15 translations and synced text. YouVersion also offers free audio Bibles, though listening isn't its primary design.
 
 **Can I use a Bible app alongside a Christian app blocker?**
-Yes, and it's a common pairing. A Bible app like YouVersion gives you translations, plans, and commentary. FaithLock blocks distracting apps and requires answering a Bible quiz to unlock, which reinforces the reading you're already doing elsewhere rather than replacing it.
+Yes, and it's a common pairing. A Bible app like YouVersion gives you translations, plans, and commentary. FaithLock blocks distracting apps and requires answering a Bible verse and prayer to unlock, which reinforces the reading you're already doing elsewhere rather than replacing it.
 
 **Which Bible app has the most translations?**
 YouVersion leads with 3,500+ versions in 2,300+ languages. Bible Gateway follows with 200+ translations in 70+ languages.

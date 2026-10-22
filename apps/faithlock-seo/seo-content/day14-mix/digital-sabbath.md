@@ -129,7 +129,7 @@ FaithLock makes maintaining a **digital sabbath** easier by removing the temptat
 
 ### FaithLock Pricing
 - **Freemium:** Basic features free
-- **Premium:** $4.99/week or $24.99/year
+- **Premium:** pricing not stated in the verified sources or pricing not stated in the verified sources
 - **Platform:** iOS only
 
 For more information and to get started, visit [FaithLock on the App Store](https://pim.ms/kTxgKF4).
