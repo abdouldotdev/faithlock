@@ -1,6 +1,7 @@
 import { OFFICIAL_APP_STORE_URL } from '@/lib/constants'
 
-export default function SubtleCallout() {
+export default function SubtleCallout({ suppressStoreCta = false }: { suppressStoreCta?: boolean }) {
+  if (suppressStoreCta) return null
   return (
     <aside className="mb-16 md:mb-20 cozy-card-soft p-6 md:p-8">
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
