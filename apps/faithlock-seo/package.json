@@ -11,6 +11,8 @@
     "test:seo-metadata": "node --test tests/metadata-title-template.test.mjs",
     "test:facts": "node --test tests/factual-source.test.mjs",
     "test:production-cta-parity": "node --test tests/best-app-blockers-production-parity.test.mjs",
+    "test:compare-title": "node --experimental-strip-types --test tests/compare-title.test.mjs",
+    "test:canonical-evidence": "node --test tests/canonical-evidence.test.mjs",
     "test:contentful": "node scripts/test-contentful.js"
   },
   "dependencies": {
