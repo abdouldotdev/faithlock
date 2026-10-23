@@ -145,7 +145,7 @@ FaithLock isn't a devotional content library, and it doesn't compete with the re
 
 FaithLock blocks distracting apps on iPhone using Apple's Family Controls (Screen Time) API and requires reading a Bible verse from the complete BSB library of 31,000+ verses and answering a quiz question about it before unlocking. You can set scheduled lock times around a morning devotion window, and the app tracks reading streaks with badges to reinforce the habit. A home screen widget also shows the verse of the day.
 
-If your actual devotional habit keeps losing to your phone before you've opened your devotional app at all, FaithLock's Bible quiz interrupts that pattern directly. It's iOS only, and Premium runs $4.99/week or $24.99/year.
+If your actual devotional habit keeps losing to your phone before you've opened your devotional app at all, FaithLock's Bible verse and prayer interrupts that pattern directly. It's available on iPhone and iPad, and Premium runs pricing not stated in the verified sources or pricing not stated in the verified sources.
 
 [Download on the App Store](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209)
 

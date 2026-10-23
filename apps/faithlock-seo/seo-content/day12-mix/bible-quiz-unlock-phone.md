@@ -43,7 +43,7 @@ Read the verse. Let it land. FaithLock doesn't quiz you or demand proof—it tru
 
 ## Benefits: Spiritual Growth on Autopilot
 
-When you use FaithLock's **bible quiz unlock phone** feature, you're not just managing screen time—you're building a spiritual practice without heroic effort.
+When you use FaithLock's **Bible verse and prayer unlock phone** feature, you're not just managing screen time—you're building a spiritual practice without heroic effort.
 
 **Daily Scripture Exposure (Without Effort)**
 
@@ -121,7 +121,7 @@ That lamp works best when it's not locked away. It works when you encounter it i
 
 And Psalm 119:11 (ESV) reveals the deep work: *"I have hidden your word in my heart that I might not sin against you."*
 
-Hidden in the heart. Not through forced memorization, but through repeated, living encounter. FaithLock's **bible quiz unlock phone** feature is a modern pathway to this ancient practice—hiding God's Word in your heart, one unlock at a time.
+Hidden in the heart. Not through forced memorization, but through repeated, living encounter. FaithLock's **Bible verse and prayer unlock phone** feature is a modern pathway to this ancient practice—hiding God's Word in your heart, one unlock at a time.
 
 ---
 
@@ -132,7 +132,7 @@ You're ready to stop letting your phone control your day. FaithLock is waiting.
 **Download FaithLock on iOS today:**
 
 1. Visit the App Store and search "FaithLock"
-2. Choose your plan (Start free, or unlock unlimited with $4.99/week or $24.99/year)
+2. Choose your plan (Start free, or unlock unlimited with pricing not stated in the verified sources or pricing not stated in the verified sources)
 3. Select the apps that pull you away from focus
 4. Begin encountering Scripture with every tap
 

@@ -125,7 +125,7 @@ FaithLock isn't a meditation app and doesn't try to be. It doesn't have a conten
 
 What it does is remove the competition for your attention before you get to meditate at all. FaithLock blocks distracting apps on iPhone using Apple's Family Controls (Screen Time) API, and unlocking requires reading a Bible verse from the complete BSB library of 31,000+ verses and answering a quiz question about it. It also supports scheduled lock times, including a morning devotion window, and sends prayer reminders throughout the day.
 
-If the real obstacle to your meditation practice is opening Instagram instead of Hallow or Abide in the first place, that's the problem FaithLock addresses. It's iOS only, and Premium runs $4.99/week or $24.99/year.
+If the real obstacle to your meditation practice is opening Instagram instead of Hallow or Abide in the first place, that's the problem FaithLock addresses. It's available on iPhone and iPad, and Premium runs pricing not stated in the verified sources or pricing not stated in the verified sources.
 
 [Download on the App Store](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209)
 

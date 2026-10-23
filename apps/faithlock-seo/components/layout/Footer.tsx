@@ -84,7 +84,7 @@ export default async function Footer() {
               </svg>
               Download on App Store
             </a>
-            <p className="mt-2 text-xs text-cozy-ink-muted">Free &middot; iOS 16+</p>
+            <p className="mt-2 text-xs text-cozy-ink-muted">Free &middot; iOS 13.0+</p>
             <p className="mt-5 text-xs text-cozy-ink-muted">
               &copy; {new Date().getFullYear()} {COMPANY.name}
             </p>

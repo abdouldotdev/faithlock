@@ -192,7 +192,7 @@ It depends on the app. YouVersion uses whichever version you set as your default
 On its own, honestly, not much. Seeing a verse and engaging with a verse are different activities, and passive exposure is closer to seeing a billboard than to reading. It becomes useful when it is attached to something: a reading plan, a prayer, or a moment when you were about to do something else. Our [devotional app guide](/resources/christian-devotional-app) covers the reading-plan side.
 
 **Is there a daily verse app for Android?**
-YouVersion is the reliable cross-platform answer. Several of the design-led iOS apps have no Android build at all, and FaithLock is iOS only. See our [Android Bible verse app roundup](/resources/best-bible-verse-apps-android) for what is actually available there.
+YouVersion is the reliable cross-platform answer. Several of the design-led iOS apps have no Android build at all, and FaithLock is available on iPhone and iPad. See our [Android Bible verse app roundup](/resources/best-bible-verse-apps-android) for what is actually available there.
 
 ---
 

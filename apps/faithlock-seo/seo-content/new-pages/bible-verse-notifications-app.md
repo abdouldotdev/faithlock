@@ -174,7 +174,7 @@ Usually one of three causes: a Focus mode is filtering them, iOS is batching the
 They help with remembering to engage and help very little with retention on their own, because reading a line and moving on is closer to skimming than to study. They work best as a trigger for something slightly longer: a prayer, a chapter, a minute of quiet.
 
 **Is there a Bible verse notification app for Android?**
-YouVersion is the reliable cross-platform choice. Several of the design-led verse apps are iOS only, and FaithLock is iOS only. Our [Android roundup](/resources/best-bible-verse-apps-android) covers what is available there.
+YouVersion is the reliable cross-platform choice. Several of the design-led verse apps are available on iPhone and iPad, and FaithLock is available on iPhone and iPad. Our [Android roundup](/resources/best-bible-verse-apps-android) covers what is available there.
 
 ---
 

@@ -12,7 +12,7 @@ meta_description: "FaithLock blocks apps with Bible verse quizzes. Clearspace bl
 
 ## FaithLock in 30 Seconds
 
-FaithLock blocks distracting apps and unlocks them through Bible verse engagement. You read a verse and complete a quiz — no skimming and tapping through. The complete BSB library (31,000+ verses) powers the content. A 30-day covenant commitment feature adds accountability, while scheduled lock times and prayer reminders bring structure. iOS-only, free tier available, premium at $24.99/year.
+FaithLock blocks distracting apps and unlocks them through Bible verse engagement. You read a verse and complete a quiz — no skimming and tapping through. The complete BSB library (31,000+ verses) powers the content. A faith-based commitment commitment feature adds accountability, while scheduled lock times and prayer reminders bring structure. available on iPhone and iPad, free download available, premium at pricing not stated in the verified sources.
 
 ## Clearspace in 30 Seconds
 
@@ -31,7 +31,7 @@ Clearspace places deliberate obstacles between you and your distracting apps. Wh
 | Customization | Lock times, prayer frequency | Challenge types, delay duration |
 | Faith component | Core | None |
 | Platforms | iOS only | iOS only |
-| Pricing | $24.99/year | ~$69.99/year |
+| Pricing | pricing not stated in the verified sources | ~$69.99/year |
 
 ## Key Differences
 
@@ -39,7 +39,7 @@ Clearspace places deliberate obstacles between you and your distracting apps. Wh
 Both apps create friction. FaithLock fills that friction with Scripture. Clearspace fills it with cognitive tasks. The question is what kind of speed bump you want between you and Instagram. Bible engagement or math problems. For Christians, FaithLock turns an annoying interruption into a spiritual practice. Clearspace treats the interruption as a deterrent — something annoying enough to make you reconsider.
 
 ### Cost
-The price gap is significant. FaithLock runs $24.99/year. Clearspace runs roughly $69.99/year — nearly three times more. Clearspace's higher price point reflects a larger development team and broader feature set, but for users who would be satisfied with either, the savings are real.
+The price gap is significant. FaithLock runs pricing not stated in the verified sources. Clearspace runs roughly $69.99/year — nearly three times more. Clearspace's higher price point reflects a larger development team and broader feature set, but for users who would be satisfied with either, the savings are real.
 
 ### Content Value
 FaithLock's intervention has value on its own — you're reading Scripture. Even if you proceed to the blocked app after, you've spent 20-30 seconds with God's Word. Clearspace's intervention is purely a deterrent — a math problem has no inherent value beyond making you reconsider. If you want the friction itself to be meaningful, FaithLock wins clearly.
@@ -52,8 +52,8 @@ Clearspace's group challenges let you compete or collaborate with friends on scr
 | | FaithLock | Clearspace |
 |--|----------|------------|
 | Free tier | Yes — basic blocking + daily verse | Yes — limited features |
-| Annual | $24.99/year | ~$69.99/year |
-| Monthly | N/A ($4.99/week option) | Available |
+| Annual | pricing not stated in the verified sources | ~$69.99/year |
+| Monthly | N/A (pricing not stated in the verified sources option) | Available |
 
 ## Which Should You Choose?
 
@@ -63,7 +63,7 @@ Clearspace's group challenges let you compete or collaborate with friends on scr
 
 **You want the strongest possible deterrent**: Clearspace. Having to solve a math problem is more annoying than reading a verse, which may deter opening the app in the first place.
 
-**Budget matters**: FaithLock at $24.99/year is a fraction of Clearspace's ~$69.99/year.
+**Budget matters**: FaithLock at pricing not stated in the verified sources is a fraction of Clearspace's ~$69.99/year.
 
 **You're a Christian wanting to integrate faith into daily habits**: FaithLock. No secular app replicates this.
 

@@ -98,7 +98,7 @@ export default function ComparisonTemplate({ competitor }: ComparisonTemplatePro
               <ul className="space-y-2 text-gray-700">
                 <li>• iOS only (Android coming 2026 Q3)</li>
                 <li>• Newer app (less brand awareness than competitors)</li>
-                <li>• Requires iOS 16+ for Family Controls</li>
+                <li>• Requires iOS 13.0 or later (App Store app id6754208209, Appbiz Studio, LLC)</li>
               </ul>
             </div>
           </div>

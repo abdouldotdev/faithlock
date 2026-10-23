@@ -110,7 +110,7 @@ The concept of boundaries isn't modern productivity speak. It's Scripture. God f
 
 Ready to break free from the scroll?
 
-**FaithLock is available on the iOS App Store.** Download the free version to try app blocking immediately. Set your first block. Encounter Scripture. See how different your day feels when you're not fighting your phone alone.
+**FaithLock is available on the iOS App Store.** Download the free download to try app blocking immediately. Set your first block. Encounter Scripture. See how different your day feels when you're not fighting your phone alone.
 
 Premium plans unlock unlimited verses, advanced scheduling, streak tracking, and prayer reminders. Whether you choose free or paid, **app blocks instagram bible-style** with FaithLock and reclaim your peace.
 
@@ -125,7 +125,7 @@ Premium plans unlock unlimited verses, advanced scheduling, streak tracking, and
 - [Prayer Reminders: Stay Connected Throughout Your Day](/features/prayer-reminders)
 - [Streak Tracking: Celebrate Your Progress](/features/streak-tracking)
 - [How to Choose Which Apps to Block](/guides/which-apps-to-block)
-- [Is FaithLock for You? iPhone Requirement & Device Support](/support/ios-only)
+- [Is FaithLock for You? iPhone Requirement & Device Support](/support/available on iPhone and iPad)
 
 ---
 
