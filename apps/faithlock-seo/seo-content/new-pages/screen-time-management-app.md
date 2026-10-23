@@ -18,7 +18,7 @@ meta_description: "A screen time management app should report, schedule, and enf
 
 ## What Is the Best Screen Time Management App for iPhone, and How Does It Work?
 
-The best screen time management app for iPhone depends on the problem you need to solve: Apple Screen Time is the free starting point, Jomo emphasizes scheduled enforcement, and Opal emphasizes reporting. FaithLock is a different option: it uses Apple's Family Controls (Screen Time) API to block selected apps, then shows a Bible verse and quiz question when you try to unlock one. The app works by combining iPhone's app restrictions with a rule or reflection step before access, not by claiming to prevent every bypass.
+The best screen time management app for iPhone depends on the problem you need to solve: Apple Screen Time is the free starting point, Jomo emphasizes scheduled enforcement, and Opal emphasizes reporting. FaithLock is a different option: it blocks selected apps, then shows a Bible verse and quiz question when you try to unlock one. The app works by combining iPhone app restrictions with a Scripture step before access, not by claiming to prevent every bypass.
 
 For a quick choice, use Apple Screen Time if you only need a report and basic limits, Jomo if you want scheduled blocking, Opal if reporting depth matters most, or FaithLock if Scripture is the replacement you want after a blocked-app attempt. All of these are iPhone tools, and a Screen Time passcode you do not control can strengthen the setup.
 
