@@ -88,7 +88,7 @@ Per Jomo's own troubleshooting article, this is usually caused by conflicts with
 Opal. Its AI-driven Focus Score and Focus Report analyze usage patterns in more depth than Jomo's on-device screen time tracking and journaling.
 
 **Is there a faith-based alternative to Jomo or Opal?**
-Neither app has a spiritual dimension; both are general-purpose productivity blockers. [FaithLock](/) uses the same Screen Time API to block apps on iOS, but the way back in is answering a Bible quiz question rather than waiting out a timer or a Strict Mode lockout. See the [FaithLock vs Opal comparison](/resources/faithlock-vs-opal) for a fuller look at that specific matchup, or the [best Christian app blocker](/resources/best-christian-app-blocker) guide for other options.
+Neither app has a spiritual dimension; both are general-purpose productivity blockers. [FaithLock](/) uses the same Screen Time API to block apps on iOS, but the way back in is answering a Bible verse and prayer rather than waiting out a timer or a Strict Mode lockout. See the [FaithLock vs Opal comparison](/resources/faithlock-vs-opal) for a fuller look at that specific matchup, or the [best Christian app blocker](/resources/best-christian-app-blocker) guide for other options.
 
 ---
 *Sources: Jomo, Jomo on the App Store, Jomo blocking troubleshooting, Opal on the App Store, Opal help center, Opal review*

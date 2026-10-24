@@ -1,4 +1,4 @@
-import { APP_STORE_URL } from '@/lib/constants'
+import { OFFICIAL_APP_STORE_URL } from '@/lib/constants'
 
 export default function SubtleCallout() {
   return (
@@ -14,7 +14,7 @@ export default function SubtleCallout() {
           </p>
         </div>
         <a
-          href={APP_STORE_URL}
+          href={OFFICIAL_APP_STORE_URL}
           data-store-location="subtle_callout"
           target="_blank"
           rel="noopener noreferrer"

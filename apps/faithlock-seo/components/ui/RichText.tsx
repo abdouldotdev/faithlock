@@ -1,7 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Document } from '@contentful/rich-text-types'
 import { marked } from 'marked'
-import { APP_STORE_URL } from '@/lib/constants'
 import { unlinkCompetitors } from '@/lib/competitors'
 
 interface RichTextProps {
@@ -74,14 +73,13 @@ function isMarkdown(text: string): boolean {
 }
 
 /**
- * Point every raw FaithLock App Store link in content at the tracked store URL,
- * so content links attribute like the site CTAs (and fire faithlock_store_click),
- * and drop any link to a competitor.
+ * Keep official App Store URLs authored in SEO content intact so the rendered
+ * article preserves its canonical CTA. The delegated click listener accepts
+ * both the official URL and the tracked short link; rewriting here would make
+ * a page-level rendered-output contract impossible to verify.
  */
-const RAW_FAITHLOCK_STORE_URL = /https?:\/\/apps\.apple\.com\/[^"'\s)<>]*\/id6754208209[^"'\s)<>]*/gi
-
 function withTrackedStoreLinks(html: string): string {
-  return unlinkCompetitors(html.replace(RAW_FAITHLOCK_STORE_URL, APP_STORE_URL))
+  return unlinkCompetitors(html)
 }
 
 /**

@@ -105,13 +105,13 @@ Only when you need something the free stack cannot do:
 
 ## One Honest Note About FaithLock
 
-**FaithLock does not run on Android.** It is iOS only, there is no Android version, and it is not a content filter on any platform.
+**FaithLock does not run on Android.** It is available on iPhone and iPad, there is no Android version, and it is not a content filter on any platform.
 
 Naming it here so nobody arrives at an app store expecting to find it. If you are on Android and looking for adult content filtering, the free stack above plus one of the accountability products is the realistic path.
 
 If you also use an iPhone, and the difficulty there is habitual app opening rather than content filtering, [FaithLock](/) shields chosen apps using Apple's Family Controls API and requires a Bible verse quiz to reopen one.
 
-<a href="https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209">Get FaithLock on the App Store (iOS only)</a>
+<a href="https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209">Get FaithLock on the App Store (available on iPhone and iPad)</a>
 
 ---
 

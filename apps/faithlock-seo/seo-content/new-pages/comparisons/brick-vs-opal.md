@@ -3,88 +3,123 @@ slug: brick-vs-opal
 title: "Brick vs Opal: Which Is Better?"
 category: Comparisons
 meta_title: "Brick vs Opal (2026): Honest Side-by-Side Comparison"
-meta_description: "Brick uses a physical NFC device for unbypassable blocking. Opal uses AI analytics and Deep Focus sessions. Here's how the hardest blockers on iOS compare."
+meta_description: "Brick uses a physical NFC device and Opal uses Screen Time controls with focus sessions. Compare blocking, bypass resistance, platforms, cost model, and fit."
 ---
 
-## Quick Verdict
-- **Choose Brick if**: You've beaten every software blocker and need physically enforced blocking you literally cannot bypass
-- **Choose Opal if**: You want powerful AI analytics with strong (but software-only) blocking and social accountability features
+## Short answer
 
-## Brick in 30 Seconds
+Choose Brick if you want a physical NFC device to start or end blocking sessions and you are willing to manage hardware. Choose Opal if you want an app-first blocker with scheduled sessions, Deep Focus, usage reports, and no separate device. Neither is universally best: the right choice depends on whether physical separation or flexible software scheduling matters more.
 
-Brick pairs a physical NFC token with an iOS app. Set your blocked apps, and the only way to unlock them is to physically tap your Brick token — which you're supposed to leave somewhere inconvenient (home, car, a friend's house). No amount of app deletion, settings changes, or willpower negotiation can bypass it without the token. The starter kit costs $49.99 for the NFC device and app, with an optional subscription for premium features. iOS-only.
+## Quick verdict
 
-## Opal in 30 Seconds
+- **Choose Brick if** you want a hardware-based ritual, a one-time hardware purchase model, and the option to keep the device away from the phone during a block.
+- **Choose Opal if** you want recurring sessions, focus reports, Focus Score, and a broader app-and-device software workflow.
+- **Choose neither by default if** you need a feature that the official sources do not confirm. Compare the current store listing and help documentation before buying.
 
-Opal combines AI-powered screen time analytics with strong blocking. "Deep Focus" sessions make blocked apps virtually inaccessible. The AI analyzes your usage patterns, identifies trends, and helps you set data-driven goals. Social features include Gem sessions and team challenges. Over 1 million users. iOS-only, freemium at ~$59.99/year.
+## Brick vs Opal at a glance
 
-## Feature Comparison
+| Use case | Better fit | Why |
+|---|---|---|
+| You want a physical unlock action | Brick | A Brick device is tapped to start or end a blocking session. |
+| You want scheduled recurring sessions | Opal | Opal documents scheduled and recurring Focus Sessions. |
+| You want usage reporting and a Focus Score | Opal | Opal documents Focus Reports and Focus Score. |
+| You do not want another device to carry or manage | Opal | The workflow is app-based rather than dependent on a physical NFC device. |
+| You want a hardware purchase rather than a recurring subscription | Brick | Brick documents a one-time hardware purchase model; confirm current terms before purchase. |
+| You need Android coverage | Brick | Brick documents an Android companion app; confirm current feature parity. |
+
+## What the official sources support
 
 | Feature | Brick | Opal |
-|---------|-------|------|
-| Blocking mechanism | Physical NFC token | Software (Deep Focus) |
-| Bypass difficulty | Nearly impossible | Very hard |
-| Analytics | Usage tracking | Advanced AI-powered |
-| Physical device required | Yes — NFC token | No |
-| Social features | Limited | Gem sessions, team challenges |
-| Scheduling | Session scheduling | Scheduled sessions |
-| Setup complexity | Higher — device pairing | Standard app setup |
-| Platforms | iOS only | iOS only |
-| Upfront cost | $49.99 (device + app) | Free to start |
-| Ongoing cost | Optional subscription | ~$59.99/year |
+|---|---|---|
+| Core mechanism | Physical NFC device paired with a companion app | Apple Screen Time controls on supported devices, plus browser extension coverage |
+| Session model | Modes and sessions started or ended with the device | Focus Sessions, Deep Focus, and recurring sessions |
+| Anti-bypass options | Optional Strict Mode | Deep Focus, with optional Screen Time Passcode and App Uninstall Protection |
+| Analytics | Usage tracking | Focus Score and Focus Reports |
+| Platforms | iOS and Android companion apps | iOS, Mac, Chrome extension, and Android with a different feature set |
+| Pricing model | One-time hardware purchase; exact price is not stated here | Free tier plus paid subscription; current price varies by plan and region |
+| Separate hardware | Yes | No |
 
-## Key Differences
+The table describes documented mechanisms and options. It does not prove that either product is impossible to bypass, improves health outcomes, or will work identically on every operating system.
 
-### Hardware vs Software
-This is the fundamental difference. Brick's NFC token makes blocking physical — you can't bypass it through software tricks, settings changes, or app deletion. Opal's Deep Focus is very hard to bypass but remains a software solution. For people who've found ways around every software blocker (and those people exist), Brick closes the loopholes.
+## Brick in 30 seconds
 
-### Analytics and Intelligence
-Opal's AI-driven analytics are its competitive advantage. Usage breakdowns, pattern identification, trend analysis, personalized recommendations. Brick tracks usage but doesn't offer comparable analytical depth. If understanding your habits through data is important, Opal is significantly better.
+Brick pairs a physical NFC device with a companion app. The device is used to start or end a blocking session, and Brick offers configurable Modes such as Deep Work, Family Time, Sleep, Study, and Social Time. An optional Strict Mode is intended to resist tampering. Brick also documents pairing one device with multiple phones and a battery-free magnetic hardware design.
 
-### Commitment Model
-Brick requires a $49.99 hardware investment upfront. That physical, financial commitment changes the psychology — you've bought a device specifically to block your phone, which creates stronger follow-through than downloading yet another app. Opal starts free and escalates to subscription. Lower barrier to entry, but easier to abandon.
+The trade-off is logistics. You must buy, keep track of, and physically access the device when you want to change the session. Brick is a good fit for someone who wants distance from the phone to be part of the blocking routine. It is a poor fit if losing or carrying hardware would make the routine harder to follow.
 
-### Practical Considerations
-Brick introduces logistics: you need to remember where your token is, you need it to unlock apps, and losing it creates real problems. Opal is entirely in your phone — no extra device to manage, no logistics, no risk of losing a physical key to your apps.
+Brick's official materials describe a one-time hardware purchase and a companion app. The exact current price, feature availability, and platform parity should be checked before purchase.
 
-## Pricing
+## Opal in 30 seconds
 
-| | Brick | Opal |
-|--|-------|------|
-| Upfront | $49.99 (device + app) | Free |
-| Year 1 total | $49.99+ | ~$59.99 |
-| Year 2 total | Optional subscription | ~$59.99 |
+Opal is an app-first screen-time tool. Its documented features include Focus Sessions, scheduled and recurring sessions, Deep Focus, Focus Score, Focus Reports, Screen Time Passcode, App Uninstall Protection, and a community leaderboard with friend invitations. Opal also offers a free tier with limited features and paid plans for the fuller feature set.
 
-## Which Should You Choose?
+The trade-off is that Opal remains software running within platform limits. Opal's own help documentation explains that stronger settings such as a Screen Time Passcode and App Uninstall Protection affect how difficult it is to disable or remove the app. Confirm the current plan and supported features for your device before subscribing.
 
-**You've bypassed every software blocker**: Brick. The physical token closes software workarounds.
+## Key differences
 
-**You want analytics and data about your habits**: Opal. Its AI insights are the best in the market.
+### Hardware separation vs software scheduling
 
-**You want the absolute maximum blocking strength**: Brick. Hardware > software for enforcement.
+Brick makes physical access part of the routine: the NFC device is used to start or end a session. Opal keeps the workflow in software and emphasizes scheduled, recurring, and timed focus sessions. Pick Brick when putting distance between yourself and the unlock device is useful. Pick Opal when scheduling and changing sessions in one app is more important.
 
-**You don't want to manage a physical device**: Opal. Everything stays in your phone.
+### Blocking and bypass resistance
 
-**You respond to social accountability**: Opal. Gem sessions and team challenges provide peer motivation.
+Both products document stronger modes intended to make distraction harder to access. Brick offers Strict Mode and a physical NFC device. Opal offers Deep Focus, plus optional settings intended to prevent changes or removal. These features do not justify an absolute claim that either product is unbypassable. Platform settings, permissions, device configuration, and current product behavior matter.
 
-**You want a simple, one-time purchase**: Brick's $49.99 may be cheaper than Opal's recurring subscription long-term.
+### Analytics
 
-## Frequently Asked Questions
+Opal documents Focus Score and Focus Reports. Brick documents usage tracking, but the available source set does not establish comparable habit analytics. If measurement and trend reporting are central to your decision, Opal is the clearer fit from the documented feature set.
 
-**What happens if I lose my Brick token?**
-Brick offers replacement tokens and emergency unlock procedures. But this is a genuine consideration — having your apps locked with no token access creates real friction that's part of the design but can be inconvenient.
+### Cost model
 
-**Is Opal's Deep Focus really that hard to bypass?**
-Very hard for most users. Dedicated tech-savvy users have found occasional workarounds, but Opal patches them. For 95%+ of users, Deep Focus is effectively unbypassable during a session.
+Brick uses a one-time hardware purchase model, with the current exact price not stated in this page. Opal has a free tier and paid subscription plans. Compare the current official pricing and included features at the time of purchase; do not treat an old price as a current offer.
 
-**Can I share my Brick token with someone to hold?**
-Yes, and many users do exactly this. Giving your token to a spouse, roommate, or friend adds a social accountability layer — you have to ask someone else for permission to unlock your apps.
+### Device coverage
 
-**Which is better for families?**
-Neither is designed as a parental control tool. Brick's physical token could work for a parent managing a teen's phone (parent holds the token), but dedicated parental controls like Bark or Apple Family Sharing are better designed for this use case.
+Brick documents iOS and Android companion apps. Opal documents iOS, Mac, Chrome extension, and Android, while noting a different feature set on Android. Check the exact device support you need before choosing a product.
 
-**Are there faith-based alternatives with strong blocking?**
-FaithLock offers strong app blocking with Bible verse engagement. Bible Mode requires physical Bible scanning. Neither matches Brick's hardware-level enforcement, but both add a spiritual dimension to the blocking experience.
+## Which should you choose?
+
+**Choose Brick** if physical separation is the point of the intervention, you want a device-based start/end action, and you accept the responsibility of keeping the hardware available.
+
+**Choose Opal** if you want recurring schedules, Focus Reports, Focus Score, or an app-first workflow without a separate device.
+
+**Compare current terms first** if price, Android feature parity, strict-mode behavior, or support for a specific device is decisive. Those details can change and are not all equivalent across platforms.
+
+**Consider FaithLock** if you want a faith-based alternative that keeps the comparison grounded in the official App Store listing and adds Scripture engagement to the unlock experience. Download the official FaithLock app: https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209
+
+## Frequently asked questions
+
+**Is Brick harder to bypass than Opal?**
+
+They use different mechanisms. Brick adds a physical NFC device and an optional Strict Mode. Opal offers Deep Focus and optional Screen Time Passcode and App Uninstall Protection. The official sources support comparing those mechanisms, not declaring either product impossible to bypass in every configuration.
+
+**Does Brick require a subscription?**
+
+Brick documents a one-time hardware purchase model and a companion app. Check Brick's current official terms for the device and any optional features before buying.
+
+**Does Opal have a free version?**
+
+Opal documents a free tier with limited features and paid plans for the fuller feature set. Current pricing and plan limits should be checked in the official listing or pricing page.
+
+**Which app has better analytics?**
+
+Opal is the clearer choice based on its documented Focus Score and Focus Reports. Brick documents usage tracking, but this comparison does not establish equivalent reporting depth.
+
+**Which is better for Android?**
+
+Brick documents an Android companion app. Opal also documents Android, but with a different feature set from its iOS experience. Check the current Android listings for the exact features you need.
+
+**Is there a faith-based alternative to Brick and Opal?**
+
+FaithLock is a faith-based iOS app listed on the App Store. Its official listing is the source for the product details and the download link above; this page does not claim that it offers Brick's hardware or Opal's analytics.
 
 ---
-*Sources: Brick on App Store, getbrick.app, Opal on App Store*
+
+Sources checked for this comparison:
+
+- Brick: https://getbrick.com/
+- Brick App Store listing and reviews: https://apps.apple.com/us/app/brick-ditch-distractions/id6448794069
+- Opal: https://opalapp.com/screentime
+- Opal help center: https://opalapp.com/help/how-can-i-make-opal-foolproof
+- Opal App Store listing: https://apps.apple.com/us/app/opal-screen-time-control/id1497465230
+- FaithLock App Store listing: https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209

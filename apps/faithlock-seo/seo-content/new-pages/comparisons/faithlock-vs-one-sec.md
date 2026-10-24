@@ -15,7 +15,7 @@ Neither approach proves an installation, subscription, or revenue outcome. They 
 
 ## FaithLock in 30 Seconds
 
-FaithLock is an iOS app that uses Apple's Family Controls (Screen Time) API to shield distracting apps. When you try to open a blocked app, the unlock flow shows a Bible verse and asks a quiz question about it. FaithLock also supports scheduled lock times and prayer reminders. It requires iOS 13.0 or later and offers a 3-day free trial; current subscription amounts are not stated here because the App Store listing does not provide a stable period for every displayed amount.
+FaithLock is an iOS app that uses Apple's Family Controls (Screen Time) API to shield distracting apps. When you try to open a blocked app, the unlock flow shows a Bible verse and asks a quiz question about it. FaithLock also supports scheduled lock times and prayer reminders. It requires iOS 13.0 or later and offers a trial terms are not stated in the verified sources; current subscription amounts are not stated here because the App Store listing does not provide a stable period for every displayed amount.
 
 ## one sec in 30 Seconds
 
@@ -46,7 +46,7 @@ FaithLock's documented unlock flow is a challenge attached to an Apple Screen Ti
 
 ### Platform coverage
 
-FaithLock is iOS-only. one sec's official site documents iOS and Android apps plus a browser extension for desktop browsers. This is a platform comparison, not a claim that every feature is identical across devices.
+FaithLock is available on iPhone and iPad. one sec's official site documents iOS and Android apps plus a browser extension for desktop browsers. This is a platform comparison, not a claim that every feature is identical across devices.
 
 ### Research claim and limits
 

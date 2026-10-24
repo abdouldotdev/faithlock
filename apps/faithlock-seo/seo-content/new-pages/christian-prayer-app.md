@@ -113,7 +113,7 @@ FaithLock blocks distracting apps on iPhone using Apple's Family Controls (Scree
 | Detail | Info |
 |--------|------|
 | Rating | New app, still building reviews |
-| Price | Premium $4.99/week or $24.99/year |
+| Price | Premium pricing not stated in the verified sources or pricing not stated in the verified sources |
 | Platforms | iOS |
 | Standout feature | Bible verse quiz unlock plus guided audio prayer and journaling |
 
@@ -129,7 +129,7 @@ FaithLock blocks distracting apps on iPhone using Apple's Family Controls (Scree
 | Echo Prayer | iOS, macOS, Android | Free; from ~$2.99/mo | Prayer list, tags, sharing | Organizing prayer requests |
 | PrayerMate | iOS, Android | Free, donation-run | Live feeds from partner ministries | No-cost, non-commercial |
 | Abide | iOS, Android | Free trial; $9.99/mo or $39.99/yr | Prayers tied to Bible passages | Scripture-anchored prayer |
-| FaithLock | iOS | Premium $4.99/wk or $24.99/yr | Bible quiz unlock, audio prayer, journal | App-blocking tied to prayer |
+| FaithLock | iOS | Premium pricing not stated in the verified sources or pricing not stated in the verified sources | Bible verse and prayer unlock, audio prayer, journal | App-blocking tied to prayer |
 
 ---
 
@@ -157,7 +157,7 @@ Yes, and several apps on this list combine both. FaithLock blocks distracting ap
 Echo Prayer supports sharing prayer requests with a group, replacing an old-school prayer chain. PrayerMate pulls in live content from partner churches and charities automatically.
 
 **Are these apps free to download?**
-Hallow, Echo Prayer, PrayerMate, and Abide are free to download, with Hallow, Echo Prayer, and Abide reserving parts of their experience behind a paid tier and PrayerMate staying free throughout, funded by donations. FaithLock's Premium tier is $4.99/week or $24.99/year.
+Hallow, Echo Prayer, PrayerMate, and Abide are free to download, with Hallow, Echo Prayer, and Abide reserving parts of their experience behind a paid tier and PrayerMate staying free throughout, funded by donations. FaithLock's Premium tier is pricing not stated in the verified sources or pricing not stated in the verified sources.
 
 ---
 

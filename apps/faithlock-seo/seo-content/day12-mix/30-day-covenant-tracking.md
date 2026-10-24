@@ -1,8 +1,8 @@
 ---
 slug: 30-day-covenant-tracking
-title: 30-Day Covenant Tracking | FaithLock
-meta_title: 30-Day Covenant: Build Lasting Digital Discipline | FaithLock
-meta_description: Make a 30-day covenant with God to break phone addiction. FaithLock tracks your progress, celebrates milestones, and helps you build lasting spiritual habits.
+title: faith-based commitment | FaithLock
+meta_title: faith-based commitment: Build Lasting Digital Discipline | FaithLock
+meta_description: Make a faith-based commitment with God to break phone addiction. FaithLock tracks your progress, celebrates milestones, and helps you build lasting spiritual habits.
 category: solutions
 ---
 
@@ -14,19 +14,19 @@ You've tried before. Maybe last January, or last week. You put your phone down w
 
 Here's the difference: **a 30-day covenant is not a resolution.** It's not willpower white-knuckling through another failed attempt. A covenant is a sacred commitment—a binding agreement between you and God. It transforms your digital discipline from a personal struggle into a spiritual journey.
 
-FaithLock's **30-day covenant tracking** feature turns that commitment into reality. Instead of relying on motivation that fades by Friday, you're building a covenant with accountability, visible progress, and the spiritual foundation that actually lasts. This is how real change happens.
+FaithLock's **faith-based commitment** feature turns that commitment into reality. Instead of relying on motivation that fades by Friday, you're building a covenant with accountability, visible progress, and the spiritual foundation that actually lasts. This is how real change happens.
 
 ---
 
 ## How 30-Day Covenant Tracking Works
 
-Making a **30-day covenant** with FaithLock is straightforward, but profoundly meaningful.
+Making a **faith-based commitment** with FaithLock is straightforward, but profoundly meaningful.
 
 **Step 1: Make Your Commitment**
 Start by declaring your covenant. Choose the apps you're committing to block (Instagram, TikTok, YouTube, or others), and set your commitment level. When you attempt to access a blocked app, you'll read a Bible verse for approximately 30 seconds before the app unlocks. This isn't punishment—it's a moment of pause, reflection, and spiritual centering.
 
 **Step 2: Track Daily Progress**
-Every day you honor your covenant, FaithLock records it. Your **30-day covenant tracking** dashboard displays your progress visually, showing exactly how many days you've maintained your commitment. The streak counter builds momentum, turning abstract discipline into concrete achievement.
+Every day you honor your covenant, FaithLock records it. Your **faith-based commitment** dashboard displays your progress visually, showing exactly how many days you've maintained your commitment. The streak counter builds momentum, turning abstract discipline into concrete achievement.
 
 **Step 3: Celebrate Milestone Moments**
 Accountability moments arrive at critical junctures: Day 7, Day 14, Day 21, and Day 30. Each milestone triggers a celebration in the app, reminding you of the spiritual significance of your journey. These moments matter—they're not just notifications, they're declarations of victory.
@@ -44,7 +44,7 @@ When you frame **30-day covenant tracking** as a spiritual commitment rather tha
 
 ### Habit Science Meets Spiritual Practice
 
-Behavioral psychologists confirm it: 30 days is the threshold where new neural pathways begin forming and old habits start releasing their grip. FaithLock's **30-day covenant** aligns perfectly with how human brains actually change. By day 21, your brain is rewiring itself. By day 30, the reduced phone habit isn't white-knuckled resistance anymore—it's becoming your new normal. The spiritual dimension accelerates this transformation.
+Behavioral psychologists confirm it: 30 days is the threshold where new neural pathways begin forming and old habits start releasing their grip. FaithLock's **faith-based commitment** aligns perfectly with how human brains actually change. By day 21, your brain is rewiring itself. By day 30, the reduced phone habit isn't white-knuckled resistance anymore—it's becoming your new normal. The spiritual dimension accelerates this transformation.
 
 ### Community Accountability
 
@@ -52,7 +52,7 @@ You're not alone in your covenant. Many FaithLock users are making the same comm
 
 ### Sacred Commitment Versus Casual Trying
 
-Here's the psychological truth: when something is casual, failure is easy. Resolutions fail because they're casual. But when you make a **30-day covenant** before God, the weight changes. You've declared something sacred. That framework—treating your digital discipline as a covenant commitment rather than a New Year's whim—is why FaithLock users actually succeed where they've failed before.
+Here's the psychological truth: when something is casual, failure is easy. Resolutions fail because they're casual. But when you make a **faith-based commitment** before God, the weight changes. You've declared something sacred. That framework—treating your digital discipline as a covenant commitment rather than a New Year's whim—is why FaithLock users actually succeed where they've failed before.
 
 ---
 
@@ -83,7 +83,7 @@ God made a covenant with **Noah** after the flood: "I do set my bow in the cloud
 
 These weren't casual commitments. They were binding, transformative agreements that invited God into every aspect of life.
 
-When you make a **30-day covenant** through FaithLock, you're activating that same biblical principle. You're saying: "God, I'm inviting You into my digital discipline. This isn't just about me reducing screen time—it's about us rebuilding my relationship with presence, purpose, and You."
+When you make a **faith-based commitment** through FaithLock, you're activating that same biblical principle. You're saying: "God, I'm inviting You into my digital discipline. This isn't just about me reducing screen time—it's about us rebuilding my relationship with presence, purpose, and You."
 
 The psalmist captured this perfectly: "Those who made a covenant with me by sacrifice" (Psalm 50:5, NIV). Your covenant has a sacrifice: time, convenience, the comfort of constant scrolling. But in that sacrifice, you meet God.
 
@@ -111,4 +111,4 @@ Your first 30-day covenant could change the next 30 years of your life.
 
 ---
 
-*FaithLock helps you build lasting digital discipline through covenant commitment. Start your 30-day covenant today.*
+*FaithLock helps you build lasting digital discipline through covenant commitment. Start your faith-based commitment today.*

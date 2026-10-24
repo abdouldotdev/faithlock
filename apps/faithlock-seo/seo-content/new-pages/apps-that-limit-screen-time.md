@@ -216,7 +216,7 @@ Flora, from AppFinca, works on the same honesty principle as Forest. A session g
 | Clearspace | $6.99/mo, $44.99/yr | Per-app time budgets | Pause screen or push-ups | Yes, you can raise your own budget |
 | one sec | Free for one app; up to $149 | Per app-open friction | Breathing prompt, then a question | Yes, described as a speed bump |
 | Jomo | $5.99/mo, $29.99/yr, $99.99 lifetime | Usage limit or schedule | Hard block | Not while Strict Mode runs |
-| FaithLock | Subscription with a 3-day free trial | Scheduled lock windows | Bible verse plus a quiz question | Only by answering correctly |
+| FaithLock | Subscription with a trial terms are not stated in the verified sources | Scheduled lock windows | Bible verse plus a quiz question | Only by answering correctly |
 | Forest | Free with IAP $0.99 to $35.99 | Self-set session | A virtual tree dies | Yes, entirely honesty-based |
 | Flora | Free with IAP from $0.99 | Self-set session, optionally shared | A shared tree dies | Yes, entirely honesty-based |
 
