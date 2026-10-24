@@ -5,6 +5,9 @@ import { GlossaryTerm } from '@/lib/types'
 import { SITE_URL } from '@/lib/constants'
 import GlossaryTemplate from '@/components/templates/GlossaryTemplate'
 import SchemaMarkup from '@/components/seo/SchemaMarkup'
+import { headers } from 'next/headers'
+
+const SUPPRESS_CTA_HEADER = 'x-faithlock-suppress-global-store-ctas'
 
 export async function generateStaticParams() {
   const terms = await getAllGlossaryTerms()
@@ -59,6 +62,7 @@ export default async function LearnSlugPage({
   }
 
   const fields = entry.fields as unknown as GlossaryTerm
+  const suppressStoreCta = headers().get(SUPPRESS_CTA_HEADER) === '1'
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -97,7 +101,7 @@ export default async function LearnSlugPage({
   return (
     <>
       <SchemaMarkup data={schemas} />
-      <GlossaryTemplate term={fields} updatedAt={entry.sys.updatedAt} />
+      <GlossaryTemplate term={fields} updatedAt={entry.sys.updatedAt} suppressStoreCta={suppressStoreCta} />
     </>
   )
 }

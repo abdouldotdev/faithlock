@@ -12,6 +12,7 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 interface GlossaryTemplateProps {
   term: GlossaryTerm
   updatedAt: string
+  suppressStoreCta?: boolean
 }
 
 // Categories that use "What is X?" format (glossary definitions)
@@ -36,7 +37,7 @@ function formatDate(dateString: string): string {
   return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
 }
 
-export default function GlossaryTemplate({ term, updatedAt }: GlossaryTemplateProps) {
+export default function GlossaryTemplate({ term, updatedAt, suppressStoreCta = false }: GlossaryTemplateProps) {
   const wordCount = estimateWordCount(term)
   const isDefinition = isDefinitionPage(term.category)
   const hasChristianPerspective = term.christianPerspective && stripMarkdown(term.christianPerspective).trim().length > 10
@@ -192,10 +193,10 @@ export default function GlossaryTemplate({ term, updatedAt }: GlossaryTemplatePr
         )}
 
         {/* Subtle product mention */}
-        <SubtleCallout />
+        <SubtleCallout suppressStoreCta={suppressStoreCta} />
 
         {/* CTA */}
-        <section className="bg-cozy-primary text-white border-[2.5px] border-cozy-ink rounded-cozy-lg shadow-cozy-hard-lg p-10 md:p-16 text-center mb-16">
+        {!suppressStoreCta && <section className="bg-cozy-primary text-white border-[2.5px] border-cozy-ink rounded-cozy-lg shadow-cozy-hard-lg p-10 md:p-16 text-center mb-16">
           <h2 className="text-2xl md:text-4xl font-bold mb-4 text-balance">
             Start building a daily Scripture habit
           </h2>
@@ -210,7 +211,7 @@ export default function GlossaryTemplate({ term, updatedAt }: GlossaryTemplatePr
             showAppleIcon
             trackingLocation="glossary_cta"
           />
-        </section>
+        </section>}
 
         {/* Related */}
         {hasRelated && (
