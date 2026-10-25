@@ -8,29 +8,33 @@ meta_description: "Compare Apple's Screen Time schedules and time allowances wit
 
 ## How can I block Minecraft on an iPhone?
 
-There are two verified approaches. Use Apple Screen Time when you want an iPhone-native schedule or a daily time allowance for a child’s device. Use FaithLock when you want a faith-based pause before access to selected distracting apps. The sources below do not establish that either approach guarantees an irreversible Minecraft block, prevents every workaround, provides monitoring, or delivers a particular outcome.[1][2][3]
+There are several verified approaches. Use Apple Screen Time’s Apps & Websites controls when you want to manually block a specific app, or use a schedule or daily time allowance for a child’s device. Use FaithLock when you want a faith-based pause before access to selected distracting apps. The sources below do not establish that either method guarantees an irreversible Minecraft block, prevents every workaround, or delivers a particular outcome. Apple’s cited parental-control guide describes Family Sharing administration; FaithLock’s cited product sources do not establish monitoring or remote parental administration.[1][2][3]
 
 ## Choose by goal
 
 | Goal | Method | What the primary source verifies | Practical limit |
 |---|---|---|---|
 | Set a recurring access window on a child’s iPhone | Apple Screen Time Schedules | Apple says schedules can choose which apps a child can access at different times, including separate weekday and weekend routines.[1] | Apple also describes pausing device use, making use unlimited, or changing the setting for the day. Describe a configured schedule, not an irreversible lock.[1] |
+| Block a specific app on a child’s iPhone | Apple Screen Time Apps & Websites | Apple says the Apps & Websites section lets a parent or guardian manually allow or block specific apps and websites, with a Block App action.[1] | Apple says a blocked app is dimmed rather than deleted and can be unblocked later. Describe a configured control, not an irreversible lock.[1] |
 | Set a daily boundary for games | Apple Screen Time Time Allowances | Apple says Time Allowances can set daily boundaries across categories such as games, entertainment, and social media, with category-level adjustment.[1] | The cited source does not verify a Minecraft-specific hard block, bypass resistance, or a guaranteed result.[1] |
 | Add a Scripture pause before selected distractions | FaithLock app blocking and prayer lock | FaithLock’s public Features page says users can choose distractions including games and unlock access after reading a Bible verse. The official App Store listing describes blocking distracting apps and unlocking them with Bible verses.[2][3] | The verified sources do not establish Minecraft-specific support, parental-control administration, monitoring, impossible bypass, or guaranteed blocking. |
 
-## Apple Screen Time: schedules and time allowances
+## Apple Screen Time: direct app blocks, schedules, and time allowances
 
-Apple’s current support guidance is the clearest starting point when the goal is a device-native boundary. Screen Time Schedules are intended for deciding when a child can use selected apps and can be organized around different routines, such as weekdays and weekends.[1]
+Apple’s current support guidance includes a direct Apps & Websites control for a parent or guardian who wants to manually allow or block a specific app. Apple says a blocked app is dimmed rather than deleted and can be unblocked later.[1] This is the closest match when the goal is to block Minecraft as a specific app, subject to the device and Family Sharing setup described by Apple.
 
-Time Allowances address a different goal. They set a daily budget across categories such as Games, Entertainment, and Social Media, and Apple describes the ability to fine-tune those categories.[1] This can be a useful way to set a daily boundary around gaming without claiming that the source provides a Minecraft-only, permanent lock.
+Schedules address a different goal. They are intended for deciding when a child can use selected apps and can be organized around different routines, such as weekdays and weekends.[1]
 
-The important distinction is schedule versus allowance:
+Time Allowances address another goal. They set a daily budget across categories such as Games, Entertainment, and Social Media, and Apple describes the ability to fine-tune those categories.[1] This can be a useful way to set a daily boundary around gaming without claiming that the source provides a Minecraft-only, permanent lock.
 
+The important distinction is direct app block versus schedule versus allowance:
+
+- Choose Apps & Websites when the goal is to block a specific app such as Minecraft.
 - Choose a schedule when access should be limited to defined times.
-- Choose a time allowance when the goal is a daily budget for games or another category.
+- Choose a Time Allowance when the goal is a daily budget for games or another category.
 - Check the current options on the iPhone because Apple can change labels and controls across software versions.
 
-Apple’s same guidance explains that Screen Time use can be paused, made unlimited, or changed for the day.[1] That is why this page does not describe Screen Time as bypass-proof or promise that Minecraft will always remain inaccessible.
+Apple’s same guidance explains that blocked apps can be unblocked later and that some Screen Time controls can be changed or paused.[1] That is why this page does not describe Screen Time as bypass-proof or promise that Minecraft will always remain inaccessible.
 
 For Apple’s current details, see [Apple Support’s iPhone parental controls guide](https://support.apple.com/en-us/105121).
 
@@ -46,15 +50,15 @@ If you want context about the product before deciding, start with the [FaithLock
 
 ## What these sources leave unknown
 
-The reviewed sources do not answer every Minecraft-specific question. They do not establish whether every iPhone configuration exposes Minecraft in the same way, whether a user can remove or override a configured limit, whether a parent can administer the setting remotely, whether either method monitors activity, or whether either method is impossible to bypass.[1][2][3]
+The reviewed sources do not answer every Minecraft-specific question. They do not establish whether every iPhone configuration exposes Minecraft in the same way, whether a user can remove or override a configured limit, or whether either method is impossible to bypass.[1][2][3] For FaithLock specifically, the reviewed product sources do not establish remote parental administration or activity monitoring; Apple’s cited guide separately describes Family Sharing parental controls.[1]
 
-Those are meaningful limits, not details to fill in with stronger marketing language. A schedule or allowance is a configured Screen Time control. FaithLock is a selected-app Scripture pause described by its public product sources. Neither description is evidence of monitoring, parental-control administration, bypass-proof behavior, or a guaranteed outcome.
+Those are meaningful limits, not details to fill in with stronger marketing language. A direct app block, schedule, or allowance is a configured Screen Time control. FaithLock is a selected-app Scripture pause described by its public product sources. The FaithLock description is not evidence of monitoring, parental-control administration, bypass-proof behavior, or a guaranteed outcome.
 
 ## Frequently asked questions
 
 **Can Apple Screen Time block Minecraft on an iPhone?**
 
-Apple verifies Screen Time schedules for deciding which apps a child can access at different times and Time Allowances for daily category boundaries including games.[1] The cited page does not establish a permanent, Minecraft-specific block or a guaranteed result.
+Apple’s guide says the Apps & Websites section can manually allow or block specific apps, so it is the closest cited control for a Minecraft-specific block. The same guide also describes Screen Time schedules for deciding when a child can use selected apps and Time Allowances for daily category boundaries including games.[1] It does not establish an irreversible, bypass-proof, or guaranteed result.
 
 **Should I use a Screen Time schedule or a Time Allowance?**
 
@@ -78,6 +82,6 @@ The official listing cited here is “Faith Lock: Bible Prayer Focus,” App Sto
 
 [2] [FaithLock Features](https://www.getfaithlock.com/features), including selected distractions, games, and Scripture before access.
 
-[3] Official FaithLock App Store listing for App ID `6754208209`, linked in the single CTA above.
+[3] [Official FaithLock App Store listing for App ID `6754208209`](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209), from Appbiz Studio, LLC.
 
 ROI NON CALCULABLE: this draft does not establish attributable payers, attributable recorded revenue, reliable cost, or causal lift.
