@@ -76,7 +76,7 @@ A Discord detox doesn't require deleting your account. Set your status to "Do No
 
 **Redeemed Zoomer's server** -- A large Christian community popular with younger believers that discusses theology, church history, and faith questions. Active moderation maintains a respectful environment.
 
-**[@Jesus](https://discord.gg/jesus)** -- An online Christian community of more than 77,000 members. Channels for prayer requests and Bible study, plus weekly Sunday events for fellowship.
+**@Jesus** -- An online Christian community of more than 77,000 members. Channels for prayer requests and Bible study, plus weekly Sunday events for fellowship.
 
 **Gospel Gamers** -- For Christians who enjoy gaming, this server combines gaming community with faith discussion. Separate channels keep conversations organized by topic.
 
