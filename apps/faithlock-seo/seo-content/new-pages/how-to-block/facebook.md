@@ -3,80 +3,59 @@ slug: how-to-block-facebook
 title: How to Block Facebook on iPhone
 category: Guides
 meta_title: "How to Block Facebook on iPhone (3 Methods That Work)"
-meta_description: "Step-by-step guide to blocking Facebook on iPhone with Screen Time, faith-based blockers, and a practical delete-and-replace strategy."
+meta_description: "Compare Apple Screen Time and selected-app friction, then choose a practical way to pause Facebook on iPhone."
 ---
 
-## 3 Ways to Block Facebook
+## How can I block Facebook on iPhone?
 
-Facebook is the social media platform people love to say they've quit — and then quietly check three times a day. It's harder to leave than other platforms because it has woven itself into practical life: church groups, marketplace, event invitations, family communication. Here's how to block it anyway.
+Start with Apple Screen Time if you want a built-in app limit: open **Settings → Screen Time → App Limits**, add Facebook, and choose a daily limit. If you often dismiss a limit, add a deliberate pause before reopening Facebook rather than expecting any setting to remove every temptation. FaithLock is another possible fit when you want selected distracting apps blocked and a short Scripture step before continuing. Choose the interruption you will actually use; neither tool promises a result without your participation.
 
-### Method 1: iOS Screen Time (Built-in)
+## Choose the approach that fits
 
-1. Open **Settings** on your iPhone
-2. Tap **Screen Time** → **App Limits** → **Add Limit**
-3. Expand the **Social** category and select **Facebook**
-4. Set your daily time limit
-5. Tap **Add** and enable **Block at End of Limit**
+### Apple Screen Time: a built-in limit
 
-**Block the full Meta suite**: While you're here, consider adding Facebook Messenger, Instagram, and Threads to the same limit. Meta designed these apps to keep you bouncing between them. Blocking one while leaving the others open is like locking the front door but leaving the windows open.
+Apple Screen Time is part of iPhone and lets you set time limits for apps and categories. To create one:
 
-**For a hard block**: Go to Screen Time → Content & Privacy Restrictions → Allowed Apps and toggle Facebook off. This completely hides the app.
+1. Open **Settings** and tap **Screen Time**.
+2. Tap **App Limits**, then **Add Limit**.
+3. Select **Facebook** under **Social**.
+4. Choose the amount of time and tap **Add**.
 
-### Method 2: Faith-Based App Blocker
+This is the native iPhone route for a time-based limit. Treat the limit as a boundary to support a decision, not as proof that a setting cannot be changed.
 
-Facebook's pull is often emotional — you open it when you're lonely, bored, or procrastinating. A faith-based blocker meets that emotional impulse with something meaningful. Instead of the news feed (which is designed to provoke emotional reactions), you encounter a verse or prayer.
+### FaithLock: selected-app friction with a Scripture step
 
-Apps like FaithLock, Bible Mode, or Sanctum are especially useful for Facebook because of the outrage cycle. Facebook's algorithm prioritizes content that generates strong emotional reactions — anger and fear perform best. A Bible verse at the moment you'd normally see a political argument can literally redirect your emotional state.
+FaithLock is distinct from Apple Screen Time. It can be considered when you want selected apps to be blocked and a short Scripture-reading step before continuing. It is a general selected-app friction option, not a Facebook feature; the page does not establish any Facebook-specific behavior. Use it only if that pause matches the habit you want to build.
 
-### Method 3: Delete and Replace
+[Try FaithLock on iPhone](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209)
 
-Facebook is the platform where people have the most excuses not to delete: "But my church group..." "But Marketplace..." "But family photos..."
+## Make the boundary easier to keep
 
-Handle each excuse individually:
+- Decide in advance why you are pausing Facebook and what you will do instead.
+- Remove Facebook from your Home Screen if you want fewer visual prompts.
+- Turn off notifications that pull you back into the app.
+- Use a specific check-in window for essential groups or messages instead of opening the feed repeatedly.
+- Review the limit or selected-app list after a few days and adjust it to the boundary you can consistently follow.
 
-- **Church groups**: Ask your church if they have a GroupMe, email list, or church management app like Planning Center or Church Center
-- **Marketplace**: Use Craigslist, OfferUp, or Nextdoor instead
-- **Events**: Ask friends to text you event details or use Evite
-- **Family photos**: Ask family members to share through iCloud Shared Albums or Google Photos
-- **Messenger**: Download Messenger separately — it works without the Facebook app
+## Frequently asked questions
 
-**What to replace it with**: Facebook fills the "I wonder what's happening" urge. Replace it with a group text thread for close friends, a neighborhood app like Nextdoor for local updates, and an email newsletter subscription for news you actually care about.
+### Is Apple Screen Time the same as FaithLock?
 
-## Why Facebook Is Hard to Quit
+No. Apple Screen Time is an iPhone system feature for app limits and device-use controls. FaithLock is a separate selected-app friction option that can place a Scripture step before continuing. They should be described by those different mechanisms, not as interchangeable products.
 
-**The social graph lock-in.** Facebook has had 20 years to accumulate your connections. Your high school friends, college roommates, coworkers from three jobs ago, distant cousins — they're all there. No other platform has this breadth of connection. Leaving feels like disconnecting from people, even though you haven't meaningfully interacted with most of them in years.
+### Does a limit guarantee that I will not open Facebook?
 
-**The outrage algorithm.** Internal Facebook documents [leaked in 2021](https://www.wsj.com/articles/the-facebook-files-11631713039) confirmed what many suspected: the algorithm amplifies content that generates angry reactions because anger drives engagement. You don't open Facebook to be angry, but you leave angry — and you come back because your brain has been conditioned to expect emotional stimulation.
+No. A limit is a tool that supports an intentional choice. The useful setup is the one whose pause you understand and are willing to keep using.
 
-**Practical utility as a trap.** Facebook strategically embedded itself into daily life: event planning, local marketplace, groups for every interest. This makes it feel indispensable. But each utility is a hook keeping you connected to the news feed, which is where the real engagement (and revenue) happens. You came for the church group; you stayed for the doomscrolling.
+### Can I block more than Facebook?
 
-## Facebook-Specific Tips
+Screen Time can apply limits to other apps or categories. FaithLock can be considered for selected distracting apps. Select only the apps that match your intended boundary and review the result rather than assuming a broader list is better.
 
-**Unfollow everyone but keep them as friends.** You can unfollow someone without unfriending them. This empties your news feed without the social awkwardness of unfriending people. Go to a person's profile → Following → Unfollow. Do this for everyone, and your feed becomes blank. You keep the connections without the noise.
+### What should I do if I need Facebook for a group or event?
 
-**Use Facebook's Quiet Mode.** Settings & Privacy → Settings → Notifications → Quiet Mode. This silences all Facebook notifications for a scheduled period. Set it for 6pm-8am to protect your evenings and mornings.
+Keep the purpose specific: check the needed information during a planned window, then return to the boundary you chose. You can also ask the group organizer about another way to receive essential updates.
 
-**Delete the app and use the mobile website instead.** Facebook's mobile website (m.facebook.com) is intentionally less polished than the app. No push notifications, slower loading, clunkier interface. This friction makes casual browsing less appealing while preserving your ability to check groups or Marketplace when you intentionally want to.
+## Sources
 
-**Leave groups that don't serve you.** Audit your Facebook groups. For each one, ask: "Would I seek this out if I wasn't already in it?" Leave every group that doesn't clear that bar. Most people are in 20+ groups and actively engage with 2 or 3.
-
-## Frequently Asked Questions
-
-**Can I keep Messenger without having Facebook?**
-Yes. Facebook Messenger works as a standalone app. You can delete the Facebook app and keep Messenger for one-on-one conversations and group chats. Your Messenger contacts and conversations won't be affected.
-
-**Will I lose my photos and memories if I delete my Facebook account?**
-Deleting the app doesn't affect your account. If you want to permanently delete your account, [download your data first](https://www.facebook.com/help/212802592074644) (Settings → Your Facebook Information → Download Your Information). Facebook gives you a 30-day window to change your mind before permanent deletion.
-
-**My church only communicates through Facebook Groups. What do I do?**
-Talk to your church leadership about adding a second communication channel — email, GroupMe, or a church app. Many churches don't realize Facebook is a barrier for some members. In the meantime, you can use the mobile website to check the group once or twice a week without having the app on your phone.
-
-**Is Facebook more addictive for older adults?**
-Usage patterns differ by age. Younger users tend toward Instagram and TikTok, while Facebook remains the primary social platform for adults 35+. [Pew Research](https://www.pewresearch.org/internet/2024/01/31/americans-social-media-use/) found that 70% of adults 50-64 use Facebook. For this demographic, Facebook is often the only social media platform, which concentrates all social media risks into one app.
-
-**Does blocking Facebook affect Facebook Login on other apps?**
-No. If you use "Login with Facebook" on other apps, those logins continue to work even if the Facebook app is blocked or deleted. The login authentication happens through a web browser redirect, not through the Facebook app itself.
-
----
-
-*Sources: [Facebook Help Center](https://www.facebook.com/help/), Facebook on the App Store, [Pew Research — Social Media Use 2024](https://www.pewresearch.org/internet/2024/01/31/americans-social-media-use/)*
+- [Apple Support: Use Screen Time on your iPhone and iPad](https://support.apple.com/en-us/108806)
+- The FaithLock App Store listing is linked in the CTA above.
