@@ -2,149 +2,67 @@
 slug: how-to-block-adult-content-on-iphone
 title: How to Block Adult Content on iPhone
 category: Guides
-meta_title: "How to Block Adult Content on iPhone (Verified 2026 Steps)"
-meta_description: "Apple's current menu path, checked against Apple's own documentation, plus the free DNS layer that covers apps and the one step that decides whether any of it lasts."
+meta_title: "How to Block Adult Content on iPhone (Apple's Current Steps)"
+meta_description: "Start with Apple's documented Screen Time controls, then see where a focus app such as FaithLock fits—and where it does not."
 ---
 
-## Quick Answer
+## Quick answer
 
-To block adult content on iPhone, open Settings, scroll down and tap Screen Time, tap Content & Privacy Restrictions, enter your Screen Time passcode if asked, tap **App Store, Media, Web, & Games**, then tap **Web Content**, and choose **Limit Adult Websites**. This filters web content system wide and is free. Have someone else set the passcode, or you can undo it in seconds.
+For a child's iPhone managed through Family Sharing, Apple documents Screen Time controls for approving or blocking apps and websites and for filtering web content. Open Settings, tap Family, select the child's name, then use Apps & Websites and Restrictions to choose the relevant app, website, or website-filtering option. Apple describes Limit Adult Websites and Approved Websites as web-filtering choices; the exact menu availability depends on the device, account, software version, and region. See [Apple's current instructions](https://support.apple.com/en-us/105121) for the path that matches your setup.
 
----
+If you are managing your own iPhone, check the Screen Time and Content & Privacy Restrictions menus on that device and follow Apple's current labels. Do not treat a third-party focus app as an adult-content filter unless its official documentation explicitly supports that capability.
 
-## Before You Start: The Menu Has Been Renamed
+## What Apple's controls are for
 
-If you are following instructions written a couple of years ago, they will send you to a screen that no longer exists.
+Apple's documented controls can help a parent or guardian manage a child's apps and websites, approve requests, and apply content and privacy restrictions. Apple also notes that controls vary by device, software version, country or region, and the child's account setup.
 
-The Web Content setting now sits behind an intermediate screen called **App Store, Media, Web, & Games**. Older guides tell you to look for "Content Restrictions". The options have been relabelled too: the choices are now **Unrestricted**, **Limit Adult Websites**, and **Only Approved Websites**, where older instructions refer to "Unrestricted Access" and "Allowed Websites Only".
-
-The steps below match Apple's current documentation ([Apple Support](https://support.apple.com/en-us/105121), checked 2026-08-16).
-
----
-
-## Method 1: The Built-In Filter (Free, 2 Minutes)
-
-Apple documents this path for a parent managing a child through Family Sharing, which adds one tap that does not apply on your own device. Both versions are given.
-
-1. Open the **Settings** app, scroll down, then tap **Screen Time**.
-2. *If you are setting this up for a child through Family Sharing:* under **Family**, tap your child's name. On your own device, skip this step.
-3. Tap **Content & Privacy Restrictions**. Turn it on if it is not already.
-4. If asked, enter your **Screen Time passcode**.
-5. Tap **App Store, Media, Web, & Games**.
-6. Tap **Web Content**.
-7. Choose **Limit Adult Websites**.
-
-That is the whole procedure. Apple's wording for the final choice is "Choose Unrestricted, Limit Adult Websites, or Only Approved Websites."
-
-**A note on the third option.** Only Approved Websites is an allowlist: nothing loads except sites you add by hand. It is the right setting for a young child's device and impractical for an adult's. Choosing it by mistake is a common way to end up assuming iPhone filtering is broken.
-
-**What this covers.** Web content across the device, not Safari alone. **What it does not cover:** content inside apps, and anything sent to you in a message.
-
----
-
-## Method 2: The Step That Decides Whether It Lasts
-
-This is not a technical step and it is the one that matters most.
-
-The filter you just set is exactly as strong as the secrecy of the Screen Time passcode. If you know the code, you have set a preference. Turning it off takes about fifteen seconds, and the moment you want to turn it off is precisely the moment your judgment is least reliable.
-
-So: have someone else set that passcode and not tell you.
-
-1. Go to **Settings**, **Screen Time**, and tap **Change Screen Time Passcode** (or set one if you have none).
-2. Hand the phone to the other person and look away while they enter it.
-3. Agree what happens when you legitimately need it changed, so there is a route that does not involve a fight.
-
-This converts a free setting into something more durable than most paid products, because reversing it now requires a conversation. If nobody in your life can do this today, that is a genuine constraint rather than a failure, and it is the main argument for accountability software, which produces a similar effect by telling someone rather than by withholding a code. See [accountability software](/resources/accountability-software).
-
----
-
-## Method 3: Add Filtering DNS (Free, 5 Minutes)
-
-Apple's web content filter acts on web content. Filtering DNS acts on the connection, so it reaches apps and every browser.
-
-**On the phone, for Wi-Fi networks:**
-
-1. Open **Settings**, tap **Wi-Fi**.
-2. Tap the **i** button beside your network.
-3. Tap **Configure DNS**, then **Manual**.
-4. Remove the existing servers and add a filtering pair.
-
-**Which resolver:**
-
-| Service | Addresses | Notes |
+| Need | Apple Screen Time controls | What this page does not claim |
 |---|---|---|
-| CleanBrowsing Family Filter | 185.228.168.168, 185.228.169.168 | Also blocks proxy and VPN domains, which closes the usual workaround |
-| Cloudflare 1.1.1.1 for Families | 1.1.1.3, 1.0.0.3 | Malware and adult content |
-| AdGuard family protection | 94.140.14.15, 94.140.15.16 | Adult content plus ads and trackers |
+| Manage websites | Use the documented website-filtering or approval setting for the account | That every app, message, or service is filtered identically |
+| Manage apps | Review, allow, or block apps and app downloads where the setting is available | That a web filter controls content inside every app |
+| Make a restriction durable | Use the account, Family Sharing, and passcode controls Apple provides | That any setting is impossible to change or bypass |
 
-CleanBrowsing documents its free tier as requiring no account but throttled and unsupported ([CleanBrowsing](https://cleanbrowsing.org/filters/)). Cloudflare describes the family option as free protection for home Internet ([Cloudflare](https://one.one.one.one/family/)). AdGuard describes its family servers as blocking "ads, trackers, adult content, and enable Safe Search and Safe Mode, where possible" ([AdGuard DNS](https://adguard-dns.io/en/public-dns.html)). All checked 2026-08-16.
+If the menu shown on your device differs, use Apple's current support documentation rather than an older screenshot or an unverified workaround.
 
-**Setting it on your router instead** covers every device in the house including televisions and consoles, which is the better version if you control the router. **It does nothing on cellular data**, so a phone that leaves the house leaves the filter behind. Per network DNS on the phone has the same gap. This is the reason people who need coverage everywhere end up on a paid tool that installs a device wide profile.
+## Where FaithLock fits—and where it does not
 
----
+FaithLock's official [Features page](/features) describes app blocking, Scripture-based unlocks, scheduled lock times, and prayer-focused habit features. The official App Store listing describes it as a prayer lock that blocks selected distracting apps and asks for Scripture before access.
 
-## Method 4: When to Pay for Something
+Those sources support positioning FaithLock as a faith-based focus and app-blocking aid. They do not support claiming that FaithLock filters adult content, provides parental controls, monitors messages, guarantees safety, or prevents every bypass. If the goal is device-level adult-content filtering, start with Apple's controls and verify the result on the relevant device.
 
-Only when you need one of three things the free setup cannot do.
+For the adjacent question of reducing distraction rather than filtering content, see [phone addiction and app focus](/resources/phone-addiction-blocker).
 
-**Coverage across apps with real anti-bypass.** Canopy runs a network extension on iOS, installed as a VPN profile visible afterward under Settings, VPN & Device Management, and blocks third party VPNs so the standard workaround fails (Canopy support, checked 2026-08-16). Go in knowing its own reviewers report overblocking of ordinary content, heavy battery and data use, and slowdown (App Store, [Trustpilot](https://www.trustpilot.com/review/canopy.us), checked 2026-08-16).
+<a href="https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209">Try FaithLock on the App Store</a>
 
-**A report sent to another person.** Covenant Eyes filters device wide on iOS through a VPN and reports through a Safari extension, so filtering is broader than reporting: other browsers and apps are filtered but not reported ([TechLockdown](https://www.techlockdown.com/articles/covenant-eyes-iphone-review), checked 2026-08-16).
+## A bounded decision guide
 
-**Alerts about what someone sends a child.** Bark scans messages and social platforms, though on iPhone it depends on a physical accessory and coverage is periodic rather than continuous (Bark support, checked 2026-08-16).
+1. Use Apple's documented Screen Time controls when the requirement is parental management of apps or websites.
+2. Verify the setting on the actual iPhone, including the browsers and apps that matter to the household.
+3. Consider FaithLock only when the requirement is Scripture-based friction before selected distracting apps—not adult-content filtering or monitoring.
+4. Stop and do not make a stronger product claim if the official source does not describe the capability or if the exact downstream measurement signal is missing.
 
-If none of those three describes your situation, the free setup is genuinely sufficient and you can stop here.
+## Frequently asked questions
 
----
+**Can I block adult websites on an iPhone?**
 
-## What None of This Covers
+Apple documents website filtering and approval controls through Screen Time for supported child-account and Family Sharing setups. Follow the current Apple Support path for the device and region rather than assuming an older menu name still applies.
 
-Worth being straight about the ceiling.
+**Does Apple's web setting filter content inside every app?**
 
-Content sent to you by another person is never requested from a server, so no filter sees it. An independent tester demonstrated this against Covenant Eyes on iPhone, installing a dating app and receiving suggestive images through messages without an alert firing ([Cranky Old Dan](https://crankyolddan.substack.com/p/you-cant-hide-those-covenant-eyes), checked 2026-08-16). That is not a flaw in one product, it is the boundary of the mechanism.
+Do not assume that a web-content setting is equivalent to monitoring or filtering every message and app. Confirm the scope in Apple's current documentation and test the specific apps that matter.
 
-Filtering also changes availability rather than wanting, and it is not treatment. If several honest attempts have not moved the pattern and it is affecting sleep, work, or a relationship, a clinician is the useful next step. The [Psychology Today therapist directory](https://www.psychologytoday.com/us/therapists) filters by concern and location.
+**Does FaithLock block adult content?**
 
-If any of this involves thoughts of self-harm, hopelessness, or a crisis of any kind, that comes first. In the US, the [988 Suicide and Crisis Lifeline](https://988lifeline.org/) is free, 24/7, by call, text, or chat, in English and Spanish.
+The official FaithLock sources support selected-app blocking and Scripture-based unlock friction. They do not establish FaithLock as an adult-content filter or parental-control product, so this page makes no such claim.
 
----
+**Can I claim installs, subscriptions, or revenue from this page?**
 
-## If the Trigger Is the App, Not the Browser
+No. A page view or App Store click is an upstream proxy. The measurement chain must remain explicit: fixed US/en-US prompt or session → canonical URL → `faithlock_store_click` in PostHog landing project `324483` → AppsFlyer App ID `6754208209` with an explicit period, timezone, source/campaign, install/re-engagement/purchase events, and attribution windows → attributable new payers and recorded revenue over rolling 28 days. ROI NON CALCULABLE while attributable payers, revenue, or reliable cost are missing.
 
-For some people the pattern is not searching for something. It is a reach for the phone with nothing in mind, at a predictable time, and the rest follows. A content filter has nothing to intercept there, because there was no decision.
+## Sources and validation boundary
 
-[FaithLock](/) works on that layer, and only that layer. It is an iOS app that shields apps you choose using Apple's Family Controls API, and reopening one requires reading a Bible verse and answering a fill-in-the-blank question about it, drawn from the complete Berean Standard Bible library of 31,000 or more verses. **It is not a content filter and it does not report to anyone**, so it supplements the steps above rather than replacing any of them.
+- [Apple Support: Set up parental controls to manage your child's iPhone or iPad](https://support.apple.com/en-us/105121) — device/account-dependent app, website, and content-control documentation.
+- [FaithLock Features](https://www.getfaithlock.com/features) — official product capability source.
+- [FaithLock App Store listing](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209) — official listing identity and described app-blocking/prayer features.
 
-<a href="https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209">Get FaithLock on the App Store</a>
-
----
-
-## Frequently Asked Questions
-
-**How do I block adult content on iPhone for free?**
-Settings, Screen Time, Content & Privacy Restrictions, App Store, Media, Web, & Games, Web Content, then Limit Adult Websites. Add a filtering DNS resolver for coverage across apps. Both are free and take under ten minutes together.
-
-**Why can I not find Content Restrictions on my iPhone?**
-Because the menu was reorganized. What older guides call Content Restrictions is now reached by tapping App Store, Media, Web, & Games inside Content & Privacy Restrictions. Web Content sits inside that screen.
-
-**Does Limit Adult Websites work in all browsers?**
-It applies to web content at the system level rather than to Safari alone. It does not reach content inside apps, and it does not see anything sent to you in a message.
-
-**How do I stop myself from turning the filter off?**
-Have another person set the Screen Time passcode without telling you. This is the only step that meaningfully changes the outcome for an adult filtering their own device, and it is free.
-
-**Can I block adult content on iPhone without an app?**
-Yes, completely. The built-in Screen Time restriction plus filtering DNS covers web content system wide and reaches apps on that connection, with nothing installed and nothing paid.
-
----
-
-## Related Reading
-
-- [Porn blocker for iPhone](/resources/porn-blocker-iphone)
-- [Porn blocker: how each mechanism works](/resources/porn-blocker)
-- [Free porn blocker options](/resources/free-porn-blocker)
-- [Best porn blocker apps, scored](/resources/best-porn-blocker-apps)
-
----
-
-*Sources: [Apple parental controls](https://support.apple.com/en-us/105121), [CleanBrowsing filters](https://cleanbrowsing.org/filters/), [Cloudflare 1.1.1.1 for Families](https://one.one.one.one/family/), [AdGuard public DNS](https://adguard-dns.io/en/public-dns.html), Canopy Shield iOS installation, Canopy on the App Store, [Canopy on Trustpilot](https://www.trustpilot.com/review/canopy.us), [TechLockdown on Covenant Eyes for iPhone](https://www.techlockdown.com/articles/covenant-eyes-iphone-review), Bark Sync support, [Cranky Old Dan](https://crankyolddan.substack.com/p/you-cant-hide-those-covenant-eyes), [988 Suicide and Crisis Lifeline](https://988lifeline.org/). All checked 2026-08-16.*
+This is an internal answer-first variant. It is not published, merged, or deployed. No claim is made about installations, subscriptions, payers, revenue, or ROI.
