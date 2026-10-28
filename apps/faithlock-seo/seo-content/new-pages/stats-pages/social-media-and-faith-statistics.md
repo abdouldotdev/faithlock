@@ -3,72 +3,43 @@ slug: social-media-and-faith-statistics
 title: "Social Media and Faith Statistics (2026)"
 category: Research
 meta_title: "Social Media and Faith Statistics (2026): What the Data Shows"
-meta_description: "36% of US adults have watched a religious service online, and half of churchgoers say social media has affected their faith. Here's the intersection of faith and digital life."
+meta_description: "Primary-source statistics on how U.S. adults use social media and online technology for religious purposes, with survey populations and definitions."
 ---
 
-## Key Statistics
+## Key statistics
 
-**36% of US adults have watched religious services online**, according to Pew Research Center's 2022 survey on religion and digital life. Among regular churchgoers, the number is significantly higher, with many maintaining hybrid in-person and online worship habits established during the pandemic.
+The most directly comparable primary evidence is a Pew Research Center survey of 11,377 U.S. adults conducted November 16–27, 2022. The sample came from Pew’s American Trends Panel, recruited through national random sampling of residential addresses and weighted to represent the U.S. adult population. Pew defines its online-worship figures using respondents who watched services online or on TV in the prior month or who generally watched at least once or twice a month. [Read Pew’s report and methodology](https://www.pewresearch.org/religion/2023/06/02/online-religious-services-appeal-to-many-americans-but-going-in-person-remains-more-popular/).
 
-**Half (49%) of US churchgoers say the internet and social media have had an impact on their faith**, according to Barna Group research. Of those, 27% say the impact has been mostly positive, while 22% describe it as mostly negative.
+- **27% of U.S. adults regularly watched religious services on screens** in November 2022: 10% watched only on screens and 17% both watched on screens and attended in person. Across in-person and virtual participation, 43% attended or watched at least monthly under Pew’s definition.
+- **20% of U.S. adults watched religion-focused online videos**, such as videos on YouTube or TikTok. This question excluded religious services.
+- **17% of U.S. adults posted or shared something about religion on social media**, including 2% daily, 3% weekly and 12% monthly or less often.
+- **11% of U.S. adults posted a prayer request online**, while 42% had seen someone else’s prayer request online.
+- **17% of U.S. adults had unfollowed, unfriended, blocked someone, or changed their settings to see less of someone because of religious content** that person posted or shared. This is a reported moderation action, not evidence that social media caused a change in faith.
 
-**The "nones" -- people with no religious affiliation -- have grown from 16% to 29% of the US adult population between 2007 and 2023**, per Pew Research Center. While social media isn't the sole driver, researchers including Jean Twenge have identified correlations between social media exposure and declining religious participation among young adults.
+Pew’s companion analysis reports the same 2022 survey population and defines “highly religious” adults as people who attend services weekly, pray daily and say religion is very important in their lives. In that analysis, 53% of highly religious adults searched online for religious information, compared with 30% of U.S. adults overall; 20% of adults overall watched religion-focused online videos. [Read Pew’s technology-use tables and definitions](https://www.pewresearch.org/religion/2023/06/02/use-of-apps-and-websites-in-religious-life/).
 
-**YouTube is the most-used platform for religious content**, with 28% of US adults saying they've watched religious or spiritual content on the platform, according to Pew Research. Facebook ranks second for religious community engagement.
+## A separate PRRI population and measure
 
-**Among young adults (18-29) who have left organized religion, 39% cite "negative things they saw online" as a contributing factor**, according to research from the Public Religion Research Institute (PRRI) and analysis of the American Values Atlas.
+PRRI’s 2023 American Values Atlas is a different source and should not be combined with Pew’s percentages. It surveyed a representative sample of 22,465 U.S. adults age 18 and older living in all 50 states and the District of Columbia, with interviews conducted online from March 9 to December 7, 2023. PRRI defines Gen Z adults in this fact sheet as Americans ages 18–25. [Read PRRI’s 2024 Gen Z fact sheet and methodology](https://www.prri.org/wp-content/uploads/2024/04/PRRI-Apr-2024-Gen-Z-Fact-Sheet-Final.pdf).
 
-**65% of pastors say social media has made their job harder**, according to a 2022 Barna Group study on the state of pastors. Primary concerns include misinformation about the church spreading online, congregants being influenced by online teachers who contradict church teaching, and public criticism on social platforms.
+In that PRRI dataset, 34% of Gen Z adults identified as religiously unaffiliated, 20% attended religious services at least once a week, and 17% said religion was the most important thing in their lives. These are measures of affiliation, attendance and religious importance; they do not establish that social media caused religious switching or disengagement. The PRRI source does not support the previously published claim that 39% of young adults left organized religion because of “negative things they saw online,” so that claim is not repeated here.
 
-**Online church attendance has stabilized at roughly 30% of weekly churchgoers participating digitally at least some of the time**, according to the Hartford Institute for Religion Research. This hybrid model represents a permanent shift from pre-pandemic patterns where online attendance was negligible.
+## What these numbers support
 
-## What the Numbers Mean
+The sources support a narrower conclusion than a causal story: online services, religious videos, prayer requests and religious posting are established parts of U.S. religious life, while some users also take steps to reduce exposure to religious content. Pew’s survey is descriptive and cross-sectional. It does not show that social media causes conversion, deconversion, declining attendance or a particular spiritual outcome.
 
-The data reveals a fundamental tension: social media is simultaneously the most powerful tool for faith communication in history and one of the most significant challenges to traditional religious practice. The same platform that lets a pastor reach 10,000 people with a sermon also exposes those 10,000 people to competing worldviews, deconversion stories, and theological misinformation.
+PRRI’s 2023 data provides a separate view of Gen Z’s religious affiliation, attendance and importance. Because the two studies use different populations, field dates and questionnaires, their percentages should be reported separately rather than added together or treated as a trend line.
 
-The 49% of churchgoers whose faith has been affected by social media -- split almost evenly between positive and negative impact -- suggests that the digital environment is spiritually volatile. The outcome depends heavily on how a person engages. Those who follow trusted teachers, participate in healthy online communities, and maintain robust offline church connections tend to report positive effects. Those who consume content passively, engage in theological debates with strangers, or substitute online engagement for in-person community tend to report negative effects.
+## Official FaithLock destination and measurement contract
 
-The pastoral data (65% saying social media has made their job harder) reflects a real structural challenge. Pastors now contend with a congregation that arrives on Sunday having consumed hours of unvetted theological content throughout the week. A pastor's 30-minute sermon competes with 20+ hours of podcast content, YouTube videos, and social media posts from creators who may have no theological training, accountability, or pastoral responsibility.
+If this page is useful to you and you want to evaluate FaithLock, use the [official FaithLock App Store listing](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209). The listing is App ID `6754208209`.
 
-The growth of the "nones" and the role of online influence in that growth is perhaps the most consequential long-term trend. Social media creates unprecedented exposure to secular worldviews, anti-religious arguments, and deconversion narratives during the very developmental period (ages 18-25) when religious identity is most vulnerable to change.
+The page has one official-store CTA. The runtime contract is the site’s single delegated `faithlock_store_click` event: one outbound web-click event per eligible click, with `market=en-US`, `source=resource_page`, `destination=official_app_store`, `page_path`, CTA location and the destination URL/type. This event records a store click only. It is not an installation, re-engagement, purchase, payer or revenue event. The destination matcher must accept only the official FaithLock App Store ID `id6754208209` (or the approved tracked destination) and reject other App Store IDs and non-HTTPS links.
 
-## The Trend Over Time
+<a href="https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209" data-store-location="social_media_faith_statistics_cta">Get FaithLock on the App Store</a>
 
-The intersection of faith and social media has evolved through distinct phases. Before 2010, churches used social media primarily for announcements and event promotion -- one-directional communication. Between 2010 and 2019, social media became a platform for theological discussion, with Christian influencers building significant audiences and denominational debates playing out in public.
+## Measurement handoff
 
-The pandemic (2020-2021) forced a radical acceleration. Churches that had never streamed a service were suddenly entirely digital. This created both opportunity (reaching people who couldn't attend in person) and crisis (normalizing the idea that church could be consumed as content rather than experienced as community).
+For a fixed en-US replay, record the exact prompt, cited URLs, canonical page URL, AI-referral/session evidence when observable and the explicit reporting period and timezone. Read the landing project’s `faithlock_store_click` event first, retaining source, campaign/referral context, page path, CTA location and event count.
 
-Post-pandemic, the hybrid model has stabilized but raised permanent questions about the nature of church attendance, membership, and community. Research from Barna found that regular church attendance (defined as attending at least once a month) has dropped from 49% pre-pandemic to approximately 31% post-pandemic. While not all of this decline is attributable to digital alternatives, the availability of online services has made it easier for marginal attenders to drift away from in-person commitment.
-
-The "deconstruction" movement -- Christians publicly questioning, revising, or abandoning their faith -- has been amplified enormously by social media. Hashtags like #exvangelical and #deconstruction have millions of posts across platforms. While genuine questions deserve honest engagement, the algorithmic amplification of deconversion stories creates a feedback loop that normalizes leaving the faith.
-
-Christian content creation has professionalized. Where church communication was once handled by volunteers, a significant industry of Christian social media managers, content strategists, and digital ministers has emerged. This professionalization has improved content quality but also created new tensions around monetization, influence, and the blurring of ministry and personal brand.
-
-## What Christians Should Know
-
-The data suggests that passive social media consumption is spiritually dangerous for Christians. The 22% who report negative faith impact and the 39% of young adult "nones" who cite online exposure as a factor are predominantly passive consumers -- people who absorbed content without the grounding of strong church community, personal study, and pastoral guidance.
-
-Active, intentional engagement tells a different story. Christians who use social media to deepen existing faith commitments -- following trusted teachers, participating in online Bible studies, sharing encouragement, and maintaining real-world church involvement -- report positive outcomes. The platform doesn't determine the effect; the pattern of engagement does.
-
-The pastoral challenge data should prompt churches to respond proactively rather than reactively. If 65% of pastors say social media has complicated their ministry, the solution isn't to ignore social media or to ban it. It's to equip congregants with digital discernment, recommend trustworthy online resources, and create church cultures where questions sparked by online content can be honestly discussed.
-
-For parents, the data on young adults and faith departure should be alarming in a motivating way. Raising children in the faith now requires preparing them for sustained exposure to sophisticated challenges to their beliefs. A child who reaches college without ever encountering a compelling atheist argument is less prepared than one who has engaged those arguments in the safety of a home where questions are welcomed.
-
-The church's most powerful response to social media's influence on faith is not better content (though that helps). It's deeper community. Research consistently shows that the strongest predictor of sustained faith across the lifespan is meaningful intergenerational relationships within a church community. No algorithm can replicate the spiritual formation that happens when a 60-year-old mentor walks alongside a 20-year-old through doubt, suffering, and growth.
-
-## Frequently Asked Questions
-
-**Is online church a valid replacement for in-person attendance?**
-For people with legitimate barriers to attendance (illness, disability, geographic isolation, persecution), online church is a genuine blessing. For people who could attend in person but prefer the convenience of online, it's an inadequate substitute. Scripture calls for embodied gathering (Hebrews 10:25), mutual ministry (Romans 12:4-5), and shared sacramental life that digital platforms cannot fully facilitate.
-
-**How should churches respond to members influenced by online teaching that contradicts church doctrine?**
-With curiosity, not defensiveness. Ask what they've been reading or watching. Engage the specific arguments rather than dismissing them. Create safe spaces for honest questions. Recognize that if someone is bringing online content to church leadership, they're still engaged -- they want help processing what they've encountered. That's an opportunity, not a threat.
-
-**Does social media cause people to leave the faith?**
-Social media appears to accelerate existing doubts and provide social support for departure, but it rarely causes deconversion in isolation. People who leave the faith typically have a combination of intellectual questions, negative church experiences, and social influences. Social media amplifies all three simultaneously, which is what makes it uniquely potent.
-
-**How can Christians use social media to strengthen rather than weaken their faith?**
-Follow teachers your pastor recommends. Participate in online communities connected to your local church. Share what you're learning in Bible study. Use social media to serve and encourage rather than to consume passively. Maintain in-person church involvement as the foundation and let social media supplement, never substitute, for embodied community.
-
-**What's the most concerning trend in the faith-and-social-media data?**
-The declining church attendance among young adults, combined with increased exposure to anti-religious content and deconversion narratives on social media, represents the most consequential long-term trend. If the church loses a generation of young adults partly because it failed to prepare them for the digital environment they'd inhabit, that's a failure of discipleship that will take decades to reverse.
+For downstream attribution, read AppsFlyer in a read-only query scoped to App ID `6754208209`, with the same period and timezone stated explicitly. Preserve media source, campaign, installs, re-engagements, purchases and each applicable attribution window. Do not infer an install or purchase from a citation, AI-referral session or store click. The KPI sequence is AI-referral sessions → cited URLs → store clicks → attributable installs/re-engagements → purchases → new payers and recorded revenue over a rolling 28-day window. ROI NON CALCULABLE until attributable new payers, attributable recorded revenue and reliable cost are available.
