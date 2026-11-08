@@ -4,6 +4,8 @@
 
 const SHORT_LINK = { host: 'pim.ms', path: '/kTxgKF4' }
 const FAITHLOCK_APP_ID = 'id6754208209'
+// AppsFlyer OneLink (kept in sync with lib/attribution.ts ONELINK)
+const ONELINK = { host: 'faithlock.onelink.me', pathPrefix: '/l3EF/' }
 
 export interface StoreClickProperties {
   cta_id: string
@@ -11,7 +13,7 @@ export interface StoreClickProperties {
   source: 'resource_page' | 'site'
   destination: 'official_app_store'
   destination_url: string
-  destination_type: 'short_link' | 'app_store'
+  destination_type: 'onelink' | 'short_link' | 'app_store'
   location: string
   button_text?: string
   page_path: string
@@ -25,6 +27,7 @@ export function storeDestinationType(href: string): StoreClickProperties['destin
     return null
   }
   if (url.protocol !== 'https:') return null
+  if (url.hostname === ONELINK.host && url.pathname.startsWith(ONELINK.pathPrefix)) return 'onelink'
   if (url.hostname === SHORT_LINK.host && url.pathname === SHORT_LINK.path) return 'short_link'
   if (url.hostname === 'apps.apple.com' && url.pathname.endsWith(`/${FAITHLOCK_APP_ID}`)) return 'app_store'
   return null
