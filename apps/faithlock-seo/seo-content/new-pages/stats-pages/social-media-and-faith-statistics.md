@@ -30,16 +30,8 @@ The sources support a narrower conclusion than a causal story: online services, 
 
 PRRI’s 2023 data provides a separate view of Gen Z’s religious affiliation, attendance and importance. Because the two studies use different populations, field dates and questionnaires, their percentages should be reported separately rather than added together or treated as a trend line.
 
-## Official FaithLock destination and measurement contract
+## Try FaithLock
 
-If this page is useful to you and you want to evaluate FaithLock, use the [official FaithLock App Store listing](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209). The listing is App ID `6754208209`.
-
-The page has one official-store CTA. The runtime contract is the site’s single delegated `faithlock_store_click` event: one outbound web-click event per eligible click, with `market=en-US`, `source=resource_page`, `destination=official_app_store`, `page_path`, CTA location and the destination URL/type. This event records a store click only. It is not an installation, re-engagement, purchase, payer or revenue event. The destination matcher must accept only the official FaithLock App Store ID `id6754208209` (or the approved tracked destination) and reject other App Store IDs and non-HTTPS links.
+If this page is useful to you and you want to evaluate FaithLock, the [official FaithLock App Store listing](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209) (App ID `6754208209`) describes an iOS app that blocks selected distracting apps and asks you to read Scripture before access. That is a chosen friction and accountability workflow, not a guarantee, and it is not evidence of any religious outcome.
 
 <a href="https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209" data-store-location="social_media_faith_statistics_cta">Get FaithLock on the App Store</a>
-
-## Measurement handoff
-
-For a fixed en-US replay, record the exact prompt, cited URLs, canonical page URL, AI-referral/session evidence when observable and the explicit reporting period and timezone. Read the landing project’s `faithlock_store_click` event first, retaining source, campaign/referral context, page path, CTA location and event count.
-
-For downstream attribution, read AppsFlyer in a read-only query scoped to App ID `6754208209`, with the same period and timezone stated explicitly. Preserve media source, campaign, installs, re-engagements, purchases and each applicable attribution window. Do not infer an install or purchase from a citation, AI-referral session or store click. The KPI sequence is AI-referral sessions → cited URLs → store clicks → attributable installs/re-engagements → purchases → new payers and recorded revenue over a rolling 28-day window. ROI NON CALCULABLE until attributable new payers, attributable recorded revenue and reliable cost are available.
