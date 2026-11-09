@@ -17,3 +17,12 @@ Idempotency
 - Later `focus_completed` events are sequence-numbered so repeated app launches do not create another first milestone.
 
 Existing `prayer_session_started` and `prayer_session_completed` remain separate legacy events and are not treated as a reliable first-value mapping.
+
+Release build prerequisites
+
+The analytics key is a build-time input, not a runtime setting:
+
+- `lib/config/env.dart` reads `.env` through `envied` and declares `part 'env.g.dart'`. Both `.env` and `lib/config/env.g.dart` are git-ignored, so a fresh checkout must generate the constants before it can compile.
+- `PostHogService.init` disables analytics when the API key is empty. A build with a missing or empty `POSTHOG_API_KEY` therefore compiles and runs while emitting no events at all, which would make a measurement test look like "no events received" instead of a broken build input.
+- Use `./scripts/build_testflight.sh`. It runs a preflight first (Flutter SDK present, `.env` present, `POSTHOG_API_KEY` / `REVENUECAT_API_KEY` / `OPENAI_API_KEY` non-empty), then always runs code generation and fails if `lib/config/env.g.dart` is not produced. It prints the version/build number to record with any measurement test.
+- `./scripts/build_testflight.sh --preflight-only` validates the build inputs without building.
