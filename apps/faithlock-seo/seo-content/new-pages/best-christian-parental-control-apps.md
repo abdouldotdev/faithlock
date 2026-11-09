@@ -96,7 +96,7 @@ Website
 
 **Best for**: A free, no-install starting point that covers the basics
 
-Built into your phone. Apple Family Sharing: age-appropriate restrictions, app-specific time limits, Downtime scheduling, purchase approval. Google Family Link: same for Android plus location tracking and bedtime mode.
+Built into your phone. Apple Family Sharing: age-appropriate restrictions, app-specific time limits, Downtime scheduling, purchase approval. Google Family Link: same for Android plus location tracking and bedtime mode. For adult content specifically, Apple's documented iPhone path is covered in [how to block adult content on iPhone](/resources/how-to-block-adult-content-on-iphone).
 
 **What stands out**: Free, already installed. Apple's "Ask to Buy" quietly prevents problematic app downloads.
 
