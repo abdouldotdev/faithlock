@@ -1,0 +1,85 @@
+# Attribution baseline — rolling 28 days (PostHog product project)
+
+Status: verified snapshot + reproducible queries. Owner: Dev (ABD-172).
+Measurement source: PostHog product project for the FaithLock mobile app
+(`com.appbiz.faithlock`, the project that also holds `prayer_session_completed`,
+matching the ABD-63 verification). No AppsFlyer connector read was used: the
+attribution fields below arrive in PostHog from the AppsFlyer SDK integration.
+
+Snapshot executed: 2026-11-09T14:25Z. Window: `now() - INTERVAL 28 DAY`
+(rolling, UTC).
+
+## What is measured, and what it is not
+
+| Stage | Event / field | Status |
+|---|---|---|
+| Install attribution | `install_attributed` → `af_status`, `af_media_source` | present |
+| Purchase / trial start | `paywall_purchase_completed` → `revenue`, `currency`, `plan_id`, `plan_type`, `is_trial_start` | present |
+| First product value | `first_focus_started`, `first_focus_completed`, `focus_completed` | absent from the project taxonomy (0 events, all time) — `INSTRUMENTATION_MISSING` until a build containing PR #74 ships |
+
+Definitions used:
+
+- **Payer**: a distinct person with at least one `paywall_purchase_completed`
+  event where `is_trial_start` is not `true`.
+- **Trial start**: `is_trial_start = true`. It is *not* a payer. The `revenue`
+  value on a trial start is the plan price at trial start, not collected money.
+- **Recorded value**: `sum(revenue)` **per currency**. Values are never summed
+  across currencies; no FX normalisation is applied here.
+- **Attribution bucket**: `af_media_source` (falling back to `af_status`) from
+  the person's first `install_attributed` event. Persons with a purchase but no
+  `install_attributed` event are reported as `no_install_attributed`, never
+  silently dropped or counted as organic.
+
+## Verified snapshot (28 days to 2026-11-09T14:25Z)
+
+Funnel top: `install_attributed` = 82 events / 82 persons.
+
+Purchases: 13 events / 13 persons.
+
+| Currency | Attribution bucket | Persons | Charged events | Charged value | Trial starts | Trial value |
+|---|---|---|---|---|---|---|
+| USD | organic | 7 | 2 | 13.98 | 5 | 199.95 |
+| USD | no_install_attributed | 2 | 2 | 13.98 | 0 | — |
+| CAD | organic | 1 | 0 | — | 1 | 49.99 |
+| GBP | organic | 2 | 0 | — | 2 | 79.98 |
+| MYR | no_install_attributed | 1 | 0 | — | 1 | 199.90 |
+
+North Star inputs from this window:
+
+- **Attributable new payers (strict, organic)**: **2** persons, recorded charged
+  value **USD 13.98**.
+- All charged payers (organic + unattributed): **4** persons, **USD 27.96**.
+- Trial starts awaiting conversion: **9** (8 organic, 1 unattributed), with a
+  plan-price value of USD 199.95 / CAD 49.99 / GBP 79.98 / MYR 199.90.
+- **ROI: NON CALCULABLE** — acquisition cost is not recorded in this source.
+  Attributable payers and recorded revenue exist; cost does not.
+
+## Limits that must travel with these numbers
+
+1. Trial-start `revenue` is plan value, not money collected. A payer is counted
+   only from non-trial purchase events; conversion and any refund/chargeback
+   confirmation require the billing source (RevenueCat / App Store), which is
+   not an active Paperclip connection.
+2. `install_attributed` proves install attribution for the person, not that the
+   purchase was caused by that source. The join is per person, lifetime-first
+   attribution bucket, and is stated as such.
+3. Internal or team test purchases are not excluded — no allowlist is applied.
+   `$is_testflight` and `$is_sideloaded` are `false` on the snapshot rows, which
+   is weak evidence of App Store builds only.
+4. A store click is still not an install, and an install is still not a payer.
+   Each stage stays separate.
+
+## Comparison mode
+
+Re-run the four queries in `docs/analytics/queries/attribution-28d.sql` against
+the same rolling 28-day window and compare, per currency and per attribution
+bucket:
+
+- attributable new payers (strict, organic) — primary;
+- charged value by currency — reported separately, never summed across currencies;
+- trial starts and trial value — secondary, never reported as revenue;
+- `install_attributed` persons — funnel top, proxy only.
+
+Record each run with its execution timestamp and window. A run is only
+comparable when source, window length, currency handling and attribution-bucket
+rule are identical.
