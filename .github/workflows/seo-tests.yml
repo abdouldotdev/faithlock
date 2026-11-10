@@ -1,0 +1,62 @@
+name: seo-tests
+
+# Gate the FaithLock SEO test suite on every pull request (ABD-791).
+#
+# Why this exists: the 11 files under apps/faithlock-seo/tests are plain
+# `node --test` assertions, but they ran nowhere. Vercel only builds the site,
+# so the suite rotted silently: at main 20a2204 it had been red since 481a2be
+# and 47837a8 (3 failing tests) and nobody noticed until a bounded Dev
+# diagnostic. This workflow makes that class of regression visible before merge.
+#
+# The suite is offline: every assertion reads versioned Markdown/TS sources, so
+# the job needs no secrets and no build step. Dependencies come from the
+# committed pnpm-lock.yaml, so a green run is reproducible.
+
+on:
+  pull_request:
+    paths:
+      - 'apps/faithlock-seo/**'
+      - 'programmatic-seo/**'
+      - '.github/workflows/seo-tests.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'apps/faithlock-seo/**'
+      - 'programmatic-seo/**'
+      - '.github/workflows/seo-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: seo-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  node-test:
+    name: node --test (apps/faithlock-seo)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: apps/faithlock-seo
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # pnpm is what wrote apps/faithlock-seo/pnpm-lock.yaml (lockfileVersion 9).
+      # A frozen install keeps the suite pinned to the reviewed dependency tree
+      # instead of resolving fresh ranges on every run.
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - name: Run the SEO test suite
+        run: pnpm run test:seo-suite
