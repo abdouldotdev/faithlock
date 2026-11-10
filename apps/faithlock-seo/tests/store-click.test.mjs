@@ -9,6 +9,8 @@ test('recognizes both FaithLock store destinations', () => {
   assert.equal(storeDestinationType(shortLink), 'short_link')
   assert.equal(storeDestinationType(appLink), 'app_store')
   assert.equal(storeDestinationType('https://apps.apple.com/fr/app/faithlock/id6754208209'), 'app_store')
+  assert.equal(storeDestinationType('https://faithlock.onelink.me/l3EF/web?af_channel=chatgpt'), 'onelink')
+  assert.equal(storeDestinationType('https://nanapay.onelink.me/4mIM/web'), null)
 })
 
 test('ignores other apps, look-alike ids and non-https links', () => {

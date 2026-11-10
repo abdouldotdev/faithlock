@@ -24,7 +24,7 @@ export const PRICING = {
 export const PLATFORM = {
   available: ['iPhone', 'iPad'] as const,
   minVersion: 'iOS 13.0+',
-  appStoreUrl: 'https://pim.ms/kTxgKF4',
+  appStoreUrl: 'https://faithlock.onelink.me/l3EF/web',
   requiresScreenTimeAPI: true,
 } as const
 

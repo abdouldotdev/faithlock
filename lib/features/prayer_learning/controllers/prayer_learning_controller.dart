@@ -12,11 +12,13 @@ import 'package:faithlock/features/bible/data/bible_repository.dart';
 import 'package:faithlock/features/lock_challenge/models/verse_question.dart';
 import 'package:faithlock/services/ai/meditation_validator_service.dart';
 import 'package:faithlock/services/analytics/posthog/export.dart';
+import 'package:faithlock/services/analytics/posthog/first_value_instrumentation.dart';
 import 'package:faithlock/services/rate_app_service.dart';
 import 'package:faithlock/services/storage/preferences_service.dart';
 import 'package:faithlock/services/storage/secure_storage_service.dart';
 import 'package:flutter/material.dart' hide Badge;
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /// Validation states for meditation response
 enum ValidationState {
@@ -33,6 +35,8 @@ class PrayerLearningController extends GetxController {
   final VerseSelectionStrategy _verseStrategy = VerseSelectionStrategy();
   final MeditationValidatorService _validator = MeditationValidatorService();
   final PostHogService _analytics = PostHogService.instance;
+  late final Future<FirstValueInstrumentation> _firstValueInstrumentation =
+      _createFirstValueInstrumentation();
 
   // Text controllers - persist across rebuilds
   late final TextEditingController meditationTextController;
@@ -94,6 +98,7 @@ class PrayerLearningController extends GetxController {
     });
 
     _loadVerse();
+    unawaited(_recordFirstFocusStarted());
 
     // Track session started
     if (_analytics.isReady) {
@@ -101,6 +106,29 @@ class PrayerLearningController extends GetxController {
         'timestamp': DateTime.now().toIso8601String(),
       });
     }
+  }
+
+  static Future<FirstValueInstrumentation> _createFirstValueInstrumentation() async {
+    final preferences = await SharedPreferences.getInstance();
+    return FirstValueInstrumentation(
+      store: SharedPreferencesFirstValueStore(preferences),
+      isReady: () => PostHogService.instance.isReady,
+      emit: (event) async {
+        final analytics = PostHogService.instance;
+        if (!analytics.isReady) return;
+        await analytics.events.trackCustom(event.name, event.properties);
+      },
+    );
+  }
+
+  Future<void> _recordFirstFocusStarted() async {
+    final instrumentation = await _firstValueInstrumentation;
+    await instrumentation.recordFocusStarted(at: DateTime.now());
+  }
+
+  Future<void> _recordFirstFocusCompleted() async {
+    final instrumentation = await _firstValueInstrumentation;
+    await instrumentation.recordFocusCompleted(at: DateTime.now());
   }
 
   @override
@@ -540,6 +568,7 @@ class PrayerLearningController extends GetxController {
         'unlock_duration_minutes': unlockDurationMinutes.value,
       });
     }
+    await _recordFirstFocusCompleted();
 
     try {
       await _saveStats();
