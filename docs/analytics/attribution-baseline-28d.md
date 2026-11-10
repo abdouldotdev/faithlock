@@ -6,6 +6,10 @@ Measurement source: PostHog product project for the FaithLock mobile app
 matching the ABD-63 verification). No AppsFlyer connector read was used: the
 attribution fields below arrive in PostHog from the AppsFlyer SDK integration.
 
+Precondition: run `docs/analytics/queries/source-identity.sql` (Q0) first. It
+fails closed when the connector is bound to a different project, which is the
+state observed on 2026-11-10 (see the re-verification section below).
+
 Snapshot executed: 2026-11-09T14:25Z. Window: `now() - INTERVAL 28 DAY`
 (rolling, UTC).
 
@@ -68,6 +72,38 @@ North Star inputs from this window:
    is weak evidence of App Store builds only.
 4. A store click is still not an install, and an install is still not a payer.
    Each stage stays separate.
+
+## Q0 — source identity preflight (mandatory, run first)
+
+`docs/analytics/queries/source-identity.sql` must return a non-zero count for
+each of `prayer_session_completed`, `install_attributed` and
+`paywall_purchase_completed` **before** Q1..Q4 may be run or published. Any zero
+means the connector is bound to a different PostHog project; the correct
+classification is `CONNECTOR_UNHEALTHY` (mis-scoped source), never
+`DATA_ABSENT`, because an empty result from the wrong project is
+indistinguishable from a real zero.
+
+## Re-verification attempt, 2026-11-10 — gate fired, source was not FaithLock
+
+Status: **not re-verifiable from the shared connector on 2026-11-10.**
+
+- Q0 executed 2026-11-10T10:0xZ (UTC) through the shared PostHog connector:
+  `prayer_session_completed` = 0, `install_attributed` = 0,
+  `paywall_purchase_completed` = 0, with PostHog taxonomy warnings that none of
+  the three names exists in the connected project.
+- Negative control (30-day event inventory of the connected project) returned a
+  mobile-money app taxonomy — `fastcash_*`, `transfer_*`, `airtime_*`,
+  `auth_pin_*`, `revenue`, `appsflyer_first_launch_attributed` (950 events) —
+  and no FaithLock event at all.
+- Conclusion: the connector resolves to a project that is **not** the FaithLock
+  product project (239251). The 2026-11-09 snapshot above therefore remains a
+  dated observation and must not be refreshed, extended or cited as current
+  until the connector is re-scoped. Nothing in this document is retracted: the
+  numbers were produced by the queries below against the FaithLock project at
+  the timestamp shown.
+- Blast radius: the North Star inputs (attributable payers, recorded revenue)
+  and ABD-773 step 3 (`first_focus_*` reception) cannot be read until the
+  connector is re-scoped to 239251 (product) / 324483 (landing).
 
 ## Comparison mode
 

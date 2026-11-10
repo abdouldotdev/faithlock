@@ -1,5 +1,8 @@
 -- FaithLock attribution baseline — rolling 28 days (PostHog HogQL)
 -- Source: PostHog product project (com.appbiz.faithlock).
+-- PRECONDITION: run docs/analytics/queries/source-identity.sql (Q0) first and
+-- require a non-zero count for every sentinel. If Q0 returns a zero, stop:
+-- the connector is bound to another project and these queries would describe it.
 -- Run each block separately. Replace the interval only to change the window;
 -- never sum revenue across currencies.
 -- See docs/analytics/attribution-baseline-28d.md for definitions and limits.
