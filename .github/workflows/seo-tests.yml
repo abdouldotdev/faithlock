@@ -1,0 +1,58 @@
+name: SEO tests
+
+# Runs the apps/faithlock-seo node --test suite (31 assertions across 11 files).
+# Added after ABD-791: the suite silently rotted on main (facts.test.mjs from
+# 481a2be, phone-addiction-ctr-variant.test.mjs from 47837a8) because Vercel
+# only builds the site and nothing executed the tests.
+
+on:
+  pull_request:
+    paths:
+      - 'apps/faithlock-seo/**'
+      - 'programmatic-seo/**'
+      - '.github/workflows/seo-tests.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'apps/faithlock-seo/**'
+      - 'programmatic-seo/**'
+      - '.github/workflows/seo-tests.yml'
+
+concurrency:
+  group: seo-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  seo-tests:
+    name: node --test (apps/faithlock-seo)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: apps/faithlock-seo
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          # 22.23.2 matches the version the suite was verified with locally;
+          # --experimental-strip-types requires Node >= 22.6.
+          node-version: '22.23.2'
+          cache: pnpm
+          cache-dependency-path: apps/faithlock-seo/pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - name: Run SEO test suite
+        run: node --experimental-strip-types --test tests/*.test.mjs
