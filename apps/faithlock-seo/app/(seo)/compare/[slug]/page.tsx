@@ -5,6 +5,7 @@ import { Competitor } from '@/lib/types'
 import { SITE_URL } from '@/lib/constants'
 import ComparisonTemplate from '@/components/templates/ComparisonTemplate'
 import SchemaMarkup from '@/components/seo/SchemaMarkup'
+import { getComparisonTitle } from '@/lib/compare-metadata'
 
 export async function generateStaticParams() {
   const competitors = await getAllCompetitors()
@@ -34,7 +35,7 @@ export async function generateMetadata({
   }
 
   const fields = entry.fields as unknown as Competitor
-  const title = fields.seoTitle
+  const title = getComparisonTitle(fields, params.slug)
   const description = fields.seoDescription
 
   return {
