@@ -5,7 +5,11 @@ import { Competitor } from '@/lib/types'
 import { SITE_URL } from '@/lib/constants'
 import ComparisonTemplate from '@/components/templates/ComparisonTemplate'
 import SchemaMarkup from '@/components/seo/SchemaMarkup'
-import { getComparisonTitle } from '@/lib/compare-metadata'
+import {
+  getComparisonDescription,
+  getComparisonTitle,
+  getCompetitorDisplayName,
+} from '@/lib/compare-metadata'
 
 export async function generateStaticParams() {
   const competitors = await getAllCompetitors()
@@ -36,7 +40,7 @@ export async function generateMetadata({
 
   const fields = entry.fields as unknown as Competitor
   const title = getComparisonTitle(fields, params.slug)
-  const description = fields.seoDescription
+  const description = getComparisonDescription(fields, params.slug)
 
   return {
     title,
@@ -76,6 +80,13 @@ export default async function ComparisonPage({
   }
 
   const fields = entry.fields as unknown as Competitor
+  // Visible copy must never expose the raw Contentful slug (H1, breadcrumb,
+  // table headers, JSON-LD, related links). Same root cause as the <title>
+  // defect fixed in PR #81 — normalise once, here.
+  const displayName = getCompetitorDisplayName(fields, params.slug)
+  const competitor: Competitor = { ...fields, name: displayName }
+  const description = getComparisonDescription(fields, params.slug)
+  const title = getComparisonTitle(fields, params.slug)
 
   // Fetch all competitors for dynamic related links
   const allCompetitors = await getAllCompetitors()
@@ -85,14 +96,14 @@ export default async function ComparisonPage({
       slug: (c.fields.slug as string).startsWith('faithlock-vs-')
         ? (c.fields.slug as string)
         : `faithlock-vs-${c.fields.slug as string}`,
-      name: c.fields.name as string,
+      name: getCompetitorDisplayName(c.fields as unknown as Competitor, c.fields.slug as string),
     }))
 
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: fields.seoTitle,
-    description: fields.seoDescription,
+    headline: title,
+    description,
     author: { '@type': 'Organization', name: 'FaithLock' },
     publisher: {
       '@type': 'Organization',
@@ -120,7 +131,7 @@ export default async function ComparisonPage({
       },
       {
         '@type': 'SoftwareApplication',
-        name: fields.name,
+        name: displayName,
         applicationCategory: 'LifestyleApplication',
         operatingSystem: fields.platforms?.join(', ') || 'iOS',
         offers: {
@@ -146,7 +157,7 @@ export default async function ComparisonPage({
     <>
       <SchemaMarkup data={[articleSchema, comparisonSchema]} />
       <ComparisonTemplate
-        competitor={fields}
+        competitor={competitor}
         updatedAt={entry.sys.updatedAt}
         otherCompetitors={otherCompetitors}
       />
