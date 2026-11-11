@@ -2,6 +2,7 @@ import { Competitor } from '@/lib/types'
 import { APP_STORE_URL } from '@/lib/constants'
 import { FAITHLOCK_PROS, FAITHLOCK_CONS, FAITHLOCK_COMPARISON } from '@/lib/faithlock-data'
 import ComparisonTable from '@/components/ui/ComparisonTable'
+import ComparisonQuickSummary from '@/components/templates/ComparisonQuickSummary'
 import CTAButton from '@/components/ui/CTAButton'
 import BibleVerse from '@/components/ui/BibleVerse'
 import TemplateTracker from '@/components/templates/TemplateTracker'
@@ -73,17 +74,7 @@ export default function ComparisonTemplate({
           </p>
 
           {/* Quick Summary — neutral, not pre-judging */}
-          <div className="cozy-card-soft max-w-2xl p-6">
-            <p className="text-sm font-semibold text-cozy-primary-dark mb-2 uppercase tracking-wide">
-              Quick Summary
-            </p>
-            <p className="text-cozy-ink/80 leading-relaxed">
-              {`${competitor.name}${competitor.tagline ? ` ${competitor.tagline.toLowerCase()}.` : '.'} `}
-              FaithLock focuses on Scripture-based app blocking with Bible verse
-              unlocking. The best choice depends on your priorities — we compare
-              both below.
-            </p>
-          </div>
+          <ComparisonQuickSummary competitorName={competitor.name} />
         </div>
       </div>
 
