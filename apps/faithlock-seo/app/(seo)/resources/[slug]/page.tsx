@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { getAllGlossaryTerms, getGlossaryTermBySlug } from '@/lib/contentful'
 import { GlossaryTerm } from '@/lib/types'
 import { SITE_URL } from '@/lib/constants'
+import { coerceToPlainText, toMetaDescription } from '@/lib/meta-description'
 import GlossaryTemplate from '@/components/templates/GlossaryTemplate'
 import SchemaMarkup from '@/components/seo/SchemaMarkup'
 
@@ -24,8 +25,13 @@ export async function generateMetadata({
 
   const fields = entry.fields as unknown as GlossaryTerm
   const year = new Date().getFullYear()
-  const title = fields.seoTitle || `What is ${fields.term}? Christian Guide (${year})`
-  const description = fields.seoDescription
+  const title = coerceToPlainText(fields.seoTitle) || `What is ${fields.term}? Christian Guide (${year})`
+  // Five glossary entries ship without seoDescription, so Production served no
+  // meta description on those URLs (measured 2026-11-11). shortDefinition is the
+  // entry's own summary, already rendered on the page — reuse it, bounded to
+  // the snippet length, rather than inventing copy.
+  const description =
+    toMetaDescription(fields.seoDescription) ?? toMetaDescription(fields.shortDefinition)
 
   return {
     title,
@@ -63,8 +69,9 @@ export default async function LearnSlugPage({
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: fields.seoTitle,
-    description: fields.seoDescription,
+    headline: coerceToPlainText(fields.seoTitle) || `What is ${fields.term}?`,
+    description:
+      toMetaDescription(fields.seoDescription) ?? toMetaDescription(fields.shortDefinition),
     author: { '@type': 'Organization', name: 'FaithLock' },
     publisher: {
       '@type': 'Organization',
