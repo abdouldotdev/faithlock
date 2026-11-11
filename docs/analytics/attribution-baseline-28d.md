@@ -104,6 +104,17 @@ Status: **not re-verifiable from the shared connector on 2026-11-10.**
 - Blast radius: the North Star inputs (attributable payers, recorded revenue)
   and ABD-773 step 3 (`first_focus_*` reception) cannot be read until the
   connector is re-scoped to 239251 (product) / 324483 (landing).
+- **Confirmed persistent, not transient.** Q0 was re-executed on 2026-11-11T11:2xZ
+  (run `1785255f-b63e-435c-ae04-6969a7afa50f`): `prayer_session_completed`,
+  `install_attributed` and `paywall_purchase_completed` = 0 events each, with
+  PostHog taxonomy warnings that none of the three names exists in the connected
+  project. The negative control returned the same mobile-money taxonomy over a
+  7-day window (`fastcash_deposit_step_advanced` 2 660, `fastcash_entry_opened`
+  2 518, `airtime_flags_resolved` 1 839, `transfer_started` 670) and a 90-day
+  scan for `%faithlock%`, `%prayer_session%`, `%paywall%` returned zero rows.
+  The connected project holds 204 752 events / 1 764 persons over 28 days and
+  none of them is a FaithLock event. The binding has therefore been wrong for at
+  least two consecutive days; the 2026-11-09 snapshot is the last good read.
 
 ## Comparison mode
 
