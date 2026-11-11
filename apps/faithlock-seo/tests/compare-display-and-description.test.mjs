@@ -3,9 +3,14 @@ import test from 'node:test'
 
 import {
   getComparisonDescription,
+  getComparisonTitle,
   getCompetitorDisplayName,
 } from '../lib/compare-metadata.ts'
-import { MAX_META_DESCRIPTION_LENGTH, toMetaDescription } from '../lib/meta-description.ts'
+import {
+  coerceToPlainText,
+  MAX_META_DESCRIPTION_LENGTH,
+  toMetaDescription,
+} from '../lib/meta-description.ts'
 
 // Every compare URL published in the Production sitemap on 2026-11-11.
 const publishedSlugs = [
@@ -96,4 +101,72 @@ test('toMetaDescription collapses whitespace and bounds long text on a word boun
 
 test('toMetaDescription keeps short text verbatim', () => {
   assert.equal(toMetaDescription('What is doomscrolling?'), 'What is doomscrolling?')
+})
+
+// Regression (ABD-800): Contentful returns Rich text documents for
+// `seoDescription` on the five entries whose Production meta description was
+// literally "[object Object]", and `getComparisonDescription` called `.trim()`
+// on it. That threw during prerendering and failed the whole Vercel build:
+//   TypeError: e.seoDescription?.trim is not a function
+//   Export encountered errors on following paths:
+//     /(seo)/compare/[slug]/page: /compare/faithlock-vs-one-sec (and 4 more)
+const contentfulRichText = (text) => ({
+  nodeType: 'document',
+  data: {},
+  content: [
+    {
+      nodeType: 'paragraph',
+      data: {},
+      content: [{ nodeType: 'text', value: text, marks: [], data: {} }],
+    },
+  ],
+})
+
+test('a Rich text seoDescription is read as text instead of crashing the build', () => {
+  const configured = 'FaithLock vs Opal: features, pricing and a biblical perspective.'
+  assert.equal(
+    getComparisonDescription(
+      { name: 'Opal', seoDescription: contentfulRichText(configured) },
+      'faithlock-vs-opal',
+    ),
+    configured,
+  )
+})
+
+test('a Rich text seoTitle is read as text instead of crashing the build', () => {
+  const configured = 'FaithLock vs Opal | FaithLock'
+  assert.equal(
+    getComparisonTitle({ name: 'Opal', seoTitle: contentfulRichText(configured) }, 'faithlock-vs-opal'),
+    configured,
+  )
+})
+
+test('no published compare URL can render an object-shaped description', () => {
+  for (const slug of publishedSlugs) {
+    const description = getComparisonDescription(
+      { name: slug, seoDescription: contentfulRichText(`Editorial copy for ${slug}.`) },
+      slug,
+    )
+    assert.ok(description.trim(), `${slug} produced an empty description`)
+    assert.doesNotMatch(description, /\[object Object\]/, `${slug} leaked an object`)
+  }
+})
+
+test('coerceToPlainText flattens rich text, locale wrappers and arrays', () => {
+  assert.equal(coerceToPlainText(contentfulRichText('Hello world')), 'Hello world')
+  assert.equal(coerceToPlainText({ 'en-US': 'Localised copy' }), 'Localised copy')
+  assert.equal(coerceToPlainText([contentfulRichText('First'), contentfulRichText('Second')]), 'First Second')
+  assert.equal(coerceToPlainText('  plain   text '), 'plain text')
+  assert.equal(coerceToPlainText(''), undefined)
+  assert.equal(coerceToPlainText(null), undefined)
+  assert.equal(coerceToPlainText(42), undefined)
+  assert.equal(coerceToPlainText({}), undefined)
+})
+
+test('toMetaDescription accepts a Rich text value', () => {
+  assert.equal(
+    toMetaDescription(contentfulRichText('Bounded rich text description.')),
+    'Bounded rich text description.',
+  )
+  assert.equal(toMetaDescription({}), undefined)
 })

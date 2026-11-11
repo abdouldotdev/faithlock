@@ -25,3 +25,22 @@ project for this app (`rootDirectory: apps/faithlock-seo`):
   verification.
 - `/resources` pages do not need Contentful: they are generated from the
   committed markdown and are fully reviewable in Preview.
+
+## Contentful text fields are not always strings
+
+`seoDescription` is a **Rich text** field on some `competitor` entries: the
+Delivery API returns a `document` node, not a string. Production proved it on
+2026-11-11 — five `/compare/*` URLs served
+`<meta name="description" content="[object Object]">`, and the first branch that
+called `.trim()` on the field failed the whole Vercel build:
+
+```
+TypeError: e.seoDescription?.trim is not a function
+Export encountered errors on following paths:
+  /(seo)/compare/[slug]/page: /compare/faithlock-vs-one-sec  (+4 more)
+```
+
+A local build without Contentful credentials never hits this path (it generates
+zero compare pages), so the failure is only reproducible with entries present.
+Always run a CMS text field through `coerceToPlainText()` from
+`lib/meta-description.ts` before using string methods on it.
