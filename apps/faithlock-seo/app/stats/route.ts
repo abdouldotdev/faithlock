@@ -31,6 +31,7 @@ const METRICS = `
   uniqIf(distinct_id, event = 'diagnostic_result') AS completed,
   uniqIf(distinct_id, event = 'diagnostic_slide' AND toString(properties.index) = '4') AS reached_cta,
   uniqIf(distinct_id, event = 'faithlock_store_click' AND properties.location = 'quiz_result') AS store_clicks,
+  uniqIf(distinct_id, event = 'faithlock_store_click' AND properties.location = 'quiz_result' AND properties.destination_type = 'onelink') AS onelink_clicks,
   uniqIf(distinct_id, event = 'diagnostic_escape_shown') AS blocked,
   uniqIf(distinct_id, event = 'diagnostic_browser_open') AS reopened`
 
@@ -165,31 +166,52 @@ export async function GET(req: Request) {
   const installsTotal = installsByDay.reduce((n, r) => n + num(r.installs), 0)
   const attributedTotal = installsByDay.reduce((n, r) => n + num(r.attributed), 0)
   const installsOf = new Map(installsByDay.map((r) => [String(r.day), r]))
-  const clicksOf = new Map(byDay.map((r) => [String(r.day), num(r.store_clicks)]))
+  // Only a click that went through the OneLink can be matched to an install: inside a social app the
+  // button went straight to the App Store, with no link AppsFlyer could see.
+  const clicksOf = new Map(byDay.map((r) => [String(r.day), num(r.onelink_clicks)]))
   const allDays = Array.from(new Set(installsByDay.map((r) => String(r.day)).concat(byDay.map((r) => String(r.day)))))
     .sort()
     .reverse()
+
+  // One row per bio link, shown even at zero: the people its page sent through its OneLink, and the
+  // installs AppsFlyer matched to that link's campaign (told apart by the campaign's name).
+  const linkOfPage = (p: string) => (/emma/i.test(p) ? 'emma' : /emft/i.test(p) ? 'emft' : 'quiz (sans compte)')
+  const linkOfCampaign = (c: string) => (/^emma/i.test(c) ? 'emma' : /emft/i.test(c) ? 'emft' : c)
+  const links = new Map<string, { clicks: number; installs: number; campaigns: string[] }>()
+  const link = (k: string) => links.get(k) ?? links.set(k, { clicks: 0, installs: 0, campaigns: [] }).get(k)!
+  link('emma')
+  link('emft')
+  byPage.forEach((r) => (link(linkOfPage(String(r.page))).clicks += num(r.onelink_clicks)))
+  campaigns.forEach((r) => {
+    const l = link(linkOfCampaign(String(r.campaign)))
+    l.installs += num(r.installs)
+    l.campaigns.push(String(r.campaign))
+  })
+  const linkRows: string[] = []
+  links.forEach((v, k) => {
+    if (k !== 'emma' && k !== 'emft' && !v.clicks && !v.installs) return
+    linkRows.push(`<tr><td>${esc(k)}</td><td>${v.clicks}</td><td>${v.installs}</td><td>${esc(v.campaigns.join(', ') || '—')}</td></tr>`)
+  })
+
   const installs = installsError
     ? `<p class="n">Lecture des installations impossible : ${esc(installsError)}</p>`
     : `<div class="k">
-${card('Installations', installsTotal)}
-${card('Attribuées à un lien', attributedTotal, pct(attributedTotal, installsTotal) + ' des installations')}
-${card('Organiques', installsTotal - attributedTotal)}
+${card('Venues du lien', attributedTotal, 'attribuées par AppsFlyer')}
+${card('Clics via OneLink', total.onelink_clicks, 'les seuls qu’AppsFlyer peut rapprocher')}
+${card('Toutes sources', installsTotal, `dont ${installsTotal - attributedTotal} sans lien`)}
 </div>
-<div class="t" style="margin-top:14px"><table><tr><th>Jour</th><th>Clic App Store (quiz)</th><th>Installations</th><th>Attribuées</th><th>Organiques</th></tr>${
+<h2>Par lien</h2>
+<div class="t"><table><tr><th>Lien</th><th>Clics via OneLink</th><th>Installations venues du lien</th><th>Campagne AppsFlyer</th></tr>${linkRows.join('')}</table></div>
+<h2>Par jour</h2>
+<div class="t"><table><tr><th>Jour</th><th>Clics via OneLink</th><th>Installations venues du lien</th><th>Installations, toutes sources</th></tr>${
         allDays
           .map((d) => {
             const r = installsOf.get(d)
-            return `<tr><td>${esc(d)}</td><td>${clicksOf.get(d) ?? 0}</td><td>${num(r?.installs)}</td><td>${num(r?.attributed)}</td><td>${num(r?.installs) - num(r?.attributed)}</td></tr>`
+            return `<tr><td>${esc(d)}</td><td>${clicksOf.get(d) ?? 0}</td><td>${num(r?.attributed)}</td><td>${num(r?.installs)}</td></tr>`
           })
-          .join('') || '<tr><td colspan="5">Aucune installation sur la période.</td></tr>'
+          .join('') || '<tr><td colspan="4">Aucune installation sur la période.</td></tr>'
       }</table></div>
-<h2>Installations attribuées, par campagne</h2>
-<div class="t"><table><tr><th>Campagne</th><th>Source</th><th>Installations</th></tr>${
-        campaigns.map((r) => `<tr><td>${esc(r.campaign)}</td><td>${esc(r.source)}</td><td>${num(r.installs)}</td></tr>`).join('') ||
-        '<tr><td colspan="3">Aucune installation attribuée sur la période.</td></tr>'
-      }</table></div>
-<p class="n">Installations lues dans le projet PostHog de l'app : l'événement install_attributed, envoyé au premier lancement avec l'attribution AppsFlyer, en jours UTC. Une installation n'est attribuée à un lien que si la personne passe par le OneLink dans un vrai navigateur, puis ouvre l'app. Celle qui quitte TikTok et cherche FaithLock dans l'App Store compte en organique.</p>`
+<p class="n">« Venues du lien » : la personne a touché le lien OneLink (le bouton du quiz, ou le lien posé directement), installé l'app puis l'a ouverte, et AppsFlyer a fait le rapprochement. Il en manque : des installations suivent un clic de quelques minutes et restent comptées sans lien. « Toutes sources » compte chaque première ouverture de l'app, d'où qu'elle vienne. Chiffres lus dans le projet PostHog de l'app (événement install_attributed), en jours UTC.</p>`
 
   return page(`
 <h1>Quiz TikTok, ${days} derniers jours</h1>
@@ -204,9 +226,9 @@ ${card('Bloqués par TikTok', total.blocked)}
 ${card('Rouverts dans Safari', total.reopened)}
 </div>
 <p class="n">Visiteurs uniques par appareil et par navigateur : une personne qui rouvre la page dans Safari compte deux fois.</p>
-<h2>Installations de l'app</h2>${installs}
+<h2>Installations venues du lien</h2>${installs}
 <h2>Test A/B : quiz ou écran direct</h2>${table(byVariant, 'Version', 'variant')}
 <p class="n">« direct » saute les questions : comparez la colonne Conversion (clics App Store sur visiteurs).</p>
-<h2>Par lien</h2>${table(byPage, 'Page', 'page')}
-<h2>Par jour</h2>${table(byDay, 'Jour', 'day')}`)
+<h2>Quiz, par lien</h2>${table(byPage, 'Page', 'page')}
+<h2>Quiz, par jour</h2>${table(byDay, 'Jour', 'day')}`)
 }
