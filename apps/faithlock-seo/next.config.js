@@ -24,13 +24,13 @@ const nextConfig = {
     ]
   },
   // The TikTok bio quiz (public/quiz.html), served under clean paths without any redirect: a
-  // social app's browser blocks a redirect. The page reads the campaign (emmas, emft) from its
+  // social app's browser blocks a redirect. The page reads the campaign (emma, emft) from its
   // path and sends the App Store button through that campaign's OneLink.
   async rewrites() {
     return [
       { source: '/quiz', destination: '/quiz.html' },
-      { source: '/quiz/:campaign(emma|emmas|emft)', destination: '/quiz.html' },
-      { source: '/:campaign(emma|emmas|emft)', destination: '/quiz.html' },
+      { source: '/quiz/:campaign(emma|emft)', destination: '/quiz.html' },
+      { source: '/:campaign(emma|emft)', destination: '/quiz.html' },
     ]
   },
   async headers() {

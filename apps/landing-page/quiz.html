@@ -204,9 +204,9 @@
   // Provider token of the App Store Connect account (App Analytics > campaign link). Empty: the
   // campaign tag is left out, the link still opens the listing.
   var APPLE_PROVIDER_TOKEN = '';
-  // The OneLink of the campaign the page is served for: /quiz/emma (or emmas) uses « emmas »,
+  // The OneLink of the campaign the page is served for: /quiz/emma uses « emma »,
   // /quiz/emft uses « emft », anything else the site's default link.
-  var CAMPAIGNS = { emma: 'emmas', emmas: 'emmas', emft: 'emft' };
+  var CAMPAIGNS = { emma: 'emma', emft: 'emft' };
   var campaign = location.pathname.replace(/\/+$/, '').split('/').pop();
   var ONELINK = 'https://faithlock.onelink.me/l3EF/' + (CAMPAIGNS[campaign] || 'web');
   // Analytics only run on the live site, never on a local preview.

@@ -1,9 +1,11 @@
 // /stats: the TikTok bio quiz funnel (public/quiz.html), read from PostHog on each request.
-// Private: HTTP basic auth with STATS_PASSWORD (any user name). Server-side only settings:
+// Private: opened with the code in STATS_PASSWORD, then kept for 30 days in a cookie. Server-side only settings:
 //   POSTHOG_PERSONAL_API_KEY  a PostHog personal API key with « query:read »
 //   POSTHOG_PROJECT_ID        the FaithLock PostHog project id
 //   POSTHOG_API_HOST          optional, default https://us.posthog.com
 // ?days=7 sets the window (1 to 365, default 7).
+
+import { createHash } from 'node:crypto'
 
 export const dynamic = 'force-dynamic'
 
@@ -17,7 +19,7 @@ const EVENTS = [
   'diagnostic_link_copied',
   'diagnostic_browser_open',
 ]
-const QUIZ_PAGES = `(properties.url LIKE '/quiz%' OR properties.url IN ('/emma', '/emmas', '/emft'))`
+const QUIZ_PAGES = `(properties.url LIKE '/quiz%' OR properties.url IN ('/emma', '/emft'))`
 
 const METRICS = `
   uniqIf(distinct_id, event = 'diagnostic_view') AS visitors,
@@ -48,13 +50,36 @@ const esc = (s: unknown) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;',
 const num = (v: unknown) => Number(v) || 0
 const pct = (a: unknown, b: unknown) => (num(b) ? `${Math.round((num(a) / num(b)) * 100)} %` : '—')
 
+const COOKIE = 'fl_stats'
+/** What the cookie holds: a hash of the code, never the code itself. */
+const token = () => createHash('sha256').update(`faithlock-stats:${process.env.STATS_PASSWORD}`).digest('hex')
+
 function authorized(req: Request): boolean {
-  const password = process.env.STATS_PASSWORD
-  if (!password) return false
-  const header = req.headers.get('authorization') || ''
-  if (!header.startsWith('Basic ')) return false
-  const decoded = Buffer.from(header.slice(6), 'base64').toString('utf8')
-  return decoded.slice(decoded.indexOf(':') + 1) === password
+  if (!process.env.STATS_PASSWORD) return false
+  const cookie = (req.headers.get('cookie') || '').split(/;\s*/).find((c) => c.startsWith(`${COOKIE}=`))
+  return cookie?.slice(COOKIE.length + 1) === token()
+}
+
+const codeForm = (wrong: boolean) =>
+  page(
+    `<h1>Stats</h1><form method="post" style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+<input name="code" type="password" inputmode="numeric" autocomplete="one-time-code" placeholder="Code" autofocus
+ style="font:inherit;font-size:20px;padding:12px 16px;border:2.5px solid #3D2B1F;border-radius:14px;background:#FFFDF8;width:180px">
+<button style="font:inherit;font-weight:800;font-size:17px;padding:12px 22px;border:2.5px solid #3D2B1F;border-radius:99px;background:#D68A4E;color:#fff;box-shadow:2px 3px 0 #3D2B1F">Ouvrir</button>
+</form>${wrong ? '<p style="color:#C0763C;font-weight:700">Code incorrect.</p>' : ''}`,
+    wrong ? 401 : 200,
+  )
+
+export async function POST(req: Request) {
+  const code = String((await req.formData()).get('code') || '')
+  if (!process.env.STATS_PASSWORD || code !== process.env.STATS_PASSWORD) return codeForm(true)
+  return new Response(null, {
+    status: 303,
+    headers: {
+      Location: '/stats',
+      'Set-Cookie': `${COOKIE}=${token()}; Path=/stats; Max-Age=2592000; HttpOnly; Secure; SameSite=Lax`,
+    },
+  })
 }
 
 function page(body: string, status = 200, extra: Record<string, string> = {}) {
@@ -73,10 +98,8 @@ th{font-size:12px;color:#9C8773}.n{color:#9C8773;font-size:13px}nav a{margin-rig
 }
 
 export async function GET(req: Request) {
-  if (!authorized(req)) {
-    if (!process.env.STATS_PASSWORD) return page('<h1>Stats</h1><p>STATS_PASSWORD n’est pas configuré.</p>', 503)
-    return new Response('Mot de passe requis', { status: 401, headers: { 'WWW-Authenticate': 'Basic realm="FaithLock stats"' } })
-  }
+  if (!process.env.STATS_PASSWORD) return page('<h1>Stats</h1><p>STATS_PASSWORD n’est pas configuré.</p>', 503)
+  if (!authorized(req)) return codeForm(false)
   if (!process.env.POSTHOG_PERSONAL_API_KEY || !process.env.POSTHOG_PROJECT_ID) {
     return page('<h1>Stats</h1><p>Il manque POSTHOG_PERSONAL_API_KEY ou POSTHOG_PROJECT_ID dans les variables Vercel.</p>', 503)
   }
