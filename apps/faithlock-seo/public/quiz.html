@@ -245,12 +245,23 @@
   var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var params = new URLSearchParams(location.search);
 
+  // ─── A/B test: the quiz, or straight to the App Store screen ──
+  // Drawn once per browser and kept; ?v=quiz or ?v=direct forces one (for testing).
+  var VARIANTS = ['quiz', 'direct'];
+  var variant = params.get('v');
+  if (VARIANTS.indexOf(variant) < 0) {
+    try { variant = localStorage.getItem('fl_quiz_variant'); } catch (e) { variant = null; }
+    if (VARIANTS.indexOf(variant) < 0) variant = Math.random() < 0.5 ? 'quiz' : 'direct';
+  }
+  try { localStorage.setItem('fl_quiz_variant', variant); } catch (e) {}
+
   // ─── Analytics (PostHog), on the live site only ──────────────
   var queue = [];
   function track(event, props) {
     props = props || {};
     props.url = location.pathname;
     props.in_app_browser = inApp;
+    props.variant = variant;
     if (window.posthog && window.posthog.capture) window.posthog.capture(event, props);
     else queue.push([event, props]);
   }
@@ -403,6 +414,21 @@
   ];
   var LAST = SLIDES.length - 1;
 
+  /** Variant « direct »: no questions, the answer screen and the App Store button at once. */
+  function renderDirect() {
+    result = null;
+    progress.hidden = true;
+    stories.hidden = true;
+    screen.className = 'slides last';
+    screen.innerHTML = '<h1 class="st">Put a verse before your apps.</h1>' +
+      '<p class="sub st">FaithLock locks TikTok, Instagram or YouTube. To open them, you read a Bible verse first.</p>' +
+      '<div class="phone st" aria-hidden="true"><div class="screen" id="demo"></div></div>';
+    restart(screen);
+    lockDemo('TikTok');
+    renderCta(true, 'Get FaithLock');
+    setQuery(function (q) { q.set('v', 'direct'); if (inApp) q.set('o', inApp); });
+  }
+
   function renderResult(arrived, toEnd) {
     result = compute();
     slide = toEnd ? LAST : 0;
@@ -411,7 +437,7 @@
     showSlide(1);
     window.scrollTo(0, 0);
     // Kept in the address, so « Open in browser » opens the result as it is.
-    setQuery(function (q) { q.set('r', encode()); if (inApp) q.set('o', inApp); });
+    setQuery(function (q) { q.set('r', encode()); q.set('v', variant); if (inApp) q.set('o', inApp); });
     if (!arrived) track('diagnostic_result', { phone_hours_week: result.phoneHoursWeek, god_minutes_week: result.godMinutesWeek, app: answers.app, when: answers.when });
   }
 
@@ -485,7 +511,7 @@
     }
   });
 
-  function renderCta(last) {
+  function renderCta(last, label) {
     cta.hidden = false;
     if (!last) {
       ctaInner.innerHTML = '<button type="button" class="btn" id="next">Continue</button>';
@@ -499,7 +525,7 @@
     }
     var href = storeLink();
     ctaInner.innerHTML =
-      '<a class="btn go" id="store" href="' + href + '">' + APPLE + 'Take back my ' + result.phoneHoursWeek + ' hours</a>' +
+      '<a class="btn go" id="store" href="' + href + '">' + APPLE + (label || 'Take back my ' + result.phoneHoursWeek + ' hours') + '</a>' +
       (inApp ? '<button type="button" class="ask" id="ask">App Store not opening?</button>' : '');
     $('store').addEventListener('click', function () {
       track('faithlock_store_click', {
@@ -510,7 +536,7 @@
       if (!inApp) return;
       // Inside a social app: still here shortly after the tap means the link was blocked.
       try { sessionStorage.setItem('fl_quiz_store_attempt', String(Date.now())); } catch (e) {}
-      setTimeout(function () { if (document.visibilityState === 'visible') openCoach('store_blocked'); }, 1800);
+      setTimeout(function () { if (document.visibilityState === 'visible') openCoach('store_blocked'); }, 700);
     });
     var ask = $('ask');
     if (ask) ask.addEventListener('click', function () { openCoach('asked'); });
@@ -612,16 +638,19 @@
   // ─── Start ───────────────────────────────────────────────────
   var arrived = decode(params.get('r'));
   track('diagnostic_view', { device: android ? 'android' : /iPhone|iPad|iPod/i.test(ua) ? 'ios' : 'other', with_result: !!arrived });
+  // Reopened in a real browser after the way out: the escape worked.
+  if (!inApp && params.get('o')) {
+    try { if (!sessionStorage.getItem('fl_quiz_reopened')) { sessionStorage.setItem('fl_quiz_reopened', '1'); track('diagnostic_browser_open', { origin: params.get('o') }); } }
+    catch (e) { track('diagnostic_browser_open', { origin: params.get('o') }); }
+  }
   if (arrived) {
     answers = arrived;
     step = QUESTIONS.length;
-    // Reopened in a real browser after the way out: the escape worked.
-    if (!inApp && params.get('o')) {
-      try { if (!sessionStorage.getItem('fl_quiz_reopened')) { sessionStorage.setItem('fl_quiz_reopened', '1'); track('diagnostic_browser_open', { origin: params.get('o') }); } }
-      catch (e) { track('diagnostic_browser_open', { origin: params.get('o') }); }
-    }
     // Back from the way out (or from TikTok's blocking screen): straight to the App Store screen.
     renderResult(true, !!params.get('o'));
+    cameBack();
+  } else if (variant === 'direct') {
+    renderDirect();
     cameBack();
   } else {
     renderQuestion();

@@ -107,10 +107,11 @@ export async function GET(req: Request) {
   const days = Math.min(365, Math.max(1, Math.round(Number(new URL(req.url).searchParams.get('days')) || 7)))
   const where = `timestamp >= now() - INTERVAL ${days} DAY AND event IN (${EVENTS.map((e) => `'${e}'`).join(', ')}) AND ${QUIZ_PAGES}`
 
-  let total: Row, byPage: Row[], byDay: Row[]
+  let total: Row, byVariant: Row[], byPage: Row[], byDay: Row[]
   try {
-    ;[[total], byPage, byDay] = await Promise.all([
+    ;[[total], byVariant, byPage, byDay] = await Promise.all([
       hogql(`SELECT ${METRICS} FROM events WHERE ${where}`),
+      hogql(`SELECT coalesce(nullIf(toString(properties.variant), ''), 'quiz') AS variant, ${METRICS} FROM events WHERE ${where} GROUP BY variant ORDER BY variant DESC`),
       hogql(`SELECT replaceRegexpOne(toString(properties.url), '\\\\.html$', '') AS page, ${METRICS} FROM events WHERE ${where} GROUP BY page ORDER BY visitors DESC`),
       hogql(`SELECT toDate(timestamp) AS day, ${METRICS} FROM events WHERE ${where} GROUP BY day ORDER BY day DESC`),
     ])
@@ -141,6 +142,8 @@ ${card('Bloqués par TikTok', total.blocked)}
 ${card('Rouverts dans Safari', total.reopened)}
 </div>
 <p class="n">Visiteurs uniques par appareil et par navigateur : une personne qui rouvre la page dans Safari compte deux fois. Les installations se lisent dans AppsFlyer et App Store Connect.</p>
+<h2>Test A/B : quiz ou écran direct</h2>${table(byVariant, 'Version', 'variant')}
+<p class="n">« direct » saute les questions : comparez la colonne Conversion (clics App Store sur visiteurs).</p>
 <h2>Par lien</h2>${table(byPage, 'Page', 'page')}
 <h2>Par jour</h2>${table(byDay, 'Jour', 'day')}`)
 }
