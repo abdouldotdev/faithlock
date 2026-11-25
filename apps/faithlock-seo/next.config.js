@@ -20,18 +20,16 @@ const nextConfig = {
         destination: '/resources/:slug',
         permanent: true,
       },
-      // Short links to the AppsFlyer OneLinks of the video series. Temporary, so a link can be
-      // repointed without browsers keeping the old target.
-      {
-        source: '/emmas',
-        destination: 'https://faithlock.onelink.me/l3EF/emmas',
-        permanent: false,
-      },
-      {
-        source: '/emft',
-        destination: 'https://faithlock.onelink.me/l3EF/emft',
-        permanent: false,
-      },
+    ]
+  },
+  // The TikTok bio quiz (public/quiz.html), served under clean paths without any redirect: a
+  // social app's browser blocks a redirect. The page reads the campaign (emmas, emft) from its
+  // path and sends the App Store button through that campaign's OneLink.
+  async rewrites() {
+    return [
+      { source: '/quiz', destination: '/quiz.html' },
+      { source: '/quiz/:campaign(emmas|emft)', destination: '/quiz.html' },
+      { source: '/:campaign(emmas|emft)', destination: '/quiz.html' },
     ]
   },
   async headers() {
