@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBF3E2">
+<title>Your phone vs. God | FaithLock</title>
+<meta name="description" content="Four taps. See how your week really splits between your phone and God.">
+<!--
+  The page behind the TikTok bio link: four taps, then the visitor's week told in a few animated
+  screens, then the App Store. One self-contained file, no dependency: it must load at once in
+  TikTok's built-in browser.
+
+  Host it on the exact host of the bio link (https://www.getfaithlock.com/quiz.html, with
+  utm_source=tiktok): TikTok blocks a link that redirects to another host.
+
+  Every number shown comes from the visitor's own answers. Verses are from the Berean Standard Bible.
+-->
+<style>
+  :root {
+    --cream: #FBF3E2; --surface: #FFFDF8; --muted: #F3E7CE; --ink: #3D2B1F; --ink-soft: #9C8773;
+    --primary: #D68A4E; --primary-dark: #C0763C; --primary-light: #E8B488; --gold: #C9A962;
+    --peach: #F3D9BE; --sage: #CFDDC3; --line: #EAD9BC;
+    --hard: 3px 5px 0 0 var(--ink); --hard-sm: 2px 3px 0 0 var(--ink);
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--cream); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased; line-height: 1.5;
+  }
+  button { font: inherit; color: inherit; cursor: pointer; }
+  [hidden] { display: none !important; }
+
+  .page { max-width: 460px; min-height: 100vh; min-height: 100dvh; margin: 0 auto; padding: 0 20px; display: flex; flex-direction: column; }
+  header { height: 56px; flex: none; display: flex; align-items: center; }
+  .brand { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 14px; letter-spacing: -.01em; }
+  .brand img { width: 28px; height: 28px; border-radius: 8px; border: 2px solid var(--ink); display: block; }
+
+  /* Questions: where you are, without words */
+  .progress { display: flex; gap: 6px; }
+  .progress span { flex: 1; height: 8px; border-radius: 99px; border: 2px solid var(--ink); background: var(--surface); transition: background .3s; }
+  .progress span.now { background: var(--primary-light); }
+  .progress span.done { background: var(--primary); }
+
+  /* Result screens: story bars that fill while a screen holds */
+  .stories { display: flex; gap: 6px; padding-top: 2px; }
+  .stories span { flex: 1; height: 6px; border-radius: 99px; background: rgba(61, 43, 31, .15); overflow: hidden; }
+  .stories i { display: block; width: 0; height: 100%; border-radius: 99px; background: var(--ink); }
+  .stories .done i { width: 100%; }
+  .stories .now i { animation: fill 4s linear forwards; }
+  .stories.paused .now i { animation-play-state: paused; }
+  @keyframes fill { from { width: 0; } to { width: 100%; } }
+
+  main { flex: 1; display: flex; flex-direction: column; padding: 32px 0 40px; }
+  .enter { animation: enter .25s cubic-bezier(.16, 1, .3, 1) both; }
+  @keyframes enter { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+  h1 { margin: 0; font-size: 28px; line-height: 1.15; font-weight: 800; letter-spacing: -.02em; }
+  .hint { margin: 10px 0 0; font-size: 15px; line-height: 1.4; color: var(--ink-soft); }
+
+  .options { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+  .option {
+    min-height: 60px; width: 100%; padding: 0 20px; display: flex; align-items: center; justify-content: space-between;
+    text-align: left; font-size: 17px; font-weight: 700; background: var(--surface); border: 2.5px solid var(--ink);
+    border-radius: 22px; box-shadow: var(--hard-sm); transition: transform .1s, box-shadow .1s, background .1s;
+  }
+  .option:active, .option.chosen { transform: translate(2px, 3px); box-shadow: none; }
+  .option.chosen { background: var(--primary); color: #fff; }
+  .option .tick { width: 24px; height: 24px; flex: none; border-radius: 50%; border: 2px solid rgba(61, 43, 31, .3); display: flex; align-items: center; justify-content: center; color: transparent; }
+  .option.chosen .tick { border-color: #fff; background: #fff; color: var(--primary); }
+  .option:focus-visible, .btn:focus-visible, .link:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+  .link { align-self: flex-start; margin-top: 24px; padding: 8px 4px; background: none; border: 0; font-size: 14px; font-weight: 700; color: var(--ink-soft); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; }
+
+  .adding { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-bottom: 96px; text-align: center; }
+  .bars { display: flex; align-items: flex-end; gap: 8px; }
+  .bars i { width: 16px; border: 2px solid var(--ink); border-radius: 6px 6px 0 0; background: var(--primary); transform-origin: bottom; animation: pulse 1s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: .35; transform: scaleY(.7); } 50% { opacity: 1; transform: scaleY(1); } }
+  .adding p { margin: 24px 0 0; font-size: 20px; font-weight: 800; }
+
+  /* One idea per screen, one screen at a time */
+  .slides { flex: 1; justify-content: center; align-items: center; text-align: center; padding: 24px 0 140px; cursor: pointer; user-select: none; -webkit-user-select: none; animation: in-next .25s cubic-bezier(.16, 1, .3, 1) both; }
+  .slides.back { animation-name: in-prev; }
+  .slides.last { cursor: default; }
+  @keyframes in-next { from { opacity: 0; transform: translateX(36px); } to { opacity: 1; transform: none; } }
+  @keyframes in-prev { from { opacity: 0; transform: translateX(-36px); } to { opacity: 1; transform: none; } }
+  .slides .st { animation: rise .3s cubic-bezier(.16, 1, .3, 1) both; }
+  .slides .st:nth-child(2) { animation-delay: .06s; }
+  .slides .st:nth-child(3) { animation-delay: .12s; }
+  .slides .st:nth-child(4) { animation-delay: .18s; }
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+  .meter { margin-top: 28px; width: 100%; text-align: left; }
+  .meter .row { display: flex; align-items: baseline; justify-content: space-between; }
+  .meter .name { font-size: 16px; font-weight: 700; }
+  .meter .value { font-size: 40px; line-height: 1; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .meter .value small { margin-left: 4px; font-size: 20px; }
+  .track { margin-top: 10px; height: 30px; border-radius: 99px; border: 2.5px solid var(--ink); background: var(--surface); overflow: hidden; }
+  .track b { display: block; height: 100%; width: 0; border-radius: 99px; background: var(--primary); transition: width .5s ease-out; }
+  .track b.god { background: var(--gold); transition-delay: .15s; }
+
+  .huge { margin: 0; font-size: 120px; line-height: .9; font-weight: 900; letter-spacing: -.05em; color: var(--primary-dark); font-variant-numeric: tabular-nums; }
+  .huge-label { margin: 12px 0 0; font-size: 28px; line-height: 1.15; font-weight: 800; letter-spacing: -.02em; }
+  .sub { margin: 18px 0 0; font-size: 18px; line-height: 1.45; color: rgba(61, 43, 31, .85); }
+
+  .verse-slide { margin: 0; }
+  .verse-slide blockquote { margin: 0; font-family: Georgia, Cambria, serif; font-style: italic; font-size: 30px; line-height: 1.25; }
+  .verse-slide blockquote::before { content: "“"; display: block; height: 40px; font-size: 80px; line-height: 1; color: var(--primary); }
+  .verse-slide figcaption { margin-top: 16px; font-size: 14px; font-weight: 800; color: var(--ink-soft); }
+
+  /* The lock, shown rather than told */
+  .phone { position: relative; width: 172px; height: 300px; margin: 28px auto 0; padding: 10px; border: 3px solid var(--ink); border-radius: 30px; background: var(--surface); box-shadow: var(--hard); }
+  .phone::before { content: ""; position: absolute; top: 8px; left: 50%; width: 48px; height: 6px; margin-left: -24px; border-radius: 99px; background: rgba(61, 43, 31, .8); }
+  .screen { height: 100%; padding: 0 12px; border-radius: 20px; background: var(--cream); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; }
+  .tile { width: 56px; height: 56px; border-radius: 16px; border: 2.5px solid var(--ink); background: var(--muted); display: flex; align-items: center; justify-content: center; }
+  .tile.open { background: var(--sage); }
+  .app { font-size: 13px; font-weight: 800; line-height: 1.2; }
+  .pill { padding: 2px 10px; border-radius: 99px; border: 2px solid var(--ink); font-size: 10px; font-weight: 800; }
+  .pill.locked { background: var(--ink); color: var(--cream); }
+  .pill.unlocked { background: var(--sage); }
+  .tiny { font-size: 10px; font-weight: 800; color: var(--ink-soft); }
+  .tiny.caps { text-transform: uppercase; letter-spacing: .06em; }
+  .screen .scripture { margin: 0; font-family: Georgia, Cambria, serif; font-style: italic; font-size: 13px; line-height: 1.35; }
+  @media (max-height: 700px) {
+    .phone { width: 148px; height: 250px; margin-top: 20px; }
+    .huge { font-size: 96px; }
+    .verse-slide blockquote { font-size: 26px; }
+  }
+
+  /* The bottom action, always within reach of the thumb */
+  .cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; padding: 14px 20px; padding-bottom: max(14px, env(safe-area-inset-bottom)); border-top: 2.5px solid var(--ink); background: var(--cream); }
+  .cta .inner { max-width: 420px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .btn { width: 100%; height: 56px; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: 99px; border: 2.5px solid var(--ink); box-shadow: var(--hard); background: var(--primary); color: #fff; font-size: 17px; font-weight: 800; text-decoration: none; transition: transform .1s, box-shadow .1s; }
+  .btn:active { transform: translate(2px, 3px); box-shadow: var(--hard-sm); }
+  .btn.cream { background: var(--surface); color: var(--ink); }
+  .btn.small { height: 48px; font-size: 15px; }
+  .btn.go { animation: glow 2.2s ease-in-out .6s infinite; }
+  @keyframes glow { 0%, 100% { transform: none; } 50% { transform: translateY(-2px) scale(1.015); } }
+  .cta .ask { padding: 4px 8px; background: none; border: 0; font-size: 13px; font-weight: 800; text-decoration: underline; text-decoration-color: var(--primary); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .cta .only { margin: 0; font-size: 15px; font-weight: 800; text-align: center; }
+
+  /* The way out of a social app's browser */
+  .coach { position: fixed; inset: 0; z-index: 50; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 16px; padding-bottom: max(16px, env(safe-area-inset-bottom)); background: rgba(61, 43, 31, .82); }
+  .pointer { position: absolute; top: 8px; right: 12px; display: flex; flex-direction: column; align-items: flex-end; pointer-events: none; }
+  .pointer svg { animation: nudge 1.1s ease-in-out infinite; }
+  @keyframes nudge { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(7px, -9px); } }
+  .pointer span { margin: 4px 40px 0 0; padding: 4px 12px; border-radius: 99px; border: 2.5px solid var(--ink); background: var(--surface); font-size: 13px; font-weight: 800; }
+  .sheet { width: 100%; max-width: 420px; margin: 0 auto; padding: 20px; border-radius: 22px; border: 2.5px solid var(--ink); background: var(--surface); box-shadow: var(--hard); }
+  .sheet h3 { margin: 0; font-size: 20px; line-height: 1.2; font-weight: 800; }
+  .sheet ol { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 16px; font-weight: 500; line-height: 1.35; }
+  .sheet li { display: flex; align-items: flex-start; gap: 12px; }
+  .sheet li i { width: 28px; height: 28px; flex: none; border-radius: 50%; border: 2.5px solid var(--ink); background: var(--peach); display: flex; align-items: center; justify-content: center; font-style: normal; font-size: 14px; font-weight: 800; }
+  .sheet li b { font-weight: 800; }
+  .sheet .actions { margin-top: 20px; display: flex; gap: 12px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .enter, .bars i, .pointer svg, .slides, .slides .st, .btn.go { animation: none !important; }
+    .track b, .option, .btn { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header>
+    <div class="brand"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBYRXhpZgAATU0AKgAAAAgAAgESAAMAAAABAAEAAIdpAAQAAAABAAAAJgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAYKADAAQAAAABAAAAYAAAAAD/wAARCABgAGADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9sAQwACAgICAgIDAgIDBAMDAwQFBAQEBAUGBQUFBQUGCAYGBgYGBggICAgICAgICQkJCQkJCwsLCwsMDAwMDAwMDAwM/9sAQwECAgIDAwMFAwMFDAgHCAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwM/90ABAAG/9oADAMBAAIRAxEAPwD9/KKKKACiiigAooooAKKKKACiiigAooooA//Q/fyiiigAorzzVviT4csvEj+C7O5FxrkQgee3RWYW8dxko0r42BmVSVTduIwcbea2BqU0mA0jg+23+i1lVrxpy5ZbmsaMpLmR1dFc8uoyKB87cf3wD/Rf51bg1aBjsnIQ/wB7+E/4fy96mOJpt2uDozWtjTkkSJGlkYKiAszE4AA6kmuL1rx/4c0HYdTvbWzEn3De3MVtvHqqyHfj32ivM/jH8Rp/DlleDTo/NfTtMk1Lyz/y1naQQWqMP7vmbmI9QK+Yn+AXgW+t49Z+Kuq6jrfii9HnX86zRiKOR/mMMKyRybUj+6MYzjOK+EzLinFVswqZdlnKvZ25pyva71srJ+m299ktfpcBkVL6vHFYyTSlsoq7f3tJdOvVfL730zxfoup+SYpkC3J2wSrIksMrHoqSxsybj2UkMewNdTX5xad4M0X4aarp8vgfULqbw1rU6aZq2l3UocRvPkQXUO0KFZXABwBg4Ir6l+FXxh0HxLHZeD9YvwPFCG9tzFIjL9r/ALNmMUksb42M+wK7oDuGScbea6+GuJMTisZVyvHwSqwXMnHaUer/AK89FbXHOMkhh6McVhpNwbtqrNPz37d3011PeKKKK+3Pmz//0f38ooooA+B/CLC+/aV+Jl/ksE1mwtgSQcfZdKiBAx2BavrBX+f/AB/+ua+QfhGwn+LfxJv+T5njHV1yxycQRxwj8PT2r6sWcBznr/wH+teTm1S2Ln5WX3RS/Q9ahD91BeX6s6BT8oI7+3+BqpMpHzD1H86rx3HT/wCsf5VR1zUWsdGvL2IjfBC7rn1UEj9a+SznNI4ajKpLZK534bDuU1FdT5++L/mXWp6zGoJ/4k9ggwCeRfk16FB4Th1GJp7k5Z8nk1hJ4juRlmnfJ6/Ma8m+MXxsvfhh4Yi1+3sJtZkmvEtRbpc/Z8BkeQuXZX6BMYxyT1r8Wyri6MMwr140XN1mrK6Vt+u3XyPt6uBrVKFPDw05evfRf5G94y8NPotzp8kJJjOp2ZIHI4mBzXgfgu7ktv2hPhzOQ4LeMfE9uQMqStxaSkZ9R8ua95l8YXV1Zw3azSp58SShS5yu9Q2CR3GcVyllc22rfEHwZfXqme50/wAQWT2srMd8bTv9nk2t1w0cjAjoa9nhjjam+J6OLlRaU17K1725m1fp1e3YWYZXVllVWg2rr3r+mtvwP0gooor+kz8kP//S/fyiiobmdLa3luZPuxIzt9FGTQB+bn7O18b3VPFOrMQTfeJPEN1kYwQ9+UBGOOgr6vW4YscZ69gv9a/L/wCFnxng+HXgWw1g2v2+41eW/nEbSeVhZb2R97EKep4xgV1kn7ZWvb8waHYKvo80zH8xj+VeBm93jKz/ALz/ADPqMHhZypQaXRH6QJdEfez+I/qKwfGN+E8L6kc/8u8nv/Ca+I9E/bKheRU1/QtiE4MlncbiPfZKoz/32K9e1P4v+EfGPgbVdS0C/WUQWrvPE/7ueEBcnzIzyB7jIPY1+f8AFOHdXA1VHez/ACPby/CTjXhzLS6KT61tJ+boa+D/AImeC/EnhfSxq/iPxpqHiKCe9Kpa3bS+XG8iyOHVGkdAVUFRhRgHivpSXXFf50cMrAEEHIIPII+teR/FjRtS8b+HoNK0ueCKaK7Scm4ZlTYI3QjKqxz8wPSvwzJJyoYiKbSjJq7aX5vb5H6M6NlzI0PA3g3xP4U1f+2dT8Z3+s2UtmYl064aVoUL7GRl8yR8bACBgDg16jpXiq00bxf4Z1K/fFvH4g0hXbONokvYo9xPoN2TXCPqJjhSHfkxoqZHQ7QBn9K8p+J/iRNI8N/b3mWJ4r6xkiLHH7yO6jkGMc8bc8V7OQxqYnOsHOpa/tIbJL7S7HPmEFDBV/8ADL8mfv8A0U1WV1DqchgCD6g06v65P5+P/9P9/Kp6jZJqWn3WnSsVS6hkhZl6gSKVJHuM1cooA/A3xB/wTn/bEtbmTSvDHivw1c6RallspJLqaJ/KLlgPLezkMZ5yVDsASQCRWIP+CZn7ZUyLJL458OxuwBZBqF4Np9PlsQOPav6DaK3lX5m5ShG78kaqvVSSU397P5+7f/gml+2XbHMfjvw03tJeXUg/8esDXC/EL9jj/goB4GMdp4btNP8AEUd1EySX3h+eEuFcFXhlS7+zsAw6lYiD/ez0/o+orCpCjU/iUov5G0MfiYfDUa+bP58fAn7I37e+oeHYJDBbeHVT5FstS1ODzQB/EBCJgqnsGYH2rrW/Yy/bzbrq2i/+DMf/ABiv3hor5yXCWUyk5fV46+SPZXFeZJJe0PwYP7Fn7eDddV0T/wAGQ/8AjFVYf+CeX7W3jLxDpNt481jQrfR0uYpL25+3yzyRQpIC4hgSABpCBkZZQTjLDmv3xorpwfDuXYWtGvRoxUo6p2WjMMTxJj69OVKdTR6MZGixosa9FAUfQcU+iivaPCP/1P38ooooAKKKKACiiigAooooAKKKKACiiigD/9k=" alt="" width="28" height="28">FaithLock</div>
+  </header>
+  <div class="progress" id="progress" role="progressbar" aria-valuemin="0" aria-valuemax="4" aria-label="Questions"></div>
+  <div class="stories" id="stories" aria-hidden="true" hidden></div>
+  <main id="screen" aria-live="polite"></main>
+</div>
+
+<div class="cta" id="cta" hidden><div class="inner" id="ctaInner"></div></div>
+
+<div class="coach" id="coach" role="dialog" aria-modal="true" aria-labelledby="coachTitle" hidden>
+  <!-- Points at the app's own menu, just above this page's top right corner. -->
+  <div class="pointer" aria-hidden="true">
+    <svg width="92" height="92" viewBox="0 0 92 92" fill="none" stroke="#FFFDF8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 82 C 22 46, 44 26, 76 16"/><polyline points="56 10 78 15 68 35"/>
+    </svg>
+    <span>Tap ••• up here</span>
+  </div>
+  <div class="sheet enter" id="sheet">
+    <h3 id="coachTitle"></h3>
+    <ol>
+      <li><i>1</i><span>Tap <b>•••</b> at the top right.</span></li>
+      <li><i>2</i><span>Choose <b>Open in browser</b>.</span></li>
+    </ol>
+    <div class="actions">
+      <button type="button" class="btn cream small" id="coachCopy">Copy the link</button>
+      <button type="button" class="btn small" id="coachClose">Got it</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ─── Settings ────────────────────────────────────────────────
+  var APP_ID = 'id6754208209';
+  // Provider token of the App Store Connect account (App Analytics > campaign link). Empty: the
+  // campaign tag is left out, the link still opens the listing.
+  var APPLE_PROVIDER_TOKEN = '';
+  var ONELINK = 'https://faithlock.onelink.me/l3EF/web';
+  // Analytics only run on the live site, never on a local preview.
+  var POSTHOG_KEY = 'phc_i7avHkNbMBf1tsDSMh3O3C1NV38DHMqGJNZCa8PKhl6';
+  var POSTHOG_HOST = 'https://us.i.posthog.com';
+  var LIVE = /(^|\.)getfaithlock\.com$/.test(location.hostname);
+
+  // ─── The four questions ──────────────────────────────────────
+  var QUESTIONS = [
+    { id: 'phone', title: 'How many hours a day are you on your phone?', hint: 'Be honest. Nobody sees this but you.',
+      options: [['a', '1 to 2 hours'], ['b', '3 to 4 hours'], ['c', '5 to 6 hours'], ['d', '7 hours or more']] },
+    { id: 'god', title: 'And how much time with God?', hint: 'Prayer and Bible, on a normal day.',
+      options: [['a', 'Almost none'], ['b', 'About 5 minutes'], ['c', 'About 15 minutes'], ['d', '30 minutes or more']] },
+    { id: 'app', title: 'Which app takes the most?',
+      options: [['tiktok', 'TikTok'], ['instagram', 'Instagram'], ['youtube', 'YouTube'], ['games', 'Games'], ['other', 'Something else']] },
+    { id: 'when', title: 'When does it pull you in?',
+      options: [['morning', 'As soon as I wake up'], ['night', 'Late at night'], ['day', 'All day long']] }
+  ];
+  var PHONE_HOURS = { a: 1.5, b: 3.5, c: 5.5, d: 7.5 };   // hours a day: the middle of each range
+  var GOD_MINUTES = { a: 0, b: 5, c: 15, d: 35 };          // minutes a day
+  var APP_NAMES = { tiktok: 'TikTok', instagram: 'Instagram', youtube: 'YouTube', games: 'your games', other: 'your apps' };
+  var WHEN_LINES = {
+    morning: 'Every morning, start the day with His word.',
+    night: 'Every night, end the day with His word.',
+    day: 'Every time you unlock, His word comes first.'
+  };
+  var BROWSER_NAMES = { tiktok: 'TikTok', instagram: 'Instagram', facebook: 'Facebook' };
+  var APPLE = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>';
+
+  // ─── Where the page is shown ─────────────────────────────────
+  var ua = navigator.userAgent || '';
+  var inApp = /musical_ly|BytedanceWebview|TikTok|trill_/i.test(ua) ? 'tiktok'
+    : /Instagram/i.test(ua) ? 'instagram'
+    : /\bFBAN\b|\bFBAV\b|FB_IAB/i.test(ua) ? 'facebook' : null;
+  var android = /Android/i.test(ua);
+  var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var params = new URLSearchParams(location.search);
+
+  // ─── Analytics (PostHog), on the live site only ──────────────
+  var queue = [];
+  function track(event, props) {
+    props = props || {};
+    props.url = location.pathname;
+    props.in_app_browser = inApp;
+    if (window.posthog && window.posthog.capture) window.posthog.capture(event, props);
+    else queue.push([event, props]);
+  }
+  if (LIVE && POSTHOG_KEY.indexOf('__') !== 0) {
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once identify alias reset".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    window.posthog.init(POSTHOG_KEY, { api_host: POSTHOG_HOST, person_profiles: 'identified_only', capture_pageview: true });
+    queue.forEach(function (q) { window.posthog.capture(q[0], q[1]); });
+    queue = [];
+  }
+
+  // ─── State ───────────────────────────────────────────────────
+  var $ = function (id) { return document.getElementById(id); };
+  var answers = {};
+  var step = 0;
+  var screen = $('screen'), progress = $('progress'), stories = $('stories');
+  var cta = $('cta'), ctaInner = $('ctaInner'), coach = $('coach');
+  var demoTimer = 0;
+
+  function encode() { return QUESTIONS.map(function (q) { return answers[q.id]; }).join('.'); }
+  function decode(raw) {
+    if (!raw) return null;
+    var parts = raw.split('.'), out = {};
+    if (parts.length !== QUESTIONS.length) return null;
+    for (var i = 0; i < QUESTIONS.length; i++) {
+      var known = QUESTIONS[i].options.some(function (o) { return o[0] === parts[i]; });
+      if (!known) return null;
+      out[QUESTIONS[i].id] = parts[i];
+    }
+    return out;
+  }
+  function setQuery(change) {
+    try {
+      var url = new URL(location.href);
+      change(url.searchParams);
+      history.replaceState(null, '', url);
+    } catch (e) { /* a local file: the address stays as it is */ }
+  }
+
+  function formatMinutes(total) {
+    if (total < 60) return total + ' min';
+    var h = Math.floor(total / 60), m = total % 60;
+    return m ? h + ' h ' + (m < 10 ? '0' + m : m) : h + ' h';
+  }
+  function compute() {
+    var hours = PHONE_HOURS[answers.phone], minutes = GOD_MINUTES[answers.god];
+    var phoneMin = hours * 7 * 60, godMin = minutes * 7;
+    return {
+      phoneHoursWeek: Math.round(hours * 7),
+      godMinutesWeek: godMin,
+      phoneDaysYear: Math.round(hours * 365 / 24),
+      ratio: godMin > 0 ? Math.round(phoneMin / godMin) : null,
+      godShare: Math.min(1, godMin / phoneMin),
+      appName: APP_NAMES[answers.app],
+      when: answers.when
+    };
+  }
+
+  /** Replays an element's entrance. */
+  function restart(el) { el.style.animation = 'none'; void el.offsetWidth; el.style.animation = ''; }
+
+  // ─── Questions ───────────────────────────────────────────────
+  function renderProgress() {
+    progress.hidden = false;
+    stories.hidden = true;
+    progress.setAttribute('aria-valuenow', String(Math.min(step, 4)));
+    progress.innerHTML = QUESTIONS.map(function (q, i) {
+      return '<span class="' + (i < step ? 'done' : i === step ? 'now' : '') + '"></span>';
+    }).join('');
+  }
+
+  function renderQuestion() {
+    var q = QUESTIONS[step];
+    cta.hidden = true;
+    renderProgress();
+    screen.className = 'enter';
+    screen.innerHTML =
+      '<h1>' + q.title + '</h1>' +
+      (q.hint ? '<p class="hint">' + q.hint + '</p>' : '') +
+      '<div class="options">' + q.options.map(function (o) {
+        return '<button type="button" class="option' + (answers[q.id] === o[0] ? ' chosen' : '') + '" data-id="' + o[0] + '">' + o[1] +
+          '<span class="tick" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 7"/></svg></span></button>';
+      }).join('') + '</div>' +
+      (step > 0 ? '<button type="button" class="link" id="back">Back</button>' : '');
+    restart(screen);
+
+    Array.prototype.forEach.call(screen.querySelectorAll('.option'), function (button) {
+      button.addEventListener('click', function () {
+        if (screen.dataset.locked) return;
+        screen.dataset.locked = '1';
+        Array.prototype.forEach.call(screen.querySelectorAll('.option'), function (b) { b.classList.remove('chosen'); });
+        button.classList.add('chosen');
+        answers[q.id] = button.dataset.id;
+        track('diagnostic_answer', { question: q.id, value: button.dataset.id, step: step + 1 });
+        // A beat on the chosen answer, then the next question (or the sum).
+        setTimeout(function () {
+          delete screen.dataset.locked;
+          step += 1;
+          if (step < QUESTIONS.length) renderQuestion(); else renderAdding();
+        }, 120);
+      });
+    });
+    var back = $('back');
+    if (back) back.addEventListener('click', function () { step -= 1; renderQuestion(); });
+  }
+
+  function renderAdding() {
+    if (reducedMotion) return renderResult(false, false);
+    renderProgress();
+    screen.className = 'adding enter';
+    screen.innerHTML = '<div class="bars" aria-hidden="true">' + [36, 60, 44, 72].map(function (h, i) {
+      return '<i style="height:' + h + 'px;animation-delay:' + (i * 140) + 'ms"></i>';
+    }).join('') + '</div><p role="status">Adding up your week…</p>';
+    restart(screen);
+    setTimeout(function () { renderResult(false, false); }, 600);
+  }
+
+  // ─── Result: a few animated screens, one idea each ───────────
+  /** How long each screen holds before the next one; the last one stays. */
+  var SLIDE_MS = [3000, 3000, 3500];
+  var result = null, slide = 0, slideTimer = 0, slideStart = 0, slideLeft = 0, lastMove = 0;
+
+  var SLIDES = [
+    // 1. The week, phone against God
+    function (r) {
+      // A sliver stays visible however small the share, so the bar reads as « almost nothing ».
+      var godWidth = r.godMinutesWeek === 0 ? 0 : Math.max(3, r.godShare * 100);
+      return '<h1 class="st">This is your week.</h1>' +
+        '<div class="meter st"><div class="row"><span class="name">Your phone</span><span class="value"><span data-count="' + r.phoneHoursWeek + '">0</span><small>h</small></span></div>' +
+        '<div class="track"><b data-width="100"></b></div></div>' +
+        '<div class="meter st"><div class="row"><span class="name">God</span><span class="value" data-count="' + r.godMinutesWeek + '" data-minutes>0 min</span></div>' +
+        '<div class="track"><b class="god" data-width="' + godWidth + '"></b></div></div>';
+    },
+    // 2. The year
+    function (r) {
+      return '<p class="huge st" data-count="' + r.phoneDaysYear + '">0</p>' +
+        '<p class="huge-label st">full days a year<br>on your phone.</p>' +
+        '<p class="sub st">' + (r.ratio ? r.ratio + ' times more than with God.' : 'And not even a minute with God.') + '</p>';
+    },
+    // 3. The verse
+    function () {
+      return '<figure class="verse-slide st"><blockquote>So teach us to number our days, that we may present a heart of wisdom.</blockquote>' +
+        '<figcaption>Psalm 90:12</figcaption></figure>';
+    },
+    // 4. The answer, and the way to the App Store
+    function (r) {
+      return '<h1 class="st">Put a verse before ' + r.appName + '.</h1>' +
+        '<p class="sub st">' + WHEN_LINES[r.when] + '</p>' +
+        '<div class="phone st" aria-hidden="true"><div class="screen" id="demo"></div></div>';
+    }
+  ];
+  var LAST = SLIDES.length - 1;
+
+  function renderResult(arrived, toEnd) {
+    result = compute();
+    slide = toEnd ? LAST : 0;
+    progress.hidden = true;
+    stories.hidden = true;
+    showSlide(1);
+    window.scrollTo(0, 0);
+    // Kept in the address, so « Open in browser » opens the result as it is.
+    setQuery(function (q) { q.set('r', encode()); if (inApp) q.set('o', inApp); });
+    if (!arrived) track('diagnostic_result', { phone_hours_week: result.phoneHoursWeek, god_minutes_week: result.godMinutesWeek, app: answers.app, when: answers.when });
+  }
+
+  function showSlide(dir) {
+    clearTimeout(slideTimer);
+    clearTimeout(demoTimer);
+    lastMove = Date.now();
+    var last = slide === LAST;
+    screen.className = 'slides' + (dir < 0 ? ' back' : '') + (last ? ' last' : '');
+    screen.innerHTML = SLIDES[slide](result);
+    restart(screen);
+
+    stories.classList.remove('paused');
+    stories.innerHTML = SLIDES.map(function (s, i) {
+      var state = i < slide || (i === slide && (last || reducedMotion)) ? 'done' : i === slide ? 'now' : '';
+      return '<span class="' + state + '"><i></i></span>';
+    }).join('');
+    var filling = stories.querySelector('.now i');
+    if (filling) filling.style.animationDuration = SLIDE_MS[slide] + 'ms';
+
+    Array.prototype.forEach.call(screen.querySelectorAll('[data-count]'), function (el) {
+      countUp(el, Number(el.dataset.count), el.hasAttribute('data-minutes') ? formatMinutes : String);
+    });
+    setTimeout(function () {
+      Array.prototype.forEach.call(screen.querySelectorAll('[data-width]'), function (b) { b.style.width = b.dataset.width + '%'; });
+    }, 50);
+    if (last) lockDemo(result.appName.charAt(0).toUpperCase() + result.appName.slice(1));
+
+    renderCta(last);
+    track('diagnostic_slide', { index: slide + 1 });
+    if (!last && !reducedMotion) schedule(SLIDE_MS[slide]);
+  }
+
+  function schedule(ms) {
+    slideStart = Date.now();
+    slideLeft = ms;
+    slideTimer = setTimeout(function () { go(1, true); }, ms);
+  }
+
+  function go(dir, auto) {
+    if (!result || (!auto && Date.now() - lastMove < 200)) return;
+    var next = slide + dir;
+    if (next < 0 || next > LAST) return;
+    slide = next;
+    showSlide(dir);
+  }
+
+  // Tap the right of the screen for the next one, the left edge to go back (as in stories).
+  screen.addEventListener('click', function (e) {
+    if (!result || e.target.closest('a, button')) return;
+    go(e.clientX < window.innerWidth * 0.25 ? -1 : 1);
+  });
+  var touchX = null;
+  screen.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+  screen.addEventListener('touchend', function (e) {
+    if (!result || touchX === null) return;
+    var dx = e.changedTouches[0].clientX - touchX;
+    touchX = null;
+    if (Math.abs(dx) > 50) { e.preventDefault(); go(dx < 0 ? 1 : -1); }
+  });
+  // A screen holds while the page is hidden.
+  document.addEventListener('visibilitychange', function () {
+    if (!result || slide === LAST || reducedMotion) return;
+    if (document.hidden) {
+      clearTimeout(slideTimer);
+      slideLeft -= Date.now() - slideStart;
+      stories.classList.add('paused');
+    } else {
+      stories.classList.remove('paused');
+      schedule(Math.max(600, slideLeft));
+    }
+  });
+
+  function renderCta(last) {
+    cta.hidden = false;
+    if (!last) {
+      ctaInner.innerHTML = '<button type="button" class="btn" id="next">Continue</button>';
+      $('next').addEventListener('click', function () { go(1); });
+      return;
+    }
+    if (android) {
+      ctaInner.innerHTML = '<p class="only">FaithLock is on iPhone and iPad.</p><button type="button" class="btn cream small" id="copyLink">Copy the link for your iPhone</button>';
+      $('copyLink').addEventListener('click', function () { copyLink(this, 'result'); });
+      return;
+    }
+    var href = storeLink();
+    ctaInner.innerHTML =
+      '<a class="btn go" id="store" href="' + href + '">' + APPLE + 'Take back my ' + result.phoneHoursWeek + ' hours</a>' +
+      (inApp ? '<button type="button" class="ask" id="ask">App Store not opening?</button>' : '');
+    $('store').addEventListener('click', function () {
+      track('faithlock_store_click', {
+        cta_id: 'quiz_result', location: 'quiz_result', destination: 'official_app_store', destination_url: href,
+        destination_type: inApp ? 'app_store' : 'onelink', page_path: location.pathname, button_text: this.textContent,
+        traffic_source: params.get('o') || params.get('utm_source') || 'direct'
+      });
+      if (!inApp) return;
+      // Inside a social app: still here shortly after the tap means the link was blocked.
+      try { sessionStorage.setItem('fl_quiz_store_attempt', String(Date.now())); } catch (e) {}
+      setTimeout(function () { if (document.visibilityState === 'visible') openCoach('store_blocked'); }, 1800);
+    });
+    var ask = $('ask');
+    if (ask) ask.addEventListener('click', function () { openCoach('asked'); });
+  }
+
+  function storeLink() {
+    if (inApp) {
+      // Straight to the App Store: inside a social app a redirect through another host is blocked.
+      var direct = new URL('https://apps.apple.com/app/apple-store/' + APP_ID);
+      if (APPLE_PROVIDER_TOKEN) { direct.searchParams.set('pt', APPLE_PROVIDER_TOKEN); direct.searchParams.set('ct', 'tiktok_quiz'); }
+      direct.searchParams.set('mt', '8');
+      return direct.toString();
+    }
+    // In a real browser the AppsFlyer OneLink works, and reports the install under its source.
+    var link = new URL(ONELINK);
+    link.searchParams.set('af_channel', params.get('o') || params.get('utm_source') || 'direct');
+    link.searchParams.set('af_sub1', location.pathname);
+    link.searchParams.set('af_sub3', 'quiz_result');
+    return link.toString();
+  }
+
+  function countUp(el, target, format) {
+    if (reducedMotion || target === 0) { el.textContent = format(target); return; }
+    var start = performance.now();
+    (function tick(now) {
+      var k = Math.min(1, (now - start) / 500);
+      el.textContent = format(Math.round(target * (1 - Math.pow(1 - k, 3))));
+      if (k < 1 && document.body.contains(el)) requestAnimationFrame(tick);
+    })(start);
+  }
+
+  /** What FaithLock does, shown: the app is locked, a verse is read, the app opens. */
+  function lockDemo(label) {
+    var demo = $('demo');
+    var lock = function (open) {
+      return '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2.5"/>' +
+        (open ? '<path d="M8 11V7.5a4 4 0 0 1 7.6-1.7"/>' : '<path d="M8 11V7.5a4 4 0 0 1 8 0V11"/>') + '</svg>';
+    };
+    var moments = [
+      ['<span class="tile">' + lock(false) + '</span><span class="app">' + label + '</span><span class="pill locked">Locked</span>', 1700],
+      ['<span class="tiny caps">Read to unlock</span><p class="scripture">Turn my eyes away from worthless things; revive me with Your word.</p><span class="tiny">Psalm 119:37</span>', 2900],
+      ['<span class="tile open">' + lock(true) + '</span><span class="app">' + label + '</span><span class="pill unlocked">Unlocked</span>', 1500]
+    ];
+    var i = reducedMotion ? 1 : 0;
+    (function show() {
+      if (!document.body.contains(demo)) return;
+      demo.className = 'screen enter';
+      demo.innerHTML = moments[i][0];
+      restart(demo);
+      if (reducedMotion) return;
+      demoTimer = setTimeout(function () { i = (i + 1) % moments.length; show(); }, moments[i][1]);
+    })();
+  }
+
+  // ─── The way out of a social app's browser ───────────────────
+  function openCoach(reason) {
+    if (!inApp || !coach.hidden) return;
+    $('coachTitle').textContent = BROWSER_NAMES[inApp] + ' won’t open the App Store from here.';
+    coach.hidden = false;
+    $('coachClose').focus();
+    track('diagnostic_escape_shown', { reason: reason });
+  }
+  function closeCoach() { coach.hidden = true; }
+  coach.addEventListener('click', closeCoach);
+  $('sheet').addEventListener('click', function (e) { e.stopPropagation(); });
+  $('coachClose').addEventListener('click', closeCoach);
+  $('coachCopy').addEventListener('click', function () { copyLink(this, 'escape'); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') return closeCoach();
+    if (!result || !coach.hidden) return;
+    if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+  });
+
+  function copyLink(button, from) {
+    var done = function () { button.textContent = 'Link copied'; track('diagnostic_link_copied', { from: from }); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(location.href).then(done, function () { legacyCopy(done); });
+    } else legacyCopy(done);
+  }
+  function legacyCopy(done) {
+    var field = document.createElement('textarea');
+    field.value = location.href; field.setAttribute('readonly', ''); field.style.position = 'fixed'; field.style.opacity = '0';
+    document.body.appendChild(field); field.select();
+    try { if (document.execCommand('copy')) done(); } catch (e) {}
+    document.body.removeChild(field);
+  }
+
+  /** The store tap replaced this page with the app's « open in your browser » screen and the visitor came back. */
+  function cameBack() {
+    if (!inApp) return;
+    try {
+      var at = Number(sessionStorage.getItem('fl_quiz_store_attempt') || 0);
+      if (at && Date.now() - at < 90000) { sessionStorage.removeItem('fl_quiz_store_attempt'); openCoach('returned'); }
+    } catch (e) {}
+  }
+  window.addEventListener('pageshow', function (e) { if (e.persisted) cameBack(); });
+
+  // ─── Start ───────────────────────────────────────────────────
+  var arrived = decode(params.get('r'));
+  track('diagnostic_view', { device: android ? 'android' : /iPhone|iPad|iPod/i.test(ua) ? 'ios' : 'other', with_result: !!arrived });
+  if (arrived) {
+    answers = arrived;
+    step = QUESTIONS.length;
+    // Reopened in a real browser after the way out: the escape worked.
+    if (!inApp && params.get('o')) {
+      try { if (!sessionStorage.getItem('fl_quiz_reopened')) { sessionStorage.setItem('fl_quiz_reopened', '1'); track('diagnostic_browser_open', { origin: params.get('o') }); } }
+      catch (e) { track('diagnostic_browser_open', { origin: params.get('o') }); }
+    }
+    // Back from the way out (or from TikTok's blocking screen): straight to the App Store screen.
+    renderResult(true, !!params.get('o'));
+    cameBack();
+  } else {
+    renderQuestion();
+  }
+})();
+</script>
+</body>
+</html>

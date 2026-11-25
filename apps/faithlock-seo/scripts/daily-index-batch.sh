@@ -11,7 +11,7 @@
 
 set -euo pipefail
 
-REPO="/Users/abdoul/development/appbiz-studio/faithlock-seo"
+REPO="/Users/abdoul/development/appbiz-studio/faithlock"
 APP="$REPO/apps/faithlock-seo"
 TRACKER="$APP/seo-content/index-tracker.csv"
 LOGDIR="$APP/seo-content/index-logs"

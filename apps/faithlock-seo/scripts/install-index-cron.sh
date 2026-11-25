@@ -12,7 +12,7 @@ set -euo pipefail
 
 LABEL="dev.abdoul.faithlock.indexbatch"
 PLIST="$HOME/Library/LaunchAgents/$LABEL.plist"
-APP="/Users/abdoul/development/appbiz-studio/faithlock-seo/apps/faithlock-seo"
+APP="/Users/abdoul/development/appbiz-studio/faithlock/apps/faithlock-seo"
 SCRIPT="$APP/scripts/daily-index-batch.sh"
 
 case "${1:-}" in

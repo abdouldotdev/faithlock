@@ -20,6 +20,18 @@ const nextConfig = {
         destination: '/resources/:slug',
         permanent: true,
       },
+      // Short links to the AppsFlyer OneLinks of the video series. Temporary, so a link can be
+      // repointed without browsers keeping the old target.
+      {
+        source: '/emmas',
+        destination: 'https://faithlock.onelink.me/l3EF/emmas',
+        permanent: false,
+      },
+      {
+        source: '/emft',
+        destination: 'https://faithlock.onelink.me/l3EF/emft',
+        permanent: false,
+      },
     ]
   },
   async headers() {
