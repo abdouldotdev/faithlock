@@ -140,7 +140,7 @@ export async function GET(req: Request) {
     const attributed = `toString(properties.af_status) = 'Non-organic'`
     ;[installsByDay, campaigns] = await Promise.all([
       hogql(
-        `SELECT toDate(timestamp) AS day, uniq(distinct_id) AS installs, uniqIf(distinct_id, ${attributed}) AS attributed FROM events WHERE ${installed} GROUP BY day ORDER BY day DESC`,
+        `SELECT toDate(timestamp) AS day, uniq(distinct_id) AS attributed FROM events WHERE ${installed} AND ${attributed} GROUP BY day ORDER BY day DESC`,
         APP_PROJECT_ID,
       ),
       hogql(
@@ -163,7 +163,7 @@ export async function GET(req: Request) {
       .join('') || '<tr><td colspan="10">Aucune donnée sur la période.</td></tr>'}</table></div>`
 
   // Installs beside the quiz's App Store clicks, day by day (UTC on both sides).
-  const installsTotal = installsByDay.reduce((n, r) => n + num(r.installs), 0)
+  // Only what the links brought: the app's other installs (search, word of mouth) are left out.
   const attributedTotal = installsByDay.reduce((n, r) => n + num(r.attributed), 0)
   const installsOf = new Map(installsByDay.map((r) => [String(r.day), r]))
   // Only a click that went through the OneLink can be matched to an install: inside a social app the
@@ -196,25 +196,27 @@ export async function GET(req: Request) {
   const installs = installsError
     ? `<p class="n">Lecture des installations impossible : ${esc(installsError)}</p>`
     : `<div class="k">
-${card('Venues du lien', attributedTotal, 'attribuées par AppsFlyer')}
 ${card('Clics via OneLink', total.onelink_clicks, 'les seuls qu’AppsFlyer peut rapprocher')}
-${card('Toutes sources', installsTotal, `dont ${installsTotal - attributedTotal} sans lien`)}
+${card('Installations venues des liens', attributedTotal, 'attribuées par AppsFlyer')}
 </div>
 <h2>Par lien</h2>
 <div class="t"><table><tr><th>Lien</th><th>Clics via OneLink</th><th>Installations venues du lien</th><th>Campagne AppsFlyer</th></tr>${linkRows.join('')}</table></div>
 <h2>Par jour</h2>
-<div class="t"><table><tr><th>Jour</th><th>Clics via OneLink</th><th>Installations venues du lien</th><th>Installations, toutes sources</th></tr>${
+<div class="t"><table><tr><th>Jour</th><th>Clics via OneLink</th><th>Installations venues des liens</th></tr>${
         allDays
           .map((d) => {
             const r = installsOf.get(d)
-            return `<tr><td>${esc(d)}</td><td>${clicksOf.get(d) ?? 0}</td><td>${num(r?.attributed)}</td><td>${num(r?.installs)}</td></tr>`
+            // No quiz visit that day: the bio link led straight to the OneLink, whose clicks only AppsFlyer sees.
+            const clicks = clicksOf.has(d) ? String(clicksOf.get(d)) : '—'
+            return `<tr><td>${esc(d)}</td><td>${clicks}</td><td>${num(r?.attributed)}</td></tr>`
           })
-          .join('') || '<tr><td colspan="4">Aucune installation sur la période.</td></tr>'
+          .join('') || '<tr><td colspan="3">Aucun clic ni installation sur la période.</td></tr>'
       }</table></div>
-<p class="n">« Venues du lien » : la personne a touché le lien OneLink (le bouton du quiz, ou le lien posé directement), installé l'app puis l'a ouverte, et AppsFlyer a fait le rapprochement. Il en manque : des installations suivent un clic de quelques minutes et restent comptées sans lien. « Toutes sources » compte chaque première ouverture de l'app, d'où qu'elle vienne. Chiffres lus dans le projet PostHog de l'app (événement install_attributed), en jours UTC.</p>`
+<p class="n">« — » : pas de page quiz ce jour-là. Le lien de bio menait directement au OneLink, et seul AppsFlyer voit ces clics.</p>
+<p class="n">Une installation compte ici quand la personne a touché un lien OneLink (le bouton du quiz ouvert dans un vrai navigateur, ou le lien posé directement), installé l'app puis l'a ouverte, et qu'AppsFlyer a fait le rapprochement. C'est un minimum : un clic dans TikTok part droit vers l'App Store, sans lien qu'AppsFlyer puisse voir, et certaines installations qui suivent un clic de quelques minutes restent sans attribution. Chiffres lus dans le projet PostHog de l'app (événement install_attributed), en jours UTC.</p>`
 
   return page(`
-<h1>Quiz TikTok, ${days} derniers jours</h1>
+<h1>Liens TikTok, ${days} derniers jours</h1>
 <nav><a href="?days=1">24 h</a><a href="?days=7">7 jours</a><a href="?days=30">30 jours</a><a href="?days=90">90 jours</a></nav>
 <div class="k">
 ${card('Visiteurs', total.visitors)}
@@ -226,7 +228,7 @@ ${card('Bloqués par TikTok', total.blocked)}
 ${card('Rouverts dans Safari', total.reopened)}
 </div>
 <p class="n">Visiteurs uniques par appareil et par navigateur : une personne qui rouvre la page dans Safari compte deux fois.</p>
-<h2>Installations venues du lien</h2>${installs}
+<h2>Installations venues des liens</h2>${installs}
 <h2>Test A/B : quiz ou écran direct</h2>${table(byVariant, 'Version', 'variant')}
 <p class="n">« direct » saute les questions : comparez la colonne Conversion (clics App Store sur visiteurs).</p>
 <h2>Quiz, par lien</h2>${table(byPage, 'Page', 'page')}
