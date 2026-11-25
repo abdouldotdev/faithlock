@@ -86,7 +86,7 @@ meta_description: "Powerful Scripture passages about purity with practical ways 
 
 **Why this matters:** Solomon says "above all else" — this is the most important instruction in his entire collection of wisdom. Your heart is the source, and everything in your life is downstream from it. Your words, your relationships, your habits, your decisions — they all flow from whatever is in your heart. "Guard" means to protect with vigilance, like a soldier guarding a city gate. What you let in through your eyes and ears and mind eventually flows out through your actions.
 
-**How to apply it:** Your phone is the modern city gate. What passes through it enters your heart. Set up one guardrail this week: a content filter, a screen time limit, an accountability app like [FaithLock](/), or simply charging your phone outside your bedroom. Guarding your heart in the digital age means guarding your screen.
+**How to apply it:** Your phone is the modern city gate. What passes through it enters your heart. Set up one guardrail this week: a content filter, a screen time limit, an accountability app like [FaithLock](/), or simply charging your phone outside your bedroom. On iPhone, Apple's own [adult content blocking settings](/resources/how-to-block-adult-content-on-iphone) are the place to start. Guarding your heart in the digital age means guarding your screen.
 
 ## How to Use These Verses Daily
 

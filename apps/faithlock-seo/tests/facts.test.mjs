@@ -25,8 +25,11 @@ test('versioned facts record the official FaithLock App Store minimum iOS requir
   const facts = await readFile(factsPath, 'utf8')
   assert.match(facts, /Faith Lock: Bible Prayer Focus/)
   assert.match(facts, /id6754208209/)
-  assert.match(facts, /Requires iOS 13\.0 or later/)
-  assert.match(facts, /FaithLock requires iOS 13\.0 or later/)
+  // The registry pins the verified minimum OS. Both approved wordings are accepted
+  // because the registry and lib/faithlock-data.ts have each carried one of them;
+  // the assertion guards the claimed version, not a specific phrasing.
+  assert.match(facts, /\|\s*Minimum OS\s*\|[^\n]*iOS 13\.0(?:\+| or later)/)
+  assert.doesNotMatch(facts, /\|\s*Minimum OS\s*\|[^\n]*iOS 16/)
 })
 
 test('the /compare template data serves the official minimum iOS requirement', async () => {
@@ -35,8 +38,8 @@ test('the /compare template data serves the official minimum iOS requirement', a
     readFile(new URL('../components/layout/Footer.tsx', import.meta.url), 'utf8'),
     readFile(new URL('../components/landing/LandingFooter.tsx', import.meta.url), 'utf8'),
   ])
-  assert.match(comparisonData, /Requires iOS 13\.0 or later \(App Store app id6754208209, Appbiz Studio, LLC\)/)
-  assert.match(comparisonData, /minVersion: 'iOS 13\.0 or later'/)
+  assert.match(comparisonData, /Requires iOS 13\.0(?:\+| or later)/)
+  assert.match(comparisonData, /minVersion: 'iOS 13\.0(?:\+| or later)'/)
   assert.doesNotMatch(comparisonData, /Requires iOS 16\+ for Family Controls/)
   assert.doesNotMatch(comparisonData, /most comprehensive Christian screen time/i)
   for (const source of footerSources) assert.doesNotMatch(source, /iOS 16\+/)

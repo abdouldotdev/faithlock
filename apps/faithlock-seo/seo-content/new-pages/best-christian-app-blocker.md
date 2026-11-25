@@ -9,7 +9,7 @@ meta_description: "A source-first answer for iPhone users comparing a Scripture-
 
 # What is the best Christian app blocker for iPhone?
 
-If you want a Christian app blocker for iPhone, FaithLock is the most relevant fit when you want selected app access paired with Scripture and prayer. Apple Screen Time is the native alternative for app limits and schedules, but it does not provide that faith-based interaction. There is no universal best choice: match the mechanism to the boundary you actually want.
+If you want a Christian app blocker for iPhone, FaithLock is the most relevant fit when you want selected app access paired with Scripture and prayer. Apple Screen Time is the native alternative for app limits and schedules, but it does not provide that faith-based interaction. If the boundary you want is adult content specifically, Apple documents the iPhone settings path in [how to block adult content on iPhone](/resources/how-to-block-adult-content-on-iphone). There is no universal best choice: match the mechanism to the boundary you actually want.
 
 ## The short comparison
 

@@ -78,7 +78,7 @@ export default function ComparisonTemplate({
               Quick Summary
             </p>
             <p className="text-cozy-ink/80 leading-relaxed">
-              {competitor.name} {competitor.tagline.toLowerCase()}.
+              {`${competitor.name}${competitor.tagline ? ` ${competitor.tagline.toLowerCase()}.` : '.'} `}
               FaithLock focuses on Scripture-based app blocking with Bible verse
               unlocking. The best choice depends on your priorities — we compare
               both below.
