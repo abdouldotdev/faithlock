@@ -48,7 +48,7 @@ Find or create a small group of 2-3 other single parents. Take turns hosting pla
 
 ### 5. Use Faith-Based Tools That Work for Your Reality
 
-Standard screen time advice assumes two parents and full energy. Faith-based tools like [FaithLock](/) meet you where you are by pairing app access with Bible engagement, so the moments when you or your child do interact with screens include a spiritual component. This isn't about perfection; it's about infusing imperfect habits with God's word. The [best Christian app blocker](/learn/best-christian-app-blocker) guide can help you find tools that fit your family's specific needs.
+Standard screen time advice assumes two parents and full energy. Faith-based tools like [FaithLock](/) meet you where you are by pairing app access with Bible engagement, so the moments when you or your child do interact with screens include a spiritual component. This isn't about perfection; it's about infusing imperfect habits with God's word. The [best Christian app blocker](/resources/best-christian-app-blocker) guide can help you find tools that fit your family's specific needs.
 
 ## Scripture for Single Parents
 

@@ -87,4 +87,4 @@ FaithLock uses Bible verse quizzes as its unlock method, which creates active en
 Both are self-accountability tools, not parental controls. Prayer Lock's simple interface is arguably more kid-friendly, but neither is designed to prevent a determined child from disabling the blocker.
 
 ---
-*Sources: [Bible Mode on App Store](https://apps.apple.com/app/bible-mode), [Prayer Lock on App Store](https://apps.apple.com/app/prayer-lock)*
+*Sources: Bible Mode on App Store, Prayer Lock on App Store*

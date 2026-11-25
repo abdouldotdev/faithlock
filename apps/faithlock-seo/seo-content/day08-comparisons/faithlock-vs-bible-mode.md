@@ -15,8 +15,8 @@ If you're a Christian struggling with phone addiction, you're not alone. The ave
 
 | Feature | FaithLock | Bible Mode |
 |---------|-----------|-----------|
-| **Price** | Freemium ($4.99/week or $24.99/year) | Free |
-| **Platform** | iOS (Android coming soon) | iOS & Android |
+| **Price** | Freemium (pricing not stated in the verified sources or pricing not stated in the verified sources) | Free |
+| **Platform** | iOS; Android availability is not stated in the verified sources | iOS & Android |
 | **Unlock Method** | Read Bible verse (~30 sec) | Scan physical Bible OR in-app reflection |
 | **Bible Translations** | BSB (Berean Standard Bible) | Multiple (KJV, ESV, more) |
 | **Streak Tracking** | Yes (30-day covenant) | Yes |
@@ -37,9 +37,9 @@ The freemium model (entirely free with optional premium features) removes barrie
 
 FaithLock is a premium iOS app that positions itself as a spiritually accountable screen time solution. At its core, FaithLock blocks addictive apps (Instagram, TikTok, etc.) and requires users to read a Bible verse—typically taking about 30 seconds—before access is granted. This creates a deliberate friction point designed to break habit loops and cultivate Scripture reflection.
 
-The app's **30-day covenant feature** positions accountability in biblical terms, helping users make formal commitments to digital wellness grounded in faith. Streak tracking visualizes progress, while detailed screen time insights provide comprehensive analytics about usage patterns. Prayer reminders nudge users toward spiritual disciplines throughout the day. The freemium pricing ($4.99/week or $24.99/year for premium features) provides access to the core blocking functionality with optional upgrades.
+The app's **30-day covenant feature** positions accountability in biblical terms, helping users make formal commitments to digital wellness grounded in faith. Streak tracking visualizes progress, while detailed screen time insights provide comprehensive analytics about usage patterns. Prayer reminders nudge users toward spiritual disciplines throughout the day. The freemium pricing (pricing not stated in the verified sources or pricing not stated in the verified sources for premium features) provides access to the core blocking functionality with optional upgrades.
 
-Currently available on iOS only, with Android support coming soon, FaithLock is positioned as a polished, premium experience. The brand emphasizes the spiritual dimension of digital detox—that reading Scripture isn't punishment but transformation. The app blocks apps like Instagram, TikTok, YouTube, and others, making it ideal for users specifically targeting social media engagement. FaithLock's approach assumes that 30 seconds of Bible reading can interrupt automatic behavior and redirect focus toward God's Word.
+Currently available on available on iPhone and iPad, with Android support coming soon, FaithLock is positioned as a polished, premium experience. The brand emphasizes the spiritual dimension of digital detox—that reading Scripture isn't punishment but transformation. The app blocks apps like Instagram, TikTok, YouTube, and others, making it ideal for users specifically targeting social media engagement. FaithLock's approach assumes that 30 seconds of Bible reading can interrupt automatic behavior and redirect focus toward God's Word.
 
 ## Feature-by-Feature Comparison
 
@@ -63,7 +63,7 @@ This is where the apps diverge most significantly. **FaithLock** uses a straight
 
 ### Tracking & Accountability
 
-Both apps include streak tracking and analytics. **FaithLock's** screen time insights are described as detailed, and the 30-day covenant framework provides spiritual structure. **Bible Mode** tracks streaks, time saved, and monthly statistics—slightly more comprehensive in the analytics department.
+Both apps include streak tracking and analytics. **FaithLock's** screen time insights are described as detailed, and the faith-based commitment framework provides spiritual structure. **Bible Mode** tracks streaks, time saved, and monthly statistics—slightly more comprehensive in the analytics department.
 
 The accountability models differ philosophically: FaithLock emphasizes covenant (biblical commitment language), while Bible Mode emphasizes metrics (time saved, streaks). If you're motivated by seeing hours reclaimed, Bible Mode's dashboard may resonate more. If covenant language and spiritual commitment drive you, FaithLock's framework aligns better.
 
@@ -77,7 +77,7 @@ The accountability models differ philosophically: FaithLock emphasizes covenant 
 
 **Bible Mode** offers an immediate advantage: it's completely free. For users on tight budgets or skeptical about paid screen-time apps, there's no financial barrier to trying it.
 
-**FaithLock's** freemium model ($4.99/week or $24.99/year) is competitive for app-blocker pricing but requires a commitment. The annual plan breaks down to roughly $2/month, which is reasonable for Christians serious about digital detox. However, the weekly tier at $4.99 is expensive if you're just testing.
+**FaithLock's** free download with in-app purchases model (pricing not stated in the verified sources or pricing not stated in the verified sources) is competitive for app-blocker pricing but requires a commitment. The annual plan breaks down to roughly $2/month, which is reasonable for Christians serious about digital detox. However, the weekly tier at $4.99 is expensive if you're just testing.
 
 For budget-conscious users, Bible Mode is unbeatable. For those comfortable with subscription pricing, FaithLock's annual plan represents good value for a polished iOS experience with premium features.
 
@@ -92,7 +92,7 @@ For budget-conscious users, Bible Mode is unbeatable. For those comfortable with
 - 30-second unlock creates consistent friction against habit
 
 ### FaithLock Cons
-- iOS-only (Android coming soon, but not yet available)
+- iOS-only; Android availability is not stated in the verified sources
 - Requires paid subscription for premium features
 - Limited emphasis on multiple Bible translations
 - No physical Bible integration option
@@ -170,4 +170,4 @@ Research on digital wellness suggests friction (like required Scripture reading)
 
 ---
 
-**Ready to reclaim your digital life?** [Download FaithLock on the App Store](https://pim.ms/kTxgKF4) and start your 30-day covenant today. Or try Bible Mode free to explore your options.
+**Ready to reclaim your digital life?** [Download FaithLock on the App Store](https://pim.ms/kTxgKF4) and start your faith-based commitment today. Or try Bible Mode free to explore your options.

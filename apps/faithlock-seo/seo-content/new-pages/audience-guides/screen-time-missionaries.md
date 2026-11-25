@@ -46,7 +46,7 @@ Invest the time you'd spend scrolling into building one genuine friendship with 
 
 ### 5. Use Faith-Based App Blocking During Cultural Immersion
 
-[FaithLock](/) pairs app blocking with Bible engagement, which means every impulse to escape into social media becomes an encounter with Scripture in the language and context you're serving. This is particularly powerful for missionaries: the Bible verse that appears before app access can be read in your host language as an additional immersion tool. See the [best Christian app blocker](/learn/best-christian-app-blocker) guide for more options.
+[FaithLock](/) pairs app blocking with Bible engagement, which means every impulse to escape into social media becomes an encounter with Scripture in the language and context you're serving. This is particularly powerful for missionaries: the Bible verse that appears before app access can be read in your host language as an additional immersion tool. See the [best Christian app blocker](/resources/best-christian-app-blocker) guide for more options.
 
 ## Scripture for Missionaries
 

@@ -87,4 +87,4 @@ Running two blocking apps on iOS creates API conflicts. On Android (where only O
 Not exactly. ScreenZen comes closest by combining waiting periods with usage analytics. For users wanting a spiritual dimension, FaithLock adds Bible verse engagement to the blocking experience.
 
 ---
-*Sources: [Opal on App Store](https://apps.apple.com/app/opal-screen-time-for-focus), [One Sec on App Store](https://apps.apple.com/app/one-sec-app-blocker), [One Sec on Google Play](https://play.google.com/store/apps/details?id=one.sec)*
+*Sources: Opal on App Store, One Sec on App Store, One Sec on Google Play*

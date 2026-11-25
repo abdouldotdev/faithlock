@@ -46,7 +46,7 @@ For the 30 minutes before leading worship, put your phone away. Don't check last
 
 ### 5. Use Faith-Based Blocking for Non-Ministry Hours
 
-When you're off the clock from worship ministry, your phone doesn't need to function as a ministry tool. [FaithLock](/) gates distracting apps behind Bible engagement, which means every impulse to scroll becomes an encounter with Scripture. For worship leaders who spend their ministry hours on screens, this creates a spiritual boundary between working hours and rest hours. See the [best Christian app blocker](/learn/best-christian-app-blocker) guide for more options.
+When you're off the clock from worship ministry, your phone doesn't need to function as a ministry tool. [FaithLock](/) gates distracting apps behind Bible engagement, which means every impulse to scroll becomes an encounter with Scripture. For worship leaders who spend their ministry hours on screens, this creates a spiritual boundary between working hours and rest hours. See the [best Christian app blocker](/resources/best-christian-app-blocker) guide for more options.
 
 ## Scripture for Worship Leaders
 

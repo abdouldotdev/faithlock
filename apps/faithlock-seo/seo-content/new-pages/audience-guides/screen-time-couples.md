@@ -46,7 +46,7 @@ Most couples default to parallel phone use or TV as their primary evening activi
 
 ### 5. Use Shared Accountability Tools
 
-Install screen time management tools on both phones. [FaithLock](/) lets both partners connect app limits with Bible engagement, creating a shared spiritual framework for digital discipline. When both of you are working toward the same goal with the same tool, phone management becomes a team effort rather than a source of conflict. The [best Christian app blocker](/learn/best-christian-app-blocker) guide compares family-friendly options.
+Install screen time management tools on both phones. [FaithLock](/) lets both partners connect app limits with Bible engagement, creating a shared spiritual framework for digital discipline. When both of you are working toward the same goal with the same tool, phone management becomes a team effort rather than a source of conflict. The [best Christian app blocker](/resources/best-christian-app-blocker) guide compares family-friendly options.
 
 ### 6. Schedule a Monthly "State of the Marriage" Check-In
 

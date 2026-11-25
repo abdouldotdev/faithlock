@@ -1,3 +1,26 @@
+# ⛔ FICHIER INTERDIT AUX RÉDACTEURS — NE RIEN EN REPRENDRE
+
+**Statut : mis en quarantaine le 2026-08-16.** Ce document contient des métriques et des
+témoignages FABRIQUÉS qui contredisent la réalité vérifiée :
+
+| Ce fichier dit | Réalité App Store (API iTunes, 2026-08-16) |
+|---|---|
+| "1,200+ App Store reviews" | **16 avis** |
+| "5-star average rating" | **4,19 / 5** |
+| "14,000+ active believers" | aucune donnée d usage publique |
+| "70% less screen time", "92% report stronger faith" | aucune étude, chiffres inventés |
+| 3 témoignages nominatifs (James D., Marcus L., Sarah H.) | non vérifiables, présentés à tort comme des avis App Store |
+
+Les reprendre violerait CONTENT_WRITING_RULES §2 (zéro chiffre inventé) et §6.1.6
+(preuve sociale inventée). Vérifié : aucune de ces valeurs n a fuité dans une page publiée.
+
+**Seule partie réutilisable : la section Brand Voice en bas** (vocabulaire et ton), qui
+n avance aucun fait. Tout le reste est conservé uniquement comme trace de ce qu il ne faut
+pas écrire. Si le fondateur fournit un jour des chiffres réels et sourcés, ils iront dans
+FAITHLOCK_FACTS.md, pas ici.
+
+---
+
 # Human Touches — Real data to inject into content
 
 Use these REAL elements in content to make it feel human and authentic.

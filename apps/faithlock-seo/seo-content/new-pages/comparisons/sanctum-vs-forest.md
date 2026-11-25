@@ -87,4 +87,4 @@ Yes. Since Forest is session-based and Sanctum is app-based, they can complement
 FaithLock includes streak tracking that provides some gamification alongside its Bible verse engagement, though it doesn't match Forest's visual reward system.
 
 ---
-*Sources: [Sanctum on App Store](https://apps.apple.com/app/sanctum), [Forest on App Store](https://apps.apple.com/app/forest-focus-for-productivity), [Forest on Google Play](https://play.google.com/store/apps/details?id=cc.forestapp)*
+*Sources: Sanctum on App Store, Forest on App Store, Forest on Google Play*

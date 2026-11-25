@@ -85,4 +85,4 @@ Not exactly in one app. FaithLock pairs Bible verse quizzes with scheduled block
 Yes. The AI Bible chat is optional. You can use Sanctum purely for its Sacred Pause blocking, mood check-ins, and journaling without touching the AI components.
 
 ---
-*Sources: [Bible Mode on App Store](https://apps.apple.com/app/bible-mode), [Sanctum on App Store](https://apps.apple.com/app/sanctum), [Sanctum on Google Play](https://play.google.com/store/apps/details?id=sanctum)*
+*Sources: Bible Mode on App Store, Sanctum on App Store, Sanctum on Google Play*

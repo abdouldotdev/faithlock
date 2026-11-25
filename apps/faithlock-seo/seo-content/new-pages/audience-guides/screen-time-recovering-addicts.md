@@ -46,7 +46,7 @@ The hours between 8 PM and midnight are the highest-risk window for both relapse
 
 ### 5. Use Faith-Based App Blocking as a Sobriety Tool
 
-[FaithLock](/) gates distracting apps behind Bible engagement, which means every impulse to mindlessly scroll becomes a prompt to engage with Scripture. For someone in recovery, this matters profoundly: the moment between craving and action is where battles are won or lost, and inserting God's Word into that gap changes the outcome. The [best Christian app blocker](/learn/best-christian-app-blocker) guide reviews tools that serve this purpose.
+[FaithLock](/) gates distracting apps behind Bible engagement, which means every impulse to mindlessly scroll becomes a prompt to engage with Scripture. For someone in recovery, this matters profoundly: the moment between craving and action is where battles are won or lost, and inserting God's Word into that gap changes the outcome. The [best Christian app blocker](/resources/best-christian-app-blocker) guide reviews tools that serve this purpose.
 
 ### 6. Tell Your Accountability Network About Your Phone Habits
 

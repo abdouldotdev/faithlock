@@ -76,7 +76,7 @@ Before you open YouTube, decide what you're going to watch and how long you'll s
 
 ### Step 4: Block the Recommendation Sidebar
 
-Browser extensions like "Unhook" remove the recommendation sidebar, trending page, and homepage feed. On mobile, use a [Christian app blocker](/learn/best-christian-app-blocker) to set time limits. Tools like FaithLock can restrict your YouTube access to specific times of day, so the rabbit hole can't open at 11pm when your willpower is spent.
+Browser extensions like "Unhook" remove the recommendation sidebar, trending page, and homepage feed. On mobile, use a [Christian app blocker](/resources/best-christian-app-blocker) to set time limits. Tools like FaithLock can restrict your YouTube access to specific times of day, so the rabbit hole can't open at 11pm when your willpower is spent.
 
 ### Step 5: Replace Background YouTube with Something Nourishing
 

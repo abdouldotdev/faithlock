@@ -68,7 +68,7 @@ You don't have to watch every Marvel show to enjoy the next Marvel movie. You ca
 
 ### Step 2: Set Screen Time Limits for Kids (and Enforce Them)
 
-The American Academy of Pediatrics recommends no more than 1 hour of screen time per day for children 2-5, and consistent limits for older kids. Set specific Disney+ times (e.g., 30 minutes after school) and enforce them. Use a [Christian app blocker](/learn/best-christian-app-blocker) to lock the app outside permitted hours. FaithLock can block Disney+ on family devices during dinner, homework time, and bedtime.
+The American Academy of Pediatrics recommends no more than 1 hour of screen time per day for children 2-5, and consistent limits for older kids. Set specific Disney+ times (e.g., 30 minutes after school) and enforce them. Use a [Christian app blocker](/resources/best-christian-app-blocker) to lock the app outside permitted hours. FaithLock can block Disney+ on family devices during dinner, homework time, and bedtime.
 
 ### Step 3: Replace Comfort Rewatches with Real Comfort
 

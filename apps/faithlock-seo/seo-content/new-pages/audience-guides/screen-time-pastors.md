@@ -46,7 +46,7 @@ Your personal Bible reading is not sermon prep. These are different activities w
 
 ### 5. Use Accountability Software Honestly
 
-Pastors are not immune to the temptations that screens deliver. The Schaeffer Institute reports that 57% of pastors have encountered tempting content online. [FaithLock](/) provides faith-based app management that pairs Scripture engagement with app access. More broadly, the [best Christian app blocker](/learn/best-christian-app-blocker) guide reviews tools designed for accountability. Choose one, install it, and give the accountability reports to a trusted peer, not a staff member or congregant.
+Pastors are not immune to the temptations that screens deliver. The Schaeffer Institute reports that 57% of pastors have encountered tempting content online. [FaithLock](/) provides faith-based app management that pairs Scripture engagement with app access. More broadly, the [best Christian app blocker](/resources/best-christian-app-blocker) guide reviews tools designed for accountability. Choose one, install it, and give the accountability reports to a trusted peer, not a staff member or congregant.
 
 ### 6. Take a Weekly Digital Sabbath
 

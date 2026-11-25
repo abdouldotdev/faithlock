@@ -72,7 +72,7 @@ Cancel every Twitch subscription. This removes the financial sunk cost that keep
 
 ### Step 3: Delete the Twitch App
 
-Watch Twitch only through a browser on your computer, never on your phone. This eliminates mobile notifications and impulse watching. You can't pull up a stream while lying in bed, waiting in line, or sitting in church. Use a [Christian app blocker](/learn/best-christian-app-blocker) to block Twitch in your browser during evening hours. FaithLock can lock access after 9pm and replace the screen with a verse about rest.
+Watch Twitch only through a browser on your computer, never on your phone. This eliminates mobile notifications and impulse watching. You can't pull up a stream while lying in bed, waiting in line, or sitting in church. Use a [Christian app blocker](/resources/best-christian-app-blocker) to block Twitch in your browser during evening hours. FaithLock can lock access after 9pm and replace the screen with a verse about rest.
 
 ### Step 4: Replace Passive Watching with Active Living
 

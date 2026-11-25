@@ -73,4 +73,4 @@ Yes. Use Screen Time's Downtime feature instead of App Limits. Go to Settings â†
 
 ---
 
-*Sources: [Reddit Help](https://www.reddithelp.com/), [Reddit on the App Store](https://apps.apple.com/app/reddit/id1064216828)*
+*Sources: [Reddit Help](https://www.reddithelp.com/), Reddit on the App Store*

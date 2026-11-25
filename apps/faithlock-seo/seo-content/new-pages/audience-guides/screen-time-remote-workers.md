@@ -46,7 +46,7 @@ Before logging into work, spend 20-30 minutes in screen-free activity: Bible rea
 
 ### 5. Use Faith-Based Tools to Enforce the Work-Life Boundary
 
-When the workday ends, activate an app blocker that gates work apps behind a barrier. [FaithLock](/) pairs app blocking with Bible engagement, which means transitioning from work to personal time includes a moment with Scripture. This creates a spiritual bookend to your workday. For a full comparison, see the [best Christian app blocker](/learn/best-christian-app-blocker) guide.
+When the workday ends, activate an app blocker that gates work apps behind a barrier. [FaithLock](/) pairs app blocking with Bible engagement, which means transitioning from work to personal time includes a moment with Scripture. This creates a spiritual bookend to your workday. For a full comparison, see the [best Christian app blocker](/resources/best-christian-app-blocker) guide.
 
 ### 6. Schedule "Embodied" Activities That Compete with Screens
 

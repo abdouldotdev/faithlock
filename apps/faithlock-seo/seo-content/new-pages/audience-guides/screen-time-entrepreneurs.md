@@ -46,7 +46,7 @@ Before opening any business app, spend your first 30 minutes in Scripture, praye
 
 ### 5. Separate Your Business Phone from Your Personal Phone
 
-If your budget allows, carry two devices: one for business, one for personal life. At 6 PM, the business phone goes in a drawer. This physical separation is the most effective boundary an entrepreneur can implement because it removes the constant temptation to "just check one thing." If two phones aren't feasible, use separate user profiles or the [best Christian app blocker](/learn/best-christian-app-blocker) tools to create digital separation.
+If your budget allows, carry two devices: one for business, one for personal life. At 6 PM, the business phone goes in a drawer. This physical separation is the most effective boundary an entrepreneur can implement because it removes the constant temptation to "just check one thing." If two phones aren't feasible, use separate user profiles or the [best Christian app blocker](/resources/best-christian-app-blocker) tools to create digital separation.
 
 ### 6. Join a Christian Entrepreneur Accountability Group
 

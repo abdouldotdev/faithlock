@@ -46,7 +46,7 @@ Set up Downtime on iOS or Digital Wellbeing on Android to automatically block re
 
 ### 5. Build a Faith-Based Recovery Routine
 
-After difficult shifts, your soul needs care as much as your body. [FaithLock](/) gates distracting apps behind Bible engagement, which means the impulse to numb out via scrolling becomes a prompt to encounter Scripture instead. This doesn't eliminate the need for decompression, but it infuses it with spiritual content. For more options, see the [best Christian app blocker](/learn/best-christian-app-blocker) comparison.
+After difficult shifts, your soul needs care as much as your body. [FaithLock](/) gates distracting apps behind Bible engagement, which means the impulse to numb out via scrolling becomes a prompt to encounter Scripture instead. This doesn't eliminate the need for decompression, but it infuses it with spiritual content. For more options, see the [best Christian app blocker](/resources/best-christian-app-blocker) comparison.
 
 ### 6. Protect One Day Off Per Week as Fully Screen-Minimal
 

@@ -73,4 +73,4 @@ Games with defined endpoints (Wordle gives you one puzzle per day) are structura
 
 ---
 
-*Sources: [King Support](https://support.king.com/), [Candy Crush Saga on the App Store](https://apps.apple.com/app/candy-crush-saga/id553834731), [FTC Dark Patterns Report](https://www.ftc.gov/news-events/events/2023/06/dark-patterns-digital-design)*
+*Sources: [King Support](https://support.king.com/), Candy Crush Saga on the App Store, [FTC Dark Patterns Report](https://www.ftc.gov/news-events/events/2023/06/dark-patterns-digital-design)*

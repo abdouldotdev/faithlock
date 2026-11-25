@@ -76,7 +76,7 @@ Before opening Facebook, state your purpose out loud or in your head: "I'm check
 
 ### Step 4: Use a Time-Restricted Blocker
 
-A [Christian app blocker](/learn/best-christian-app-blocker) can limit your Facebook access to specific times — like 15 minutes at lunch and 15 minutes in the evening. FaithLock places a Bible verse between you and the app, turning your reflexive reach into a moment of spiritual reflection. The verse doesn't judge you. It just makes you pause long enough to ask, "Do I actually need to be here right now?"
+A [Christian app blocker](/resources/best-christian-app-blocker) can limit your Facebook access to specific times — like 15 minutes at lunch and 15 minutes in the evening. FaithLock places a Bible verse between you and the app, turning your reflexive reach into a moment of spiritual reflection. The verse doesn't judge you. It just makes you pause long enough to ask, "Do I actually need to be here right now?"
 
 ### Step 5: Move Your Groups Off Facebook
 

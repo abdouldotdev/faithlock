@@ -80,7 +80,7 @@ The combat adrenaline you get from COD Mobile serves a real biological need for 
 
 ### Step 5: Use an App Blocker During Vulnerable Hours
 
-If you're not ready to delete the app entirely, use a [Christian app blocker](/learn/best-christian-app-blocker) to lock it during specific hours — after 9pm, during morning devotions, during family time. FaithLock shows you a verse when you try to open the app during locked hours, replacing the adrenaline urge with a moment of spiritual reflection.
+If you're not ready to delete the app entirely, use a [Christian app blocker](/resources/best-christian-app-blocker) to lock it during specific hours — after 9pm, during morning devotions, during family time. FaithLock shows you a verse when you try to open the app during locked hours, replacing the adrenaline urge with a moment of spiritual reflection.
 
 ---
 

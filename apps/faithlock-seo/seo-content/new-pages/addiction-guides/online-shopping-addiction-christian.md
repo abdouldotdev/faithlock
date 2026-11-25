@@ -80,7 +80,7 @@ Write down every online purchase — what you bought, how much it cost, and why 
 
 ### Step 5: Address the Emotional Root
 
-Shopping addiction is rarely about the stuff. It's about the feelings the stuff promises: comfort, control, reward, identity. Identify your trigger emotions and develop non-purchasing responses. Use a [Christian app blocker](/learn/best-christian-app-blocker) to lock shopping apps during emotional vulnerability. FaithLock can block access and show you a verse about contentment when you reach for the shopping app after a hard day.
+Shopping addiction is rarely about the stuff. It's about the feelings the stuff promises: comfort, control, reward, identity. Identify your trigger emotions and develop non-purchasing responses. Use a [Christian app blocker](/resources/best-christian-app-blocker) to lock shopping apps during emotional vulnerability. FaithLock can block access and show you a verse about contentment when you reach for the shopping app after a hard day.
 
 ---
 

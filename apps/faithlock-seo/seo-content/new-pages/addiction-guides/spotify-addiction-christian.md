@@ -80,7 +80,7 @@ The next time you feel anxious and reach for a calming playlist, try prayer inst
 
 ### Step 5: Set Time Limits on Spotify
 
-Use a [Christian app blocker](/learn/best-christian-app-blocker) to limit your daily Spotify time. FaithLock can lock the app after a set duration and show you a verse about stillness and silence. This doesn't eliminate music from your life — it returns it to its proper place as enjoyment rather than dependency.
+Use a [Christian app blocker](/resources/best-christian-app-blocker) to limit your daily Spotify time. FaithLock can lock the app after a set duration and show you a verse about stillness and silence. This doesn't eliminate music from your life — it returns it to its proper place as enjoyment rather than dependency.
 
 ---
 

@@ -194,4 +194,4 @@ For emotional scrollers — especially those on Android — Sanctum is the most 
 
 ---
 
-*Sources: [Sanctum on the App Store](https://apps.apple.com/app/sanctum-christian-screen-time/id6504737960), [Sanctum on Google Play](https://play.google.com/store/apps/details?id=com.sanctum.app), [faith.tools - Christian App Reviews](https://faith.tools/internet-filtering)*
+*Sources: Sanctum on the App Store, Sanctum on Google Play, [faith.tools - Christian App Reviews](https://faith.tools/internet-filtering)*

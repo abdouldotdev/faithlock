@@ -46,7 +46,7 @@ Protect at least 2-3 hours per week for in-person, phone-free student interactio
 
 ### 5. Use Faith-Based Tools to Guard Your Own Heart
 
-You spend your days helping students with digital discipline. Who's helping you? Install accountability software that you share with a peer, not a student or supervisor. [FaithLock](/) pairs app management with Scripture engagement, providing a faith-based guardrail for your personal device use. Review options in the [best Christian app blocker](/learn/best-christian-app-blocker) guide.
+You spend your days helping students with digital discipline. Who's helping you? Install accountability software that you share with a peer, not a student or supervisor. [FaithLock](/) pairs app management with Scripture engagement, providing a faith-based guardrail for your personal device use. Review options in the [best Christian app blocker](/resources/best-christian-app-blocker) guide.
 
 ### 6. Build a Volunteer Team to Share the Digital Load
 

@@ -46,7 +46,7 @@ If your family chooses to allow some screen time, make it intentional. Co-watch 
 
 ### 5. Manage Your Own Screen Habits with Faith-Based Tools
 
-Your phone use directly shapes your toddler's expectations about screens. Tools like [FaithLock](/) help parents manage their own app access by requiring Bible engagement before unlocking distracting apps. When you model screen discipline, you teach your toddler that phones aren't the default activity. For more options, visit the [best Christian app blocker](/learn/best-christian-app-blocker) comparison guide.
+Your phone use directly shapes your toddler's expectations about screens. Tools like [FaithLock](/) help parents manage their own app access by requiring Bible engagement before unlocking distracting apps. When you model screen discipline, you teach your toddler that phones aren't the default activity. For more options, visit the [best Christian app blocker](/resources/best-christian-app-blocker) comparison guide.
 
 ## Scripture for Parents of Toddlers
 

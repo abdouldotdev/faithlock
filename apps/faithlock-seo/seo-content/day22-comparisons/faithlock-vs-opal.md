@@ -13,7 +13,7 @@ Both apps address the same core problem—overwhelming smartphone addiction—bu
 | Feature | FaithLock | Opal |
 |---------|-----------|------|
 | **Primary Mechanism** | Bible verse unlock | Deep focus + rewards system |
-| **Pricing** | Freemium/$4.99/week/$24.99/year | Free + $100/year premium |
+| **Pricing** | Freemium/pricing not stated in the verified sources/pricing not stated in the verified sources | Free + $100/year premium |
 | **User Base** | Growing Christian community | 4M+ users worldwide |
 | **Platform Support** | iOS only | iOS/macOS |
 | **App Blocking** | Yes | Yes |
@@ -43,15 +43,15 @@ However, Opal is expensive: $100 annually for premium features. The free version
 
 FaithLock enters the market with a conviction that app blocking should be rooted in faith, not gamification. Where Opal says "improve your focus score," FaithLock says "align your actions with Scripture." This philosophical difference defines the entire user experience.
 
-FaithLock's pricing is its immediate competitive advantage: $24.99 annually for premium—one-quarter the price of Opal. For the cost of Opal's annual subscription, you get 4+ years of FaithLock premium. This democratizes faith-based digital wellness for budget-conscious users and those wanting to test the approach without major financial commitment.
+FaithLock's pricing is its immediate competitive advantage: pricing not stated in the verified sources for premium—one-quarter the price of Opal. For the cost of Opal's annual subscription, you get 4+ years of FaithLock premium. This democratizes faith-based digital wellness for budget-conscious users and those wanting to test the approach without major financial commitment.
 
 The Bible verse unlock is revolutionary. Every time you're tempted to check a blocked app, you encounter Scripture from the Berean Standard Bible (BSB), relevant to themes of self-discipline, temptation, and covenant. Rather than a friction mechanism, this is a spiritual intervention. Reading "Resist the devil, and he will flee from you" (James 4:7) when reaching for Instagram creates cognitive alignment between your impulse and your faith conviction.
 
-FaithLock's 30-day covenant system transforms app blocking into spiritual practice. You're not just building a productivity streak; you're making a faith commitment. This covenant language matters because it elevates the stakes psychologically. Breaking a 20-day streak is disappointing. Breaking a 20-day faith covenant carries deeper significance because you perceive it as betraying not just yourself but your commitment to God.
+FaithLock's faith-based commitment system transforms app blocking into spiritual practice. You're not just building a productivity streak; you're making a faith commitment. This covenant language matters because it elevates the stakes psychologically. Breaking a 20-day streak is disappointing. Breaking a 20-day faith covenant carries deeper significance because you perceive it as betraying not just yourself but your commitment to God.
 
 Prayer reminders throughout the day integrate faith into your entire digital wellness journey. While Opal gamifies your focus, FaithLock spiritualizes it. For Christians, this resonates profoundly. Your battle with phone addiction isn't separate from your faith journey—it's integral to it.
 
-The limitation is platform scope: iOS only, and no macOS support. If you use an iPad or Mac, Opal's multi-platform availability is significant. But for iPhone-exclusive users, FaithLock's faith integration and affordability create an unbeatable combination.
+The limitation is platform scope: available on iPhone and iPad, and no macOS support. If you use an iPad or Mac, Opal's multi-platform availability is significant. But for iPhone-exclusive users, FaithLock's faith integration and affordability create an unbeatable combination.
 
 ## 5. Feature-by-Feature Breakdown
 
@@ -63,7 +63,7 @@ The limitation is platform scope: iOS only, and no macOS support. If you use an 
 
 **Rewards & Gamification:** Opal's rewards system is elaborate: unlock badges, earn virtual achievements, compete with friends. This is incredibly motivating for gamification-responsive personalities. FaithLock offers covenant points and spiritual progress tracking rather than gamified rewards. For users energized by competition and achievement systems, Opal is superior. For users motivated by spiritual conviction, FaithLock is superior. Winner: Opal (for gamers), FaithLock (for believers).
 
-**Streak Tracking:** Both include streak tracking. Opal's streak is unlimited and emphasizes duration. FaithLock's 30-day covenant creates natural breakpoints—you complete a covenant and start fresh, rather than chasing endless streaks. Psychologically, covenant completion is more satisfying than relentless streak chasing. FaithLock's approach encourages reflection and renewal; Opal's encourages persistence. Winner: Tie (different approaches, equally valid).
+**Streak Tracking:** Both include streak tracking. Opal's streak is unlimited and emphasizes duration. FaithLock's faith-based commitment creates natural breakpoints—you complete a covenant and start fresh, rather than chasing endless streaks. Psychologically, covenant completion is more satisfying than relentless streak chasing. FaithLock's approach encourages reflection and renewal; Opal's encourages persistence. Winner: Tie (different approaches, equally valid).
 
 **Focus Score Intelligence:** Opal's focus score is algorithmically calculated, reflecting your improvement trajectory and comparing you to user norms. FaithLock doesn't offer a similar metric. This is Opal's technical advantage. Winner: Opal.
 
@@ -77,7 +77,7 @@ The limitation is platform scope: iOS only, and no macOS support. If you use an 
 
 ## 6. Pricing Comparison
 
-FaithLock's pricing is remarkably aggressive: $24.99 annually for premium features, with a freemium version offering basic blocking. If paying weekly ($4.99/week), annual cost is $259.48—still less than Opal's $100/year base pricing.
+FaithLock's pricing is remarkably aggressive: pricing not stated in the verified sources for premium features, with a free download with in-app purchases version offering basic blocking. If paying weekly (pricing not stated in the verified sources), annual cost is $259.48—still less than Opal's $100/year base pricing.
 
 Opal's structure: Free version with limited features, $100 annual subscription for premium. No lifetime pricing option, meaning you pay annually indefinitely.
 
@@ -87,14 +87,14 @@ Opal's structure: Free version with limited features, $100 annual subscription f
 
 FaithLock saves you $75 annually—nearly 75% less expensive than Opal. Over 3 years, you save $225. Over 5 years, you save $375. For budget-conscious users or those wanting to try premium features without major financial commitment, FaithLock's pricing is dramatically superior.
 
-However, Opal's premium price reflects its 4 million-user infrastructure, sophisticated algorithms, and advanced features. You're paying for scale and development resources. FaithLock's iOS-only focus enables lower operational costs and pricing.
+However, Opal's premium price reflects its 4 million-user infrastructure, sophisticated algorithms, and advanced features. You're paying for scale and development resources. FaithLock's available on iPhone and iPad focus enables lower operational costs and pricing.
 
 For users asking "which is better value?"—FaithLock wins objectively. For users asking "which features justify the cost?"—it depends on whether you value Opal's gamification and focus score over FaithLock's spiritual accountability and affordability.
 
 ## 7. Pros & Cons
 
 **FaithLock Pros:**
-- Exceptional affordability ($24.99/year premium)
+- Exceptional affordability (pricing not stated in the verified sources premium)
 - Bible verse unlock creates spiritual accountability
 - 30-day covenant system creates meaningful commitment cycles
 - Prayer reminders integrate faith throughout the day
@@ -171,7 +171,7 @@ The affordability gap is also profound. At 75% cheaper than Opal, FaithLock is g
 A: Both significantly exceed Apple Screen Time's security. FaithLock uses psychological barriers (Scripture reading); Opal uses technical barriers (authentication). Both are harder to circumvent than standard parental controls.
 
 **Q: Does FaithLock work on iPad or Mac like Opal does?**
-A: FaithLock is iOS only. Opal works on iOS and macOS. If you need multi-device coverage, Opal is required.
+A: FaithLock is available on iPhone and iPad. Opal works on iOS and macOS. If you need multi-device coverage, Opal is required.
 
 **Q: Can I use FaithLock without being religious?**
 A: Technically yes—you'd read Bible verses to unlock apps. But FaithLock is specifically designed for Christian users. Non-religious users would find Opal more aligned to their worldview.
@@ -180,7 +180,7 @@ A: Technically yes—you'd read Bible verses to unlock apps. But FaithLock is sp
 A: Opal's 4 million users mean more online resources and community discussions. FaithLock's community is smaller but tightly-knit and faith-oriented. For general app blocker advice, Opal. For faith-integrated strategies, FaithLock.
 
 **Q: What if I want FaithLock's faith approach but need macOS support?**
-A: FaithLock is iOS only currently. You could use FaithLock on iPhone and another blocker on Mac, or commit to Opal for cross-platform coverage.
+A: FaithLock is available on iPhone and iPad currently. You could use FaithLock on iPhone and another blocker on Mac, or commit to Opal for cross-platform coverage.
 
 ---
 

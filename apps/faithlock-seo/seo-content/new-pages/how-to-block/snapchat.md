@@ -78,4 +78,4 @@ Snapchat's combination of disappearing messages, streaks, and Snap Map location 
 
 ---
 
-*Sources: [Snapchat Support](https://support.snapchat.com/), [Snapchat on the App Store](https://apps.apple.com/app/snapchat/id447188370), [Surgeon General's Advisory on Social Media](https://www.hhs.gov/surgeongeneral/priorities/youth-mental-health/social-media/index.html)*
+*Sources: [Snapchat Support](https://support.snapchat.com/), Snapchat on the App Store, [Surgeon General's Advisory on Social Media](https://www.hhs.gov/surgeongeneral/priorities/youth-mental-health/social-media/index.html)*

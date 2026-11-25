@@ -87,4 +87,4 @@ Both are iOS-only and support standard iOS accessibility features (VoiceOver, Dy
 FaithLock uses Bible verse quizzes to unlock apps — firm blocking with a Scripture engagement focus rather than a restriction-focused design.
 
 ---
-*Sources: [Holy Focus on App Store](https://apps.apple.com/app/holy-focus), [Bible Pause on App Store](https://apps.apple.com/app/bible-pause)*
+*Sources: Holy Focus on App Store, Bible Pause on App Store*

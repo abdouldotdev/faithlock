@@ -94,9 +94,9 @@ Practicing **digital minimalism** requires discipline, and that's where FaithLoc
 
 This brilliant design forces intentionality at the moment of highest temptation. You can't mindlessly tap into TikTok. You must pause, engage with Scripture, and then decide: *Do I really need to open this app right now?* Often, that sacred pause is enough to redirect your energy.
 
-FaithLock's features—app blocking, streak tracking, screen time insights, 30-day covenant challenges, and prayer reminders—all work together to support **digital minimalism** as a spiritual practice. Rather than white-knuckling through willpower alone, FaithLock creates a system that aligns your technology use with your faith values.
+FaithLock's features—app blocking, streak tracking, screen time insights, faith-based commitment challenges, and prayer reminders—all work together to support **digital minimalism** as a spiritual practice. Rather than white-knuckling through willpower alone, FaithLock creates a system that aligns your technology use with your faith values.
 
-The freemium model lets you start free; premium plans ($4.99/week or $24.99/year) unlock advanced features. Available exclusively on iOS, FaithLock is built for the Christian seeking to reclaim their attention for God.
+The free download with in-app purchases model lets you start free; premium plans (pricing not stated in the verified sources or pricing not stated in the verified sources) unlock advanced features. Available exclusively on iOS, FaithLock is built for the Christian seeking to reclaim their attention for God.
 
 ---
 

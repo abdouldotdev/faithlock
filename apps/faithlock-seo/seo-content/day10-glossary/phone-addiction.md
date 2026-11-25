@@ -144,7 +144,7 @@ Instead of just blocking apps like Instagram and TikTok, FaithLock requires you 
 
 FaithLock isn't about shame—it's about pausing long enough to remember your why and align your choices with your values.
 
-**Available on iOS.** Choose between freemium (limited blocks), $4.99/week, or $24.99/year for full features.
+**Available on iOS.** Choose between freemium (limited blocks), pricing not stated in the verified sources, or pricing not stated in the verified sources for full features.
 
 **[Download FaithLock Today](https://pim.ms/kTxgKF4)** and reclaim your focus, peace, and time.
 
@@ -191,4 +191,4 @@ Learn more about challenges and solutions related to phone addiction:
 ---
 
 *Last Updated: February 2026*
-*FaithLock: Blocks Instagram, TikTok, etc. → Read Scripture to unlock. Available on iOS. Freemium, $4.99/week, or $24.99/year.*
+*FaithLock: Blocks Instagram, TikTok, etc. → Read Scripture to unlock. Available on iOS. free download with in-app purchases, pricing not stated in the verified sources, or pricing not stated in the verified sources.*

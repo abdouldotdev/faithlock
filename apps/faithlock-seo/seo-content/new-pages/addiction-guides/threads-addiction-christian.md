@@ -76,7 +76,7 @@ Threads sends notifications for likes, replies, new followers, and trending topi
 
 ### Step 4: Set Strict Time Limits
 
-Use a [Christian app blocker](/learn/best-christian-app-blocker) to cap Threads at 15 minutes per day. FaithLock can replace the infinite scroll with a Bible verse when your time expires, redirecting your attention from the feed to the Word.
+Use a [Christian app blocker](/resources/best-christian-app-blocker) to cap Threads at 15 minutes per day. FaithLock can replace the infinite scroll with a Bible verse when your time expires, redirecting your attention from the feed to the Word.
 
 ### Step 5: Consolidate Your Platforms
 

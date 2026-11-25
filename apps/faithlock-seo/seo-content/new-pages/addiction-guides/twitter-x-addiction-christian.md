@@ -72,7 +72,7 @@ Keep it on your computer if you need it for professional reasons. But removing i
 
 ### Step 3: Implement a "No Reply" Rule
 
-Stop replying to strangers. If someone you don't know says something wrong, let it be wrong. You're not obligated to correct every bad take on the internet. This single rule eliminates the argument loops that consume hours. If you can't resist, use a [Christian app blocker](/learn/best-christian-app-blocker) to lock access during your most vulnerable hours.
+Stop replying to strangers. If someone you don't know says something wrong, let it be wrong. You're not obligated to correct every bad take on the internet. This single rule eliminates the argument loops that consume hours. If you can't resist, use a [Christian app blocker](/resources/best-christian-app-blocker) to lock access during your most vulnerable hours.
 
 ### Step 4: Replace Twitter's News Function
 

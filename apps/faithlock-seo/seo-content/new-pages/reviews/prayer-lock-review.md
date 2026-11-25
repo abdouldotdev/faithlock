@@ -3,7 +3,7 @@ slug: prayer-lock-review
 title: Prayer Lock Review (2026)
 category: Reviews
 meta_title: "Prayer Lock App Review (2026): Mood-Matched Prayers to Replace Scrolling"
-meta_description: "Honest review of Prayer Lock — the app that matches prayers to your mood before unlocking apps. Features, pricing, and who it's best for."
+meta_description: "Honest review of Prayer Lock, the app that matches prayers to your mood before unlocking apps. Features, pricing, and who it's best for."
 ---
 
 ## Key Takeaways
@@ -19,7 +19,7 @@ meta_description: "Honest review of Prayer Lock — the app that matches prayers
 
 ## What Is Prayer Lock?
 
-Prayer Lock sits in the "less is more" corner of faith-based app blocking. When you try to open a blocked app, the app asks how you're feeling. You pick a mood — anxious, bored, lonely, grateful, overwhelmed — and receive a short, Bible-rooted prayer written for that specific emotion. After praying, your app unlocks.
+Prayer Lock sits in the "less is more" corner of faith-based app blocking. When you try to open a blocked app, the app asks how you're feeling. You pick a mood (anxious, bored, lonely, grateful, overwhelmed) and receive a short, Bible-rooted prayer written for that specific emotion. After praying, your app unlocks.
 
 That's the whole thing. No quizzes, no scanning, no journaling, no AI chat. Just: how are you feeling, here's a prayer for that, now go in peace.
 
@@ -29,10 +29,23 @@ If you want a faith-based blocker that feels like a quiet conversation with God 
 
 ---
 
+## Prayer Lock Pricing: Is It Free?
+
+**No. Prayer Lock is not free.** You can download the app at no cost, but the free version is little more than a preview; the mood-matched prayers and app blocking that make Prayer Lock worth using require an active subscription, typically in the $3.99–$6.99/month range depending on region.
+
+- **Free to download**: Yes.
+- **Free tier**: Extremely limited (essentially a preview of the interface, not the actual experience).
+- **Full features**: Require a paid subscription (monthly or annual).
+- **Free trial**: Availability varies by region and changes over time. Check the current App Store listing before committing.
+
+If you want a faith-based app blocker with a genuinely usable free tier, see the alternatives at the end of this review: Bible Mode and Pray Screen Time both offer functional blocking without a subscription.
+
+---
+
 ## How It Works
 
 1. **Download** Prayer Lock from the App Store
-2. **Select apps to block** — standard setup flow
+2. **Select apps to block**: standard setup flow
 3. **Grant Screen Time permissions** through Apple's Family Controls
 4. When you open a blocked app, Prayer Lock asks **"How are you feeling?"**
 5. Select your **current mood** from a clean, intuitive list
@@ -52,7 +65,7 @@ The headline feature. Prayer Lock maps emotions to specific prayers, so you're n
 The prayers themselves are well-written. They acknowledge the feeling without shaming you for having it, then gently redirect your attention to God. "Lord, I'm bored and reaching for distraction. Help me sit with this stillness and find You in it." That kind of tone.
 
 **Clean, Minimal Interface**
-Prayer Lock's design is spare and intentional. No dashboard, no stats page, no settings jungle. You open the app to adjust your blocked apps or review your prayer history, and everything is within two taps. The aesthetic is calm — soft colors, clean typography, generous white space.
+Prayer Lock's design is spare and intentional. No dashboard, no stats page, no settings jungle. You open the app to adjust your blocked apps or review your prayer history, and everything is within two taps. The aesthetic is calm: soft colors, clean typography, generous white space.
 
 **App Blocking**
 System-level blocking through Apple's Family Controls framework. Same infrastructure as Bible Mode, Holy Focus, and FaithLock. Reliable and hard to bypass. You select specific apps to block and can update the list anytime.
@@ -71,14 +84,14 @@ Prayer Lock requires an active subscription:
 
 | Tier | Price | What You Get |
 |------|-------|--------------|
-| Free | $0 | Extremely limited — essentially a preview |
+| Free | $0 | Extremely limited (essentially a preview) |
 | Subscription | Monthly or annual (varies) | Full access to mood-matched prayers + blocking |
 
 Here's the honest issue with Prayer Lock's pricing: there's no meaningful free tier. You can download the app and see what it looks like, but you need a subscription to actually use it. The monthly price varies by region but expect typical faith app pricing ($3.99-$6.99/month range).
 
 For an app that does one thing (mood-matched prayer prompts before app unlocking), the subscription model is a hard sell compared to competitors that offer functional free tiers. Bible Mode gives you free blocking with Bible scanning. Pray Screen Time gives you free blocking with prayer prompts. Prayer Lock asks you to pay before you can evaluate whether the experience actually works for you.
 
-If there were a 7-day free trial (and there may be — check the App Store listing), that would help significantly.
+If there were a 7-day free trial (and there may be; check the App Store listing), that would help significantly.
 
 ---
 
@@ -86,22 +99,22 @@ If there were a 7-day free trial (and there may be — check the App Store listi
 
 **Pros**
 - Mood-matched prayers feel **genuinely personal and relevant**
-- The prayers are **well-written** — compassionate, not preachy
+- The prayers are **well-written**: compassionate, not preachy
 - **Clean, calming design** that doesn't add to your stress
-- Extremely **simple to use** — zero learning curve
+- Extremely **simple to use**: zero learning curve
 - System-level blocking is reliable and hard to bypass
 - The mood selection forces a **micro moment of self-awareness**
-- No feature bloat — the app does one thing and does it well
+- No feature bloat: the app does one thing and does it well
 - Acknowledges emotions **without shame or guilt**
 
 **Cons**
-- **No meaningful free tier** — you're paying before you know if it works for you
-- iOS only — no Android
-- The mood categories, while good, **could be deeper** — some emotions aren't well-represented
+- **No meaningful free tier**: you're paying before you know if it works for you
+- iOS only, no Android
+- The mood categories, while good, **could be deeper**: some emotions aren't well-represented
 - No scheduling or time-based blocking
 - No analytics, streaks, or usage tracking
-- **Passive engagement** — you read the prayer, but nothing confirms you engaged with it
-- Prayer library depth is unclear — how many unique prayers exist per mood?
+- **Passive engagement**: you read the prayer, but nothing confirms you engaged with it
+- Prayer library depth is unclear: how many unique prayers exist per mood?
 - No community, accountability, or sharing features
 - For the price, the feature set is thin compared to competitors
 
@@ -127,7 +140,7 @@ If there were a 7-day free trial (and there may be — check the App Store listi
 
 **Android users.** iOS only.
 
-**Those who want active engagement.** Reading a prayer is passive. If you need something that forces you to engage — a quiz, a scan, a written response — Prayer Lock won't provide that friction.
+**Those who want active engagement.** Reading a prayer is passive. If you need something that forces you to engage (a quiz, a scan, a written response), Prayer Lock won't provide that friction.
 
 **Families.** No family plans, no kid modes, no shared accountability. It's a solo experience.
 
@@ -152,6 +165,18 @@ If there were a 7-day free trial (and there may be — check the App Store listi
 
 ## Frequently Asked Questions
 
+**Is Prayer Lock free?**
+No. You can download it for free, but the free version is essentially a preview. The mood-matched prayers and app blocking that make Prayer Lock worth using require an active subscription.
+
+**Does Prayer Lock cost money?**
+Yes. After the initial download, you need a subscription to use the app's core features. Pricing typically falls in the $3.99–$6.99/month range depending on region.
+
+**Do you have to pay for Prayer Lock?**
+Yes, to use it meaningfully. There's no substantial free tier: a subscription is required almost immediately after setup.
+
+**What is Prayer Lock's pricing?**
+Prayer Lock uses a subscription model (monthly or annual) with no meaningful free tier. Exact pricing varies by region. Check the current App Store listing for the current rate and whether a free trial is being offered.
+
 **How many moods can I choose from?**
 Prayer Lock offers a solid range of emotional states: anxiety, boredom, loneliness, gratitude, overwhelm, anger, sadness, restlessness, and more. The exact number varies as the developers add new categories. It covers the most common emotions that drive phone pickup behavior, though some niche emotions (like grief or envy) may not have dedicated categories yet.
 
@@ -165,7 +190,7 @@ The prayer history feature lets you look back at prayers you've received. There'
 The 20-30 second pause before each app unlock creates friction that makes mindless scrolling harder. Research shows that even small delays significantly reduce app usage. But Prayer Lock doesn't track your screen time, so you won't see quantified results within the app. Use Apple's built-in Screen Time report for that data.
 
 **Is there a free trial?**
-Check the current App Store listing — availability of free trials varies. If a trial is available, use it fully before deciding. The subscription is the only way to meaningfully evaluate the app.
+Check the current App Store listing. Availability of free trials varies. If a trial is available, use it fully before deciding. The subscription is the only way to meaningfully evaluate the app.
 
 **Can I use Prayer Lock alongside Apple Screen Time?**
 Yes. Prayer Lock uses Apple's Family Controls framework, which works alongside your existing Screen Time settings. They complement each other: Apple Screen Time for hard limits, Prayer Lock for spiritual friction.
@@ -180,10 +205,10 @@ The content is appropriate for all ages. The emotional awareness aspect could be
 
 ## Alternatives to Consider
 
-- **Holy Focus** — If you want a deeper prayer library (300+) with exceptional visual design, though without mood matching
-- **Sanctum** — If you want mood awareness plus journaling, AI chat, and Android support
-- **Pray Screen Time** — If you want a free prayer-based blocker, especially on Android
-- **FaithLock** — If you want active Scripture engagement with quizzes, scheduling, and analytics
+- **Holy Focus**: If you want a deeper prayer library (300+) with exceptional visual design, though without mood matching
+- **Sanctum**: If you want mood awareness plus journaling, AI chat, and Android support
+- **Pray Screen Time**: If you want a free prayer-based blocker, especially on Android
+- **FaithLock**: If you want active Scripture engagement with quizzes, scheduling, and analytics
 
 ---
 
@@ -193,10 +218,10 @@ Prayer Lock does one thing, and it does it with genuine care. The mood-matched p
 
 The question is whether that's enough to justify a subscription. In a category where Bible Mode offers free Bible scanning and Pray Screen Time offers free prayer prompts, Prayer Lock's insistence on a paid subscription with no real free tier is its biggest weakness. The content is excellent, but the pricing model asks for a commitment before you've had a chance to evaluate the experience.
 
-If you value quality over quantity — if one perfect prayer matters more to you than 300 curated ones, download Prayer Lock and give it a week. The emotional awareness it builds is subtle but real. You'll start noticing why you reach for your phone, and that awareness, paired with a prayer that meets you in that exact moment, can genuinely reshape the habit.
+If you value quality over quantity, if one perfect prayer matters more to you than 300 curated ones, download Prayer Lock and give it a week. The emotional awareness it builds is subtle but real. You'll start noticing why you reach for your phone, and that awareness, paired with a prayer that meets you in that exact moment, can genuinely reshape the habit.
 
 Just make sure the subscription math works for your budget first.
 
 ---
 
-*Sources: [Prayer Lock on the App Store](https://apps.apple.com/app/prayer-lock-screen-time/id6738803498), [faith.tools - Christian App Reviews](https://faith.tools/internet-filtering), [Riedel et al., PNAS 2023 - App Delay Study](https://pmc.ncbi.nlm.nih.gov/articles/PMC9974409/)*
+*Sources: Prayer Lock on the App Store, [faith.tools - Christian App Reviews](https://faith.tools/internet-filtering), [Riedel et al., PNAS 2023 - App Delay Study](https://pmc.ncbi.nlm.nih.gov/articles/PMC9974409/)*

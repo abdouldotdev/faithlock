@@ -1,0 +1,587 @@
+# COMPETITOR_FACTS — couche de faits concurrents (source de vérité B)
+
+*Équivalent du `content/competitors.ts` de Montaj. Toutes les pages comparisons/reviews/listicles piochent ICI. Un concurrent est décrit identiquement sur toutes les pages : cohérence par construction. Un fait absent de ce fichier ne va pas sur une page.*
+
+> ⚠️ **À REMPLIR par un agent de recherche (web search, sources datées) puis relire une fois, AVANT le batch.** Ne pas remplir de mémoire. Chaque entrée doit porter la date de vérification.
+> Règle prix : `pricingModel` **qualitatif** (« free tier + subscription for full blocking »), jamais un montant figé sans date + source.
+
+## Template d'entrée
+
+```yaml
+- name:            # nom exact de l'app
+  owner:           # société
+  platforms:       # iOS / Android / desktop / extension
+  pricingModel:    # qualitatif, daté
+  blockingMethod:  # Screen Time API / VPN / DNS / accountability
+  strictness:      # contournable facilement ? strict mode ?
+  keyFeatures: []  # 3-6 features vérifiées
+  weaknesses: []   # réelles, sourcées (App Store/Trustpilot), avec lien
+  faithlockAngle:  # notre angle honnête face à cette app
+  verifiedAt:      # YYYY-MM-DD
+  sources: []      # URLs
+```
+
+## Apps à couvrir (déduites des pages existantes + cibles du batch)
+
+Bloqueurs génériques : Opal · Brick · ScreenZen · one sec · Freedom · Cold Turkey · Forest · Flora · Jomo · Clearspace · Unpluq · AppBlock
+Bloqueurs chrétiens : Prayer Lock · Bible Mode · Pray Screen Time · Holy Focus · Sanctum
+Accountability / parental chrétien : Covenant Eyes · Bark · Canopy · Truple · Accountable2You
+
+## Entrées
+
+- name: "Opal"
+  owner: "Opal OS Corporation"
+  platforms: "iOS (iPhone, iPad), Mac, Chrome browser extension, Android (weaker feature set with ads on the free tier)"
+  pricingModel: "free tier with limited features (one recurring session, no Deep Focus); paid subscription (monthly or annual) unlocks the full feature set including Deep Focus mode; a lifetime purchase option also exists"
+  blockingMethod: "Apple Screen Time API on iOS/Mac; browser-level blocking via Chrome extension"
+  strictness: "Deep Focus mode cannot be cancelled once a timer is set; optional Screen Time Passcode and App Uninstall Protection can prevent disabling or deleting the app during a session. Without those settings enabled, Opal's own help center acknowledges the app can be turned off in one step via iOS Settings > Screen Time > toggle off 'Apps with Screen Time Access'."
+  keyFeatures:
+    - "Focus Sessions: timed app/website blocking with scheduled breaks"
+    - "Deep Focus: non-bypassable blocking mode once started"
+    - "Recurring Sessions with calendar/Shortcuts and iOS Focus Mode integration"
+    - "Focus Score and Focus Report analytics"
+    - "Rewards, milestones, and a community leaderboard with friend invitations"
+    - "Screen Time Passcode and App Uninstall Protection anti-bypass options"
+  weaknesses:
+    - "A user reported the app blocked apps they hadn't selected and found it easily bypassed through Screen Time settings, then struggled for three days to get a refund after an unwanted renewal (https://community.opalapp.com/t/refund-for-unwanted-subscription/1498)"
+    - "An independent review calls the $99.99/year Pro price steep for a screen time blocker and says the free plan is almost useless since it excludes Deep Focus mode, review published March 2026, checked 2026-08-15 (https://www.blok.so/resources/opal-app-review-is-it-worth-100-year-for-screen-time-management)"
+    - "The same review notes that even with Deep Focus enabled, users can still delete the app, change phone settings, or find workarounds, concluding the software can be bypassed by the person it is trying to help (https://www.blok.so/resources/opal-app-review-is-it-worth-100-year-for-screen-time-management)"
+    - "The Android version is described as having ads on its free tier and blocking that is not as robust as iOS due to platform limitations (https://www.blok.so/resources/opal-app-review-is-it-worth-100-year-for-screen-time-management)"
+  faithlockAngle: "Opal uses the same underlying Screen Time API as FaithLock, but sells its strongest anti-bypass protections only in a paid tier reviewers call expensive. FaithLock's unlock is different in kind: instead of a hard lock users try to defeat, it asks the user to answer a Bible quiz question, turning the moment of temptation into a moment of reflection."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://apps.apple.com/us/app/opal-screen-time-control/id1497465230"
+    - "https://opalapp.com/screentime"
+    - "https://opalapp.com/help/how-is-opal-different-from-screen-time-settings-on-ios"
+    - "https://opalapp.com/help/how-to-lock-opals-screen-time-access"
+    - "https://opalapp.com/help/what-is-app-uninstall-protection"
+    - "https://opalapp.com/help/how-can-i-make-opal-foolproof"
+    - "https://www.blok.so/resources/opal-app-review-is-it-worth-100-year-for-screen-time-management"
+    - "https://community.opalapp.com/t/refund-for-unwanted-subscription/1498"
+    - "https://password-locker.com/blog/post/opal-workarounds-a-solution-to-disabling-screen-time-access/"
+
+- name: "Brick"
+  owner: "Brick LLC"
+  platforms: "iOS, Android (companion app paired with a physical NFC hardware device)"
+  pricingModel: "one-time hardware purchase (physical NFC device); companion app is free with no subscription. Exact hardware price unknown (not independently verified with a dated source)."
+  blockingMethod: "NFC-triggered device blocking: the phone must physically tap the Brick hardware to start or end a blocking session; on iOS this is layered on top of system-level restrictions consistent with Screen Time"
+  strictness: "Has an optional Strict Mode meant to prevent app deletion or setting changes during a session. At least one App Store reviewer reports Strict Mode can be defeated by disabling the restriction directly in iOS Screen Time settings. Losing the physical Brick is mitigated by five 'Emergency Unbrick' uses per account; after that, unlocking requires an email/form request typically processed within about 48 hours."
+  keyFeatures:
+    - "Physical NFC 'Brick' device that must be tapped to start or end a blocking session"
+    - "Custom blocking 'Modes' (Deep Work, Family Time, Sleep, Study, Social Time, etc.)"
+    - "One-time purchase with no subscription fee"
+    - "One Brick can pair with multiple phones and vice versa"
+    - "Optional Strict Mode to resist tampering"
+    - "Battery-free, magnetic hardware design"
+  weaknesses:
+    - "App Store reviewer C Parlee (1 star) reports Strict Mode can be bypassed in one tap via iOS Screen Time settings (https://apps.apple.com/us/app/brick-ditch-distractions/id6448794069?see-all=reviews)"
+    - "App Store reviewer unique_physique_13 reports scheduled unblocking sometimes fails to trigger, requiring a phone restart as a workaround (https://apps.apple.com/us/app/brick-ditch-distractions/id6448794069?see-all=reviews)"
+    - "App Store reviewer Busy Cal Fan reports the in-app screen time timer randomly resets to 00:00:00 (https://apps.apple.com/us/app/brick-ditch-distractions/id6448794069?see-all=reviews)"
+    - "An independent review notes the scheduler cannot auto-end a session after a fixed duration, Android has no home screen widget, activation requires opening the app plus a two-second hold, and analytics are limited to daily usage duration with no habit tracking (https://www.digitalreviews.net/reviews/mobile/brick-phone-distraction-device-review/)"
+    - "Website blocking is not yet supported on Android according to review coverage (https://cybernews.com/reviews/brick-phone-blocker-review/)"
+  faithlockAngle: "Brick requires buying and carrying a physical hardware device, and Strict Mode is reported bypassable in one tap through iOS Screen Time settings by at least one reviewer. FaithLock blocks apps purely in software via Apple's Screen Time API and requires answering a Bible quiz question to unlock, so there is no device to lose or ship, and regaining access is tied to a values-based challenge rather than a hardware tap."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://getbrick.com/"
+    - "https://getbrick.com/pages/android"
+    - "https://apps.apple.com/us/app/brick-ditch-distractions/id6448794069?see-all=reviews"
+    - "https://play.google.com/store/apps/details?id=com.brickllc.brick&hl=en_US"
+    - "https://www.digitalreviews.net/reviews/mobile/brick-phone-distraction-device-review/"
+    - "https://cybernews.com/reviews/brick-phone-blocker-review/"
+
+- name: "ScreenZen"
+  owner: "ScreenZen LLC"
+  platforms: "iOS, iPadOS, macOS, Android (Windows also listed on the official site, not independently cross-verified in an app store)"
+  pricingModel: "free with optional donations; no mandatory subscription found, though forgetting the app passcode after enabling the uninstall-prevention/lock feature can require a paid unlock request"
+  blockingMethod: "on iOS, requires Screen Time and Shortcuts permissions consistent with Apple's Screen Time API (FamilyControls/ManagedSettings); on Android, uses Accessibility Service permissions rather than VPN or DNS filtering"
+  strictness: "Offers an optional passcode and lock mode intended to prevent uninstallation and block-setting changes. Independent reviews describe it as a friction-based tool (delays and prompts) rather than an absolute block, and one comparison source explicitly lists 'can be bypassed' as a weak point. A Trustpilot reviewer reported that enabling the uninstall-prevention feature and then forgetting the passcode effectively locks the user out of changing settings until a paid unlock request is processed."
+  keyFeatures:
+    - "Customizable delay (pause) before an app or website opens, with increasing wait times"
+    - "Interruption of endless scrolling by limiting sessions to short bursts"
+    - "Per-app daily usage limits and blocking once goals are reached, schedulable by day/time"
+    - "Motivational and reflective prompts before app access"
+    - "Passcode-protected settings and an optional lock mode against workarounds"
+    - "Activity tracking and usage streaks"
+  weaknesses:
+    - "A Trustpilot reviewer states ScreenZen sends screen recordings and third-party app activity to its servers without this being mentioned in the privacy policy, and reports receiving no response from support after asking about it (https://www.trustpilot.com/review/www.screenzen.co)"
+    - "A Trustpilot reviewer reports that forgetting the app passcode after enabling the uninstall-prevention/lock feature effectively bricks the phone's settings access, requiring a paid unlock request to resolve (https://www.trustpilot.com/review/www.screenzen.co)"
+    - "An independent review site lists 'can be bypassed' as a noted weak point and observes the delay/friction mechanic can lose effectiveness once tapping through becomes habitual (https://nibble-app.com/blog/screenzen)"
+  faithlockAngle: "ScreenZen relies on delays, prompts, and optional lock settings that reviewers describe as bypassable friction rather than a hard stop, and it carries an unresolved privacy complaint from at least one reviewer. FaithLock blocks apps directly through Apple's Screen Time API and requires correctly answering a Bible quiz question to unlock, tying the act of regaining access to scripture engagement rather than waiting out a timer."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://screenzen.co/"
+    - "https://apps.apple.com/us/app/screenzen-screen-time-control/id1541027222"
+    - "https://www.trustpilot.com/review/www.screenzen.co"
+    - "https://nibble-app.com/blog/screenzen"
+    - "https://play.google.com/store/apps/details?id=com.screenzen&hl=en_US"
+
+- name: "one sec"
+  owner: "riedel.wtf apps S.L."
+  platforms: "iOS (iPhone, iPad, Mac via Catalyst, Apple Watch, Apple TV), Android, browser extension (desktop: Windows/macOS/Linux)"
+  pricingModel: "free tier that fully protects a single app; paid subscription or one-time/family lifetime purchase required to cover multiple apps and unlock all intervention types. Family/lifetime tier reaches up to $149 per the App Store listing accessed 2026-08-15."
+  blockingMethod: "not a hard restriction: on iOS it intercepts app launches through Shortcuts automation and shows a friction interstitial (breathing exercise, reflection prompt, phone rotation, etc.) before letting the user proceed; an optional 'blocking mode' enforces scheduled full restriction; on Android it relies on the Accessibility Service API rather than a Screen Time style API"
+  strictness: "Easily bypassable: reviewers describe the intervention as a speed bump rather than a wall, since users can tap or swipe through the breathing prompt without any genuine pause. No tamper-proof lock mode preventing disabling was found."
+  keyFeatures:
+    - "Deep-breath / mindfulness interstitial shown before opening chosen apps"
+    - "Journaling and intention tracking tied to each app-opening event"
+    - "Website interruption via browser extension"
+    - "Scheduled blocking mode for stricter, time-based restriction"
+    - "LENGO integration that turns scrolling urges into language-learning prompts"
+    - "Adult content filter"
+  weaknesses:
+    - "A review states the intervention is a speed bump, not a wall, since determined users routinely tap through every breathing prompt without pausing (https://www.blok.so/resources/one-sec-app-review-does-adding-friction-actually-reduce-screen-time)"
+    - "Long-term users report the pause loses its psychological impact, becoming an annoying formality by week four as the novelty wears off (https://www.whistleout.com/CellPhones/Apps/one-sec-app-review)"
+    - "The free tier only protects one app, pushing most users toward a paid plan almost immediately (https://www.whistleout.com/CellPhones/Apps/one-sec-app-review)"
+    - "On Android the app depends on the Accessibility Service API, which can conflict with other apps or get disabled by manufacturer battery optimization, causing inconsistent blocking (https://www.blok.so/resources/one-sec-app-review-does-adding-friction-actually-reduce-screen-time)"
+  faithlockAngle: "one sec relies on a dismissible interstitial that reviewers say users can simply tap through, while FaithLock enforces a hard restriction through Apple's Screen Time API that cannot be skipped without genuinely answering a Bible quiz question. Where one sec's friction is a generic mindfulness pause that fades with repetition, FaithLock's unlock moment is tied to scripture engagement rather than an animation users learn to ignore."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://one-sec.app"
+    - "https://apps.apple.com/us/app/one-sec-screen-time-focus/id1532875441"
+    - "https://www.blok.so/resources/one-sec-app-review-does-adding-friction-actually-reduce-screen-time"
+    - "https://www.whistleout.com/CellPhones/Apps/one-sec-app-review"
+
+- name: "Freedom"
+  owner: "Eighty Percent Solutions Corporation (founded by Fred Stutzman, based in Chapel Hill, North Carolina)"
+  platforms: "iOS, Android, macOS, Windows, browser extension (Chrome/Safari/Firefox)"
+  pricingModel: "Freemium with a premium subscription or lifetime option. Amounts verified on freedom.to/pricing on 2026-08-15: free plan $0, Premium monthly $8.99/month, Premium annual billed upfront at $3.33/month, lifetime offer $99.50 (shown as 50% off a $199 list price)."
+  blockingMethod: "iOS: Apple's Screen Time API for app blocking (iOS 16+) combined with a local VPN ('Freedom Profile' via Network Extensions, traffic never leaves the device) for cross-browser website blocking. Android: Device Admin API + Accessibility API + local proxy/VPN. Desktop: local agent + browser extension."
+  strictness: "Offers a 'Locked Mode' that prevents editing or stopping an active session (one early exit allowed every 7 days). Freedom's own documentation states that on iOS, Locked Mode does not by itself prevent disabling Freedom's Screen Time permission in the phone's settings, unless a separate Screen Time passcode is also configured, so it is bypassable if that extra precaution isn't taken. On Android, Device Admin blocks uninstall from the home screen but is still bypassable by revoking admin rights."
+  keyFeatures:
+    - "Synced blocking of apps and sites across phone, tablet, and computer"
+    - "Scheduled and recurring blocking sessions"
+    - "Locked Mode preventing early session exit"
+    - "Ambient focus sounds (music, cafe, office, nature)"
+    - "Custom block lists synced across devices"
+  weaknesses:
+    - "App Store reviews report a limited block accidentally blocking 'the entirety of the internet,' and one case where the app made an iPhone unusable to the point of requiring a reinstall (https://apps.apple.com/us/app/freedom-screen-time-control/id1269788228)"
+    - "Bypassable by switching browsers, using a proxy, or uninstalling the app; on iOS, outside an active Screen Time session, the app reportedly just shows a blocked message rather than truly preventing the app from opening (https://www.blok.so/resources/freedom-app-review-does-blocking-websites-and-apps-actually-work)"
+    - "Trustpilot reviews report refund difficulties and billing described as not transparent (https://www.trustpilot.com/review/freedom.to)"
+  faithlockAngle: "Freedom covers more platforms and general-purpose features, but its own documentation admits a bypass gap on iOS via Screen Time settings unless extra configuration is set up. FaithLock focuses solely on iOS with native Screen Time blocking, and early unlock requires passing a Bible quiz, a different kind of friction than a locked-mode toggle."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://apps.apple.com/us/app/freedom-screen-time-control/id1269788228"
+    - "https://freedom.to/pricing"
+    - "https://support.freedom.to/en/articles/14596751-how-freedom-blocks-apps-and-websites-on-ios"
+    - "https://support.freedom.to/en/articles/8283287-the-freedom-profile-vpn-explained"
+    - "https://support.freedom.to/en/articles/1802927-locked-mode"
+    - "https://support.freedom.to/en/articles/6350161-freedom-for-android-app-options-explained"
+    - "https://support.freedom.to/en/articles/6116638-how-to-prevent-uninstallation-of-the-freedom-app"
+    - "https://www.trustpilot.com/review/freedom.to"
+    - "https://www.blok.so/resources/freedom-app-review-does-blocking-websites-and-apps-actually-work"
+    - "https://en.wikipedia.org/wiki/Freedom_(application)"
+
+- name: "Cold Turkey Blocker"
+  owner: "Cold Turkey Software Inc. (founded by Felix Belzile in July 2016)"
+  platforms: "Windows, macOS"
+  pricingModel: "Free with a one-time-purchase Pro upgrade (no subscription). Amount confirmed by several 2026-dated reviews: Pro is a $39 one-time purchase, valid across all of a user's personal computers (source: tryhugo.app review, 2026)."
+  blockingMethod: "Modifies the system hosts file (redirecting blocked domains to 127.0.0.1) combined with a background Windows service that locks that file and prevents edits during a block; browser extensions reinforce the block. On Mac, this method runs into macOS sandboxing, which reduces real-world reliability."
+  strictness: "Very strict on Windows via 'Frozen Turkey' mode: once a block is locked, it cannot be stopped before the timer expires, the app cannot be uninstalled during the lock, and 'Block Strictness' settings prevent switching to an unsupported browser or changing the system clock/region to work around the block. On Mac, however, several reviews report notably lower reliability (delayed or non-functional blocks) due to macOS system restrictions, making bypass easier than advertised on that platform."
+  keyFeatures:
+    - "'Frozen Turkey' mode: a lock that cannot be interrupted before the set deadline"
+    - "Blocks both websites AND desktop applications"
+    - "Recurring weekly block scheduling"
+    - "Anti-bypass settings (blocking unsupported browsers, blocking system clock/region changes)"
+    - "One-time lifetime purchase, no subscription, usable across multiple personal computers"
+  weaknesses:
+    - "On Mac, blocks are 'often delayed and sometimes completely non-functional' because Cold Turkey's architecture runs into macOS sandboxing; one user reports such a system slowdown that simple programs took up to 10 minutes to open after installation (https://www.tryhugo.app/blog/cold-turkey-review-2026)"
+    - "No mobile version: the app doesn't cover phone usage at all, forcing users to pair it with another tool (https://makerstack.co/reviews/cold-turkey-blocker-review/)"
+    - "Interface described as dated and the free version seen as very limited compared to Pro (https://makerstack.co/reviews/cold-turkey-blocker-review/)"
+  faithlockAngle: "Cold Turkey targets Windows/Mac computers and has no mobile version, so it doesn't address FaithLock's use case at all. FaithLock is a native iOS Screen Time block where unlocking requires passing a Bible quiz rather than a timer or system password."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://getcoldturkey.com/pricing/"
+    - "https://getcoldturkey.com/"
+    - "https://www.tryhugo.app/blog/cold-turkey-review-2026"
+    - "https://makerstack.co/reviews/cold-turkey-blocker-review/"
+    - "https://www.crunchbase.com/organization/cold-turkey"
+
+- name: "Forest: Focus for Productivity"
+  owner: "SEEKRTECH CO., LTD. (Taiwan)"
+  platforms: "iOS, Android, browser extension (Chrome, Firefox)"
+  pricingModel: "Free with in-app purchases (verified on the App Store on 2026-08-15): in-app purchases from $0.99 to $35.99, including a 'Forest Plus' subscription around $5.99/month or $32.49-$35.99/year. The app was previously sold as a one-time paid purchase on iOS before this pricing model change."
+  blockingMethod: "Primarily based on gamification and honesty: the virtual tree dies if the user leaves the app or opens another one during a session, with no technical block actually preventing access. On iOS 16+, the 'Deep Focus' feature with allowlists relies on Apple's Screen Time API to intercept an attempt to switch apps during the session. On browser, a Chrome/Firefox extension blocks chosen sites."
+  strictness: "Easily bypassable in its base mode: simply closing the app or accepting the tree's 'death' lets the user resume free phone use, with no system-level barrier (except Deep Focus on iOS 16+, which adds a real blocking layer but is optional per session). No cross-device block syncing: one article notes that even when Forest works well on the phone, nothing stops going to the same distracting apps from a laptop (https://ctrlaltescape.substack.com)."
+  keyFeatures:
+    - "Gamified focus timer with virtual trees that grow or die"
+    - "'Deep Focus' mode with allowlists based on the Screen Time API (iOS 16+)"
+    - "Plants real trees via a partnership with Trees for the Future"
+    - "Social features: shared forests and co-planting with friends"
+    - "Browser extension to block sites on computer"
+    - "Focus statistics and forest history"
+  weaknesses:
+    - "No cross-device protection: a user can simply switch devices (laptop) to reach the same distractions, since the app only blocks the device it runs on (https://ctrlaltescape.substack.com/p/5-apps-to-save-you-from-the-internet)"
+    - "Recent App Store reviews criticize the shift toward a more subscription-driven model, with statistics previously free now gated behind the Plus subscription (https://apps.apple.com/us/app/866450515)"
+    - "Monetization friction reported (ads, upsell screens, price seen as high) noted across aggregated review pages (https://justuseapp.com/en/app/866450515/forest-stay-focused/reviews)"
+  faithlockAngle: "Forest relies mainly on gamification and the user's own honesty: the tree dies, but the phone stays technically usable outside the optional Deep Focus mode. FaithLock relies on native iOS Screen Time blocking and ties unlocking to passing a Bible quiz, a systemic barrier harder to ignore than a virtual tree."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://apps.apple.com/us/app/forest-focus-for-productivity/id866450515"
+    - "https://apps.apple.com/us/app/866450515?see-all=reviews&platform=iphone"
+    - "https://www.forestapp.cc/"
+    - "https://ctrlaltescape.substack.com/p/5-apps-to-save-you-from-the-internet"
+    - "https://justuseapp.com/en/app/866450515/forest-stay-focused/reviews"
+    - "https://en.wikipedia.org/wiki/Forest_(application)"
+
+- name: "Flora - Green Focus"
+  owner: "AppFinca Inc."
+  platforms: "iOS, Android"
+  pricingModel: "Free with in-app purchases (verified on the App Store on 2026-08-15). 'Flora Care' option at $1.99/year, a $9.99 tier to plant a real tree every 24 cumulative focus hours, and in-app tours/tips priced at $0.99 or $1.99 each."
+  blockingMethod: "Mainly based on app-switch detection and gamification: leaving Flora or opening another app during a session 'kills' the virtual tree, with no real system-level block preventing phone access. A 'Pause' option lets users leave a session without penalty, and on iOS 16.1+ an allowlist ('Allow apps during Focus') exempts certain apps from this detection mechanism."
+  strictness: "Not strict in a technical sense: the phone and other apps remain fully accessible during a session, the only deterrent being the loss of the virtual tree. Flora's own FAQ acknowledges trees 'killed' incorrectly due to 'iOS limitations,' and recommends manual workarounds (avoiding the home button, keeping the app updated, stable internet connection) rather than guaranteeing a reliable block (https://flora.appfinca.com/faq)."
+  keyFeatures:
+    - "Gamified focus timer with a virtual garden and trees"
+    - "Built-in to-do list and habit tracking"
+    - "Multiplayer challenges to plant trees with friends"
+    - "Plants real trees via partners like Trees.org and Eden Reforestation Projects"
+    - "Allowlist of apps permitted during a session (iOS 16.1+)"
+  weaknesses:
+    - "The official FAQ acknowledges trees killed by mistake ('false detections') attributed to iOS limitations, with a dedicated reporting process to get them restored (https://flora.appfinca.com/faq)"
+    - "The 'allow background apps' feature is reported by users as completely broken (https://justuseapp.com/en/app/1225155794/flora-green-focus/reviews)"
+    - "App Store reviews mention a friends/progress-tracking interface described as glitchy (https://apps.apple.com/us/app/flora-green-focus/id1225155794)"
+  faithlockAngle: "Flora works on the same honesty-based principle as Forest: the tree is killed if the app is left, but nothing technically prevents access to other apps. FaithLock uses native iOS Screen Time blocking and requires passing a Bible quiz to unlock, closing the loop that Flora leaves open."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://apps.apple.com/us/app/flora-green-focus/id1225155794"
+    - "https://apps.apple.com/us/app/flora-green-focus/id1225155794?see-all=reviews&platform=iphone"
+    - "https://flora.appfinca.com/faq/"
+    - "https://justuseapp.com/en/app/1225155794/flora-green-focus/reviews"
+    - "https://mwm.ai/apps/flora-green-focus/1225155794"
+
+- name: "Jomo (Screen Time Blocker)"
+  owner: "Jomo SAS"
+  platforms: "iOS (iPhone, iPad), Mac"
+  pricingModel: "freemium; free tier plus a 'Jomo Plus' subscription that unlocks unlimited blocking, Strict Mode and app exclusions, with monthly, annual and one-time lifetime purchase options (App Store listing: $5.99/month, $29.99/year, $99.99 lifetime, checked 2026-08-15)"
+  blockingMethod: "Screen Time API (iOS)"
+  strictness: "Has a 'Strict Mode' advertised as a lockout for a chosen duration with no early opt-out, which also triggers an 'Anti-uninstall' protection blocking app deletion while active; however Jomo's own help center documents recurring cases where blocking fails to engage or fails to release on schedule, caused by conflicts with other Screen Time apps, Low Power Mode, or outdated iOS/app versions."
+  keyFeatures:
+    - "Block apps and websites across all browsers by schedule, usage limit, or 'until you take an action'"
+    - "Category-based blocking (Social Media, Games, Shopping, etc.)"
+    - "Strict Mode with adjustable multi-day lockout and anti-uninstall protection"
+    - "On-device screen time analytics and journaling"
+    - "Runs on Apple's Screen Time API; states it does not sell usage data"
+    - "Family plan option"
+  weaknesses:
+    - "'Blocking doesn't turn off when it's supposed to' and similar failures to engage are common enough that Jomo maintains a dedicated troubleshooting article acknowledging 'we understand your frustration and share it' (https://help.jomo.so/en/article/blocking-doesnt-seem-to-be-working-pr6ji2/)"
+    - "A published review found the free version too limited (scheduled sessions, advanced groupings and usage insights are paywalled) and noted Jomo cannot block Safari at the granular level native Apple tools allow (https://rtriv.io/en/blog/jomo-app-review)"
+  faithlockAngle: "Jomo is a well-regarded general-purpose Screen Time blocker with a strong Strict Mode and clean UX, but by its own reviewer's account it only restricts and gives users nothing to do instead. FaithLock uses the same Screen Time API to lock apps, but the way back in is answering a Bible quiz question, turning the interruption into scripture engagement rather than a bare countdown timer."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://jomo.so"
+    - "https://apps.apple.com/app/id1609960918"
+    - "https://help.jomo.so/en/article/blocking-doesnt-seem-to-be-working-pr6ji2/"
+    - "https://help.jomo.so/en/category/bugs-issues-ti5w20/"
+    - "https://rtriv.io/en/blog/jomo-app-review"
+    - "https://www.tapsmart.com/apps/review-jomo/"
+
+- name: "Clearspace (Reduce Screen Time)"
+  owner: "Clearspace Technologies, Inc."
+  platforms: "iOS, Android, Chrome extension"
+  pricingModel: "freemium; free tier limited to blocking a single app, Premium subscription unlocks full blocking and accountability features (App Store listing: $6.99/month, $44.99/year individual, $79.99/year family, checked 2026-08-15)"
+  blockingMethod: "Screen Time API (iOS) to measure and gate app access, paired with forced pause / session-budget screens (1 to 10 minutes) before opening a restricted app and an optional push-up-based unlock challenge; the Android version's underlying blocking mechanism is unknown from the sources checked"
+  strictness: "Ordinary time budgets can be edited by the user at any time, which an independent review calls the app's main structural weakness; a separate 'Strict Mode' exists as a harder, warning-gated lockout, but reviewers describe everyday use as a 'light-touch' nudge rather than something uncontournable"
+  keyFeatures:
+    - "App and website blocking with per-app time budgets"
+    - "Forced pause screen before opening a limited app"
+    - "Push-up/exercise challenge as an alternative unlock method"
+    - "Accountability partner notifications"
+    - "Screen time reporting with streaks"
+    - "Strict Mode lockout"
+  weaknesses:
+    - "App Store reviewers report inaccurate screen time tracking ('there will be days that I'll go from one hour to 20 without opening my phone') and difficulty reaching the developers about it (https://apps.apple.com/us/app/clearspace-reduce-screen-time/id1572515807?see-all=reviews&platform=iphone)"
+    - "The free tier blocks only one app and reviewers call Premium 'pretty expensive'; the push-up unlock challenge is reported to fail to register completed reps roughly a quarter of the time (same source)"
+    - "An independent review flags that accountability notifications fire only after a limit is broken, so a partner cannot approve or block an override in the moment, and users can raise their own budgets at will (https://lockpact.app/blog/clearspace-app-review/)"
+  faithlockAngle: "Clearspace's unlock ritual is a timed pause or a set of push-ups, useful as a generic mindfulness nudge but with no content dimension, and its own reviewers note users can simply raise their own limits. FaithLock's unlock ritual is a Bible quiz gated behind the same kind of Screen Time API block, so the friction doubles as scripture practice for users who specifically want a faith-based habit loop instead of a secular pause."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://apps.apple.com/us/app/clearspace-reduce-screen-time/id1572515807"
+    - "https://lockpact.app/blog/clearspace-app-review/"
+    - "https://www.getclearspace.com/"
+    - "https://apps.apple.com/us/developer/clearspace/id1653276930"
+    - "https://play.google.com/store/apps/details?id=com.clearspace.app"
+
+- name: "Unpluq"
+  owner: "Unpluq (Delft, Netherlands; co-founded by Tim Smits and Jorn Rigter)"
+  platforms: "iOS, Android, physical NFC hardware tag/keychain accessory"
+  pricingModel: "freemium app (2 apps / 1 schedule on the free tier) plus a required Premium subscription to use the physical Tag; the Tag itself is sold separately as a one-time hardware purchase (per a review checked 2026-08-15: Tag $26.50 one-time, Premium $64/year single device, Family Lite $99.95/year, Family Full $129.95/year; the tag-plus-subscription bundle structure is corroborated on unpluq.com/products/unpluq-tag and unpluq.com/products/premium-subscription, which do not list all figures directly)"
+  blockingMethod: "hardware, an NFC tag/keychain is required to unlock blocked apps, layered on top of Apple's Screen Time API on iOS and Android device-admin permissions on Android for the underlying block"
+  strictness: "Not a hard lock. An independent review notes apps stay unlockable at any time because the tag is normally carried on the user's person, and that iOS's own restrictions on what third-party apps can intercept make the iOS version notably weaker than the Android one. On iOS, disabling the block only requires going to Settings > Screen Time and toggling Unpluq off (gated by the user's own iCloud password), though Unpluq offers an optional setting to block self-uninstall while a schedule is active"
+  keyFeatures:
+    - "Physical NFC tag/keychain required to unlock selected apps"
+    - "Multiple alternative 'barrier' unlock types (tap pattern, shake, scroll, NFC, walk, QR code)"
+    - "Custom schedules (work hours, evenings, weekends)"
+    - "Screen time tracking and analytics"
+    - "One tag can pair with multiple devices"
+    - "Family plans"
+  weaknesses:
+    - "An independent review concludes Unpluq is 'not a hard lock' since the tag travels with the user, describes it as 'app-based enforcement, not mechanical' and weaker for deliberate cravings than distance-based tools like Brick, and states it is 'significantly less effective on Apple devices' because of iOS restrictions on third-party interception (https://screenfreezone.com/reviews/unpluq/)"
+    - "The physical Tag stops working without an active Premium subscription, and the app has no manual 'lock now' button, relying on scheduling as a workaround instead (https://whatifididnt.com/blog/unpluq-review/)"
+  faithlockAngle: "Unpluq sells a genuine hardware ritual, tap the tag to get back in, but its own reviewers say that ritual is not a real lock since the tag lives in the user's pocket and iOS limits how much any third-party app can enforce. FaithLock also blocks purely through the iOS Screen Time API without asking users to buy or carry anything; the unlock is answering a Bible quiz question correctly, keeping the friction digital and faith-specific instead of physical."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://www.unpluq.com/"
+    - "https://www.unpluq.com/pages/about"
+    - "https://www.unpluq.com/pages/faq"
+    - "https://screenfreezone.com/reviews/unpluq/"
+    - "https://whatifididnt.com/blog/unpluq-review/"
+    - "https://apps.apple.com/us/app/unpluq-reduce-screen-time/id1673743726"
+
+- name: "AppBlock (Block Apps & Sites)"
+  owner: "MobileSoft s.r.o. (Hradec Kralove, Czech Republic; founded 2012, sole owner Miroslav Novosvetsky)"
+  platforms: "Android, iOS/iPadOS, Chrome/Edge/Brave browser extensions"
+  pricingModel: "freemium; free tier is capped (iOS 4-hour Quick Block plus 2 schedules; Android 3 apps plus 3 websites), Premium unlocks unlimited blocking with monthly, yearly or lifetime purchase, reported at $4.99/month, $29.99/year, $89.99 lifetime in the US store with prices varying by region per a third-party aggregator checked 2026-08-15; appblock.app/premium confirms the three-tier structure without publishing figures directly"
+  blockingMethod: "Android uses the Accessibility service to detect the foreground app and draw a lock screen over it; iOS uses Apple's Screen Time API, confirmed indirectly by a developer reply stating iOS platform restrictions limit what AppBlock can enforce there. Primarily an Android product per its own feature parity gaps on iOS"
+  strictness: "Has a documented 'Strict Mode' that prevents changing or disabling rules while a block is active, normally requiring the device to be on a charger or a third party's approval to unlock early. On iOS specifically, a reviewer reported an 'Achilles heel': going to Settings > Screen Time and revoking AppBlock's access disables Strict Mode entirely, which the developer confirmed in a reply is an iOS restriction they cannot close"
+  keyFeatures:
+    - "Quick Block and custom schedules by time, day, location or Wi-Fi network"
+    - "Allowlist mode (block everything except selected apps)"
+    - "Strict Mode with charger/third-party unlock requirement"
+    - "Cross-browser website blocking extensions (Chrome, Edge, Brave)"
+    - "In-app purchase blocking and parental controls"
+    - "Usage statistics"
+  weaknesses:
+    - "On iOS, a user reported that AppBlock's Strict Mode can be fully bypassed by revoking its access under Settings > Screen Time, which the developer acknowledged in a reply is an iOS restriction they cannot fix (https://apps.apple.com/us/app/appblock-block-apps-website/id1515753232?see-all=reviews&platform=iphone)"
+    - "App Store reviewers report notifications reappearing 'several times an hour' after being disabled, pauses taking up to 30 seconds to apply, and the app 'forgetting' a paid Premium subscription, requiring restarts (same source)"
+    - "Other reviewers describe the free tier as too limited given the roughly $20 lifetime asking price, and reported AppBlock showing 'blocked' notifications while the blocked app or site still opened normally (https://justuseapp.com/en/app/1515753232/appblock-stay-focused/reviews)"
+  faithlockAngle: "AppBlock is a broad, cross-platform blocker with a genuine Strict Mode, but on iOS its own users have shown that revoking Screen Time access from system Settings defeats it entirely, a limitation Apple imposes on every third-party blocker, FaithLock included. Where AppBlock stays a generic productivity tool, FaithLock's unlock step is a Bible quiz, so the same iOS Screen Time constraints apply, but the reason to keep the block on is built around scripture rather than raw willpower."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://appblock.app/"
+    - "https://appblock.app/premium/"
+    - "https://en.wikipedia.org/wiki/AppBlock"
+    - "https://www.mobilesoft.eu/en/about"
+    - "https://apps.apple.com/us/app/appblock-block-apps-website/id1515753232"
+    - "https://justuseapp.com/en/app/1515753232/appblock-stay-focused/reviews"
+    - "https://nubiapage.com/appblock-review-2026-extension-app-price-free-plan/"
+
+- name: "Prayer Lock"
+  owner: "WhatsGoodApps LLC"
+  platforms: "iOS"
+  pricingModel: "free download; full use requires an in-app subscription (weekly and yearly pass tiers), no meaningful free tier beyond initial app view"
+  blockingMethod: "Screen Time API (iOS), per the App Store listing's own description of blocking distracting apps using screen time controls"
+  strictness: "unknown, no source found describing bypass resistance or a dedicated strict mode"
+  keyFeatures:
+    - "blocks chosen apps and gates them behind a short prayer before unlock"
+    - "mood selection step before the prayer (anxious, bored, lonely, etc.)"
+    - "short Bible-rooted prayer generated to match the selected mood"
+    - "prayer streak tracking"
+    - "prayer journey analytics (subscription required)"
+    - "unlimited prayer locks throughout the day"
+  weaknesses: "unknown, the App Store listing showed only about 5 ratings at verification time with no readable review text retrievable, and no Trustpilot, G2, or Reddit discussion of this app was found"
+  faithlockAngle: "Prayer Lock's unlock mechanic is a short mood-matched prayer to read, not a comprehension check. FaithLock's Bible quiz requires correctly answering a question about a passage's content to unlock, a different and more active kind of friction than reading a prayer prompt."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://apps.apple.com/us/app/prayer-lock/id6757933700"
+
+- name: "Bible Mode: Reduce Screen Time"
+  owner: "Friday Labs LLC"
+  platforms: "iOS"
+  pricingModel: "free download with a functional free tier; in-app purchases ranging from $4.99 to a $59.99 one-time lifetime-access option, per the App Store listing, verified 2026-08-15"
+  blockingMethod: "iOS Screen Time API (Family Controls framework), system-level blocking"
+  strictness: "system-level via the Screen Time API, so it is not defeated by simply force-quitting the app; a third-party review describes it as harder to bypass than typical third-party blockers, but no explicit anti-uninstall or dedicated strict-mode toggle was confirmed"
+  keyFeatures:
+    - "unlock blocked apps by scanning a physical printed Bible page with the camera (OCR-based verification)"
+    - "alternate in-app unlock path via a short verse reflection with prayer or affirmation when a physical Bible is not available"
+    - "Bible Chat feature for guidance and conversation"
+    - "Quiet Time Mode for focused prayer sessions"
+    - "full Bible access with multiple translations (KJV, ESV)"
+    - "customizable unlock intervals (15 min, 1 hr, 2 hr, 6 hr, all day) and screen time tracking widgets"
+  weaknesses:
+    - "iOS only, no Android version (https://apps.apple.com/us/app/bible-mode-reduce-screen-time/id6744124873)"
+    - "at least one App Store reviewer was unhappy about the removal of a 'Gen Z' Bible translation, later revising the review to 5 stars after the concern was addressed (https://apps.apple.com/us/app/bible-mode-reduce-screen-time/id6744124873)"
+  faithlockAngle: "Bible Mode unlocks apps by scanning a physical Bible page or completing a light verse reflection, which checks presence or exposure rather than comprehension. FaithLock's Bible quiz requires correctly answering questions about the passage to unlock, and does not require owning or locating a printed Bible."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://apps.apple.com/us/app/bible-mode-reduce-screen-time/id6744124873"
+
+- name: "Pray Screen Time - Bible Focus"
+  owner: "Manifest Automation, Inc"
+  platforms: "iOS, Android"
+  pricingModel: "free tier includes core app blocking, prayer prompts, and a daily verse; an optional subscription (Pray Screen Time Pro) adds extra content, customization, and ad removal"
+  blockingMethod: "iOS: Apple Screen Time API (Family Controls). Android: Accessibility Services. Reported by a third-party review, not independently confirmed by developer documentation."
+  strictness: "the iOS version is described as system-level and hard to bypass via the Screen Time API; the Android version is reported as easier to circumvent and has reported bugs including users stuck in demo loops"
+  keyFeatures:
+    - "app blocking with a mandatory prayer prompt before unlocking selected apps"
+    - "daily Bible verse delivery"
+    - "morning prayer reminders"
+    - "customizable app selection for blocking"
+    - "available on both iOS and Android"
+  weaknesses:
+    - "excessive or malfunctioning ads reported even on the free tier, per App Store review excerpts (https://apps.apple.com/us/app/pray-screen-time-bible-focus/id6737241669)"
+    - "subscription cost cited by reviewers as high compared to competitors, per a third-party app summary citing App Store reviews (https://mwm.ai/apps/pray-screen-time-bible-focus/6737241669)"
+    - "reported technical issues including frozen screens, glitches, and blocking not releasing after the prayer was completed, per App Store review excerpts (https://apps.apple.com/us/app/pray-screen-time-bible-focus/id6737241669)"
+    - "one reviewer reported losing access to paid features despite an active subscription, per an App Store review excerpt (https://apps.apple.com/us/app/pray-screen-time-bible-focus/id6737241669)"
+  faithlockAngle: "Pray Screen Time stops at a prayer prompt before unlocking a blocked app, with no verification that the user actually engaged with it. FaithLock instead requires answering a Bible quiz question to unlock, a more active and harder-to-skip gate than a passive prayer screen."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://apps.apple.com/us/app/pray-screen-time-bible-focus/id6737241669"
+    - "https://play.google.com/store/apps/details?id=com.fkr.prayscreen&hl=en_US"
+    - "https://mwm.ai/apps/pray-screen-time-bible-focus/6737241669"
+
+- name: "Holy Focus: Block Apps & Pray"
+  owner: "Emin Karayel (individual developer; no company/LLC name found)"
+  platforms: "iOS, Android"
+  pricingModel: "free download with in-app purchase; premium subscription listed on the App Store at $77.90/year (about $6.49/month) with a 3-day free trial, per the App Store listing, verified 2026-08-15"
+  blockingMethod: "iOS Screen Time API, per a third-party review; not independently confirmed on the developer's own site during this research"
+  strictness: "per a third-party review, cannot be bypassed by deleting the app, disabling requires the Screen Time passcode, and the prayer gate has no skip button; not independently confirmed against the developer's own documentation"
+  keyFeatures:
+    - "blocks chosen apps and websites behind a full-screen prayer or Bible verse instead of a simple lock screen"
+    - "300+ prayer library across categories (Morning, Evening, Gratitude, Forgiveness, Strength, etc.)"
+    - "daily prayer unlock system requiring the previous day's prayer to be finished before the next one unlocks"
+    - "custom time-slot or usage-limit blocking schedules"
+    - "faith-based icon and messages shown at each blocked-app attempt"
+  weaknesses:
+    - "one App Store reviewer reported confusion accessing premium features and editing settings after setup, before the developer clarified in a reply that the features worked for free (https://apps.apple.com/us/app/holy-focus-block-apps-pray/id6744828672)"
+    - "per an independent app review, no home-screen or lock-screen widgets, no daily verse notifications outside the blocking gate, and no way to add personal or custom prayers (https://psalmo.app/blog/holy-focus-app-review)"
+    - "per the same review, the liturgical prayer style may feel stiff or unfamiliar to charismatic or evangelical users (https://psalmo.app/blog/holy-focus-app-review)"
+  faithlockAngle: "Holy Focus gates the unlock behind a devotional prayer from its library, read and scrolled to the end. FaithLock's Screen Time API blocking instead requires answering a Bible quiz to unlock, an active-recall check rather than a passive read-through."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://apps.apple.com/us/app/holy-focus-block-apps-pray/id6744828672"
+    - "https://play.google.com/store/apps/details?id=com.Emin.Karayel.ChristianAppBlock&hl=en"
+    - "https://holyfocus.io/"
+    - "https://psalmo.app/blog/holy-focus-app-review"
+
+- name: "Sanctum: Christian App Blocker"
+  owner: "unknown (Google Play developer name shown as HapiBits; an individual name appeared in one unverified aggregator search result, not confirmed on a primary store page)"
+  platforms: "Android. No iOS listing could be confirmed to exist."
+  pricingModel: "freemium: free tier covers basic blocking and the core prayer-prompt gate; a premium subscription unlocks mood tracking, AI Bible chat, extended journaling, and the full verse library, per the Google Play listing summary. No specific price figure could be verified with both a date and a source."
+  blockingMethod: "Android Accessibility Service, per the Google Play listing description as summarized in search results, not independently confirmed by a directly rendered page view"
+  strictness: "unknown with certainty; Accessibility-Service-based blocking on Android is generally reported by third-party reviewers as easier to bypass than iOS Screen Time based blocking, and the unlock gate is described as a pause prompt rather than a hard lock. No confirmed strict mode feature found."
+  keyFeatures:
+    - "a Bible verse and prayer prompt shown before a blocked app opens"
+    - "a mood check-in feature that surfaces a verse matched to the logged emotional state"
+    - "AI-generated prayer or Bible chat (premium tiers)"
+    - "mood journaling that logs emotional patterns tied to phone usage"
+    - "runs locally on-device; reviewers state no user data is collected or sold"
+  weaknesses: "unknown, no App Store, Trustpilot, G2, or Reddit user review with a real checkable link could be found for this app; only competitor-authored blog reviews exist and were not used as a weakness source"
+  faithlockAngle: "unknown for iOS specifically: no iOS listing for this Sanctum could be confirmed to exist, so it may not be a real alternative for an iOS user comparing options. Where its Android unlock gate only requires viewing a verse and prayer prompt to proceed, that is a lower bar than FaithLock's Bible quiz, which requires correctly answering a question to unlock."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://play.google.com/store/apps/details?id=com.hapibits.sanctum&hl=en_US"
+    - "https://itunes.apple.com/search?term=sanctum+app+blocker&entity=software&limit=20&country=us"
+
+- name: "Covenant Eyes"
+  owner: "Covenant Eyes, Inc. (current flagship product marketed as Victory by Covenant Eyes)"
+  platforms: "iOS, Android, Windows, macOS"
+  pricingModel: "Subscription only, no permanent free tier (30-day trial with a money-back guarantee); monthly, annual, and one-time lifetime tiers, each covering up to 10 users and unlimited devices per household (verified on covenanteyes.com/pricing)"
+  blockingMethod: "Dual mechanism. On Android, Windows, and macOS: regular AI-blurred screenshots analyzed to flag explicit content, then sent in a report to a chosen accountability partner (reporting, not direct blocking). On iOS: a filtering VPN that blocks adult content at the network level, combined with a Safari extension that captures screenshots only within Safari, not in other browsers or apps."
+  strictness: "Easily bypassable on iOS: no Screen Time integration, simple app deletion, and screenshots only cover Safari, leaving other browsers and apps unmonitored. An independent tester was able to download a dating app and receive suggestive photos via message without triggering an alert. The tool's real strength comes from the report sent to the trusted partner, not from a strict technical block."
+  keyFeatures:
+    - "Regular screenshots analyzed by AI to detect explicit content"
+    - "Filtering VPN on iOS blocking adult content at the network level"
+    - "Activity reports sent to an accountability partner chosen by the user"
+    - "Associated recovery programs (Strive for men, Arise for women)"
+    - "Coverage for up to 10 users and unlimited devices per subscription"
+  weaknesses:
+    - "On iOS, screenshots only cover Safari, leaving other browsers and apps outside the control (https://www.techlockdown.com/articles/covenant-eyes-iphone-review)"
+    - "Trustpilot reviews report cancellation difficulties and continued billing after requesting the service be stopped (https://www.trustpilot.com/review/covenanteyes.com)"
+    - "An independent tester bypassed the control without triggering an alert (downloading a dating app, receiving suggestive photos via message) (https://crankyolddan.substack.com/p/you-cant-hide-those-covenant-eyes)"
+  faithlockAngle: "FaithLock doesn't depend on any third-party partner or a VPN limited to Safari: blocking runs through Apple's native Screen Time API and therefore covers the chosen apps and categories across the whole device, with unlocking via a Bible quiz rather than a report sent to someone else."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://www.covenanteyes.com/pricing/"
+    - "https://www.trustpilot.com/review/covenanteyes.com"
+    - "https://www.techlockdown.com/articles/covenant-eyes-iphone-review"
+    - "https://crankyolddan.substack.com/p/you-cant-hide-those-covenant-eyes"
+    - "https://apps.apple.com/us/developer/covenant-eyes-inc/id335318149"
+
+- name: "Bark"
+  owner: "Bark Technologies, Inc."
+  platforms: "iOS, Android, Bark Sync hardware accessory (charger/analyzer) for iOS monitoring, Bark Home (Wi-Fi router)"
+  pricingModel: "Subscription only, no permanent free tier; main Bark Premium plan and entry-level Bark Jr plan, monthly or annual billing with a discount, a single subscription covering all children and devices in the household (verified on bark.us/pricing)"
+  blockingMethod: "Primarily monitoring: AI that scans messages, social media, web searches, and alerts parents to risky content (bullying, suicidal ideation, explicit content). Also offers screen time management and site/app blocking by category. On iOS, since Apple prevents a third-party app from directly reading messages/photos, Bark sells a physical accessory, the Bark Sync, a charger that scans the device each time it's plugged in."
+  strictness: "Detection depends on AI alerts, and the company itself acknowledges false positives. On iOS, monitoring is not continuous but triggered when the Bark Sync is plugged in, leaving windows without coverage. The tool's strength comes from monitoring and parental alerts, not a strict Screen-Time-style block."
+  keyFeatures:
+    - "AI scan of messages, social media, and web searches"
+    - "Alerts for bullying, suicidal content, or explicit content"
+    - "Screen time management and site/app blocking by category"
+    - "GPS location tracking and location check-ins"
+    - "Bark Sync, a physical accessory to work around Apple's iOS restrictions"
+  weaknesses:
+    - "On the App Store, users report the app cannot be uninstalled without contacting support, and one case of total loss of cellular/Wi-Fi connectivity after installing on an iPhone 14 (https://apps.apple.com/us/app/bark-parental-controls/id1477619146)"
+    - "On Google Play, complaints of repeated false location alerts (arrival/departure at home flagged when the child hadn't moved) (https://play.google.com/store/apps/details?id=cm.pt.barkparent&hl=en_US)"
+    - "Bark itself acknowledges false positives in its content alerts, including music misread by the AI (https://www.trustpilot.com/review/bark.us)"
+  faithlockAngle: "Bark relies on monitoring communications and alerting parents, with no guaranteed block on iOS without an external accessory; FaithLock blocks access to chosen apps directly via iOS's Screen Time API and only unlocks after a successful Bible quiz, without sending any data to a third party."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://www.bark.us/pricing/"
+    - "https://apps.apple.com/us/app/bark-parental-controls/id1477619146"
+    - "https://support.bark.us/en/articles/13928365-how-to-monitor-ios-devices-with-the-bark-sync"
+    - "https://www.bark.us/bark-sync/"
+    - "https://play.google.com/store/apps/details?id=cm.pt.barkparent&hl=en_US"
+    - "https://www.trustpilot.com/review/bark.us"
+
+- name: "Canopy"
+  owner: "Netspark Inc. (founder and CEO Sean Clifford, per Focus on the Family)"
+  platforms: "iOS, Android, Windows, macOS, ChromeOS"
+  pricingModel: "Subscription only, no permanent free tier; Essential/Plus/Premium tiers based on device count, annual billing on the plans observed, one-week free trial then a 30-day money-back guarantee (verified on canopy.us/pricing)"
+  blockingMethod: "iOS-level VPN/Network Extension (VPN profile visible under Settings > VPN & Device Management), combined with AI that scans traffic in real time to blur specific images rather than block an entire site. Also includes standard category-based blocking and blocking of third-party VPNs to prevent bypass."
+  strictness: "Closer to a genuine technical block than the other apps on this list, thanks to the VPN and its blocking of competing VPNs. But users report both overblocking (harmless content blocked) and loopholes found after a few weeks to access content via image search. The VPN connection also significantly slows the device according to several reviews."
+  keyFeatures:
+    - "Real-time AI image and text filtering rather than whole-site blocking"
+    - "Blocks third-party VPNs to prevent bypass"
+    - "20+ web and app filtering categories"
+    - "AI category blocking (ChatGPT and other AI tools) included by default"
+    - "Sextortion attempt detection"
+  weaknesses:
+    - "On the App Store, a 3.8/5 rating across roughly 1.3K reviews with complaints of overblocking non-explicit content, heavy battery and data use, and incompatibilities with banking or streaming apps (https://apps.apple.com/us/app/canopy-ai-online-safety-app/id1492266682)"
+    - "Average rating around 2.2 to 2.5/5 on Trustpilot, with complaints of a slow VPN connection making the iPhone nearly unusable and 30-day refunds not honored (https://www.trustpilot.com/review/canopy.us)"
+    - "One user reports finding ways to bypass the filter after a few weeks, notably via image search (https://apps.apple.com/us/app/canopy-ai-online-safety-app/id1492266682)"
+  faithlockAngle: "Canopy is the closest technical competitor thanks to its VPN and third-party VPN blocking, but its real-time image-moderation filtering is still criticized for errors and network slowdown; FaithLock uses Apple's native Screen Time API to block chosen apps and requires unlocking via a Bible quiz, with no VPN involved."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://canopy.us/pricing/"
+    - "https://apps.apple.com/us/app/canopy-ai-online-safety-app/id1492266682"
+    - "https://www.trustpilot.com/review/canopy.us"
+    - "https://support.canopy.us/portal/en/kb/articles/canopy-shield-ios-installation"
+    - "https://dailycitizen.focusonthefamily.com/canopy-new-parental-control-app-protects-children-from-nudity-and-pornography/"
+
+- name: "Truple"
+  owner: "Truple LLC (small independent operation; founder publicly known only by first name, Cam)"
+  platforms: "Android, Windows, macOS, ChromeOS, Linux, Chrome extension, iOS/iPadOS via separate companion apps (Best Accountability for individual use, ScreenKin for families), both described as powered by Truple, plus a separate DNS filter installable via configuration profile"
+  pricingModel: "Two separate products, each subscription-only with no permanent free tier: a cheaper anti-pornography DNS filter, and a pricier screenshot-based accountability app, monthly or annual billing with a discount, 30-day money-back guarantee (verified on truple.io)"
+  blockingMethod: "Two separate mechanisms. The DNS filter blocks access to over two million adult sites via a dedicated DNS server (configuration profile on iOS). The accountability app blocks nothing: it captures random screenshots of the whole device, analyzes them with AI to flag sexual content, and shares them with the chosen trusted partner; on iOS this capture goes through the screen-broadcast permission, since there's no equivalent to the system-level access used on Android."
+  strictness: "The DNS filter can be bypassed by changing the device's DNS settings, unless the device is supervised or locked. The accountability app itself blocks nothing at all: its entire strength depends on a third party seeing the screenshots. On Android, device-admin-based locking makes uninstalling harder."
+  keyFeatures:
+    - "Random screenshots of the whole device, analyzed by AI"
+    - "Separate DNS filter blocking over two million adult sites"
+    - "End-to-end encryption claimed as unique in this market"
+    - "Device-admin-based locking on Android"
+    - "Email alerts to the partner when the filter is turned on or off"
+  weaknesses:
+    - "No native Truple-branded support on iOS itself, requiring separate companion apps (Best Accountability, ScreenKin) (https://support.truple.io/articles/ios/iphone-setup-guide)"
+    - "Aggregated Google Play reviews mention occasional technical bugs requiring a reset or manual configuration, and the absence of custom site blocking in the accountability app, which only reports, doesn't block (https://appgrooves.com/android/com.camhart.netcountable/truple-screenshot-accountability/truple)"
+    - "The company itself acknowledges that each iOS solution is only a creative workaround for Apple's limitations, reflecting weaker coverage than on Android (https://support.truple.io/articles/ios/why-iphone-app-is-designed-the-way-it-is)"
+  faithlockAngle: "Truple splits a bypassable DNS filter and a screenshot-based accountability tool that blocks nothing and depends on separate third-party apps on iOS; FaithLock combines direct app blocking via Screen Time with an active Bible-quiz unlock, natively on iOS and without a third party receiving screenshots."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://truple.io/"
+    - "https://truple.io/faq.html"
+    - "https://support.truple.io/articles/ios/iphone-setup-guide"
+    - "https://support.truple.io/articles/ios/why-iphone-app-is-designed-the-way-it-is"
+    - "https://apps.apple.com/ca/app/best-accountability/id6753020993"
+    - "https://appgrooves.com/android/com.camhart.netcountable/truple-screenshot-accountability/truple"
+
+- name: "Accountable2You"
+  owner: "Accountable2You, LLC"
+  platforms: "iOS, Android, Windows, macOS, Chromebook, Linux"
+  pricingModel: "Subscription only, no permanent free tier (10-day free trial); Personal and Family tiers, monthly or annual billing with one month free on annual, group/church/business pricing not published (verified on accountable2you.com/pricing)"
+  blockingMethod: "Pure monitoring and reporting, explicitly described by the company itself as not a blocking tool. Logs browsing history, including private browsing, app usage, and device activity, then shares real-time reports or summaries with one or more chosen accountability partners."
+  strictness: "No technical block at all: there is nothing to bypass since the content stays accessible. App Store users report it's easy to disable monitoring and ask for this to be made harder. The tool's strength depends entirely on another person seeing the activity reports."
+  keyFeatures:
+    - "Browsing reports including private-browsing activity"
+    - "Unlimited accountability partners per device"
+    - "Real-time alerts or daily/weekly summaries, user's choice"
+    - "Detection of uninstall or tampering attempts"
+    - "Separate parent and child accounts on the Family plan"
+  weaknesses:
+    - "On the App Store, reviews mention numerous false alerts (beach photos flagged as suspicious) and users asking for monitoring to be harder to disable (https://apps.apple.com/us/app/accountable2you-monitoring/id1531309290)"
+    - "On the Chrome Web Store, one review reports having to uninstall and reinstall the extension daily without support resolving the issue (https://chromewebstore.google.com/detail/accountable2you/efbfdmcbmjkdkhopodcpmajcdbkiljaa/reviews)"
+    - "Tracking doesn't cover messaging apps well and works poorly on certain Apple products according to App Store reviews (https://apps.apple.com/us/app/accountable2you-monitoring/id1531309290)"
+  faithlockAngle: "Accountable2You blocks nothing at all and relies entirely on a third party's eyes on the activity reports; FaithLock actually blocks access via iOS's Screen Time API and replaces that human oversight with an unlock gated on passing a Bible quiz."
+  verifiedAt: "2026-08-15"
+  sources:
+    - "https://accountable2you.com/pricing/"
+    - "https://apps.apple.com/us/app/accountable2you-monitoring/id1531309290"
+    - "https://chromewebstore.google.com/detail/accountable2you/efbfdmcbmjkdkhopodcpmajcdbkiljaa/reviews"

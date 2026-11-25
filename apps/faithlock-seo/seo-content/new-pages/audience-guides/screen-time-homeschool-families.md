@@ -46,7 +46,7 @@ Schedule a minimum 90-minute block each day with zero screens for anyone in the 
 
 ### 5. Use Faith-Based Tools for the Transition Between School and Free Time
 
-The moment "school screen time" ends and "free time" begins is the highest-risk transition. Faith-based app blockers like [FaithLock](/) can gate recreational apps behind Bible engagement, creating a spiritual buffer between educational use and entertainment. This turns the daily transition into a moment of Scripture engagement rather than an instant shift to TikTok. See the [best Christian app blocker](/learn/best-christian-app-blocker) guide for comparison options.
+The moment "school screen time" ends and "free time" begins is the highest-risk transition. Faith-based app blockers like [FaithLock](/) can gate recreational apps behind Bible engagement, creating a spiritual buffer between educational use and entertainment. This turns the daily transition into a moment of Scripture engagement rather than an instant shift to TikTok. See the [best Christian app blocker](/resources/best-christian-app-blocker) guide for comparison options.
 
 ### 6. Join or Form a Screen-Conscious Homeschool Co-op
 

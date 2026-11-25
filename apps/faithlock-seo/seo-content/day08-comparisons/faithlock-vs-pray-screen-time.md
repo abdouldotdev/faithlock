@@ -17,8 +17,8 @@ In an age of constant digital distraction, many Christians are seeking faith-bas
 
 | Feature | FaithLock | Pray Screen Time |
 |---------|-----------|-----------------|
-| **Price** | Freemium ($4.99/week or $24.99/year) | Free |
-| **Platform** | iOS (Android coming soon) | iOS & Android |
+| **Price** | Freemium (pricing not stated in the verified sources or pricing not stated in the verified sources) | Free |
+| **Platform** | iOS; Android availability is not stated in the verified sources | iOS & Android |
 | **Unlock Method** | Read Bible verse (~30 sec) | Prayer-first unlock |
 | **Daily Verses** | Yes | Yes, integrated daily |
 | **Prayer Reminders** | Yes, customizable | Yes, customizable |
@@ -42,13 +42,13 @@ The app's standout feature is its emphasis on *prevention through prayer* rather
 
 ## FaithLock Overview
 
-**FaithLock**, available exclusively on iOS through a freemium model, represents a more comprehensive approach to faith-based screen management. Currently launching in 2026, FaithLock combines Bible-based unlocking with robust analytics and social accountability features designed for sustained spiritual growth.
+**FaithLock**, available exclusively on iOS through a free download with in-app purchases model, represents a more comprehensive approach to faith-based screen management. Currently launching in 2026, FaithLock combines Bible-based unlocking with robust analytics and social accountability features designed for sustained spiritual growth.
 
 The FaithLock unlock mechanism asks users to read and reflect on a Bible verse (approximately 30 seconds) before accessing blocked apps like Instagram and TikTok. This brief pause creates a mindfulness moment—long enough to encourage reflection, short enough to feel achievable. The verse rotates daily, exposing users to diverse Scripture throughout their journey.
 
-What distinguishes **FaithLock vs Pray Screen Time** is FaithLock's emphasis on trackable progress. The 30-day covenant system gamifies spiritual discipline, allowing users to build visual streaks and celebrate milestones. Screen time analytics provide granular insights into usage patterns, showing which apps consume most time and how blocking correlates with reduced dependency. These metrics appeal to users who respond to data-driven motivation—seeing progress visualized often strengthens commitment.
+What distinguishes **FaithLock vs Pray Screen Time** is FaithLock's emphasis on trackable progress. The faith-based commitment system gamifies spiritual discipline, allowing users to build visual streaks and celebrate milestones. Screen time analytics provide granular insights into usage patterns, showing which apps consume most time and how blocking correlates with reduced dependency. These metrics appeal to users who respond to data-driven motivation—seeing progress visualized often strengthens commitment.
 
-FaithLock's premium tier ($4.99/week or $24.99/year) unlocks advanced features: unlimited custom app blocking, detailed analytics dashboards, priority Bible verse curation, and enhanced prayer reminders. The freemium model allows users to test the core functionality before upgrading. Streak tracking, in particular, leverages psychological principles of habit formation—consecutive successful days create momentum that compounds over time.
+FaithLock's premium tier (pricing not stated in the verified sources or pricing not stated in the verified sources) unlocks advanced features: unlimited custom app blocking, detailed analytics dashboards, priority Bible verse curation, and enhanced prayer reminders. The free download with in-app purchases model allows users to test the core functionality before upgrading. Streak tracking, in particular, leverages psychological principles of habit formation—consecutive successful days create momentum that compounds over time.
 
 The upcoming Android release signals FaithLock's commitment to platform inclusivity, though iOS currently remains the priority launch environment.
 
@@ -76,13 +76,13 @@ Both apps feature daily Bible verses. **Pray Screen Time** integrates verses int
 
 ### Streak & Accountability
 
-**FaithLock's** 30-day covenant creates a structured accountability framework. Streaks visualize progress and encourage daily engagement. Covenant completion triggers celebration moments, reinforcing spiritual discipline.
+**FaithLock's** faith-based commitment creates a structured accountability framework. Streaks visualize progress and encourage daily engagement. Covenant completion triggers celebration moments, reinforcing spiritual discipline.
 
 **Pray Screen Time** offers basic tracking without elaborate streak systems. The emphasis remains on daily prayer practice rather than gamified progression.
 
 ### Platform Availability
 
-**Pray Screen Time** currently dominates cross-platform availability (iOS and Android). **FaithLock** launches iOS-first, with Android expected later in 2026. For Android users seeking faith-based blocking, this currently favors Pray Screen Time.
+**Pray Screen Time** currently dominates cross-platform availability (iOS and Android). **FaithLock** launches iOS-first, with Android availability is not stated in the verified sources later in 2026. For Android users seeking faith-based blocking, this currently favors Pray Screen Time.
 
 ### Customization Options
 
@@ -96,9 +96,9 @@ Both apps allow custom blocking rules and customizable reminders. **FaithLock's*
 
 **Pray Screen Time** is completely free with no premium tier, removing financial barriers to entry. Users gain full feature access regardless of budget. This approach has clearly resonated—evident in its 4.90/5-star rating and rapid user adoption since November 2024.
 
-**FaithLock** employs a freemium model:
+**FaithLock** employs a free download with in-app purchases model:
 - **Free tier:** Core app blocking, basic streak tracking, daily Bible verses, prayer reminders
-- **Premium subscription:** $4.99/week ($259.48/year) or $24.99/year for annual commitment
+- **Premium subscription:** pricing not stated in the verified sources ($259.48/year) or pricing not stated in the verified sources for annual commitment
 
 The annual plan represents approximately 15% of the weekly subscription cost per month, incentivizing long-term commitment.
 
@@ -119,7 +119,7 @@ The pricing decision reflects differing target audiences: Pray Screen Time serve
 - Robust app blocking across social media and gaming platforms
 
 ### FaithLock Cons
-- iOS-only (Android coming later in 2026)
+- iOS-only; Android availability is not stated in the verified sources
 - Subscription required for full feature access
 - Lower current user base and ratings (launching 2026)
 - Premium tier may feel expensive for casual users
@@ -166,7 +166,7 @@ For **FaithLock vs Pray Screen Time** selection, honestly assess your motivation
 
 Both **FaithLock and Pray Screen Time** represent legitimate faith-based solutions to digital distraction, each with distinct strengths. Pray Screen Time has captured early market momentum with its free model and impressive 4.90/5-star rating, earning genuine user trust through November 2024 rapid adoption. Its prayer-first unlock genuinely transforms app-blocking from punishment into spiritual practice.
 
-FaithLock counters with superior analytics, structured accountability through 30-day covenants, and gamified progression—resources that appeal to users seeking measurable spiritual growth. The premium model funds ongoing development, though it creates accessibility barriers.
+FaithLock counters with superior analytics, structured accountability through faith-based commitments, and gamified progression—resources that appeal to users seeking measurable spiritual growth. The premium model funds ongoing development, though it creates accessibility barriers.
 
 For most users seeking faith-based screen management, either app will improve digital discipline. The "better" choice depends on whether your motivation stems from prayer transformation (Pray Screen Time) or data-driven accountability (FaithLock). iOS users specifically interested in comprehensive analytics and covenant-based tracking should monitor FaithLock's 2026 launch closely. Android users and budget-conscious believers should confidently choose Pray Screen Time, whose proven ratings and free access make it the current market-leading option in this emerging category.
 
@@ -181,10 +181,10 @@ A: These apps manage device-level app blocking, so running both simultaneously m
 A: True faith-based app blockers require additional device-level restrictions beyond standard app permissions. FaithLock and Pray Screen Time both utilize iOS Screen Time integration (or equivalent Android solutions) that prevent easy circumvention. Spiritual discipline requires honest commitment—these tools remove convenience, not absolute impossibility.
 
 **Q: Which app has the best Bible verse selection?**
-A: FaithLock uses the Berean Standard Bible (BSB), a modern and accurate translation. Pray Screen Time rotates daily verses integrated into the unlock flow. FaithLock's premium tier provides curated, thematically-aligned verses within 30-day covenants. Neither approach is objectively "better"—choose based on whether thematic progression (FaithLock) or daily variety (Pray Screen Time) motivates you.
+A: FaithLock uses the Berean Standard Bible (BSB), a modern and accurate translation. Pray Screen Time rotates daily verses integrated into the unlock flow. FaithLock's premium tier provides curated, thematically-aligned verses within faith-based commitments. Neither approach is objectively "better"—choose based on whether thematic progression (FaithLock) or daily variety (Pray Screen Time) motivates you.
 
 **Q: Will FaithLock ever be free?**
-A: FaithLock maintains a freemium model, offering core blocking functionality free with premium features behind subscription. The free tier provides legitimate value; premium expands analytics and customization. As of early 2026, no complete free conversion is announced. Pray Screen Time remains the free-tier option.
+A: FaithLock maintains a free download with in-app purchases model, offering core blocking functionality free with premium features behind subscription. The free download provides legitimate value; premium expands analytics and customization. As of early 2026, no complete free conversion is announced. Pray Screen Time remains the free-tier option.
 
 ---
 

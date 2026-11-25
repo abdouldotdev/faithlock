@@ -122,7 +122,7 @@ The $59.99 lifetime option is worth noting — most competitors charge monthly o
 
 | Feature | Bible Mode | Holy Focus | FaithLock |
 |---------|-----------|------------|-----------|
-| **Price** | Free (IAP $4.99-$59.99) | ~$6.49/month | Free/$24.99/year |
+| **Price** | Free (IAP $4.99-$59.99) | ~$6.49/month | Free/pricing not stated in the verified sources |
 | **Platforms** | iOS | iOS | iOS |
 | **Unlock Method** | Physical Bible scan | Prayer + verse display | Bible verse + quiz |
 | **Active Engagement** | Scanning (physical) | Passive reading | Quiz-based |
@@ -177,8 +177,8 @@ Bible Mode does one thing that no other app does: it makes you physically pick u
 
 The scanning feature transforms your phone from a distraction source into a Bible reading trigger. Yes, it's iOS-only. Yes, it needs good lighting. Yes, the analytics are basically nonexistent. But if your goal is simple — read your physical Bible more and scroll less — Bible Mode delivers on that promise better than anything else available.
 
-Start with the free tier. If the scanning habit sticks after a couple of weeks, the lifetime purchase is a genuinely good deal. If you find yourself always using the in-app fallback because your Bible isn't nearby, a screen-based alternative like Holy Focus or FaithLock might be a better fit for your lifestyle.
+Start with the free download. If the scanning habit sticks after a couple of weeks, the lifetime purchase is a genuinely good deal. If you find yourself always using the in-app fallback because your Bible isn't nearby, a screen-based alternative like Holy Focus or FaithLock might be a better fit for your lifestyle.
 
 ---
 
-*Sources: [Bible Mode on the App Store](https://apps.apple.com/app/bible-mode/id6502637936), [Friday Labs LLC](https://fridaylabs.co), [faith.tools - Christian App Reviews](https://faith.tools/internet-filtering)*
+*Sources: Bible Mode on the App Store, Friday Labs LLC, [faith.tools - Christian App Reviews](https://faith.tools/internet-filtering)*

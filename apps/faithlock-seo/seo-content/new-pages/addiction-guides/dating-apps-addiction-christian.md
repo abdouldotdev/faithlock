@@ -76,7 +76,7 @@ Join a small group at church. Volunteer somewhere regularly. Take a class. Say y
 
 ### Step 4: If You Return to Dating Apps, Set Strict Boundaries
 
-If you choose to use dating apps after your fast, set rules: 15 minutes per day maximum, swipe with intention (not mindlessly), and delete the app after matching with someone worth meeting in person. Use a [Christian app blocker](/learn/best-christian-app-blocker) to enforce time limits. FaithLock can restrict dating app access outside your designated window and show you a verse about patience and trust when you try to open it impulsively.
+If you choose to use dating apps after your fast, set rules: 15 minutes per day maximum, swipe with intention (not mindlessly), and delete the app after matching with someone worth meeting in person. Use a [Christian app blocker](/resources/best-christian-app-blocker) to enforce time limits. FaithLock can restrict dating app access outside your designated window and show you a verse about patience and trust when you try to open it impulsively.
 
 ### Step 5: Reframe Your View of Singleness
 

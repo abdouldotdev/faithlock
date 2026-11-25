@@ -1,4 +1,17 @@
 import posthog from 'posthog-js'
+import { buildStoreClick } from '@/lib/store-click'
+
+// ─── Store click (every link to the FaithLock App Store listing) ──
+export function trackStoreClick(href: string, location: string, text?: string, trafficSource?: string) {
+  const props = buildStoreClick(href, window.location.pathname, location, text)
+  if (!props) return
+  // Same-tab links navigate away immediately: beacon survives the unload.
+  posthog.capture(
+    'faithlock_store_click',
+    { ...props, traffic_source: trafficSource },
+    { transport: 'sendBeacon' },
+  )
+}
 
 // ─── CTA / Download ─────────────────────────────────────────
 export function trackCTAClick(location: string, text?: string) {

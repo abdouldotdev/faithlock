@@ -68,7 +68,7 @@ Most online gambling sites offer self-exclusion — a permanent or long-term ban
 
 ### Step 2: Block Gambling Apps and Websites
 
-Delete every gambling app. Use a [Christian app blocker](/learn/best-christian-app-blocker) or a gambling-specific blocker like Gamban to prevent reinstallation and website access. FaithLock can block access to gambling apps and show Scripture when you try to open them — a moment of spiritual intervention exactly when you need it most.
+Delete every gambling app. Use a [Christian app blocker](/resources/best-christian-app-blocker) or a gambling-specific blocker like Gamban to prevent reinstallation and website access. FaithLock can block access to gambling apps and show Scripture when you try to open them — a moment of spiritual intervention exactly when you need it most.
 
 ### Step 3: Give Financial Control to a Trusted Person
 

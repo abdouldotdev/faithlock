@@ -35,7 +35,7 @@ Good parental control software serves both principles. The best tools aren't the
 
 Bark uses AI to scan content and only alerts you when it detects something concerning — cyberbullying, depression indicators, sexual content, drug references, grooming patterns. You never see normal everyday messages. Monitors 30+ platforms including texts, YouTube, Instagram, TikTok, Snapchat, and Discord.
 
-**What stands out**: Monitoring without surveillance. A [Bark case study](https://www.bark.us/blog/bark-prevented-school-shootings/) documented detection of self-harm threats and school violence that parents missed. Screen time scheduling and web filtering (including a "faith and values" category) round out the feature set.
+**What stands out**: Monitoring without surveillance. A Bark case study documented detection of self-harm threats and school violence that parents missed. Screen time scheduling and web filtering (including a "faith and values" category) round out the feature set.
 
 **Where it falls short**: No real-time visibility. AI occasionally flags innocent content. Newer or niche apps might not be covered. Bark Premium: $14/month or $99/year. Bark Jr: $5/month.
 
@@ -46,7 +46,7 @@ Bark uses AI to scan content and only alerts you when it detects something conce
 | Platforms | iOS + Android + Windows + Mac + Chromebook |
 | Key feature | AI-powered content monitoring with smart alerts |
 
-[Website](https://www.bark.us/)
+Website
 
 ---
 
@@ -67,7 +67,7 @@ Canopy uses real-time AI to filter harmful content — analyzing page content, i
 | Platforms | iOS + Android |
 | Key feature | AI content filtering + sexting detection |
 
-[Website](https://canopy.us/)
+Website
 
 ---
 
@@ -88,7 +88,7 @@ Founded in 2000 by a Christian ministry. The name comes from [Job 31:1](https://
 | Platforms | iOS + Android + Windows + Mac |
 | Key feature | Screen accountability reports to a trusted partner |
 
-[Website](https://www.covenanteyes.com/)
+Website
 
 ---
 
@@ -128,7 +128,7 @@ The Swiss Army knife: web filtering (30+ categories), app blocking, screen time 
 | Platforms | iOS + Android + Windows + Mac + Chromebook + Kindle |
 | Key feature | Comprehensive monitoring and filtering across all devices |
 
-[Website](https://www.qustodio.com/)
+Website
 
 ---
 
@@ -140,18 +140,18 @@ Not a parental control — a self-accountability app. Your teen installs it them
 
 **What stands out**: Self-chosen accountability respects growing autonomy while keeping faith at the center. The 30-day covenant is a commitment with God, not with you. Teaches self-control as spiritual discipline.
 
-**Where it falls short**: Not a parental control — teen can uninstall anytime. No parent dashboard or reports. For younger kids, use Bark or Qustodio. iOS only. Premium: $24.99/year.
+**Where it falls short**: Not a parental control — teen can uninstall anytime. No parent dashboard or reports. For younger kids, use Bark or Qustodio. iOS only. Premium: pricing not stated in the verified sources.
 
 *Disclosure: This article is published on the FaithLock blog. We've included FaithLock as one option among many and noted its limitations honestly.*
 
 | Detail | Info |
 |--------|------|
 | Rating | New (building reviews) |
-| Price | Free (Premium $24.99/year) |
+| Price | Free (Premium pricing not stated in the verified sources) |
 | Platforms | iOS |
 | Key feature | Self-chosen Bible verse app blocking for teens |
 
-[Download on the App Store](https://apps.apple.com/app/faithlock)
+[Download on the App Store](https://apps.apple.com/us/app/faith-lock-bible-prayer-focus/id6754208209)
 
 ---
 
@@ -164,7 +164,7 @@ Not a parental control — a self-accountability app. Your teen installs it them
 | Covenant Eyes | $16.99/mo | All major | Accountability reports | Optional | No | 12+ |
 | Apple/Google | Free | iOS / Android | Basic | Basic | Yes | Any |
 | Qustodio | $54.95/yr | All major | Comprehensive | 30+ categories | Yes | 4-18 |
-| FaithLock | Free/$24.99/yr | iOS | None (self-use) | App blocking | Yes | 15+ (self-chosen) |
+| FaithLock | Free/pricing not stated in the verified sources | iOS | None (self-use) | App blocking | Yes | 15+ (self-chosen) |
 
 ---
 
@@ -220,4 +220,4 @@ Your goal isn't to control their internet — it's to raise someone who doesn't 
 
 ---
 
-*Sources: [Common Sense Media - Parental Controls Guide](https://www.commonsensemedia.org/articles/everything-you-need-to-know-about-parental-controls), [American Academy of Pediatrics - Media & Children](https://www.aap.org/en/patient-care/media-and-children/), [Bark Safety Reports](https://www.bark.us/blog/bark-prevented-school-shootings/), [BibleGateway](https://www.biblegateway.com), [App Store listings](https://apps.apple.com)*
+*Sources: [Common Sense Media - Parental Controls Guide](https://www.commonsensemedia.org/articles/everything-you-need-to-know-about-parental-controls), [American Academy of Pediatrics - Media & Children](https://www.aap.org/en/patient-care/media-and-children/), Bark Safety Reports, [BibleGateway](https://www.biblegateway.com), App Store listings*

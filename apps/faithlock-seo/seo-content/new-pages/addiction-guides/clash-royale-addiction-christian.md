@@ -72,7 +72,7 @@ Chest-ready notifications, clan war reminders, special offer alerts — turn the
 
 ### Step 3: Set a "3 Games Max" Rule
 
-If you're not ready to delete the app, cap your sessions at 3 matches. When the third match ends, close the app — win or lose. This prevents the "just one more to make up for that loss" spiral. Use a [Christian app blocker](/learn/best-christian-app-blocker) to enforce time limits. FaithLock can lock the app after your allotted time and show you a verse, reframing the moment from frustration to reflection.
+If you're not ready to delete the app, cap your sessions at 3 matches. When the third match ends, close the app — win or lose. This prevents the "just one more to make up for that loss" spiral. Use a [Christian app blocker](/resources/best-christian-app-blocker) to enforce time limits. FaithLock can lock the app after your allotted time and show you a verse, reframing the moment from frustration to reflection.
 
 ### Step 4: Delete the App for 30 Days
 

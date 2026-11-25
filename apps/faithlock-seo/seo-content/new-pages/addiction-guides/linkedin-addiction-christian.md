@@ -72,7 +72,7 @@ Go to Settings > Communications and turn off everything except direct messages f
 
 ### Step 3: Never Browse the LinkedIn Feed
 
-Open LinkedIn, do what you came to do (send a message, check a connection, apply for a job), and close it. Never scroll the feed. The feed is LinkedIn's profit center, not yours. Use a [Christian app blocker](/learn/best-christian-app-blocker) to time-limit your sessions. FaithLock can remind you with Scripture that your identity is in Christ, not your career, exactly when you need to hear it.
+Open LinkedIn, do what you came to do (send a message, check a connection, apply for a job), and close it. Never scroll the feed. The feed is LinkedIn's profit center, not yours. Use a [Christian app blocker](/resources/best-christian-app-blocker) to time-limit your sessions. FaithLock can remind you with Scripture that your identity is in Christ, not your career, exactly when you need to hear it.
 
 ### Step 4: Unfollow Influencers and Thought Leaders
 

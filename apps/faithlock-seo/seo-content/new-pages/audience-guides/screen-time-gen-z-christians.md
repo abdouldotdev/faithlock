@@ -46,7 +46,7 @@ Every Gen Z Christian needs a physical location that isn't home or work/school w
 
 ### 5. Use Technology Intentionally with Faith-Based Tools
 
-Going fully analog isn't realistic for Gen Z. The goal is intentional use. Apps like [FaithLock](/) work with Gen Z's digital-native reality by requiring Bible engagement before accessing distracting apps. This keeps screens in your life but inserts Scripture into the habit loop. Compare options in the [best Christian app blocker](/learn/best-christian-app-blocker) guide.
+Going fully analog isn't realistic for Gen Z. The goal is intentional use. Apps like [FaithLock](/) work with Gen Z's digital-native reality by requiring Bible engagement before accessing distracting apps. This keeps screens in your life but inserts Scripture into the habit loop. Compare options in the [best Christian app blocker](/resources/best-christian-app-blocker) guide.
 
 ### 6. Start a "No Phone" Small Group
 

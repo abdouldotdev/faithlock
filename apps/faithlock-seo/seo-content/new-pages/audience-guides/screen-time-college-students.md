@@ -42,7 +42,7 @@ Pick one day per week (Saturday works for most students) and go phone-free from 
 
 ### 4. Use Faith-Based App Blocking During Study Hours
 
-Standard app blockers work, but they're easy to override when willpower is low at 11 PM. Tools like [FaithLock](/) connect app blocking with Bible engagement, so accessing distracting apps requires interacting with Scripture first. This adds a spiritual pause between impulse and action, which is exactly what the college brain needs. For a comparison of options, check out the [best Christian app blocker](/learn/best-christian-app-blocker) guide.
+Standard app blockers work, but they're easy to override when willpower is low at 11 PM. Tools like [FaithLock](/) connect app blocking with Bible engagement, so accessing distracting apps requires interacting with Scripture first. This adds a spiritual pause between impulse and action, which is exactly what the college brain needs. For a comparison of options, check out the [best Christian app blocker](/resources/best-christian-app-blocker) guide.
 
 ### 5. Join or Start a Phone-Free Study Group
 

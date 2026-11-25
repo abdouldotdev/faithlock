@@ -46,7 +46,7 @@ Maintain at least one weekly connection point with your teen that has nothing to
 
 ### 5. Use Accountability Tools, Not Surveillance
 
-There's a difference between monitoring everything your teen does (surveillance) and having shared visibility into screen habits (accountability). Tools like [FaithLock](/) allow families to pair app management with Bible engagement, creating a faith-based framework rather than a punishment-based one. The [best Christian app blocker](/learn/best-christian-app-blocker) guide reviews options that support accountability without eroding trust.
+There's a difference between monitoring everything your teen does (surveillance) and having shared visibility into screen habits (accountability). Tools like [FaithLock](/) allow families to pair app management with Bible engagement, creating a faith-based framework rather than a punishment-based one. The [best Christian app blocker](/resources/best-christian-app-blocker) guide reviews options that support accountability without eroding trust.
 
 ### 6. Prepare Them to Self-Regulate
 

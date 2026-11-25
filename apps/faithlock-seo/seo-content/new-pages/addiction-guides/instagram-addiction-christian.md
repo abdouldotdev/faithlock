@@ -72,7 +72,7 @@ Go through your following list and unfollow every account that makes you feel wo
 
 ### Step 3: Set a Hard Time Limit with an App Blocker
 
-Instagram's own "time reminder" is a suggestion you can dismiss in one tap. You need something with teeth. Use a [Christian app blocker](/learn/best-christian-app-blocker) that puts a Bible verse between you and the app. When you're forced to read Scripture before you can scroll, you'll be surprised how often you decide you don't actually need to open it. Tools like FaithLock turn that moment of weakness into a moment of reflection.
+Instagram's own "time reminder" is a suggestion you can dismiss in one tap. You need something with teeth. Use a [Christian app blocker](/resources/best-christian-app-blocker) that puts a Bible verse between you and the app. When you're forced to read Scripture before you can scroll, you'll be surprised how often you decide you don't actually need to open it. Tools like FaithLock turn that moment of weakness into a moment of reflection.
 
 ### Step 4: Replace the Scroll with Something Real
 
@@ -86,7 +86,7 @@ The reason you reach for Instagram is that it fills a void. But it fills it with
 
 Pick one day per week — Sunday works well — where you don't open Instagram at all. Delete it from your phone on Saturday night if you need to. Notice what happens to your mood, your prayer life, and your conversations. Most people report that their "worst" day offline is still better than their "best" day of scrolling.
 
-If you want to go further, learn [how to block Instagram](/learn/how-to-block-instagram) during specific hours so the temptation is removed entirely.
+If you want to go further, learn [how to block Instagram](/resources/how-to-block-instagram) during specific hours so the temptation is removed entirely.
 
 ---
 

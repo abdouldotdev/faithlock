@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 
-Comparing FaithLock vs Cold Turkey reveals a fundamental platform disconnect: you're evaluating a mobile faith-based app blocker against the internet's most hardcore desktop blocking software. FaithLock is iOS only, addressing phone addiction through spiritual accountability. Cold Turkey is Windows/Mac only, offering unbreakable desktop blocking through Frozen Turkey mode—literally locking your entire computer until a timer expires.
+Comparing FaithLock vs Cold Turkey reveals a fundamental platform disconnect: you're evaluating a mobile faith-based app blocker against the internet's most hardcore desktop blocking software. FaithLock is available on iPhone and iPad, addressing phone addiction through spiritual accountability. Cold Turkey is Windows/Mac only, offering unbreakable desktop blocking through Frozen Turkey mode—literally locking your entire computer until a timer expires.
 
 This FaithLock vs Cold Turkey comparison is less about choosing one over the other and more about understanding that they serve completely different use cases. FaithLock is optimized for controlling the device you carry everywhere (smartphone). Cold Turkey is optimized for controlling the device you sit at for focused work (computer).
 
@@ -16,7 +16,7 @@ This FaithLock vs Cold Turkey guide examines both solutions so you understand wh
 |---------|-----------|-----------|
 | **Platform** | iOS only | Windows/Mac only (NO mobile) |
 | **Primary Use Case** | Mobile/phone addiction | Desktop/computer addiction |
-| **Pricing** | Freemium/$4.99/week/$24.99/year | $39 one-time purchase (permanent) |
+| **Pricing** | Freemium/pricing not stated in the verified sources/pricing not stated in the verified sources | $39 one-time purchase (permanent) |
 | **Blocking Mechanism** | Bible verse unlock | Frozen Turkey mode (computer lock) |
 | **Unbreakable?** | Psychologically (for believers) | Technically (for all users) |
 | **App Blocking** | Yes (iOS apps) | Yes (Windows/Mac apps) |
@@ -49,11 +49,11 @@ FaithLock is the opposite of Cold Turkey in almost every dimension. Rather than 
 
 FaithLock's core insight is that for Christians, the most powerful accountability mechanism isn't a locked computer—it's spiritual conviction. When you reach for Instagram, FaithLock doesn't freeze your phone. Instead, it presents you with Scripture: "For the flesh desires what is contrary to the Spirit, and the Spirit what is contrary to the flesh" (Galatians 5:17). You read that verse, reflect on it, and the psychological work—the confrontation between impulse and conviction—prevents access as effectively as Cold Turkey's technical lock.
 
-FaithLock's 30-day covenant system adds behavioral structure. You're not just blocking apps indefinitely; you're committing to 30-day cycles of accountability, completing covenants, and starting fresh with renewed intention. Prayer reminders throughout the day connect your digital wellness struggle to your spiritual foundation.
+FaithLock's faith-based commitment system adds behavioral structure. You're not just blocking apps indefinitely; you're committing to 30-day cycles of accountability, completing covenants, and starting fresh with renewed intention. Prayer reminders throughout the day connect your digital wellness struggle to your spiritual foundation.
 
-The pricing is accessible: $24.99 annually for premium features. This democratizes faith-based digital accountability for users who might never pay Cold Turkey's $39 one-time fee or manage ongoing subscriptions.
+The pricing is accessible: pricing not stated in the verified sources for premium features. This democratizes faith-based digital accountability for users who might never pay Cold Turkey's $39 one-time fee or manage ongoing subscriptions.
 
-However, FaithLock is iOS-only. It doesn't address desktop distraction. If your problem is checking email compulsively on a Windows desktop or doom-scrolling Reddit on a Mac, FaithLock is completely irrelevant. Additionally, FaithLock's psychological barriers are weaker than Cold Turkey's technical barriers for users not motivated by faith or who lack self-awareness of their covenant commitment.
+However, FaithLock is available on iPhone and iPad. It doesn't address desktop distraction. If your problem is checking email compulsively on a Windows desktop or doom-scrolling Reddit on a Mac, FaithLock is completely irrelevant. Additionally, FaithLock's psychological barriers are weaker than Cold Turkey's technical barriers for users not motivated by faith or who lack self-awareness of their covenant commitment.
 
 ## 5. Feature-by-Feature Breakdown
 
@@ -73,7 +73,7 @@ However, FaithLock is iOS-only. It doesn't address desktop distraction. If your 
 
 **Portability:** FaithLock travels with you everywhere (iPhone). Cold Turkey stays at your desk (computer). Winner: Context-dependent.
 
-**Cost of Ownership:** FaithLock charges annually ($24.99/year minimum). Cold Turkey charges once ($39 forever). Long-term, Cold Turkey is cheaper if you use it for 5+ years. Short-term, FaithLock is cheaper. Winner: Cold Turkey (long-term), FaithLock (short-term).
+**Cost of Ownership:** FaithLock charges annually (pricing not stated in the verified sources minimum). Cold Turkey charges once ($39 forever). Long-term, Cold Turkey is cheaper if you use it for 5+ years. Short-term, FaithLock is cheaper. Winner: Cold Turkey (long-term), FaithLock (short-term).
 
 **Anti-Workaround Design:** Both employ anti-workaround philosophy, just differently. Cold Turkey creates technical impossibility. FaithLock creates covenant violation discomfort. Winner: Cold Turkey (technical), FaithLock (spiritual).
 
@@ -85,7 +85,7 @@ However, FaithLock is iOS-only. It doesn't address desktop distraction. If your 
 
 Cold Turkey: $39 one-time purchase. You pay once, own it forever. Optional updates cost extra but aren't required.
 
-FaithLock: $24.99 annual subscription for premium features. Free version available but limited.
+FaithLock: $24.99 annual subscription for premium features. free download available but limited.
 
 **Year 1:** FaithLock is $24.99 cheaper ($24.99 vs. $39).
 
@@ -105,7 +105,7 @@ This pricing comparison heavily favors Cold Turkey for long-term users but Faith
 **FaithLock Pros:**
 - Spiritual accountability (Bible verse unlock) for Christians
 - iPhone portable—travels with you everywhere
-- Affordable annual subscription ($24.99/year)
+- Affordable annual subscription (pricing not stated in the verified sources)
 - 30-day covenant cycles create meaningful commitment structure
 - Prayer reminders integrate faith throughout day
 - iOS optimization ensures excellent performance
@@ -151,7 +151,7 @@ This pricing comparison heavily favors Cold Turkey for long-term users but Faith
 - Are Christian and want spiritual accountability
 - Prefer gentle psychological barriers over harsh technical locks
 - Want portability (your blocker travels with you)
-- Prefer annual affordability ($24.99/year)
+- Prefer annual affordability (pricing not stated in the verified sources)
 - Value prayer reminders and covenant structure
 - Are willing to commit to spiritual discipline
 - Don't use Windows/Mac for primary work
@@ -169,7 +169,7 @@ This pricing comparison heavily favors Cold Turkey for long-term users but Faith
 **Choose both if you:**
 - Struggle with both phone AND desktop distraction
 - Use iPhone for personal time (FaithLock) and Windows/Mac for work (Cold Turkey)
-- Have budget for both ($24.99/year + $39 one-time = $63.99 first year)
+- Have budget for both (pricing not stated in the verified sources + $39 one-time = $63.99 first year)
 - Want comprehensive digital boundaries across all devices
 - Can commit to spiritual practice on phone and technical discipline on desktop
 
@@ -183,7 +183,7 @@ The real insight from FaithLock vs Cold Turkey is that the internet's worst dist
 
 The one dimension where they do compete is unbreakability philosophy. Cold Turkey believes in technical impossibility; FaithLock believes in spiritual conviction. For believers, FaithLock's approach is actually stronger—violating a covenant feels worse than circumventing a timer. For non-believers or doubters, Cold Turkey's approach is stronger.
 
-**Final recommendation:** Choose FaithLock exclusively if iPhone is your primary distraction device. Choose Cold Turkey exclusively if Windows/Mac desktop is your primary distraction device. If you struggle with both (realistically, most users do), consider both tools—$24.99/year for phone + $39 one-time for desktop creates comprehensive digital accountability across your entire device ecosystem. They're not competitors; they're complementary solutions.
+**Final recommendation:** Choose FaithLock exclusively if iPhone is your primary distraction device. Choose Cold Turkey exclusively if Windows/Mac desktop is your primary distraction device. If you struggle with both (realistically, most users do), consider both tools—pricing not stated in the verified sources for phone + $39 one-time for desktop creates comprehensive digital accountability across your entire device ecosystem. They're not competitors; they're complementary solutions.
 
 ## 10. FAQ
 
@@ -200,7 +200,7 @@ A: Possibly. Cold Turkey is designed for people serious about focus. If Frozen T
 A: Yes, technically. But that bypasses only the current unlock request, not the blocking rules. The covenant structure makes willful violation carry psychological weight.
 
 **Q: Which is cheaper over 5 years?**
-A: Cold Turkey: $39 + optional updates (~$20 every few years) = ~$59-79 over 5 years. FaithLock: $24.99/year = $124.95 over 5 years. Cold Turkey is cheaper long-term.
+A: Cold Turkey: $39 + optional updates (~$20 every few years) = ~$59-79 over 5 years. FaithLock: pricing not stated in the verified sources = $124.95 over 5 years. Cold Turkey is cheaper long-term.
 
 **Q: Can I use FaithLock on iPad?**
 A: Currently, FaithLock is iPhone only. iPad support would need to be added by the developer. Check the App Store for current availability.

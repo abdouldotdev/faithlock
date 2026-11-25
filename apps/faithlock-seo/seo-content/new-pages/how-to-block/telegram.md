@@ -75,4 +75,4 @@ Not through iOS Screen Time. However, within Telegram you can leave channels or 
 
 ---
 
-*Sources: [Telegram FAQ](https://telegram.org/faq), [Telegram on the App Store](https://apps.apple.com/app/telegram-messenger/id686449807)*
+*Sources: [Telegram FAQ](https://telegram.org/faq), Telegram on the App Store*

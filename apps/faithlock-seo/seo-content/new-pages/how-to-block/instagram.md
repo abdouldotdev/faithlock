@@ -89,4 +89,4 @@ Ask your church if they have an email newsletter or website where they post the 
 
 ---
 
-*Sources: [Instagram Help Center](https://help.instagram.com/), [Instagram on the App Store](https://apps.apple.com/app/instagram/id389801252), [Royal Society for Public Health — Status of Mind](https://www.rsph.org.uk/our-work/campaigns/status-of-mind.html)*
+*Sources: [Instagram Help Center](https://help.instagram.com/), Instagram on the App Store, [Royal Society for Public Health — Status of Mind](https://www.rsph.org.uk/our-work/campaigns/status-of-mind.html)*

@@ -74,4 +74,4 @@ Yes. Screen Time blocks are app-specific. You can block Spotify while keeping Ap
 
 ---
 
-*Sources: [Spotify Support](https://support.spotify.com/), [Spotify on the App Store](https://apps.apple.com/app/spotify-music-and-podcasts/id324684580), [Edison Research — The Podcast Consumer 2024](https://www.edisonresearch.com/the-podcast-consumer-2024/)*
+*Sources: [Spotify Support](https://support.spotify.com/), Spotify on the App Store, [Edison Research — The Podcast Consumer 2024](https://www.edisonresearch.com/the-podcast-consumer-2024/)*

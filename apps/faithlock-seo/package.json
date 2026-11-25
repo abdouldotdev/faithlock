@@ -7,12 +7,18 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test:tracking": "node --experimental-strip-types --test tests/store-click.test.mjs tests/competitors.test.mjs tests/attribution.test.mjs",
+    "test:seo-metadata": "node --test tests/metadata-title-template.test.mjs",
+    "test:facts": "node --test tests/factual-source.test.mjs",
+    "test:whatsapp-answer-first": "node --test tests/christian-guide-whatsapp-answer-first.test.mjs",
+    "test:production-cta-parity": "node --test tests/best-app-blockers-production-parity.test.mjs",
     "test:contentful": "node scripts/test-contentful.js"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.22.11",
     "@contentful/rich-text-types": "^16.8.5",
     "contentful": "^11.2.0",
+    "gray-matter": "^4.0.3",
     "marked": "^17.0.2",
     "next": "14.2.22",
     "posthog-js": "^1.354.3",

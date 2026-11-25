@@ -72,7 +72,7 @@ Instead of having 6 shows in progress, pick one. Watch it, finish it, then choos
 
 ### Step 3: Set a "No Screens After 9pm" Rule
 
-Choose a cutoff time for all streaming, not just Hulu. After 9pm (or whatever time gives you an hour before bed), screens go off. Use a [Christian app blocker](/learn/best-christian-app-blocker) like FaithLock to enforce this boundary. When you try to open Hulu after your cutoff, a Bible verse appears, redirecting your evening toward rest and reflection.
+Choose a cutoff time for all streaming, not just Hulu. After 9pm (or whatever time gives you an hour before bed), screens go off. Use a [Christian app blocker](/resources/best-christian-app-blocker) like FaithLock to enforce this boundary. When you try to open Hulu after your cutoff, a Bible verse appears, redirecting your evening toward rest and reflection.
 
 ### Step 4: Designate Two TV-Free Evenings Per Week
 

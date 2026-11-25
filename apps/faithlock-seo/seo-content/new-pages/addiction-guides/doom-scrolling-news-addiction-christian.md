@@ -76,7 +76,7 @@ Every push notification from a news app is designed to spike your stress and pul
 
 ### Step 4: Replace the Doomscroll with a "Goodscroll"
 
-When you feel the urge to check the news, open a Bible app instead. Read one Psalm. Or open a notes app and write down three things you're grateful for. This isn't ignoring the world — it's choosing what shapes your emotional state. A [Christian app blocker](/learn/best-christian-app-blocker) like FaithLock can block news apps and show you a Scripture passage when you reflexively try to open them.
+When you feel the urge to check the news, open a Bible app instead. Read one Psalm. Or open a notes app and write down three things you're grateful for. This isn't ignoring the world — it's choosing what shapes your emotional state. A [Christian app blocker](/resources/best-christian-app-blocker) like FaithLock can block news apps and show you a Scripture passage when you reflexively try to open them.
 
 ### Step 5: Pray About What You've Read
 

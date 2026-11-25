@@ -44,7 +44,7 @@ Make a conscious distinction: your phone is for talking to people you love (call
 
 ### 4. Invest Screen-Free Time in Legacy Activities
 
-You have knowledge, stories, faith experiences, and wisdom that the next generation needs. Spend time writing your testimony, recording family stories, writing letters to grandchildren, mentoring younger believers, or volunteering. These activities produce lasting value that scrolling never will. Use [FaithLock](/) to reduce passive screen time by connecting app access to Bible engagement, freeing up hours for legacy-building. The [best Christian app blocker](/learn/best-christian-app-blocker) guide reviews additional options.
+You have knowledge, stories, faith experiences, and wisdom that the next generation needs. Spend time writing your testimony, recording family stories, writing letters to grandchildren, mentoring younger believers, or volunteering. These activities produce lasting value that scrolling never will. Use [FaithLock](/) to reduce passive screen time by connecting app access to Bible engagement, freeing up hours for legacy-building. The [best Christian app blocker](/resources/best-christian-app-blocker) guide reviews additional options.
 
 ### 5. Join or Start a Weekly In-Person Group
 

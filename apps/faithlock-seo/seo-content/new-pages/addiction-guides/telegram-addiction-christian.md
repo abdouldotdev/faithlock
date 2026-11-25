@@ -72,7 +72,7 @@ If you haven't contributed meaningfully to a group in the past month, leave it. 
 
 ### Step 3: Mute Everything and Check on a Schedule
 
-Mute all remaining groups and channels. Check Telegram twice per day — once in the morning and once in the evening, 15 minutes each. This transforms Telegram from a constant interruption into a brief, intentional check-in. Use a [Christian app blocker](/learn/best-christian-app-blocker) to enforce your schedule. FaithLock can block Telegram outside your chosen windows and show you Scripture when you try to open it reflexively.
+Mute all remaining groups and channels. Check Telegram twice per day — once in the morning and once in the evening, 15 minutes each. This transforms Telegram from a constant interruption into a brief, intentional check-in. Use a [Christian app blocker](/resources/best-christian-app-blocker) to enforce your schedule. FaithLock can block Telegram outside your chosen windows and show you Scripture when you try to open it reflexively.
 
 ### Step 4: Replace Telegram Information with Vetted Sources
 

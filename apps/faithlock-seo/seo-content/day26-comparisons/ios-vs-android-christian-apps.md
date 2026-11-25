@@ -11,7 +11,7 @@
 
 The choice between iOS and Android often determines which **ios vs android christian apps** you can access, creating an unequal landscape in faith-based digital wellness. While secular screen time solutions have achieved near-parity across platforms, Christian screen time apps remain fragmented—some exclusive to iOS, others available only on Android, with a shrinking middle ground serving both. Understanding this platform divide is essential for Christians seeking to align their digital habits with their faith.
 
-The disparity in **ios vs android christian apps** availability reflects broader app development economics. iOS's smaller user base but superior monetization makes it attractive for specialized, premium apps like FaithLock. Android's larger market share pushes developers toward freemium models and broader platform support. Neither approach is inherently superior; they reflect different philosophical choices about sustainability and accessibility.
+The disparity in **ios vs android christian apps** availability reflects broader app development economics. iOS's smaller user base but superior monetization makes it attractive for specialized, premium apps like FaithLock. Android's larger market share pushes developers toward free download with in-app purchases models and broader platform support. Neither approach is inherently superior; they reflect different philosophical choices about sustainability and accessibility.
 
 This guide examines how platform choice affects your options in faith-based digital wellness. Whether you're iOS-committed, Android-loyal, or considering switching platforms, understanding the **ios vs android christian apps** landscape helps you make informed decisions about both devices and digital wellness applications. The choice ultimately reflects not just technical preference but also which faith-based features matter most to your spiritual journey.
 
@@ -21,7 +21,7 @@ This guide examines how platform choice affects your options in faith-based digi
 
 | App | iOS Available | Android Available | Cross-Platform | iOS-Exclusive | Android-Exclusive | Feature Parity |
 |-----|--------------|-----------------|----------------|-------------|-----------------|----------------|
-| **FaithLock** | Yes | No | No | Yes | No | N/A (iOS only) |
+| **FaithLock** | Yes | No | No | Yes | No | N/A (available on iPhone and iPad) |
 | **Bible Mode** | Yes | Yes | Yes | No | No | High |
 | **Holy Focus** | Yes | Yes | Yes | No | No | High |
 | **Pray Screen Time** | Yes | No | No | Yes | No | N/A (iOS only) |

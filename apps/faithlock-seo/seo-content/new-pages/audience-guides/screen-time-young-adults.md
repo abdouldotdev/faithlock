@@ -46,7 +46,7 @@ Create a morning routine with a specific order: wake up, brush teeth, make coffe
 
 ### 5. Conduct a Monthly "Digital Audit"
 
-On the first of each month, review your screen time data, your app usage breakdown, and your subscription list. Ask: What served me this month? What drained me? Unsubscribe, unfollow, or delete one thing each month. Over a year, this gradual pruning transforms your digital environment. The [best Christian app blocker](/learn/best-christian-app-blocker) guide can help identify tools for maintaining these boundaries.
+On the first of each month, review your screen time data, your app usage breakdown, and your subscription list. Ask: What served me this month? What drained me? Unsubscribe, unfollow, or delete one thing each month. Over a year, this gradual pruning transforms your digital environment. The [best Christian app blocker](/resources/best-christian-app-blocker) guide can help identify tools for maintaining these boundaries.
 
 ### 6. Join a Covenant Group
 

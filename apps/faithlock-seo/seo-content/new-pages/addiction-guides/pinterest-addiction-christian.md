@@ -76,7 +76,7 @@ Instead of browsing the home feed, only open Pinterest when you have a specific 
 
 ### Step 4: Use a Time-Limited Blocker
 
-A [Christian app blocker](/learn/best-christian-app-blocker) keeps Pinterest from becoming your default time-filler. FaithLock can limit your daily access and replace the opening screen with a verse about contentment. When you reach for Pinterest out of boredom, Scripture redirects your attention to gratitude instead of longing.
+A [Christian app blocker](/resources/best-christian-app-blocker) keeps Pinterest from becoming your default time-filler. FaithLock can limit your daily access and replace the opening screen with a verse about contentment. When you reach for Pinterest out of boredom, Scripture redirects your attention to gratitude instead of longing.
 
 ### Step 5: Practice Gratitude for What You Have
 

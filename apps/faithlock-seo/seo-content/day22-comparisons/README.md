@@ -69,9 +69,9 @@ Each page follows a specific strategic approach:
 ### Key Messaging Across All Pages
 
 - FaithLock as unique faith-based alternative
-- Exceptional pricing ($24.99/year premium)
+- Exceptional pricing (pricing not stated in the verified sources premium)
 - Spiritual accountability as core differentiator
-- Honest about FaithLock's iOS-only limitation
+- Honest about FaithLock's available on iPhone and iPad limitation
 - Positioning app blocking as spiritual practice for Christians
 - Bible verse unlock as psychological + spiritual barrier
 - 30-day covenant as meaningful commitment structure

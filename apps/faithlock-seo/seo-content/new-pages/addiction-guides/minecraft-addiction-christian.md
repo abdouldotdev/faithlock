@@ -68,7 +68,7 @@ Don't rely on feeling like you want to stop — Minecraft flow states override y
 
 ### Step 2: Designate Minecraft Days, Not Minecraft All-Days
 
-Instead of daily Minecraft access, designate specific days: "Minecraft is available on Tuesday, Thursday, and Saturday, for 1.5 hours." On other days, the game is locked. This breaks the daily habit loop and creates natural recovery periods. Use a [Christian app blocker](/learn/best-christian-app-blocker) or parental controls to enforce the schedule. FaithLock can block the game outside designated hours.
+Instead of daily Minecraft access, designate specific days: "Minecraft is available on Tuesday, Thursday, and Saturday, for 1.5 hours." On other days, the game is locked. This breaks the daily habit loop and creates natural recovery periods. Use a [Christian app blocker](/resources/best-christian-app-blocker) or parental controls to enforce the schedule. FaithLock can block the game outside designated hours.
 
 ### Step 3: Channel Creativity into Physical Projects
 

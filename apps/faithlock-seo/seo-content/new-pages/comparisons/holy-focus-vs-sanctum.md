@@ -87,4 +87,4 @@ FaithLock pairs Bible verse quizzes (active engagement) with prayer reminders an
 Neither currently offers dedicated family plans. Both are designed as individual self-accountability tools. For family screen time management, Apple's Family Sharing or dedicated parental control apps are better options.
 
 ---
-*Sources: [Holy Focus on App Store](https://apps.apple.com/app/holy-focus), [Sanctum on App Store](https://apps.apple.com/app/sanctum), [Sanctum on Google Play](https://play.google.com/store/apps/details?id=sanctum)*
+*Sources: Holy Focus on App Store, Sanctum on App Store, Sanctum on Google Play*

@@ -75,4 +75,4 @@ Frame it as a shared experiment, not a criticism. "What if we tried reading toge
 
 ---
 
-*Sources: [Netflix Help Center](https://help.netflix.com/), [Netflix on the App Store](https://apps.apple.com/app/netflix/id363590051), [Business Insider — Netflix vs. Sleep](https://www.businessinsider.com/netflix-ceo-biggest-competitor-sleep-2017-4)*
+*Sources: [Netflix Help Center](https://help.netflix.com/), Netflix on the App Store, [Business Insider — Netflix vs. Sleep](https://www.businessinsider.com/netflix-ceo-biggest-competitor-sleep-2017-4)*

@@ -72,7 +72,7 @@ Go through your subscriptions. For each subreddit, ask: "Does this make me a bet
 
 ### Step 3: Set a Hard Daily Limit
 
-Use a [Christian app blocker](/learn/best-christian-app-blocker) to cap Reddit at 30 minutes per day. When your time is up, FaithLock shows you a Bible verse instead of the next thread. That moment of Scripture replaces the "just one more thread" impulse with a gentle redirect toward what actually matters.
+Use a [Christian app blocker](/resources/best-christian-app-blocker) to cap Reddit at 30 minutes per day. When your time is up, FaithLock shows you a Bible verse instead of the next thread. That moment of Scripture replaces the "just one more thread" impulse with a gentle redirect toward what actually matters.
 
 ### Step 4: Replace Reddit with Direct Sources
 

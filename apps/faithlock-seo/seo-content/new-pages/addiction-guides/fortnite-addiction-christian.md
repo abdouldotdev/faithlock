@@ -72,7 +72,7 @@ Instead of "play for 1 hour" (which feels arbitrary and frustrating mid-game), s
 
 ### Step 3: Remove Fortnite from Your Phone and Tablet
 
-If Fortnite is only available on a console or PC in a shared space, it's harder to play secretly and easier for family members to notice usage. Mobile access enables playing anywhere, anytime — in bed, during class, instead of homework. Remove it from mobile devices. Use a [Christian app blocker](/learn/best-christian-app-blocker) to block gaming apps on phones. FaithLock can restrict access and show a verse when the app is locked.
+If Fortnite is only available on a console or PC in a shared space, it's harder to play secretly and easier for family members to notice usage. Mobile access enables playing anywhere, anytime — in bed, during class, instead of homework. Remove it from mobile devices. Use a [Christian app blocker](/resources/best-christian-app-blocker) to block gaming apps on phones. FaithLock can restrict access and show a verse when the app is locked.
 
 ### Step 4: Find a Physical Competitive Outlet
 

@@ -46,7 +46,7 @@ Instead of responding to messages as they arrive, process them in 3-4 daily bloc
 
 ### 5. Use Faith-Based Tools for Personal Device Management
 
-Your work devices serve the church. Your personal device serves you. Use [FaithLock](/) on your personal phone to gate recreational apps behind Scripture engagement. This creates a clean separation: when you pick up your personal phone, you encounter God before you encounter distractions. For a full comparison of tools, visit the [best Christian app blocker](/learn/best-christian-app-blocker) guide.
+Your work devices serve the church. Your personal device serves you. Use [FaithLock](/) on your personal phone to gate recreational apps behind Scripture engagement. This creates a clean separation: when you pick up your personal phone, you encounter God before you encounter distractions. For a full comparison of tools, visit the [best Christian app blocker](/resources/best-christian-app-blocker) guide.
 
 ### 6. Advocate for a Team-Wide Digital Wellness Policy
 

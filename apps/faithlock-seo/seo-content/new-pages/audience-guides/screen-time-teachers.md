@@ -46,7 +46,7 @@ Pick one weeknight where you don't grade, don't check email, and don't open your
 
 ### 5. Use Faith-Based Tools for After-School Phone Management
 
-After the school day ends, your phone doesn't need to be a work tool. Use [FaithLock](/) to gate recreational apps behind Bible engagement, creating a spiritual transition between "teacher mode" and "person mode." When every app unlock begins with Scripture, your evening phone use becomes spiritually informed rather than mindlessly reactive. Check the [best Christian app blocker](/learn/best-christian-app-blocker) guide for options.
+After the school day ends, your phone doesn't need to be a work tool. Use [FaithLock](/) to gate recreational apps behind Bible engagement, creating a spiritual transition between "teacher mode" and "person mode." When every app unlock begins with Scripture, your evening phone use becomes spiritually informed rather than mindlessly reactive. Check the [best Christian app blocker](/resources/best-christian-app-blocker) guide for options.
 
 ### 6. Batch Administrative Tasks into Power Hours
 

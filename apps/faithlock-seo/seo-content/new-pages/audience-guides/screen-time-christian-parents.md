@@ -42,7 +42,7 @@ Protect specific weekly times as phone-free sacred spaces. Sunday morning before
 
 ### 4. Use Technology to Limit Technology
 
-This isn't hypocritical; it's wise. Set up router-level time limits. Use [FaithLock](/) to connect app access to Bible engagement for yourself and age-appropriate family members. Use Apple's Family Sharing or Google Family Link for younger children. The [best Christian app blocker](/learn/best-christian-app-blocker) guide provides a detailed comparison of faith-integrated options.
+This isn't hypocritical; it's wise. Set up router-level time limits. Use [FaithLock](/) to connect app access to Bible engagement for yourself and age-appropriate family members. Use Apple's Family Sharing or Google Family Link for younger children. The [best Christian app blocker](/resources/best-christian-app-blocker) guide provides a detailed comparison of faith-integrated options.
 
 ### 5. Replace Screen Time with Presence Time
 

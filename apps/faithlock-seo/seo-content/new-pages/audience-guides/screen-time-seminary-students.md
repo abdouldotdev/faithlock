@@ -46,7 +46,7 @@ Seminary requires academic spiritual engagement. But you also need practices tha
 
 ### 5. Use Faith-Based Tools to Manage Non-Academic Screen Time
 
-Academic screen time is largely non-negotiable in seminary. Personal screen time is where you have control. [FaithLock](/) gates recreational apps behind Bible engagement, creating a spiritual pause before every social media session. When you've been studying theology all day, encountering Scripture personally before scrolling is a corrective your soul needs. See the [best Christian app blocker](/learn/best-christian-app-blocker) guide for options.
+Academic screen time is largely non-negotiable in seminary. Personal screen time is where you have control. [FaithLock](/) gates recreational apps behind Bible engagement, creating a spiritual pause before every social media session. When you've been studying theology all day, encountering Scripture personally before scrolling is a corrective your soul needs. See the [best Christian app blocker](/resources/best-christian-app-blocker) guide for options.
 
 ### 6. Form a Spiritual Friendship with One Person
 

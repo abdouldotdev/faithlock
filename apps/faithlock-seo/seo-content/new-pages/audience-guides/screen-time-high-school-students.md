@@ -46,7 +46,7 @@ You don't need your entire friend group on board. Find one person who shares you
 
 ### 5. Use Faith-Based Blocking During Study Hours
 
-Generic screen time limits are easy to bypass when you're tired and stressed at 10 PM. Faith-based tools add a spiritual layer to digital discipline. [FaithLock](/) requires Bible verse engagement before accessing blocked apps, which turns every temptation moment into a Scripture encounter. Check out the [best Christian app blocker](/learn/best-christian-app-blocker) for detailed comparisons.
+Generic screen time limits are easy to bypass when you're tired and stressed at 10 PM. Faith-based tools add a spiritual layer to digital discipline. [FaithLock](/) requires Bible verse engagement before accessing blocked apps, which turns every temptation moment into a Scripture encounter. Check out the [best Christian app blocker](/resources/best-christian-app-blocker) for detailed comparisons.
 
 ## Scripture for High School Students
 

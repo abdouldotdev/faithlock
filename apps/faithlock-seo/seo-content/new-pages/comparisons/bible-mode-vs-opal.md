@@ -87,4 +87,4 @@ Bible Mode's scanning works offline since it uses on-device text recognition. Op
 Not currently. FaithLock offers streak tracking and structured scheduling but doesn't match Opal's AI-driven analytics. This remains a gap in the faith-based app market.
 
 ---
-*Sources: [Bible Mode on App Store](https://apps.apple.com/app/bible-mode), [Opal on App Store](https://apps.apple.com/app/opal-screen-time-for-focus)*
+*Sources: Bible Mode on App Store, Opal on App Store*

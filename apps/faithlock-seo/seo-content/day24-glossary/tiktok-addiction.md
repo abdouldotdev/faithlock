@@ -119,4 +119,4 @@ A: If TikTok is genuinely essential to your work, use FaithLock to limit access 
 - [How YouTube's Algorithm Creates Addiction](/sessions/zen-ecstatic-mayer/mnt/outputs/faithlock-seo/day24-glossary/youtube-addiction.md)
 - [Breaking the Doomscrolling Cycle](/sessions/zen-ecstatic-mayer/mnt/outputs/faithlock-seo/day24-glossary/doomscrolling.md)
 
-**Download FaithLock Today**: Block TikTok and replace the urge to scroll with Scripture. Available on iOS. [Get FaithLock](https://pim.ms/kTxgKF4) — Transform your relationship with technology. Freemium, $4.99/week, or $24.99/year.
+**Download FaithLock Today**: Block TikTok and replace the urge to scroll with Scripture. Available on iOS. [Get FaithLock](https://pim.ms/kTxgKF4) — Transform your relationship with technology. free download with in-app purchases, pricing not stated in the verified sources, or pricing not stated in the verified sources.

@@ -50,7 +50,7 @@ In your first month of marriage, draft a written agreement about phone and scree
 
 ### 6. Use Faith-Based Tools to Support Your Covenant
 
-[FaithLock](/) pairs app blocking with Bible engagement, giving both spouses a faith-based framework for digital discipline. When every app unlock starts with Scripture, your phone use becomes spiritually informed rather than mindlessly habitual. Many couples install it together and use shared accountability features. See the [best Christian app blocker](/learn/best-christian-app-blocker) guide for more tools.
+[FaithLock](/) pairs app blocking with Bible engagement, giving both spouses a faith-based framework for digital discipline. When every app unlock starts with Scripture, your phone use becomes spiritually informed rather than mindlessly habitual. Many couples install it together and use shared accountability features. See the [best Christian app blocker](/resources/best-christian-app-blocker) guide for more tools.
 
 ## Scripture for Newlyweds
 

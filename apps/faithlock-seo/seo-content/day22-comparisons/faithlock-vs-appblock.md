@@ -4,7 +4,7 @@
 
 When evaluating FaithLock vs AppBlock, you're comparing two iOS app blockers with surprisingly different philosophies despite their similar price points. AppBlock is a secular, feature-rich app blocker with 4.5-star ratings, offering quick blocking, strict mode, geofencing, and granular Safari phrase blocking. FaithLock is the faith-integrated alternative, trading AppBlock's technical sophistication for spiritual accountability through Bible verses.
 
-The FaithLock vs AppBlock comparison is especially relevant because both target iOS users specifically and charge similar premium prices ($4.99/month or $29.99/year for AppBlock vs. $4.99/week or $24.99/year for FaithLock). This makes FaithLock vs AppBlock a genuine competitive matchup rather than a David-vs-Goliath scenario. Both apps recognize that iOS users deserve specialized, native solutions rather than diluted cross-platform experiences.
+The FaithLock vs AppBlock comparison is especially relevant because both target iOS users specifically and charge similar premium prices ($4.99/month or $29.99/year for AppBlock vs. pricing not stated in the verified sources or pricing not stated in the verified sources for FaithLock). This makes FaithLock vs AppBlock a genuine competitive matchup rather than a David-vs-Goliath scenario. Both apps recognize that iOS users deserve specialized, native solutions rather than diluted cross-platform experiences.
 
 Understanding FaithLock vs AppBlock requires examining what "app blocking" actually means to each developer. AppBlock prioritizes technical control: lock apps, block websites at the phrase level, use GPS location to enable/disable rules automatically. FaithLock prioritizes accountability: make blocking psychologically difficult through spiritual intervention, transform addiction recovery into faith practice.
 
@@ -15,7 +15,7 @@ This FaithLock vs AppBlock guide examines every dimension of these two iOS-nativ
 | Feature | FaithLock | AppBlock |
 |---------|-----------|---------|
 | **Platform** | iOS only | iOS only |
-| **Pricing** | Freemium/$4.99/week/$24.99/year | Freemium/$4.99/month/$29.99/year |
+| **Pricing** | Freemium/pricing not stated in the verified sources/pricing not stated in the verified sources | Freemium/$4.99/month/$29.99/year |
 | **Rating** | Growing community | 4.5 stars (established) |
 | **Quick Block** | Basic | Advanced (one-tap blocking) |
 | **Scheduled Blocking** | Limited | Advanced time-based rules |
@@ -49,9 +49,9 @@ However, AppBlock offers zero faith integration. For Christian users viewing dig
 
 FaithLock enters the market with radical simplicity: app blocking through spiritual accountability. Every blocked app unlock requires reading a Bible verse (approximately 30 seconds), creating a moment of spiritual reflection rather than purely technical friction. This isn't merely a user experience difference—it's a fundamentally different approach to motivation.
 
-FaithLock's pricing is more aggressive than AppBlock: $24.99 annually for premium vs. AppBlock's $29.99. On monthly pricing, FaithLock is more expensive ($4.99/week = $259.48/year), but annual pricing is cheaper. For users committing to annual billing, FaithLock costs $5 less per year—modest but meaningful given both apps' affordability.
+FaithLock's pricing is more aggressive than AppBlock: pricing not stated in the verified sources for premium vs. AppBlock's $29.99. On monthly pricing, FaithLock is more expensive (pricing not stated in the verified sources = $259.48/year), but annual pricing is cheaper. For users committing to annual billing, FaithLock costs $5 less per year—modest but meaningful given both apps' affordability.
 
-The 30-day covenant system is FaithLock's defining feature. Rather than endless streak chasing, you commit to 30-day cycles aligned with Scripture's language of covenant. Completing a covenant is psychologically satisfying in ways that arbitrary streaks aren't. You're not just building a number; you're completing a spiritual commitment and then immediately starting fresh with renewed intention.
+The faith-based commitment system is FaithLock's defining feature. Rather than endless streak chasing, you commit to 30-day cycles aligned with Scripture's language of covenant. Completing a covenant is psychologically satisfying in ways that arbitrary streaks aren't. You're not just building a number; you're completing a spiritual commitment and then immediately starting fresh with renewed intention.
 
 Prayer reminders throughout the day integrate faith into your entire digital wellness journey. These aren't generic motivation notifications—they're specific prayers connecting your phone addiction battle to your spiritual foundation. For Christians, this transforms app blocking from a health behavior into a faith practice.
 
@@ -75,7 +75,7 @@ The limitation is technical sophistication. FaithLock doesn't offer geofencing, 
 
 **Screen Time Analytics:** Both provide insights into app usage patterns. AppBlock's weekly insights are straightforward; FaithLock's tracking is comprehensive. Both are solid. Winner: Tie.
 
-**Streak Tracking:** Both include streak systems. FaithLock's 30-day covenant cycles are psychologically more sophisticated than AppBlock's simple counter. FaithLock's covenant language creates more meaningful commitment. Winner: FaithLock (psychologically).
+**Streak Tracking:** Both include streak systems. FaithLock's faith-based commitment cycles are psychologically more sophisticated than AppBlock's simple counter. FaithLock's covenant language creates more meaningful commitment. Winner: FaithLock (psychologically).
 
 **Faith Integration:** FaithLock includes Scripture, prayer reminders, and covenant language. AppBlock includes none. For Christian users, FaithLock's approach is profoundly more meaningful. Winner: FaithLock (for Christians), AppBlock (for secular users).
 
@@ -86,11 +86,11 @@ The limitation is technical sophistication. FaithLock doesn't offer geofencing, 
 ## 6. Pricing Comparison
 
 AppBlock annual pricing: $29.99/year. AppBlock monthly pricing: $4.99/month ($59.88/year).
-FaithLock annual pricing: $24.99/year. FaithLock weekly pricing: $4.99/week ($259.48/year).
+FaithLock annual pricing: pricing not stated in the verified sources. FaithLock weekly pricing: pricing not stated in the verified sources ($259.48/year).
 
 **For annual billing:** FaithLock is $5 cheaper ($24.99 vs. $29.99). This is a modest advantage but meaningful for budget users.
 
-**For monthly/subscription billing:** AppBlock is slightly cheaper ($4.99/month = $59.88/year vs. FaithLock's $4.99/week = $259.48/year). However, few users opt for weekly subscriptions; most commit to annual billing where FaithLock wins.
+**For monthly/subscription billing:** AppBlock is slightly cheaper ($4.99/month = $59.88/year vs. FaithLock's pricing not stated in the verified sources = $259.48/year). However, few users opt for weekly subscriptions; most commit to annual billing where FaithLock wins.
 
 Both are remarkably affordable in absolute terms—under $30 annually for premium iOS app blocking is excellent pricing. The difference of $5 is negligible compared to alternatives like Freedom ($39.99/year) or Opal ($100/year).
 
@@ -142,7 +142,7 @@ If pricing is the deciding factor, FaithLock wins slightly for annual billing. B
 - Are Christian and view digital wellness as spiritual discipline
 - Prefer simplicity and straightforward app blocking
 - Respond to spiritual motivation (Bible verses, prayer, covenant)
-- Want affordability ($24.99/year premium)
+- Want affordability (pricing not stated in the verified sources premium)
 - Don't need advanced features like geofencing or scheduling
 - Use primarily iPhone without complex location-based needs
 - Value covenant commitment over streak chasing

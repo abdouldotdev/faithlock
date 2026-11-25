@@ -82,7 +82,7 @@ Pay attention to how you feel during and after Among Us. If you're yelling, gett
 
 Tell your group you're taking two weeks off from Among Us. Use the time to notice what fills the space — more prayer? Better sleep? Deeper conversations? The break provides clarity about how much of your social and emotional energy the game was consuming. If you can stay connected to your friends without Among Us for two weeks, you don't need it. If you can't, the game was serving as the relationship's crutch, and that needs addressing.
 
-Use a [Christian app blocker](/learn/best-christian-app-blocker) to block Among Us during your fast if you need external accountability.
+Use a [Christian app blocker](/resources/best-christian-app-blocker) to block Among Us during your fast if you need external accountability.
 
 ---
 

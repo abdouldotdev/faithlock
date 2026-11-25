@@ -1,5 +1,5 @@
 import { GlossaryTerm } from '@/lib/types'
-import { APP_STORE_URL } from '@/lib/constants'
+import { OFFICIAL_APP_STORE_URL } from '@/lib/constants'
 import BibleVerse from '@/components/ui/BibleVerse'
 import CTAButton from '@/components/ui/CTAButton'
 import RichText, { stripMarkdown } from '@/components/ui/RichText'
@@ -204,7 +204,7 @@ export default function GlossaryTemplate({ term, updatedAt }: GlossaryTemplatePr
           </p>
           <CTAButton
             text="Try FaithLock Free"
-            href={APP_STORE_URL}
+            href={OFFICIAL_APP_STORE_URL}
             variant="white"
             size="large"
             showAppleIcon

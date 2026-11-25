@@ -81,10 +81,10 @@ Deep Focus is already extremely hard to bypass. Some users report it's virtually
 Opal's scheduled sessions are great for creating work/non-work boundaries. Clearspace's challenge system works well for quick checks — you can still access work tools but face friction on distractions. Choose based on whether you need total restriction during work hours (Opal) or just extra friction (Clearspace).
 
 **Are there cheaper alternatives that work nearly as well?**
-ScreenZen offers waiting periods and analytics at a lower price point. One Sec provides breathing pauses for less than either Opal or Clearspace. For users wanting a faith-based approach, FaithLock uses Bible verse quizzes at $24.99/year.
+ScreenZen offers waiting periods and analytics at a lower price point. One Sec provides breathing pauses for less than either Opal or Clearspace. For users wanting a faith-based approach, FaithLock uses Bible verse quizzes at pricing not stated in the verified sources.
 
 **Can I use Opal and Clearspace together?**
 Not reliably on iOS. Both use the Screen Time API, and running two blockers creates conflicts.
 
 ---
-*Sources: [Opal on App Store](https://apps.apple.com/app/opal-screen-time-for-focus), [Clearspace on App Store](https://apps.apple.com/app/clearspace-reduce-screen-time)*
+*Sources: Opal on App Store, Clearspace on App Store*

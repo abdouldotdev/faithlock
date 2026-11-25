@@ -78,7 +78,7 @@ Open Snapchat, go to the Map, tap the settings gear, and enable Ghost Mode. Stop
 
 ### Step 4: Set a Time Window for Snapchat
 
-Instead of checking Snapchat throughout the day, choose two windows — maybe noon and 6pm, 15 minutes each. Outside those windows, use a [Christian app blocker](/learn/best-christian-app-blocker) to lock the app. FaithLock can schedule access so you don't have to rely on willpower every time your phone buzzes.
+Instead of checking Snapchat throughout the day, choose two windows — maybe noon and 6pm, 15 minutes each. Outside those windows, use a [Christian app blocker](/resources/best-christian-app-blocker) to lock the app. FaithLock can schedule access so you don't have to rely on willpower every time your phone buzzes.
 
 ### Step 5: Invest in One Real Conversation Per Day
 

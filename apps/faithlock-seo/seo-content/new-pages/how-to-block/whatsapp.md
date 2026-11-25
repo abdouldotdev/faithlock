@@ -74,4 +74,4 @@ Yes. Open any chat → tap the contact name → Export Chat. You can include or 
 
 ---
 
-*Sources: [WhatsApp Help Center](https://faq.whatsapp.com/), [WhatsApp on the App Store](https://apps.apple.com/app/whatsapp-messenger/id310633997)*
+*Sources: [WhatsApp Help Center](https://faq.whatsapp.com/), WhatsApp on the App Store*

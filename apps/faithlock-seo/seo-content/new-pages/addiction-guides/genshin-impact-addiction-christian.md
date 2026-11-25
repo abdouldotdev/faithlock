@@ -80,7 +80,7 @@ This is the chain that binds daily players. Give yourself permission to waste Re
 
 ### Step 5: Use a Blocker to Limit Play Time
 
-A [Christian app blocker](/learn/best-christian-app-blocker) can cap your daily Genshin time. FaithLock locks the app after your allotted time and shows a Bible verse about contentment or stewardship. The verse reframes your "I need to play more" impulse into a moment of spiritual clarity.
+A [Christian app blocker](/resources/best-christian-app-blocker) can cap your daily Genshin time. FaithLock locks the app after your allotted time and shows a Bible verse about contentment or stewardship. The verse reframes your "I need to play more" impulse into a moment of spiritual clarity.
 
 ---
 

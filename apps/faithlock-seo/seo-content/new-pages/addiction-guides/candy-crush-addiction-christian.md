@@ -81,7 +81,7 @@ Candy Crush filled micro-moments: waiting rooms, commercial breaks, lying in bed
 - **Idle time:** Pray. Even 30 seconds of prayer is more nourishing than matching candies.
 - **Before sleep:** Put your phone in another room and read a physical book.
 
-Use a [Christian app blocker](/learn/best-christian-app-blocker) to ensure you can't reinstall Candy Crush impulsively. FaithLock can block game installations and redirect you to Scripture.
+Use a [Christian app blocker](/resources/best-christian-app-blocker) to ensure you can't reinstall Candy Crush impulsively. FaithLock can block game installations and redirect you to Scripture.
 
 ### Step 5: Tell Someone
 

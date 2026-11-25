@@ -72,7 +72,7 @@ Open each group, tap the name, and mute notifications for 1 year (the maximum). 
 
 ### Step 3: Set Communication Windows
 
-Decide on two or three times per day when you'll check and respond to WhatsApp messages. Morning, lunchtime, and evening. Outside those windows, the app stays closed. Use a [Christian app blocker](/learn/best-christian-app-blocker) to enforce these windows. FaithLock can lock WhatsApp during your prayer time, family dinner, or bedtime hours, replacing the notification reflex with a moment of Scripture.
+Decide on two or three times per day when you'll check and respond to WhatsApp messages. Morning, lunchtime, and evening. Outside those windows, the app stays closed. Use a [Christian app blocker](/resources/best-christian-app-blocker) to enforce these windows. FaithLock can lock WhatsApp during your prayer time, family dinner, or bedtime hours, replacing the notification reflex with a moment of Scripture.
 
 ### Step 4: Leave Groups That Don't Serve You
 

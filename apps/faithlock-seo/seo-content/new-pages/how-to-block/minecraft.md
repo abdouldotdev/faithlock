@@ -76,4 +76,4 @@ That's up to your family, but it's worth noting that survival mode has more natu
 
 ---
 
-*Sources: [Minecraft Official Site](https://www.minecraft.net/), [Minecraft on the App Store](https://apps.apple.com/app/minecraft/id479516143)*
+*Sources: [Minecraft Official Site](https://www.minecraft.net/), Minecraft on the App Store*

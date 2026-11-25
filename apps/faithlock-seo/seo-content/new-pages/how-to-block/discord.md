@@ -75,4 +75,4 @@ Technically yes, but this requires discipline. Join only the servers you need, m
 
 ---
 
-*Sources: [Discord Support](https://support.discord.com/), [Discord on the App Store](https://apps.apple.com/app/discord-talk-chat-hang-out/id985746746), [Discord Safety Center](https://discord.com/safety)*
+*Sources: [Discord Support](https://support.discord.com/), Discord on the App Store, [Discord Safety Center](https://discord.com/safety)*

@@ -21,8 +21,13 @@ export async function generateMetadata({
 }: {
   params: { slug: string }
 }): Promise<Metadata> {
+  // Certaines entrées Contentful portent déjà le préfixe dans leur slug, d'autres non.
+  // Retirer le préfixe systématiquement faisait 404 les premières (opal, freedom,
+  // cold-turkey, appblock), pourtant listées au sitemap. On essaie les deux formes.
   const competitorSlug = params.slug.replace('faithlock-vs-', '')
-  const entry = await getCompetitorBySlug(competitorSlug)
+  const entry =
+    (await getCompetitorBySlug(competitorSlug)) ??
+    (await getCompetitorBySlug(params.slug))
 
   if (!entry) {
     return { title: 'Comparison Not Found' }
@@ -57,8 +62,13 @@ export default async function ComparisonPage({
 }: {
   params: { slug: string }
 }) {
+  // Certaines entrées Contentful portent déjà le préfixe dans leur slug, d'autres non.
+  // Retirer le préfixe systématiquement faisait 404 les premières (opal, freedom,
+  // cold-turkey, appblock), pourtant listées au sitemap. On essaie les deux formes.
   const competitorSlug = params.slug.replace('faithlock-vs-', '')
-  const entry = await getCompetitorBySlug(competitorSlug)
+  const entry =
+    (await getCompetitorBySlug(competitorSlug)) ??
+    (await getCompetitorBySlug(params.slug))
 
   if (!entry) {
     notFound()

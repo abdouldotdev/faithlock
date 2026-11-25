@@ -87,6 +87,10 @@ fastlane/test_output
 # Bible prompt eval — generated outputs (key is in .env.local, already ignored)
 tooling/bible-prompt-eval/results.json
 
+# logs et lots générés par la tâche d indexation quotidienne
+apps/faithlock-seo/seo-content/index-logs/
+apps/faithlock-seo/seo-content/index-tracker-batch-*.txt
+
 # Native build artifacts — any depth (root-only /build/ above missed ios/build/)
 build/
 ios/Pods/

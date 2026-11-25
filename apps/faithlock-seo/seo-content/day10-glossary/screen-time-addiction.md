@@ -97,9 +97,9 @@ FaithLock isn't just another parental control app; it's a faith-based tool desig
 
 **Streak Tracking & Accountability**: Build momentum with visual progress tracking. Watching your "screen-time free" streak grow provides dopamine in a healthy, productive way.
 
-**Spiritual Integration**: With prayer reminders and a 30-day covenant, FaithLock helps you see this journey not as deprivation but as spiritual discipline—a modern-day practice of self-control that Paul discusses in **1 Corinthians 9:25** (NIV): "Everyone who competes in the games goes into strict training."
+**Spiritual Integration**: With prayer reminders and a faith-based commitment, FaithLock helps you see this journey not as deprivation but as spiritual discipline—a modern-day practice of self-control that Paul discusses in **1 Corinthians 9:25** (NIV): "Everyone who competes in the games goes into strict training."
 
-Available on iOS for just $4.99/week or $24.99/year, FaithLock puts the power of intentional tech use in your hands.
+Available on iOS for just pricing not stated in the verified sources or pricing not stated in the verified sources, FaithLock puts the power of intentional tech use in your hands.
 
 ## Frequently Asked Questions About Screen Time Addiction
 

@@ -46,7 +46,7 @@ Most healthy small groups have a group covenant or agreement covering confidenti
 
 ### 5. Model Healthy Digital Boundaries as the Leader
 
-Share your own screen time challenges openly. Talk about what you're doing to manage your phone use. Recommend resources like [FaithLock](/) to group members who express interest in faith-based app management. When the leader is vulnerable about digital struggles, it opens the door for others to be honest too. Point members to the [best Christian app blocker](/learn/best-christian-app-blocker) guide for practical tools.
+Share your own screen time challenges openly. Talk about what you're doing to manage your phone use. Recommend resources like [FaithLock](/) to group members who express interest in faith-based app management. When the leader is vulnerable about digital struggles, it opens the door for others to be honest too. Point members to the [best Christian app blocker](/resources/best-christian-app-blocker) guide for practical tools.
 
 ### 6. Create One Phone-Free Group Experience Per Quarter
 

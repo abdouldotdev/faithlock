@@ -68,7 +68,7 @@ Go through your server list. For each one, ask: "Does this server make me a bett
 
 ### Step 2: Set Hard Offline Hours
 
-Decide when you go offline, and stick to it. 9pm to 8am is a reasonable window. During those hours, Discord is closed. Not muted — closed. Use a [Christian app blocker](/learn/best-christian-app-blocker) like FaithLock to enforce this window. When you try to open Discord during offline hours, a Bible verse appears instead, reminding you that rest and presence with God matter more than server activity.
+Decide when you go offline, and stick to it. 9pm to 8am is a reasonable window. During those hours, Discord is closed. Not muted — closed. Use a [Christian app blocker](/resources/best-christian-app-blocker) like FaithLock to enforce this window. When you try to open Discord during offline hours, a Bible verse appears instead, reminding you that rest and presence with God matter more than server activity.
 
 ### Step 3: Step Down from Moderator Roles
 

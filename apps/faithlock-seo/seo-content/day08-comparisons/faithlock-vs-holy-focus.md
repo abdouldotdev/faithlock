@@ -19,8 +19,8 @@ In an age where social media feeds consume our attention and steal our time with
 
 | Feature | FaithLock | Holy Focus |
 |---------|-----------|-----------|
-| **Price** | Freemium; $4.99/week or $24.99/year | Freemium with premium tier |
-| **Platform** | iOS only (Android coming) | Likely cross-platform capable |
+| **Price** | Freemium; pricing not stated in the verified sources or pricing not stated in the verified sources | Freemium with premium tier |
+| **Platform** | iOS only; Android availability is not stated in the verified sources | Likely cross-platform capable |
 | **Unlock Method** | Read Bible verse (~30 sec) | View handcrafted image + Bible verse |
 | **Website Blocking** | App-focused | Yes, includes websites |
 | **Prayer Features** | Prayer reminders, customizable | Daily Christ-centered prayers, scheduled |
@@ -46,7 +46,7 @@ For users seeking a prayer-first approach and willing to engage with a smaller d
 
 **FaithLock** positions itself as the mainstream alternative for faith-based screen time management, built natively for iOS with a sleek, modern interface that appeals to younger believers. The app's core mechanic is straightforward: block Instagram, TikTok, and other social platforms; to unlock, read a Bible verse carefully for approximately 30 seconds. This creates intentional friction that transforms impulsive scrolling into a moment of Scripture engagement.
 
-FaithLock's freemium pricing ($4.99/week or $24.99/year) positions it as an affordable daily practice. The app includes streak tracking tied to a "30-day covenant" concept—framing digital discipline as spiritual commitment. Beyond blocking, FaithLock offers screen time insights, prayer reminders, and basic scheduling features, making it a comprehensive screen wellness platform.
+FaithLock's free download with in-app purchases pricing (pricing not stated in the verified sources or pricing not stated in the verified sources) positions it as an affordable daily practice. The app includes streak tracking tied to a "faith-based commitment" concept—framing digital discipline as spiritual commitment. Beyond blocking, FaithLock offers screen time insights, prayer reminders, and basic scheduling features, making it a comprehensive screen wellness platform.
 
 The brand benefits from modern app store optimization and a growing user community. With iOS exclusivity for now (Android announced), FaithLock targets iPhone and iPad users first—a strategic choice given iOS's premium demographics and developer ecosystem. The app's user interface emphasizes simplicity: open the app, set blocked apps, encounter Scripture instead of feeds.
 
@@ -78,7 +78,7 @@ Holy Focus integrates daily structured prayers into the app's core experience. E
 
 ### Streak Tracking & Gamification
 
-FaithLock's 30-day covenant ties streaks to a theological concept (covenants with God), elevating what might otherwise be mere gamification into spiritual language. Streak tracking is present and functional.
+FaithLock's faith-based commitment ties streaks to a theological concept (covenants with God), elevating what might otherwise be mere gamification into spiritual language. Streak tracking is present and functional.
 
 Holy Focus offers prayer streaks—tracking consistent prayer practice rather than just "days without social media." This distinction matters: you're building a prayer habit, not just avoiding sin. The streak measures what you're moving *toward*, not away from.
 
@@ -92,12 +92,12 @@ FaithLock offers basic scheduling. Holy Focus provides minute-level customizatio
 
 | App | Free Tier | Premium | Annual | Best For |
 |-----|-----------|---------|--------|----------|
-| **FaithLock** | Limited (basic blocking) | $4.99/week | $24.99/year (best value) | Budget-conscious iPhone users |
+| **FaithLock** | Limited (basic blocking) | pricing not stated in the verified sources | pricing not stated in the verified sources (best value) | Budget-conscious iPhone users |
 | **Holy Focus** | Core features free | Variable premium | Custom pricing | Users wanting free-first approach |
 
-FaithLock's annual pricing ($24.99/year ≈ $2.08/month) beats Holy Focus's weekly rate if you're comparing premium tiers. The freemium structure differs: FaithLock limits free features; Holy Focus offers more free functionality.
+FaithLock's annual pricing (pricing not stated in the verified sources ≈ $2.08/month) beats Holy Focus's weekly rate if you're comparing premium tiers. The free download with in-app purchases structure differs: FaithLock limits free features; Holy Focus offers more free functionality.
 
-For cost-conscious believers, Holy Focus's generous free tier may suffice. For those wanting premium features at lowest lifetime cost, FaithLock's $24.99 annual plan is unbeatable.
+For cost-conscious believers, Holy Focus's generous free download may suffice. For those wanting premium features at lowest lifetime cost, FaithLock's $24.99 annual plan is unbeatable.
 
 ---
 
@@ -105,7 +105,7 @@ For cost-conscious believers, Holy Focus's generous free tier may suffice. For t
 
 ### FaithLock Pros
 - ✅ Modern, polished iOS interface
-- ✅ Affordable annual pricing ($24.99/year)
+- ✅ Affordable annual pricing (pricing not stated in the verified sources)
 - ✅ Simple, distraction-free setup
 - ✅ Clear 30-day covenant branding aligns with faith language
 - ✅ Regular updates and growing community
@@ -113,7 +113,7 @@ For cost-conscious believers, Holy Focus's generous free tier may suffice. For t
 - ✅ Screen time insights beyond basic blocking
 
 ### FaithLock Cons
-- ❌ iOS only (Android coming, but not yet available)
+- ❌ iOS only; Android availability is not stated in the verified sources
 - ❌ Limited website blocking
 - ❌ Prayer reminders less integrated than competitor
 - ❌ Smaller faith community compared to Holy Focus's church partnerships
@@ -158,7 +158,7 @@ For cost-conscious believers, Holy Focus's generous free tier may suffice. For t
 
 Both **FaithLock vs Holy Focus** represent legitimate spiritual tools for digital discipline. Neither is a "wrong" choice; they reflect different philosophies.
 
-FaithLock wins on accessibility, design, and pricing. Its iOS-native experience feels premium, the annual cost is unbeatable, and the 30-day covenant framework resonates with modern faith language. For iPhone users fighting Instagram addiction, FaithLock is the fastest path to digital peace.
+FaithLock wins on accessibility, design, and pricing. Its iOS-native experience feels premium, the annual cost is unbeatable, and the faith-based commitment framework resonates with modern faith language. For iPhone users fighting Instagram addiction, FaithLock is the fastest path to digital peace.
 
 Holy Focus wins on depth, customization, and community. Its prayer-first approach transcends app blocking to become spiritual practice. The endorsement from pastors and church networks signals theological credibility. For users seeking comprehensive blocking plus genuine prayer integration, Holy Focus justifies the learning curve.
 
@@ -172,13 +172,13 @@ Holy Focus wins on depth, customization, and community. Its prayer-first approac
 A: FaithLock currently focuses on app blocking (Instagram, TikTok, etc.). Website blocking is not its primary feature. Holy Focus offers more comprehensive web filtering.
 
 **Q: Is Holy Focus available on Android?**
-A: The information provided doesn't explicitly confirm Android availability for Holy Focus. FaithLock is iOS-only currently, with Android announced for future release.
+A: The information provided doesn't explicitly confirm Android availability for Holy Focus. FaithLock is available on iPhone and iPad currently, with Android announced for future release.
 
 **Q: Which app has a stronger faith community?**
 A: Holy Focus has documented adoption by hundreds of pastors and churches across multiple countries, indicating stronger institutional faith community endorsement. FaithLock's community is growing but smaller.
 
 **Q: Can I try both apps for free?**
-A: Yes. Both offer freemium models. FaithLock's free tier includes basic blocking; Holy Focus's free tier is generous with core features unlocked. Test both to see which unlock experience (Bible verse reading vs. prayer + imagery) resonates with your spiritual practice.
+A: Yes. Both offer free download with in-app purchases models. FaithLock's free download includes basic blocking; Holy Focus's free download is generous with core features unlocked. Test both to see which unlock experience (Bible verse reading vs. prayer + imagery) resonates with your spiritual practice.
 
 ---
 
@@ -198,4 +198,4 @@ A: Yes. Both offer freemium models. FaithLock's free tier includes basic blockin
 
 ---
 
-**Ready to reclaim your focus? Download FaithLock today on the App Store and start your 30-day covenant. Sometimes the best spiritual growth happens when we simply stop scrolling and start reading Scripture.**
+**Ready to reclaim your focus? Download FaithLock today on the App Store and start your faith-based commitment. Sometimes the best spiritual growth happens when we simply stop scrolling and start reading Scripture.**

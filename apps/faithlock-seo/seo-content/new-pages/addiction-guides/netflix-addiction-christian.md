@@ -76,7 +76,7 @@ Before opening Netflix, decide what you're going to watch and how much. Treat it
 
 ### Step 4: Replace One Netflix Evening Per Week
 
-Pick one evening a week where Netflix is off-limits. Use that evening for something else: a date with your spouse, game night with your kids, a prayer walk, reading a book. Use a [Christian app blocker](/learn/best-christian-app-blocker) to enforce it. FaithLock can block streaming apps during designated times and remind you with Scripture that your evening belongs to God, not an algorithm.
+Pick one evening a week where Netflix is off-limits. Use that evening for something else: a date with your spouse, game night with your kids, a prayer walk, reading a book. Use a [Christian app blocker](/resources/best-christian-app-blocker) to enforce it. FaithLock can block streaming apps during designated times and remind you with Scripture that your evening belongs to God, not an algorithm.
 
 ### Step 5: Process Your Stress Without a Screen
 

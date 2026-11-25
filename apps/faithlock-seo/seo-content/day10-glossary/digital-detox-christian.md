@@ -98,11 +98,11 @@ The Bible offers profound wisdom about where we place our focus and trust. While
 
 FaithLock transforms your **Christian digital detox** from an abstract goal into a daily spiritual practice. When you want to access Instagram, TikTok, or other distracting apps, you're asked to read a Bible verse first. This simple friction creates a powerful pause—forcing you to choose: Do I really need this app, or am I seeking distraction?
 
-The **30-day covenant feature** is particularly powerful for a **Christian digital detox**. A covenant is a sacred agreement—something Christians take seriously. By entering into a 30-day covenant with God through FaithLock, you're making a spiritual commitment to reclaim your attention and protect your prayer life.
+The **faith-based commitment feature** is particularly powerful for a **Christian digital detox**. A covenant is a sacred agreement—something Christians take seriously. By entering into a faith-based commitment with God through FaithLock, you're making a spiritual commitment to reclaim your attention and protect your prayer life.
 
 Beyond blocking apps, FaithLock provides **streak tracking** (celebrating your spiritual consistency), **screen time insights** (helping you understand your actual digital habits), and **prayer reminders** (keeping your focus on what matters). It's not about punishment—it's about partnership with God in reclaiming your life from digital noise.
 
-Available on iOS with both free and premium options ($4.99/week or $24.99/year), FaithLock is designed specifically for Christians who want their digital detox to be spiritually rooted, not just willpower-dependent.
+Available on iOS with both free and premium options (pricing not stated in the verified sources or pricing not stated in the verified sources), FaithLock is designed specifically for Christians who want their digital detox to be spiritually rooted, not just willpower-dependent.
 
 ---
 
