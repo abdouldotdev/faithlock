@@ -242,7 +242,10 @@
 
   // ─── Where the page is shown ─────────────────────────────────
   var ua = navigator.userAgent || '';
-  var inApp = /musical_ly|BytedanceWebview|TikTok|trill_/i.test(ua) ? 'tiktok'
+  // ?as=tiktok shows the page as TikTok's browser would (to preview it from a computer).
+  var forced = new URLSearchParams(location.search).get('as');
+  var inApp = ['tiktok', 'instagram', 'facebook'].indexOf(forced) >= 0 ? forced
+    : /musical_ly|BytedanceWebview|TikTok|trill_|ByteLocale|aweme/i.test(ua) ? 'tiktok'
     : /Instagram/i.test(ua) ? 'instagram'
     : /\bFBAN\b|\bFBAV\b|FB_IAB/i.test(ua) ? 'facebook' : null;
   var android = /Android/i.test(ua);
