@@ -118,13 +118,18 @@ export async function GET(req: Request) {
   const days = Math.min(365, Math.max(1, Math.round(Number(new URL(req.url).searchParams.get('days')) || 7)))
   const where = `timestamp >= now() - INTERVAL ${days} DAY AND event IN (${EVENTS.map((e) => `'${e}'`).join(', ')}) AND ${QUIZ_PAGES}`
 
-  let total: Row, byVariant: Row[], byPage: Row[], byDay: Row[]
+  let total: Row, byVariant: Row[], byPage: Row[], byDay: Row[], clicksByDayPage: Row[]
   try {
-    ;[[total], byVariant, byPage, byDay] = await Promise.all([
+    ;[[total], byVariant, byPage, byDay, clicksByDayPage] = await Promise.all([
       hogql(`SELECT ${METRICS} FROM events WHERE ${where}`),
       hogql(`SELECT coalesce(nullIf(toString(properties.variant), ''), 'quiz') AS variant, ${METRICS} FROM events WHERE ${where} GROUP BY variant ORDER BY variant DESC`),
       hogql(`SELECT replaceRegexpOne(toString(properties.url), '\\\\.html$', '') AS page, ${METRICS} FROM events WHERE ${where} GROUP BY page ORDER BY visitors DESC`),
       hogql(`SELECT toDate(timestamp) AS day, ${METRICS} FROM events WHERE ${where} GROUP BY day ORDER BY day DESC`),
+      // The OneLink clicks per day and per link: the links section adds these up, so its total, its
+      // rows per link and its rows per day always agree.
+      hogql(
+        `SELECT toDate(timestamp) AS day, replaceRegexpOne(toString(properties.url), '\\\\.html$', '') AS page, uniqIf(distinct_id, event = 'faithlock_store_click' AND properties.location = 'quiz_result' AND properties.destination_type = 'onelink') AS onelink_clicks FROM events WHERE ${where} GROUP BY day, page`,
+      ),
     ])
   } catch (e) {
     return page(`<h1>Stats</h1><p>Lecture PostHog impossible : ${esc((e as Error).message)}</p>`, 502)
@@ -168,7 +173,14 @@ export async function GET(req: Request) {
   const installsOf = new Map(installsByDay.map((r) => [String(r.day), r]))
   // Only a click that went through the OneLink can be matched to an install: inside a social app the
   // button went straight to the App Store, with no link AppsFlyer could see.
-  const clicksOf = new Map(byDay.map((r) => [String(r.day), num(r.onelink_clicks)]))
+  // A day with quiz visits starts at 0; a day without any stays absent (shown as a dash).
+  const clicksOf = new Map<string, number>(byDay.map((r) => [String(r.day), 0]))
+  let clicksTotal = 0
+  clicksByDayPage.forEach((r) => {
+    const n = num(r.onelink_clicks)
+    clicksOf.set(String(r.day), (clicksOf.get(String(r.day)) ?? 0) + n)
+    clicksTotal += n
+  })
   const allDays = Array.from(new Set(installsByDay.map((r) => String(r.day)).concat(byDay.map((r) => String(r.day)))))
     .sort()
     .reverse()
@@ -181,7 +193,7 @@ export async function GET(req: Request) {
   const link = (k: string) => links.get(k) ?? links.set(k, { clicks: 0, installs: 0, campaigns: [] }).get(k)!
   link('emma')
   link('emft')
-  byPage.forEach((r) => (link(linkOfPage(String(r.page))).clicks += num(r.onelink_clicks)))
+  clicksByDayPage.forEach((r) => (link(linkOfPage(String(r.page))).clicks += num(r.onelink_clicks)))
   campaigns.forEach((r) => {
     const l = link(linkOfCampaign(String(r.campaign)))
     l.installs += num(r.installs)
@@ -196,7 +208,7 @@ export async function GET(req: Request) {
   const installs = installsError
     ? `<p class="n">Lecture des installations impossible : ${esc(installsError)}</p>`
     : `<div class="k">
-${card('Clics via OneLink', total.onelink_clicks, 'les seuls qu’AppsFlyer peut rapprocher')}
+${card('Clics via OneLink', clicksTotal, 'les seuls qu’AppsFlyer peut rapprocher')}
 ${card('Installations venues des liens', attributedTotal, 'attribuées par AppsFlyer')}
 </div>
 <h2>Par lien</h2>
