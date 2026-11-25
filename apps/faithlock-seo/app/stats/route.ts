@@ -1,0 +1,123 @@
+// /stats: the TikTok bio quiz funnel (public/quiz.html), read from PostHog on each request.
+// Private: HTTP basic auth with STATS_PASSWORD (any user name). Server-side only settings:
+//   POSTHOG_PERSONAL_API_KEY  a PostHog personal API key with « query:read »
+//   POSTHOG_PROJECT_ID        the FaithLock PostHog project id
+//   POSTHOG_API_HOST          optional, default https://us.posthog.com
+// ?days=7 sets the window (1 to 365, default 7).
+
+export const dynamic = 'force-dynamic'
+
+const EVENTS = [
+  'diagnostic_view',
+  'diagnostic_answer',
+  'diagnostic_result',
+  'diagnostic_slide',
+  'faithlock_store_click',
+  'diagnostic_escape_shown',
+  'diagnostic_link_copied',
+  'diagnostic_browser_open',
+]
+const QUIZ_PAGES = `(properties.url LIKE '/quiz%' OR properties.url IN ('/emma', '/emmas', '/emft'))`
+
+const METRICS = `
+  uniqIf(distinct_id, event = 'diagnostic_view') AS visitors,
+  uniqIf(distinct_id, event = 'diagnostic_view' AND properties.in_app_browser = 'tiktok') AS in_tiktok,
+  uniqIf(distinct_id, event = 'diagnostic_answer' AND toString(properties.step) = '1') AS started,
+  uniqIf(distinct_id, event = 'diagnostic_result') AS completed,
+  uniqIf(distinct_id, event = 'diagnostic_slide' AND toString(properties.index) = '4') AS reached_cta,
+  uniqIf(distinct_id, event = 'faithlock_store_click' AND properties.location = 'quiz_result') AS store_clicks,
+  uniqIf(distinct_id, event = 'diagnostic_escape_shown') AS blocked,
+  uniqIf(distinct_id, event = 'diagnostic_browser_open') AS reopened`
+
+type Row = Record<string, number | string>
+
+async function hogql(query: string): Promise<Row[]> {
+  const host = (process.env.POSTHOG_API_HOST || 'https://us.posthog.com').replace(/\/+$/, '')
+  const res = await fetch(`${host}/api/projects/${process.env.POSTHOG_PROJECT_ID}/query/`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${process.env.POSTHOG_PERSONAL_API_KEY}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ query: { kind: 'HogQLQuery', query } }),
+    cache: 'no-store',
+  })
+  if (!res.ok) throw new Error(`PostHog ${res.status}: ${(await res.text()).slice(0, 300)}`)
+  const data = (await res.json()) as { columns: string[]; results: unknown[][] }
+  return data.results.map((r) => Object.fromEntries(data.columns.map((c, i) => [c, r[i] as number | string])))
+}
+
+const esc = (s: unknown) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!)
+const num = (v: unknown) => Number(v) || 0
+const pct = (a: unknown, b: unknown) => (num(b) ? `${Math.round((num(a) / num(b)) * 100)} %` : '—')
+
+function authorized(req: Request): boolean {
+  const password = process.env.STATS_PASSWORD
+  if (!password) return false
+  const header = req.headers.get('authorization') || ''
+  if (!header.startsWith('Basic ')) return false
+  const decoded = Buffer.from(header.slice(6), 'base64').toString('utf8')
+  return decoded.slice(decoded.indexOf(':') + 1) === password
+}
+
+function page(body: string, status = 200, extra: Record<string, string> = {}) {
+  const html = `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Stats quiz | FaithLock</title>
+<style>
+body{margin:0;background:#FBF3E2;color:#3D2B1F;font:15px/1.5 -apple-system,BlinkMacSystemFont,Inter,sans-serif}
+.w{max-width:980px;margin:0 auto;padding:28px 20px 60px}h1{margin:0;font-size:26px}h2{margin:36px 0 12px;font-size:18px}
+.k{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:20px}
+.c{background:#FFFDF8;border:2.5px solid #3D2B1F;border-radius:18px;padding:14px 16px;box-shadow:2px 3px 0 #3D2B1F}
+.c b{display:block;font-size:28px;line-height:1.1}.c span{font-size:13px;color:#9C8773;font-weight:700}.c i{font-style:normal;font-size:13px;font-weight:700;color:#C0763C}
+table{width:100%;border-collapse:collapse;background:#FFFDF8;border:2.5px solid #3D2B1F;border-radius:14px;overflow:hidden}
+th,td{padding:9px 12px;text-align:right;border-bottom:1px solid #EAD9BC;white-space:nowrap}th:first-child,td:first-child{text-align:left}
+th{font-size:12px;color:#9C8773}.n{color:#9C8773;font-size:13px}nav a{margin-right:12px;color:#C0763C;font-weight:700}
+.t{overflow-x:auto}</style></head><body><div class="w">${body}</div></body></html>`
+  return new Response(html, { status, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex', ...extra } })
+}
+
+export async function GET(req: Request) {
+  if (!authorized(req)) {
+    if (!process.env.STATS_PASSWORD) return page('<h1>Stats</h1><p>STATS_PASSWORD n’est pas configuré.</p>', 503)
+    return new Response('Mot de passe requis', { status: 401, headers: { 'WWW-Authenticate': 'Basic realm="FaithLock stats"' } })
+  }
+  if (!process.env.POSTHOG_PERSONAL_API_KEY || !process.env.POSTHOG_PROJECT_ID) {
+    return page('<h1>Stats</h1><p>Il manque POSTHOG_PERSONAL_API_KEY ou POSTHOG_PROJECT_ID dans les variables Vercel.</p>', 503)
+  }
+
+  const days = Math.min(365, Math.max(1, Math.round(Number(new URL(req.url).searchParams.get('days')) || 7)))
+  const where = `timestamp >= now() - INTERVAL ${days} DAY AND event IN (${EVENTS.map((e) => `'${e}'`).join(', ')}) AND ${QUIZ_PAGES}`
+
+  let total: Row, byPage: Row[], byDay: Row[]
+  try {
+    ;[[total], byPage, byDay] = await Promise.all([
+      hogql(`SELECT ${METRICS} FROM events WHERE ${where}`),
+      hogql(`SELECT replaceRegexpOne(toString(properties.url), '\\\\.html$', '') AS page, ${METRICS} FROM events WHERE ${where} GROUP BY page ORDER BY visitors DESC`),
+      hogql(`SELECT toDate(timestamp) AS day, ${METRICS} FROM events WHERE ${where} GROUP BY day ORDER BY day DESC`),
+    ])
+  } catch (e) {
+    return page(`<h1>Stats</h1><p>Lecture PostHog impossible : ${esc((e as Error).message)}</p>`, 502)
+  }
+
+  const card = (label: string, value: unknown, rate?: string) =>
+    `<div class="c"><span>${label}</span><b>${num(value)}</b>${rate ? `<i>${rate}</i>` : ''}</div>`
+  const table = (rows: Row[], first: string, key: string) =>
+    `<div class="t"><table><tr><th>${first}</th><th>Visiteurs</th><th>Dans TikTok</th><th>Commencé</th><th>Terminé</th><th>Écran final</th><th>Clic App Store</th><th>Conversion</th><th>Bloqués</th><th>Rouverts</th></tr>${rows
+      .map(
+        (r) =>
+          `<tr><td>${esc(r[key])}</td><td>${num(r.visitors)}</td><td>${num(r.in_tiktok)}</td><td>${num(r.started)}</td><td>${num(r.completed)} <span class="n">${pct(r.completed, r.started)}</span></td><td>${num(r.reached_cta)}</td><td>${num(r.store_clicks)}</td><td>${pct(r.store_clicks, r.visitors)}</td><td>${num(r.blocked)}</td><td>${num(r.reopened)}</td></tr>`,
+      )
+      .join('') || '<tr><td colspan="10">Aucune donnée sur la période.</td></tr>'}</table></div>`
+
+  return page(`
+<h1>Quiz TikTok, ${days} derniers jours</h1>
+<nav><a href="?days=1">24 h</a><a href="?days=7">7 jours</a><a href="?days=30">30 jours</a><a href="?days=90">90 jours</a></nav>
+<div class="k">
+${card('Visiteurs', total.visitors)}
+${card('Ont commencé', total.started, pct(total.started, total.visitors) + ' des visiteurs')}
+${card('Ont terminé', total.completed, pct(total.completed, total.started) + ' de ceux qui commencent')}
+${card('Écran final', total.reached_cta, pct(total.reached_cta, total.completed) + ' de ceux qui terminent')}
+${card('Clic App Store', total.store_clicks, pct(total.store_clicks, total.visitors) + ' des visiteurs')}
+${card('Bloqués par TikTok', total.blocked)}
+${card('Rouverts dans Safari', total.reopened)}
+</div>
+<p class="n">Visiteurs uniques par appareil et par navigateur : une personne qui rouvre la page dans Safari compte deux fois. Les installations se lisent dans AppsFlyer et App Store Connect.</p>
+<h2>Par lien</h2>${table(byPage, 'Page', 'page')}
+<h2>Par jour</h2>${table(byDay, 'Jour', 'day')}`)
+}

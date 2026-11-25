@@ -20,6 +20,7 @@ const nextConfig = {
         destination: '/resources/:slug',
         permanent: true,
       },
+      { source: '/stat', destination: '/stats', permanent: false },
     ]
   },
   // The TikTok bio quiz (public/quiz.html), served under clean paths without any redirect: a
