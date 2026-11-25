@@ -28,8 +28,8 @@ const nextConfig = {
   async rewrites() {
     return [
       { source: '/quiz', destination: '/quiz.html' },
-      { source: '/quiz/:campaign(emmas|emft)', destination: '/quiz.html' },
-      { source: '/:campaign(emmas|emft)', destination: '/quiz.html' },
+      { source: '/quiz/:campaign(emma|emmas|emft)', destination: '/quiz.html' },
+      { source: '/:campaign(emma|emmas|emft)', destination: '/quiz.html' },
     ]
   },
   async headers() {
