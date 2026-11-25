@@ -1,7 +1,10 @@
-// /stats: the TikTok bio quiz funnel (public/quiz.html), read from PostHog on each request.
-// Private: opened with the code in STATS_PASSWORD, then kept for 30 days in a cookie. Server-side only settings:
-//   POSTHOG_PERSONAL_API_KEY  a PostHog personal API key with « query:read »
-//   POSTHOG_PROJECT_ID        the FaithLock PostHog project id
+// /stats: the TikTok bio quiz funnel (public/quiz.html) and the app's installs, read from PostHog on
+// each request. Private: opened with the code in STATS_PASSWORD, then kept for 30 days in a cookie.
+// Server-side only settings:
+//   POSTHOG_PERSONAL_API_KEY  a PostHog personal API key with « query:read » on both projects below
+//   POSTHOG_PROJECT_ID        the website's project, « Faithlock - landing page » (324483): the quiz
+//                             events. Not « FaithLock », the app's project, which has none of them.
+//   POSTHOG_APP_PROJECT_ID    optional, the app's project (default 239251): the installs
 //   POSTHOG_API_HOST          optional, default https://us.posthog.com
 // ?days=7 sets the window (1 to 365, default 7).
 
@@ -31,14 +34,21 @@ const METRICS = `
   uniqIf(distinct_id, event = 'diagnostic_escape_shown') AS blocked,
   uniqIf(distinct_id, event = 'diagnostic_browser_open') AS reopened`
 
+// The mobile app's PostHog project. On its first launch the app sends `install_attributed` there, with
+// what the AppsFlyer SDK reports (af_status, af_media_source, af_campaign): installs and their
+// attribution are read from it, with no call to AppsFlyer's own API.
+const APP_PROJECT_ID = process.env.POSTHOG_APP_PROJECT_ID || '239251'
+
 type Row = Record<string, number | string>
 
-async function hogql(query: string): Promise<Row[]> {
+async function hogql(query: string, projectId = process.env.POSTHOG_PROJECT_ID): Promise<Row[]> {
   const host = (process.env.POSTHOG_API_HOST || 'https://us.posthog.com').replace(/\/+$/, '')
-  const res = await fetch(`${host}/api/projects/${process.env.POSTHOG_PROJECT_ID}/query/`, {
+  const res = await fetch(`${host}/api/projects/${projectId}/query/`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${process.env.POSTHOG_PERSONAL_API_KEY}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ query: { kind: 'HogQLQuery', query } }),
+    // PostHog caches API queries by default, and these keep the same text from one load to the next:
+    // without `force_blocking` the page showed figures 40 minutes old. Always recompute.
+    body: JSON.stringify({ query: { kind: 'HogQLQuery', query }, refresh: 'force_blocking' }),
     cache: 'no-store',
   })
   if (!res.ok) throw new Error(`PostHog ${res.status}: ${(await res.text()).slice(0, 300)}`)
@@ -119,6 +129,28 @@ export async function GET(req: Request) {
     return page(`<h1>Stats</h1><p>Lecture PostHog impossible : ${esc((e as Error).message)}</p>`, 502)
   }
 
+  // Installs, from the app's project. A failure here (a key that cannot read that project) must not
+  // hide the quiz figures: the section says what went wrong instead.
+  let installsByDay: Row[] = []
+  let campaigns: Row[] = []
+  let installsError = ''
+  try {
+    const installed = `timestamp >= now() - INTERVAL ${days} DAY AND event = 'install_attributed'`
+    const attributed = `toString(properties.af_status) = 'Non-organic'`
+    ;[installsByDay, campaigns] = await Promise.all([
+      hogql(
+        `SELECT toDate(timestamp) AS day, uniq(distinct_id) AS installs, uniqIf(distinct_id, ${attributed}) AS attributed FROM events WHERE ${installed} GROUP BY day ORDER BY day DESC`,
+        APP_PROJECT_ID,
+      ),
+      hogql(
+        `SELECT coalesce(nullIf(toString(properties.af_media_source), ''), '—') AS source, coalesce(nullIf(toString(properties.af_campaign), ''), '—') AS campaign, uniq(distinct_id) AS installs FROM events WHERE ${installed} AND ${attributed} GROUP BY source, campaign ORDER BY installs DESC LIMIT 20`,
+        APP_PROJECT_ID,
+      ),
+    ])
+  } catch (e) {
+    installsError = (e as Error).message
+  }
+
   const card = (label: string, value: unknown, rate?: string) =>
     `<div class="c"><span>${label}</span><b>${num(value)}</b>${rate ? `<i>${rate}</i>` : ''}</div>`
   const table = (rows: Row[], first: string, key: string) =>
@@ -128,6 +160,36 @@ export async function GET(req: Request) {
           `<tr><td>${esc(r[key])}</td><td>${num(r.visitors)}</td><td>${num(r.in_tiktok)}</td><td>${num(r.started)}</td><td>${num(r.completed)} <span class="n">${pct(r.completed, r.started)}</span></td><td>${num(r.reached_cta)}</td><td>${num(r.store_clicks)}</td><td>${pct(r.store_clicks, r.visitors)}</td><td>${num(r.blocked)}</td><td>${num(r.reopened)}</td></tr>`,
       )
       .join('') || '<tr><td colspan="10">Aucune donnée sur la période.</td></tr>'}</table></div>`
+
+  // Installs beside the quiz's App Store clicks, day by day (UTC on both sides).
+  const installsTotal = installsByDay.reduce((n, r) => n + num(r.installs), 0)
+  const attributedTotal = installsByDay.reduce((n, r) => n + num(r.attributed), 0)
+  const installsOf = new Map(installsByDay.map((r) => [String(r.day), r]))
+  const clicksOf = new Map(byDay.map((r) => [String(r.day), num(r.store_clicks)]))
+  const allDays = Array.from(new Set(installsByDay.map((r) => String(r.day)).concat(byDay.map((r) => String(r.day)))))
+    .sort()
+    .reverse()
+  const installs = installsError
+    ? `<p class="n">Lecture des installations impossible : ${esc(installsError)}</p>`
+    : `<div class="k">
+${card('Installations', installsTotal)}
+${card('Attribuées à un lien', attributedTotal, pct(attributedTotal, installsTotal) + ' des installations')}
+${card('Organiques', installsTotal - attributedTotal)}
+</div>
+<div class="t" style="margin-top:14px"><table><tr><th>Jour</th><th>Clic App Store (quiz)</th><th>Installations</th><th>Attribuées</th><th>Organiques</th></tr>${
+        allDays
+          .map((d) => {
+            const r = installsOf.get(d)
+            return `<tr><td>${esc(d)}</td><td>${clicksOf.get(d) ?? 0}</td><td>${num(r?.installs)}</td><td>${num(r?.attributed)}</td><td>${num(r?.installs) - num(r?.attributed)}</td></tr>`
+          })
+          .join('') || '<tr><td colspan="5">Aucune installation sur la période.</td></tr>'
+      }</table></div>
+<h2>Installations attribuées, par campagne</h2>
+<div class="t"><table><tr><th>Campagne</th><th>Source</th><th>Installations</th></tr>${
+        campaigns.map((r) => `<tr><td>${esc(r.campaign)}</td><td>${esc(r.source)}</td><td>${num(r.installs)}</td></tr>`).join('') ||
+        '<tr><td colspan="3">Aucune installation attribuée sur la période.</td></tr>'
+      }</table></div>
+<p class="n">Installations lues dans le projet PostHog de l'app : l'événement install_attributed, envoyé au premier lancement avec l'attribution AppsFlyer, en jours UTC. Une installation n'est attribuée à un lien que si la personne passe par le OneLink dans un vrai navigateur, puis ouvre l'app. Celle qui quitte TikTok et cherche FaithLock dans l'App Store compte en organique.</p>`
 
   return page(`
 <h1>Quiz TikTok, ${days} derniers jours</h1>
@@ -141,7 +203,8 @@ ${card('Clic App Store', total.store_clicks, pct(total.store_clicks, total.visit
 ${card('Bloqués par TikTok', total.blocked)}
 ${card('Rouverts dans Safari', total.reopened)}
 </div>
-<p class="n">Visiteurs uniques par appareil et par navigateur : une personne qui rouvre la page dans Safari compte deux fois. Les installations se lisent dans AppsFlyer et App Store Connect.</p>
+<p class="n">Visiteurs uniques par appareil et par navigateur : une personne qui rouvre la page dans Safari compte deux fois.</p>
+<h2>Installations de l'app</h2>${installs}
 <h2>Test A/B : quiz ou écran direct</h2>${table(byVariant, 'Version', 'variant')}
 <p class="n">« direct » saute les questions : comparez la colonne Conversion (clics App Store sur visiteurs).</p>
 <h2>Par lien</h2>${table(byPage, 'Page', 'page')}
