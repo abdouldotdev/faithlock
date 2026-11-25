@@ -34,10 +34,7 @@
   button { font: inherit; color: inherit; cursor: pointer; }
   [hidden] { display: none !important; }
 
-  .page { max-width: 460px; min-height: 100vh; min-height: 100dvh; margin: 0 auto; padding: 0 20px; display: flex; flex-direction: column; }
-  header { height: 56px; flex: none; display: flex; align-items: center; }
-  .brand { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 14px; letter-spacing: -.01em; }
-  .brand img { width: 28px; height: 28px; border-radius: 8px; border: 2px solid var(--ink); display: block; }
+  .page { max-width: 460px; min-height: 100vh; min-height: 100dvh; margin: 0 auto; padding: 20px 20px 0; display: flex; flex-direction: column; }
 
   /* Questions: where you are, without words */
   .progress { display: flex; gap: 6px; }
@@ -123,6 +120,16 @@
   .tiny { font-size: 10px; font-weight: 800; color: var(--ink-soft); }
   .tiny.caps { text-transform: uppercase; letter-spacing: .06em; }
   .screen .scripture { margin: 0; font-family: Georgia, Cambria, serif; font-style: italic; font-size: 13px; line-height: 1.35; }
+  .art { display: block; width: 100%; max-width: 230px; height: auto; margin: 0 auto 18px; overflow: visible; }
+  .art .pulse { animation: art-pulse 1.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  @keyframes art-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+  .tuto { width: 100%; text-align: center; }
+  .tuto ol { list-style: none; margin: 18px auto 0; padding: 0; max-width: 320px; display: flex; flex-direction: column; gap: 12px; text-align: left; font-size: 17px; line-height: 1.35; }
+  .tuto li { display: flex; align-items: center; gap: 12px; }
+  .tuto li i { width: 30px; height: 30px; flex: none; border-radius: 50%; border: 2.5px solid var(--ink); background: var(--peach); display: flex; align-items: center; justify-content: center; font-style: normal; font-size: 15px; font-weight: 800; }
+  .tuto li b { font-weight: 800; }
+  .page-pointer { position: fixed; top: 6px; right: 10px; z-index: 30; pointer-events: none; display: flex; flex-direction: column; align-items: flex-end; }
+  .page-pointer svg { animation: nudge 1.1s ease-in-out infinite; }
   @media (max-height: 700px) {
     .phone { width: 148px; height: 250px; margin-top: 20px; }
     .huge { font-size: 96px; }
@@ -156,7 +163,7 @@
   .sheet .actions { margin-top: 20px; display: flex; gap: 12px; }
 
   @media (prefers-reduced-motion: reduce) {
-    .enter, .bars i, .pointer svg, .slides, .slides .st, .btn.go { animation: none !important; }
+    .art .pulse, .page-pointer svg, .enter, .bars i, .pointer svg, .slides, .slides .st, .btn.go { animation: none !important; }
     .track b, .option, .btn { transition: none !important; }
   }
 </style>
@@ -164,9 +171,6 @@
 <body>
 
 <div class="page">
-  <header>
-    <div class="brand"><img src="data:image/jpeg;base64,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" alt="" width="28" height="28">FaithLock</div>
-  </header>
   <div class="progress" id="progress" role="progressbar" aria-valuemin="0" aria-valuemax="4" aria-label="Questions"></div>
   <div class="stories" id="stories" aria-hidden="true" hidden></div>
   <main id="screen" aria-live="polite"></main>
@@ -272,6 +276,46 @@
     queue = [];
   }
 
+
+  // ─── Drawings (ink outlines, cozy palette, a hard offset shadow) ──
+  var INK = '#3D2B1F';
+  function art(inner) {
+    return '<svg class="art" viewBox="0 0 220 150" fill="none" stroke="' + INK + '" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + inner + '</svg>';
+  }
+  function shadowed(shape, fill) { // the same shape twice: the ink shadow, then the filled one
+    return shape.replace('/>', ' fill="' + INK + '" transform="translate(3 5)"/>') + shape.replace('/>', ' fill="' + fill + '"/>');
+  }
+  var ARTS = {
+    phone: art(
+      shadowed('<rect x="78" y="10" width="64" height="122" rx="13"/>', '#FFFDF8') +
+      '<rect x="86" y="24" width="48" height="90" rx="5" fill="#F3D9BE"/><path d="M101 17h18"/>' +
+      '<circle cx="110" cy="69" r="21" fill="#FFFDF8"/><path d="M110 56v13l9 6"/>' +
+      shadowed('<circle cx="46" cy="42" r="15"/>', '#E8B488') + '<path d="M40 42h12M46 36v12" stroke-width="2.5"/>' +
+      shadowed('<rect x="160" y="78" width="34" height="34" rx="9"/>', '#CFDDC3') + '<path d="M171 89l14 6-14 6z" fill="' + INK + '"/>'),
+    god: art(
+      shadowed('<path d="M110 40 C 92 30, 62 30, 40 38 V 118 C 62 110, 92 110, 110 120 Z"/>', '#FFFDF8') +
+      shadowed('<path d="M110 40 C 128 30, 158 30, 180 38 V 118 C 158 110, 128 110, 110 120 Z"/>', '#FFFDF8') +
+      '<path d="M110 40v80"/><path d="M58 60h36M58 74h36M58 88h28M126 60h36M126 74h36M126 88h28" stroke-width="2.5"/>' +
+      '<path d="M110 8v16M96 14l6 10M124 14l-6 10" stroke="#C9A962" stroke-width="4"/>'),
+    apps: art(
+      shadowed('<rect x="22" y="48" width="52" height="52" rx="14"/>', '#3D2B1F') + '<path d="M44 64v24a6 6 0 1 1-6-6M44 64c2 5 6 8 11 8" stroke="#FFFDF8"/>' +
+      shadowed('<rect x="84" y="36" width="52" height="52" rx="14"/>', '#E8B488') + '<rect x="96" y="48" width="28" height="28" rx="8" fill="#FFFDF8"/><circle cx="110" cy="62" r="7" fill="#E8B488"/>' +
+      shadowed('<rect x="146" y="48" width="52" height="52" rx="14"/>', '#D68A4E') + '<path d="M165 64l16 10-16 10z" fill="#FFFDF8"/>' +
+      '<path d="M60 124c30 10 70 10 100 0" stroke="#C9A962" stroke-width="3.5"/>'),
+    when: art(
+      shadowed('<circle cx="70" cy="74" r="30"/>', '#E8B488') +
+      '<path d="M70 26v10M70 112v10M22 74h10M108 74h10M36 40l7 7M97 101l7 7M36 108l7-7M97 47l7-7" stroke-width="3.5"/>' +
+      shadowed('<path d="M170 44 a 32 32 0 1 0 22 54 a 26 26 0 1 1 -22 -54 Z"/>', '#FFFDF8') +
+      '<path d="M150 40l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#C9A962" stroke-width="2"/>'),
+    tuto: art(
+      shadowed('<rect x="60" y="6" width="100" height="140" rx="16"/>', '#FFFDF8') +
+      '<path d="M60 40h100"/><path d="M76 23l-6 6 6 6" stroke-width="3.5"/>' +
+      '<g class="pulse"><circle cx="138" cy="23" r="13" fill="#D68A4E"/><path d="M131 23h.5M138 23h.5M145 23h.5" stroke="#FFFDF8" stroke-width="5"/></g>' +
+      shadowed('<rect x="72" y="74" width="76" height="58" rx="10"/>', '#F3E7CE') +
+      '<rect x="78" y="80" width="64" height="20" rx="6" fill="#D68A4E" class="pulse"/><path d="M84 90h40" stroke="#FFFDF8" stroke-width="3"/>' +
+      '<path d="M84 114h44" stroke-width="2.5"/><path d="M84 122h30" stroke-width="2.5"/>')
+  };
+
   // ─── State ───────────────────────────────────────────────────
   var $ = function (id) { return document.getElementById(id); };
   var answers = {};
@@ -338,6 +382,7 @@
     renderProgress();
     screen.className = 'enter';
     screen.innerHTML =
+      ARTS[q.id] +
       '<h1>' + q.title + '</h1>' +
       (q.hint ? '<p class="hint">' + q.hint + '</p>' : '') +
       '<div class="options">' + q.options.map(function (o) {
@@ -414,12 +459,44 @@
   ];
   var LAST = SLIDES.length - 1;
 
-  /** Variant « direct »: no questions, the answer screen and the App Store button at once. */
+
+  /** In a social app's browser the App Store is blocked: the way out, as a full screen. */
+  function tutorialHTML() {
+    return '<div class="tuto">' + ARTS.tuto.replace('class="art"', 'class="art st"') +
+      '<h1 class="st">Open this page in your browser</h1>' +
+      '<ol class="st"><li><i>1</i><span>Tap <b>•••</b> at the top right.</span></li>' +
+      '<li><i>2</i><span>Choose <b>Open in browser</b>.</span></li></ol></div>';
+  }
+  function showPointer(on) {
+    var el = $('pagePointer');
+    if (!on) { if (el) el.remove(); return; }
+    if (el) return;
+    el = document.createElement('div');
+    el.id = 'pagePointer'; el.className = 'page-pointer'; el.setAttribute('aria-hidden', 'true');
+    el.innerHTML = '<svg width="80" height="80" viewBox="0 0 92 92" fill="none" stroke="' + INK + '" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 82 C 22 46, 44 26, 76 16"/><polyline points="56 10 78 15 68 35"/></svg>';
+    document.body.appendChild(el);
+  }
+  function renderTutorialCta() {
+    cta.hidden = false;
+    ctaInner.innerHTML = '<button type="button" class="btn cream" id="copyLink">Copy the link</button>';
+    $('copyLink').addEventListener('click', function () { copyLink(this, 'tutorial'); });
+  }
+
+  /** Variant « direct »: no questions. In a social app, the way out at once; elsewhere, the App Store screen. */
   function renderDirect() {
     result = null;
     progress.hidden = true;
     stories.hidden = true;
     screen.className = 'slides last';
+    if (inApp) {
+      screen.innerHTML = tutorialHTML();
+      restart(screen);
+      showPointer(true);
+      renderTutorialCta();
+      setQuery(function (q) { q.set('v', 'direct'); q.set('o', inApp); });
+      track('diagnostic_escape_shown', { reason: 'page' });
+      return;
+    }
     screen.innerHTML = '<h1 class="st">Put a verse before your apps.</h1>' +
       '<p class="sub st">FaithLock locks TikTok, Instagram or YouTube. To open them, you read a Bible verse first.</p>' +
       '<div class="phone st" aria-hidden="true"><div class="screen" id="demo"></div></div>';
@@ -447,7 +524,8 @@
     lastMove = Date.now();
     var last = slide === LAST;
     screen.className = 'slides' + (dir < 0 ? ' back' : '') + (last ? ' last' : '');
-    screen.innerHTML = SLIDES[slide](result);
+    screen.innerHTML = last && inApp ? tutorialHTML() : SLIDES[slide](result);
+    showPointer(last && !!inApp);
     restart(screen);
 
     stories.classList.remove('paused');
@@ -464,9 +542,10 @@
     setTimeout(function () {
       Array.prototype.forEach.call(screen.querySelectorAll('[data-width]'), function (b) { b.style.width = b.dataset.width + '%'; });
     }, 50);
-    if (last) lockDemo(result.appName.charAt(0).toUpperCase() + result.appName.slice(1));
+    if (last && !inApp) lockDemo(result.appName.charAt(0).toUpperCase() + result.appName.slice(1));
 
-    renderCta(last);
+    if (last && inApp) { renderTutorialCta(); track('diagnostic_escape_shown', { reason: 'page' }); }
+    else renderCta(last);
     track('diagnostic_slide', { index: slide + 1 });
     if (!last && !reducedMotion) schedule(SLIDE_MS[slide]);
   }
