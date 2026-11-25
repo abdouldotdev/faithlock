@@ -121,8 +121,6 @@
   .tiny.caps { text-transform: uppercase; letter-spacing: .06em; }
   .screen .scripture { margin: 0; font-family: Georgia, Cambria, serif; font-style: italic; font-size: 13px; line-height: 1.35; }
   .art { display: block; width: 100%; max-width: 230px; height: auto; margin: 0 auto 18px; overflow: visible; }
-  .art .pulse { animation: art-pulse 1.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
-  @keyframes art-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
   .tuto { width: 100%; text-align: center; }
   .tuto ol { list-style: none; margin: 18px auto 0; padding: 0; max-width: 320px; display: flex; flex-direction: column; gap: 12px; text-align: left; font-size: 17px; line-height: 1.35; }
   .tuto li { display: flex; align-items: center; gap: 12px; }
@@ -163,7 +161,7 @@
   .sheet .actions { margin-top: 20px; display: flex; gap: 12px; }
 
   @media (prefers-reduced-motion: reduce) {
-    .art .pulse, .page-pointer svg, .enter, .bars i, .pointer svg, .slides, .slides .st, .btn.go { animation: none !important; }
+    .page-pointer svg, .enter, .bars i, .pointer svg, .slides, .slides .st, .btn.go { animation: none !important; }
     .track b, .option, .btn { transition: none !important; }
   }
 </style>
@@ -309,14 +307,7 @@
       shadowed('<circle cx="70" cy="74" r="30"/>', '#E8B488') +
       '<path d="M70 26v10M70 112v10M22 74h10M108 74h10M36 40l7 7M97 101l7 7M36 108l7-7M97 47l7-7" stroke-width="3.5"/>' +
       shadowed('<path d="M170 44 a 32 32 0 1 0 22 54 a 26 26 0 1 1 -22 -54 Z"/>', '#FFFDF8') +
-      '<path d="M150 40l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#C9A962" stroke-width="2"/>'),
-    tuto: art(
-      shadowed('<rect x="60" y="6" width="100" height="140" rx="16"/>', '#FFFDF8') +
-      '<path d="M60 40h100"/><path d="M76 23l-6 6 6 6" stroke-width="3.5"/>' +
-      '<g class="pulse"><circle cx="138" cy="23" r="13" fill="#D68A4E"/><path d="M131 23h.5M138 23h.5M145 23h.5" stroke="#FFFDF8" stroke-width="5"/></g>' +
-      shadowed('<rect x="72" y="74" width="76" height="58" rx="10"/>', '#F3E7CE') +
-      '<rect x="78" y="80" width="64" height="20" rx="6" fill="#D68A4E" class="pulse"/><path d="M84 90h40" stroke="#FFFDF8" stroke-width="3"/>' +
-      '<path d="M84 114h44" stroke-width="2.5"/><path d="M84 122h30" stroke-width="2.5"/>')
+      '<path d="M150 40l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#C9A962" stroke-width="2"/>')
   };
 
   // ─── State ───────────────────────────────────────────────────
@@ -465,8 +456,7 @@
 
   /** In a social app's browser the App Store is blocked: the way out, as a full screen. */
   function tutorialHTML() {
-    return '<div class="tuto">' + ARTS.tuto.replace('class="art"', 'class="art st"') +
-      '<h1 class="st">Open this page in your browser</h1>' +
+    return '<div class="tuto"><h1 class="st">Open this page in your browser</h1>' +
       '<ol class="st"><li><i>1</i><span>Tap <b>•••</b> at the top right.</span></li>' +
       '<li><i>2</i><span>Choose <b>Open in browser</b>.</span></li></ol></div>';
   }
