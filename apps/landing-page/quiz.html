@@ -9,8 +9,12 @@
 <meta name="description" content="Four taps. See how your week really splits between your phone and God.">
 <!--
   The page behind the TikTok bio link: four taps, then the visitor's week told in a few animated
-  screens, then the App Store. One self-contained file, no dependency: it must load at once in
-  TikTok's built-in browser.
+  screens, then the App Store. An install button stays at the bottom from the first question on.
+  One self-contained file, no dependency: it must load at once in TikTok's built-in browser.
+
+  Opened in a real browser from a bio link (TikTok's « Open in browser »), the page skips the quiz
+  and sends the visitor to the App Store. TikTok usually reopens the link as it was first tapped,
+  without the flags this page adds to the address, so the bio path itself marks the escape.
 
   Host it on the exact host of the bio link (https://www.getfaithlock.com/quiz.html, with
   utm_source=tiktok): TikTok blocks a link that redirects to another host.
@@ -121,13 +125,12 @@
   .tiny.caps { text-transform: uppercase; letter-spacing: .06em; }
   .screen .scripture { margin: 0; font-family: Georgia, Cambria, serif; font-style: italic; font-size: 13px; line-height: 1.35; }
   .art { display: block; width: 100%; max-width: 230px; height: auto; margin: 0 auto 18px; overflow: visible; }
-  .tuto { width: 100%; text-align: center; }
-  .tuto ol { list-style: none; margin: 18px auto 0; padding: 0; max-width: 320px; display: flex; flex-direction: column; gap: 12px; text-align: left; font-size: 17px; line-height: 1.35; }
-  .tuto li { display: flex; align-items: center; gap: 12px; }
-  .tuto li i { width: 30px; height: 30px; flex: none; border-radius: 50%; border: 2.5px solid var(--ink); background: var(--peach); display: flex; align-items: center; justify-content: center; font-style: normal; font-size: 15px; font-weight: 800; }
-  .tuto li b { font-weight: 800; }
-  .page-pointer { position: fixed; top: 6px; right: 10px; z-index: 30; pointer-events: none; display: flex; flex-direction: column; align-items: flex-end; }
-  .page-pointer svg { animation: nudge 1.1s ease-in-out infinite; }
+  /* Back in a real browser after leaving TikTok: the install button alone, at the top */
+  .store-only { text-align: center; padding-top: 8px; }
+  .store-only .btn { margin-top: 22px; }
+  .store-only .sub { margin-top: 10px; }
+  /* The questions keep their last option clear of the install bar */
+  body.has-cta main { padding-bottom: 128px; }
   @media (max-height: 700px) {
     .phone { width: 148px; height: 250px; margin-top: 20px; }
     .huge { font-size: 96px; }
@@ -161,7 +164,7 @@
   .sheet .actions { margin-top: 20px; display: flex; gap: 12px; }
 
   @media (prefers-reduced-motion: reduce) {
-    .page-pointer svg, .enter, .bars i, .pointer svg, .slides, .slides .st, .btn.go { animation: none !important; }
+    .enter, .bars i, .pointer svg, .slides, .slides .st, .btn.go { animation: none !important; }
     .track b, .option, .btn { transition: none !important; }
   }
 </style>
@@ -247,32 +250,64 @@
     : /Instagram/i.test(ua) ? 'instagram'
     : /\bFBAN\b|\bFBAV\b|FB_IAB/i.test(ua) ? 'facebook' : null;
   var android = /Android/i.test(ua);
+  // iPadOS Safari reports itself as a Mac: a touch screen tells them apart.
+  var ios = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
   var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var params = new URLSearchParams(location.search);
 
-  // ─── A/B test: the quiz, or straight to the App Store screen ──
-  // Drawn once per browser and kept; ?v=quiz or ?v=direct forces one (for testing).
-  var VARIANTS = ['quiz', 'direct'];
-  var variant = params.get('v');
-  if (VARIANTS.indexOf(variant) < 0) {
-    try { variant = localStorage.getItem('fl_quiz_variant'); } catch (e) { variant = null; }
-    if (VARIANTS.indexOf(variant) < 0) variant = Math.random() < 0.5 ? 'quiz' : 'direct';
-  }
-  try { localStorage.setItem('fl_quiz_variant', variant); } catch (e) {}
+  // ─── Back in a real browser after leaving a social app ───────
+  // Inside the app, the page marks its own address (o=tiktok&go=store) so « Open in browser » lands
+  // on the App Store. TikTok mostly reopens the link as first tapped, without those flags: a bio
+  // path (/quiz/emma, /emft…) or a social utm_source opened outside the app means the same thing.
+  var escapedVia = inApp ? null
+    : params.get('go') === 'store' || params.get('o') ? 'flag'
+    : CAMPAIGNS[campaign] ? 'path'
+    : /^(tiktok|instagram|facebook)$/i.test(params.get('utm_source') || '') ? 'utm' : null;
+
+  // One page for everyone since the A/B test (quiz against a direct App Store screen) ended: the
+  // quiz, with the install button always in view. The name tells its events apart in /stats.
+  var variant = 'quiz_install';
 
   // ─── Analytics (PostHog), on the live site only ──────────────
   var queue = [];
-  function track(event, props) {
+  var analyticsReady = false, readyWaiters = [];
+  function decorate(props) {
     props = props || {};
     props.url = location.pathname;
     props.in_app_browser = inApp;
     props.variant = variant;
+    return props;
+  }
+  function track(event, props) {
+    props = decorate(props);
+    if (!LIVE) (window.__flEvents = window.__flEvents || []).push([event, props, 'xhr']);
     if (window.posthog && window.posthog.capture) window.posthog.capture(event, props);
     else queue.push([event, props]);
   }
+  /** An event sent as the page is left (the App Store opens): a beacon outlives the page, a request does not. */
+  function trackLeaving(event, props) {
+    props = decorate(props);
+    if (!LIVE) { (window.__flEvents = window.__flEvents || []).push([event, props, 'beacon']); return; }
+    if (analyticsReady) { window.posthog.capture(event, props, { transport: 'sendBeacon' }); return; }
+    // The library is not there yet: the event goes straight to PostHog's capture endpoint.
+    try {
+      var body = JSON.stringify({ api_key: POSTHOG_KEY, event: event, distinct_id: 'quiz-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8), properties: props });
+      if (!(navigator.sendBeacon && navigator.sendBeacon(POSTHOG_HOST + '/i/v0/e/',new Blob([body], { type: 'text/plain' })))) track(event, props);
+    } catch (e) { track(event, props); }
+  }
+  /** Runs `then` once PostHog is loaded, or after `maxMs` at the latest. */
+  function whenAnalyticsReady(then, maxMs) {
+    if (analyticsReady || !LIVE) return then();
+    var done = false, run = function () { if (!done) { done = true; then(); } };
+    readyWaiters.push(run);
+    setTimeout(run, maxMs);
+  }
   if (LIVE && POSTHOG_KEY.indexOf('__') !== 0) {
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once identify alias reset".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-    window.posthog.init(POSTHOG_KEY, { api_host: POSTHOG_HOST, person_profiles: 'identified_only', capture_pageview: true });
+    window.posthog.init(POSTHOG_KEY, {
+      api_host: POSTHOG_HOST, person_profiles: 'identified_only', capture_pageview: true,
+      loaded: function () { analyticsReady = true; readyWaiters.splice(0).forEach(function (f) { f(); }); }
+    });
     queue.forEach(function (q) { window.posthog.capture(q[0], q[1]); });
     queue = [];
   }
@@ -372,7 +407,8 @@
 
   function renderQuestion() {
     var q = QUESTIONS[step];
-    cta.hidden = true;
+    // The way to the App Store is there from the first question: nobody has to finish the quiz.
+    if (android) hideCta(); else renderCta(true, 'Get FaithLock on the App Store', 'quiz_question');
     renderProgress();
     screen.className = 'enter';
     screen.innerHTML =
@@ -454,49 +490,35 @@
   var LAST = SLIDES.length - 1;
 
 
-  /** In a social app's browser the App Store is blocked: the way out, as a full screen. */
-  function tutorialHTML() {
-    return '<div class="tuto"><h1 class="st">Open this page in your browser</h1>' +
-      '<ol class="st"><li><i>1</i><span>Tap <b>•••</b> at the top right.</span></li>' +
-      '<li><i>2</i><span>Choose <b>Open in browser</b>.</span></li></ol></div>';
-  }
-  function showPointer(on) {
-    var el = $('pagePointer');
-    if (!on) { if (el) el.remove(); return; }
-    if (el) return;
-    el = document.createElement('div');
-    el.id = 'pagePointer'; el.className = 'page-pointer'; el.setAttribute('aria-hidden', 'true');
-    el.innerHTML = '<svg width="80" height="80" viewBox="0 0 92 92" fill="none" stroke="' + INK + '" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 82 C 22 46, 44 26, 76 16"/><polyline points="56 10 78 15 68 35"/></svg>';
-    document.body.appendChild(el);
-  }
-  function renderTutorialCta() {
-    cta.hidden = false;
-    ctaInner.innerHTML = '<button type="button" class="btn cream" id="copyLink">Copy the link</button>';
-    $('copyLink').addEventListener('click', function () { copyLink(this, 'tutorial'); });
-  }
-
-  /** Variant « direct »: no questions. In a social app, the way out at once; elsewhere, the App Store screen. */
-  function renderDirect() {
+  /** Opened in a real browser from a bio link: the install button alone, and the App Store at once. */
+  var AUTO_STORE_KEY = 'fl_quiz_auto_store';
+  function renderStoreOnly() {
     result = null;
     progress.hidden = true;
     stories.hidden = true;
-    screen.className = 'slides last';
-    if (inApp) {
-      screen.innerHTML = tutorialHTML();
-      restart(screen);
-      showPointer(true);
-      renderTutorialCta();
-      setQuery(function (q) { q.set('v', 'direct'); q.set('o', inApp); });
-      track('diagnostic_escape_shown', { reason: 'page' });
-      return;
-    }
-    screen.innerHTML = '<h1 class="st">Put a verse before your apps.</h1>' +
-      '<p class="sub st">FaithLock locks TikTok, Instagram or YouTube. To open them, you read a Bible verse first.</p>' +
-      '<div class="phone st" aria-hidden="true"><div class="screen" id="demo"></div></div>';
+    hideCta();
+    screen.className = 'store-only enter';
+    var label = 'Get FaithLock on the App Store';
+    screen.innerHTML = '<h1>Put a verse before your apps.</h1>' +
+      (android
+        ? '<p class="sub">FaithLock is on iPhone and iPad.</p><button type="button" class="btn cream small" id="copyLink">Copy the link for your iPhone</button>'
+        : '<a class="btn go" id="store" href="' + storeLink('escape') + '">' + APPLE + label + '</a><p class="sub" id="storeNote">Opening the App Store…</p>') +
+      '<div class="phone" aria-hidden="true"><div class="screen" id="demo"></div></div>';
     restart(screen);
     lockDemo('TikTok');
-    renderCta(true, 'Get FaithLock');
-    setQuery(function (q) { q.set('v', 'direct'); if (inApp) q.set('o', inApp); });
+    if (android) { $('copyLink').addEventListener('click', function () { copyLink(this, 'escape'); }); return; }
+    bindStore($('store'), 'escape');
+
+    // The App Store opens by itself, once: coming back to this tab (or reloading it) leaves the button.
+    var last = 0;
+    try { last = Number(sessionStorage.getItem(AUTO_STORE_KEY) || 0); } catch (e) {}
+    if (!ios || Date.now() - last < 30 * 60 * 1000) { $('storeNote').textContent = 'Tap the button to install.'; return; }
+    try { sessionStorage.setItem(AUTO_STORE_KEY, String(Date.now())); } catch (e) {}
+    whenAnalyticsReady(function () {
+      var href = storeLink('escape_auto');
+      trackLeaving('faithlock_store_click', storeClickProps('escape_auto', href, label));
+      location.href = href;
+    }, 1200);
   }
 
   function renderResult(arrived, toEnd) {
@@ -506,8 +528,8 @@
     stories.hidden = true;
     showSlide(1);
     window.scrollTo(0, 0);
-    // Kept in the address, so « Open in browser » opens the result as it is.
-    setQuery(function (q) { q.set('r', encode()); q.set('v', variant); if (inApp) q.set('o', inApp); });
+    // Kept in the address, so a copied link reopens the result as it is.
+    setQuery(function (q) { q.set('r', encode()); q.delete('v'); });
     if (!arrived) track('diagnostic_result', { phone_hours_week: result.phoneHoursWeek, god_minutes_week: result.godMinutesWeek, app: answers.app, when: answers.when });
   }
 
@@ -517,8 +539,7 @@
     lastMove = Date.now();
     var last = slide === LAST;
     screen.className = 'slides' + (dir < 0 ? ' back' : '') + (last ? ' last' : '');
-    screen.innerHTML = last && inApp ? tutorialHTML() : SLIDES[slide](result);
-    showPointer(last && !!inApp);
+    screen.innerHTML = SLIDES[slide](result);
     restart(screen);
 
     stories.classList.remove('paused');
@@ -535,10 +556,9 @@
     setTimeout(function () {
       Array.prototype.forEach.call(screen.querySelectorAll('[data-width]'), function (b) { b.style.width = b.dataset.width + '%'; });
     }, 50);
-    if (last && !inApp) lockDemo(result.appName.charAt(0).toUpperCase() + result.appName.slice(1));
+    if (last) lockDemo(result.appName.charAt(0).toUpperCase() + result.appName.slice(1));
 
-    if (last && inApp) { renderTutorialCta(); track('diagnostic_escape_shown', { reason: 'page' }); }
-    else renderCta(last);
+    renderCta(last, null, 'quiz_result');
     track('diagnostic_slide', { index: slide + 1 });
     if (!last && !reducedMotion) schedule(SLIDE_MS[slide]);
   }
@@ -583,8 +603,12 @@
     }
   });
 
-  function renderCta(last, label) {
+  function hideCta() { cta.hidden = true; document.body.classList.remove('has-cta'); }
+
+  /** The bottom bar: « Continue » between result screens, otherwise the App Store button. */
+  function renderCta(last, label, ctaId) {
     cta.hidden = false;
+    document.body.classList.add('has-cta');
     if (!last) {
       ctaInner.innerHTML = '<button type="button" class="btn" id="next">Continue</button>';
       $('next').addEventListener('click', function () { go(1); });
@@ -595,38 +619,52 @@
       $('copyLink').addEventListener('click', function () { copyLink(this, 'result'); });
       return;
     }
-    var href = storeLink();
+    var onResult = ctaId === 'quiz_result';
     ctaInner.innerHTML =
-      '<a class="btn go" id="store" href="' + href + '">' + APPLE + (label || 'Take back my ' + result.phoneHoursWeek + ' hours') + '</a>' +
-      (inApp ? '<button type="button" class="ask" id="ask">App Store not opening?</button>' : '');
-    $('store').addEventListener('click', function () {
-      track('faithlock_store_click', {
-        cta_id: 'quiz_result', location: 'quiz_result', destination: 'official_app_store', destination_url: href,
-        destination_type: inApp ? 'app_store' : 'onelink', page_path: location.pathname, button_text: this.textContent,
-        traffic_source: params.get('o') || params.get('utm_source') || 'direct'
-      });
+      '<a class="btn' + (onResult ? ' go' : '') + '" id="store" href="' + storeLink(ctaId) + '">' + APPLE + (label || 'Take back my ' + result.phoneHoursWeek + ' hours') + '</a>' +
+      (inApp && onResult ? '<button type="button" class="ask" id="ask">App Store not opening?</button>' : '');
+    bindStore($('store'), ctaId);
+    var ask = $('ask');
+    if (ask) ask.addEventListener('click', function () { openCoach('asked'); });
+  }
+
+  function storeClickProps(ctaId, href, text) {
+    return {
+      // `location` stays « quiz_result » for every button of this page: /stats counts the quiz's
+      // clicks by it. `cta_id` tells the buttons apart (quiz_question, quiz_result, escape, escape_auto).
+      cta_id: ctaId, location: 'quiz_result', destination: 'official_app_store', destination_url: href,
+      destination_type: inApp ? 'app_store' : 'onelink', page_path: location.pathname, button_text: text,
+      step: ctaId === 'quiz_question' ? step + 1 : null, escaped_via: escapedVia,
+      traffic_source: inApp || params.get('o') || params.get('utm_source') || (escapedVia ? 'tiktok' : 'direct')
+    };
+  }
+
+  /** An App Store button: the click is recorded by beacon, then the link opens as it is (no delay). */
+  function bindStore(el, ctaId) {
+    el.addEventListener('click', function () {
+      trackLeaving('faithlock_store_click', storeClickProps(ctaId, el.href, el.textContent));
       if (!inApp) return;
       // Inside a social app: still here shortly after the tap means the link was blocked.
       try { sessionStorage.setItem('fl_quiz_store_attempt', String(Date.now())); } catch (e) {}
       setTimeout(function () { if (document.visibilityState === 'visible') openCoach('store_blocked'); }, 700);
     });
-    var ask = $('ask');
-    if (ask) ask.addEventListener('click', function () { openCoach('asked'); });
   }
 
-  function storeLink() {
+  function storeLink(ctaId) {
     if (inApp) {
-      // Straight to the App Store: inside a social app a redirect through another host is blocked.
+      // Straight to apps.apple.com: inside a social app a redirect through another host is blocked.
+      // ct names the campaign in App Store Connect; Apple only reports it once pt is set too.
       var direct = new URL('https://apps.apple.com/app/apple-store/' + APP_ID);
-      if (APPLE_PROVIDER_TOKEN) { direct.searchParams.set('pt', APPLE_PROVIDER_TOKEN); direct.searchParams.set('ct', 'tiktok_quiz'); }
+      if (APPLE_PROVIDER_TOKEN) direct.searchParams.set('pt', APPLE_PROVIDER_TOKEN);
+      direct.searchParams.set('ct', inApp + '_' + (CAMPAIGNS[campaign] ? campaign : 'quiz'));
       direct.searchParams.set('mt', '8');
       return direct.toString();
     }
     // In a real browser the AppsFlyer OneLink works, and reports the install under its source.
     var link = new URL(ONELINK);
-    link.searchParams.set('af_channel', params.get('o') || params.get('utm_source') || 'direct');
+    link.searchParams.set('af_channel', params.get('o') || params.get('utm_source') || (escapedVia ? 'tiktok' : 'direct'));
     link.searchParams.set('af_sub1', location.pathname);
-    link.searchParams.set('af_sub3', 'quiz_result');
+    link.searchParams.set('af_sub3', ctaId);
     return link.toString();
   }
 
@@ -709,23 +747,25 @@
 
   // ─── Start ───────────────────────────────────────────────────
   var arrived = decode(params.get('r'));
-  track('diagnostic_view', { device: android ? 'android' : /iPhone|iPad|iPod/i.test(ua) ? 'ios' : 'other', with_result: !!arrived });
-  // Reopened in a real browser after the way out: the escape worked.
-  if (!inApp && params.get('o')) {
-    try { if (!sessionStorage.getItem('fl_quiz_reopened')) { sessionStorage.setItem('fl_quiz_reopened', '1'); track('diagnostic_browser_open', { origin: params.get('o') }); } }
-    catch (e) { track('diagnostic_browser_open', { origin: params.get('o') }); }
-  }
-  if (arrived) {
+  track('diagnostic_view', { device: android ? 'android' : ios ? 'ios' : 'other', with_result: !!arrived, escaped_via: escapedVia });
+  // Inside a social app, the address is marked at once: if « Open in browser » keeps it, the real
+  // browser goes straight to the App Store (and if it does not, the bio path does the same).
+  if (inApp) setQuery(function (q) { q.set('o', inApp); q.set('go', 'store'); q.delete('v'); });
+  if (escapedVia) {
+    // Reopened in a real browser after the way out: the escape worked. Sent by beacon once PostHog is
+    // there (same visitor id), queued ahead of the App Store opening, which may leave the page.
+    var reopened = function () { whenAnalyticsReady(function () { trackLeaving('diagnostic_browser_open', { origin: params.get('o') || 'tiktok', via: escapedVia }); }, 1200); };
+    try { if (!sessionStorage.getItem('fl_quiz_reopened')) { sessionStorage.setItem('fl_quiz_reopened', '1'); reopened(); } }
+    catch (e) { reopened(); }
+    renderStoreOnly();
+  } else if (arrived) {
     answers = arrived;
     step = QUESTIONS.length;
-    // Back from the way out (or from TikTok's blocking screen): straight to the App Store screen.
-    renderResult(true, !!params.get('o'));
-    cameBack();
-  } else if (variant === 'direct') {
-    renderDirect();
+    renderResult(true, false);
     cameBack();
   } else {
     renderQuestion();
+    cameBack();
   }
 })();
 </script>

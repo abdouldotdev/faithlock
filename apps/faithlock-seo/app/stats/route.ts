@@ -144,8 +144,10 @@ export async function GET(req: Request) {
     const installed = `timestamp >= now() - INTERVAL ${days} DAY AND event = 'install_attributed'`
     const attributed = `toString(properties.af_status) = 'Non-organic'`
     ;[installsByDay, campaigns] = await Promise.all([
+      // `all_installs`: every first launch of the app, whatever brought it. A tap inside TikTok opens
+      // the App Store with no link AppsFlyer sees, so those installs only show up here (as organic).
       hogql(
-        `SELECT toDate(timestamp) AS day, uniq(distinct_id) AS attributed FROM events WHERE ${installed} AND ${attributed} GROUP BY day ORDER BY day DESC`,
+        `SELECT toDate(timestamp) AS day, uniqIf(distinct_id, event = 'install_attributed' AND ${attributed}) AS attributed, uniqIf(distinct_id, event = 'Application Installed') AS all_installs FROM events WHERE timestamp >= now() - INTERVAL ${days} DAY AND event IN ('install_attributed', 'Application Installed') GROUP BY day ORDER BY day DESC`,
         APP_PROJECT_ID,
       ),
       hogql(
@@ -170,6 +172,7 @@ export async function GET(req: Request) {
   // Installs beside the quiz's App Store clicks, day by day (UTC on both sides).
   // Only what the links brought: the app's other installs (search, word of mouth) are left out.
   const attributedTotal = installsByDay.reduce((n, r) => n + num(r.attributed), 0)
+  const allInstallsTotal = installsByDay.reduce((n, r) => n + num(r.all_installs), 0)
   const installsOf = new Map(installsByDay.map((r) => [String(r.day), r]))
   // Only a click that went through the OneLink can be matched to an install: inside a social app the
   // button went straight to the App Store, with no link AppsFlyer could see.
@@ -208,21 +211,22 @@ export async function GET(req: Request) {
   const installs = installsError
     ? `<p class="n">Lecture des installations impossible : ${esc(installsError)}</p>`
     : `<div class="k">
+${card('Installations de l’app', allInstallsTotal, 'toutes sources, premier lancement')}
 ${card('Clics via OneLink', clicksTotal, 'les seuls qu’AppsFlyer peut rapprocher')}
-${card('Installations venues des liens', attributedTotal, 'attribuées par AppsFlyer')}
+${card('Installations venues des liens', attributedTotal, 'attribuées par AppsFlyer (un minimum)')}
 </div>
 <h2>Par lien</h2>
 <div class="t"><table><tr><th>Lien</th><th>Clics via OneLink</th><th>Installations venues du lien</th><th>Campagne AppsFlyer</th></tr>${linkRows.join('')}</table></div>
 <h2>Par jour</h2>
-<div class="t"><table><tr><th>Jour</th><th>Clics via OneLink</th><th>Installations venues des liens</th></tr>${
+<div class="t"><table><tr><th>Jour</th><th>Installations de l’app</th><th>Clics via OneLink</th><th>Installations venues des liens</th></tr>${
         allDays
           .map((d) => {
             const r = installsOf.get(d)
             // No quiz visit that day: the bio link led straight to the OneLink, whose clicks only AppsFlyer sees.
             const clicks = clicksOf.has(d) ? String(clicksOf.get(d)) : '—'
-            return `<tr><td>${esc(d)}</td><td>${clicks}</td><td>${num(r?.attributed)}</td></tr>`
+            return `<tr><td>${esc(d)}</td><td>${num(r?.all_installs)}</td><td>${clicks}</td><td>${num(r?.attributed)}</td></tr>`
           })
-          .join('') || '<tr><td colspan="3">Aucun clic ni installation sur la période.</td></tr>'
+          .join('') || '<tr><td colspan="4">Aucun clic ni installation sur la période.</td></tr>'
       }</table></div>
 <p class="n">« — » : pas de page quiz ce jour-là. Le lien de bio menait directement au OneLink, et seul AppsFlyer voit ces clics.</p>
 <p class="n">Une installation compte ici quand la personne a touché un lien OneLink (le bouton du quiz ouvert dans un vrai navigateur, ou le lien posé directement), installé l'app puis l'a ouverte, et qu'AppsFlyer a fait le rapprochement. C'est un minimum : un clic dans TikTok part droit vers l'App Store, sans lien qu'AppsFlyer puisse voir, et certaines installations qui suivent un clic de quelques minutes restent sans attribution. Chiffres lus dans le projet PostHog de l'app (événement install_attributed), en jours UTC.</p>`
